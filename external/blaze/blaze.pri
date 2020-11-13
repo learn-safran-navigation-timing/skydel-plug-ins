@@ -9,9 +9,11 @@ win32: {
 }
 else:linux-oe-g++: {
     BLAZE_LIBS = -Wl,-Bstatic -llapack -lblas -Wl,-Bdynamic -lgfortran
+    QMAKE_CXXFLAGS *= -Wno-unknown-pragmas
 }
 else:unix: {
     BLAZE_LIBS = -llapack
+    QMAKE_CXXFLAGS *= -Wno-unknown-pragmas
 }
 
 HEADERS += \
