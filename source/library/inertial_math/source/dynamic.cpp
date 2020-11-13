@@ -1,6 +1,7 @@
 #include "dynamic.h"
 
 #include "angle_unwrap.h"
+#include "sensor.h"
 #include "transformation.h"
 
 namespace Iml {
@@ -48,7 +49,9 @@ InertialData BodyInertialDynamic::getPosition() const
   if (isReady())
   {
     position = BodyDynamic::getPosition();
-    bodyInertialTruth(position);
+    auto llaPosition = ecefToLla(position.position);
+    position.acceleration = idealAccelerometer(llaPosition, position.velocity, position.acceleration, position.attitude);
+    position.angularVelocity = idealGyroscope(llaPosition, position.velocity, position.attitude, position.angularVelocity);
   }
 
   return position;

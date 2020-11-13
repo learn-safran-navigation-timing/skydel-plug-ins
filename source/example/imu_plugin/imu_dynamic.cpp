@@ -8,7 +8,7 @@ ImuDynamic::ImuDynamic(const ImuConfiguration& configuration, const QString &log
 {
   if (configuration.getValue("fileLoggingEnabled").toBool())
     m_loggers.push_back(std::make_shared<ImuFileLogger>(static_cast<ImuDataFormat>(configuration.getValue("fileLoggingFormat").toInt()),
-                                                        logPath + QDir::separator() + "Imu_dynamic.csv"));
+                                                        logPath + QDir::separator() + "imu_dynamic"));
 
   if (configuration.getValue("networkLoggingEnabled").toBool())
     m_loggers.push_back(std::make_shared<ImuNetworkLogger>(static_cast<ImuDataFormat>(configuration.getValue("networkLoggingFormat").toInt()),

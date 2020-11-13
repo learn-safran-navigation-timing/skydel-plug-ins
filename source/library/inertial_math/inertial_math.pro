@@ -21,6 +21,7 @@ HEADERS += \
     include/dynamic.h \
     include/gravity.h \
     include/rotation_matrix.h \
+    include/sensor.h \
     include/transformation.h \
     include/triplet.h \
     include/utility.h
@@ -30,6 +31,8 @@ SOURCES += \
     source/coriolis_force.cpp \
     source/dynamic.cpp \
     source/gravity.cpp \
+    source/rotation_matrix.cpp \
+    source/sensor.cpp \
     source/transformation.cpp
 
 INCLUDEPATH *= $$PWD/include

@@ -6,26 +6,26 @@
 
 namespace Iml {
 
-Attitude unwrap(const Attitude &previous, const Attitude &current, Attitude &correction)
+double unwrap(double previousAngle, double currentAngle, double &correction)
 {
-  return { unwrap(previous[0], current[0], correction[0]),
-           unwrap(previous[1], current[1], correction[1]),
-           unwrap(previous[2], current[2], correction[2]) };
+  correction += roundDifferenceToClosest2PiMultiple(previousAngle, currentAngle);
+
+  return currentAngle - correction;
 }
 
-double unwrap(double previous, double current, double &correction)
+Triplet unwrap(const Triplet &previousAngles, const Triplet &currentAngles, Triplet &corrections)
 {
-  correction += phaseCorrection(previous, current);
-
-  return current - correction;
+  return { unwrap(previousAngles[0], currentAngles[0], corrections[0]),
+           unwrap(previousAngles[1], currentAngles[1], corrections[1]),
+           unwrap(previousAngles[2], currentAngles[2], corrections[2]) };
 }
 
-double phaseCorrection(double previous, double current)
+double roundDifferenceToClosest2PiMultiple(double previousAngle, double currentAngle)
 {
-  double delta = current - previous;
+  double delta = currentAngle - previousAngle;
   if (std::abs(delta) > PI)
   {
-    if (current <= 0.0)
+    if (currentAngle <= 0.0)
     {
       return 2.0 * PI * std::floor(delta / (2.0 * PI));
     }

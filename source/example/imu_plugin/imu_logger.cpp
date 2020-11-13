@@ -32,7 +32,7 @@ ImuLogger::ImuLogger(ImuDataFormat dataFormat) :
   m_dataFormat(dataFormat)
 {}
 
-QString ImuLogger::getHeader()
+QString ImuLogger::getHeader() const
 {
   switch (m_dataFormat)
   {
@@ -42,7 +42,7 @@ QString ImuLogger::getHeader()
   }
 }
 
-QString ImuLogger::getFormattedData(const Iml::InertialData& data)
+QString ImuLogger::getFormattedData(const Iml::InertialData& data) const
 {
   switch (m_dataFormat)
   {
@@ -52,41 +52,44 @@ QString ImuLogger::getFormattedData(const Iml::InertialData& data)
   }
 }
 
-QString ImuLogger::getFormattedDataInCsvFormat(const Iml::InertialData& data)
+QString ImuLogger::getFormattedDataInCsvFormat(const Iml::InertialData& data) const
 {
   QString formattedData;
   QTextStream stream(&formattedData);
   stream.setRealNumberPrecision(15);
   stream << data.time << ','
-         << data.acceleration.x() << ','
-         << data.acceleration.y() << ','
-         << data.acceleration.z() << ','
-         << data.angularVelocity.roll() << ','
-         << data.angularVelocity.pitch() << ','
-         << data.angularVelocity.yaw() << '\n';
+         << Iml::x(data.acceleration) << ','
+         << Iml::y(data.acceleration) << ','
+         << Iml::z(data.acceleration) << ','
+         << Iml::roll(data.angularVelocity) << ','
+         << Iml::pitch(data.angularVelocity) << ','
+         << Iml::yaw(data.angularVelocity) << '\n';
 
   return formattedData;
 }
 
-QString ImuLogger::getFormattedDataInJsonFormat(const Iml::InertialData& data)
+QString ImuLogger::getFormattedDataInJsonFormat(const Iml::InertialData& data) const
 {
   QJsonObject formattedData;
   formattedData.insert(ELASPED_JSON_KEY, static_cast<double>(data.time));
-  formattedData.insert(ACCELERATION_JSON_KEY, QJsonArray{ data.acceleration.x(),
-                                                   data.acceleration.y(),
-                                                   data.acceleration.z() });
-  formattedData.insert(ANGULAR_VELOCITY_JSON_KEY, QJsonArray{ data.angularVelocity.roll(),
-                                                     data.angularVelocity.pitch(),
-                                                     data.angularVelocity.yaw() });
+  formattedData.insert(ACCELERATION_JSON_KEY, QJsonArray{ Iml::x(data.acceleration),
+                                                          Iml::y(data.acceleration),
+                                                          Iml::z(data.acceleration) });
+  formattedData.insert(ANGULAR_VELOCITY_JSON_KEY, QJsonArray{ Iml::roll(data.angularVelocity),
+                                                              Iml::pitch(data.angularVelocity),
+                                                              Iml::yaw(data.angularVelocity) });
 
   QJsonDocument jsonDocument(formattedData);
 
   return jsonDocument.toJson();
 }
 
+const QString ImuFileLogger::csvFileExtension = ".csv";
+const QString ImuFileLogger::jsonFileExtension = ".json";
+
 ImuFileLogger::ImuFileLogger(ImuDataFormat dataFormat, QString logFilePath) :
   ImuLogger(dataFormat),
-  m_file(std::move(logFilePath))
+  m_file(std::move(logFilePath + getFileExtension() ))
 {
   if (!m_file.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text))
     throw std::runtime_error("ImuFileLogger - Can't open file.");
@@ -102,6 +105,16 @@ ImuFileLogger::~ImuFileLogger()
 void ImuFileLogger::log(const Iml::InertialData& data)
 {
   writeInFile(getFormattedData(data));
+}
+
+QString ImuFileLogger::getFileExtension() const
+{
+  switch (m_dataFormat)
+  {
+    case ImuDataFormat::CSV: return csvFileExtension;
+    case ImuDataFormat::JSON: return jsonFileExtension;
+    default: return ".txt";
+  }
 }
 
 void ImuFileLogger::writeInFile(const QString& string)

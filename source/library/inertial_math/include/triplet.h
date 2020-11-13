@@ -5,37 +5,23 @@
 
 namespace Iml {
 
-typedef blaze::StaticVector<double, 3, blaze::rowVector> Triplet;
+using Triplet = blaze::StaticVector<double, 3, blaze::rowVector>;
 
-class Attitude : public Triplet
-{
-public:
-  using Triplet::Triplet;
+inline double roll(const Triplet &triplet)  { return triplet.at(0); }
+inline double pitch(const Triplet &triplet) { return triplet.at(1); }
+inline double yaw(const Triplet &triplet)   { return triplet.at(2); }
 
-  inline double roll()  const { return at(0); }
-  inline double pitch() const { return at(1); }
-  inline double yaw()   const { return at(2); }
-};
+inline double x(const Triplet &triplet) { return triplet.at(0); }
+inline double y(const Triplet &triplet) { return triplet.at(1); }
+inline double z(const Triplet &triplet) { return triplet.at(2); }
 
-class Xyz : public Triplet
-{
-public:
-  using Triplet::Triplet;
+inline double north(const Triplet &triplet) { return triplet.at(0); }
+inline double east(const Triplet &triplet)  { return triplet.at(1); }
+inline double down(const Triplet &triplet)  { return triplet.at(2); }
 
-  inline double x() const { return at(0); }
-  inline double y() const { return at(1); }
-  inline double z() const { return at(2); }
-};
-
-class Lla : public Triplet
-{
-public:
-  using Triplet::Triplet;
-
-  inline double latitude()  const { return at(0); }
-  inline double longitude() const { return at(1); }
-  inline double altitude()  const { return at(2); }
-};
+inline double latitude(const Triplet &triplet)  { return triplet.at(0); }
+inline double longitude(const Triplet &triplet) { return triplet.at(1); }
+inline double altitude(const Triplet &triplet)  { return triplet.at(2); }
 
 } // namespace Iml
 

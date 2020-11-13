@@ -10,38 +10,38 @@ namespace Iml {
 
 struct RawPositionData
 {
-  int64_t time;           // ms
-  double  position[3];    // m
-  double  orientation[3]; // deg
+  int64_t time;           // millisecond
+  double  position[3];    // meter
+  double  orientation[3]; // radian
 };
 
 struct InertialData
 {
-  int64_t time;             // ms
-  Xyz position;             // m
-  Xyz velocity;             // m/s
-  Xyz acceleration;         // m/s^2
-  Attitude attitude;        // rad
-  Attitude angularVelocity; // rad/s
+  int64_t time;            // millisecond
+  Triplet position;        // meter
+  Triplet velocity;        // meter/second
+  Triplet acceleration;    // meter/second^2
+  Triplet attitude;        // radian
+  Triplet angularVelocity; // radian/second
 };
 
 class BodyDynamic
 {
 public:
-  inline InertialData getPosition() const { return m_datas[1]; }
+  virtual inline InertialData getPosition() const { return m_datas[1]; }
   inline bool isReady() const { return m_datas.size() == m_bufferCapacity; }
   void pushPosition(const RawPositionData &rawPosition);
 
 private:
-  Attitude m_phaseCorrection;
+  Triplet m_phaseCorrection;
   std::vector<InertialData> m_datas;
-  static const size_t m_bufferCapacity = 4;
+  static constexpr size_t m_bufferCapacity = 4;
 };
 
 class BodyInertialDynamic : public BodyDynamic
 {
 public:
-  InertialData getPosition() const;
+  InertialData getPosition() const override;
 };
 
 } // namespace Iml

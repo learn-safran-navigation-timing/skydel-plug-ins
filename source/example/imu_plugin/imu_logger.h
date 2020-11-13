@@ -21,17 +21,17 @@ public:
   virtual void log(const Iml::InertialData& data) = 0;
 
 protected:
-  QString getHeader();
-  QString getFormattedData(const Iml::InertialData& data);
+  QString getHeader() const;
+  QString getFormattedData(const Iml::InertialData& data) const;
+
+  ImuDataFormat m_dataFormat;
 
 private:
-  QString getFormattedDataInCsvFormat(const Iml::InertialData& data);
-  QString getFormattedDataInJsonFormat(const Iml::InertialData& data);
+  QString getFormattedDataInCsvFormat(const Iml::InertialData& data) const;
+  QString getFormattedDataInJsonFormat(const Iml::InertialData& data) const;
 
   static const QString csvHeader;
   static const QString jsonHeader;
-
-  ImuDataFormat m_dataFormat;
 };
 
 typedef std::shared_ptr<ImuLogger> ImuLoggerPtr;
@@ -45,7 +45,11 @@ public:
   void log(const Iml::InertialData& data) override;
 
 private:
+  QString getFileExtension() const;
   void writeInFile(const QString& string);
+
+  static const QString csvFileExtension;
+  static const QString jsonFileExtension;
 
   QFile m_file;
 };

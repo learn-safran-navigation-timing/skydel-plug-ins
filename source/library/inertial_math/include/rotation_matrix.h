@@ -3,41 +3,42 @@
 
 #include <blaze_math.h>
 
+#include <cmath>
+
 #include "triplet.h"
 
 namespace Iml {
 
-typedef blaze::StaticMatrix<double, 3, 3> RotationMatrix;
+using RotationMatrix = blaze::StaticMatrix<double, 3, 3>;
 
-template<typename T>
-T applyRotationMatrix(const T &triplet, const RotationMatrix &rotationMatrix)
-{
-  return trans(rotationMatrix * trans(triplet));
-}
+enum class Axis { X, Y, Z };
 
-template<typename T>
-void applyRotationMatrixTo(const RotationMatrix &rotationMatrix, T &triplet)
-{
-  triplet = applyRotationMatrix(triplet, rotationMatrix);
-}
+/**
+ * @brief Generate a rotation matrix for rotation around a single axis.
+ * 
+ * @param angle Rotation angle around the axis in radian.
+ * @param axis  Axis to rotate around.
+ * @return Rotation matrix for elemental rotation a single axis.
+ */
+RotationMatrix rotationMatrixForElementalRotation(double angle, Axis axis);
 
-template<typename T,  typename... Args>
-void applyRotationMatrixTo(const RotationMatrix &rotationMatrix, T &triplet, Args&... args)
-{
-  applyRotationMatrixTo(rotationMatrix, triplet);
-  applyRotationMatrixTo(rotationMatrix, args...);
-}
+/**
+ * @brief Generate a rotation matrix for rotation around x-y-z axis.
+ *
+ * @param angles Rotation angles around x-y-z axis in radian.
+ * @return Rotation matrix for rotation around x-y-z axis.
+ */
+RotationMatrix rotationMatrixForXYZRotation(const Triplet &angles);
 
-class SkewSymmetricMatrix : public RotationMatrix
-{
-public:
-  SkewSymmetricMatrix(const Triplet &a) :
-    RotationMatrix({ {  0.0,  -a[2],  a[1] },
-                     {  a[2],  0.0,  -a[0] },
-                     { -a[1],  a[0],  0.0  } })
-  {}
-};
 
+/**
+ * @brief Perform a rotation of a triplet with a rotation matrix.
+ * 
+ * @param rotationMatrix Rotation matrix.
+ * @param triplet        Triplet.
+ * @return Rotated triplet.
+ */
+Triplet rotate(const RotationMatrix &rotationMatrix, const Triplet &triplet);
 
 } // namespace Iml
 

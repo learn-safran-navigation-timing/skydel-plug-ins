@@ -6,6 +6,7 @@
 #include "include/dynamic.h"
 #include "include/gravity.h"
 #include "include/rotation_matrix.h"
+#include "include/sensor.h"
 #include "include/transformation.h"
 #include "include/triplet.h"
 #include "include/utility.h"

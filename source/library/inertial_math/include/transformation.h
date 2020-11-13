@@ -2,23 +2,44 @@
 #define IML_TRANSFORMATION_H
 
 #include "dynamic.h"
-#include "rotation_matrix.h"
 #include "triplet.h"
 
 namespace Iml {
 
-enum Axis { X, Y, Z };
+/**
+ * @brief Convert triplet from geocentric Earth-centered Earth-fixed (ECEF) to geodetic (LLA).
+ * 
+ * @param ecef ECEF triplet in meter.
+ * @return LLA triplet in radian, radian and meter.
+ */
+Triplet ecefToLla(const Triplet &ecef);
 
-RotationMatrix conversionMatrix(const Triplet &angles);
-RotationMatrix rotationArroundAxis(double angle, Axis axis);
-RotationMatrix accelerationOffsetRotationMatrix(double p, double q, double r, double dp, double dq, double dr);
-Xyz accelerationOffset(const Attitude &currentVelocity, const Attitude &previousVelocity, const Xyz &offset, double t);
-double primeVerticalRadiusOfCurvature(double latitude);
-Lla toLla(const Xyz &ecef);
-void ecefToNed(const Lla &reference, Xyz &velocityEcef, Xyz &accelerationEcef);
-void nedToBody(const Attitude &attitude, Xyz &accelerationNed, Attitude &angularVelocityNed, Attitude &angularVelocityCorrection);
-void bodyToImu(const Attitude &angularOffset, Xyz &accelerationBody, Attitude &angularVelocityBody);
-void bodyInertialTruth(InertialData &data);
+/**
+ * @brief Convert triplet from geocentric Earth-centered Earth-fixed (ECEF) to local north-east-down (NED).
+ * 
+ * @param llaOrigin Geodetic coordinate (LLA) of local NED system origin in radian, radian and meter.
+ * @param ecef ECEF triplet in meter.
+ * @return NED triplet in meter.
+ */
+Triplet ecefToNed(const Triplet &llaOrigin, const Triplet &ecef);
+
+/**
+ * @brief Convert triplet from local north-east-down (NED) to body via x-y-z axis rotation.
+ *
+ * @param attitude Attitude triplet in radian.
+ * @param ned      NED triplet.
+ * @return Body triplet.
+ */
+Triplet nedToBodyFromXYZRotation(const Triplet &attitude, const Triplet &ned);
+
+/**
+ * @brief Convert angular velocity from local north-east-down (NED) to body.
+ *
+ * @param attitude Attitude triplet in radian.
+ * @param ned      NED triplet.
+ * @return Body triplet.
+ */
+Triplet nedToBody(const Triplet &attitude, const Triplet &ned);
 
 } // namespace Iml
 

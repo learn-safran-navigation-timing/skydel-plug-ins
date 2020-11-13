@@ -15,9 +15,9 @@ double gravity(double latitude, double altitude)
           std::pow(ROTATION_RATE, 2.0) * radius * cos2(geocentricLatitude));
 }
 
-void gravity(const Lla &lla, Xyz &xyz)
+Triplet nedAccelerationFromGravity(const Triplet &llaPosition)
 {
-  xyz -= Xyz { 0.0, 0.0, gravity(lla.latitude(), lla.altitude()) };
+  return { 0.0, 0.0, gravity(latitude(llaPosition), altitude(llaPosition)) };
 }
 
 } // namespace Iml

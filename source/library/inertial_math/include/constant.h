@@ -6,19 +6,19 @@
 namespace Iml {
 
 // General
-const double PI = 3.14159265358979323846;
+inline constexpr double PI = 3.14159265358979323846;
 
 // Earth Model - WGS 84
-const double FLATTENING = 1.0 / 298.257223563;
-const double FIRST_ECCENTRICITY_SQUARED = 6.69437999014e-3;
-const double SECOND_ECCENTRICITY_SQUARED = (2.0 - FLATTENING) * FLATTENING/ std::pow(1.0 - FLATTENING, 2.0);
-const double EARTH_ANGULAR_VELOCITY = 7.292115e-5; // rad/s
-const double SEMI_MAJOR_AXIS = 6378137.0; // m
-const double SEMI_MINOR_AXIS = 6356752.314245; // m
-const double POLAR_RADIUS_OF_CURVATURE = SEMI_MAJOR_AXIS * std::sqrt(1.0 + SECOND_ECCENTRICITY_SQUARED); // m
-const double GEOCENTRIC_GRAVITATIONAL_CONSTANT = 3.986004418e14; // m^3 / s^2
-const double DERIVED_DYNAMIC_FORM_FACTOR = 1.081874e-3;
-const double ROTATION_RATE = 7.2921155e-5; // rad/s
+inline constexpr double FLATTENING = 1.0 / 298.257223563;
+inline constexpr double FIRST_ECCENTRICITY_SQUARED = 6.69437999014e-3;
+inline constexpr double SECOND_ECCENTRICITY_SQUARED = 6.7394967422764341e-3;
+inline constexpr double EARTH_ANGULAR_VELOCITY = 7.292115e-5; // rad/s
+inline constexpr double SEMI_MAJOR_AXIS = 6378137.0; // m
+inline constexpr double SEMI_MINOR_AXIS = 6356752.314245; // m
+inline constexpr double POLAR_RADIUS_OF_CURVATURE = 6399593.6257584924; // m
+inline constexpr double GEOCENTRIC_GRAVITATIONAL_CONSTANT = 3.986004418e14; // m^3 / s^2
+inline constexpr double DERIVED_DYNAMIC_FORM_FACTOR = 1.081874e-3;
+inline constexpr double ROTATION_RATE = 7.2921155e-5; // rad/s
 
 } // namespace Iml
 
