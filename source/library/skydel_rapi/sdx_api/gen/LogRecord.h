@@ -1,11 +1,11 @@
 #pragma once
 
 #include "parse_json.hpp"
-#include "gen/SimulatorState.h"
-#include <string>
-#include "date_time.h"
 #include "gen/LogLevel.h"
+#include "gen/SimulatorState.h"
+#include "date_time.h"
 #include "gen/SimulatorSubState.h"
+#include <string>
 
 namespace Sdx
 {

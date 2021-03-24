@@ -1,11 +1,7 @@
-## Welcome to the Public Skydel Plug-ins Github repo!
+## Welcome to the Public Skydel Plug-ins Github repository!
 
-This repository will contain the Skydel Plug-ins Software Development Kit (SDK).
-It will also contain Plug-ins examples.
+With plug-ins, users can develop features and integrate them to the Skydel user interface and the real-time simulation engine. In Skydel's context, a plug-in is a dynamic library (*.so* on Ubuntu and *.dll* on Windows).
 
-Skydel Plug-ins documentation will be available shortly.
+This repository contains the Skydel Plug-ins Software Development Kit (SDK) and multiple plug-in examples.
 
-Skydel Plug-ins Documentation is divided into 3 categories and can be found here:
-1. General Skydel Plug-in usage: Skydel User Manual
-2. Plug-ins development environment and interaction with Skydel: [Wiki](https://github.com/learn-orolia/skydel-plug-ins/wiki)
-3. Plug-ins interface: In the source code of the SDK
+See [documentation](https://skydel.gitbook.io/skydel-plug-ins-documentation/) to have more details on how to get started.
