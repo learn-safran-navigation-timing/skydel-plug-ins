@@ -4,7 +4,8 @@
 
 #include "imu_data_format.h"
 
-ImuDynamic::ImuDynamic(const ImuConfiguration& configuration, const QString &logPath)
+ImuDynamic::ImuDynamic(const ImuConfiguration& configuration, const QString &logPath) :
+  m_bodyDynamic(static_cast<Iml::GravityModel>(configuration.getValue("gravityModel").toInt()))
 {
   if (configuration.getValue("fileLoggingEnabled").toBool())
     m_loggers.push_back(std::make_shared<ImuFileLogger>(static_cast<ImuDataFormat>(configuration.getValue("fileLoggingFormat").toInt()),

@@ -5,6 +5,7 @@
 #include <QLineEdit>
 #include <QSpinBox>
 
+#include "gravity.h"
 #include "imu_data_format.h"
 #include "ui_imu_view.h"
 
@@ -14,10 +15,15 @@ ImuView::ImuView(const ImuConfiguration& configuration, QWidget *parent) :
 {
   m_ui->setupUi(this);
 
-  for (auto ImuDataFormat : ALL_IMU_DATA_FORMAT)
+  for (auto imuDataFormat : ALL_IMU_DATA_FORMAT)
   {
-    m_ui->comboBoxFileLogging->addItem(toString(ImuDataFormat));
-    m_ui->comboBoxNetworkLogging->addItem(toString(ImuDataFormat));
+    m_ui->comboBoxFileLogging->addItem(toString(imuDataFormat));
+    m_ui->comboBoxNetworkLogging->addItem(toString(imuDataFormat));
+  }
+
+  for (auto gravityModel : Iml::ALL_GRAVITY_MODEL)
+  {
+    m_ui->comboBoxGravityModel->addItem(toString(gravityModel));
   }
 
   m_ui->spinBoxNetworkLogging->setMaximum(65535);
@@ -30,6 +36,7 @@ ImuView::ImuView(const ImuConfiguration& configuration, QWidget *parent) :
   connect(m_ui->comboBoxNetworkLogging, QOverload<int>::of(&QComboBox::activated), this, &ImuView::comboBoxNetworkLoggingActivated);
   connect(m_ui->lineEditNetworkLogging, &QLineEdit::textChanged, this, &ImuView::lineEditNetworkLoggingTextChanged);
   connect(m_ui->spinBoxNetworkLogging, QOverload<int>::of(&QSpinBox::valueChanged), this, &ImuView::spinBoxNetworkLoggingValueChanged);
+  connect(m_ui->comboBoxGravityModel, QOverload<int>::of(&QComboBox::activated), this, &ImuView::comboBoxGravityModelActivated);
 }
 
 ImuView::~ImuView()
@@ -45,4 +52,5 @@ void ImuView::setConfiguration(const ImuConfiguration& configuration)
   m_ui->comboBoxNetworkLogging->setCurrentIndex(configuration.getValue("networkLoggingFormat").toInt());
   m_ui->lineEditNetworkLogging->setText(configuration.getValue("networkLoggingAddress").toString());
   m_ui->spinBoxNetworkLogging->setValue(configuration.getValue("networkLoggingPort").toInt());
+  m_ui->comboBoxGravityModel->setCurrentIndex(configuration.getValue("gravityModel").toInt());
 }

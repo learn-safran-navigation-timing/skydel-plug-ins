@@ -46,4 +46,9 @@ double earthMeridianRadiusOfCurvature(double latitude)
   return SEMI_MAJOR_AXIS * (1.0 - FIRST_ECCENTRICITY_SQUARED) / std::pow(1.0 - FIRST_ECCENTRICITY_SQUARED * sin2(latitude), 1.5);
 }
 
+double earthMeanRadiusOfCurvature(double latitude)
+{
+  return std::sqrt(earthPrimeVerticalRadiusOfCurvature(latitude) * earthMeridianRadiusOfCurvature(latitude));
+}
+
 } // namespace Iml

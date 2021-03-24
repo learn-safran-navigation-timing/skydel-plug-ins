@@ -1,6 +1,7 @@
 #ifndef SKYDEL_PLUGIN_H
 #define SKYDEL_PLUGIN_H
 
+#include <QObject>
 #include <QString>
 
 #include <vector>
@@ -23,7 +24,9 @@ public:
 
 Q_DECLARE_INTERFACE(SkydelPluginBase, "SkydelPluginBase/1.0")
 
+#include "internal/skydel_rapi_interface.h"
 #include "skydel_core_interface.h"
+#include "skydel_instrumentation_interface.h"
 #include "skydel_licensing_interface.h"
 #include "skydel_position_observer_interface.h"
 
@@ -38,6 +41,8 @@ public:
     SKYDEL_PLUGIN_ROLE(SkydelCoreInterface);
     SKYDEL_PLUGIN_ROLE(SkydelPositionObserverInterface);
     SKYDEL_PLUGIN_ROLE(SkydelLicensingInterface);
+    SKYDEL_PLUGIN_ROLE(SkydelInstrumentationInterface);
+    SKYDEL_PLUGIN_ROLE(SkydelRapiInterface);
   }
 
   QObject* createInstance() override { return new T{}; }

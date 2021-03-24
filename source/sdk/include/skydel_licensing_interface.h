@@ -1,7 +1,7 @@
 #ifndef SKYDEL_LICENSING_INTERFACE_H
 #define SKYDEL_LICENSING_INTERFACE_H
 
-#include "skydel_licensing_base.h"
+#include "internal/skydel_licensing_base.h"
 
 class SkydelLicensingInterface : public SkydelLicensingBase
 {

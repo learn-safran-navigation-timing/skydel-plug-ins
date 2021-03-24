@@ -1,0 +1,80 @@
+#include "command_factory.h"
+#include "command_result_factory.h"
+#include "parse_json.hpp"
+
+///
+/// Definition of GetGpsConfigurationCodeForSVResult
+///
+#include "gen/GetGpsConfigurationCodeForSVResult.h"
+
+namespace Sdx
+{
+  namespace Cmd
+  {
+    const char* const GetGpsConfigurationCodeForSVResult::CmdName = "GetGpsConfigurationCodeForSVResult";
+    const char* const GetGpsConfigurationCodeForSVResult::Documentation = "Result of GetGpsConfigurationCodeForSV";
+
+    REGISTER_COMMAND_RESULT_FACTORY(GetGpsConfigurationCodeForSVResult);
+
+
+    GetGpsConfigurationCodeForSVResult::GetGpsConfigurationCodeForSVResult()
+      : CommandResult(CmdName)
+    {}
+
+    GetGpsConfigurationCodeForSVResult::GetGpsConfigurationCodeForSVResult(CommandBasePtr relatedCommand, int svId, int svConfig)
+      : CommandResult(CmdName, relatedCommand)
+    {
+
+      setSvId(svId);
+      setSvConfig(svConfig);
+    }
+
+
+    GetGpsConfigurationCodeForSVResultPtr GetGpsConfigurationCodeForSVResult::create(CommandBasePtr relatedCommand, int svId, int svConfig)
+    {
+      return GetGpsConfigurationCodeForSVResultPtr(new GetGpsConfigurationCodeForSVResult(relatedCommand, svId, svConfig));
+    }
+
+    GetGpsConfigurationCodeForSVResultPtr GetGpsConfigurationCodeForSVResult::dynamicCast(CommandBasePtr ptr)
+    {
+      return std::dynamic_pointer_cast<GetGpsConfigurationCodeForSVResult>(ptr);
+    }
+
+    bool GetGpsConfigurationCodeForSVResult::isValid() const
+    {
+      
+        return m_values.IsObject()
+          && parse_json<int>::is_valid(m_values["SvId"])
+          && parse_json<int>::is_valid(m_values["SvConfig"])
+        ;
+
+    }
+
+    std::string GetGpsConfigurationCodeForSVResult::documentation() const { return Documentation; }
+
+
+    int GetGpsConfigurationCodeForSVResult::svId() const
+    {
+      return parse_json<int>::parse(m_values["SvId"]);
+    }
+
+    void GetGpsConfigurationCodeForSVResult::setSvId(int svId)
+    {
+      m_values.AddMember("SvId", parse_json<int>::format(svId, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    int GetGpsConfigurationCodeForSVResult::svConfig() const
+    {
+      return parse_json<int>::parse(m_values["SvConfig"]);
+    }
+
+    void GetGpsConfigurationCodeForSVResult::setSvConfig(int svConfig)
+    {
+      m_values.AddMember("SvConfig", parse_json<int>::format(svConfig, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+  }
+}

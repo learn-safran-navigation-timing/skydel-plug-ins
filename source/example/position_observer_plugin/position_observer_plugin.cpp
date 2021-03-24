@@ -76,14 +76,18 @@ void PositionLogger::connectToView(QWidget* view)
 
 QString PositionLogger::toString(const SkydelRuntimePositionObserver::TimedPosition& p)
 {
-  return QString::number(p.time) + ','
-       + QString::number(p.position.x) + ','
-       + QString::number(p.position.y) + ','
-       + QString::number(p.position.z) + ','
-       + QString::number(p.orientation.roll) + ','
-       + QString::number(p.orientation.pitch) + ','
-       + QString::number(p.orientation.yaw) + '\n';
+  QString formattedData;
+  QTextStream stream(&formattedData);
+  stream.setRealNumberPrecision(15);
+  stream << p.time << ','
+         << p.position.x << ','
+         << p.position.y << ','
+         << p.position.z << ','
+         << p.orientation.roll << ','
+         << p.orientation.pitch << ','
+         << p.orientation.yaw << '\n';
 
+  return formattedData;
 }
 
 PositionObserverPlugin::PositionObserverPlugin(QObject *parent) :

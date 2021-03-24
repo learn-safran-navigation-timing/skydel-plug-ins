@@ -1,4 +1,5 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
-    inertial_math
+    inertial_math \
+    skydel_rapi

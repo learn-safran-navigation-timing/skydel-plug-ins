@@ -33,7 +33,7 @@ RotationMatrix coriolisForceSkewSymmetricMatrix(const Triplet &nedEarthRate);
 
 /**
  * @brief Compute the transport rate of the Earth relative to LLA position and NED velocity.
- * 
+ *
  * @param eastVelocity   East velocity in meter/second.
  * @param northVelocity  North velocity in meter/second.
  * @param latitude       Latitude in radian.
@@ -65,6 +65,14 @@ double earthPrimeVerticalRadiusOfCurvature(double latitude);
  * @return Earth meridian radius of curvature in radian.
  */
 double earthMeridianRadiusOfCurvature(double latitude);
+
+/**
+ * @brief Compute the Earth mean radius of curvature based the refenrece ellipsoid WSG-84.
+ *
+ * @param latitude Latitude in radian.
+ * @return Earth mean radius of curvature in radian.
+ */
+double earthMeanRadiusOfCurvature(double latitude);
 
 } // namespace Iml
 

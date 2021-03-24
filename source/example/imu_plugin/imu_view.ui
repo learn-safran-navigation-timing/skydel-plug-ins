@@ -17,6 +17,9 @@
    <property name="spacing">
     <number>20</number>
    </property>
+   <item row="0" column="2">
+    <widget class="QComboBox" name="comboBoxFileLogging"/>
+   </item>
    <item row="0" column="5" rowspan="2">
     <spacer name="horizontalSpacer">
      <property name="orientation">
@@ -37,15 +40,15 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="4">
-    <widget class="QSpinBox" name="spinBoxNetworkLogging"/>
-   </item>
-   <item row="0" column="0">
-    <widget class="QLabel" name="label">
+   <item row="1" column="1">
+    <widget class="QCheckBox" name="checkBoxNetworkLogging">
      <property name="text">
-      <string>File Logging</string>
+      <string/>
      </property>
     </widget>
+   </item>
+   <item row="1" column="4">
+    <widget class="QSpinBox" name="spinBoxNetworkLogging"/>
    </item>
    <item row="1" column="2">
     <widget class="QComboBox" name="comboBoxNetworkLogging"/>
@@ -57,20 +60,7 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="3">
-    <widget class="QLineEdit" name="lineEditNetworkLogging"/>
-   </item>
-   <item row="0" column="2">
-    <widget class="QComboBox" name="comboBoxFileLogging"/>
-   </item>
-   <item row="1" column="1">
-    <widget class="QCheckBox" name="checkBoxNetworkLogging">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="0" colspan="6">
+   <item row="3" column="0" colspan="6">
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -83,8 +73,37 @@
      </property>
     </spacer>
    </item>
+   <item row="1" column="3">
+    <widget class="QLineEdit" name="lineEditNetworkLogging"/>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>File Logging</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Gravity Model</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QComboBox" name="comboBoxGravityModel"/>
+   </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>checkBoxFileLogging</tabstop>
+  <tabstop>comboBoxFileLogging</tabstop>
+  <tabstop>checkBoxNetworkLogging</tabstop>
+  <tabstop>comboBoxNetworkLogging</tabstop>
+  <tabstop>lineEditNetworkLogging</tabstop>
+  <tabstop>spinBoxNetworkLogging</tabstop>
+  <tabstop>comboBoxGravityModel</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

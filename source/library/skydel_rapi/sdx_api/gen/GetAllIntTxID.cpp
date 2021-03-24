@@ -1,0 +1,54 @@
+#include "command_factory.h"
+#include "command_result_factory.h"
+#include "parse_json.hpp"
+
+///
+/// Definition of GetAllIntTxID
+///
+#include "gen/GetAllIntTxID.h"
+
+namespace Sdx
+{
+  namespace Cmd
+  {
+    const char* const GetAllIntTxID::CmdName = "GetAllIntTxID";
+    const char* const GetAllIntTxID::Documentation = "get the ID of all interferences transmitters.";
+
+    REGISTER_COMMAND_FACTORY(GetAllIntTxID);
+
+
+    GetAllIntTxID::GetAllIntTxID()
+      : CommandBase(CmdName)
+    {
+
+    }
+
+
+    GetAllIntTxIDPtr GetAllIntTxID::create()
+    {
+      return GetAllIntTxIDPtr(new GetAllIntTxID());
+    }
+
+    GetAllIntTxIDPtr GetAllIntTxID::dynamicCast(CommandBasePtr ptr)
+    {
+      return std::dynamic_pointer_cast<GetAllIntTxID>(ptr);
+    }
+
+    bool GetAllIntTxID::isValid() const
+    {
+      
+        return m_values.IsObject()
+        ;
+
+    }
+
+    std::string GetAllIntTxID::documentation() const { return Documentation; }
+
+
+    int GetAllIntTxID::executePermission() const
+    {
+      return EXECUTE_IF_IDLE;
+    }
+
+  }
+}

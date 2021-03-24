@@ -26,6 +26,7 @@ signals:
   void comboBoxNetworkLoggingActivated(int index);
   void lineEditNetworkLoggingTextChanged(const QString& text);
   void spinBoxNetworkLoggingValueChanged(int i);
+  void comboBoxGravityModelActivated(int index);
 
 private:
   Ui::ImuView *m_ui;

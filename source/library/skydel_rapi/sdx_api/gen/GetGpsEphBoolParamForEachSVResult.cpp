@@ -1,0 +1,80 @@
+#include "command_factory.h"
+#include "command_result_factory.h"
+#include "parse_json.hpp"
+
+///
+/// Definition of GetGpsEphBoolParamForEachSVResult
+///
+#include "gen/GetGpsEphBoolParamForEachSVResult.h"
+
+namespace Sdx
+{
+  namespace Cmd
+  {
+    const char* const GetGpsEphBoolParamForEachSVResult::CmdName = "GetGpsEphBoolParamForEachSVResult";
+    const char* const GetGpsEphBoolParamForEachSVResult::Documentation = "Result of GetGpsEphBoolParamForEachSV";
+
+    REGISTER_COMMAND_RESULT_FACTORY(GetGpsEphBoolParamForEachSVResult);
+
+
+    GetGpsEphBoolParamForEachSVResult::GetGpsEphBoolParamForEachSVResult()
+      : CommandResult(CmdName)
+    {}
+
+    GetGpsEphBoolParamForEachSVResult::GetGpsEphBoolParamForEachSVResult(CommandBasePtr relatedCommand, const std::string& paramName, const std::vector<bool>& val)
+      : CommandResult(CmdName, relatedCommand)
+    {
+
+      setParamName(paramName);
+      setVal(val);
+    }
+
+
+    GetGpsEphBoolParamForEachSVResultPtr GetGpsEphBoolParamForEachSVResult::create(CommandBasePtr relatedCommand, const std::string& paramName, const std::vector<bool>& val)
+    {
+      return GetGpsEphBoolParamForEachSVResultPtr(new GetGpsEphBoolParamForEachSVResult(relatedCommand, paramName, val));
+    }
+
+    GetGpsEphBoolParamForEachSVResultPtr GetGpsEphBoolParamForEachSVResult::dynamicCast(CommandBasePtr ptr)
+    {
+      return std::dynamic_pointer_cast<GetGpsEphBoolParamForEachSVResult>(ptr);
+    }
+
+    bool GetGpsEphBoolParamForEachSVResult::isValid() const
+    {
+      
+        return m_values.IsObject()
+          && parse_json<std::string>::is_valid(m_values["ParamName"])
+          && parse_json<std::vector<bool>>::is_valid(m_values["Val"])
+        ;
+
+    }
+
+    std::string GetGpsEphBoolParamForEachSVResult::documentation() const { return Documentation; }
+
+
+    std::string GetGpsEphBoolParamForEachSVResult::paramName() const
+    {
+      return parse_json<std::string>::parse(m_values["ParamName"]);
+    }
+
+    void GetGpsEphBoolParamForEachSVResult::setParamName(const std::string& paramName)
+    {
+      m_values.AddMember("ParamName", parse_json<std::string>::format(paramName, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    std::vector<bool> GetGpsEphBoolParamForEachSVResult::val() const
+    {
+      return parse_json<std::vector<bool>>::parse(m_values["Val"]);
+    }
+
+    void GetGpsEphBoolParamForEachSVResult::setVal(const std::vector<bool>& val)
+    {
+      m_values.AddMember("Val", parse_json<std::vector<bool>>::format(val, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+  }
+}
