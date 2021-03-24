@@ -6,14 +6,14 @@
 
 namespace Iml {
 
-Triplet idealAccelerometer(const Triplet &llaPosition, const Triplet &ecefVelocity, const Triplet &ecefAcceleration, const Triplet &attitude)
+Triplet idealAccelerometer(const Triplet &llaPosition, const Triplet &ecefVelocity, const Triplet &ecefAcceleration, const Triplet &attitude, GravityModel gravityModel)
 {
   auto nedVelocity = ecefToNed(llaPosition, ecefVelocity);
   auto nedAcceleration = ecefToNed(llaPosition, ecefAcceleration);
 
   nedAcceleration += nedAccelerationFromCoriolisForce(llaPosition, nedVelocity);
 
-  nedAcceleration -= nedAccelerationFromGravity(llaPosition);
+  nedAcceleration -= nedAccelerationFromGravity(llaPosition, gravityModel);
 
   return  nedToBodyFromXYZRotation(attitude, nedAcceleration);
 }

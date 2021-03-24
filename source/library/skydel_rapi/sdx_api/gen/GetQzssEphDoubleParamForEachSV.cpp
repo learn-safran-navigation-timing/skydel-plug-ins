@@ -1,0 +1,72 @@
+#include "command_factory.h"
+#include "command_result_factory.h"
+#include "parse_json.hpp"
+
+///
+/// Definition of GetQzssEphDoubleParamForEachSV
+///
+#include "gen/GetQzssEphDoubleParamForEachSV.h"
+
+namespace Sdx
+{
+  namespace Cmd
+  {
+    const char* const GetQzssEphDoubleParamForEachSV::CmdName = "GetQzssEphDoubleParamForEachSV";
+    const char* const GetQzssEphDoubleParamForEachSV::Documentation = "Please note the command GetQzssEphemerisDoubleParams is deprecated since 21.3. You may use GetQzssEphDoubleParamForEachSV.\n\nGet QZSS ephemeris parameter value for all satellites";
+
+    REGISTER_COMMAND_FACTORY(GetQzssEphDoubleParamForEachSV);
+
+
+    GetQzssEphDoubleParamForEachSV::GetQzssEphDoubleParamForEachSV()
+      : CommandBase(CmdName)
+    {}
+
+    GetQzssEphDoubleParamForEachSV::GetQzssEphDoubleParamForEachSV(const std::string& paramName)
+      : CommandBase(CmdName)
+    {
+
+      setParamName(paramName);
+    }
+
+
+    GetQzssEphDoubleParamForEachSVPtr GetQzssEphDoubleParamForEachSV::create(const std::string& paramName)
+    {
+      return GetQzssEphDoubleParamForEachSVPtr(new GetQzssEphDoubleParamForEachSV(paramName));
+    }
+
+    GetQzssEphDoubleParamForEachSVPtr GetQzssEphDoubleParamForEachSV::dynamicCast(CommandBasePtr ptr)
+    {
+      return std::dynamic_pointer_cast<GetQzssEphDoubleParamForEachSV>(ptr);
+    }
+
+    bool GetQzssEphDoubleParamForEachSV::isValid() const
+    {
+      
+        return m_values.IsObject()
+          && parse_json<std::string>::is_valid(m_values["ParamName"])
+        ;
+
+    }
+
+    std::string GetQzssEphDoubleParamForEachSV::documentation() const { return Documentation; }
+
+
+    int GetQzssEphDoubleParamForEachSV::executePermission() const
+    {
+      return EXECUTE_IF_IDLE;
+    }
+
+
+    std::string GetQzssEphDoubleParamForEachSV::paramName() const
+    {
+      return parse_json<std::string>::parse(m_values["ParamName"]);
+    }
+
+    void GetQzssEphDoubleParamForEachSV::setParamName(const std::string& paramName)
+    {
+      m_values.AddMember("ParamName", parse_json<std::string>::format(paramName, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+  }
+}

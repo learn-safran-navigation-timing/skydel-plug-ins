@@ -4,6 +4,7 @@
 
 #include <stdexcept>
 
+#include "gravity.h"
 #include "imu_data_format.h"
 
 ImuConfiguration::ImuConfiguration()
@@ -15,6 +16,8 @@ ImuConfiguration::ImuConfiguration()
   m_configuration.insert("networkLoggingFormat", ImuDataFormat::JSON);
   m_configuration.insert("networkLoggingAddress", QHostAddress(QHostAddress::LocalHost).toString());
   m_configuration.insert("networkLoggingPort", 161);
+
+  m_configuration.insert("gravityModel", Iml::GravityModel::WGS84);
 }
 
 void ImuConfiguration::setConfiguration(SkydelNotifierInterface* notifier, const QJsonObject& configuration)

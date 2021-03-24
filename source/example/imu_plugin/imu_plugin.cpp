@@ -40,6 +40,10 @@ QWidget* ImuPlugin::createUI()
     m_configuration.setValue(m_skydelNotifier, "networkLoggingPort", i);
   });
 
+  connect(view, &ImuView::comboBoxGravityModelActivated, [this](int index){
+    m_configuration.setValue(m_skydelNotifier, "gravityModel", index);
+  });
+
   connect(this, &ImuPlugin::configurationChanged, [this, view](){
     view->setConfiguration(m_configuration);
   });

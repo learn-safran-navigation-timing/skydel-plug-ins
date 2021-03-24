@@ -1,0 +1,100 @@
+#include "command_factory.h"
+#include "command_result_factory.h"
+#include "parse_json.hpp"
+
+///
+/// Definition of SetGalileoDataHealthForSV
+///
+#include "gen/SetGalileoDataHealthForSV.h"
+
+namespace Sdx
+{
+  namespace Cmd
+  {
+    const char* const SetGalileoDataHealthForSV::CmdName = "SetGalileoDataHealthForSV";
+    const char* const SetGalileoDataHealthForSV::Documentation = "Set Galileo data health for I/NAV and F/NAV message";
+
+    REGISTER_COMMAND_FACTORY(SetGalileoDataHealthForSV);
+
+
+    SetGalileoDataHealthForSV::SetGalileoDataHealthForSV()
+      : CommandBase(CmdName)
+    {}
+
+    SetGalileoDataHealthForSV::SetGalileoDataHealthForSV(int svId, const std::string& component, bool health)
+      : CommandBase(CmdName)
+    {
+
+      setSvId(svId);
+      setComponent(component);
+      setHealth(health);
+    }
+
+
+    SetGalileoDataHealthForSVPtr SetGalileoDataHealthForSV::create(int svId, const std::string& component, bool health)
+    {
+      return SetGalileoDataHealthForSVPtr(new SetGalileoDataHealthForSV(svId, component, health));
+    }
+
+    SetGalileoDataHealthForSVPtr SetGalileoDataHealthForSV::dynamicCast(CommandBasePtr ptr)
+    {
+      return std::dynamic_pointer_cast<SetGalileoDataHealthForSV>(ptr);
+    }
+
+    bool SetGalileoDataHealthForSV::isValid() const
+    {
+      
+        return m_values.IsObject()
+          && parse_json<int>::is_valid(m_values["SvId"])
+          && parse_json<std::string>::is_valid(m_values["Component"])
+          && parse_json<bool>::is_valid(m_values["Health"])
+        ;
+
+    }
+
+    std::string SetGalileoDataHealthForSV::documentation() const { return Documentation; }
+
+
+    int SetGalileoDataHealthForSV::executePermission() const
+    {
+      return EXECUTE_IF_SIMULATING | EXECUTE_IF_IDLE;
+    }
+
+
+    int SetGalileoDataHealthForSV::svId() const
+    {
+      return parse_json<int>::parse(m_values["SvId"]);
+    }
+
+    void SetGalileoDataHealthForSV::setSvId(int svId)
+    {
+      m_values.AddMember("SvId", parse_json<int>::format(svId, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    std::string SetGalileoDataHealthForSV::component() const
+    {
+      return parse_json<std::string>::parse(m_values["Component"]);
+    }
+
+    void SetGalileoDataHealthForSV::setComponent(const std::string& component)
+    {
+      m_values.AddMember("Component", parse_json<std::string>::format(component, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    bool SetGalileoDataHealthForSV::health() const
+    {
+      return parse_json<bool>::parse(m_values["Health"]);
+    }
+
+    void SetGalileoDataHealthForSV::setHealth(bool health)
+    {
+      m_values.AddMember("Health", parse_json<bool>::format(health, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+  }
+}

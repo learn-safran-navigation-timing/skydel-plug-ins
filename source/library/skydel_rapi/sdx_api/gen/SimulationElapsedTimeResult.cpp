@@ -1,0 +1,66 @@
+#include "command_factory.h"
+#include "command_result_factory.h"
+#include "parse_json.hpp"
+
+///
+/// Definition of SimulationElapsedTimeResult
+///
+#include "gen/SimulationElapsedTimeResult.h"
+
+namespace Sdx
+{
+  namespace Cmd
+  {
+    const char* const SimulationElapsedTimeResult::CmdName = "SimulationElapsedTimeResult";
+    const char* const SimulationElapsedTimeResult::Documentation = "Result of the command \"GetSimulationElapsedTime\"";
+
+    REGISTER_COMMAND_RESULT_FACTORY(SimulationElapsedTimeResult);
+
+
+    SimulationElapsedTimeResult::SimulationElapsedTimeResult()
+      : CommandResult(CmdName)
+    {}
+
+    SimulationElapsedTimeResult::SimulationElapsedTimeResult(CommandBasePtr relatedCommand, int milliseconds)
+      : CommandResult(CmdName, relatedCommand)
+    {
+
+      setMilliseconds(milliseconds);
+    }
+
+
+    SimulationElapsedTimeResultPtr SimulationElapsedTimeResult::create(CommandBasePtr relatedCommand, int milliseconds)
+    {
+      return SimulationElapsedTimeResultPtr(new SimulationElapsedTimeResult(relatedCommand, milliseconds));
+    }
+
+    SimulationElapsedTimeResultPtr SimulationElapsedTimeResult::dynamicCast(CommandBasePtr ptr)
+    {
+      return std::dynamic_pointer_cast<SimulationElapsedTimeResult>(ptr);
+    }
+
+    bool SimulationElapsedTimeResult::isValid() const
+    {
+      
+        return m_values.IsObject()
+          && parse_json<int>::is_valid(m_values["Milliseconds"])
+        ;
+
+    }
+
+    std::string SimulationElapsedTimeResult::documentation() const { return Documentation; }
+
+
+    int SimulationElapsedTimeResult::milliseconds() const
+    {
+      return parse_json<int>::parse(m_values["Milliseconds"]);
+    }
+
+    void SimulationElapsedTimeResult::setMilliseconds(int milliseconds)
+    {
+      m_values.AddMember("Milliseconds", parse_json<int>::format(milliseconds, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+  }
+}

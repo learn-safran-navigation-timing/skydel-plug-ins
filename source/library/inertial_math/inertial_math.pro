@@ -41,5 +41,3 @@ DESTDIR = $$PWD/../../../bin
 OBJECTS_DIR = $$PWD/../../../tmp/$$TARGET
 MOC_DIR = $$OBJECTS_DIR
 UI_DIR = $$OBJECTS_DIR
-
-STATECHARTS +=

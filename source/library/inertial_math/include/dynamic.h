@@ -4,6 +4,7 @@
 #include <cstdint>
 #include <vector>
 
+#include "gravity.h"
 #include "triplet.h"
 
 namespace Iml {
@@ -41,7 +42,11 @@ private:
 class BodyInertialDynamic : public BodyDynamic
 {
 public:
+  BodyInertialDynamic(GravityModel gravityModel);
   InertialData getPosition() const override;
+
+private:
+  GravityModel m_gravityModel;
 };
 
 } // namespace Iml
