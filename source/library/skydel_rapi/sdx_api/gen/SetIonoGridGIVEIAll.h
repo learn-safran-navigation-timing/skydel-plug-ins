@@ -3,8 +3,8 @@
 #include <memory>
 #include "command_base.h"
 #include <string>
-#include <vector>
 #include "sdx_optional.h"
+#include <vector>
 
 namespace Sdx
 {

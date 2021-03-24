@@ -2,10 +2,10 @@
 
 #include <memory>
 #include "command_result.h"
-#include <string>
-#include "gen/SerialPortFlowControl.h"
 #include "gen/SerialPortParity.h"
+#include <string>
 #include "sdx_optional.h"
+#include "gen/SerialPortFlowControl.h"
 
 namespace Sdx
 {

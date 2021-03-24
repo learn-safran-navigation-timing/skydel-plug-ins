@@ -2,8 +2,8 @@
 
 #include <memory>
 #include "command_base.h"
-#include <vector>
 #include "gen/StringPair.h"
+#include <vector>
 
 namespace Sdx
 {

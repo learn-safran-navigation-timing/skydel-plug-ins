@@ -2,8 +2,8 @@
 
 #include <memory>
 #include "command_result.h"
-#include <vector>
 #include "gen/ConfigFilter.h"
+#include <vector>
 
 namespace Sdx
 {
