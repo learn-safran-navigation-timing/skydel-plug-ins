@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetGalileoFNavMessageResult::CmdName = "GetGalileoFNavMessageResult";
-    const char* const GetGalileoFNavMessageResult::Documentation = "Result of GetGalileoFNavMessage";
+    const char* const GetGalileoFNavMessageResult::Documentation = "Result of GetGalileoFNavMessage.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetGalileoFNavMessageResult);
 

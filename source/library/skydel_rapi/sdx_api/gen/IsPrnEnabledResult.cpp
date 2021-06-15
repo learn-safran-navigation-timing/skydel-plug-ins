@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsPrnEnabledResult::CmdName = "IsPrnEnabledResult";
-    const char* const IsPrnEnabledResult::Documentation = "Result of IsPrnEnabled";
+    const char* const IsPrnEnabledResult::Documentation = "Result of IsPrnEnabled.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsPrnEnabledResult);
 

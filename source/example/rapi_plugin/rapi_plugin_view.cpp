@@ -5,9 +5,7 @@
 
 #include "ui_rapi_plugin_view.h"
 
-RapiPluginView::RapiPluginView(QWidget *parent) :
-  QWidget(parent),
-  m_ui(new Ui::RapiPluginView)
+RapiPluginView::RapiPluginView(QWidget* parent) : QWidget(parent), m_ui(new Ui::RapiPluginView)
 {
   m_ui->setupUi(this);
 
@@ -19,7 +17,7 @@ RapiPluginView::~RapiPluginView()
   delete m_ui;
 }
 
-void RapiPluginView::setSimulatorState(const QString &state)
+void RapiPluginView::setSimulatorState(const QString& state)
 {
   m_ui->labelSimulatorState->setText(state);
 }

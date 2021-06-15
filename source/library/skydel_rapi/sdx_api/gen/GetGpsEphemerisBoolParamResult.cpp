@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetGpsEphemerisBoolParamResult::CmdName = "GetGpsEphemerisBoolParamResult";
-    const char* const GetGpsEphemerisBoolParamResult::Documentation = "Result of GetGpsEphemerisBoolParam";
+    const char* const GetGpsEphemerisBoolParamResult::Documentation = "Result of GetGpsEphemerisBoolParam.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetGpsEphemerisBoolParamResult);
 

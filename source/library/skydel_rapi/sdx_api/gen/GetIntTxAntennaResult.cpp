@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetIntTxAntennaResult::CmdName = "GetIntTxAntennaResult";
-    const char* const GetIntTxAntennaResult::Documentation = "Result of GetIntTxAntenna";
+    const char* const GetIntTxAntennaResult::Documentation = "Result of GetIntTxAntenna.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetIntTxAntennaResult);
 

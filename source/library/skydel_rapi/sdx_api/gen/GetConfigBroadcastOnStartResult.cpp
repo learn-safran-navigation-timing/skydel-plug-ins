@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetConfigBroadcastOnStartResult::CmdName = "GetConfigBroadcastOnStartResult";
-    const char* const GetConfigBroadcastOnStartResult::Documentation = "Result of GetConfigBroadcastOnStart";
+    const char* const GetConfigBroadcastOnStartResult::Documentation = "Result of GetConfigBroadcastOnStart.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetConfigBroadcastOnStartResult);
 

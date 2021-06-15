@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetGalileoEphemerisReferenceTimeResult::CmdName = "GetGalileoEphemerisReferenceTimeResult";
-    const char* const GetGalileoEphemerisReferenceTimeResult::Documentation = "Result of GetGalileoEphemerisReferenceTime";
+    const char* const GetGalileoEphemerisReferenceTimeResult::Documentation = "Result of GetGalileoEphemerisReferenceTime.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetGalileoEphemerisReferenceTimeResult);
 

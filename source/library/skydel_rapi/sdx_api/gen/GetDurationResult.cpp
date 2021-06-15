@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetDurationResult::CmdName = "GetDurationResult";
-    const char* const GetDurationResult::Documentation = "Result of GetDuration";
+    const char* const GetDurationResult::Documentation = "Result of GetDuration.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetDurationResult);
 

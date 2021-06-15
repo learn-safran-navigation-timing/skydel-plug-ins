@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetConfigPaths::CmdName = "GetConfigPaths";
-    const char* const GetConfigPaths::Documentation = "Returns a list of paths for all the files in the Configurations folder.";
+    const char* const GetConfigPaths::Documentation = "Get a list of paths for all the files in the Configurations folder.";
 
     REGISTER_COMMAND_FACTORY(GetConfigPaths);
 

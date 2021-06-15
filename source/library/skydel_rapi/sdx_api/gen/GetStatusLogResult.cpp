@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetStatusLogResult::CmdName = "GetStatusLogResult";
-    const char* const GetStatusLogResult::Documentation = "Represents a log, each element of the same record share the same index";
+    const char* const GetStatusLogResult::Documentation = "Result of GetStatusLog.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetStatusLogResult);
 

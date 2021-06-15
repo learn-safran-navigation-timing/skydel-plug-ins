@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetQzssPerturbations::CmdName = "GetQzssPerturbations";
-    const char* const GetQzssPerturbations::Documentation = "Please note the command QzssPerturbations is deprecated since 20.9. You may use Perturbations.\n\nGet QZSS orbit perturbations (Crs, Crc, Cis, Cic, Cus and Cuc)";
+    const char* const GetQzssPerturbations::Documentation = "Please note the command GetQzssPerturbations is deprecated since 20.9. You may use GetPerturbations.\n\nGet QZSS orbit perturbations (Crs, Crc, Cis, Cic, Cus and Cuc)";
 
     REGISTER_COMMAND_FACTORY(GetQzssPerturbations);
 

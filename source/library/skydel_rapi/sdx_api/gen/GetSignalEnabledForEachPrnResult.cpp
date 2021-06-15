@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetSignalEnabledForEachPrnResult::CmdName = "GetSignalEnabledForEachPrnResult";
-    const char* const GetSignalEnabledForEachPrnResult::Documentation = "Result of GetSignalEnabledForEachPrn";
+    const char* const GetSignalEnabledForEachPrnResult::Documentation = "Result of GetSignalEnabledForEachPrn.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetSignalEnabledForEachPrnResult);
 

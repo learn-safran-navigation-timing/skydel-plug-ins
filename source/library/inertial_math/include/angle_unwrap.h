@@ -3,8 +3,8 @@
 
 #include "triplet.h"
 
-namespace Iml {
-
+namespace Iml
+{
 /**
  * @brief Whenever the jump between consecutive angles is greater than Pi radians,
  *        unwrap shifts the current angle by adding multiples of +/- 2Pi until the jump is less than Pi.
@@ -16,7 +16,7 @@ namespace Iml {
  *                              [out] Updated phase correction in radian.
  * @return Corrected current angle.
  */
-double unwrap(double previousAngle, double currentAngle, double &correction);
+double unwrap(double previousAngle, double currentAngle, double& correction);
 
 /**
  * @brief Apply unwrap on Triplet.
@@ -27,8 +27,7 @@ double unwrap(double previousAngle, double currentAngle, double &correction);
  *                                [out] Updated phase corrections in radian.
  * @return Corrected current angles.
  */
-Triplet unwrap(const Triplet &previousAngles, const Triplet &currentAngles, Triplet &corrections);
-
+Triplet unwrap(const Triplet& previousAngles, const Triplet& currentAngles, Triplet& corrections);
 
 /**
  * @brief Compute a multiple of +/- 2Pi from the difference between previous and current angles.

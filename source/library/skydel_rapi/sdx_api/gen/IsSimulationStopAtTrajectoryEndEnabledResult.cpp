@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsSimulationStopAtTrajectoryEndEnabledResult::CmdName = "IsSimulationStopAtTrajectoryEndEnabledResult";
-    const char* const IsSimulationStopAtTrajectoryEndEnabledResult::Documentation = "Result of IsSimulationStopAtTrajectoryEndEnabled";
+    const char* const IsSimulationStopAtTrajectoryEndEnabledResult::Documentation = "Result of IsSimulationStopAtTrajectoryEndEnabled.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsSimulationStopAtTrajectoryEndEnabledResult);
 

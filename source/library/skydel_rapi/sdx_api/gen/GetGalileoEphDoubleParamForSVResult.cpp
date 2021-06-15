@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetGalileoEphDoubleParamForSVResult::CmdName = "GetGalileoEphDoubleParamForSVResult";
-    const char* const GetGalileoEphDoubleParamForSVResult::Documentation = "Result of GetGalileoEphDoubleParamForSV";
+    const char* const GetGalileoEphDoubleParamForSVResult::Documentation = "Result of GetGalileoEphDoubleParamForSV.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetGalileoEphDoubleParamForSVResult);
 

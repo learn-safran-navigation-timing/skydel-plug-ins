@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetGlonassNavigationMessage::CmdName = "GetGlonassNavigationMessage";
-    const char* const GetGlonassNavigationMessage::Documentation = "Please note the command ModificationToGlonassNavigationMessage is deprecated since 21.3. You may use MessageModificationToGlonassNav.\n\nGet infos about this modification Glonass navigation message event";
+    const char* const GetGlonassNavigationMessage::Documentation = "Please note the command GetGlonassNavigationMessage is deprecated since 21.3. You may use GetMessageModificationToGlonassNav.\n\nGet infos about this modification Glonass navigation message event";
 
     REGISTER_COMMAND_FACTORY(GetGlonassNavigationMessage);
 

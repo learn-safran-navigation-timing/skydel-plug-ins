@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetBeiDouEphemerisBoolParamResult::CmdName = "GetBeiDouEphemerisBoolParamResult";
-    const char* const GetBeiDouEphemerisBoolParamResult::Documentation = "Result of GetBeiDouEphemerisBoolParam";
+    const char* const GetBeiDouEphemerisBoolParamResult::Documentation = "Result of GetBeiDouEphemerisBoolParam.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetBeiDouEphemerisBoolParamResult);
 

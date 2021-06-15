@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsLOSEnabledForEachPrnResult::CmdName = "IsLOSEnabledForEachPrnResult";
-    const char* const IsLOSEnabledForEachPrnResult::Documentation = "Result of IsLOSEnabledForEachPrn";
+    const char* const IsLOSEnabledForEachPrnResult::Documentation = "Result of IsLOSEnabledForEachPrn.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsLOSEnabledForEachPrnResult);
 

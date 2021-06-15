@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsSpectrumVisibleResult::CmdName = "IsSpectrumVisibleResult";
-    const char* const IsSpectrumVisibleResult::Documentation = "Result of IsSpectrumVisible";
+    const char* const IsSpectrumVisibleResult::Documentation = "Result of IsSpectrumVisible.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsSpectrumVisibleResult);
 

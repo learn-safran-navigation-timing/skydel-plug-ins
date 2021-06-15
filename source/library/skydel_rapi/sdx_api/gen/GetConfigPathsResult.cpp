@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetConfigPathsResult::CmdName = "GetConfigPathsResult";
-    const char* const GetConfigPathsResult::Documentation = "Result of GetConfigPaths";
+    const char* const GetConfigPathsResult::Documentation = "Result of GetConfigPaths.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetConfigPathsResult);
 

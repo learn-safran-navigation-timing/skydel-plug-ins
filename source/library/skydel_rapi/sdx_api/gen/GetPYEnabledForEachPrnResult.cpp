@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetPYEnabledForEachPrnResult::CmdName = "GetPYEnabledForEachPrnResult";
-    const char* const GetPYEnabledForEachPrnResult::Documentation = "Result of GetPYEnabledForEachPrn";
+    const char* const GetPYEnabledForEachPrnResult::Documentation = "Result of GetPYEnabledForEachPrn.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetPYEnabledForEachPrnResult);
 

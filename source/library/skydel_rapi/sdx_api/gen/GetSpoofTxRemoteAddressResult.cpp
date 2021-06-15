@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetSpoofTxRemoteAddressResult::CmdName = "GetSpoofTxRemoteAddressResult";
-    const char* const GetSpoofTxRemoteAddressResult::Documentation = "Result of GetSpoofTxRemoteAddress";
+    const char* const GetSpoofTxRemoteAddressResult::Documentation = "Result of GetSpoofTxRemoteAddress.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetSpoofTxRemoteAddressResult);
 

@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsStopMasterWhenSlaveStopResult::CmdName = "IsStopMasterWhenSlaveStopResult";
-    const char* const IsStopMasterWhenSlaveStopResult::Documentation = "Result of IsStopMasterWhenSlaveStop";
+    const char* const IsStopMasterWhenSlaveStopResult::Documentation = "Result of IsStopMasterWhenSlaveStop.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsStopMasterWhenSlaveStopResult);
 

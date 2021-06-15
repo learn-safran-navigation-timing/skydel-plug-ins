@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetSpoofTxFixEcefResult::CmdName = "GetSpoofTxFixEcefResult";
-    const char* const GetSpoofTxFixEcefResult::Documentation = "Result of GetSpoofTxFixEcef";
+    const char* const GetSpoofTxFixEcefResult::Documentation = "Result of GetSpoofTxFixEcef.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetSpoofTxFixEcefResult);
 

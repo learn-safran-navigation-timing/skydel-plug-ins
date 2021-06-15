@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const HilPortResult::CmdName = "HilPortResult";
-    const char* const HilPortResult::Documentation = "Hardware in the loop server port.";
+    const char* const HilPortResult::Documentation = "Result of GetHilPort.";
 
     REGISTER_COMMAND_RESULT_FACTORY(HilPortResult);
 

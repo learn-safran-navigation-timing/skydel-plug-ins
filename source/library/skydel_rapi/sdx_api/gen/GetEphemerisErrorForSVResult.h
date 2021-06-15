@@ -2,15 +2,15 @@
 
 #include <memory>
 #include "command_result.h"
-#include <string>
 #include "gen/RIC.h"
+#include <string>
 
 namespace Sdx
 {
   namespace Cmd
   {
     ///
-    /// Result of GetEphemerisErrorForSV
+    /// Result of GetEphemerisErrorForSV.
     ///
     /// Name     Type   Description
     /// -------- ------ -----------------------------------------------------------------------------------

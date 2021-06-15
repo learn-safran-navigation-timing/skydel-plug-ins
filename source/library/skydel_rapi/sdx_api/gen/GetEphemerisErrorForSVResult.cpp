@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetEphemerisErrorForSVResult::CmdName = "GetEphemerisErrorForSVResult";
-    const char* const GetEphemerisErrorForSVResult::Documentation = "Result of GetEphemerisErrorForSV";
+    const char* const GetEphemerisErrorForSVResult::Documentation = "Result of GetEphemerisErrorForSV.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetEphemerisErrorForSVResult);
 

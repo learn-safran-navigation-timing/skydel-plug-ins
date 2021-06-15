@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetIntTxTrajectory::CmdName = "GetIntTxTrajectory";
-    const char* const GetIntTxTrajectory::Documentation = "Get interference transmitter trajectory";
+    const char* const GetIntTxTrajectory::Documentation = "Get interference transmitter trajectory.";
 
     REGISTER_COMMAND_FACTORY(GetIntTxTrajectory);
 

@@ -5,7 +5,8 @@
 
 #include "imu_configuration.h"
 
-namespace Ui {
+namespace Ui
+{
 class ImuView;
 }
 
@@ -14,7 +15,7 @@ class ImuView : public QWidget
   Q_OBJECT
 
 public:
-  explicit ImuView(const ImuConfiguration& configuration, QWidget *parent = nullptr);
+  explicit ImuView(const ImuConfiguration& configuration, QWidget* parent = nullptr);
   ~ImuView();
 
   void setConfiguration(const ImuConfiguration& configuration);
@@ -29,7 +30,7 @@ signals:
   void comboBoxGravityModelActivated(int index);
 
 private:
-  Ui::ImuView *m_ui;
+  Ui::ImuView* m_ui;
 };
 
 #endif // IMU_VIEW_H

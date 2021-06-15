@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetIonoBdgimAlphaResult::CmdName = "GetIonoBdgimAlphaResult";
-    const char* const GetIonoBdgimAlphaResult::Documentation = "Result of GetIonoBdgimAlpha";
+    const char* const GetIonoBdgimAlphaResult::Documentation = "Result of GetIonoBdgimAlpha.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetIonoBdgimAlphaResult);
 

@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsIntTxTrajectorySmoothingEnabledResult::CmdName = "IsIntTxTrajectorySmoothingEnabledResult";
-    const char* const IsIntTxTrajectorySmoothingEnabledResult::Documentation = "Result of IsIntTxTrajectorySmoothingEnabled";
+    const char* const IsIntTxTrajectorySmoothingEnabledResult::Documentation = "Result of IsIntTxTrajectorySmoothingEnabled.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsIntTxTrajectorySmoothingEnabledResult);
 

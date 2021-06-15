@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetGalileoSatelliteSignalHealth::CmdName = "GetGalileoSatelliteSignalHealth";
-    const char* const GetGalileoSatelliteSignalHealth::Documentation = "Please note the command GalileoSatelliteSignalHealth is deprecated since 21.3. You may use GalileoSignalHealthForSV.\n\nGet Galileo signal health for I/NAV and F/NAV message";
+    const char* const GetGalileoSatelliteSignalHealth::Documentation = "Please note the command GetGalileoSatelliteSignalHealth is deprecated since 21.3. You may use GetGalileoSignalHealthForSV.\n\nGet Galileo signal health for I/NAV and F/NAV message";
 
     REGISTER_COMMAND_FACTORY(GetGalileoSatelliteSignalHealth);
 

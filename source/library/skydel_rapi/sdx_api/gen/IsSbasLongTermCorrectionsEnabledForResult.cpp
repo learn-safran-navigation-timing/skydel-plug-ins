@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsSbasLongTermCorrectionsEnabledForResult::CmdName = "IsSbasLongTermCorrectionsEnabledForResult";
-    const char* const IsSbasLongTermCorrectionsEnabledForResult::Documentation = "Result of IsSbasLongTermCorrectionsEnabledFor";
+    const char* const IsSbasLongTermCorrectionsEnabledForResult::Documentation = "Result of IsSbasLongTermCorrectionsEnabledFor.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsSbasLongTermCorrectionsEnabledForResult);
 

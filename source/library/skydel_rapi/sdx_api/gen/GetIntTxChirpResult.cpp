@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetIntTxChirpResult::CmdName = "GetIntTxChirpResult";
-    const char* const GetIntTxChirpResult::Documentation = "Result of GetIntTxChirp";
+    const char* const GetIntTxChirpResult::Documentation = "Result of GetIntTxChirp.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetIntTxChirpResult);
 

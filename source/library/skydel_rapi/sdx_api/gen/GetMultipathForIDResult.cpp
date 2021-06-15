@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetMultipathForIDResult::CmdName = "GetMultipathForIDResult";
-    const char* const GetMultipathForIDResult::Documentation = "Result of GetMultipathForIDResult.";
+    const char* const GetMultipathForIDResult::Documentation = "Result of GetMultipathForID.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetMultipathForIDResult);
 

@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetQzssLNAVNavigationMessage::CmdName = "GetQzssLNAVNavigationMessage";
-    const char* const GetQzssLNAVNavigationMessage::Documentation = "Please note the command ModificationToQzssLNAVNavigationMessage is deprecated since 21.3. You may use MessageModificationToQzssLNav.\n\nGet infos about this modification QZSS navigation message event.";
+    const char* const GetQzssLNAVNavigationMessage::Documentation = "Please note the command GetQzssLNAVNavigationMessage is deprecated since 21.3. You may use GetMessageModificationToQzssLNav.\n\nGet infos about this modification QZSS navigation message event.";
 
     REGISTER_COMMAND_FACTORY(GetQzssLNAVNavigationMessage);
 

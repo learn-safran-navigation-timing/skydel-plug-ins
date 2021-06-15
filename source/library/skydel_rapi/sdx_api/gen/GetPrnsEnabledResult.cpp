@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetPrnsEnabledResult::CmdName = "GetPrnsEnabledResult";
-    const char* const GetPrnsEnabledResult::Documentation = "Result of GetPrnsEnabled";
+    const char* const GetPrnsEnabledResult::Documentation = "Result of GetPrnsEnabled.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetPrnsEnabledResult);
 

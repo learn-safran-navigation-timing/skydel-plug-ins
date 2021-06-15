@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const SetQzssPerturbationsForAllSat::CmdName = "SetQzssPerturbationsForAllSat";
-    const char* const SetQzssPerturbationsForAllSat::Documentation = "Please note the command QzssPerturbationsForAllSat is deprecated since 20.9. You may use PerturbationsForAllSat.\n\nSet QZSS orbit perturbations (Crs, Crc, Cis, Cic, Cus and Cuc) for all satellites.\nAll parameters are zero based index (index 0 => SV ID 1, index 1 => SV ID 2, etc)";
+    const char* const SetQzssPerturbationsForAllSat::Documentation = "Please note the command SetQzssPerturbationsForAllSat is deprecated since 20.9. You may use SetPerturbationsForAllSat.\n\nSet QZSS orbit perturbations (Crs, Crc, Cis, Cic, Cus and Cuc) for all satellites.\nAll parameters are zero based index (index 0 => SV ID 1, index 1 => SV ID 2, etc)";
 
     REGISTER_COMMAND_FACTORY(SetQzssPerturbationsForAllSat);
 

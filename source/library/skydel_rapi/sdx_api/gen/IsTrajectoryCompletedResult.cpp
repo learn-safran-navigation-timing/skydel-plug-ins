@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsTrajectoryCompletedResult::CmdName = "IsTrajectoryCompletedResult";
-    const char* const IsTrajectoryCompletedResult::Documentation = "Result of IsTrajectoryCompleted";
+    const char* const IsTrajectoryCompletedResult::Documentation = "Result of IsTrajectoryCompleted.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsTrajectoryCompletedResult);
 

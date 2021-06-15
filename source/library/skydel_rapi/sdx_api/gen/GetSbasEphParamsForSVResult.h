@@ -2,15 +2,15 @@
 
 #include <memory>
 #include "command_result.h"
-#include <string>
 #include <map>
+#include <string>
 
 namespace Sdx
 {
   namespace Cmd
   {
     ///
-    /// Result of GetSbasEphParamsForSV
+    /// Result of GetSbasEphParamsForSV.
     ///
     /// Name           Type               Description
     /// -------------- ------------------ --------------------------------------------------------------------------

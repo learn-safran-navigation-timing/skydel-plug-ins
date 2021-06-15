@@ -10,17 +10,27 @@ class SkydelRuntimePositionObserver : public QObject
 {
 public:
   virtual ~SkydelRuntimePositionObserver() = default;
-  
-  struct Ecef { double x; double y; double z; };
-  struct Orientation { double roll; double pitch; double yaw; };
+
+  struct Ecef
+  {
+    double x;
+    double y;
+    double z;
+  };
+  struct Orientation
+  {
+    double roll;
+    double pitch;
+    double yaw;
+  };
   struct TimedPosition
   {
     int64_t time;            // ms
     Ecef position;           // m
     Orientation orientation; // rad
   };
-  
-  virtual void pushPosition(const TimedPosition &) = 0;
+
+  virtual void pushPosition(const TimedPosition&) = 0;
   virtual void connectToView(QWidget* view) = 0;
 };
 

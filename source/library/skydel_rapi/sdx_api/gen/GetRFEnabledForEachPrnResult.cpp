@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetRFEnabledForEachPrnResult::CmdName = "GetRFEnabledForEachPrnResult";
-    const char* const GetRFEnabledForEachPrnResult::Documentation = "Result of GetRFEnabledForEachPrn";
+    const char* const GetRFEnabledForEachPrnResult::Documentation = "Result of GetRFEnabledForEachPrn.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetRFEnabledForEachPrnResult);
 

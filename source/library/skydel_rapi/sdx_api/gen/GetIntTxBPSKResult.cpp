@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetIntTxBPSKResult::CmdName = "GetIntTxBPSKResult";
-    const char* const GetIntTxBPSKResult::Documentation = "Result of GetIntTxBPSK";
+    const char* const GetIntTxBPSKResult::Documentation = "Result of GetIntTxBPSK.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetIntTxBPSKResult);
 

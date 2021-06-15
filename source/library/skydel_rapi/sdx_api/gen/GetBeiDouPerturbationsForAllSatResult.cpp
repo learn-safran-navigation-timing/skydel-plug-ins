@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetBeiDouPerturbationsForAllSatResult::CmdName = "GetBeiDouPerturbationsForAllSatResult";
-    const char* const GetBeiDouPerturbationsForAllSatResult::Documentation = "Result of GetBeiDouPerturbationsForAllSat";
+    const char* const GetBeiDouPerturbationsForAllSatResult::Documentation = "Result of GetBeiDouPerturbationsForAllSat.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetBeiDouPerturbationsForAllSatResult);
 

@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetPseudorangeNoiseOffsetForSVResult::CmdName = "GetPseudorangeNoiseOffsetForSVResult";
-    const char* const GetPseudorangeNoiseOffsetForSVResult::Documentation = "Result of GetPseudorangeNoiseOffsetForSV";
+    const char* const GetPseudorangeNoiseOffsetForSVResult::Documentation = "Result of GetPseudorangeNoiseOffsetForSV.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetPseudorangeNoiseOffsetForSVResult);
 

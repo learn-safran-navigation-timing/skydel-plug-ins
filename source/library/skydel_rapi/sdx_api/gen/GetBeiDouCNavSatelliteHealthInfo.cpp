@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetBeiDouCNavSatelliteHealthInfo::CmdName = "GetBeiDouCNavSatelliteHealthInfo";
-    const char* const GetBeiDouCNavSatelliteHealthInfo::Documentation = "Please note the command BeiDouCNavSatelliteHealthInfo is deprecated since 21.3. You may use BeiDouCNavHealthInfoForSV.\n\nGet BeiDou CNav satellite health info";
+    const char* const GetBeiDouCNavSatelliteHealthInfo::Documentation = "Please note the command GetBeiDouCNavSatelliteHealthInfo is deprecated since 21.3. You may use GetBeiDouCNavHealthInfoForSV.\n\nGet BeiDou CNav satellite health info";
 
     REGISTER_COMMAND_FACTORY(GetBeiDouCNavSatelliteHealthInfo);
 

@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsPYEnabledResult::CmdName = "IsPYEnabledResult";
-    const char* const IsPYEnabledResult::Documentation = "Result of IsPYEnabled";
+    const char* const IsPYEnabledResult::Documentation = "Result of IsPYEnabled.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsPYEnabledResult);
 

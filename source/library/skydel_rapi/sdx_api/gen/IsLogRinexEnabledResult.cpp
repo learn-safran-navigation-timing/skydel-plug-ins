@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsLogRinexEnabledResult::CmdName = "IsLogRinexEnabledResult";
-    const char* const IsLogRinexEnabledResult::Documentation = "Result of IsLogRinexEnabled";
+    const char* const IsLogRinexEnabledResult::Documentation = "Result of IsLogRinexEnabled.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsLogRinexEnabledResult);
 

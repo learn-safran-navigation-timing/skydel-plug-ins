@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const SetGpsSVConfiguration::CmdName = "SetGpsSVConfiguration";
-    const char* const SetGpsSVConfiguration::Documentation = "Please note the command GpsSVConfiguration is deprecated since 21.3. You may use GpsConfigurationCodeForSV.\n\nSet GPS SV configuration flag for one PRN";
+    const char* const SetGpsSVConfiguration::Documentation = "Please note the command SetGpsSVConfiguration is deprecated since 21.3. You may use SetGpsConfigurationCodeForSV.\n\nSet GPS SV configuration flag for one PRN";
 
     REGISTER_COMMAND_FACTORY(SetGpsSVConfiguration);
 

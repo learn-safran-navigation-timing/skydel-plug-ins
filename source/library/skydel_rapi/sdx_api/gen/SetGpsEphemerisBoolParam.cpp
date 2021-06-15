@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const SetGpsEphemerisBoolParam::CmdName = "SetGpsEphemerisBoolParam";
-    const char* const SetGpsEphemerisBoolParam::Documentation = "Please note the command GpsEphemerisBoolParam is deprecated since 21.3. You may use GpsEphBoolParamForSV.\n\nSet various boolean parameters in the GPS ephemeris\n\n  ParamName\n\"IscL1CaAvailable\"\n\"IscL2CAvailable\"\n\"IscL5I5Available\"\n\"IscL5Q5Available\"\n\"IscL1CPAvailable\"\n\"IscL1CDAvailable\"";
+    const char* const SetGpsEphemerisBoolParam::Documentation = "Please note the command SetGpsEphemerisBoolParam is deprecated since 21.3. You may use SetGpsEphBoolParamForSV.\n\nSet various boolean parameters in the GPS ephemeris\n\n  ParamName\n\"IscL1CaAvailable\"\n\"IscL2CAvailable\"\n\"IscL5I5Available\"\n\"IscL5Q5Available\"\n\"IscL1CPAvailable\"\n\"IscL1CDAvailable\"";
 
     REGISTER_COMMAND_FACTORY(SetGpsEphemerisBoolParam);
 

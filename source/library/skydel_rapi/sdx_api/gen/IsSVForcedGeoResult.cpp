@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsSVForcedGeoResult::CmdName = "IsSVForcedGeoResult";
-    const char* const IsSVForcedGeoResult::Documentation = "Result of IsSVForcedGeo";
+    const char* const IsSVForcedGeoResult::Documentation = "Result of IsSVForcedGeo.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsSVForcedGeoResult);
 

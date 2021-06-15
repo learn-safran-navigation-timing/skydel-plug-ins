@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsSbasFastCorrectionsEnabledForResult::CmdName = "IsSbasFastCorrectionsEnabledForResult";
-    const char* const IsSbasFastCorrectionsEnabledForResult::Documentation = "Result of IsSbasFastCorrectionsEnabledFor";
+    const char* const IsSbasFastCorrectionsEnabledForResult::Documentation = "Result of IsSbasFastCorrectionsEnabledFor.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsSbasFastCorrectionsEnabledForResult);
 

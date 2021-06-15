@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetPYEnabledForEachPrn::CmdName = "GetPYEnabledForEachPrn";
-    const char* const GetPYEnabledForEachPrn::Documentation = "Please note the command EnablePYForEachPrn is deprecated since 21.3. You may use EnablePYCodeForEachSV.\n\nTells if the P(Y)-Code is enabled or disabled for each satellite. See EnablePYForEachPrn description for allowed signals.";
+    const char* const GetPYEnabledForEachPrn::Documentation = "Please note the command GetPYEnabledForEachPrn is deprecated since 21.3. You may use IsPYCodeEnabledForEachSV.\n\nTells if the P(Y)-Code is enabled or disabled for each satellite. See GetPYEnabledForEachPrn description for allowed signals.";
 
     REGISTER_COMMAND_FACTORY(GetPYEnabledForEachPrn);
 

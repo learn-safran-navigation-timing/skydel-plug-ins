@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetIntTxFixEcefResult::CmdName = "GetIntTxFixEcefResult";
-    const char* const GetIntTxFixEcefResult::Documentation = "Result of GetIntTxFixEcef";
+    const char* const GetIntTxFixEcefResult::Documentation = "Result of GetIntTxFixEcef.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetIntTxFixEcefResult);
 

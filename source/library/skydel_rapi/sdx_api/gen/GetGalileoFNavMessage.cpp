@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetGalileoFNavMessage::CmdName = "GetGalileoFNavMessage";
-    const char* const GetGalileoFNavMessage::Documentation = "Please note the command ModificationToGalileoFNavMessage is deprecated since 21.3. You may use MessageModificationToGalileoFNav.\n\nGet infos about the FNAV Message with this id";
+    const char* const GetGalileoFNavMessage::Documentation = "Please note the command GetGalileoFNavMessage is deprecated since 21.3. You may use GetMessageModificationToGalileoFNav.\n\nGet infos about the FNAV Message with this id";
 
     REGISTER_COMMAND_FACTORY(GetGalileoFNavMessage);
 

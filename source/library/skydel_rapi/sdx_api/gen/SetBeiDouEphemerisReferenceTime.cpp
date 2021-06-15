@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const SetBeiDouEphemerisReferenceTime::CmdName = "SetBeiDouEphemerisReferenceTime";
-    const char* const SetBeiDouEphemerisReferenceTime::Documentation = "Please note the command BeiDouEphemerisReferenceTime is deprecated since 21.3. You may use EphemerisReferenceTimeForSV.\n\nSet the BeiDou ephemeris reference time";
+    const char* const SetBeiDouEphemerisReferenceTime::Documentation = "Please note the command SetBeiDouEphemerisReferenceTime is deprecated since 21.3. You may use SetEphemerisReferenceTimeForSV.\n\nSet the BeiDou ephemeris reference time";
 
     REGISTER_COMMAND_FACTORY(SetBeiDouEphemerisReferenceTime);
 

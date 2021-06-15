@@ -1,9 +1,5 @@
-! include (../common.pri) {
-    error( "Couldn't find the common.pri file!" )
-}
-! include (../../library/inertial_math/inertial_math.pri) {
-    error( "Couldn't find the inertial_math.pri file!" )
-}
+include (../common.pri)
+include (../../library/inertial_math/inertial_math.pri)
 
 QT += gui widgets network
 

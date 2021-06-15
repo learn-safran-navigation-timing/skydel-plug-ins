@@ -5,9 +5,7 @@
 
 #include "ui_position_observer_view.h"
 
-PositionObserverView::PositionObserverView(QWidget *parent) :
-  QWidget(parent),
-  m_ui(new Ui::PositionObserverView)
+PositionObserverView::PositionObserverView(QWidget* parent) : QWidget(parent), m_ui(new Ui::PositionObserverView)
 {
   m_ui->setupUi(this);
 
@@ -55,7 +53,7 @@ void PositionObserverView::clear()
   updateLabelValue(m_ui->yaw, 0.0);
 }
 
-void PositionObserverView::updatePosition(const SkydelRuntimePositionObserver::TimedPosition &timedPosition)
+void PositionObserverView::updatePosition(const SkydelRuntimePositionObserver::TimedPosition& timedPosition)
 {
   updateLabelValue(m_ui->x, timedPosition.position.x);
   updateLabelValue(m_ui->y, timedPosition.position.y);

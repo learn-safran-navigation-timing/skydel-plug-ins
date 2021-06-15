@@ -4,32 +4,32 @@
 #include "rotation_matrix.h"
 #include "triplet.h"
 
-namespace Iml {
-    
+namespace Iml
+{
 /**
  * @brief Compute NED angular velocity due to coriolis force.
- * 
+ *
  * @param llaPosition LLA position in radian, radian and meter.
  * @param nedVelocity NED velocity in meter/second.
  * @return NED angular velocity due to the coriolis force in radian/second.
  */
-Triplet nedAngularVelocityFromCoriolisForce(const Triplet &llaPosition, const Triplet &nedVelocity);
+Triplet nedAngularVelocityFromCoriolisForce(const Triplet& llaPosition, const Triplet& nedVelocity);
 
 /**
  * @brief Compute NED acceleration due to coriolis force/
- * 
+ *
  * @param llaPosition LLA position in radian, radian and meter.
  * @param nedVelocity NED velocity in meter/second.
  * @return NED acceleration due to the coriolis force in meter/second^2.
  */
-Triplet nedAccelerationFromCoriolisForce(const Triplet &llaPosition, const Triplet &nedVelocity);
+Triplet nedAccelerationFromCoriolisForce(const Triplet& llaPosition, const Triplet& nedVelocity);
 /**
  * @brief Compute the coriolis force skew symmetric matrix based on NED Earth rate.
- * 
+ *
  * @param nedEarthRate NED Earth rate in radian/second.
  * @return Coriolis force skew symmetric matrix.
  */
-RotationMatrix coriolisForceSkewSymmetricMatrix(const Triplet &nedEarthRate);
+RotationMatrix coriolisForceSkewSymmetricMatrix(const Triplet& nedEarthRate);
 
 /**
  * @brief Compute the transport rate of the Earth relative to LLA position and NED velocity.
@@ -52,7 +52,7 @@ Triplet earthRate(double latitude);
 
 /**
  * @brief Compute the Earth prime vertical(east/west) radius of curvature based the refenrece ellipsoid WSG-84.
- * 
+ *
  * @param latitude Latitude in radian.
  * @return Earth prime vertial radius of curvature in radian.
  */

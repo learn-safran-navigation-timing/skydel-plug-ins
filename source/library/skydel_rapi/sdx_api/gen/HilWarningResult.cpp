@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const HilWarningResult::CmdName = "HilWarningResult";
-    const char* const HilWarningResult::Documentation = "Hardware in the loop server warning result ";
+    const char* const HilWarningResult::Documentation = "Result of GetLastHilWarning.";
 
     REGISTER_COMMAND_RESULT_FACTORY(HilWarningResult);
 

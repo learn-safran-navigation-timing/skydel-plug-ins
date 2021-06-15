@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetNavICEphDoubleParamForSVResult::CmdName = "GetNavICEphDoubleParamForSVResult";
-    const char* const GetNavICEphDoubleParamForSVResult::Documentation = "Result of GetNavICEphDoubleParamForSV";
+    const char* const GetNavICEphDoubleParamForSVResult::Documentation = "Result of GetNavICEphDoubleParamForSV.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetNavICEphDoubleParamForSVResult);
 

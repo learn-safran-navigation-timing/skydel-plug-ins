@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsPrnEnabled::CmdName = "IsPrnEnabled";
-    const char* const IsPrnEnabled::Documentation = "Please note the command EnablePrn is deprecated since 21.3. You may use EnableSV.\n\nGet  enabled or disabled satellite for this constellation.";
+    const char* const IsPrnEnabled::Documentation = "Please note the command IsPrnEnabled is deprecated since 21.3. You may use IsSVEnabled.\n\nGet  enabled or disabled satellite for this constellation.";
 
     REGISTER_COMMAND_FACTORY(IsPrnEnabled);
 

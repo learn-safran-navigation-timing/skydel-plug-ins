@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetDataFolder::CmdName = "GetDataFolder";
-    const char* const GetDataFolder::Documentation = "Ask Skydel's Data Folder. The user can changed it in the GUI's Preferences.";
+    const char* const GetDataFolder::Documentation = "Get Skydel's Data Folder. The user can changed it in the GUI's Preferences.";
 
     REGISTER_COMMAND_FACTORY(GetDataFolder);
 

@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const SetBeiDouPerturbations::CmdName = "SetBeiDouPerturbations";
-    const char* const SetBeiDouPerturbations::Documentation = "Please note the command BeiDouPerturbations is deprecated since 21.3. You may use Perturbations.\n\nSet BeiDou orbit perturbations (Crs, Crc, Cis, Cic, Cus and Cuc)";
+    const char* const SetBeiDouPerturbations::Documentation = "Please note the command SetBeiDouPerturbations is deprecated since 21.3. You may use SetPerturbations.\n\nSet BeiDou orbit perturbations (Crs, Crc, Cis, Cic, Cus and Cuc)";
 
     REGISTER_COMMAND_FACTORY(SetBeiDouPerturbations);
 

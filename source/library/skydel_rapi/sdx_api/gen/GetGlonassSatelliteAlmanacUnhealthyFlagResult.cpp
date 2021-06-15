@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetGlonassSatelliteAlmanacUnhealthyFlagResult::CmdName = "GetGlonassSatelliteAlmanacUnhealthyFlagResult";
-    const char* const GetGlonassSatelliteAlmanacUnhealthyFlagResult::Documentation = "Result of GetGlonassSatelliteAlmanacUnhealthyFlag";
+    const char* const GetGlonassSatelliteAlmanacUnhealthyFlagResult::Documentation = "Result of GetGlonassSatelliteAlmanacUnhealthyFlag.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetGlonassSatelliteAlmanacUnhealthyFlagResult);
 

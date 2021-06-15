@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetGpsPerturbations::CmdName = "GetGpsPerturbations";
-    const char* const GetGpsPerturbations::Documentation = "Please note the command GpsPerturbations is deprecated since 21.3. You may use Perturbations.\n\nGet GPS orbit perturbations (Crs, Crc, Cis, Cic, Cus and Cuc)";
+    const char* const GetGpsPerturbations::Documentation = "Please note the command GetGpsPerturbations is deprecated since 21.3. You may use GetPerturbations.\n\nGet GPS orbit perturbations (Crs, Crc, Cis, Cic, Cus and Cuc)";
 
     REGISTER_COMMAND_FACTORY(GetGpsPerturbations);
 

@@ -2,16 +2,16 @@
 
 #include <memory>
 #include "command_result.h"
+#include "sdx_optional.h"
 #include <string>
 #include <vector>
-#include "sdx_optional.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     ///
-    /// Result of GetIonoGridGIVEIAll
+    /// Result of GetIonoGridGIVEIAll.
     ///
     /// Name            Type            Description
     /// --------------- --------------- ----------------------------------------------------------------------

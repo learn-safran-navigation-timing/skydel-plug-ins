@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetGpsEphDoubleParamForEachSVResult::CmdName = "GetGpsEphDoubleParamForEachSVResult";
-    const char* const GetGpsEphDoubleParamForEachSVResult::Documentation = "Result of GetGpsEphDoubleParamForEachSV";
+    const char* const GetGpsEphDoubleParamForEachSVResult::Documentation = "Result of GetGpsEphDoubleParamForEachSV.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetGpsEphDoubleParamForEachSVResult);
 

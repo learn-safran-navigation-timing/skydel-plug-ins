@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetGpsTimingReceiverResult::CmdName = "GetGpsTimingReceiverResult";
-    const char* const GetGpsTimingReceiverResult::Documentation = "Result of GetGpsTimingReceiver";
+    const char* const GetGpsTimingReceiverResult::Documentation = "Result of GetGpsTimingReceiver.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetGpsTimingReceiverResult);
 

@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetVehicleTrajectoryFixResult::CmdName = "GetVehicleTrajectoryFixResult";
-    const char* const GetVehicleTrajectoryFixResult::Documentation = "Result of GetVehicleTrajectoryFix";
+    const char* const GetVehicleTrajectoryFixResult::Documentation = "Result of GetVehicleTrajectoryFix.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetVehicleTrajectoryFixResult);
 

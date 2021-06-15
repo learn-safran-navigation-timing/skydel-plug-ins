@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetIntTxIqFileResult::CmdName = "GetIntTxIqFileResult";
-    const char* const GetIntTxIqFileResult::Documentation = "Result of GetIntTxIqFile";
+    const char* const GetIntTxIqFileResult::Documentation = "Result of GetIntTxIqFile.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetIntTxIqFileResult);
 

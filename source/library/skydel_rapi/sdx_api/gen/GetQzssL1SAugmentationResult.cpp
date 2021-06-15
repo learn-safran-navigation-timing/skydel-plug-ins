@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetQzssL1SAugmentationResult::CmdName = "GetQzssL1SAugmentationResult";
-    const char* const GetQzssL1SAugmentationResult::Documentation = "Result of GetQzssL1SAugmentation";
+    const char* const GetQzssL1SAugmentationResult::Documentation = "Result of GetQzssL1SAugmentation.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetQzssL1SAugmentationResult);
 

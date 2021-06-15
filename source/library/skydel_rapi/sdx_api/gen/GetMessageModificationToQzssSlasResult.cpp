@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetMessageModificationToQzssSlasResult::CmdName = "GetMessageModificationToQzssSlasResult";
-    const char* const GetMessageModificationToQzssSlasResult::Documentation = "Result of GetMessageModificationToQzssSlas";
+    const char* const GetMessageModificationToQzssSlasResult::Documentation = "Result of GetMessageModificationToQzssSlas.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetMessageModificationToQzssSlasResult);
 

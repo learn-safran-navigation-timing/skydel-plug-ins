@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetGpsSatelliteAntiSpoofingFlagResult::CmdName = "GetGpsSatelliteAntiSpoofingFlagResult";
-    const char* const GetGpsSatelliteAntiSpoofingFlagResult::Documentation = "Result of GetGpsSatelliteAntiSpoofingFlag";
+    const char* const GetGpsSatelliteAntiSpoofingFlagResult::Documentation = "Result of GetGpsSatelliteAntiSpoofingFlag.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetGpsSatelliteAntiSpoofingFlagResult);
 

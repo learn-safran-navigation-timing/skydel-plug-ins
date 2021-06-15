@@ -9,13 +9,17 @@
 // Plugin implementation
 class RapiPlugin : public QObject, public SkydelCoreInterface, public SkydelRapiAccess
 {
-  // SkydelCoreInterface interface
 public:
-  inline void setLogPath([[maybe_unused]] const QString &path) override {};
+  // SkydelCoreInterface
+  inline void setLogPath([[maybe_unused]] const QString& path) override {};
   inline void setNotifier(SkydelNotifierInterface* notifier) override { m_notifier = notifier; }
-  inline void setConfiguration([[maybe_unused]] const QString &version, [[maybe_unused]] const QJsonObject &configuration) override {}
-  QJsonObject getConfiguration() const override;
+  inline void setConfiguration([[maybe_unused]] const QString& version,
+                               [[maybe_unused]] const QJsonObject& configuration) override
+  {
+  }
+  inline QJsonObject getConfiguration() const override { return QJsonObject {}; }
   QWidget* createUI() override;
+  inline void initialize() override {}
 
 private:
   SkydelNotifierInterface* m_notifier;
@@ -27,9 +31,6 @@ class RapiPluginFactory : public QObject, public SkydelPlugin<RapiPlugin>
   Q_OBJECT
   Q_PLUGIN_METADATA(IID "RapiPlugin" FILE "rapi_plugin.json")
   Q_INTERFACES(SkydelPluginBase)
-
-public:
-  explicit RapiPluginFactory(QObject *parent = nullptr);
 };
 
 #endif // RAPI_PLUGIN_H

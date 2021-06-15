@@ -2,17 +2,17 @@
 
 #include <memory>
 #include "command_result.h"
-#include <string>
 #include "gen/SerialPortFlowControl.h"
 #include "gen/SerialPortParity.h"
 #include "sdx_optional.h"
+#include <string>
 
 namespace Sdx
 {
   namespace Cmd
   {
     ///
-    /// Result of GetGpsTimingReceiver
+    /// Result of GetGpsTimingReceiver.
     ///
     /// Name        Type                           Description
     /// ----------- ------------------------------ -----------------------------------------------------------------------------------------

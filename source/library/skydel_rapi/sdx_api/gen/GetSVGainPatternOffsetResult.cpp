@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetSVGainPatternOffsetResult::CmdName = "GetSVGainPatternOffsetResult";
-    const char* const GetSVGainPatternOffsetResult::Documentation = "Result of GetSVGainPatternOffset";
+    const char* const GetSVGainPatternOffsetResult::Documentation = "Result of GetSVGainPatternOffset.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetSVGainPatternOffsetResult);
 

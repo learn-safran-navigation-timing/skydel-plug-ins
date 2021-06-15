@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetCnav2PagesEnabledResult::CmdName = "GetCnav2PagesEnabledResult";
-    const char* const GetCnav2PagesEnabledResult::Documentation = "Result of GetCnav2PagesEnabled";
+    const char* const GetCnav2PagesEnabledResult::Documentation = "Result of GetCnav2PagesEnabled.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetCnav2PagesEnabledResult);
 

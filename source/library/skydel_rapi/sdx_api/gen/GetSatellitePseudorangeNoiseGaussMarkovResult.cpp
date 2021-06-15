@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetSatellitePseudorangeNoiseGaussMarkovResult::CmdName = "GetSatellitePseudorangeNoiseGaussMarkovResult";
-    const char* const GetSatellitePseudorangeNoiseGaussMarkovResult::Documentation = "Result of GetSatellitePseudorangeNoiseGaussMarkov";
+    const char* const GetSatellitePseudorangeNoiseGaussMarkovResult::Documentation = "Result of GetSatellitePseudorangeNoiseGaussMarkov.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetSatellitePseudorangeNoiseGaussMarkovResult);
 

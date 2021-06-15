@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const SetSatellitePseudorangeNoiseOffset::CmdName = "SetSatellitePseudorangeNoiseOffset";
-    const char* const SetSatellitePseudorangeNoiseOffset::Documentation = "Please note the command SatellitePseudorangeNoiseOffset is deprecated since 21.3. You may use PseudorangeNoiseOffsetForSV.\n\nSet the satellite pseudorange noise constant offset.";
+    const char* const SetSatellitePseudorangeNoiseOffset::Documentation = "Please note the command SetSatellitePseudorangeNoiseOffset is deprecated since 21.3. You may use SetPseudorangeNoiseOffsetForSV.\n\nSet the satellite pseudorange noise constant offset.";
 
     REGISTER_COMMAND_FACTORY(SetSatellitePseudorangeNoiseOffset);
 

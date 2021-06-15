@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetMessageModificationToGalileoINavResult::CmdName = "GetMessageModificationToGalileoINavResult";
-    const char* const GetMessageModificationToGalileoINavResult::Documentation = "Result of GetMessageModificationToGalileoINav";
+    const char* const GetMessageModificationToGalileoINavResult::Documentation = "Result of GetMessageModificationToGalileoINav.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetMessageModificationToGalileoINavResult);
 

@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsRFEnabled::CmdName = "IsRFEnabled";
-    const char* const IsRFEnabled::Documentation = "Please note the command EnableRF is deprecated since 21.3. You may use EnableRFOutputForSV.\n\nTells if the RF is enabled or disabled for the specified satellite.";
+    const char* const IsRFEnabled::Documentation = "Please note the command IsRFEnabled is deprecated since 21.3. You may use IsRFOutputEnabled.\n\nTells if the RF is enabled or disabled for the specified satellite.";
 
     REGISTER_COMMAND_FACTORY(IsRFEnabled);
 

@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const SetGalileoSatelliteDataHealth::CmdName = "SetGalileoSatelliteDataHealth";
-    const char* const SetGalileoSatelliteDataHealth::Documentation = "Please note the command GalileoSatelliteDataHealth is deprecated since 21.3. You may use GalileoDataHealthForSV.\n\nSet Galileo data health for I/NAV and F/NAV message";
+    const char* const SetGalileoSatelliteDataHealth::Documentation = "Please note the command SetGalileoSatelliteDataHealth is deprecated since 21.3. You may use SetGalileoDataHealthForSV.\n\nSet Galileo data health for I/NAV and F/NAV message";
 
     REGISTER_COMMAND_FACTORY(SetGalileoSatelliteDataHealth);
 

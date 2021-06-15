@@ -1,6 +1,4 @@
-! include (../common.pri) {
-    error( "Couldn't find the common.pri file!" )
-}
+include (../common.pri)
 
 QT += gui widgets
 
@@ -9,8 +7,6 @@ SOURCES += \
 
 HEADERS += \
     skydel_default_instrumentation_plugin.h
-
-FORMS +=
 
 DISTFILES += \
     skydel_default_instrumentation_plugin.json

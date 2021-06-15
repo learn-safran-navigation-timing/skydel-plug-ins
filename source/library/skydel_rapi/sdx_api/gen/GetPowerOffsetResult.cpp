@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetPowerOffsetResult::CmdName = "GetPowerOffsetResult";
-    const char* const GetPowerOffsetResult::Documentation = "Result of GetPowerOffset";
+    const char* const GetPowerOffsetResult::Documentation = "Result of GetPowerOffset.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetPowerOffsetResult);
 

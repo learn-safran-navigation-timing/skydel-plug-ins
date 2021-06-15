@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetGpsCodePrn::CmdName = "GetGpsCodePrn";
-    const char* const GetGpsCodePrn::Documentation = "Please note the command GpsCodePrn is deprecated since 21.3. You may use PrnOfSVID.\n\nGet the transmitted PRN code for the specified satellite";
+    const char* const GetGpsCodePrn::Documentation = "Please note the command GetGpsCodePrn is deprecated since 21.3. You may use GetPrnOfSVID.\n\nGet the transmitted PRN code for the specified satellite";
 
     REGISTER_COMMAND_FACTORY(GetGpsCodePrn);
 

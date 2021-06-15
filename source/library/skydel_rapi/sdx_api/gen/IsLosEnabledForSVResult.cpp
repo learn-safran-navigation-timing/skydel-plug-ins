@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsLosEnabledForSVResult::CmdName = "IsLosEnabledForSVResult";
-    const char* const IsLosEnabledForSVResult::Documentation = "Result of IsLosEnabledForSV";
+    const char* const IsLosEnabledForSVResult::Documentation = "Result of IsLosEnabledForSV.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsLosEnabledForSVResult);
 

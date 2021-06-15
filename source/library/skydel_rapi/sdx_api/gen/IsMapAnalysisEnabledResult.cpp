@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsMapAnalysisEnabledResult::CmdName = "IsMapAnalysisEnabledResult";
-    const char* const IsMapAnalysisEnabledResult::Documentation = "Result of IsMapAnalysisEnabled";
+    const char* const IsMapAnalysisEnabledResult::Documentation = "Result of IsMapAnalysisEnabled.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsMapAnalysisEnabledResult);
 

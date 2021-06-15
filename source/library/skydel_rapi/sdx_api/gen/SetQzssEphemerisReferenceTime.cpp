@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const SetQzssEphemerisReferenceTime::CmdName = "SetQzssEphemerisReferenceTime";
-    const char* const SetQzssEphemerisReferenceTime::Documentation = "Please note the command QzssEphemerisReferenceTime is deprecated since 20.9. You may use EphemerisReferenceTimeForSV.\n\nSet the QZSS ephemeris reference time";
+    const char* const SetQzssEphemerisReferenceTime::Documentation = "Please note the command SetQzssEphemerisReferenceTime is deprecated since 20.9. You may use SetEphemerisReferenceTimeForSV.\n\nSet the QZSS ephemeris reference time";
 
     REGISTER_COMMAND_FACTORY(SetQzssEphemerisReferenceTime);
 

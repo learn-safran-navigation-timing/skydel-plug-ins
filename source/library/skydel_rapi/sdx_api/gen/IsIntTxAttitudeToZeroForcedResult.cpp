@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsIntTxAttitudeToZeroForcedResult::CmdName = "IsIntTxAttitudeToZeroForcedResult";
-    const char* const IsIntTxAttitudeToZeroForcedResult::Documentation = "Result of IsIntTxAttitudeToZeroForced";
+    const char* const IsIntTxAttitudeToZeroForcedResult::Documentation = "Result of IsIntTxAttitudeToZeroForced.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsIntTxAttitudeToZeroForcedResult);
 

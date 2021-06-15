@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsQzssSatMotionFixedResult::CmdName = "IsQzssSatMotionFixedResult";
-    const char* const IsQzssSatMotionFixedResult::Documentation = "Result of IsQzssSatMotionFixed";
+    const char* const IsQzssSatMotionFixedResult::Documentation = "Result of IsQzssSatMotionFixed.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsQzssSatMotionFixedResult);
 

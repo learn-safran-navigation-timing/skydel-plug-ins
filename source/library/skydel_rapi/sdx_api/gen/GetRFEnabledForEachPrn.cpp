@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetRFEnabledForEachPrn::CmdName = "GetRFEnabledForEachPrn";
-    const char* const GetRFEnabledForEachPrn::Documentation = "Please note the command EnableRFForEachPrn is deprecated since 21.3. You may use EnableRFOutputForEachSV.\n\nTells if the RF is enabled or disabled for each satellite.";
+    const char* const GetRFEnabledForEachPrn::Documentation = "Please note the command GetRFEnabledForEachPrn is deprecated since 21.3. You may use IsRFOutputEnabledForEachSV.\n\nTells if the RF is enabled or disabled for each satellite.";
 
     REGISTER_COMMAND_FACTORY(GetRFEnabledForEachPrn);
 

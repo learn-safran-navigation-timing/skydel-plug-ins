@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetSbasEphParamsForSVResult::CmdName = "GetSbasEphParamsForSVResult";
-    const char* const GetSbasEphParamsForSVResult::Documentation = "Result of GetSbasEphParamsForSV";
+    const char* const GetSbasEphParamsForSVResult::Documentation = "Result of GetSbasEphParamsForSV.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetSbasEphParamsForSVResult);
 

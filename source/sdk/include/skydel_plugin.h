@@ -15,7 +15,7 @@ public:
   {
     QString id;
     int version;
-    void *(*convertFunction)(QObject *);
+    void* (*convertFunction)(QObject*);
   };
 
   virtual QObject* createInstance() = 0;
@@ -29,8 +29,12 @@ Q_DECLARE_INTERFACE(SkydelPluginBase, "SkydelPluginBase/1.0")
 #include "skydel_instrumentation_interface.h"
 #include "skydel_licensing_interface.h"
 #include "skydel_position_observer_interface.h"
+#include "skydel_raw_data_observer_interface.h"
 
-#define SKYDEL_PLUGIN_ROLE(interface) if constexpr (std::is_base_of_v<interface, T>) m_implementedInterfaces.push_back({ interface::ID, interface::VERSION, [](QObject* base) -> void* { return dynamic_cast<interface*>(base); }});
+#define SKYDEL_PLUGIN_ROLE(interface)            \
+  if constexpr (std::is_base_of_v<interface, T>) \
+    m_implementedInterfaces.push_back(           \
+      {interface::ID, interface::VERSION, [](QObject* base) -> void* { return dynamic_cast<interface*>(base); }});
 
 template<typename T>
 class SkydelPlugin : public SkydelPluginBase
@@ -43,9 +47,10 @@ public:
     SKYDEL_PLUGIN_ROLE(SkydelLicensingInterface);
     SKYDEL_PLUGIN_ROLE(SkydelInstrumentationInterface);
     SKYDEL_PLUGIN_ROLE(SkydelRapiInterface);
+    SKYDEL_PLUGIN_ROLE(SkydelRawDataObserverInterface);
   }
 
-  QObject* createInstance() override { return new T{}; }
+  QObject* createInstance() override { return new T {}; }
   virtual std::vector<Interface> implementedInterfaces() { return m_implementedInterfaces; }
 
 private:

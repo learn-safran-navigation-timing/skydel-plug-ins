@@ -9,11 +9,11 @@ namespace Sdx
   namespace Cmd
   {
     ///
-    /// Result of GetPrnOfSVID
+    /// Result of GetPrnOfSVID.
     ///
     /// Name   Type   Description
-    /// ------ ------ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    /// Signal string Accepted signal keys: "L1CA", "L1C", "L2C", "L5", "G1", "G2", "E1", "E6BC", "B1", "B2", "B1C", "B2a", "QZSSL1CA", "QZSSL1C", "QZSSL5", "QZSSL1S", "QZSSL5S", "NAVICL5"
+    /// ------ ------ ----------------------------------------------------------------------------------------------------------------------------------------------------------
+    /// Signal string Accepted signal keys: "L1CA", "L1C", "L2C", "L5", "E1", "E6BC", "B1", "B2", "B1C", "B2a", "QZSSL1CA", "QZSSL1C", "QZSSL5", "QZSSL1S", "QZSSL5S", "NAVICL5"
     /// SvId   int    Satellite SV ID.
     /// Prn    int    PRN number.
     ///

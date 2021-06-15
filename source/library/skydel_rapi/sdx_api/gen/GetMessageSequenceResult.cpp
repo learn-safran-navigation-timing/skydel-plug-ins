@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetMessageSequenceResult::CmdName = "GetMessageSequenceResult";
-    const char* const GetMessageSequenceResult::Documentation = "Result of GetMessageSequence";
+    const char* const GetMessageSequenceResult::Documentation = "Result of GetMessageSequence.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetMessageSequenceResult);
 

@@ -2,16 +2,16 @@
 
 #include <memory>
 #include "command_result.h"
-#include <string>
 #include "gen/GNSSBand.h"
 #include "sdx_optional.h"
+#include <string>
 
 namespace Sdx
 {
   namespace Cmd
   {
     ///
-    /// Result of GetVehicleGainPatternOffset
+    /// Result of GetVehicleGainPatternOffset.
     ///
     /// Name        Type            Description
     /// ----------- --------------- ------------------------------------------------------------------------------------

@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const SetGalileoSatMotionFixed::CmdName = "SetGalileoSatMotionFixed";
-    const char* const SetGalileoSatMotionFixed::Documentation = "Please note the command GalileoSatMotionFixed is deprecated since 21.3. You may use SatMotionFixed.\n\nIf IsFixed is set to true, the satellite will not move during the simulation and keep its initial position calculated at the beginning of the simulation.";
+    const char* const SetGalileoSatMotionFixed::Documentation = "Please note the command SetGalileoSatMotionFixed is deprecated since 21.3. You may use SetSatMotionFixed.\n\nIf IsFixed is set to true, the satellite will not move during the simulation and keep its initial position calculated at the beginning of the simulation.";
 
     REGISTER_COMMAND_FACTORY(SetGalileoSatMotionFixed);
 

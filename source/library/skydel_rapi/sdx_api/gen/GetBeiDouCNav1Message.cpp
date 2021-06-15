@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetBeiDouCNav1Message::CmdName = "GetBeiDouCNav1Message";
-    const char* const GetBeiDouCNav1Message::Documentation = "Please note the command ModificationToBeiDouCNav1Message is deprecated since 21.3. You may use MessageModificationToBeiDouCNav1.\n\nGet infos about the CNAV1 Message with this id";
+    const char* const GetBeiDouCNav1Message::Documentation = "Please note the command GetBeiDouCNav1Message is deprecated since 21.3. You may use GetMessageModificationToBeiDouCNav1.\n\nGet infos about the CNAV1 Message with this id";
 
     REGISTER_COMMAND_FACTORY(GetBeiDouCNav1Message);
 

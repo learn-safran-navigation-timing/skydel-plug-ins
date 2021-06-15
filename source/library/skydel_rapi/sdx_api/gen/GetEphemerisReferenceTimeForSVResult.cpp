@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetEphemerisReferenceTimeForSVResult::CmdName = "GetEphemerisReferenceTimeForSVResult";
-    const char* const GetEphemerisReferenceTimeForSVResult::Documentation = "Result of GetEphemerisReferenceTimeForSV";
+    const char* const GetEphemerisReferenceTimeForSVResult::Documentation = "Result of GetEphemerisReferenceTimeForSV.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetEphemerisReferenceTimeForSVResult);
 

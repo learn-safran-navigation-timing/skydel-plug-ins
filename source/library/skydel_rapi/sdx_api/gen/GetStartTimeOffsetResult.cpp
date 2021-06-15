@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetStartTimeOffsetResult::CmdName = "GetStartTimeOffsetResult";
-    const char* const GetStartTimeOffsetResult::Documentation = "Result of GetStartTimeOffset";
+    const char* const GetStartTimeOffsetResult::Documentation = "Result of GetStartTimeOffset.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetStartTimeOffsetResult);
 

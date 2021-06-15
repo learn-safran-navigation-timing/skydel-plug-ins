@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetGpsPerturbationsForAllSat::CmdName = "GetGpsPerturbationsForAllSat";
-    const char* const GetGpsPerturbationsForAllSat::Documentation = "Please note the command GpsPerturbationsForAllSat is deprecated since 21.3. You may use PerturbationsForAllSat.\n\nGet GPS orbit perturbations (Crs, Crc, Cis, Cic, Cus and Cuc) for all satellites.\nAll parameters are zero based index (index 0 => PRN 1, index 1 => PRN 2, etc)";
+    const char* const GetGpsPerturbationsForAllSat::Documentation = "Please note the command GetGpsPerturbationsForAllSat is deprecated since 21.3. You may use GetPerturbationsForAllSat.\n\nGet GPS orbit perturbations (Crs, Crc, Cis, Cic, Cus and Cuc) for all satellites.\nAll parameters are zero based index (index 0 => PRN 1, index 1 => PRN 2, etc)";
 
     REGISTER_COMMAND_FACTORY(GetGpsPerturbationsForAllSat);
 

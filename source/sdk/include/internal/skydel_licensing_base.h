@@ -1,12 +1,14 @@
 #ifndef SKYDEL_LICENSING_BASE_H
 #define SKYDEL_LICENSING_BASE_H
 
+class QByteArray;
+
 class SkydelLicensingBase
 {
 public:
   virtual ~SkydelLicensingBase() = default;
 
-  virtual void exchangeKey(unsigned char* ciphertext, unsigned char* nonce) = 0;
+  virtual void exchangeKey(QByteArray& ciphertext, QByteArray& nonce) = 0;
 };
 
 #endif // SKYDEL_LICENSING_BASE_H

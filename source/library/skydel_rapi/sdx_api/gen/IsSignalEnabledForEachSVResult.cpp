@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsSignalEnabledForEachSVResult::CmdName = "IsSignalEnabledForEachSVResult";
-    const char* const IsSignalEnabledForEachSVResult::Documentation = "Result of IsSignalEnabledForEachSV";
+    const char* const IsSignalEnabledForEachSVResult::Documentation = "Result of IsSignalEnabledForEachSV.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsSignalEnabledForEachSVResult);
 

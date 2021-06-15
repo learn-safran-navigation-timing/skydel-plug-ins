@@ -4,9 +4,13 @@
 #include "gravity.h"
 #include "transformation.h"
 
-namespace Iml {
-
-Triplet idealAccelerometer(const Triplet &llaPosition, const Triplet &ecefVelocity, const Triplet &ecefAcceleration, const Triplet &attitude, GravityModel gravityModel)
+namespace Iml
+{
+Triplet idealAccelerometer(const Triplet& llaPosition,
+                           const Triplet& ecefVelocity,
+                           const Triplet& ecefAcceleration,
+                           const Triplet& attitude,
+                           GravityModel gravityModel)
 {
   auto nedVelocity = ecefToNed(llaPosition, ecefVelocity);
   auto nedAcceleration = ecefToNed(llaPosition, ecefAcceleration);
@@ -15,10 +19,13 @@ Triplet idealAccelerometer(const Triplet &llaPosition, const Triplet &ecefVeloci
 
   nedAcceleration -= nedAccelerationFromGravity(llaPosition, gravityModel);
 
-  return  nedToBodyFromXYZRotation(attitude, nedAcceleration);
+  return nedToBodyFromXYZRotation(attitude, nedAcceleration);
 }
 
-Triplet idealGyroscope(const Triplet &llaPosition, const Triplet &ecefVelocity, const Triplet &attitude, const Triplet &nedAngularVelocity)
+Triplet idealGyroscope(const Triplet& llaPosition,
+                       const Triplet& ecefVelocity,
+                       const Triplet& attitude,
+                       const Triplet& nedAngularVelocity)
 {
   auto nedVelocity = ecefToNed(llaPosition, ecefVelocity);
 
