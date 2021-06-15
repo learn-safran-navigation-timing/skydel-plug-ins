@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const VersionResult::CmdName = "VersionResult";
-    const char* const VersionResult::Documentation = "Result of the command \"GetVersion\"";
+    const char* const VersionResult::Documentation = "Result of GetVersion.";
 
     REGISTER_COMMAND_RESULT_FACTORY(VersionResult);
 

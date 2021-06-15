@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const SimulationElapsedTimeResult::CmdName = "SimulationElapsedTimeResult";
-    const char* const SimulationElapsedTimeResult::Documentation = "Result of the command \"GetSimulationElapsedTime\"";
+    const char* const SimulationElapsedTimeResult::Documentation = "Result of GetSimulationElapsedTime.";
 
     REGISTER_COMMAND_RESULT_FACTORY(SimulationElapsedTimeResult);
 

@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetIntTxAntennaOffsetResult::CmdName = "GetIntTxAntennaOffsetResult";
-    const char* const GetIntTxAntennaOffsetResult::Documentation = "Result of GetIntTxAntennaOffset";
+    const char* const GetIntTxAntennaOffsetResult::Documentation = "Result of GetIntTxAntennaOffset.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetIntTxAntennaOffsetResult);
 

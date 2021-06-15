@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetNavICL5HealthForSVResult::CmdName = "GetNavICL5HealthForSVResult";
-    const char* const GetNavICL5HealthForSVResult::Documentation = "Result of GetNavICL5HealthForSV";
+    const char* const GetNavICL5HealthForSVResult::Documentation = "Result of GetNavICL5HealthForSV.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetNavICL5HealthForSVResult);
 

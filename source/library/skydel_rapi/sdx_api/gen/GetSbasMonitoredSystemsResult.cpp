@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetSbasMonitoredSystemsResult::CmdName = "GetSbasMonitoredSystemsResult";
-    const char* const GetSbasMonitoredSystemsResult::Documentation = "Result of GetSbasMonitoredSystems";
+    const char* const GetSbasMonitoredSystemsResult::Documentation = "Result of GetSbasMonitoredSystems.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetSbasMonitoredSystemsResult);
 

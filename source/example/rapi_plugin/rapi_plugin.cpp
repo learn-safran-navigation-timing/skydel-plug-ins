@@ -5,16 +5,11 @@
 #include "all_commands.h"
 #include "rapi_plugin_view.h"
 
-QJsonObject RapiPlugin::getConfiguration() const
-{
-  return QJsonObject{};
-}
-
 QWidget* RapiPlugin::createUI()
 {
   auto view = new RapiPluginView;
 
-  connect(view, &RapiPluginView::buttonUpdateClicked, [this, view](){
+  connect(view, &RapiPluginView::buttonUpdateClicked, [this, view]() {
     post(Sdx::Cmd::GetSimulatorState::create(), [=](Sdx::CommandResultPtr result) {
       if (auto simulatorStateResult = Sdx::Cmd::SimulatorStateResult::dynamicCast(result))
         view->setSimulatorState(QString::fromStdString(simulatorStateResult->state()));
@@ -23,7 +18,3 @@ QWidget* RapiPlugin::createUI()
 
   return view;
 }
-
-RapiPluginFactory::RapiPluginFactory(QObject *parent) :
-  QObject(parent)
-{}

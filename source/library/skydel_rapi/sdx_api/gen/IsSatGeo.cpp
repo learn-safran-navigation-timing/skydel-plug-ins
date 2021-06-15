@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsSatGeo::CmdName = "IsSatGeo";
-    const char* const IsSatGeo::Documentation = "Please note the command SatGeo is deprecated since 21.3. You may use ForceSVGeo.\n\nGet whether a satellite is geostationary";
+    const char* const IsSatGeo::Documentation = "Please note the command IsSatGeo is deprecated since 21.3. You may use IsSVForcedGeo.\n\nGet whether a satellite is geostationary";
 
     REGISTER_COMMAND_FACTORY(IsSatGeo);
 

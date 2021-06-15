@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsPropagationDelayEnabledResult::CmdName = "IsPropagationDelayEnabledResult";
-    const char* const IsPropagationDelayEnabledResult::Documentation = "Result of IsPropagationDelayEnabled";
+    const char* const IsPropagationDelayEnabledResult::Documentation = "Result of IsPropagationDelayEnabled.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsPropagationDelayEnabledResult);
 

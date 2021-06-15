@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetGpsSatelliteCNavAlertFlag::CmdName = "GetGpsSatelliteCNavAlertFlag";
-    const char* const GetGpsSatelliteCNavAlertFlag::Documentation = "Please note the command GpsSatelliteCNavAlertFlag is deprecated since 21.3. You may use GpsCNavAlertFlagToSV.\n\nGet GPS CNAV Alert Flag";
+    const char* const GetGpsSatelliteCNavAlertFlag::Documentation = "Please note the command GetGpsSatelliteCNavAlertFlag is deprecated since 21.3. You may use GetGpsCNavAlertFlagToSV.\n\nGet GPS CNAV Alert Flag";
 
     REGISTER_COMMAND_FACTORY(GetGpsSatelliteCNavAlertFlag);
 

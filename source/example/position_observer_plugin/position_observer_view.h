@@ -6,7 +6,8 @@
 
 #include "skydel_position_observer_interface.h"
 
-namespace Ui {
+namespace Ui
+{
 class PositionObserverView;
 }
 
@@ -15,7 +16,7 @@ class PositionObserverView : public QWidget
   Q_OBJECT
 
 public:
-  explicit PositionObserverView(QWidget *parent = nullptr);
+  explicit PositionObserverView(QWidget* parent = nullptr);
   ~PositionObserverView();
   void clear();
   void setEnableFileLogging(bool enable);
@@ -24,7 +25,7 @@ public:
   void setPort(int port);
 
 public slots:
-  void updatePosition(const SkydelRuntimePositionObserver::TimedPosition &timedPosition);
+  void updatePosition(const SkydelRuntimePositionObserver::TimedPosition& timedPosition);
   void lockConfiguration(bool lock);
 
 signals:
@@ -36,7 +37,7 @@ signals:
 private:
   void updateLabelValue(QLabel* label, double value);
 
-  Ui::PositionObserverView *m_ui;
+  Ui::PositionObserverView* m_ui;
 };
 
 #endif // POSITION_OBSERVER_VIEW_H

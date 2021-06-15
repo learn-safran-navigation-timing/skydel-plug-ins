@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetVehiclePhasePatternOffsetResult::CmdName = "GetVehiclePhasePatternOffsetResult";
-    const char* const GetVehiclePhasePatternOffsetResult::Documentation = "Result of GetVehiclePhasePatternOffset";
+    const char* const GetVehiclePhasePatternOffsetResult::Documentation = "Result of GetVehiclePhasePatternOffset.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetVehiclePhasePatternOffsetResult);
 

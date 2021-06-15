@@ -6,9 +6,7 @@
 
 #include "ui_simple_plugin_view.h"
 
-SimplePluginView::SimplePluginView(QWidget *parent) :
-  QWidget(parent),
-  m_ui(new Ui::SimplePluginView)
+SimplePluginView::SimplePluginView(QWidget* parent) : QWidget(parent), m_ui(new Ui::SimplePluginView)
 {
   m_ui->setupUi(this);
 

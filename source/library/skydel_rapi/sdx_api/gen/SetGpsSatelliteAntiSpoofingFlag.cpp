@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const SetGpsSatelliteAntiSpoofingFlag::CmdName = "SetGpsSatelliteAntiSpoofingFlag";
-    const char* const SetGpsSatelliteAntiSpoofingFlag::Documentation = "Please note the command GpsSatelliteAntiSpoofingFlag is deprecated since 21.3. You may use GpsAntiSpoofingFlagForSV.\n\nSet GPS Anti-Spoofing Flag";
+    const char* const SetGpsSatelliteAntiSpoofingFlag::Documentation = "Please note the command SetGpsSatelliteAntiSpoofingFlag is deprecated since 21.3. You may use SetGpsAntiSpoofingFlagForSV.\n\nSet GPS Anti-Spoofing Flag";
 
     REGISTER_COMMAND_FACTORY(SetGpsSatelliteAntiSpoofingFlag);
 

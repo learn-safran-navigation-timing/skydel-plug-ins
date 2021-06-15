@@ -17,9 +17,10 @@ public:
   virtual void setConfiguration(const QString& version, const QJsonObject& configuration) = 0;
   virtual QJsonObject getConfiguration() const = 0;
   virtual QWidget* createUI() = 0;
+  virtual void initialize() = 0;
 
   static constexpr auto ID = "SkydelCore";
-  static constexpr auto VERSION = 1;
+  static constexpr auto VERSION = 2;
 };
 
 #endif // SKYDEL_CORE_INTERFACE_H

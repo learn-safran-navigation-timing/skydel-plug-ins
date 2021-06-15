@@ -9,9 +9,7 @@
 #include "imu_data_format.h"
 #include "ui_imu_view.h"
 
-ImuView::ImuView(const ImuConfiguration& configuration, QWidget *parent) :
-  QWidget(parent),
-  m_ui(new Ui::ImuView)
+ImuView::ImuView(const ImuConfiguration& configuration, QWidget* parent) : QWidget(parent), m_ui(new Ui::ImuView)
 {
   m_ui->setupUi(this);
 
@@ -31,12 +29,24 @@ ImuView::ImuView(const ImuConfiguration& configuration, QWidget *parent) :
   setConfiguration(configuration);
 
   connect(m_ui->checkBoxFileLogging, &QCheckBox::clicked, this, &ImuView::checkBoxFileLoggingClicked);
-  connect(m_ui->comboBoxFileLogging, QOverload<int>::of(&QComboBox::activated), this, &ImuView::comboBoxFileLoggingActivated);
+  connect(m_ui->comboBoxFileLogging,
+          QOverload<int>::of(&QComboBox::activated),
+          this,
+          &ImuView::comboBoxFileLoggingActivated);
   connect(m_ui->checkBoxNetworkLogging, &QCheckBox::clicked, this, &ImuView::checkBoxNetworkLoggingClicked);
-  connect(m_ui->comboBoxNetworkLogging, QOverload<int>::of(&QComboBox::activated), this, &ImuView::comboBoxNetworkLoggingActivated);
+  connect(m_ui->comboBoxNetworkLogging,
+          QOverload<int>::of(&QComboBox::activated),
+          this,
+          &ImuView::comboBoxNetworkLoggingActivated);
   connect(m_ui->lineEditNetworkLogging, &QLineEdit::textChanged, this, &ImuView::lineEditNetworkLoggingTextChanged);
-  connect(m_ui->spinBoxNetworkLogging, QOverload<int>::of(&QSpinBox::valueChanged), this, &ImuView::spinBoxNetworkLoggingValueChanged);
-  connect(m_ui->comboBoxGravityModel, QOverload<int>::of(&QComboBox::activated), this, &ImuView::comboBoxGravityModelActivated);
+  connect(m_ui->spinBoxNetworkLogging,
+          QOverload<int>::of(&QSpinBox::valueChanged),
+          this,
+          &ImuView::spinBoxNetworkLoggingValueChanged);
+  connect(m_ui->comboBoxGravityModel,
+          QOverload<int>::of(&QComboBox::activated),
+          this,
+          &ImuView::comboBoxGravityModelActivated);
 }
 
 ImuView::~ImuView()

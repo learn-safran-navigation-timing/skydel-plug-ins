@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetQzssL1SMessage::CmdName = "GetQzssL1SMessage";
-    const char* const GetQzssL1SMessage::Documentation = "Please note the command ModificationToQzssL1SMessage is deprecated since 21.3. You may use MessageModificationToQzssSlas.\n\nGet infos about the L1S Message with this id";
+    const char* const GetQzssL1SMessage::Documentation = "Please note the command GetQzssL1SMessage is deprecated since 21.3. You may use GetMessageModificationToQzssSlas.\n\nGet infos about the L1S Message with this id";
 
     REGISTER_COMMAND_FACTORY(GetQzssL1SMessage);
 

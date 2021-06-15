@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const SetSatellitePseudorangeNoiseGaussMarkov::CmdName = "SetSatellitePseudorangeNoiseGaussMarkov";
-    const char* const SetSatellitePseudorangeNoiseGaussMarkov::Documentation = "Please note the command SatellitePseudorangeNoiseGaussMarkov is deprecated since 21.3. You may use PseudorangeNoiseGaussMarkovForSV.\n\nSet the satellite pseudorange noise Gauss-Markov process attributes.";
+    const char* const SetSatellitePseudorangeNoiseGaussMarkov::Documentation = "Please note the command SetSatellitePseudorangeNoiseGaussMarkov is deprecated since 21.3. You may use SetPseudorangeNoiseGaussMarkovForSV.\n\nSet the satellite pseudorange noise Gauss-Markov process attributes.";
 
     REGISTER_COMMAND_FACTORY(SetSatellitePseudorangeNoiseGaussMarkov);
 

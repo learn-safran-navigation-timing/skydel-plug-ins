@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetModulationTargetResult::CmdName = "GetModulationTargetResult";
-    const char* const GetModulationTargetResult::Documentation = "Result of GetModulationTarget";
+    const char* const GetModulationTargetResult::Documentation = "Result of GetModulationTarget.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetModulationTargetResult);
 

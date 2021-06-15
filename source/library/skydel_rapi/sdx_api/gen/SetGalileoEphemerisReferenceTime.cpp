@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const SetGalileoEphemerisReferenceTime::CmdName = "SetGalileoEphemerisReferenceTime";
-    const char* const SetGalileoEphemerisReferenceTime::Documentation = "Please note the command GalileoEphemerisReferenceTime is deprecated since 21.3. You may use EphemerisReferenceTimeForSV.\n\nSet the Galileo ephemeris reference time";
+    const char* const SetGalileoEphemerisReferenceTime::Documentation = "Please note the command SetGalileoEphemerisReferenceTime is deprecated since 21.3. You may use SetEphemerisReferenceTimeForSV.\n\nSet the Galileo ephemeris reference time";
 
     REGISTER_COMMAND_FACTORY(SetGalileoEphemerisReferenceTime);
 

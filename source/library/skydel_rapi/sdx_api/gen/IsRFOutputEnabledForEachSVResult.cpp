@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsRFOutputEnabledForEachSVResult::CmdName = "IsRFOutputEnabledForEachSVResult";
-    const char* const IsRFOutputEnabledForEachSVResult::Documentation = "Result of IsRFOutputEnabledForEachSV";
+    const char* const IsRFOutputEnabledForEachSVResult::Documentation = "Result of IsRFOutputEnabledForEachSV.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsRFOutputEnabledForEachSVResult);
 

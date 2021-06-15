@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetAllIntTxID::CmdName = "GetAllIntTxID";
-    const char* const GetAllIntTxID::Documentation = "get the ID of all interferences transmitters.";
+    const char* const GetAllIntTxID::Documentation = "Get the ID of all interferences transmitters.";
 
     REGISTER_COMMAND_FACTORY(GetAllIntTxID);
 

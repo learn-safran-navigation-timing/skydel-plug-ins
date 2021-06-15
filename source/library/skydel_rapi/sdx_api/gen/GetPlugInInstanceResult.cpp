@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetPlugInInstanceResult::CmdName = "GetPlugInInstanceResult";
-    const char* const GetPlugInInstanceResult::Documentation = "Result of GetPlugInInstance";
+    const char* const GetPlugInInstanceResult::Documentation = "Result of GetPlugInInstance.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetPlugInInstanceResult);
 

@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetPseudorangeRampForSVResult::CmdName = "GetPseudorangeRampForSVResult";
-    const char* const GetPseudorangeRampForSVResult::Documentation = "Result of GetPseudorangeRampForSV";
+    const char* const GetPseudorangeRampForSVResult::Documentation = "Result of GetPseudorangeRampForSV.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetPseudorangeRampForSVResult);
 

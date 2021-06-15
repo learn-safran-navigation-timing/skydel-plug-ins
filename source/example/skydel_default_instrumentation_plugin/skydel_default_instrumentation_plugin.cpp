@@ -4,7 +4,9 @@
 #include <QFile>
 #include <QTextStream>
 
-void SkydelDefaultInstrumentationPlugin::setLogPath(const QString &path)
+#include <stdexcept>
+
+void SkydelDefaultInstrumentationPlugin::setLogPath(const QString& path)
 {
   m_path = path;
 
@@ -19,29 +21,18 @@ void SkydelDefaultInstrumentationPlugin::setLogPath(const QString &path)
   }
 }
 
-QJsonObject SkydelDefaultInstrumentationPlugin::getConfiguration() const
-{
-  return QJsonObject{};
-}
-
-QWidget* SkydelDefaultInstrumentationPlugin::createUI()
-{
-  return nullptr;
-}
-
 void SkydelDefaultInstrumentationPlugin::setEngineGraph(const std::vector<Node>& nodes, const std::vector<Pipe>& pipes)
 {
-  static const auto indexOf = [&nodes](const Node* node)
-  {
-    return node - &nodes.front();
-  };
-  static constexpr auto typeLabel = [](PipeType type)
-  {
+  static const auto indexOf = [&nodes](const Node* node) { return node - &nodes.front(); };
+  static constexpr auto typeLabel = [](PipeType type) {
     switch (type)
     {
-      case IQBlock: return "IQ";
-      case ModulationOrder: return "MO";
-      default: return "???";
+      case IQBlock:
+        return "IQ";
+      case ModulationOrder:
+        return "MO";
+      default:
+        return "???";
     }
   };
   auto filename = "engine_graph.dot";
@@ -57,13 +48,14 @@ void SkydelDefaultInstrumentationPlugin::setEngineGraph(const std::vector<Node>&
 
     for (const Pipe& pipe : pipes)
     {
-      out << ' ' << indexOf(pipe.input) << " -> " << indexOf(pipe.output) << " [label=\"" << typeLabel(pipe.type) << "\"];\n";
+      out << ' ' << indexOf(pipe.input) << " -> " << indexOf(pipe.output) << " [label=\"" << typeLabel(pipe.type)
+          << "\"];\n";
     }
     out << "}\n";
   }
   else
   {
-    throw std::runtime_error{std::string{"Unable to open "} + filename};
+    throw std::runtime_error {std::string {"Unable to open "} + filename};
   }
 }
 
@@ -79,15 +71,12 @@ void SkydelDefaultInstrumentationPlugin::pushQueueMeasures(const std::vector<Que
     {
       if (!m_queueSizeReference)
         m_queueSizeReference = measure.timestamp;
-      out << (measure.timestamp - m_queueSizeReference.value()) << ',' << measure.pipeName << ',' << measure.size << '\n';
+      out << (measure.timestamp - m_queueSizeReference.value()) << ',' << measure.pipeName << ',' << measure.size
+          << '\n';
     }
   }
   else
   {
-    throw std::runtime_error{std::string{"Unable to open "} + filename};
+    throw std::runtime_error {std::string {"Unable to open "} + filename};
   }
 }
-
-SkydelDefaultInstrumentationPluginFactory::SkydelDefaultInstrumentationPluginFactory(QObject *parent) :
-  QObject(parent)
-{}

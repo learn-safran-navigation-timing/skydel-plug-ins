@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsLOSEnabledResult::CmdName = "IsLOSEnabledResult";
-    const char* const IsLOSEnabledResult::Documentation = "Result of IsLOSEnabled";
+    const char* const IsLOSEnabledResult::Documentation = "Result of IsLOSEnabled.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsLOSEnabledResult);
 

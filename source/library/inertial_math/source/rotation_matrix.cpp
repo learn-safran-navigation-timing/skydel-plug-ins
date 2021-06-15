@@ -1,41 +1,35 @@
 #include "rotation_matrix.h"
 
-namespace Iml {
-
+namespace Iml
+{
 RotationMatrix rotationMatrixForElementalRotation(double angle, Axis axis)
 {
   switch (axis)
   {
     case Axis::X:
     {
-      return { { 1.0,  0.0,             0.0             },
-               { 0.0,  std::cos(angle), std::sin(angle) },
-               { 0.0, -std::sin(angle), std::cos(angle) } };
+      return {{1.0, 0.0, 0.0}, {0.0, std::cos(angle), std::sin(angle)}, {0.0, -std::sin(angle), std::cos(angle)}};
     }
     case Axis::Y:
     {
-      return { { std::cos(angle), 0.0, -std::sin(angle) },
-               { 0.0,             1.0, 0.0            },
-               { std::sin(angle), 0.0, std::cos(angle)  } };
+      return {{std::cos(angle), 0.0, -std::sin(angle)}, {0.0, 1.0, 0.0}, {std::sin(angle), 0.0, std::cos(angle)}};
     }
     case Axis::Z:
     default:
     {
-      return { { std::cos(angle),  std::sin(angle), 0.0 },
-               { -std::sin(angle), std::cos(angle), 0.0 },
-               { 0.0,              0.0,             1.0 } };
+      return {{std::cos(angle), std::sin(angle), 0.0}, {-std::sin(angle), std::cos(angle), 0.0}, {0.0, 0.0, 1.0}};
     }
   }
 }
 
-RotationMatrix rotationMatrixForXYZRotation(const Triplet &angles)
+RotationMatrix rotationMatrixForXYZRotation(const Triplet& angles)
 {
-  return rotationMatrixForElementalRotation(roll(angles),  Axis::X) *
+  return rotationMatrixForElementalRotation(roll(angles), Axis::X) *
          rotationMatrixForElementalRotation(pitch(angles), Axis::Y) *
-         rotationMatrixForElementalRotation(yaw(angles),   Axis::Z);
+         rotationMatrixForElementalRotation(yaw(angles), Axis::Z);
 }
 
-Triplet rotate(const RotationMatrix &rotationMatrix, const Triplet &triplet)
+Triplet rotate(const RotationMatrix& rotationMatrix, const Triplet& triplet)
 {
   return trans(rotationMatrix * trans(triplet));
 }

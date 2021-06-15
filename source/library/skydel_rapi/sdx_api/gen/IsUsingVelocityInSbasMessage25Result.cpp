@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsUsingVelocityInSbasMessage25Result::CmdName = "IsUsingVelocityInSbasMessage25Result";
-    const char* const IsUsingVelocityInSbasMessage25Result::Documentation = "Result of IsUsingVelocityInSbasMessage25";
+    const char* const IsUsingVelocityInSbasMessage25Result::Documentation = "Result of IsUsingVelocityInSbasMessage25.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsUsingVelocityInSbasMessage25Result);
 

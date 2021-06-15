@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetGalileoEphemerisDoubleParamResult::CmdName = "GetGalileoEphemerisDoubleParamResult";
-    const char* const GetGalileoEphemerisDoubleParamResult::Documentation = "Result of GetGalileoEphemerisDoubleParam";
+    const char* const GetGalileoEphemerisDoubleParamResult::Documentation = "Result of GetGalileoEphemerisDoubleParam.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetGalileoEphemerisDoubleParamResult);
 

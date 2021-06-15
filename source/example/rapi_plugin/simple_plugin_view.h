@@ -3,7 +3,8 @@
 
 #include <QWidget>
 
-namespace Ui {
+namespace Ui
+{
 class SimplePluginView;
 }
 
@@ -11,7 +12,7 @@ class SimplePluginView : public QWidget
 {
   Q_OBJECT
 public:
-  explicit SimplePluginView(QWidget *parent = nullptr);
+  explicit SimplePluginView(QWidget* parent = nullptr);
   ~SimplePluginView();
 
   void setNotification(const QString& message, int type);
@@ -22,7 +23,7 @@ signals:
   void typeChanged(int type);
 
 private:
-  Ui::SimplePluginView *m_ui;
+  Ui::SimplePluginView* m_ui;
 };
 
 #endif // SIMPLE_PLUGIN_VIEW_H

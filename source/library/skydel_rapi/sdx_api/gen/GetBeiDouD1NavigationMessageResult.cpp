@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetBeiDouD1NavigationMessageResult::CmdName = "GetBeiDouD1NavigationMessageResult";
-    const char* const GetBeiDouD1NavigationMessageResult::Documentation = "Result of GetBeiDouD1NavigationMessage";
+    const char* const GetBeiDouD1NavigationMessageResult::Documentation = "Result of GetBeiDouD1NavigationMessage.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetBeiDouD1NavigationMessageResult);
 

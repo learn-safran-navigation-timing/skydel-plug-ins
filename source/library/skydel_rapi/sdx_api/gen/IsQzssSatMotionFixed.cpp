@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsQzssSatMotionFixed::CmdName = "IsQzssSatMotionFixed";
-    const char* const IsQzssSatMotionFixed::Documentation = "Please note the command QzssSatMotionFixed is deprecated since 20.9. You may use SatMotionFixed.\n\nTells if the satellite is fixed (True) or not fixed (false).";
+    const char* const IsQzssSatMotionFixed::Documentation = "Please note the command IsQzssSatMotionFixed is deprecated since 20.9. You may use IsSatMotionFixed.\n\nTells if the satellite is fixed (True) or not fixed (false).";
 
     REGISTER_COMMAND_FACTORY(IsQzssSatMotionFixed);
 

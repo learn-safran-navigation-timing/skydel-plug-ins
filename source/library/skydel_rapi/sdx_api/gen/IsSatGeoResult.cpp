@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsSatGeoResult::CmdName = "IsSatGeoResult";
-    const char* const IsSatGeoResult::Documentation = "Result of IsSatGeo";
+    const char* const IsSatGeoResult::Documentation = "Result of IsSatGeo.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsSatGeoResult);
 

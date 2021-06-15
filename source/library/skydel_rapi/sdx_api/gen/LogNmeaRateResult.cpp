@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const LogNmeaRateResult::CmdName = "LogNmeaRateResult";
-    const char* const LogNmeaRateResult::Documentation = "Result of GetLogNmeaRate";
+    const char* const LogNmeaRateResult::Documentation = "Result of GetLogNmeaRate.";
 
     REGISTER_COMMAND_RESULT_FACTORY(LogNmeaRateResult);
 

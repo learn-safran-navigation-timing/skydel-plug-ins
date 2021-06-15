@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetSbasMessagesEnabledResult::CmdName = "GetSbasMessagesEnabledResult";
-    const char* const GetSbasMessagesEnabledResult::Documentation = "Result of GetSbasMessagesEnabled";
+    const char* const GetSbasMessagesEnabledResult::Documentation = "Result of GetSbasMessagesEnabled.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetSbasMessagesEnabledResult);
 

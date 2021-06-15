@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetAlmanacUploadTimeIntervalResult::CmdName = "GetAlmanacUploadTimeIntervalResult";
-    const char* const GetAlmanacUploadTimeIntervalResult::Documentation = "Result of GetAlmanacUploadTimeInterval";
+    const char* const GetAlmanacUploadTimeIntervalResult::Documentation = "Result of GetAlmanacUploadTimeInterval.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetAlmanacUploadTimeIntervalResult);
 

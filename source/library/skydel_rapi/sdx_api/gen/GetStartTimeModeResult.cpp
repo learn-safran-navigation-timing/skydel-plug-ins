@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetStartTimeModeResult::CmdName = "GetStartTimeModeResult";
-    const char* const GetStartTimeModeResult::Documentation = "Result of GetStartTimeMode";
+    const char* const GetStartTimeModeResult::Documentation = "Result of GetStartTimeMode.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetStartTimeModeResult);
 

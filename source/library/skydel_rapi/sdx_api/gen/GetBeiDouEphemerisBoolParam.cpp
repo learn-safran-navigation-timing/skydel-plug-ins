@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetBeiDouEphemerisBoolParam::CmdName = "GetBeiDouEphemerisBoolParam";
-    const char* const GetBeiDouEphemerisBoolParam::Documentation = "Please note the command BeiDouEphemerisBoolParam is deprecated since 21.3. You may use BeiDouEphBoolParamForSV.\n\nGet various boolean parameters in the BeiDou ephemeris\n\n  ParamName\n\"IscB1CdAvailable\"\n\"IscB2adAvailable\"";
+    const char* const GetBeiDouEphemerisBoolParam::Documentation = "Please note the command GetBeiDouEphemerisBoolParam is deprecated since 21.3. You may use GetBeiDouEphBoolParamForSV.\n\nGet various boolean parameters in the BeiDou ephemeris\n\n  ParamName\n\"IscB1CdAvailable\"\n\"IscB2adAvailable\"";
 
     REGISTER_COMMAND_FACTORY(GetBeiDouEphemerisBoolParam);
 

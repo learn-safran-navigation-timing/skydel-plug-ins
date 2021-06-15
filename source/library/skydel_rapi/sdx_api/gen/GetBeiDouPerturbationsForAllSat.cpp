@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetBeiDouPerturbationsForAllSat::CmdName = "GetBeiDouPerturbationsForAllSat";
-    const char* const GetBeiDouPerturbationsForAllSat::Documentation = "Please note the command BeiDouPerturbationsForAllSat is deprecated since 21.3. You may use PerturbationsForAllSat.\n\nGet BeiDou orbit perturbations (Crs, Crc, Cis, Cic, Cus and Cuc) for all satellites.\nAll parameters are zero based index (index 0 => PRN 1, index 1 => PRN 2, etc)";
+    const char* const GetBeiDouPerturbationsForAllSat::Documentation = "Please note the command GetBeiDouPerturbationsForAllSat is deprecated since 21.3. You may use GetPerturbationsForAllSat.\n\nGet BeiDou orbit perturbations (Crs, Crc, Cis, Cic, Cus and Cuc) for all satellites.\nAll parameters are zero based index (index 0 => PRN 1, index 1 => PRN 2, etc)";
 
     REGISTER_COMMAND_FACTORY(GetBeiDouPerturbationsForAllSat);
 

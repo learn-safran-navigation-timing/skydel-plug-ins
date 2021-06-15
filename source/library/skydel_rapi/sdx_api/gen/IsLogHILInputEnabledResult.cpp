@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsLogHILInputEnabledResult::CmdName = "IsLogHILInputEnabledResult";
-    const char* const IsLogHILInputEnabledResult::Documentation = "Result of IsLogHILInputEnabled";
+    const char* const IsLogHILInputEnabledResult::Documentation = "Result of IsLogHILInputEnabled.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsLogHILInputEnabledResult);
 

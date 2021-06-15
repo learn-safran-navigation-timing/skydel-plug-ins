@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const SetSatelliteEphemerisError::CmdName = "SetSatelliteEphemerisError";
-    const char* const SetSatelliteEphemerisError::Documentation = "Please note the command SatelliteEphemerisError is deprecated since 21.3. You may use EphemerisErrorForSV.\n\nSet the satellite ephemeris error.";
+    const char* const SetSatelliteEphemerisError::Documentation = "Please note the command SetSatelliteEphemerisError is deprecated since 21.3. You may use SetEphemerisErrorForSV.\n\nSet the satellite ephemeris error.";
 
     REGISTER_COMMAND_FACTORY(SetSatelliteEphemerisError);
 

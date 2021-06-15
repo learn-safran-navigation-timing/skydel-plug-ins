@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetPerturbationsForAllSatResult::CmdName = "GetPerturbationsForAllSatResult";
-    const char* const GetPerturbationsForAllSatResult::Documentation = "Result of GetPerturbationsForAllSat";
+    const char* const GetPerturbationsForAllSatResult::Documentation = "Result of GetPerturbationsForAllSat.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetPerturbationsForAllSatResult);
 

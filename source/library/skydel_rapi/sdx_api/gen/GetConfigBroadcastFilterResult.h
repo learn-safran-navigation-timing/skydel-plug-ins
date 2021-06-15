@@ -2,15 +2,15 @@
 
 #include <memory>
 #include "command_result.h"
-#include <vector>
 #include "gen/ConfigFilter.h"
+#include <vector>
 
 namespace Sdx
 {
   namespace Cmd
   {
     ///
-    /// Result of GetConfigBroadcastFilter
+    /// Result of GetConfigBroadcastFilter.
     ///
     /// Name   Type               Description
     /// ------ ------------------ ------------------------------------------------------------------------------

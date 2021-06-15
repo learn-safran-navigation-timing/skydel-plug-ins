@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetLeapSecondFutureResult::CmdName = "GetLeapSecondFutureResult";
-    const char* const GetLeapSecondFutureResult::Documentation = "Result of GetLeapSecondFuture";
+    const char* const GetLeapSecondFutureResult::Documentation = "Result of GetLeapSecondFuture.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetLeapSecondFutureResult);
 

@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetMessageModificationToGlonassNavResult::CmdName = "GetMessageModificationToGlonassNavResult";
-    const char* const GetMessageModificationToGlonassNavResult::Documentation = "Result of GetMessageModificationToGlonassNav";
+    const char* const GetMessageModificationToGlonassNavResult::Documentation = "Result of GetMessageModificationToGlonassNav.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetMessageModificationToGlonassNavResult);
 

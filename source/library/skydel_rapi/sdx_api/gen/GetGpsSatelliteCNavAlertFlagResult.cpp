@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetGpsSatelliteCNavAlertFlagResult::CmdName = "GetGpsSatelliteCNavAlertFlagResult";
-    const char* const GetGpsSatelliteCNavAlertFlagResult::Documentation = "Result of GetGpsSatelliteCNavAlertFlag";
+    const char* const GetGpsSatelliteCNavAlertFlagResult::Documentation = "Result of GetGpsSatelliteCNavAlertFlag.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetGpsSatelliteCNavAlertFlagResult);
 

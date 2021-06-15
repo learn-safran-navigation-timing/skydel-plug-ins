@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetGlonassDoubleParamResult::CmdName = "GetGlonassDoubleParamResult";
-    const char* const GetGlonassDoubleParamResult::Documentation = "Result of GetGlonassDoubleParam";
+    const char* const GetGlonassDoubleParamResult::Documentation = "Result of GetGlonassDoubleParam.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetGlonassDoubleParamResult);
 

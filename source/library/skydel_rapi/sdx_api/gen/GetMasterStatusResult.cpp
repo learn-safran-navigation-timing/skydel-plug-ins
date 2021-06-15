@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetMasterStatusResult::CmdName = "GetMasterStatusResult";
-    const char* const GetMasterStatusResult::Documentation = "Result of GetMasterStatus";
+    const char* const GetMasterStatusResult::Documentation = "Result of GetMasterStatus.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetMasterStatusResult);
 

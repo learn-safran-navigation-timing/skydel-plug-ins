@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetSpoofTxCircularResult::CmdName = "GetSpoofTxCircularResult";
-    const char* const GetSpoofTxCircularResult::Documentation = "Result of GetSpoofTxCircular";
+    const char* const GetSpoofTxCircularResult::Documentation = "Result of GetSpoofTxCircular.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetSpoofTxCircularResult);
 

@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetVisibleSVResult::CmdName = "GetVisibleSVResult";
-    const char* const GetVisibleSVResult::Documentation = "Result of GetVisibleSV";
+    const char* const GetVisibleSVResult::Documentation = "Result of GetVisibleSV.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetVisibleSVResult);
 

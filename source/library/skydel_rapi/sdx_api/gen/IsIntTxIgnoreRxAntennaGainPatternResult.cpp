@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsIntTxIgnoreRxAntennaGainPatternResult::CmdName = "IsIntTxIgnoreRxAntennaGainPatternResult";
-    const char* const IsIntTxIgnoreRxAntennaGainPatternResult::Documentation = "Result of IsIntTxIgnoreRxAntennaGainPattern";
+    const char* const IsIntTxIgnoreRxAntennaGainPatternResult::Documentation = "Result of IsIntTxIgnoreRxAntennaGainPattern.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsIntTxIgnoreRxAntennaGainPatternResult);
 

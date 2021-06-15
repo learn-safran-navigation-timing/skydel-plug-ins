@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsWFAntennaElementEnabledResult::CmdName = "IsWFAntennaElementEnabledResult";
-    const char* const IsWFAntennaElementEnabledResult::Documentation = "Result of IsWFAntennaElementEnabled";
+    const char* const IsWFAntennaElementEnabledResult::Documentation = "Result of IsWFAntennaElementEnabled.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsWFAntennaElementEnabledResult);
 

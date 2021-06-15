@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetWFAntennaElementModelResult::CmdName = "GetWFAntennaElementModelResult";
-    const char* const GetWFAntennaElementModelResult::Documentation = "Result of GetWFAntennaElementModel";
+    const char* const GetWFAntennaElementModelResult::Documentation = "Result of GetWFAntennaElementModel.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetWFAntennaElementModelResult);
 

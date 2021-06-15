@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetVersion::CmdName = "GetVersion";
-    const char* const GetVersion::Documentation = "Ask Skydel version.";
+    const char* const GetVersion::Documentation = "Get Skydel version.";
 
     REGISTER_COMMAND_FACTORY(GetVersion);
 

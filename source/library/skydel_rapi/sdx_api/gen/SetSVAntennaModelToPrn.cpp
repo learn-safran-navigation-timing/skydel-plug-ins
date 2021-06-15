@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const SetSVAntennaModelToPrn::CmdName = "SetSVAntennaModelToPrn";
-    const char* const SetSVAntennaModelToPrn::Documentation = "Please note the command SVAntennaModelToPrn is deprecated since 21.3. You may use SVAntennaModelForSV.\n\nSet the antenna model used by the PRN.";
+    const char* const SetSVAntennaModelToPrn::Documentation = "Please note the command SetSVAntennaModelToPrn is deprecated since 21.3. You may use SetSVAntennaModelForSV.\n\nSet the antenna model used by the PRN.";
 
     REGISTER_COMMAND_FACTORY(SetSVAntennaModelToPrn);
 

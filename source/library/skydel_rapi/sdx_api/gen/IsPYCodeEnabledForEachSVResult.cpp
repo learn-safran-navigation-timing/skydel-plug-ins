@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsPYCodeEnabledForEachSVResult::CmdName = "IsPYCodeEnabledForEachSVResult";
-    const char* const IsPYCodeEnabledForEachSVResult::Documentation = "Result of IsPYCodeEnabledForEachSV";
+    const char* const IsPYCodeEnabledForEachSVResult::Documentation = "Result of IsPYCodeEnabledForEachSV.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsPYCodeEnabledForEachSVResult);
 

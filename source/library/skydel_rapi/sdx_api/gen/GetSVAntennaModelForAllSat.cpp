@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetSVAntennaModelForAllSat::CmdName = "GetSVAntennaModelForAllSat";
-    const char* const GetSVAntennaModelForAllSat::Documentation = "Please note the command SVAntennaModelForAllSat is deprecated since 21.3. You may use SVAntennaModelForEachSV.\n\nGet the antenna model for all satellites.";
+    const char* const GetSVAntennaModelForAllSat::Documentation = "Please note the command GetSVAntennaModelForAllSat is deprecated since 21.3. You may use GetSVAntennaModelForEachSV.\n\nGet the antenna model for all satellites.";
 
     REGISTER_COMMAND_FACTORY(GetSVAntennaModelForAllSat);
 

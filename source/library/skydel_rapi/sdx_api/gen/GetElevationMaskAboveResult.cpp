@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetElevationMaskAboveResult::CmdName = "GetElevationMaskAboveResult";
-    const char* const GetElevationMaskAboveResult::Documentation = "Result of GetElevationMaskAbove";
+    const char* const GetElevationMaskAboveResult::Documentation = "Result of GetElevationMaskAbove.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetElevationMaskAboveResult);
 

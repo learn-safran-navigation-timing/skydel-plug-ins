@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const SetGpsSatelliteL2Health::CmdName = "SetGpsSatelliteL2Health";
-    const char* const SetGpsSatelliteL2Health::Documentation = "Please note the command GpsSatelliteL2Health is deprecated since 21.3. You may use GpsL2HealthForSV.\n\nSet GPS L2 health (used with CNAV and CNAV2)";
+    const char* const SetGpsSatelliteL2Health::Documentation = "Please note the command SetGpsSatelliteL2Health is deprecated since 21.3. You may use SetGpsL2HealthForSV.\n\nSet GPS L2 health (used with CNAV and CNAV2)";
 
     REGISTER_COMMAND_FACTORY(SetGpsSatelliteL2Health);
 

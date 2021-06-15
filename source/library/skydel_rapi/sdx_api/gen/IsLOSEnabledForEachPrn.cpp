@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsLOSEnabledForEachPrn::CmdName = "IsLOSEnabledForEachPrn";
-    const char* const IsLOSEnabledForEachPrn::Documentation = "Please note the command EnableLOSForEachPrn is deprecated since 21.3. You may use EnableLosForEachSV.\n\nGet Direct Line Of Sight signal from satellite disabled or enabled. Generally used when only multipaths signal is visible.";
+    const char* const IsLOSEnabledForEachPrn::Documentation = "Please note the command IsLOSEnabledForEachPrn is deprecated since 21.3. You may use IsLOSEnabledForEachSV.\n\nGet Direct Line Of Sight signal from satellite disabled or enabled. Generally used when only multipaths signal is visible.";
 
     REGISTER_COMMAND_FACTORY(IsLOSEnabledForEachPrn);
 

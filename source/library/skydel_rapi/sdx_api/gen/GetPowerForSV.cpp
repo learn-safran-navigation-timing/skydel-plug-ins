@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetPowerForSV::CmdName = "GetPowerForSV";
-    const char* const GetPowerForSV::Documentation = "Get power offset for specified satellite SV ID.";
+    const char* const GetPowerForSV::Documentation = "Get the power offset for specified satellite SV ID.";
 
     REGISTER_COMMAND_FACTORY(GetPowerForSV);
 

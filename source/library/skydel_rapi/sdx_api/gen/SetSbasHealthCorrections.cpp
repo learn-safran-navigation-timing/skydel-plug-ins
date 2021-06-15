@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const SetSbasHealthCorrections::CmdName = "SetSbasHealthCorrections";
-    const char* const SetSbasHealthCorrections::Documentation = "Apply correction flag for a SBAS satellite";
+    const char* const SetSbasHealthCorrections::Documentation = "Please note the command SetSbasHealthCorrections is deprecated since 21.5. You may use SetSbasSVCorrectionsHealth.\n\nApply correction flag for a SBAS satellite";
 
     REGISTER_COMMAND_FACTORY(SetSbasHealthCorrections);
 

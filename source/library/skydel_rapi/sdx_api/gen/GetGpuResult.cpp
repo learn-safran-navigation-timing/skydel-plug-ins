@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetGpuResult::CmdName = "GetGpuResult";
-    const char* const GetGpuResult::Documentation = "Result of GetGpu";
+    const char* const GetGpuResult::Documentation = "Result of GetGpu.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetGpuResult);
 

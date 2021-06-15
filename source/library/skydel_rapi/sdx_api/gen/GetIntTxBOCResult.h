@@ -2,15 +2,15 @@
 
 #include <memory>
 #include "command_result.h"
-#include <string>
 #include "sdx_optional.h"
+#include <string>
 
 namespace Sdx
 {
   namespace Cmd
   {
     ///
-    /// Result of GetIntTxBOC
+    /// Result of GetIntTxBOC.
     ///
     /// Name           Type         Description
     /// -------------- ------------ -------------------------------------------------------------------------

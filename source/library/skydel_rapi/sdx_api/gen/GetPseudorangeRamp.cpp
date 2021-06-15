@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetPseudorangeRamp::CmdName = "GetPseudorangeRamp";
-    const char* const GetPseudorangeRamp::Documentation = "Please note the command PseudorangeRamp is deprecated since 21.3. You may use PseudorangeRampForSV.\n\nGet PSR ramp event. This function lets user change the pseudorange of any satellite.\nIf PRN is set to 0, the change is applied to all satellites.\n\n         Hold Start Time\n         |     Hold Stop Time\n         |     |\n         ...........\n       ..       ...\n       ..        ...\n  .......           .........> Time\n      |           |\n      Start Time      Stop Time\n";
+    const char* const GetPseudorangeRamp::Documentation = "Please note the command GetPseudorangeRamp is deprecated since 21.3. You may use GetPseudorangeRampForSV.\n\nGet PSR ramp event. This function lets user change the pseudorange of any satellite.\nIf PRN is set to 0, the change is applied to all satellites.\n\n         Hold Start Time\n         |     Hold Stop Time\n         |     |\n         ...........\n       ..       ...\n       ..        ...\n  .......           .........> Time\n      |           |\n      Start Time      Stop Time\n";
 
     REGISTER_COMMAND_FACTORY(GetPseudorangeRamp);
 

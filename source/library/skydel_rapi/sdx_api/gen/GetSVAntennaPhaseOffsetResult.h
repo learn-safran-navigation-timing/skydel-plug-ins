@@ -2,18 +2,18 @@
 
 #include <memory>
 #include "command_result.h"
-#include <vector>
-#include "sdx_optional.h"
-#include <string>
 #include "gen/AntennaPatternType.h"
 #include "gen/GNSSBand.h"
+#include "sdx_optional.h"
+#include <string>
+#include <vector>
 
 namespace Sdx
 {
   namespace Cmd
   {
     ///
-    /// Result of GetSVAntennaPhaseOffset
+    /// Result of GetSVAntennaPhaseOffset.
     ///
     /// Name        Type               Description
     /// ----------- ------------------ ----------------------------------------------------------------------------------------------------------------------------------

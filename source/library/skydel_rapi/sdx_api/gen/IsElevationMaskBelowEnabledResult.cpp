@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsElevationMaskBelowEnabledResult::CmdName = "IsElevationMaskBelowEnabledResult";
-    const char* const IsElevationMaskBelowEnabledResult::Documentation = "Result of IsElevationMaskBelowEnabled";
+    const char* const IsElevationMaskBelowEnabledResult::Documentation = "Result of IsElevationMaskBelowEnabled.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsElevationMaskBelowEnabledResult);
 

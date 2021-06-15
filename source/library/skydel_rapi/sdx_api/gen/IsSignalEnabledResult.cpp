@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsSignalEnabledResult::CmdName = "IsSignalEnabledResult";
-    const char* const IsSignalEnabledResult::Documentation = "Result of IsSignalEnabled";
+    const char* const IsSignalEnabledResult::Documentation = "Result of IsSignalEnabled.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsSignalEnabledResult);
 

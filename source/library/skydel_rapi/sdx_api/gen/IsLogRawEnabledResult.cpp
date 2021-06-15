@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsLogRawEnabledResult::CmdName = "IsLogRawEnabledResult";
-    const char* const IsLogRawEnabledResult::Documentation = "Result of IsLogRawEnabled";
+    const char* const IsLogRawEnabledResult::Documentation = "Result of IsLogRawEnabled.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsLogRawEnabledResult);
 

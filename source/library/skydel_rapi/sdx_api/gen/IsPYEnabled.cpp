@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsPYEnabled::CmdName = "IsPYEnabled";
-    const char* const IsPYEnabled::Documentation = "Please note the command EnablePY is deprecated since 21.3. You may use EnablePYCodeForSV.\n\nTells if P(Y)-Code is enabled for the specified satellite PRN. See EnablePY description for allowed signals.";
+    const char* const IsPYEnabled::Documentation = "Please note the command IsPYEnabled is deprecated since 21.3. You may use IsPYCodeEnabledForSV.\n\nTells if P(Y)-Code is enabled for the specified satellite PRN. See IsPYEnabled description for allowed signals.";
 
     REGISTER_COMMAND_FACTORY(IsPYEnabled);
 

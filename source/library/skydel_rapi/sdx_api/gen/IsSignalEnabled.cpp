@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsSignalEnabled::CmdName = "IsSignalEnabled";
-    const char* const IsSignalEnabled::Documentation = "Please note the command EnableSignal is deprecated since 21.3. You may use EnableSignalForSV.\n\nTells if the signal is enabled or disabled. See EnableSignal description for allowed signals.";
+    const char* const IsSignalEnabled::Documentation = "Please note the command IsSignalEnabled is deprecated since 21.3. You may use IsSignalEnabledForSV.\n\nTells if the signal is enabled or disabled. See IsSignalEnabled description for allowed signals.";
 
     REGISTER_COMMAND_FACTORY(IsSignalEnabled);
 

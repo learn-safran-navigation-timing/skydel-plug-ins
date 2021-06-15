@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetNavICNavAlertFlagForSVResult::CmdName = "GetNavICNavAlertFlagForSVResult";
-    const char* const GetNavICNavAlertFlagForSVResult::Documentation = "Result of GetNavICNavAlertFlagForSV";
+    const char* const GetNavICNavAlertFlagForSVResult::Documentation = "Result of GetNavICNavAlertFlagForSV.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetNavICNavAlertFlagForSVResult);
 

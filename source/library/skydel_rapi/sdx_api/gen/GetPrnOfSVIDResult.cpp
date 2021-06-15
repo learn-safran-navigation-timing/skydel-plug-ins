@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetPrnOfSVIDResult::CmdName = "GetPrnOfSVIDResult";
-    const char* const GetPrnOfSVIDResult::Documentation = "Result of GetPrnOfSVID";
+    const char* const GetPrnOfSVIDResult::Documentation = "Result of GetPrnOfSVID.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetPrnOfSVIDResult);
 

@@ -2,15 +2,15 @@
 
 #include <memory>
 #include "command_base.h"
-#include <string>
 #include "gen/RIC.h"
+#include <string>
 
 namespace Sdx
 {
   namespace Cmd
   {
     ///
-    /// Please note the command SatelliteEphemerisError is deprecated since 21.3. You may use EphemerisErrorForSV.
+    /// Please note the command SetSatelliteEphemerisError is deprecated since 21.3. You may use SetEphemerisErrorForSV.
     /// 
     /// Set the satellite ephemeris error.
     ///

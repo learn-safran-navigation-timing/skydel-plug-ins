@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetGpsEphemerisReferenceTime::CmdName = "GetGpsEphemerisReferenceTime";
-    const char* const GetGpsEphemerisReferenceTime::Documentation = "Please note the command GpsEphemerisReferenceTime is deprecated since 21.3. You may use EphemerisReferenceTimeForSV.\n\nGet the GPS ephemeris reference time";
+    const char* const GetGpsEphemerisReferenceTime::Documentation = "Please note the command GetGpsEphemerisReferenceTime is deprecated since 21.3. You may use GetEphemerisReferenceTimeForSV.\n\nGet the GPS ephemeris reference time";
 
     REGISTER_COMMAND_FACTORY(GetGpsEphemerisReferenceTime);
 

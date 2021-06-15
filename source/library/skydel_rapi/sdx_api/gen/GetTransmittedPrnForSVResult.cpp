@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetTransmittedPrnForSVResult::CmdName = "GetTransmittedPrnForSVResult";
-    const char* const GetTransmittedPrnForSVResult::Documentation = "Result of GetTransmittedPrnForSV";
+    const char* const GetTransmittedPrnForSVResult::Documentation = "Result of GetTransmittedPrnForSV.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetTransmittedPrnForSVResult);
 

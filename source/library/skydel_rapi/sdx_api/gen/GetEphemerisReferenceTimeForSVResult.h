@@ -2,15 +2,15 @@
 
 #include <memory>
 #include "command_result.h"
-#include <string>
 #include "date_time.h"
+#include <string>
 
 namespace Sdx
 {
   namespace Cmd
   {
     ///
-    /// Result of GetEphemerisReferenceTimeForSV
+    /// Result of GetEphemerisReferenceTimeForSV.
     ///
     /// Name   Type     Description
     /// ------ -------- --------------------------------------------------------------

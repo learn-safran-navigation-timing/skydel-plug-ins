@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsLogDownlinkEnabledResult::CmdName = "IsLogDownlinkEnabledResult";
-    const char* const IsLogDownlinkEnabledResult::Documentation = "Result of IsLogDownlinkEnabled";
+    const char* const IsLogDownlinkEnabledResult::Documentation = "Result of IsLogDownlinkEnabled.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsLogDownlinkEnabledResult);
 

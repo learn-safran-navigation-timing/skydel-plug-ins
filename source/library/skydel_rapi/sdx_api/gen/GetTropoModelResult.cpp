@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetTropoModelResult::CmdName = "GetTropoModelResult";
-    const char* const GetTropoModelResult::Documentation = "Result of GetTropoModel";
+    const char* const GetTropoModelResult::Documentation = "Result of GetTropoModel.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetTropoModelResult);
 

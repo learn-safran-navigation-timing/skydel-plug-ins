@@ -9,7 +9,7 @@
 
 ImuConfiguration::ImuConfiguration()
 {
-  m_configuration.insert("fileLoggingEnabled",  true);
+  m_configuration.insert("fileLoggingEnabled", true);
   m_configuration.insert("fileLoggingFormat", ImuDataFormat::CSV);
 
   m_configuration.insert("networkLoggingEnabled", false);
@@ -26,13 +26,18 @@ void ImuConfiguration::setConfiguration(SkydelNotifierInterface* notifier, const
   {
     if (!configuration.contains(key))
     {
-      notifier->notify("During configuration transfer from Skydel to plug-in, the key " + key.toStdString() + " is expected by missing", SkydelNotifierInterface::Type::WARNING);
+      notifier->notify("During configuration transfer from Skydel to plug-in, the key " + key.toStdString() +
+                         " is expected by missing",
+                       SkydelNotifierInterface::Type::WARNING);
       continue;
     }
 
     if (m_configuration.value(key).type() != configuration.value(key).type())
     {
-      notifier->notify("During configuration transfer from Skydel to plug-in, the expected type for configuration key " + key.toStdString() + " mismatch the expected type", SkydelNotifierInterface::Type::WARNING);
+      notifier->notify(
+        "During configuration transfer from Skydel to plug-in, the expected type for configuration key " +
+          key.toStdString() + " mismatch the expected type",
+        SkydelNotifierInterface::Type::WARNING);
       continue;
     }
 
@@ -45,7 +50,7 @@ QJsonValue ImuConfiguration::getValue(const QString& key) const
   auto value = m_configuration.value(key);
 
   if (value.type() == QJsonValue::Undefined)
-    throw std::runtime_error("ImuConfiguration::getValue - Key " + key.toStdString() + " does not exist" );
+    throw std::runtime_error("ImuConfiguration::getValue - Key " + key.toStdString() + " does not exist");
 
   return value;
 }
@@ -53,7 +58,7 @@ QJsonValue ImuConfiguration::getValue(const QString& key) const
 void ImuConfiguration::setValue(SkydelNotifierInterface* notifier, const QString& key, const QJsonValue& value)
 {
   if (!m_configuration.contains(key))
-    throw std::runtime_error("ImuConfiguration::setValue - Key " + key.toStdString() + " does not exist" );
+    throw std::runtime_error("ImuConfiguration::setValue - Key " + key.toStdString() + " does not exist");
 
   m_configuration.insert(key, value);
   notifier->setDirty();

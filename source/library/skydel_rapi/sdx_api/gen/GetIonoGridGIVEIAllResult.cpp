@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetIonoGridGIVEIAllResult::CmdName = "GetIonoGridGIVEIAllResult";
-    const char* const GetIonoGridGIVEIAllResult::Documentation = "Result of GetIonoGridGIVEIAll";
+    const char* const GetIonoGridGIVEIAllResult::Documentation = "Result of GetIonoGridGIVEIAll.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetIonoGridGIVEIAllResult);
 

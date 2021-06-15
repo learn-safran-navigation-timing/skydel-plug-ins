@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const SetGlonassSatelliteAlmanacUnhealthyFlag::CmdName = "SetGlonassSatelliteAlmanacUnhealthyFlag";
-    const char* const SetGlonassSatelliteAlmanacUnhealthyFlag::Documentation = "Please note the command GlonassSatelliteAlmanacUnhealthyFlag is deprecated since 21.3. You may use GlonassAlmanacUnhealthyFlagForSV.\n\nSet GLONASS satellite Almanac Unhealthy Flag Cn";
+    const char* const SetGlonassSatelliteAlmanacUnhealthyFlag::Documentation = "Please note the command SetGlonassSatelliteAlmanacUnhealthyFlag is deprecated since 21.3. You may use SetGlonassAlmanacUnhealthyFlagForSV.\n\nSet GLONASS satellite Almanac Unhealthy Flag Cn";
 
     REGISTER_COMMAND_FACTORY(SetGlonassSatelliteAlmanacUnhealthyFlag);
 

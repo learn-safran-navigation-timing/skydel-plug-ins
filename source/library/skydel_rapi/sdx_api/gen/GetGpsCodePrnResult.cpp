@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetGpsCodePrnResult::CmdName = "GetGpsCodePrnResult";
-    const char* const GetGpsCodePrnResult::Documentation = "Result of GetGpsCodePrn";
+    const char* const GetGpsCodePrnResult::Documentation = "Result of GetGpsCodePrn.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetGpsCodePrnResult);
 

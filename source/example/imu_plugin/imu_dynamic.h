@@ -13,8 +13,8 @@
 class ImuDynamic : public SkydelRuntimePositionObserver
 {
 public:
-  explicit ImuDynamic(const ImuConfiguration& configuration, const QString &logPath);
-  void pushPosition(const TimedPosition &p) override;
+  explicit ImuDynamic(const ImuConfiguration& configuration, const QString& logPath);
+  void pushPosition(const TimedPosition& p) override;
   void connectToView(QWidget*) override {}
 
 private:

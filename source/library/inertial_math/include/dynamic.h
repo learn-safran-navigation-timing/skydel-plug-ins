@@ -7,13 +7,13 @@
 #include "gravity.h"
 #include "triplet.h"
 
-namespace Iml {
-
+namespace Iml
+{
 struct RawPositionData
 {
-  int64_t time;           // millisecond
-  double  position[3];    // meter
-  double  orientation[3]; // radian
+  int64_t time;          // millisecond
+  double position[3];    // meter
+  double orientation[3]; // radian
 };
 
 struct InertialData
@@ -31,7 +31,7 @@ class BodyDynamic
 public:
   virtual inline InertialData getPosition() const { return m_datas[1]; }
   inline bool isReady() const { return m_datas.size() == m_bufferCapacity; }
-  void pushPosition(const RawPositionData &rawPosition);
+  void pushPosition(const RawPositionData& rawPosition);
 
 private:
   Triplet m_phaseCorrection;

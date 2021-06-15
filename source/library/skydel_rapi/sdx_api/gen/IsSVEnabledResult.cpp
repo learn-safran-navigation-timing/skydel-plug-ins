@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsSVEnabledResult::CmdName = "IsSVEnabledResult";
-    const char* const IsSVEnabledResult::Documentation = "Result of IsSVEnabled";
+    const char* const IsSVEnabledResult::Documentation = "Result of IsSVEnabled.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsSVEnabledResult);
 

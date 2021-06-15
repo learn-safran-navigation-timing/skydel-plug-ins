@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsDelayAppliedInSbasResult::CmdName = "IsDelayAppliedInSbasResult";
-    const char* const IsDelayAppliedInSbasResult::Documentation = "Result of IsDelayAppliedInSbas";
+    const char* const IsDelayAppliedInSbasResult::Documentation = "Result of IsDelayAppliedInSbas.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsDelayAppliedInSbasResult);
 

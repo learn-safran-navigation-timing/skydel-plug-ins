@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsIonoOffsetEnabledResult::CmdName = "IsIonoOffsetEnabledResult";
-    const char* const IsIonoOffsetEnabledResult::Documentation = "Result of IsIonoOffsetEnabled";
+    const char* const IsIonoOffsetEnabledResult::Documentation = "Result of IsIonoOffsetEnabled.";
 
     REGISTER_COMMAND_RESULT_FACTORY(IsIonoOffsetEnabledResult);
 

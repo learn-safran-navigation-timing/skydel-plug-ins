@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const DataFolderResult::CmdName = "DataFolderResult";
-    const char* const DataFolderResult::Documentation = "Result of the command \"GetDataFolder\"";
+    const char* const DataFolderResult::Documentation = "Result of GetDataFolder.";
 
     REGISTER_COMMAND_RESULT_FACTORY(DataFolderResult);
 

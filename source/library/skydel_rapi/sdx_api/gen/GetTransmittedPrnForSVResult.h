@@ -2,23 +2,23 @@
 
 #include <memory>
 #include "command_result.h"
-#include <string>
 #include <map>
+#include <string>
 
 namespace Sdx
 {
   namespace Cmd
   {
     ///
-    /// Result of GetTransmittedPrnForSV
+    /// Result of GetTransmittedPrnForSV.
     ///
     /// Name          Type            Description
-    /// ------------- --------------- ------------------------------------------------------------------------------
+    /// ------------- --------------- -------------------------------------------------------------------------------
     /// SvId          int             Satellite SV ID.
     /// SignalPrnDict dict string:int A dictionary of signal prn pairs.
-    ///                               Accepted keys are: "L1CA", "L1C", "L2C", "L5", "G1", "G2", "E1", "E6BC", "B1",
-    ///                                                  "B2", "B1C", "B2a", "QZSSL1CA", "QZSSL1C", "QZSSL5",
-    ///                                                  "QZSSL1S", "QZSSL5S" and "NAVICL5"
+    ///                               Accepted keys are: "L1CA", "L1C", "L2C", "L5", "E1", "E6BC", "B1", "B2", "B1C",
+    ///                                                  "B2a", "QZSSL1CA", "QZSSL1C", "QZSSL5", "QZSSL1S", "QZSSL5S"
+    ///                                                  and "NAVICL5"
     ///
 
     class GetTransmittedPrnForSVResult;

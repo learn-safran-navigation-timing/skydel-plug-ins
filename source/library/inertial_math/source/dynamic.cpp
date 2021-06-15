@@ -4,16 +4,16 @@
 #include "sensor.h"
 #include "transformation.h"
 
-namespace Iml {
-
-void BodyDynamic::pushPosition(const RawPositionData &rawPosition)
+namespace Iml
 {
-  InertialData data = { static_cast<int64_t>(rawPosition.time),
-                        rawPosition.position,
-                        { 0.0, 0.0, 0.0 },
-                        { 0.0, 0.0, 0.0 },
-                        { rawPosition.orientation },
-                        { 0.0, 0.0, 0.0 } };
+void BodyDynamic::pushPosition(const RawPositionData& rawPosition)
+{
+  InertialData data = {static_cast<int64_t>(rawPosition.time),
+                       rawPosition.position,
+                       {0.0, 0.0, 0.0},
+                       {0.0, 0.0, 0.0},
+                       {rawPosition.orientation},
+                       {0.0, 0.0, 0.0}};
 
   if (!m_datas.empty())
   {
@@ -42,9 +42,9 @@ void BodyDynamic::pushPosition(const RawPositionData &rawPosition)
   }
 }
 
-BodyInertialDynamic::BodyInertialDynamic(GravityModel gravityModel) :
-  m_gravityModel(gravityModel)
-{}
+BodyInertialDynamic::BodyInertialDynamic(GravityModel gravityModel) : m_gravityModel(gravityModel)
+{
+}
 
 InertialData BodyInertialDynamic::getPosition() const
 {
@@ -54,8 +54,12 @@ InertialData BodyInertialDynamic::getPosition() const
   {
     position = BodyDynamic::getPosition();
     auto llaPosition = ecefToLla(position.position);
-    position.acceleration = idealAccelerometer(llaPosition, position.velocity, position.acceleration, position.attitude, m_gravityModel);
-    position.angularVelocity = idealGyroscope(llaPosition, position.velocity, position.attitude, position.angularVelocity);
+    position.acceleration =
+      idealAccelerometer(llaPosition, position.velocity, position.acceleration, position.attitude, m_gravityModel);
+    position.angularVelocity = idealGyroscope(llaPosition,
+                                              position.velocity,
+                                              position.attitude,
+                                              position.angularVelocity);
   }
 
   return position;

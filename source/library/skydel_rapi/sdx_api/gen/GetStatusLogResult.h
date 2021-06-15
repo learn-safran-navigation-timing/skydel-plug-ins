@@ -2,15 +2,15 @@
 
 #include <memory>
 #include "command_result.h"
-#include <vector>
 #include "gen/LogRecord.h"
+#include <vector>
 
 namespace Sdx
 {
   namespace Cmd
   {
     ///
-    /// Represents a log, each element of the same record share the same index
+    /// Result of GetStatusLog.
     ///
     /// Name    Type            Description
     /// ------- --------------- ----------------

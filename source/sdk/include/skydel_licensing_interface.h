@@ -1,6 +1,8 @@
 #ifndef SKYDEL_LICENSING_INTERFACE_H
 #define SKYDEL_LICENSING_INTERFACE_H
 
+#include <QString>
+
 #include "internal/skydel_licensing_base.h"
 
 class SkydelLicensingInterface : public SkydelLicensingBase
@@ -8,8 +10,8 @@ class SkydelLicensingInterface : public SkydelLicensingBase
 public:
   virtual ~SkydelLicensingInterface() = default;
 
-  void exchangeKey(unsigned char* ciphertext, unsigned char* nonce);
-  virtual bool validateSerialNumber(const char* serialNumber) = 0;
+  void exchangeKey(QByteArray& ciphertext, QByteArray& nonce);
+  virtual QString getPluginIID() const = 0;
 
   static constexpr auto ID = "SkydelLicensing";
   static constexpr auto VERSION = 1;

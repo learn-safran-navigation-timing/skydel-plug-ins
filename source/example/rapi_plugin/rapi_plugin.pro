@@ -1,9 +1,5 @@
-! include (../common.pri) {
-    error( "Couldn't find the common.pri file!" )
-}
-! include (../../library/skydel_rapi/skydel_rapi.pri) {
-    error( "Couldn't find the skydel_rapi.pri file!" )
-}
+include (../common.pri)
+include (../../library/skydel_rapi/skydel_rapi.pri)
 
 QT += gui widgets
 
@@ -15,10 +11,10 @@ HEADERS += \
     rapi_plugin.h \
     rapi_plugin_view.h
 
-DISTFILES += \
-    rapi_plugin.json
-
 FORMS += \
     rapi_plugin_view.ui
+
+DISTFILES += \
+    rapi_plugin.json
 
 LIBS += $$SKYDEL_RAPI

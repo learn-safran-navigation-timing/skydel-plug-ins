@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetGpsCNavMessage::CmdName = "GetGpsCNavMessage";
-    const char* const GetGpsCNavMessage::Documentation = "Please note the command ModificationToGpsCNavMessage is deprecated since 21.3. You may use MessageModificationToGpsCNav.\n\nGet infos about the CNAV Message with this id";
+    const char* const GetGpsCNavMessage::Documentation = "Please note the command GetGpsCNavMessage is deprecated since 21.3. You may use GetMessageModificationToGpsCNav.\n\nGet infos about the CNAV Message with this id";
 
     REGISTER_COMMAND_FACTORY(GetGpsCNavMessage);
 

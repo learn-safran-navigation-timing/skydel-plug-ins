@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetIntTxPulseResult::CmdName = "GetIntTxPulseResult";
-    const char* const GetIntTxPulseResult::Documentation = "Result of GetIntTxPulse";
+    const char* const GetIntTxPulseResult::Documentation = "Result of GetIntTxPulse.";
 
     REGISTER_COMMAND_RESULT_FACTORY(GetIntTxPulseResult);
 

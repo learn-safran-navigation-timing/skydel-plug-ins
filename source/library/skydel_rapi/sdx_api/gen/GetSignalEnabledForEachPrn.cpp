@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetSignalEnabledForEachPrn::CmdName = "GetSignalEnabledForEachPrn";
-    const char* const GetSignalEnabledForEachPrn::Documentation = "Please note the command EnableSignalForEachPrn is deprecated since 21.3. You may use EnableSignalForEachSV.\n\nTells if the signal is enabled or disabled for each satellite. See EnableSignalForEachPrn description for allowed signals.";
+    const char* const GetSignalEnabledForEachPrn::Documentation = "Please note the command GetSignalEnabledForEachPrn is deprecated since 21.3. You may use IsSignalEnabledForEachSV.\n\nTells if the signal is enabled or disabled for each satellite. See GetSignalEnabledForEachPrn description for allowed signals.";
 
     REGISTER_COMMAND_FACTORY(GetSignalEnabledForEachPrn);
 
