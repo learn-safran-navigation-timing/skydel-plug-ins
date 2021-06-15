@@ -1,6 +1,7 @@
 #pragma once
 
 #include <map>
+#include <stdexcept>
 #include <vector>
 
 #include "rapidjson/document.h"
