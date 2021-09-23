@@ -27,5 +27,5 @@ jobs:
 
       - name: Build
         run: |
-          /opt/Qt/bin/qmake skydel_plugin.pro -r CONFIG+=release
+          $Qt5_DIR/qmake skydel_plugin.pro -r CONFIG+=release
           make -f Makefile
