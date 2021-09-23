@@ -1,0 +1,40 @@
+name: Windows Build
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository and submodules
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Cache Qt
+        id: cache-qt
+        uses: actions/cache@v1
+        with:
+          path: ../Qt
+          key: ${{ runner.os }}-QtCache
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v2
+        with:
+          cached: ${{ steps.cache-qt.outputs.cache-hit }}
+          version: '5.12.3'
+          host: 'windows'
+          arch: 'win64_msvc2017_64'
+          
+      - name: Build
+        run: |
+          call "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
+          call C:\\Qt\\5.12.3\\msvc2017_64\\bin\\qmake skydel_plugin.pro -r CONFIG+=release  -spec win32-msvc
+          call C:\\Qt\\Tools\\QtCreator\\bin\\jom -f Makefile
+          
