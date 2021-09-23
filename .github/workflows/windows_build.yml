@@ -31,7 +31,7 @@ jobs:
           version: '5.12.3'
           host: 'windows'
           arch: 'win64_msvc2017_64'
-          tools: 'qt.tools.qtcreator'
+          tools: 'tools_qtcreator,4.13.2-0,qt.tools.qtcreator'
 
       - name: Setup
         uses: ilammy/msvc-dev-cmd@v1
@@ -43,8 +43,8 @@ jobs:
 
       - name: Jom
         run: |
-          cd ${{ env.Qt5_Dir }}/../.. && dir
-      #    call ${{ env.GITHUB_WORKSPACE }}/Qt/5.12.3/Tools/QtCreator/jom/bin/jom -f Makefile
+          cd ${{ env.Qt5_Dir }}/../../ && dir && cd ${{ env.Qt5_Dir }}/../../Tools/QtCreator && dir
+          call ${{ env.Qt5_Dir }}/../../Tools/QtCreator/bin/jom -f Makefile
         shell: cmd
 
       #- name: Setup Build Env
