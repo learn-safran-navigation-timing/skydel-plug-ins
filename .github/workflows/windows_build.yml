@@ -42,8 +42,7 @@ jobs:
 
       - name: Jom
         run: |
-          cd /Qt/5.12.3/Tools/QtCreator
-          dir
+          cd ${{ env.Qt5_Dir }}/../.. && dir
       #    call ${{ env.GITHUB_WORKSPACE }}/Qt/5.12.3/Tools/QtCreator/jom/bin/jom -f Makefile
         shell: cmd
 
