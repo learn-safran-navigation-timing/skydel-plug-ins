@@ -35,6 +35,6 @@ jobs:
       - name: Build
         run: |
           "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
-          C:\\Qt\\5.12.3\\msvc2017_64\\bin\\qmake skydel_plugin.pro -r CONFIG+=release  -spec win32-msvc
-          C:\\Qt\\Tools\\QtCreator\\bin\\jom -f Makefile
+          $Qt5_Dir\bin\qmake skydel_plugin.pro -r CONFIG+=release  -spec win32-msvc
+          $Qt5_Dir\..\Tools\\QtCreator\bin\jom -f Makefile
           
