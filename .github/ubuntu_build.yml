@@ -1,12 +1,6 @@
 name: Ubuntu build
 
-on:
-  push:
-    branches:
-      - any
-  pull_request:
-    branches:
-      - main
+on: [push, pull_request]
 
 jobs:
   build:
