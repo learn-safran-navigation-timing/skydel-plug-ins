@@ -32,13 +32,20 @@ jobs:
           host: 'windows'
           arch: 'win64_msvc2017_64'
 
-      - name: Setup Build Env
-        run: call "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools\\VC\\Auxiliary\\Build\\vcvars64.bat"
-        shell: cmd
+    - name: Build
+    - uses: ilammy/msvc-dev-cmd@v1
+      run: |
+         call ${{ env.Qt5_Dir }}"\\bin\\qmake skydel_plugin.pro" -r CONFIG+=release -spec win32-msvc
+      shell: cmd
 
-      - name: QMake
-        run: ${{ env.Qt5_Dir }}"\\bin\\qmake skydel_plugin.pro" -r CONFIG+=release -spec win32-msvc
+      #- name: Setup Build Env
+      #             C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat
+      #  run: call "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools\\VC\\Auxiliary\\Build\\vcvars64.bat"
+      #  shell: cmd
 
-      - name: Build
-        run: ${{ env.Qt5_Dir }}"\\..\\Tools\\QtCreator\\bin\\jom" -f Makefile
+      #- name: QMake
+      #  run: ${{ env.Qt5_Dir }}"\\bin\\qmake skydel_plugin.pro" -r CONFIG+=release -spec win32-msvc
+
+      #- name: Build
+      #  run: ${{ env.Qt5_Dir }}"\\..\\Tools\\QtCreator\\bin\\jom" -f Makefile
           
