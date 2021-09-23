@@ -32,10 +32,8 @@ jobs:
           host: 'windows'
           arch: 'win64_msvc2017_64'
 
-      #- name: Setup
-      #  uses: ilammy/msvc-dev-cmd@v1
-      #  with:
-      #    toolset: 15.XX
+      - name: Setup
+        uses: ilammy/msvc-dev-cmd@v1
 
       - name: Build
         run: |
