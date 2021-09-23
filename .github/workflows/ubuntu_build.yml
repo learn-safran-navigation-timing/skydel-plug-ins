@@ -25,6 +25,9 @@ jobs:
           cached: ${{ steps.cache-qt.outputs.cache-hit }}
           version: '5.12.3'
 
+      - name: Install uuid-dev
+        run: sudo apt-get install uuid-dev
+
       - name: Build
         run: |
           $Qt5_DIR/bin/qmake skydel_plugin.pro -r CONFIG+=release
