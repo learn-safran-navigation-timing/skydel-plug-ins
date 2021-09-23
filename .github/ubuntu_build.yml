@@ -3,7 +3,7 @@ name: Ubuntu build
 on:
   push:
     branches:
-      - main
+      - any
   pull_request:
     branches:
       - main
