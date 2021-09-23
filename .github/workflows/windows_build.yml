@@ -35,10 +35,16 @@ jobs:
       - name: Setup
         uses: ilammy/msvc-dev-cmd@v1
 
-      - name: Build
+      - name: QMake
         run: |
           call ${{ env.Qt5_Dir }}/bin/qmake skydel_plugin.pro -r CONFIG+=release -spec win32-msvc
-          call ${{ env.Qt5_Dir }}/../../Tools/QtCreator/jom/bin/jom -f Makefile
+        shell: cmd
+
+      - name: Jom
+        run: |
+          cd /Qt/5.12.3/Tools/QtCreator
+          dir
+      #    call ${{ env.GITHUB_WORKSPACE }}/Qt/5.12.3/Tools/QtCreator/jom/bin/jom -f Makefile
         shell: cmd
 
       #- name: Setup Build Env
