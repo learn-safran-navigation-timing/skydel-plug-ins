@@ -38,7 +38,7 @@ jobs:
       - name: Build
         run: |
           call ${{ env.Qt5_Dir }}/bin/qmake skydel_plugin.pro -r CONFIG+=release -spec win32-msvc
-          call ${{ env.Qt5_Dir }}/../ools/QtCreator/bin/jom -f Makefile
+          call ${{ env.Qt5_Dir }}/../Tools/QtCreator/bin/jom -f Makefile
         shell: cmd
 
       #- name: Setup Build Env
