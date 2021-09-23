@@ -43,8 +43,8 @@ jobs:
 
       - name: Jom
         run: |
-          cd ${{ env.Qt5_Dir }}/../../ && dir && cd ${{ env.Qt5_Dir }}/../../Tools/QtCreator && dir
-          call ${{ env.Qt5_Dir }}/../../Tools/QtCreator/bin/jom -f Makefile
+          cd ${{ env.Qt5_Dir }}/../../Tools/QtCreator/QtCreator && dir
+          call ${{ env.Qt5_Dir }}/../../Tools/QtCreator/bin/jom/jom -f Makefile
         shell: cmd
 
       #- name: Setup Build Env
