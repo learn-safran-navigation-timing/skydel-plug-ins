@@ -9,3 +9,9 @@ With plug-ins, users can develop features and integrate them to the Skydel user 
 This repository contains the Skydel Plug-ins Software Development Kit (SDK) and multiple plug-in examples.
 
 See [documentation](https://skydel.gitbook.io/skydel-plug-ins-documentation/) to have more details on how to get started.
+
+## Featured Plug-ins
+
+Would you like your plug-in to be featured in this repository? Send us a pull request!
+
+- [IMU Plug-in](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/imu_plugin): Simulates an inertial measurement unit with real-time position data from Skydel.
