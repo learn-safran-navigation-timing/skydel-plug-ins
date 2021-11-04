@@ -12,7 +12,7 @@ See [documentation](https://skydel.gitbook.io/skydel-plug-ins-documentation/) to
 
 ## Contributing
 
-Would you like your plug-in to be part of the Skydel Plug-ins repository? You found an improvement on an existing plug-in example? We suggest forking our repository and when your all set, open a pull request!
+Would you like your plug-in to be part of the Skydel Plug-ins repository? You found an improvement on an existing plug-in example? We suggest forking our repository and when you're all set, open a pull request!
 
 ## Reporting Issues
 
