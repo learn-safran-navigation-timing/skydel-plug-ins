@@ -25,7 +25,7 @@ exists($$GEN_RAPI_PRO_FILE) {
 SOURCES += $$EXTRA_SOURCES
 HEADERS += $$EXTRA_HEADERS
 
-DESTDIR = $$PWD/../../../bin_qmake
+DESTDIR = $$PWD/../../../bin
 OBJECTS_DIR = $$PWD/../../../tmp/$$TARGET
 MOC_DIR = $$OBJECTS_DIR
 UI_DIR = $$OBJECTS_DIR

@@ -5,10 +5,10 @@
 INCLUDEPATH *= $$PWD $$PWD/include
 
 win32: {
-  PRE_TARGETDEPS *= $$PWD/../../../bin_qmake/inertial_math.lib
+  PRE_TARGETDEPS *= $$PWD/../../../bin/inertial_math.lib
 }
 else:unix: {
-  PRE_TARGETDEPS *= $$PWD/../../../bin_qmake/libinertial_math.a
+  PRE_TARGETDEPS *= $$PWD/../../../bin/libinertial_math.a
 }
 
-INERTIAL_MATH = $$BLAZE_LIBS -L$$PWD/../../../bin_qmake -linertial_math
+INERTIAL_MATH = $$BLAZE_LIBS -L$$PWD/../../../bin -linertial_math

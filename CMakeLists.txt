@@ -4,6 +4,11 @@ project(SkydelPlugin VERSION 0.0.1 LANGUAGES CXX)
 
 set(BUILD_SKYDELPLUGIN_EXAMPLES ON CACHE BOOL "IF TRUE we build the example plugins")
 set(INSTALL_SKYDELPLUGIN_EXAMPLES ON CACHE BOOL "IF TRUE we install the example plugins in $HOME/Documents/Skydel-SDX/Plug-ins")
+if(NOT WIN32)
+    set(PLUGIN_INSTALL_DIR "$ENV{HOME}/Documents/Skydel-SDX/Plug-ins" CACHE PATH "Define the destination folder at the insallation")
+else()
+    set(PLUGIN_INSTALL_DIR "$ENV{HOMEPATH}/Documents/Skydel-SDX/Plug-ins" CACHE PATH "Define the destination folder at the insallation")
+endif()
 
 ### Dependencies
 find_package(blaze 3.7 REQUIRED)
@@ -20,11 +25,6 @@ target_link_libraries(SkydelPlugin INTERFACE blaze::blaze Qt5::Core Qt5::Widgets
 add_library(Skydel::SkydelPlugin ALIAS SkydelPlugin)
 
 if(BUILD_SKYDELPLUGIN_EXAMPLES)
-    if(NOT WIN32)
-       set(PLUGIN_INSTALL_DIR "$ENV{HOME}/Documents/Skydel-SDX/Plug-ins")
-    else()
-       set(PLUGIN_INSTALL_DIR "$ENV{HOMEPATH}/Documents/Skydel-SDX/Plug-ins")
-    endif()
         add_subdirectory(examples)
 endif(BUILD_SKYDELPLUGIN_EXAMPLES)
 
