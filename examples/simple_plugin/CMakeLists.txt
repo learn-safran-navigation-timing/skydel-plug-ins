@@ -12,7 +12,7 @@ add_library(simple_plugin SHARED
     )
 
 target_link_libraries(simple_plugin PUBLIC
-    Skydel::SkydelPlugin
+    Skydel::SkydelPlugIn
     )
 
 target_include_directories(simple_plugin PUBLIC

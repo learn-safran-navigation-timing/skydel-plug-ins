@@ -11,7 +11,7 @@ add_library(rapi_plugin SHARED
     )
 
 target_link_libraries(rapi_plugin PUBLIC
-    Skydel::SkydelPlugin
+    Skydel::SkydelPlugIn
     skydel_rapi
     )
 

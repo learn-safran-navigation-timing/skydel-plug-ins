@@ -15,7 +15,7 @@ add_library(imu_plugin SHARED
     )
 
 target_link_libraries(imu_plugin PUBLIC
-    Skydel::SkydelPlugin
+    Skydel::SkydelPlugIn
     Qt5::Network
     inertial_math
     )

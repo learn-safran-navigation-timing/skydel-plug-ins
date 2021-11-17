@@ -16,13 +16,13 @@ find_package(blaze 3.7 REQUIRED)
 find_package(Qt5 COMPONENTS Core Widgets REQUIRED)
 
 ### Project
-add_library(SkydelPlugin INTERFACE)
+add_library(SkydelPlugIn INTERFACE)
 
-target_include_directories(SkydelPlugin INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> $<INSTALL_INTERFACE:include>)
+target_include_directories(SkydelPlugIn INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> $<INSTALL_INTERFACE:include>)
 
-target_link_libraries(SkydelPlugin INTERFACE blaze::blaze Qt5::Core Qt5::Widgets)
+target_link_libraries(SkydelPlugIn INTERFACE blaze::blaze Qt5::Core Qt5::Widgets)
 
-add_library(Skydel::SkydelPlugin ALIAS SkydelPlugin)
+add_library(Skydel::SkydelPlugIn ALIAS SkydelPlugIn)
 
 if(BUILD_SKYDELPLUGIN_EXAMPLES)
         add_subdirectory(examples)
@@ -31,20 +31,20 @@ endif(BUILD_SKYDELPLUGIN_EXAMPLES)
 ### Installation / Export
 include(CMakePackageConfigHelpers)
 
-configure_package_config_file(cmake/SkydelPluginConfig.cmake.in
-    ${CMAKE_BINARY_DIR}/cmake/SkydelPluginConfig.cmake
-    INSTALL_DESTINATION lib/cmake/SkydelPlugin
+configure_package_config_file(cmake/SkydelPlugInConfig.cmake.in
+    ${CMAKE_BINARY_DIR}/cmake/SkydelPlugInConfig.cmake
+    INSTALL_DESTINATION lib/cmake/SkydelPlugIn
     )
 
 install(
-    TARGETS SkydelPlugin #plus others if there is
-    EXPORT SkydelPluginTargets
+    TARGETS SkydelPlugIn #plus others if there is
+    EXPORT SkydelPlugInTargets
     PUBLIC_HEADER DESTINATION include
     )
 
-install( EXPORT SkydelPluginTargets NAMESPACE "Skydel::" DESTINATION lib/cmake/SkydelPlugin )
+install( EXPORT SkydelPlugInTargets NAMESPACE "Skydel::" DESTINATION lib/cmake/SkydelPlugIn )
 
-install(FILES ${CMAKE_BINARY_DIR}/cmake/SkydelPluginConfig.cmake DESTINATION lib/cmake/SkydelPlugin)
+install(FILES ${CMAKE_BINARY_DIR}/cmake/SkydelPlugInConfig.cmake DESTINATION lib/cmake/SkydelPlugIn)
 
 install(DIRECTORY include/ DESTINATION include FILES_MATCHING PATTERN *.h)
 

@@ -12,7 +12,7 @@ add_library(position_observer_plugin SHARED
     )
 
 target_link_libraries(position_observer_plugin PUBLIC
-    Skydel::SkydelPlugin
+    Skydel::SkydelPlugIn
     Qt5::Network
     )
 

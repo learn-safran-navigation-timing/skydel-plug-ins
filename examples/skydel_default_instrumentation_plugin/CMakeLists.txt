@@ -9,7 +9,7 @@ add_library(skydel_default_instrumentation_plugin SHARED
     )
 
 target_link_libraries(skydel_default_instrumentation_plugin PUBLIC
-    Skydel::SkydelPlugin
+    Skydel::SkydelPlugIn
     )
 
 target_include_directories(skydel_default_instrumentation_plugin PUBLIC
