@@ -1,5 +1,3 @@
-
-
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
@@ -11,7 +9,7 @@ add_library(rapi_plugin SHARED
     )
 
 target_link_libraries(rapi_plugin PUBLIC
-    Skydel::SkydelPlugIn
+    Skydel::SkydelPlugin
     skydel_rapi
     )
 

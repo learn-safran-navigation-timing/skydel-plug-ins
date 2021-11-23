@@ -1,4 +1,3 @@
-
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
@@ -15,7 +14,7 @@ add_library(imu_plugin SHARED
     )
 
 target_link_libraries(imu_plugin PUBLIC
-    Skydel::SkydelPlugIn
+    Skydel::SkydelPlugin
     Qt5::Network
     inertial_math
     )

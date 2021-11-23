@@ -1,6 +1,3 @@
-
-
-
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
@@ -12,7 +9,7 @@ add_library(simple_plugin SHARED
     )
 
 target_link_libraries(simple_plugin PUBLIC
-    Skydel::SkydelPlugIn
+    Skydel::SkydelPlugin
     )
 
 target_include_directories(simple_plugin PUBLIC
