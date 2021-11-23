@@ -1,7 +1,0 @@
-@PACKAGE_INIT@
-check_required_components("@PROJECT_NAME@")
-include("${CMAKE_CURRENT_LIST_DIR}/SkydelPluginTargets.cmake")
-
-include(CMakeFindDependencyMacro)
-find_dependency(blaze REQUIRED)
-find_dependency(Qt5 COMPONENTS Core Widgets REQUIRED)
