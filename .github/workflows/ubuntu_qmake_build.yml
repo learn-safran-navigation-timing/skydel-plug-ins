@@ -1,0 +1,39 @@
+name: Ubuntu QMake Build
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Checkout repository and submodules
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Cache Qt
+        id: cache-qt
+        uses: actions/cache@v1
+        with:
+          path: ../Qt
+          key: ${{ runner.os }}-QtCache
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v2
+        with:
+          cached: ${{ steps.cache-qt.outputs.cache-hit }}
+          version: '5.12.3'
+
+      - name: Install uuid-dev
+        run: sudo apt-get install uuid-dev
+
+      - name: Build
+        run: |
+          $Qt5_DIR/bin/qmake skydel_plugin.pro -r CONFIG+=release
+          make -f Makefile

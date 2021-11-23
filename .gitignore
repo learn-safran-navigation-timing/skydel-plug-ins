@@ -57,5 +57,7 @@ compile_commands.json
 
 *_qmlcache.qrc
 
+bin_qmake/*
 bin/*
 tmp/*
+build/*
