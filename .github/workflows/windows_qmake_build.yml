@@ -1,4 +1,4 @@
-name: Windows Build
+name: Windows QMake Build
 
 on:
   push:
@@ -33,4 +33,3 @@ jobs:
           call ${{ env.Qt5_Dir }}/bin/qmake skydel_plugin.pro -r CONFIG+=release -spec win32-msvc
           call ${{ env.Qt5_Dir }}/../../Tools/QtCreator/bin/jom/jom -f Makefile
         shell: cmd
-          

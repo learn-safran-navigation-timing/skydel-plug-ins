@@ -1,4 +1,4 @@
-name: Windows Build
+name: Windows CMake Build
 
 on:
   push:
@@ -35,7 +35,6 @@ jobs:
         with:
           cmake-version: '3.17.x'
 
-
       - name: Install blaze 
         run: |
           git clone https://github.com/parsa/blaze 
@@ -45,12 +44,9 @@ jobs:
           cmake --install . 
         shell: cmd
 
-
       - name: Build
         run: |
           mkdir build && cd build
           cmake -G"NMake Makefiles" -DCMAKE_BUILD_TYPE=Release ..
           cmake --build . 
         shell: cmd
-
-          
