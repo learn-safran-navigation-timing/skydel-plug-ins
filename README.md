@@ -26,4 +26,4 @@ Having a good idea to improve the SDK or there is something bothering you? Open 
 
 Would you like your plug-in to be featured in this repository? Add your project to the list bellow and send us a pull request!
 
-- [IMU Plug-in](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/imu_plugin): Simulates an inertial measurement unit with real-time position data from Skydel.
+- [IMU Plug-in](https://github.com/learn-orolia/skydel-plug-ins/tree/master/examples/imu_plugin): Simulates an inertial measurement unit with real-time position data from Skydel.
