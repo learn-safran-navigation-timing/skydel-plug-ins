@@ -3,7 +3,6 @@ cmake_minimum_required(VERSION 3.17)
 project(SkydelPlugin VERSION 0.0.1 LANGUAGES CXX)
 
 set(BUILD_SKYDEL_PLUGIN_EXAMPLES ON CACHE BOOL "If TRUE the plug-in examples are built")
-set(INSTALL_SKYDEL_PLUGIN_EXAMPLES ON CACHE BOOL "If TRUE the plug-in examples are installed in $HOME/Documents/Skydel-SDX/Plug-ins")
 if(NOT WIN32)
     set(PLUGIN_INSTALL_DIR "$ENV{HOME}/Documents/Skydel-SDX/Plug-ins" CACHE PATH "Define the destination folder where the plug-in examples are installed")
 else()
