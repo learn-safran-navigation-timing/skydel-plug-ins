@@ -21,19 +21,20 @@ namespace Sdx
       : CommandResult(CmdName)
     {}
 
-    GetNavICEphDoubleParamForSVResult::GetNavICEphDoubleParamForSVResult(CommandBasePtr relatedCommand, int svId, const std::string& paramName, double val)
+    GetNavICEphDoubleParamForSVResult::GetNavICEphDoubleParamForSVResult(CommandBasePtr relatedCommand, int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName)
       : CommandResult(CmdName, relatedCommand)
     {
 
       setSvId(svId);
       setParamName(paramName);
       setVal(val);
+      setDataSetName(dataSetName);
     }
 
 
-    GetNavICEphDoubleParamForSVResultPtr GetNavICEphDoubleParamForSVResult::create(CommandBasePtr relatedCommand, int svId, const std::string& paramName, double val)
+    GetNavICEphDoubleParamForSVResultPtr GetNavICEphDoubleParamForSVResult::create(CommandBasePtr relatedCommand, int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetNavICEphDoubleParamForSVResultPtr(new GetNavICEphDoubleParamForSVResult(relatedCommand, svId, paramName, val));
+      return GetNavICEphDoubleParamForSVResultPtr(new GetNavICEphDoubleParamForSVResult(relatedCommand, svId, paramName, val, dataSetName));
     }
 
     GetNavICEphDoubleParamForSVResultPtr GetNavICEphDoubleParamForSVResult::dynamicCast(CommandBasePtr ptr)
@@ -48,6 +49,7 @@ namespace Sdx
           && parse_json<int>::is_valid(m_values["SvId"])
           && parse_json<std::string>::is_valid(m_values["ParamName"])
           && parse_json<double>::is_valid(m_values["Val"])
+          && parse_json<Sdx::optional<std::string>>::is_valid(m_values["DataSetName"])
         ;
 
     }
@@ -87,6 +89,18 @@ namespace Sdx
     void GetNavICEphDoubleParamForSVResult::setVal(double val)
     {
       m_values.AddMember("Val", parse_json<double>::format(val, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    Sdx::optional<std::string> GetNavICEphDoubleParamForSVResult::dataSetName() const
+    {
+      return parse_json<Sdx::optional<std::string>>::parse(m_values["DataSetName"]);
+    }
+
+    void GetNavICEphDoubleParamForSVResult::setDataSetName(const Sdx::optional<std::string>& dataSetName)
+    {
+      m_values.AddMember("DataSetName", parse_json<Sdx::optional<std::string>>::format(dataSetName, m_values.GetAllocator()), m_values.GetAllocator());
     }
 
 

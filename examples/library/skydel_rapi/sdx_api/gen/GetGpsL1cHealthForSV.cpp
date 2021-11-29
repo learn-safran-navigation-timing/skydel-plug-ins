@@ -21,17 +21,18 @@ namespace Sdx
       : CommandBase(CmdName)
     {}
 
-    GetGpsL1cHealthForSV::GetGpsL1cHealthForSV(int svId)
+    GetGpsL1cHealthForSV::GetGpsL1cHealthForSV(int svId, const Sdx::optional<std::string>& dataSetName)
       : CommandBase(CmdName)
     {
 
       setSvId(svId);
+      setDataSetName(dataSetName);
     }
 
 
-    GetGpsL1cHealthForSVPtr GetGpsL1cHealthForSV::create(int svId)
+    GetGpsL1cHealthForSVPtr GetGpsL1cHealthForSV::create(int svId, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetGpsL1cHealthForSVPtr(new GetGpsL1cHealthForSV(svId));
+      return GetGpsL1cHealthForSVPtr(new GetGpsL1cHealthForSV(svId, dataSetName));
     }
 
     GetGpsL1cHealthForSVPtr GetGpsL1cHealthForSV::dynamicCast(CommandBasePtr ptr)
@@ -44,6 +45,7 @@ namespace Sdx
       
         return m_values.IsObject()
           && parse_json<int>::is_valid(m_values["SvId"])
+          && parse_json<Sdx::optional<std::string>>::is_valid(m_values["DataSetName"])
         ;
 
     }
@@ -65,6 +67,18 @@ namespace Sdx
     void GetGpsL1cHealthForSV::setSvId(int svId)
     {
       m_values.AddMember("SvId", parse_json<int>::format(svId, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    Sdx::optional<std::string> GetGpsL1cHealthForSV::dataSetName() const
+    {
+      return parse_json<Sdx::optional<std::string>>::parse(m_values["DataSetName"]);
+    }
+
+    void GetGpsL1cHealthForSV::setDataSetName(const Sdx::optional<std::string>& dataSetName)
+    {
+      m_values.AddMember("DataSetName", parse_json<Sdx::optional<std::string>>::format(dataSetName, m_values.GetAllocator()), m_values.GetAllocator());
     }
 
 

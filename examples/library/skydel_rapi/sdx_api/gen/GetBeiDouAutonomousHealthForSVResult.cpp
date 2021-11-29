@@ -21,18 +21,19 @@ namespace Sdx
       : CommandResult(CmdName)
     {}
 
-    GetBeiDouAutonomousHealthForSVResult::GetBeiDouAutonomousHealthForSVResult(CommandBasePtr relatedCommand, int svId, bool health)
+    GetBeiDouAutonomousHealthForSVResult::GetBeiDouAutonomousHealthForSVResult(CommandBasePtr relatedCommand, int svId, bool health, const Sdx::optional<std::string>& dataSetName)
       : CommandResult(CmdName, relatedCommand)
     {
 
       setSvId(svId);
       setHealth(health);
+      setDataSetName(dataSetName);
     }
 
 
-    GetBeiDouAutonomousHealthForSVResultPtr GetBeiDouAutonomousHealthForSVResult::create(CommandBasePtr relatedCommand, int svId, bool health)
+    GetBeiDouAutonomousHealthForSVResultPtr GetBeiDouAutonomousHealthForSVResult::create(CommandBasePtr relatedCommand, int svId, bool health, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetBeiDouAutonomousHealthForSVResultPtr(new GetBeiDouAutonomousHealthForSVResult(relatedCommand, svId, health));
+      return GetBeiDouAutonomousHealthForSVResultPtr(new GetBeiDouAutonomousHealthForSVResult(relatedCommand, svId, health, dataSetName));
     }
 
     GetBeiDouAutonomousHealthForSVResultPtr GetBeiDouAutonomousHealthForSVResult::dynamicCast(CommandBasePtr ptr)
@@ -46,6 +47,7 @@ namespace Sdx
         return m_values.IsObject()
           && parse_json<int>::is_valid(m_values["SvId"])
           && parse_json<bool>::is_valid(m_values["Health"])
+          && parse_json<Sdx::optional<std::string>>::is_valid(m_values["DataSetName"])
         ;
 
     }
@@ -73,6 +75,18 @@ namespace Sdx
     void GetBeiDouAutonomousHealthForSVResult::setHealth(bool health)
     {
       m_values.AddMember("Health", parse_json<bool>::format(health, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    Sdx::optional<std::string> GetBeiDouAutonomousHealthForSVResult::dataSetName() const
+    {
+      return parse_json<Sdx::optional<std::string>>::parse(m_values["DataSetName"]);
+    }
+
+    void GetBeiDouAutonomousHealthForSVResult::setDataSetName(const Sdx::optional<std::string>& dataSetName)
+    {
+      m_values.AddMember("DataSetName", parse_json<Sdx::optional<std::string>>::format(dataSetName, m_values.GetAllocator()), m_values.GetAllocator());
     }
 
 

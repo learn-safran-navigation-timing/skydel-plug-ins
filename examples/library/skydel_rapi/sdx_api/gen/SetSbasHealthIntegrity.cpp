@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const SetSbasHealthIntegrity::CmdName = "SetSbasHealthIntegrity";
-    const char* const SetSbasHealthIntegrity::Documentation = "Please note the command SetSbasHealthIntegrity is deprecated since 21.5. You may use SetSbasSVIntegrityHealth.\n\nApply integrity flag for a SBAS satellite";
+    const char* const SetSbasHealthIntegrity::Documentation = "Please note the command SetSbasHealthIntegrity is deprecated since 21.9. You may use SetSbasSVIntegrityHealth.\n\nApply integrity flag for a SBAS satellite";
 
     REGISTER_COMMAND_FACTORY(SetSbasHealthIntegrity);
 

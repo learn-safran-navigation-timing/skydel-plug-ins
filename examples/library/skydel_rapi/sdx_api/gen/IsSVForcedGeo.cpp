@@ -21,18 +21,19 @@ namespace Sdx
       : CommandBase(CmdName)
     {}
 
-    IsSVForcedGeo::IsSVForcedGeo(const std::string& system, int svId)
+    IsSVForcedGeo::IsSVForcedGeo(const std::string& system, int svId, const Sdx::optional<std::string>& dataSetName)
       : CommandBase(CmdName)
     {
 
       setSystem(system);
       setSvId(svId);
+      setDataSetName(dataSetName);
     }
 
 
-    IsSVForcedGeoPtr IsSVForcedGeo::create(const std::string& system, int svId)
+    IsSVForcedGeoPtr IsSVForcedGeo::create(const std::string& system, int svId, const Sdx::optional<std::string>& dataSetName)
     {
-      return IsSVForcedGeoPtr(new IsSVForcedGeo(system, svId));
+      return IsSVForcedGeoPtr(new IsSVForcedGeo(system, svId, dataSetName));
     }
 
     IsSVForcedGeoPtr IsSVForcedGeo::dynamicCast(CommandBasePtr ptr)
@@ -46,6 +47,7 @@ namespace Sdx
         return m_values.IsObject()
           && parse_json<std::string>::is_valid(m_values["System"])
           && parse_json<int>::is_valid(m_values["SvId"])
+          && parse_json<Sdx::optional<std::string>>::is_valid(m_values["DataSetName"])
         ;
 
     }
@@ -79,6 +81,18 @@ namespace Sdx
     void IsSVForcedGeo::setSvId(int svId)
     {
       m_values.AddMember("SvId", parse_json<int>::format(svId, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    Sdx::optional<std::string> IsSVForcedGeo::dataSetName() const
+    {
+      return parse_json<Sdx::optional<std::string>>::parse(m_values["DataSetName"]);
+    }
+
+    void IsSVForcedGeo::setDataSetName(const Sdx::optional<std::string>& dataSetName)
+    {
+      m_values.AddMember("DataSetName", parse_json<Sdx::optional<std::string>>::format(dataSetName, m_values.GetAllocator()), m_values.GetAllocator());
     }
 
 

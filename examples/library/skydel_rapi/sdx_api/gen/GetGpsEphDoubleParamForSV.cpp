@@ -21,18 +21,19 @@ namespace Sdx
       : CommandBase(CmdName)
     {}
 
-    GetGpsEphDoubleParamForSV::GetGpsEphDoubleParamForSV(int svId, const std::string& paramName)
+    GetGpsEphDoubleParamForSV::GetGpsEphDoubleParamForSV(int svId, const std::string& paramName, const Sdx::optional<std::string>& dataSetName)
       : CommandBase(CmdName)
     {
 
       setSvId(svId);
       setParamName(paramName);
+      setDataSetName(dataSetName);
     }
 
 
-    GetGpsEphDoubleParamForSVPtr GetGpsEphDoubleParamForSV::create(int svId, const std::string& paramName)
+    GetGpsEphDoubleParamForSVPtr GetGpsEphDoubleParamForSV::create(int svId, const std::string& paramName, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetGpsEphDoubleParamForSVPtr(new GetGpsEphDoubleParamForSV(svId, paramName));
+      return GetGpsEphDoubleParamForSVPtr(new GetGpsEphDoubleParamForSV(svId, paramName, dataSetName));
     }
 
     GetGpsEphDoubleParamForSVPtr GetGpsEphDoubleParamForSV::dynamicCast(CommandBasePtr ptr)
@@ -46,6 +47,7 @@ namespace Sdx
         return m_values.IsObject()
           && parse_json<int>::is_valid(m_values["SvId"])
           && parse_json<std::string>::is_valid(m_values["ParamName"])
+          && parse_json<Sdx::optional<std::string>>::is_valid(m_values["DataSetName"])
         ;
 
     }
@@ -79,6 +81,18 @@ namespace Sdx
     void GetGpsEphDoubleParamForSV::setParamName(const std::string& paramName)
     {
       m_values.AddMember("ParamName", parse_json<std::string>::format(paramName, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    Sdx::optional<std::string> GetGpsEphDoubleParamForSV::dataSetName() const
+    {
+      return parse_json<Sdx::optional<std::string>>::parse(m_values["DataSetName"]);
+    }
+
+    void GetGpsEphDoubleParamForSV::setDataSetName(const Sdx::optional<std::string>& dataSetName)
+    {
+      m_values.AddMember("DataSetName", parse_json<Sdx::optional<std::string>>::format(dataSetName, m_values.GetAllocator()), m_values.GetAllocator());
     }
 
 

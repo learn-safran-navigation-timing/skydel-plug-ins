@@ -21,18 +21,19 @@ namespace Sdx
       : CommandBase(CmdName)
     {}
 
-    GetGalileoSignalHealthForSV::GetGalileoSignalHealthForSV(int svId, const std::string& component)
+    GetGalileoSignalHealthForSV::GetGalileoSignalHealthForSV(int svId, const std::string& component, const Sdx::optional<std::string>& dataSetName)
       : CommandBase(CmdName)
     {
 
       setSvId(svId);
       setComponent(component);
+      setDataSetName(dataSetName);
     }
 
 
-    GetGalileoSignalHealthForSVPtr GetGalileoSignalHealthForSV::create(int svId, const std::string& component)
+    GetGalileoSignalHealthForSVPtr GetGalileoSignalHealthForSV::create(int svId, const std::string& component, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetGalileoSignalHealthForSVPtr(new GetGalileoSignalHealthForSV(svId, component));
+      return GetGalileoSignalHealthForSVPtr(new GetGalileoSignalHealthForSV(svId, component, dataSetName));
     }
 
     GetGalileoSignalHealthForSVPtr GetGalileoSignalHealthForSV::dynamicCast(CommandBasePtr ptr)
@@ -46,6 +47,7 @@ namespace Sdx
         return m_values.IsObject()
           && parse_json<int>::is_valid(m_values["SvId"])
           && parse_json<std::string>::is_valid(m_values["Component"])
+          && parse_json<Sdx::optional<std::string>>::is_valid(m_values["DataSetName"])
         ;
 
     }
@@ -79,6 +81,18 @@ namespace Sdx
     void GetGalileoSignalHealthForSV::setComponent(const std::string& component)
     {
       m_values.AddMember("Component", parse_json<std::string>::format(component, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    Sdx::optional<std::string> GetGalileoSignalHealthForSV::dataSetName() const
+    {
+      return parse_json<Sdx::optional<std::string>>::parse(m_values["DataSetName"]);
+    }
+
+    void GetGalileoSignalHealthForSV::setDataSetName(const Sdx::optional<std::string>& dataSetName)
+    {
+      m_values.AddMember("DataSetName", parse_json<Sdx::optional<std::string>>::format(dataSetName, m_values.GetAllocator()), m_values.GetAllocator());
     }
 
 

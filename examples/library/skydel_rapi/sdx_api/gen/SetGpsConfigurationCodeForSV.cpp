@@ -21,18 +21,19 @@ namespace Sdx
       : CommandBase(CmdName)
     {}
 
-    SetGpsConfigurationCodeForSV::SetGpsConfigurationCodeForSV(int svId, int svConfig)
+    SetGpsConfigurationCodeForSV::SetGpsConfigurationCodeForSV(int svId, int svConfig, const Sdx::optional<std::string>& dataSetName)
       : CommandBase(CmdName)
     {
 
       setSvId(svId);
       setSvConfig(svConfig);
+      setDataSetName(dataSetName);
     }
 
 
-    SetGpsConfigurationCodeForSVPtr SetGpsConfigurationCodeForSV::create(int svId, int svConfig)
+    SetGpsConfigurationCodeForSVPtr SetGpsConfigurationCodeForSV::create(int svId, int svConfig, const Sdx::optional<std::string>& dataSetName)
     {
-      return SetGpsConfigurationCodeForSVPtr(new SetGpsConfigurationCodeForSV(svId, svConfig));
+      return SetGpsConfigurationCodeForSVPtr(new SetGpsConfigurationCodeForSV(svId, svConfig, dataSetName));
     }
 
     SetGpsConfigurationCodeForSVPtr SetGpsConfigurationCodeForSV::dynamicCast(CommandBasePtr ptr)
@@ -46,6 +47,7 @@ namespace Sdx
         return m_values.IsObject()
           && parse_json<int>::is_valid(m_values["SvId"])
           && parse_json<int>::is_valid(m_values["SvConfig"])
+          && parse_json<Sdx::optional<std::string>>::is_valid(m_values["DataSetName"])
         ;
 
     }
@@ -79,6 +81,18 @@ namespace Sdx
     void SetGpsConfigurationCodeForSV::setSvConfig(int svConfig)
     {
       m_values.AddMember("SvConfig", parse_json<int>::format(svConfig, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    Sdx::optional<std::string> SetGpsConfigurationCodeForSV::dataSetName() const
+    {
+      return parse_json<Sdx::optional<std::string>>::parse(m_values["DataSetName"]);
+    }
+
+    void SetGpsConfigurationCodeForSV::setDataSetName(const Sdx::optional<std::string>& dataSetName)
+    {
+      m_values.AddMember("DataSetName", parse_json<Sdx::optional<std::string>>::format(dataSetName, m_values.GetAllocator()), m_values.GetAllocator());
     }
 
 

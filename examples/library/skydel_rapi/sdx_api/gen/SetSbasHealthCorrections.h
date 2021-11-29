@@ -9,7 +9,7 @@ namespace Sdx
   namespace Cmd
   {
     ///
-    /// Please note the command SetSbasHealthCorrections is deprecated since 21.5. You may use SetSbasSVCorrectionsHealth.
+    /// Please note the command SetSbasHealthCorrections is deprecated since 21.9. You may use SetSbasSVCorrectionsHealth.
     /// 
     /// Apply correction flag for a SBAS satellite
     ///

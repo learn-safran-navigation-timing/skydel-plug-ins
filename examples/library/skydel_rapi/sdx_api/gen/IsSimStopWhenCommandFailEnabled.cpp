@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsSimStopWhenCommandFailEnabled::CmdName = "IsSimStopWhenCommandFailEnabled";
-    const char* const IsSimStopWhenCommandFailEnabled::Documentation = "Get If enabled, simulation stops when a command result fail.";
+    const char* const IsSimStopWhenCommandFailEnabled::Documentation = "If enabled, simulation stops when a command result fail.";
 
     REGISTER_COMMAND_FACTORY(IsSimStopWhenCommandFailEnabled);
 

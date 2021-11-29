@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const StopMasterWhenSlaveStop::CmdName = "StopMasterWhenSlaveStop";
-    const char* const StopMasterWhenSlaveStop::Documentation = "Set If enabled, master and all the slaves will stop if a slave stop.";
+    const char* const StopMasterWhenSlaveStop::Documentation = "If enabled, master and all the slaves will stop if a slave stop.";
 
     REGISTER_COMMAND_FACTORY(StopMasterWhenSlaveStop);
 

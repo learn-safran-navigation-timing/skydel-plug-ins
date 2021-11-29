@@ -21,18 +21,19 @@ namespace Sdx
       : CommandBase(CmdName)
     {}
 
-    GetEphemerisReferenceTimeForSV::GetEphemerisReferenceTimeForSV(const std::string& system, int svId)
+    GetEphemerisReferenceTimeForSV::GetEphemerisReferenceTimeForSV(const std::string& system, int svId, const Sdx::optional<std::string>& dataSetName)
       : CommandBase(CmdName)
     {
 
       setSystem(system);
       setSvId(svId);
+      setDataSetName(dataSetName);
     }
 
 
-    GetEphemerisReferenceTimeForSVPtr GetEphemerisReferenceTimeForSV::create(const std::string& system, int svId)
+    GetEphemerisReferenceTimeForSVPtr GetEphemerisReferenceTimeForSV::create(const std::string& system, int svId, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetEphemerisReferenceTimeForSVPtr(new GetEphemerisReferenceTimeForSV(system, svId));
+      return GetEphemerisReferenceTimeForSVPtr(new GetEphemerisReferenceTimeForSV(system, svId, dataSetName));
     }
 
     GetEphemerisReferenceTimeForSVPtr GetEphemerisReferenceTimeForSV::dynamicCast(CommandBasePtr ptr)
@@ -46,6 +47,7 @@ namespace Sdx
         return m_values.IsObject()
           && parse_json<std::string>::is_valid(m_values["System"])
           && parse_json<int>::is_valid(m_values["SvId"])
+          && parse_json<Sdx::optional<std::string>>::is_valid(m_values["DataSetName"])
         ;
 
     }
@@ -79,6 +81,18 @@ namespace Sdx
     void GetEphemerisReferenceTimeForSV::setSvId(int svId)
     {
       m_values.AddMember("SvId", parse_json<int>::format(svId, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    Sdx::optional<std::string> GetEphemerisReferenceTimeForSV::dataSetName() const
+    {
+      return parse_json<Sdx::optional<std::string>>::parse(m_values["DataSetName"]);
+    }
+
+    void GetEphemerisReferenceTimeForSV::setDataSetName(const Sdx::optional<std::string>& dataSetName)
+    {
+      m_values.AddMember("DataSetName", parse_json<Sdx::optional<std::string>>::format(dataSetName, m_values.GetAllocator()), m_values.GetAllocator());
     }
 
 

@@ -21,7 +21,7 @@ namespace Sdx
       : CommandBase(CmdName)
     {}
 
-    ForceSVGeo::ForceSVGeo(const std::string& system, int svId, bool isGeo, double longitude)
+    ForceSVGeo::ForceSVGeo(const std::string& system, int svId, bool isGeo, double longitude, const Sdx::optional<std::string>& dataSetName)
       : CommandBase(CmdName)
     {
 
@@ -29,12 +29,13 @@ namespace Sdx
       setSvId(svId);
       setIsGeo(isGeo);
       setLongitude(longitude);
+      setDataSetName(dataSetName);
     }
 
 
-    ForceSVGeoPtr ForceSVGeo::create(const std::string& system, int svId, bool isGeo, double longitude)
+    ForceSVGeoPtr ForceSVGeo::create(const std::string& system, int svId, bool isGeo, double longitude, const Sdx::optional<std::string>& dataSetName)
     {
-      return ForceSVGeoPtr(new ForceSVGeo(system, svId, isGeo, longitude));
+      return ForceSVGeoPtr(new ForceSVGeo(system, svId, isGeo, longitude, dataSetName));
     }
 
     ForceSVGeoPtr ForceSVGeo::dynamicCast(CommandBasePtr ptr)
@@ -50,6 +51,7 @@ namespace Sdx
           && parse_json<int>::is_valid(m_values["SvId"])
           && parse_json<bool>::is_valid(m_values["IsGeo"])
           && parse_json<double>::is_valid(m_values["Longitude"])
+          && parse_json<Sdx::optional<std::string>>::is_valid(m_values["DataSetName"])
         ;
 
     }
@@ -107,6 +109,18 @@ namespace Sdx
     void ForceSVGeo::setLongitude(double longitude)
     {
       m_values.AddMember("Longitude", parse_json<double>::format(longitude, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    Sdx::optional<std::string> ForceSVGeo::dataSetName() const
+    {
+      return parse_json<Sdx::optional<std::string>>::parse(m_values["DataSetName"]);
+    }
+
+    void ForceSVGeo::setDataSetName(const Sdx::optional<std::string>& dataSetName)
+    {
+      m_values.AddMember("DataSetName", parse_json<Sdx::optional<std::string>>::format(dataSetName, m_values.GetAllocator()), m_values.GetAllocator());
     }
 
 

@@ -21,18 +21,19 @@ namespace Sdx
       : CommandBase(CmdName)
     {}
 
-    SetGpsCNavAlertFlagToSV::SetGpsCNavAlertFlagToSV(int svId, bool alert)
+    SetGpsCNavAlertFlagToSV::SetGpsCNavAlertFlagToSV(int svId, bool alert, const Sdx::optional<std::string>& dataSetName)
       : CommandBase(CmdName)
     {
 
       setSvId(svId);
       setAlert(alert);
+      setDataSetName(dataSetName);
     }
 
 
-    SetGpsCNavAlertFlagToSVPtr SetGpsCNavAlertFlagToSV::create(int svId, bool alert)
+    SetGpsCNavAlertFlagToSVPtr SetGpsCNavAlertFlagToSV::create(int svId, bool alert, const Sdx::optional<std::string>& dataSetName)
     {
-      return SetGpsCNavAlertFlagToSVPtr(new SetGpsCNavAlertFlagToSV(svId, alert));
+      return SetGpsCNavAlertFlagToSVPtr(new SetGpsCNavAlertFlagToSV(svId, alert, dataSetName));
     }
 
     SetGpsCNavAlertFlagToSVPtr SetGpsCNavAlertFlagToSV::dynamicCast(CommandBasePtr ptr)
@@ -46,6 +47,7 @@ namespace Sdx
         return m_values.IsObject()
           && parse_json<int>::is_valid(m_values["SvId"])
           && parse_json<bool>::is_valid(m_values["Alert"])
+          && parse_json<Sdx::optional<std::string>>::is_valid(m_values["DataSetName"])
         ;
 
     }
@@ -79,6 +81,18 @@ namespace Sdx
     void SetGpsCNavAlertFlagToSV::setAlert(bool alert)
     {
       m_values.AddMember("Alert", parse_json<bool>::format(alert, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    Sdx::optional<std::string> SetGpsCNavAlertFlagToSV::dataSetName() const
+    {
+      return parse_json<Sdx::optional<std::string>>::parse(m_values["DataSetName"]);
+    }
+
+    void SetGpsCNavAlertFlagToSV::setDataSetName(const Sdx::optional<std::string>& dataSetName)
+    {
+      m_values.AddMember("DataSetName", parse_json<Sdx::optional<std::string>>::format(dataSetName, m_values.GetAllocator()), m_values.GetAllocator());
     }
 
 

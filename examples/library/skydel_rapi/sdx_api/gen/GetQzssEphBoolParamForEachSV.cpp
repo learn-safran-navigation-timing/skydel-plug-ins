@@ -21,17 +21,18 @@ namespace Sdx
       : CommandBase(CmdName)
     {}
 
-    GetQzssEphBoolParamForEachSV::GetQzssEphBoolParamForEachSV(const std::string& paramName)
+    GetQzssEphBoolParamForEachSV::GetQzssEphBoolParamForEachSV(const std::string& paramName, const Sdx::optional<std::string>& dataSetName)
       : CommandBase(CmdName)
     {
 
       setParamName(paramName);
+      setDataSetName(dataSetName);
     }
 
 
-    GetQzssEphBoolParamForEachSVPtr GetQzssEphBoolParamForEachSV::create(const std::string& paramName)
+    GetQzssEphBoolParamForEachSVPtr GetQzssEphBoolParamForEachSV::create(const std::string& paramName, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetQzssEphBoolParamForEachSVPtr(new GetQzssEphBoolParamForEachSV(paramName));
+      return GetQzssEphBoolParamForEachSVPtr(new GetQzssEphBoolParamForEachSV(paramName, dataSetName));
     }
 
     GetQzssEphBoolParamForEachSVPtr GetQzssEphBoolParamForEachSV::dynamicCast(CommandBasePtr ptr)
@@ -44,6 +45,7 @@ namespace Sdx
       
         return m_values.IsObject()
           && parse_json<std::string>::is_valid(m_values["ParamName"])
+          && parse_json<Sdx::optional<std::string>>::is_valid(m_values["DataSetName"])
         ;
 
     }
@@ -65,6 +67,18 @@ namespace Sdx
     void GetQzssEphBoolParamForEachSV::setParamName(const std::string& paramName)
     {
       m_values.AddMember("ParamName", parse_json<std::string>::format(paramName, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    Sdx::optional<std::string> GetQzssEphBoolParamForEachSV::dataSetName() const
+    {
+      return parse_json<Sdx::optional<std::string>>::parse(m_values["DataSetName"]);
+    }
+
+    void GetQzssEphBoolParamForEachSV::setDataSetName(const Sdx::optional<std::string>& dataSetName)
+    {
+      m_values.AddMember("DataSetName", parse_json<Sdx::optional<std::string>>::format(dataSetName, m_values.GetAllocator()), m_values.GetAllocator());
     }
 
 

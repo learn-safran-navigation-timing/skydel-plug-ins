@@ -21,19 +21,20 @@ namespace Sdx
       : CommandBase(CmdName)
     {}
 
-    SetQzssEphDoubleParamForSV::SetQzssEphDoubleParamForSV(int svId, const std::string& paramName, double val)
+    SetQzssEphDoubleParamForSV::SetQzssEphDoubleParamForSV(int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName)
       : CommandBase(CmdName)
     {
 
       setSvId(svId);
       setParamName(paramName);
       setVal(val);
+      setDataSetName(dataSetName);
     }
 
 
-    SetQzssEphDoubleParamForSVPtr SetQzssEphDoubleParamForSV::create(int svId, const std::string& paramName, double val)
+    SetQzssEphDoubleParamForSVPtr SetQzssEphDoubleParamForSV::create(int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName)
     {
-      return SetQzssEphDoubleParamForSVPtr(new SetQzssEphDoubleParamForSV(svId, paramName, val));
+      return SetQzssEphDoubleParamForSVPtr(new SetQzssEphDoubleParamForSV(svId, paramName, val, dataSetName));
     }
 
     SetQzssEphDoubleParamForSVPtr SetQzssEphDoubleParamForSV::dynamicCast(CommandBasePtr ptr)
@@ -48,6 +49,7 @@ namespace Sdx
           && parse_json<int>::is_valid(m_values["SvId"])
           && parse_json<std::string>::is_valid(m_values["ParamName"])
           && parse_json<double>::is_valid(m_values["Val"])
+          && parse_json<Sdx::optional<std::string>>::is_valid(m_values["DataSetName"])
         ;
 
     }
@@ -93,6 +95,18 @@ namespace Sdx
     void SetQzssEphDoubleParamForSV::setVal(double val)
     {
       m_values.AddMember("Val", parse_json<double>::format(val, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    Sdx::optional<std::string> SetQzssEphDoubleParamForSV::dataSetName() const
+    {
+      return parse_json<Sdx::optional<std::string>>::parse(m_values["DataSetName"]);
+    }
+
+    void SetQzssEphDoubleParamForSV::setDataSetName(const Sdx::optional<std::string>& dataSetName)
+    {
+      m_values.AddMember("DataSetName", parse_json<Sdx::optional<std::string>>::format(dataSetName, m_values.GetAllocator()), m_values.GetAllocator());
     }
 
 

@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const SetSbasHealthReserved::CmdName = "SetSbasHealthReserved";
-    const char* const SetSbasHealthReserved::Documentation = "Please note the command SetSbasHealthReserved is deprecated since 21.5. You may use SetSbasSVReservedHealth.\n\nApply reserved flag for a SBAS satellite";
+    const char* const SetSbasHealthReserved::Documentation = "Please note the command SetSbasHealthReserved is deprecated since 21.9. You may use SetSbasSVReservedHealth.\n\nApply reserved flag for a SBAS satellite";
 
     REGISTER_COMMAND_FACTORY(SetSbasHealthReserved);
 

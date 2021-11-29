@@ -21,19 +21,20 @@ namespace Sdx
       : CommandResult(CmdName)
     {}
 
-    GetGpsEphBoolParamForSVResult::GetGpsEphBoolParamForSVResult(CommandBasePtr relatedCommand, int svId, const std::string& paramName, bool val)
+    GetGpsEphBoolParamForSVResult::GetGpsEphBoolParamForSVResult(CommandBasePtr relatedCommand, int svId, const std::string& paramName, bool val, const Sdx::optional<std::string>& dataSetName)
       : CommandResult(CmdName, relatedCommand)
     {
 
       setSvId(svId);
       setParamName(paramName);
       setVal(val);
+      setDataSetName(dataSetName);
     }
 
 
-    GetGpsEphBoolParamForSVResultPtr GetGpsEphBoolParamForSVResult::create(CommandBasePtr relatedCommand, int svId, const std::string& paramName, bool val)
+    GetGpsEphBoolParamForSVResultPtr GetGpsEphBoolParamForSVResult::create(CommandBasePtr relatedCommand, int svId, const std::string& paramName, bool val, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetGpsEphBoolParamForSVResultPtr(new GetGpsEphBoolParamForSVResult(relatedCommand, svId, paramName, val));
+      return GetGpsEphBoolParamForSVResultPtr(new GetGpsEphBoolParamForSVResult(relatedCommand, svId, paramName, val, dataSetName));
     }
 
     GetGpsEphBoolParamForSVResultPtr GetGpsEphBoolParamForSVResult::dynamicCast(CommandBasePtr ptr)
@@ -48,6 +49,7 @@ namespace Sdx
           && parse_json<int>::is_valid(m_values["SvId"])
           && parse_json<std::string>::is_valid(m_values["ParamName"])
           && parse_json<bool>::is_valid(m_values["Val"])
+          && parse_json<Sdx::optional<std::string>>::is_valid(m_values["DataSetName"])
         ;
 
     }
@@ -87,6 +89,18 @@ namespace Sdx
     void GetGpsEphBoolParamForSVResult::setVal(bool val)
     {
       m_values.AddMember("Val", parse_json<bool>::format(val, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    Sdx::optional<std::string> GetGpsEphBoolParamForSVResult::dataSetName() const
+    {
+      return parse_json<Sdx::optional<std::string>>::parse(m_values["DataSetName"]);
+    }
+
+    void GetGpsEphBoolParamForSVResult::setDataSetName(const Sdx::optional<std::string>& dataSetName)
+    {
+      m_values.AddMember("DataSetName", parse_json<Sdx::optional<std::string>>::format(dataSetName, m_values.GetAllocator()), m_values.GetAllocator());
     }
 
 

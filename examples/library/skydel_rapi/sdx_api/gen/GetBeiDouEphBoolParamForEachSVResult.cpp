@@ -21,18 +21,19 @@ namespace Sdx
       : CommandResult(CmdName)
     {}
 
-    GetBeiDouEphBoolParamForEachSVResult::GetBeiDouEphBoolParamForEachSVResult(CommandBasePtr relatedCommand, const std::string& paramName, const std::vector<bool>& val)
+    GetBeiDouEphBoolParamForEachSVResult::GetBeiDouEphBoolParamForEachSVResult(CommandBasePtr relatedCommand, const std::string& paramName, const std::vector<bool>& val, const Sdx::optional<std::string>& dataSetName)
       : CommandResult(CmdName, relatedCommand)
     {
 
       setParamName(paramName);
       setVal(val);
+      setDataSetName(dataSetName);
     }
 
 
-    GetBeiDouEphBoolParamForEachSVResultPtr GetBeiDouEphBoolParamForEachSVResult::create(CommandBasePtr relatedCommand, const std::string& paramName, const std::vector<bool>& val)
+    GetBeiDouEphBoolParamForEachSVResultPtr GetBeiDouEphBoolParamForEachSVResult::create(CommandBasePtr relatedCommand, const std::string& paramName, const std::vector<bool>& val, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetBeiDouEphBoolParamForEachSVResultPtr(new GetBeiDouEphBoolParamForEachSVResult(relatedCommand, paramName, val));
+      return GetBeiDouEphBoolParamForEachSVResultPtr(new GetBeiDouEphBoolParamForEachSVResult(relatedCommand, paramName, val, dataSetName));
     }
 
     GetBeiDouEphBoolParamForEachSVResultPtr GetBeiDouEphBoolParamForEachSVResult::dynamicCast(CommandBasePtr ptr)
@@ -46,6 +47,7 @@ namespace Sdx
         return m_values.IsObject()
           && parse_json<std::string>::is_valid(m_values["ParamName"])
           && parse_json<std::vector<bool>>::is_valid(m_values["Val"])
+          && parse_json<Sdx::optional<std::string>>::is_valid(m_values["DataSetName"])
         ;
 
     }
@@ -73,6 +75,18 @@ namespace Sdx
     void GetBeiDouEphBoolParamForEachSVResult::setVal(const std::vector<bool>& val)
     {
       m_values.AddMember("Val", parse_json<std::vector<bool>>::format(val, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    Sdx::optional<std::string> GetBeiDouEphBoolParamForEachSVResult::dataSetName() const
+    {
+      return parse_json<Sdx::optional<std::string>>::parse(m_values["DataSetName"]);
+    }
+
+    void GetBeiDouEphBoolParamForEachSVResult::setDataSetName(const Sdx::optional<std::string>& dataSetName)
+    {
+      m_values.AddMember("DataSetName", parse_json<Sdx::optional<std::string>>::format(dataSetName, m_values.GetAllocator()), m_values.GetAllocator());
     }
 
 

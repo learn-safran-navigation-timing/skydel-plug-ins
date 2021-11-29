@@ -21,18 +21,19 @@ namespace Sdx
       : CommandBase(CmdName)
     {}
 
-    SetGpsAntiSpoofingFlagForSV::SetGpsAntiSpoofingFlagForSV(int svId, const Sdx::GpsASFlag& antiSpoofing)
+    SetGpsAntiSpoofingFlagForSV::SetGpsAntiSpoofingFlagForSV(int svId, const Sdx::GpsASFlag& antiSpoofing, const Sdx::optional<std::string>& dataSetName)
       : CommandBase(CmdName)
     {
 
       setSvId(svId);
       setAntiSpoofing(antiSpoofing);
+      setDataSetName(dataSetName);
     }
 
 
-    SetGpsAntiSpoofingFlagForSVPtr SetGpsAntiSpoofingFlagForSV::create(int svId, const Sdx::GpsASFlag& antiSpoofing)
+    SetGpsAntiSpoofingFlagForSVPtr SetGpsAntiSpoofingFlagForSV::create(int svId, const Sdx::GpsASFlag& antiSpoofing, const Sdx::optional<std::string>& dataSetName)
     {
-      return SetGpsAntiSpoofingFlagForSVPtr(new SetGpsAntiSpoofingFlagForSV(svId, antiSpoofing));
+      return SetGpsAntiSpoofingFlagForSVPtr(new SetGpsAntiSpoofingFlagForSV(svId, antiSpoofing, dataSetName));
     }
 
     SetGpsAntiSpoofingFlagForSVPtr SetGpsAntiSpoofingFlagForSV::dynamicCast(CommandBasePtr ptr)
@@ -46,6 +47,7 @@ namespace Sdx
         return m_values.IsObject()
           && parse_json<int>::is_valid(m_values["SvId"])
           && parse_json<Sdx::GpsASFlag>::is_valid(m_values["AntiSpoofing"])
+          && parse_json<Sdx::optional<std::string>>::is_valid(m_values["DataSetName"])
         ;
 
     }
@@ -79,6 +81,18 @@ namespace Sdx
     void SetGpsAntiSpoofingFlagForSV::setAntiSpoofing(const Sdx::GpsASFlag& antiSpoofing)
     {
       m_values.AddMember("AntiSpoofing", parse_json<Sdx::GpsASFlag>::format(antiSpoofing, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    Sdx::optional<std::string> SetGpsAntiSpoofingFlagForSV::dataSetName() const
+    {
+      return parse_json<Sdx::optional<std::string>>::parse(m_values["DataSetName"]);
+    }
+
+    void SetGpsAntiSpoofingFlagForSV::setDataSetName(const Sdx::optional<std::string>& dataSetName)
+    {
+      m_values.AddMember("DataSetName", parse_json<Sdx::optional<std::string>>::format(dataSetName, m_values.GetAllocator()), m_values.GetAllocator());
     }
 
 

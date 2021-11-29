@@ -21,19 +21,20 @@ namespace Sdx
       : CommandBase(CmdName)
     {}
 
-    SetBeiDouEphBoolParamForSV::SetBeiDouEphBoolParamForSV(int svId, const std::string& paramName, bool val)
+    SetBeiDouEphBoolParamForSV::SetBeiDouEphBoolParamForSV(int svId, const std::string& paramName, bool val, const Sdx::optional<std::string>& dataSetName)
       : CommandBase(CmdName)
     {
 
       setSvId(svId);
       setParamName(paramName);
       setVal(val);
+      setDataSetName(dataSetName);
     }
 
 
-    SetBeiDouEphBoolParamForSVPtr SetBeiDouEphBoolParamForSV::create(int svId, const std::string& paramName, bool val)
+    SetBeiDouEphBoolParamForSVPtr SetBeiDouEphBoolParamForSV::create(int svId, const std::string& paramName, bool val, const Sdx::optional<std::string>& dataSetName)
     {
-      return SetBeiDouEphBoolParamForSVPtr(new SetBeiDouEphBoolParamForSV(svId, paramName, val));
+      return SetBeiDouEphBoolParamForSVPtr(new SetBeiDouEphBoolParamForSV(svId, paramName, val, dataSetName));
     }
 
     SetBeiDouEphBoolParamForSVPtr SetBeiDouEphBoolParamForSV::dynamicCast(CommandBasePtr ptr)
@@ -48,6 +49,7 @@ namespace Sdx
           && parse_json<int>::is_valid(m_values["SvId"])
           && parse_json<std::string>::is_valid(m_values["ParamName"])
           && parse_json<bool>::is_valid(m_values["Val"])
+          && parse_json<Sdx::optional<std::string>>::is_valid(m_values["DataSetName"])
         ;
 
     }
@@ -93,6 +95,18 @@ namespace Sdx
     void SetBeiDouEphBoolParamForSV::setVal(bool val)
     {
       m_values.AddMember("Val", parse_json<bool>::format(val, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    Sdx::optional<std::string> SetBeiDouEphBoolParamForSV::dataSetName() const
+    {
+      return parse_json<Sdx::optional<std::string>>::parse(m_values["DataSetName"]);
+    }
+
+    void SetBeiDouEphBoolParamForSV::setDataSetName(const Sdx::optional<std::string>& dataSetName)
+    {
+      m_values.AddMember("DataSetName", parse_json<Sdx::optional<std::string>>::format(dataSetName, m_values.GetAllocator()), m_values.GetAllocator());
     }
 
 

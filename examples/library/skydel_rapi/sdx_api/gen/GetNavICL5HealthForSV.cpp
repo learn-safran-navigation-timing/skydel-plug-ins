@@ -21,17 +21,18 @@ namespace Sdx
       : CommandBase(CmdName)
     {}
 
-    GetNavICL5HealthForSV::GetNavICL5HealthForSV(int svId)
+    GetNavICL5HealthForSV::GetNavICL5HealthForSV(int svId, const Sdx::optional<std::string>& dataSetName)
       : CommandBase(CmdName)
     {
 
       setSvId(svId);
+      setDataSetName(dataSetName);
     }
 
 
-    GetNavICL5HealthForSVPtr GetNavICL5HealthForSV::create(int svId)
+    GetNavICL5HealthForSVPtr GetNavICL5HealthForSV::create(int svId, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetNavICL5HealthForSVPtr(new GetNavICL5HealthForSV(svId));
+      return GetNavICL5HealthForSVPtr(new GetNavICL5HealthForSV(svId, dataSetName));
     }
 
     GetNavICL5HealthForSVPtr GetNavICL5HealthForSV::dynamicCast(CommandBasePtr ptr)
@@ -44,6 +45,7 @@ namespace Sdx
       
         return m_values.IsObject()
           && parse_json<int>::is_valid(m_values["SvId"])
+          && parse_json<Sdx::optional<std::string>>::is_valid(m_values["DataSetName"])
         ;
 
     }
@@ -65,6 +67,18 @@ namespace Sdx
     void GetNavICL5HealthForSV::setSvId(int svId)
     {
       m_values.AddMember("SvId", parse_json<int>::format(svId, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    Sdx::optional<std::string> GetNavICL5HealthForSV::dataSetName() const
+    {
+      return parse_json<Sdx::optional<std::string>>::parse(m_values["DataSetName"]);
+    }
+
+    void GetNavICL5HealthForSV::setDataSetName(const Sdx::optional<std::string>& dataSetName)
+    {
+      m_values.AddMember("DataSetName", parse_json<Sdx::optional<std::string>>::format(dataSetName, m_values.GetAllocator()), m_values.GetAllocator());
     }
 
 

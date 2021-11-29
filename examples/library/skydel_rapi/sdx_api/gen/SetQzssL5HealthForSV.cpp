@@ -21,18 +21,19 @@ namespace Sdx
       : CommandBase(CmdName)
     {}
 
-    SetQzssL5HealthForSV::SetQzssL5HealthForSV(int svId, bool health)
+    SetQzssL5HealthForSV::SetQzssL5HealthForSV(int svId, bool health, const Sdx::optional<std::string>& dataSetName)
       : CommandBase(CmdName)
     {
 
       setSvId(svId);
       setHealth(health);
+      setDataSetName(dataSetName);
     }
 
 
-    SetQzssL5HealthForSVPtr SetQzssL5HealthForSV::create(int svId, bool health)
+    SetQzssL5HealthForSVPtr SetQzssL5HealthForSV::create(int svId, bool health, const Sdx::optional<std::string>& dataSetName)
     {
-      return SetQzssL5HealthForSVPtr(new SetQzssL5HealthForSV(svId, health));
+      return SetQzssL5HealthForSVPtr(new SetQzssL5HealthForSV(svId, health, dataSetName));
     }
 
     SetQzssL5HealthForSVPtr SetQzssL5HealthForSV::dynamicCast(CommandBasePtr ptr)
@@ -46,6 +47,7 @@ namespace Sdx
         return m_values.IsObject()
           && parse_json<int>::is_valid(m_values["SvId"])
           && parse_json<bool>::is_valid(m_values["Health"])
+          && parse_json<Sdx::optional<std::string>>::is_valid(m_values["DataSetName"])
         ;
 
     }
@@ -79,6 +81,18 @@ namespace Sdx
     void SetQzssL5HealthForSV::setHealth(bool health)
     {
       m_values.AddMember("Health", parse_json<bool>::format(health, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    Sdx::optional<std::string> SetQzssL5HealthForSV::dataSetName() const
+    {
+      return parse_json<Sdx::optional<std::string>>::parse(m_values["DataSetName"]);
+    }
+
+    void SetQzssL5HealthForSV::setDataSetName(const Sdx::optional<std::string>& dataSetName)
+    {
+      m_values.AddMember("DataSetName", parse_json<Sdx::optional<std::string>>::format(dataSetName, m_values.GetAllocator()), m_values.GetAllocator());
     }
 
 

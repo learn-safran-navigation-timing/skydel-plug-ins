@@ -21,18 +21,19 @@ namespace Sdx
       : CommandBase(CmdName)
     {}
 
-    SetGalileoSisaE1E5aIndexForSV::SetGalileoSisaE1E5aIndexForSV(int svId, int sisai)
+    SetGalileoSisaE1E5aIndexForSV::SetGalileoSisaE1E5aIndexForSV(int svId, int sisai, const Sdx::optional<std::string>& dataSetName)
       : CommandBase(CmdName)
     {
 
       setSvId(svId);
       setSisai(sisai);
+      setDataSetName(dataSetName);
     }
 
 
-    SetGalileoSisaE1E5aIndexForSVPtr SetGalileoSisaE1E5aIndexForSV::create(int svId, int sisai)
+    SetGalileoSisaE1E5aIndexForSVPtr SetGalileoSisaE1E5aIndexForSV::create(int svId, int sisai, const Sdx::optional<std::string>& dataSetName)
     {
-      return SetGalileoSisaE1E5aIndexForSVPtr(new SetGalileoSisaE1E5aIndexForSV(svId, sisai));
+      return SetGalileoSisaE1E5aIndexForSVPtr(new SetGalileoSisaE1E5aIndexForSV(svId, sisai, dataSetName));
     }
 
     SetGalileoSisaE1E5aIndexForSVPtr SetGalileoSisaE1E5aIndexForSV::dynamicCast(CommandBasePtr ptr)
@@ -46,6 +47,7 @@ namespace Sdx
         return m_values.IsObject()
           && parse_json<int>::is_valid(m_values["SvId"])
           && parse_json<int>::is_valid(m_values["Sisai"])
+          && parse_json<Sdx::optional<std::string>>::is_valid(m_values["DataSetName"])
         ;
 
     }
@@ -79,6 +81,18 @@ namespace Sdx
     void SetGalileoSisaE1E5aIndexForSV::setSisai(int sisai)
     {
       m_values.AddMember("Sisai", parse_json<int>::format(sisai, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    Sdx::optional<std::string> SetGalileoSisaE1E5aIndexForSV::dataSetName() const
+    {
+      return parse_json<Sdx::optional<std::string>>::parse(m_values["DataSetName"]);
+    }
+
+    void SetGalileoSisaE1E5aIndexForSV::setDataSetName(const Sdx::optional<std::string>& dataSetName)
+    {
+      m_values.AddMember("DataSetName", parse_json<Sdx::optional<std::string>>::format(dataSetName, m_values.GetAllocator()), m_values.GetAllocator());
     }
 
 

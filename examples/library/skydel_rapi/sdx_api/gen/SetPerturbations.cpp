@@ -21,7 +21,7 @@ namespace Sdx
       : CommandBase(CmdName)
     {}
 
-    SetPerturbations::SetPerturbations(const std::string& system, int svId, double crs, double crc, double cis, double cic, double cus, double cuc)
+    SetPerturbations::SetPerturbations(const std::string& system, int svId, double crs, double crc, double cis, double cic, double cus, double cuc, const Sdx::optional<std::string>& dataSetName)
       : CommandBase(CmdName)
     {
 
@@ -33,12 +33,13 @@ namespace Sdx
       setCic(cic);
       setCus(cus);
       setCuc(cuc);
+      setDataSetName(dataSetName);
     }
 
 
-    SetPerturbationsPtr SetPerturbations::create(const std::string& system, int svId, double crs, double crc, double cis, double cic, double cus, double cuc)
+    SetPerturbationsPtr SetPerturbations::create(const std::string& system, int svId, double crs, double crc, double cis, double cic, double cus, double cuc, const Sdx::optional<std::string>& dataSetName)
     {
-      return SetPerturbationsPtr(new SetPerturbations(system, svId, crs, crc, cis, cic, cus, cuc));
+      return SetPerturbationsPtr(new SetPerturbations(system, svId, crs, crc, cis, cic, cus, cuc, dataSetName));
     }
 
     SetPerturbationsPtr SetPerturbations::dynamicCast(CommandBasePtr ptr)
@@ -58,6 +59,7 @@ namespace Sdx
           && parse_json<double>::is_valid(m_values["Cic"])
           && parse_json<double>::is_valid(m_values["Cus"])
           && parse_json<double>::is_valid(m_values["Cuc"])
+          && parse_json<Sdx::optional<std::string>>::is_valid(m_values["DataSetName"])
         ;
 
     }
@@ -163,6 +165,18 @@ namespace Sdx
     void SetPerturbations::setCuc(double cuc)
     {
       m_values.AddMember("Cuc", parse_json<double>::format(cuc, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    Sdx::optional<std::string> SetPerturbations::dataSetName() const
+    {
+      return parse_json<Sdx::optional<std::string>>::parse(m_values["DataSetName"]);
+    }
+
+    void SetPerturbations::setDataSetName(const Sdx::optional<std::string>& dataSetName)
+    {
+      m_values.AddMember("DataSetName", parse_json<Sdx::optional<std::string>>::format(dataSetName, m_values.GetAllocator()), m_values.GetAllocator());
     }
 
 

@@ -9,7 +9,7 @@ namespace Sdx
   namespace Cmd
   {
     ///
-    /// Please note the command SetSbasHealthReserved is deprecated since 21.5. You may use SetSbasSVReservedHealth.
+    /// Please note the command SetSbasHealthReserved is deprecated since 21.9. You may use SetSbasSVReservedHealth.
     /// 
     /// Apply reserved flag for a SBAS satellite
     ///

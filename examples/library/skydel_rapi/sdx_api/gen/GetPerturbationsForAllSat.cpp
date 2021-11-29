@@ -21,17 +21,18 @@ namespace Sdx
       : CommandBase(CmdName)
     {}
 
-    GetPerturbationsForAllSat::GetPerturbationsForAllSat(const std::string& system)
+    GetPerturbationsForAllSat::GetPerturbationsForAllSat(const std::string& system, const Sdx::optional<std::string>& dataSetName)
       : CommandBase(CmdName)
     {
 
       setSystem(system);
+      setDataSetName(dataSetName);
     }
 
 
-    GetPerturbationsForAllSatPtr GetPerturbationsForAllSat::create(const std::string& system)
+    GetPerturbationsForAllSatPtr GetPerturbationsForAllSat::create(const std::string& system, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetPerturbationsForAllSatPtr(new GetPerturbationsForAllSat(system));
+      return GetPerturbationsForAllSatPtr(new GetPerturbationsForAllSat(system, dataSetName));
     }
 
     GetPerturbationsForAllSatPtr GetPerturbationsForAllSat::dynamicCast(CommandBasePtr ptr)
@@ -44,6 +45,7 @@ namespace Sdx
       
         return m_values.IsObject()
           && parse_json<std::string>::is_valid(m_values["System"])
+          && parse_json<Sdx::optional<std::string>>::is_valid(m_values["DataSetName"])
         ;
 
     }
@@ -65,6 +67,18 @@ namespace Sdx
     void GetPerturbationsForAllSat::setSystem(const std::string& system)
     {
       m_values.AddMember("System", parse_json<std::string>::format(system, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    Sdx::optional<std::string> GetPerturbationsForAllSat::dataSetName() const
+    {
+      return parse_json<Sdx::optional<std::string>>::parse(m_values["DataSetName"]);
+    }
+
+    void GetPerturbationsForAllSat::setDataSetName(const Sdx::optional<std::string>& dataSetName)
+    {
+      m_values.AddMember("DataSetName", parse_json<Sdx::optional<std::string>>::format(dataSetName, m_values.GetAllocator()), m_values.GetAllocator());
     }
 
 

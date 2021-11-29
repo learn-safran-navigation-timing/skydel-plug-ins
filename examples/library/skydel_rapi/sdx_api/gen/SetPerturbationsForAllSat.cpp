@@ -21,7 +21,7 @@ namespace Sdx
       : CommandBase(CmdName)
     {}
 
-    SetPerturbationsForAllSat::SetPerturbationsForAllSat(const std::string& system, const std::vector<double>& crs, const std::vector<double>& crc, const std::vector<double>& cis, const std::vector<double>& cic, const std::vector<double>& cus, const std::vector<double>& cuc)
+    SetPerturbationsForAllSat::SetPerturbationsForAllSat(const std::string& system, const std::vector<double>& crs, const std::vector<double>& crc, const std::vector<double>& cis, const std::vector<double>& cic, const std::vector<double>& cus, const std::vector<double>& cuc, const Sdx::optional<std::string>& dataSetName)
       : CommandBase(CmdName)
     {
 
@@ -32,12 +32,13 @@ namespace Sdx
       setCic(cic);
       setCus(cus);
       setCuc(cuc);
+      setDataSetName(dataSetName);
     }
 
 
-    SetPerturbationsForAllSatPtr SetPerturbationsForAllSat::create(const std::string& system, const std::vector<double>& crs, const std::vector<double>& crc, const std::vector<double>& cis, const std::vector<double>& cic, const std::vector<double>& cus, const std::vector<double>& cuc)
+    SetPerturbationsForAllSatPtr SetPerturbationsForAllSat::create(const std::string& system, const std::vector<double>& crs, const std::vector<double>& crc, const std::vector<double>& cis, const std::vector<double>& cic, const std::vector<double>& cus, const std::vector<double>& cuc, const Sdx::optional<std::string>& dataSetName)
     {
-      return SetPerturbationsForAllSatPtr(new SetPerturbationsForAllSat(system, crs, crc, cis, cic, cus, cuc));
+      return SetPerturbationsForAllSatPtr(new SetPerturbationsForAllSat(system, crs, crc, cis, cic, cus, cuc, dataSetName));
     }
 
     SetPerturbationsForAllSatPtr SetPerturbationsForAllSat::dynamicCast(CommandBasePtr ptr)
@@ -56,6 +57,7 @@ namespace Sdx
           && parse_json<std::vector<double>>::is_valid(m_values["Cic"])
           && parse_json<std::vector<double>>::is_valid(m_values["Cus"])
           && parse_json<std::vector<double>>::is_valid(m_values["Cuc"])
+          && parse_json<Sdx::optional<std::string>>::is_valid(m_values["DataSetName"])
         ;
 
     }
@@ -149,6 +151,18 @@ namespace Sdx
     void SetPerturbationsForAllSat::setCuc(const std::vector<double>& cuc)
     {
       m_values.AddMember("Cuc", parse_json<std::vector<double>>::format(cuc, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    Sdx::optional<std::string> SetPerturbationsForAllSat::dataSetName() const
+    {
+      return parse_json<Sdx::optional<std::string>>::parse(m_values["DataSetName"]);
+    }
+
+    void SetPerturbationsForAllSat::setDataSetName(const Sdx::optional<std::string>& dataSetName)
+    {
+      m_values.AddMember("DataSetName", parse_json<Sdx::optional<std::string>>::format(dataSetName, m_values.GetAllocator()), m_values.GetAllocator());
     }
 
 

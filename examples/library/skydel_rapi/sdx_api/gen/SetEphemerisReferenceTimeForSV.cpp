@@ -21,19 +21,20 @@ namespace Sdx
       : CommandBase(CmdName)
     {}
 
-    SetEphemerisReferenceTimeForSV::SetEphemerisReferenceTimeForSV(const std::string& system, int svId, const Sdx::DateTime& time)
+    SetEphemerisReferenceTimeForSV::SetEphemerisReferenceTimeForSV(const std::string& system, int svId, const Sdx::DateTime& time, const Sdx::optional<std::string>& dataSetName)
       : CommandBase(CmdName)
     {
 
       setSystem(system);
       setSvId(svId);
       setTime(time);
+      setDataSetName(dataSetName);
     }
 
 
-    SetEphemerisReferenceTimeForSVPtr SetEphemerisReferenceTimeForSV::create(const std::string& system, int svId, const Sdx::DateTime& time)
+    SetEphemerisReferenceTimeForSVPtr SetEphemerisReferenceTimeForSV::create(const std::string& system, int svId, const Sdx::DateTime& time, const Sdx::optional<std::string>& dataSetName)
     {
-      return SetEphemerisReferenceTimeForSVPtr(new SetEphemerisReferenceTimeForSV(system, svId, time));
+      return SetEphemerisReferenceTimeForSVPtr(new SetEphemerisReferenceTimeForSV(system, svId, time, dataSetName));
     }
 
     SetEphemerisReferenceTimeForSVPtr SetEphemerisReferenceTimeForSV::dynamicCast(CommandBasePtr ptr)
@@ -48,6 +49,7 @@ namespace Sdx
           && parse_json<std::string>::is_valid(m_values["System"])
           && parse_json<int>::is_valid(m_values["SvId"])
           && parse_json<Sdx::DateTime>::is_valid(m_values["Time"])
+          && parse_json<Sdx::optional<std::string>>::is_valid(m_values["DataSetName"])
         ;
 
     }
@@ -93,6 +95,18 @@ namespace Sdx
     void SetEphemerisReferenceTimeForSV::setTime(const Sdx::DateTime& time)
     {
       m_values.AddMember("Time", parse_json<Sdx::DateTime>::format(time, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    Sdx::optional<std::string> SetEphemerisReferenceTimeForSV::dataSetName() const
+    {
+      return parse_json<Sdx::optional<std::string>>::parse(m_values["DataSetName"]);
+    }
+
+    void SetEphemerisReferenceTimeForSV::setDataSetName(const Sdx::optional<std::string>& dataSetName)
+    {
+      m_values.AddMember("DataSetName", parse_json<Sdx::optional<std::string>>::format(dataSetName, m_values.GetAllocator()), m_values.GetAllocator());
     }
 
 

@@ -21,19 +21,20 @@ namespace Sdx
       : CommandBase(CmdName)
     {}
 
-    SetGalileoDataHealthForSV::SetGalileoDataHealthForSV(int svId, const std::string& component, bool health)
+    SetGalileoDataHealthForSV::SetGalileoDataHealthForSV(int svId, const std::string& component, bool health, const Sdx::optional<std::string>& dataSetName)
       : CommandBase(CmdName)
     {
 
       setSvId(svId);
       setComponent(component);
       setHealth(health);
+      setDataSetName(dataSetName);
     }
 
 
-    SetGalileoDataHealthForSVPtr SetGalileoDataHealthForSV::create(int svId, const std::string& component, bool health)
+    SetGalileoDataHealthForSVPtr SetGalileoDataHealthForSV::create(int svId, const std::string& component, bool health, const Sdx::optional<std::string>& dataSetName)
     {
-      return SetGalileoDataHealthForSVPtr(new SetGalileoDataHealthForSV(svId, component, health));
+      return SetGalileoDataHealthForSVPtr(new SetGalileoDataHealthForSV(svId, component, health, dataSetName));
     }
 
     SetGalileoDataHealthForSVPtr SetGalileoDataHealthForSV::dynamicCast(CommandBasePtr ptr)
@@ -48,6 +49,7 @@ namespace Sdx
           && parse_json<int>::is_valid(m_values["SvId"])
           && parse_json<std::string>::is_valid(m_values["Component"])
           && parse_json<bool>::is_valid(m_values["Health"])
+          && parse_json<Sdx::optional<std::string>>::is_valid(m_values["DataSetName"])
         ;
 
     }
@@ -93,6 +95,18 @@ namespace Sdx
     void SetGalileoDataHealthForSV::setHealth(bool health)
     {
       m_values.AddMember("Health", parse_json<bool>::format(health, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    Sdx::optional<std::string> SetGalileoDataHealthForSV::dataSetName() const
+    {
+      return parse_json<Sdx::optional<std::string>>::parse(m_values["DataSetName"]);
+    }
+
+    void SetGalileoDataHealthForSV::setDataSetName(const Sdx::optional<std::string>& dataSetName)
+    {
+      m_values.AddMember("DataSetName", parse_json<Sdx::optional<std::string>>::format(dataSetName, m_values.GetAllocator()), m_values.GetAllocator());
     }
 
 
