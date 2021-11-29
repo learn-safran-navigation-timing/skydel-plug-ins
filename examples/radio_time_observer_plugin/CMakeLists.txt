@@ -8,6 +8,7 @@ file(GLOB RADIO_TIME_OBSERVER_PLUGIN_SRC *.cpp *.ui)
 
 add_library(radio_time_observer_plugin SHARED
     ${RADIO_TIME_OBSERVER_PLUGIN_SRC}
+	runtime_objects.h
     )
 
 target_link_libraries(radio_time_observer_plugin PUBLIC
