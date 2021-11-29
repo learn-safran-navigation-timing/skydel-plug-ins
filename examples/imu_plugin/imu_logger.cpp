@@ -10,7 +10,7 @@
 
 const QString ELASPED_JSON_KEY = "elapsed";
 const QString ACCELERATION_JSON_KEY = "acceleration";
-const QString ANGULAR_VELOCITY_JSON_KEY = "agularvelocity";
+const QString ANGULAR_VELOCITY_JSON_KEY = "angularvelocity";
 
 const QString ELAPSED_TIME = "Elapsed Time (ms)";
 const QJsonArray ACCELERATION = {"Acceleration X (m/s^2)", "Acceleration Y (m/s^2)", "Acceleration Z (m/s^2)"};
