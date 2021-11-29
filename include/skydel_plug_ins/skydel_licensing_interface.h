@@ -10,11 +10,11 @@ class SkydelLicensingInterface : public SkydelLicensingBase
 public:
   virtual ~SkydelLicensingInterface() = default;
 
-  void exchangeKey(QByteArray& ciphertext, QByteArray& nonce);
+  virtual void exchangeKey(QByteArray& ciphertext, QByteArray& nonce) = 0;
   virtual QString getPluginIID() const = 0;
 
   static constexpr auto ID = "SkydelLicensing";
-  static constexpr auto VERSION = 1;
+  static constexpr auto VERSION = 2;
 };
 
 #endif // SKYDEL_LICENSING_INTERFACE_H

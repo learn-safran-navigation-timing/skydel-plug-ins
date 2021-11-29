@@ -15,10 +15,13 @@ public:
 
   inline void post(Sdx::CommandBasePtr cmd,
                    double timestamp = 0.0,
-                   std::function<void(Sdx::CommandResultPtr)> callback = {})
+                   std::function<void(Sdx::CommandResultPtr)> callback = {},
+                   bool hideFromAutomationTab = false)
   {
     if (m_rapi)
     {
+      cmd->setHidden(hideFromAutomationTab);
+
       if (callback)
       {
         m_rapi->post(cmd->toString(), timestamp, [callback = std::move(callback)](const std::string& result) {
@@ -39,15 +42,24 @@ public:
     }
   }
 
-  inline void post(Sdx::CommandBasePtr cmd, std::function<void(Sdx::CommandResultPtr)> callback)
+  inline void post(Sdx::CommandBasePtr cmd, bool hideFromAutomationTab = false)
   {
-    post(cmd, 0.0, callback);
+    post(cmd, 0.0, {}, hideFromAutomationTab);
   }
 
-  Sdx::CommandResultPtr call(Sdx::CommandBasePtr cmd)
+  inline void post(Sdx::CommandBasePtr cmd,
+                   std::function<void(Sdx::CommandResultPtr)> callback,
+                   bool hideFromAutomationTab = false)
+  {
+    post(cmd, 0.0, callback, hideFromAutomationTab);
+  }
+
+  Sdx::CommandResultPtr call(Sdx::CommandBasePtr cmd, bool hideFromAutomationTab = false)
   {
     if (m_rapi)
     {
+      cmd->setHidden(hideFromAutomationTab);
+
       auto result = m_rapi->call(cmd->toString());
 
       std::string errorMsg;
