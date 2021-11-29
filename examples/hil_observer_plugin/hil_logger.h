@@ -3,7 +3,7 @@
 
 #include <QFile>
 
-#include "skydel_plugin.h"
+#include "skydel_plug_ins/skydel_plugin.h"
 
 // Runtime hil observer implementation
 class HilLogger : public SkydelRuntimeHilObserver

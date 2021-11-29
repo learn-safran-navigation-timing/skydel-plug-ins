@@ -5,7 +5,7 @@
 #include <QObject>
 
 #include "delayed_broadcaster.h"
-#include "skydel_plugin.h"
+#include "skydel_plug_ins/skydel_plugin.h"
 
 // This class will receive data from the runtime objects and do the following
 // - Log, over network or by file, the time data was processed relative to RF transmission

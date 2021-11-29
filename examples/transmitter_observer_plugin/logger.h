@@ -6,8 +6,8 @@
 #include <QString>
 #include <QUdpSocket>
 
-#include "skydel_position_observer_interface.h"
-#include "skydel_transmitter_observer_interface.h"
+#include "skydel_plug_ins/skydel_position_observer_interface.h"
+#include "skydel_plug_ins/skydel_transmitter_observer_interface.h"
 
 class Logger
 {

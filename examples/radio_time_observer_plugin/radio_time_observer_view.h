@@ -4,8 +4,8 @@
 #include <QLabel>
 #include <QWidget>
 
-#include "skydel_position_observer_interface.h"
-#include "skydel_radio_time_observer_interface.h"
+#include "skydel_plug_ins/skydel_position_observer_interface.h"
+#include "skydel_plug_ins/skydel_radio_time_observer_interface.h"
 
 namespace Ui
 {

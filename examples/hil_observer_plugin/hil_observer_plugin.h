@@ -1,7 +1,7 @@
 #ifndef HIL_OBSERVER_PLUGIN_H
 #define HIL_OBSERVER_PLUGIN_H
 
-#include "skydel_plugin.h"
+#include "skydel_plug_ins/skydel_plugin.h"
 
 // Plugin implementation
 class HilObserverPlugin : public QObject, public SkydelCoreInterface, public SkydelHilObserverInterface

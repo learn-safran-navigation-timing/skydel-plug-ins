@@ -4,7 +4,7 @@
 #include <QLabel>
 #include <QWidget>
 
-#include "skydel_hil_observer_interface.h"
+#include "skydel_plug_ins/skydel_hil_observer_interface.h"
 
 namespace Ui
 {

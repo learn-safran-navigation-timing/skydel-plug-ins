@@ -5,7 +5,7 @@
 #include <QUdpSocket>
 
 #include "logger.h"
-#include "skydel_plugin.h"
+#include "skydel_plug_ins/skydel_plugin.h"
 
 // Plugin implementation
 class TransmitterObserverPlugin :

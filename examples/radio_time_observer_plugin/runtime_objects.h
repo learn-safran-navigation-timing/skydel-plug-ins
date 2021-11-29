@@ -1,8 +1,8 @@
 #ifndef RUNTIME_OBJECTS_H
 #define RUNTIME_OBJECTS_H
 
-#include "skydel_position_observer_interface.h"
-#include "skydel_radio_time_observer_interface.h"
+#include "skydel_plug_ins/skydel_position_observer_interface.h"
+#include "skydel_plug_ins/skydel_radio_time_observer_interface.h"
 
 class ForwardingRadioTimeObserver : public SkydelRuntimeRadioTimeObserver
 {

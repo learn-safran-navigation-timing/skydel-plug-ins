@@ -1,8 +1,8 @@
 #ifndef RUNTIME_POSITION_OBSERVER_H
 #define RUNTIME_POSITION_OBSERVER_H
 
-#include "skydel_plugin.h"
-#include "skydel_position_observer_interface.h"
+#include "skydel_plug_ins/skydel_plugin.h"
+#include "skydel_plug_ins/skydel_position_observer_interface.h"
 
 class RuntimePositionObserver : public SkydelRuntimePositionObserver
 {
