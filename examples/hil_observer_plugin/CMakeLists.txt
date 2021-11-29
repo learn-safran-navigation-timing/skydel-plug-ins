@@ -2,8 +2,6 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-find_package(Qt5 COMPONENTS Network REQUIRED)
-
 file(GLOB HIL_OBSERVER_PLUGIN_SRC *.cpp *.ui)
 
 add_library(hil_observer_plugin SHARED

@@ -12,6 +12,7 @@ add_library(transmitter_observer_plugin SHARED
 
 target_link_libraries(transmitter_observer_plugin PUBLIC
     Skydel::SkydelPlugin
+	Qt5::Network
     )
 
 target_include_directories(transmitter_observer_plugin PUBLIC

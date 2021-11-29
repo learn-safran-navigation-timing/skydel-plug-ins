@@ -12,6 +12,7 @@ add_library(radio_time_observer_plugin SHARED
 
 target_link_libraries(radio_time_observer_plugin PUBLIC
     Skydel::SkydelPlugin
+	Qt5::Network
     )
 
 target_include_directories(radio_time_observer_plugin PUBLIC
