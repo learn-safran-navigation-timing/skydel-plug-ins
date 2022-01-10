@@ -72,6 +72,7 @@ HEADERS += \
   sdx_api/gen/DeleteSVAntennaModel.h	\
   sdx_api/gen/DeleteVehicleAntennaModel.h	\
   sdx_api/gen/DuplicateDataSet.h	\
+  sdx_api/gen/ElevationAzimuth.h	\
   sdx_api/gen/EnableCnav2Pages.h	\
   sdx_api/gen/EnableEachSV.h	\
   sdx_api/gen/EnableElevationMaskAbove.h	\
@@ -190,6 +191,12 @@ HEADERS += \
   sdx_api/gen/GetDefaultVehicleAntennaModelResult.h	\
   sdx_api/gen/GetDuration.h	\
   sdx_api/gen/GetDurationResult.h	\
+  sdx_api/gen/GetEffectiveIonisationLevelCoefficient.h	\
+  sdx_api/gen/GetEffectiveIonisationLevelCoefficientResult.h	\
+  sdx_api/gen/GetElevationAzimuthForEachSV.h	\
+  sdx_api/gen/GetElevationAzimuthForEachSVResult.h	\
+  sdx_api/gen/GetElevationAzimuthForSV.h	\
+  sdx_api/gen/GetElevationAzimuthForSVResult.h	\
   sdx_api/gen/GetElevationMaskAbove.h	\
   sdx_api/gen/GetElevationMaskAboveResult.h	\
   sdx_api/gen/GetElevationMaskBelow.h	\
@@ -370,6 +377,8 @@ HEADERS += \
   sdx_api/gen/GetMessageModificationToQzssLNavResult.h	\
   sdx_api/gen/GetMessageModificationToQzssSlas.h	\
   sdx_api/gen/GetMessageModificationToQzssSlasResult.h	\
+  sdx_api/gen/GetMessageModificationToSbasNav.h	\
+  sdx_api/gen/GetMessageModificationToSbasNavResult.h	\
   sdx_api/gen/GetMessageSequence.h	\
   sdx_api/gen/GetMessageSequenceResult.h	\
   sdx_api/gen/GetModulationTarget.h	\
@@ -563,12 +572,14 @@ HEADERS += \
   sdx_api/gen/GpsASFlag.h	\
   sdx_api/gen/HilPortResult.h	\
   sdx_api/gen/HilWarningResult.h	\
+  sdx_api/gen/ImportCCIRFilesFromDirectory.h	\
   sdx_api/gen/ImportConstellationParameters.h	\
   sdx_api/gen/ImportGlonassAlmanac.h	\
   sdx_api/gen/ImportIonoGridErrors.h	\
   sdx_api/gen/ImportIonoGridGIVEI.h	\
   sdx_api/gen/ImportIonoGridMask.h	\
   sdx_api/gen/ImportIonoParameters.h	\
+  sdx_api/gen/ImportMODIPFile.h	\
   sdx_api/gen/ImportNmeaIntTxTrack.h	\
   sdx_api/gen/ImportNmeaTrack.h	\
   sdx_api/gen/ImportSVAntennaModel.h	\
@@ -745,6 +756,7 @@ HEADERS += \
   sdx_api/gen/SetDefaultIntTxPersistence.h	\
   sdx_api/gen/SetDefaultVehicleAntennaModel.h	\
   sdx_api/gen/SetDuration.h	\
+  sdx_api/gen/SetEffectiveIonisationLevelCoefficient.h	\
   sdx_api/gen/SetElevationMaskAbove.h	\
   sdx_api/gen/SetElevationMaskBelow.h	\
   sdx_api/gen/SetEngineLatency.h	\
@@ -851,6 +863,7 @@ HEADERS += \
   sdx_api/gen/SetMessageModificationToQzssCNav2.h	\
   sdx_api/gen/SetMessageModificationToQzssLNav.h	\
   sdx_api/gen/SetMessageModificationToQzssSlas.h	\
+  sdx_api/gen/SetMessageModificationToSbasNav.h	\
   sdx_api/gen/SetModulationTarget.h	\
   sdx_api/gen/SetMultipathForSV.h	\
   sdx_api/gen/SetNavICEphDoubleParamForEachSV.h	\
@@ -1193,6 +1206,12 @@ SOURCES += \
   sdx_api/gen/GetDefaultVehicleAntennaModelResult.cpp	\
   sdx_api/gen/GetDuration.cpp	\
   sdx_api/gen/GetDurationResult.cpp	\
+  sdx_api/gen/GetEffectiveIonisationLevelCoefficient.cpp	\
+  sdx_api/gen/GetEffectiveIonisationLevelCoefficientResult.cpp	\
+  sdx_api/gen/GetElevationAzimuthForEachSV.cpp	\
+  sdx_api/gen/GetElevationAzimuthForEachSVResult.cpp	\
+  sdx_api/gen/GetElevationAzimuthForSV.cpp	\
+  sdx_api/gen/GetElevationAzimuthForSVResult.cpp	\
   sdx_api/gen/GetElevationMaskAbove.cpp	\
   sdx_api/gen/GetElevationMaskAboveResult.cpp	\
   sdx_api/gen/GetElevationMaskBelow.cpp	\
@@ -1367,6 +1386,8 @@ SOURCES += \
   sdx_api/gen/GetMessageModificationToQzssLNavResult.cpp	\
   sdx_api/gen/GetMessageModificationToQzssSlas.cpp	\
   sdx_api/gen/GetMessageModificationToQzssSlasResult.cpp	\
+  sdx_api/gen/GetMessageModificationToSbasNav.cpp	\
+  sdx_api/gen/GetMessageModificationToSbasNavResult.cpp	\
   sdx_api/gen/GetMessageSequence.cpp	\
   sdx_api/gen/GetMessageSequenceResult.cpp	\
   sdx_api/gen/GetModulationTarget.cpp	\
@@ -1544,12 +1565,14 @@ SOURCES += \
   sdx_api/gen/GetWFAntennaOffsetResult.cpp	\
   sdx_api/gen/HilPortResult.cpp	\
   sdx_api/gen/HilWarningResult.cpp	\
+  sdx_api/gen/ImportCCIRFilesFromDirectory.cpp	\
   sdx_api/gen/ImportConstellationParameters.cpp	\
   sdx_api/gen/ImportGlonassAlmanac.cpp	\
   sdx_api/gen/ImportIonoGridErrors.cpp	\
   sdx_api/gen/ImportIonoGridGIVEI.cpp	\
   sdx_api/gen/ImportIonoGridMask.cpp	\
   sdx_api/gen/ImportIonoParameters.cpp	\
+  sdx_api/gen/ImportMODIPFile.cpp	\
   sdx_api/gen/ImportNmeaIntTxTrack.cpp	\
   sdx_api/gen/ImportNmeaTrack.cpp	\
   sdx_api/gen/ImportSVAntennaModel.cpp	\
@@ -1713,6 +1736,7 @@ SOURCES += \
   sdx_api/gen/SetDefaultIntTxPersistence.cpp	\
   sdx_api/gen/SetDefaultVehicleAntennaModel.cpp	\
   sdx_api/gen/SetDuration.cpp	\
+  sdx_api/gen/SetEffectiveIonisationLevelCoefficient.cpp	\
   sdx_api/gen/SetElevationMaskAbove.cpp	\
   sdx_api/gen/SetElevationMaskBelow.cpp	\
   sdx_api/gen/SetEngineLatency.cpp	\
@@ -1812,6 +1836,7 @@ SOURCES += \
   sdx_api/gen/SetMessageModificationToQzssCNav2.cpp	\
   sdx_api/gen/SetMessageModificationToQzssLNav.cpp	\
   sdx_api/gen/SetMessageModificationToQzssSlas.cpp	\
+  sdx_api/gen/SetMessageModificationToSbasNav.cpp	\
   sdx_api/gen/SetModulationTarget.cpp	\
   sdx_api/gen/SetMultipathForSV.cpp	\
   sdx_api/gen/SetNavICEphDoubleParamForEachSV.cpp	\
