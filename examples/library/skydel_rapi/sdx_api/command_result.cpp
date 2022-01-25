@@ -19,8 +19,8 @@ CommandResult::CommandResult(const std::string &cmdName, CommandBasePtr relatedC
   CommandBase(cmdName), m_relatedCommand(relatedCmd)
 {
   rapidjson::Value value;
-  value.SetString(str.c_str(), (rapidjson::SizeType) str.size(), m_values.GetAllocator());
-  setValue(Key, value);
+  value.SetString(RelatedCommand.c_str(), (rapidjson::SizeType) RelatedCommand.size(), m_values.GetAllocator());
+  setValue(RelatedCommand, value);
 }
 
 bool CommandResult::isValid() const
