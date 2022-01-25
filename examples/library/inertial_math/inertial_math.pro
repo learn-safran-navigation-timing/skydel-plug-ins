@@ -35,11 +35,7 @@ SOURCES += \
 
 INCLUDEPATH *= $$PWD/include
 
-win32:CONFIG(release, debug|release): INERTIAL_MATH_OUT_DIR = $$PWD/../../../bin/release/
-else:win32:CONFIG(debug, debug|release): INERTIAL_MATH_OUT_DIR = $$PWD/../../../bin/debug/
-else:unix: INERTIAL_MATH_OUT_DIR = $$PWD/../../../bin/
-
-DESTDIR = $$INERTIAL_MATH_OUT_DIR
-OBJECTS_DIR = $$INERTIAL_MATH_OUT_DIR/tmp/$$TARGET
+DESTDIR = $$PWD/../../../bin
+OBJECTS_DIR = $$PWD/../../../tmp/$$TARGET
 MOC_DIR = $$OBJECTS_DIR
 UI_DIR = $$OBJECTS_DIR
