@@ -23,7 +23,7 @@ jobs:
           version: '5.12.3'
           host: 'windows'
           arch: 'win64_msvc2017_64'
-          tools: 'tools_qtcreator,6.0.1-0,qt.tools.qtcreator'
+          tools: 'tools_qtcreator,6.0.2-0,qt.tools.qtcreator'
 
       - name: Build Setup
         uses: ilammy/msvc-dev-cmd@v1
