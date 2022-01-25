@@ -25,7 +25,11 @@ exists($$GEN_RAPI_PRO_FILE) {
 SOURCES += $$EXTRA_SOURCES
 HEADERS += $$EXTRA_HEADERS
 
-DESTDIR = $$PWD/../../../bin
-OBJECTS_DIR = $$PWD/../../../tmp/$$TARGET
+win32:CONFIG(release, debug|release): RAPI_OUT_DIR = $$PWD/../../../bin/release/
+else:win32:CONFIG(debug, debug|release): RAPI_OUT_DIR = $$PWD/../../../bin/debug/
+else:unix: RAPI_OUT_DIR = $$PWD/../../../bin/
+
+DESTDIR = $$RAPI_OUT_DIR
+OBJECTS_DIR = $$RAPI_OUT_DIR/tmp/$$TARGET
 MOC_DIR = $$OBJECTS_DIR
 UI_DIR = $$OBJECTS_DIR
