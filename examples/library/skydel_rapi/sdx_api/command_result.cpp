@@ -19,7 +19,7 @@ CommandResult::CommandResult(const std::string &cmdName, CommandBasePtr relatedC
   CommandBase(cmdName), m_relatedCommand(relatedCmd)
 {
   rapidjson::Value value;
-  value.SetString(RelatedCommand.c_str(), (rapidjson::SizeType) RelatedCommand.size(), m_values.GetAllocator());
+  value.SetString(relatedCmd->toString().c_str(), (rapidjson::SizeType) relatedCmd->toString().size(), m_values.GetAllocator());
   setValue(RelatedCommand, value);
 }
 
