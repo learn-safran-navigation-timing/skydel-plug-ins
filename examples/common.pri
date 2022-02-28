@@ -1,4 +1,6 @@
-include (../skydel_plugin_sdk.pri)
+! include (../skydel_plugin_sdk.pri) {
+    error( "Couldn't find the skydel_plugin_sdk.pri file!" )
+}
 
 TEMPLATE = lib
 CONFIG += plugin

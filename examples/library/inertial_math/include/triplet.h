@@ -1,7 +1,7 @@
 #ifndef IML_TRIPLET_H
 #define IML_TRIPLET_H
 
-#include <blaze_math.h>
+#include <blaze/Math.h>
 
 namespace Iml
 {
