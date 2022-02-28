@@ -31,7 +31,7 @@ namespace Sdx
 
     IsLogHILInputEnabledResultPtr IsLogHILInputEnabledResult::create(CommandBasePtr relatedCommand, bool enabled)
     {
-      return std::make_shared<IsLogHILInputEnabledResult>(relatedCommand, enabled);
+      return IsLogHILInputEnabledResultPtr(new IsLogHILInputEnabledResult(relatedCommand, enabled));
     }
 
     IsLogHILInputEnabledResultPtr IsLogHILInputEnabledResult::dynamicCast(CommandBasePtr ptr)

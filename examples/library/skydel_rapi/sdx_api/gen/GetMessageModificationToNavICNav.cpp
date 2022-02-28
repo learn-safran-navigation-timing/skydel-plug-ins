@@ -31,7 +31,7 @@ namespace Sdx
 
     GetMessageModificationToNavICNavPtr GetMessageModificationToNavICNav::create(const std::string& id)
     {
-      return std::make_shared<GetMessageModificationToNavICNav>(id);
+      return GetMessageModificationToNavICNavPtr(new GetMessageModificationToNavICNav(id));
     }
 
     GetMessageModificationToNavICNavPtr GetMessageModificationToNavICNav::dynamicCast(CommandBasePtr ptr)

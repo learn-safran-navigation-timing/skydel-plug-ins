@@ -26,7 +26,7 @@ namespace Sdx
 
     GetAllModulationTargetsPtr GetAllModulationTargets::create()
     {
-      return std::make_shared<GetAllModulationTargets>();
+      return GetAllModulationTargetsPtr(new GetAllModulationTargets());
     }
 
     GetAllModulationTargetsPtr GetAllModulationTargets::dynamicCast(CommandBasePtr ptr)

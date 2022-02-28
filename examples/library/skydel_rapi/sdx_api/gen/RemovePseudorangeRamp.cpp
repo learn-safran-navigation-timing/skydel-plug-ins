@@ -32,7 +32,7 @@ namespace Sdx
 
     RemovePseudorangeRampPtr RemovePseudorangeRamp::create(const std::string& system, const std::string& id)
     {
-      return std::make_shared<RemovePseudorangeRamp>(system, id);
+      return RemovePseudorangeRampPtr(new RemovePseudorangeRamp(system, id));
     }
 
     RemovePseudorangeRampPtr RemovePseudorangeRamp::dynamicCast(CommandBasePtr ptr)

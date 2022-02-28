@@ -31,7 +31,7 @@ namespace Sdx
 
     GetMultipathForIDPtr GetMultipathForID::create(const std::string& id)
     {
-      return std::make_shared<GetMultipathForID>(id);
+      return GetMultipathForIDPtr(new GetMultipathForID(id));
     }
 
     GetMultipathForIDPtr GetMultipathForID::dynamicCast(CommandBasePtr ptr)

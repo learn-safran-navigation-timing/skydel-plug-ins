@@ -31,7 +31,7 @@ namespace Sdx
 
     SetIonoGridErrorAllPtr SetIonoGridErrorAll::create(const std::vector<std::vector<double>>& grid)
     {
-      return std::make_shared<SetIonoGridErrorAll>(grid);
+      return SetIonoGridErrorAllPtr(new SetIonoGridErrorAll(grid));
     }
 
     SetIonoGridErrorAllPtr SetIonoGridErrorAll::dynamicCast(CommandBasePtr ptr)

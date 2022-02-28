@@ -26,7 +26,7 @@ namespace Sdx
 
     BeginRouteDefinitionPtr BeginRouteDefinition::create()
     {
-      return std::make_shared<BeginRouteDefinition>();
+      return BeginRouteDefinitionPtr(new BeginRouteDefinition());
     }
 
     BeginRouteDefinitionPtr BeginRouteDefinition::dynamicCast(CommandBasePtr ptr)

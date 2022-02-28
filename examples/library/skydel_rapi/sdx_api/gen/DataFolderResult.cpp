@@ -31,7 +31,7 @@ namespace Sdx
 
     DataFolderResultPtr DataFolderResult::create(CommandBasePtr relatedCommand, const std::string& folder)
     {
-      return std::make_shared<DataFolderResult>(relatedCommand, folder);
+      return DataFolderResultPtr(new DataFolderResult(relatedCommand, folder));
     }
 
     DataFolderResultPtr DataFolderResult::dynamicCast(CommandBasePtr ptr)

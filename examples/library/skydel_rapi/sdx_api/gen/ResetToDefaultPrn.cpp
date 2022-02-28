@@ -31,7 +31,7 @@ namespace Sdx
 
     ResetToDefaultPrnPtr ResetToDefaultPrn::create(const std::string& system)
     {
-      return std::make_shared<ResetToDefaultPrn>(system);
+      return ResetToDefaultPrnPtr(new ResetToDefaultPrn(system));
     }
 
     ResetToDefaultPrnPtr ResetToDefaultPrn::dynamicCast(CommandBasePtr ptr)

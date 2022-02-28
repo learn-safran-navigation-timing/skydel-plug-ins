@@ -32,7 +32,7 @@ namespace Sdx
 
     GetPrnForEachSVResultPtr GetPrnForEachSVResult::create(CommandBasePtr relatedCommand, const std::string& signal, const std::vector<int>& prn)
     {
-      return std::make_shared<GetPrnForEachSVResult>(relatedCommand, signal, prn);
+      return GetPrnForEachSVResultPtr(new GetPrnForEachSVResult(relatedCommand, signal, prn));
     }
 
     GetPrnForEachSVResultPtr GetPrnForEachSVResult::dynamicCast(CommandBasePtr ptr)

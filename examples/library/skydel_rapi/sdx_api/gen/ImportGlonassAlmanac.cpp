@@ -31,7 +31,7 @@ namespace Sdx
 
     ImportGlonassAlmanacPtr ImportGlonassAlmanac::create(const std::string& path)
     {
-      return std::make_shared<ImportGlonassAlmanac>(path);
+      return ImportGlonassAlmanacPtr(new ImportGlonassAlmanac(path));
     }
 
     ImportGlonassAlmanacPtr ImportGlonassAlmanac::dynamicCast(CommandBasePtr ptr)

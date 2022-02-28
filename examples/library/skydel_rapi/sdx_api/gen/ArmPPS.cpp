@@ -26,7 +26,7 @@ namespace Sdx
 
     ArmPPSPtr ArmPPS::create()
     {
-      return std::make_shared<ArmPPS>();
+      return ArmPPSPtr(new ArmPPS());
     }
 
     ArmPPSPtr ArmPPS::dynamicCast(CommandBasePtr ptr)

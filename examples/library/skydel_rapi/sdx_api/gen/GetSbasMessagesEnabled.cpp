@@ -26,7 +26,7 @@ namespace Sdx
 
     GetSbasMessagesEnabledPtr GetSbasMessagesEnabled::create()
     {
-      return std::make_shared<GetSbasMessagesEnabled>();
+      return GetSbasMessagesEnabledPtr(new GetSbasMessagesEnabled());
     }
 
     GetSbasMessagesEnabledPtr GetSbasMessagesEnabled::dynamicCast(CommandBasePtr ptr)

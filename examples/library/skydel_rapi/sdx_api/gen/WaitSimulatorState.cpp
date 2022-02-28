@@ -32,7 +32,7 @@ namespace Sdx
 
     WaitSimulatorStatePtr WaitSimulatorState::create(const std::string& state, const std::string& failureState)
     {
-      return std::make_shared<WaitSimulatorState>(state, failureState);
+      return WaitSimulatorStatePtr(new WaitSimulatorState(state, failureState));
     }
 
     WaitSimulatorStatePtr WaitSimulatorState::dynamicCast(CommandBasePtr ptr)

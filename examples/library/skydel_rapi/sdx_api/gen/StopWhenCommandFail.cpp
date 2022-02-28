@@ -31,7 +31,7 @@ namespace Sdx
 
     StopWhenCommandFailPtr StopWhenCommandFail::create(bool enabled)
     {
-      return std::make_shared<StopWhenCommandFail>(enabled);
+      return StopWhenCommandFailPtr(new StopWhenCommandFail(enabled));
     }
 
     StopWhenCommandFailPtr StopWhenCommandFail::dynamicCast(CommandBasePtr ptr)

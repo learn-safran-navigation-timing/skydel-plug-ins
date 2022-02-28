@@ -26,7 +26,7 @@ namespace Sdx
 
     GetWFAntennaGainPtr GetWFAntennaGain::create()
     {
-      return std::make_shared<GetWFAntennaGain>();
+      return GetWFAntennaGainPtr(new GetWFAntennaGain());
     }
 
     GetWFAntennaGainPtr GetWFAntennaGain::dynamicCast(CommandBasePtr ptr)

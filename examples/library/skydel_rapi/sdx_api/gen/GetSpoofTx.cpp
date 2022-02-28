@@ -31,7 +31,7 @@ namespace Sdx
 
     GetSpoofTxPtr GetSpoofTx::create(const std::string& id)
     {
-      return std::make_shared<GetSpoofTx>(id);
+      return GetSpoofTxPtr(new GetSpoofTx(id));
     }
 
     GetSpoofTxPtr GetSpoofTx::dynamicCast(CommandBasePtr ptr)

@@ -17,7 +17,6 @@ RemoteSimulator::RemoteSimulator(bool exceptionOnError)
   m_client(0),
   m_hil(0),
   m_verbose(false),
-  m_hilStreamingCheckEnabled(true),
   m_beginTrack(false),
   m_beginRoute(false),
   m_serverApiVersion(0)
@@ -148,16 +147,6 @@ bool RemoteSimulator::isVerbose() const
   return m_verbose;
 }
 
-void RemoteSimulator::setHilStreamingCheckEnabled(bool hilStreamingCheckEnabled)
-{
-  m_hilStreamingCheckEnabled = hilStreamingCheckEnabled;
-}
-
-bool RemoteSimulator::isHilStreamingCheckEnabled()
-{
-  return m_hilStreamingCheckEnabled;
-}
-
 bool RemoteSimulator::arm()
 {
   if (isVerbose())
@@ -193,7 +182,7 @@ bool RemoteSimulator::start()
   if (isVerbose())
   {
     std::cout << "Simulation started." << std::endl;
-    Cmd::SimulatorStateResultPtr result = Cmd::SimulatorStateResult::dynamicCast(callCommand(std::make_shared<Cmd::GetSimulatorState>()));
+    Cmd::SimulatorStateResultPtr result = Cmd::SimulatorStateResult::dynamicCast(callCommand(CommandBasePtr(new Cmd::GetSimulatorState())));
     if (!result)
       std::cout << "Unable to find simulator state!" << std::endl;
     else if (result->subStateId() == Sdx::SimulatorSubState::Started_HILSync)
@@ -308,7 +297,7 @@ bool RemoteSimulator::hilCheck(long long elapsedTime)
   if (elapsedTime - m_checkRunningTime >= 1000)
   {
     m_checkRunningTime = elapsedTime;
-    if (m_hilStreamingCheckEnabled && !checkIfStreaming())
+    if (!checkIfStreaming())
     {
       resetTime();
       return false;
@@ -350,8 +339,11 @@ bool RemoteSimulator::pushEcef(long long elapsedTime, const Ecef& ecef, const st
   if (!m_hil)
     throw std::runtime_error("Cannot send position to simulator because you are not connected.");
 
+  if (!hilCheck(elapsedTime))
+    return false;
+
   m_hil->pushEcef(elapsedTime, ecef, name);
-  return hilCheck(elapsedTime);
+  return true;
 }
 
 bool RemoteSimulator::pushLla(long long elapsedTime, const Lla& lla, const std::string& name)
@@ -366,8 +358,11 @@ bool RemoteSimulator::pushEcefNed(long long elapsedTime, const Ecef& ecef, const
   if (!m_hil)
     throw std::runtime_error("Cannot send position to simulator because you are not connected.");
 
+  if (!hilCheck(elapsedTime))
+    return false;
+
   m_hil->pushEcefNed(elapsedTime, ecef, attitude, name);
-  return hilCheck(elapsedTime);
+  return true;
 }
 
 bool RemoteSimulator::pushLlaNed(long long elapsedTime, const Lla& lla, const Attitude& attitude, const std::string& name)

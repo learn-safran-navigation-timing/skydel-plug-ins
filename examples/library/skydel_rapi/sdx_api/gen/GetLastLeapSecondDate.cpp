@@ -26,7 +26,7 @@ namespace Sdx
 
     GetLastLeapSecondDatePtr GetLastLeapSecondDate::create()
     {
-      return std::make_shared<GetLastLeapSecondDate>();
+      return GetLastLeapSecondDatePtr(new GetLastLeapSecondDate());
     }
 
     GetLastLeapSecondDatePtr GetLastLeapSecondDate::dynamicCast(CommandBasePtr ptr)

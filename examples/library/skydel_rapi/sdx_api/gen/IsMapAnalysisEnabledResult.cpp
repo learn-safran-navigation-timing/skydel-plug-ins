@@ -31,7 +31,7 @@ namespace Sdx
 
     IsMapAnalysisEnabledResultPtr IsMapAnalysisEnabledResult::create(CommandBasePtr relatedCommand, bool show)
     {
-      return std::make_shared<IsMapAnalysisEnabledResult>(relatedCommand, show);
+      return IsMapAnalysisEnabledResultPtr(new IsMapAnalysisEnabledResult(relatedCommand, show));
     }
 
     IsMapAnalysisEnabledResultPtr IsMapAnalysisEnabledResult::dynamicCast(CommandBasePtr ptr)

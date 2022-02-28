@@ -32,7 +32,7 @@ namespace Sdx
 
     ImportIonoGridErrorsPtr ImportIonoGridErrors::create(bool overwriting, const std::string& path)
     {
-      return std::make_shared<ImportIonoGridErrors>(overwriting, path);
+      return ImportIonoGridErrorsPtr(new ImportIonoGridErrors(overwriting, path));
     }
 
     ImportIonoGridErrorsPtr ImportIonoGridErrors::dynamicCast(CommandBasePtr ptr)

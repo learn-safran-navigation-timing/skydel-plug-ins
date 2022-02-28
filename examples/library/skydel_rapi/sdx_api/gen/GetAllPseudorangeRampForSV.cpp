@@ -32,7 +32,7 @@ namespace Sdx
 
     GetAllPseudorangeRampForSVPtr GetAllPseudorangeRampForSV::create(const std::string& system, int svId)
     {
-      return std::make_shared<GetAllPseudorangeRampForSV>(system, svId);
+      return GetAllPseudorangeRampForSVPtr(new GetAllPseudorangeRampForSV(system, svId));
     }
 
     GetAllPseudorangeRampForSVPtr GetAllPseudorangeRampForSV::dynamicCast(CommandBasePtr ptr)

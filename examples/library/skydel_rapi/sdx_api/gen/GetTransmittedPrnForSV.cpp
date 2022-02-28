@@ -32,7 +32,7 @@ namespace Sdx
 
     GetTransmittedPrnForSVPtr GetTransmittedPrnForSV::create(int svId, const std::vector<std::string>& signalArray)
     {
-      return std::make_shared<GetTransmittedPrnForSV>(svId, signalArray);
+      return GetTransmittedPrnForSVPtr(new GetTransmittedPrnForSV(svId, signalArray));
     }
 
     GetTransmittedPrnForSVPtr GetTransmittedPrnForSV::dynamicCast(CommandBasePtr ptr)

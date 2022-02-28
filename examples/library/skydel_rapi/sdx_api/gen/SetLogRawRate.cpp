@@ -31,7 +31,7 @@ namespace Sdx
 
     SetLogRawRatePtr SetLogRawRate::create(int rate)
     {
-      return std::make_shared<SetLogRawRate>(rate);
+      return SetLogRawRatePtr(new SetLogRawRate(rate));
     }
 
     SetLogRawRatePtr SetLogRawRate::dynamicCast(CommandBasePtr ptr)

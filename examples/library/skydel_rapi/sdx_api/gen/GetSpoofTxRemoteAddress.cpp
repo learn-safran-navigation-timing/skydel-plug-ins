@@ -31,7 +31,7 @@ namespace Sdx
 
     GetSpoofTxRemoteAddressPtr GetSpoofTxRemoteAddress::create(const std::string& id)
     {
-      return std::make_shared<GetSpoofTxRemoteAddress>(id);
+      return GetSpoofTxRemoteAddressPtr(new GetSpoofTxRemoteAddress(id));
     }
 
     GetSpoofTxRemoteAddressPtr GetSpoofTxRemoteAddress::dynamicCast(CommandBasePtr ptr)

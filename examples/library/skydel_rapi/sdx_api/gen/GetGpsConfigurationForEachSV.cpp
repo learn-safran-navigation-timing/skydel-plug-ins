@@ -27,7 +27,7 @@ namespace Sdx
 
     GetGpsConfigurationForEachSVPtr GetGpsConfigurationForEachSV::create(const Sdx::optional<std::string>& dataSetName)
     {
-      return std::make_shared<GetGpsConfigurationForEachSV>(dataSetName);
+      return GetGpsConfigurationForEachSVPtr(new GetGpsConfigurationForEachSV(dataSetName));
     }
 
     GetGpsConfigurationForEachSVPtr GetGpsConfigurationForEachSV::dynamicCast(CommandBasePtr ptr)

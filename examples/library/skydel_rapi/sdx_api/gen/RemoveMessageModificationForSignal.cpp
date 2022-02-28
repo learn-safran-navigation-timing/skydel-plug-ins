@@ -32,7 +32,7 @@ namespace Sdx
 
     RemoveMessageModificationForSignalPtr RemoveMessageModificationForSignal::create(const std::string& signal, const std::string& id)
     {
-      return std::make_shared<RemoveMessageModificationForSignal>(signal, id);
+      return RemoveMessageModificationForSignalPtr(new RemoveMessageModificationForSignal(signal, id));
     }
 
     RemoveMessageModificationForSignalPtr RemoveMessageModificationForSignal::dynamicCast(CommandBasePtr ptr)

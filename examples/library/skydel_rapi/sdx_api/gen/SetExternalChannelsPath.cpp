@@ -31,7 +31,7 @@ namespace Sdx
 
     SetExternalChannelsPathPtr SetExternalChannelsPath::create(const std::string& path)
     {
-      return std::make_shared<SetExternalChannelsPath>(path);
+      return SetExternalChannelsPathPtr(new SetExternalChannelsPath(path));
     }
 
     SetExternalChannelsPathPtr SetExternalChannelsPath::dynamicCast(CommandBasePtr ptr)

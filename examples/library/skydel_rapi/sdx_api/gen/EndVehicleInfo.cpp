@@ -26,7 +26,7 @@ namespace Sdx
 
     EndVehicleInfoPtr EndVehicleInfo::create()
     {
-      return std::make_shared<EndVehicleInfo>();
+      return EndVehicleInfoPtr(new EndVehicleInfo());
     }
 
     EndVehicleInfoPtr EndVehicleInfo::dynamicCast(CommandBasePtr ptr)

@@ -31,7 +31,7 @@ namespace Sdx
 
     RemoveMultipathPtr RemoveMultipath::create(const std::string& id)
     {
-      return std::make_shared<RemoveMultipath>(id);
+      return RemoveMultipathPtr(new RemoveMultipath(id));
     }
 
     RemoveMultipathPtr RemoveMultipath::dynamicCast(CommandBasePtr ptr)

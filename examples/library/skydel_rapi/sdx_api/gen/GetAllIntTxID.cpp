@@ -26,7 +26,7 @@ namespace Sdx
 
     GetAllIntTxIDPtr GetAllIntTxID::create()
     {
-      return std::make_shared<GetAllIntTxID>();
+      return GetAllIntTxIDPtr(new GetAllIntTxID());
     }
 
     GetAllIntTxIDPtr GetAllIntTxID::dynamicCast(CommandBasePtr ptr)

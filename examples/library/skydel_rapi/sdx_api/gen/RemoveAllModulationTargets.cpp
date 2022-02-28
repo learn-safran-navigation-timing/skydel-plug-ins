@@ -26,7 +26,7 @@ namespace Sdx
 
     RemoveAllModulationTargetsPtr RemoveAllModulationTargets::create()
     {
-      return std::make_shared<RemoveAllModulationTargets>();
+      return RemoveAllModulationTargetsPtr(new RemoveAllModulationTargets());
     }
 
     RemoveAllModulationTargetsPtr RemoveAllModulationTargets::dynamicCast(CommandBasePtr ptr)

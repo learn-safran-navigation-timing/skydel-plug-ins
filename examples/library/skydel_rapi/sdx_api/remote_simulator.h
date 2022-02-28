@@ -31,9 +31,6 @@ public:
   void setVerbose(bool verbose);
   bool isVerbose() const;
 
-  void setHilStreamingCheckEnabled(bool hilStreamingCheckEnabled);
-  bool isHilStreamingCheckEnabled();
-
   bool arm();
   bool start();
   void stop(double timestamp);
@@ -101,7 +98,6 @@ private:
   HilClient* m_hil;
   long long m_checkRunningTime;
   bool m_verbose;
-  bool m_hilStreamingCheckEnabled;
   bool m_beginTrack;
   bool m_beginRoute;
 

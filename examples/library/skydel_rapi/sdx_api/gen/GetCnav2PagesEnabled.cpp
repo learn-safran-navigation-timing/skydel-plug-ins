@@ -26,7 +26,7 @@ namespace Sdx
 
     GetCnav2PagesEnabledPtr GetCnav2PagesEnabled::create()
     {
-      return std::make_shared<GetCnav2PagesEnabled>();
+      return GetCnav2PagesEnabledPtr(new GetCnav2PagesEnabled());
     }
 
     GetCnav2PagesEnabledPtr GetCnav2PagesEnabled::dynamicCast(CommandBasePtr ptr)

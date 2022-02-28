@@ -31,7 +31,7 @@ namespace Sdx
 
     SetPowerGlobalOffsetPtr SetPowerGlobalOffset::create(double offset)
     {
-      return std::make_shared<SetPowerGlobalOffset>(offset);
+      return SetPowerGlobalOffsetPtr(new SetPowerGlobalOffset(offset));
     }
 
     SetPowerGlobalOffsetPtr SetPowerGlobalOffset::dynamicCast(CommandBasePtr ptr)

@@ -26,7 +26,7 @@ namespace Sdx
 
     GetSyncTimePtr GetSyncTime::create()
     {
-      return std::make_shared<GetSyncTime>();
+      return GetSyncTimePtr(new GetSyncTime());
     }
 
     GetSyncTimePtr GetSyncTime::dynamicCast(CommandBasePtr ptr)

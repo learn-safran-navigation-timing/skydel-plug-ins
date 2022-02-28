@@ -26,7 +26,7 @@ namespace Sdx
 
     IsLogRinexEnabledPtr IsLogRinexEnabled::create()
     {
-      return std::make_shared<IsLogRinexEnabled>();
+      return IsLogRinexEnabledPtr(new IsLogRinexEnabled());
     }
 
     IsLogRinexEnabledPtr IsLogRinexEnabled::dynamicCast(CommandBasePtr ptr)

@@ -32,7 +32,7 @@ namespace Sdx
 
     EnableSpoofTxPtr EnableSpoofTx::create(bool enabled, const std::string& id)
     {
-      return std::make_shared<EnableSpoofTx>(enabled, id);
+      return EnableSpoofTxPtr(new EnableSpoofTx(enabled, id));
     }
 
     EnableSpoofTxPtr EnableSpoofTx::dynamicCast(CommandBasePtr ptr)

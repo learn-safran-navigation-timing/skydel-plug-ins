@@ -26,7 +26,7 @@ namespace Sdx
 
     IsSignalStrengthModelEnabledPtr IsSignalStrengthModelEnabled::create()
     {
-      return std::make_shared<IsSignalStrengthModelEnabled>();
+      return IsSignalStrengthModelEnabledPtr(new IsSignalStrengthModelEnabled());
     }
 
     IsSignalStrengthModelEnabledPtr IsSignalStrengthModelEnabled::dynamicCast(CommandBasePtr ptr)

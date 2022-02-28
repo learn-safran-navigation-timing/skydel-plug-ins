@@ -26,7 +26,7 @@ namespace Sdx
 
     GetIonoModelPtr GetIonoModel::create()
     {
-      return std::make_shared<GetIonoModel>();
+      return GetIonoModelPtr(new GetIonoModel());
     }
 
     GetIonoModelPtr GetIonoModel::dynamicCast(CommandBasePtr ptr)

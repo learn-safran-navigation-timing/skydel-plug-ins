@@ -26,7 +26,7 @@ namespace Sdx
 
     GetSimulationElapsedTimePtr GetSimulationElapsedTime::create()
     {
-      return std::make_shared<GetSimulationElapsedTime>();
+      return GetSimulationElapsedTimePtr(new GetSimulationElapsedTime());
     }
 
     GetSimulationElapsedTimePtr GetSimulationElapsedTime::dynamicCast(CommandBasePtr ptr)

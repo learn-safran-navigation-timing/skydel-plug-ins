@@ -26,7 +26,7 @@ namespace Sdx
 
     GetDefaultVehicleAntennaModelPtr GetDefaultVehicleAntennaModel::create()
     {
-      return std::make_shared<GetDefaultVehicleAntennaModel>();
+      return GetDefaultVehicleAntennaModelPtr(new GetDefaultVehicleAntennaModel());
     }
 
     GetDefaultVehicleAntennaModelPtr GetDefaultVehicleAntennaModel::dynamicCast(CommandBasePtr ptr)

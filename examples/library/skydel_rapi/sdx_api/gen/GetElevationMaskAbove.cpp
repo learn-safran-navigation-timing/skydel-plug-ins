@@ -26,7 +26,7 @@ namespace Sdx
 
     GetElevationMaskAbovePtr GetElevationMaskAbove::create()
     {
-      return std::make_shared<GetElevationMaskAbove>();
+      return GetElevationMaskAbovePtr(new GetElevationMaskAbove());
     }
 
     GetElevationMaskAbovePtr GetElevationMaskAbove::dynamicCast(CommandBasePtr ptr)

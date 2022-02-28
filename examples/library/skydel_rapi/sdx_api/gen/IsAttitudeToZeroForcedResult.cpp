@@ -31,7 +31,7 @@ namespace Sdx
 
     IsAttitudeToZeroForcedResultPtr IsAttitudeToZeroForcedResult::create(CommandBasePtr relatedCommand, bool enabled)
     {
-      return std::make_shared<IsAttitudeToZeroForcedResult>(relatedCommand, enabled);
+      return IsAttitudeToZeroForcedResultPtr(new IsAttitudeToZeroForcedResult(relatedCommand, enabled));
     }
 
     IsAttitudeToZeroForcedResultPtr IsAttitudeToZeroForcedResult::dynamicCast(CommandBasePtr ptr)

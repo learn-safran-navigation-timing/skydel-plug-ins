@@ -31,7 +31,7 @@ namespace Sdx
 
     GetActiveDataSetPtr GetActiveDataSet::create(const std::string& system)
     {
-      return std::make_shared<GetActiveDataSet>(system);
+      return GetActiveDataSetPtr(new GetActiveDataSet(system));
     }
 
     GetActiveDataSetPtr GetActiveDataSet::dynamicCast(CommandBasePtr ptr)

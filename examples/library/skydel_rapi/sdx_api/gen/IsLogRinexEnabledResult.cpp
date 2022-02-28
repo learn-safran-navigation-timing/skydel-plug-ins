@@ -31,7 +31,7 @@ namespace Sdx
 
     IsLogRinexEnabledResultPtr IsLogRinexEnabledResult::create(CommandBasePtr relatedCommand, bool enabled)
     {
-      return std::make_shared<IsLogRinexEnabledResult>(relatedCommand, enabled);
+      return IsLogRinexEnabledResultPtr(new IsLogRinexEnabledResult(relatedCommand, enabled));
     }
 
     IsLogRinexEnabledResultPtr IsLogRinexEnabledResult::dynamicCast(CommandBasePtr ptr)

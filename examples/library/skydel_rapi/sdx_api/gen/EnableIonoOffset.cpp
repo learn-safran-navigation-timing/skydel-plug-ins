@@ -31,7 +31,7 @@ namespace Sdx
 
     EnableIonoOffsetPtr EnableIonoOffset::create(bool isEnabled)
     {
-      return std::make_shared<EnableIonoOffset>(isEnabled);
+      return EnableIonoOffsetPtr(new EnableIonoOffset(isEnabled));
     }
 
     EnableIonoOffsetPtr EnableIonoOffset::dynamicCast(CommandBasePtr ptr)

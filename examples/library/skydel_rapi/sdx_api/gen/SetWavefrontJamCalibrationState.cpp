@@ -31,7 +31,7 @@ namespace Sdx
 
     SetWavefrontJamCalibrationStatePtr SetWavefrontJamCalibrationState::create(bool state)
     {
-      return std::make_shared<SetWavefrontJamCalibrationState>(state);
+      return SetWavefrontJamCalibrationStatePtr(new SetWavefrontJamCalibrationState(state));
     }
 
     SetWavefrontJamCalibrationStatePtr SetWavefrontJamCalibrationState::dynamicCast(CommandBasePtr ptr)

@@ -26,7 +26,7 @@ namespace Sdx
 
     GetDefaultIntTxPersistencePtr GetDefaultIntTxPersistence::create()
     {
-      return std::make_shared<GetDefaultIntTxPersistence>();
+      return GetDefaultIntTxPersistencePtr(new GetDefaultIntTxPersistence());
     }
 
     GetDefaultIntTxPersistencePtr GetDefaultIntTxPersistence::dynamicCast(CommandBasePtr ptr)

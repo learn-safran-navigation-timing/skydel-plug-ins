@@ -32,7 +32,7 @@ namespace Sdx
 
     IsIntTxAttitudeToZeroForcedResultPtr IsIntTxAttitudeToZeroForcedResult::create(CommandBasePtr relatedCommand, bool enabled, const std::string& id)
     {
-      return std::make_shared<IsIntTxAttitudeToZeroForcedResult>(relatedCommand, enabled, id);
+      return IsIntTxAttitudeToZeroForcedResultPtr(new IsIntTxAttitudeToZeroForcedResult(relatedCommand, enabled, id));
     }
 
     IsIntTxAttitudeToZeroForcedResultPtr IsIntTxAttitudeToZeroForcedResult::dynamicCast(CommandBasePtr ptr)

@@ -31,7 +31,7 @@ namespace Sdx
 
     GetOfficialLeapSecondResultPtr GetOfficialLeapSecondResult::create(CommandBasePtr relatedCommand, int leapSecond)
     {
-      return std::make_shared<GetOfficialLeapSecondResult>(relatedCommand, leapSecond);
+      return GetOfficialLeapSecondResultPtr(new GetOfficialLeapSecondResult(relatedCommand, leapSecond));
     }
 
     GetOfficialLeapSecondResultPtr GetOfficialLeapSecondResult::dynamicCast(CommandBasePtr ptr)

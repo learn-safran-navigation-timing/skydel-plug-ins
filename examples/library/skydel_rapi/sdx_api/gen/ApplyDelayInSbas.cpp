@@ -31,7 +31,7 @@ namespace Sdx
 
     ApplyDelayInSbasPtr ApplyDelayInSbas::create(bool isEnabled)
     {
-      return std::make_shared<ApplyDelayInSbas>(isEnabled);
+      return ApplyDelayInSbasPtr(new ApplyDelayInSbas(isEnabled));
     }
 
     ApplyDelayInSbasPtr ApplyDelayInSbas::dynamicCast(CommandBasePtr ptr)

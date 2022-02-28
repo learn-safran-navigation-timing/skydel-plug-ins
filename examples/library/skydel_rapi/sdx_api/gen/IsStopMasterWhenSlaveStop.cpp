@@ -26,7 +26,7 @@ namespace Sdx
 
     IsStopMasterWhenSlaveStopPtr IsStopMasterWhenSlaveStop::create()
     {
-      return std::make_shared<IsStopMasterWhenSlaveStop>();
+      return IsStopMasterWhenSlaveStopPtr(new IsStopMasterWhenSlaveStop());
     }
 
     IsStopMasterWhenSlaveStopPtr IsStopMasterWhenSlaveStop::dynamicCast(CommandBasePtr ptr)

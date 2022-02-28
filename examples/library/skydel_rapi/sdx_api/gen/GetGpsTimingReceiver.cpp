@@ -26,7 +26,7 @@ namespace Sdx
 
     GetGpsTimingReceiverPtr GetGpsTimingReceiver::create()
     {
-      return std::make_shared<GetGpsTimingReceiver>();
+      return GetGpsTimingReceiverPtr(new GetGpsTimingReceiver());
     }
 
     GetGpsTimingReceiverPtr GetGpsTimingReceiver::dynamicCast(CommandBasePtr ptr)

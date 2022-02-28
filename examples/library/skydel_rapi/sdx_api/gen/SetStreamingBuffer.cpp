@@ -31,7 +31,7 @@ namespace Sdx
 
     SetStreamingBufferPtr SetStreamingBuffer::create(int size)
     {
-      return std::make_shared<SetStreamingBuffer>(size);
+      return SetStreamingBufferPtr(new SetStreamingBuffer(size));
     }
 
     SetStreamingBufferPtr SetStreamingBuffer::dynamicCast(CommandBasePtr ptr)

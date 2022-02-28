@@ -32,7 +32,7 @@ namespace Sdx
 
     GetIntTxIqFilePtr GetIntTxIqFile::create(const std::string& transmitterId, const std::string& signalId)
     {
-      return std::make_shared<GetIntTxIqFile>(transmitterId, signalId);
+      return GetIntTxIqFilePtr(new GetIntTxIqFile(transmitterId, signalId));
     }
 
     GetIntTxIqFilePtr GetIntTxIqFile::dynamicCast(CommandBasePtr ptr)

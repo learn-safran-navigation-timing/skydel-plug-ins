@@ -31,7 +31,7 @@ namespace Sdx
 
     SetIntTxHilPtr SetIntTxHil::create(const std::string& id)
     {
-      return std::make_shared<SetIntTxHil>(id);
+      return SetIntTxHilPtr(new SetIntTxHil(id));
     }
 
     SetIntTxHilPtr SetIntTxHil::dynamicCast(CommandBasePtr ptr)

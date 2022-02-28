@@ -31,7 +31,7 @@ namespace Sdx
 
     GetSyncTimeMasterResultPtr GetSyncTimeMasterResult::create(CommandBasePtr relatedCommand, double time)
     {
-      return std::make_shared<GetSyncTimeMasterResult>(relatedCommand, time);
+      return GetSyncTimeMasterResultPtr(new GetSyncTimeMasterResult(relatedCommand, time));
     }
 
     GetSyncTimeMasterResultPtr GetSyncTimeMasterResult::dynamicCast(CommandBasePtr ptr)

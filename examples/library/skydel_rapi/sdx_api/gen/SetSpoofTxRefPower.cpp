@@ -32,7 +32,7 @@ namespace Sdx
 
     SetSpoofTxRefPowerPtr SetSpoofTxRefPower::create(double power, const std::string& id)
     {
-      return std::make_shared<SetSpoofTxRefPower>(power, id);
+      return SetSpoofTxRefPowerPtr(new SetSpoofTxRefPower(power, id));
     }
 
     SetSpoofTxRefPowerPtr SetSpoofTxRefPower::dynamicCast(CommandBasePtr ptr)

@@ -32,7 +32,7 @@ namespace Sdx
 
     MessageSequenceRemovePtr MessageSequenceRemove::create(const std::string& signal, int index)
     {
-      return std::make_shared<MessageSequenceRemove>(signal, index);
+      return MessageSequenceRemovePtr(new MessageSequenceRemove(signal, index));
     }
 
     MessageSequenceRemovePtr MessageSequenceRemove::dynamicCast(CommandBasePtr ptr)

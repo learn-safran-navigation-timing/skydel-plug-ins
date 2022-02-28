@@ -31,7 +31,7 @@ namespace Sdx
 
     GetMessageModificationToQzssSlasPtr GetMessageModificationToQzssSlas::create(const std::string& id)
     {
-      return std::make_shared<GetMessageModificationToQzssSlas>(id);
+      return GetMessageModificationToQzssSlasPtr(new GetMessageModificationToQzssSlas(id));
     }
 
     GetMessageModificationToQzssSlasPtr GetMessageModificationToQzssSlas::dynamicCast(CommandBasePtr ptr)

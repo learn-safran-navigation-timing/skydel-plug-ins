@@ -31,7 +31,7 @@ namespace Sdx
 
     RemoveInterferencePtr RemoveInterference::create(const std::string& id)
     {
-      return std::make_shared<RemoveInterference>(id);
+      return RemoveInterferencePtr(new RemoveInterference(id));
     }
 
     RemoveInterferencePtr RemoveInterference::dynamicCast(CommandBasePtr ptr)

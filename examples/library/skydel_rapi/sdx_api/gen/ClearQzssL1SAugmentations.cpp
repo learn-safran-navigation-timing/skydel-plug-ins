@@ -26,7 +26,7 @@ namespace Sdx
 
     ClearQzssL1SAugmentationsPtr ClearQzssL1SAugmentations::create()
     {
-      return std::make_shared<ClearQzssL1SAugmentations>();
+      return ClearQzssL1SAugmentationsPtr(new ClearQzssL1SAugmentations());
     }
 
     ClearQzssL1SAugmentationsPtr ClearQzssL1SAugmentations::dynamicCast(CommandBasePtr ptr)

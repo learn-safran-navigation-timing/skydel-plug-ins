@@ -26,7 +26,7 @@ namespace Sdx
 
     EndTrackDefinitionPtr EndTrackDefinition::create()
     {
-      return std::make_shared<EndTrackDefinition>();
+      return EndTrackDefinitionPtr(new EndTrackDefinition());
     }
 
     EndTrackDefinitionPtr EndTrackDefinition::dynamicCast(CommandBasePtr ptr)

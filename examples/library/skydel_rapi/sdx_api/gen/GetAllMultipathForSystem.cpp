@@ -31,7 +31,7 @@ namespace Sdx
 
     GetAllMultipathForSystemPtr GetAllMultipathForSystem::create(const std::string& system)
     {
-      return std::make_shared<GetAllMultipathForSystem>(system);
+      return GetAllMultipathForSystemPtr(new GetAllMultipathForSystem(system));
     }
 
     GetAllMultipathForSystemPtr GetAllMultipathForSystem::dynamicCast(CommandBasePtr ptr)

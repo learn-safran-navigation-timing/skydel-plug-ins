@@ -26,7 +26,7 @@ namespace Sdx
 
     GetVehicleTrajectoryPtr GetVehicleTrajectory::create()
     {
-      return std::make_shared<GetVehicleTrajectory>();
+      return GetVehicleTrajectoryPtr(new GetVehicleTrajectory());
     }
 
     GetVehicleTrajectoryPtr GetVehicleTrajectory::dynamicCast(CommandBasePtr ptr)

@@ -31,7 +31,7 @@ namespace Sdx
 
     EnableSlavePpsPtr EnableSlavePps::create(bool enabled)
     {
-      return std::make_shared<EnableSlavePps>(enabled);
+      return EnableSlavePpsPtr(new EnableSlavePps(enabled));
     }
 
     EnableSlavePpsPtr EnableSlavePps::dynamicCast(CommandBasePtr ptr)

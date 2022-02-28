@@ -32,7 +32,7 @@ namespace Sdx
 
     ChangeSpoofTxColorPtr ChangeSpoofTxColor::create(const std::string& color, const std::string& id)
     {
-      return std::make_shared<ChangeSpoofTxColor>(color, id);
+      return ChangeSpoofTxColorPtr(new ChangeSpoofTxColor(color, id));
     }
 
     ChangeSpoofTxColorPtr ChangeSpoofTxColor::dynamicCast(CommandBasePtr ptr)

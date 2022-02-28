@@ -31,7 +31,7 @@ namespace Sdx
 
     GetPrnForEachSVPtr GetPrnForEachSV::create(const std::string& signal)
     {
-      return std::make_shared<GetPrnForEachSV>(signal);
+      return GetPrnForEachSVPtr(new GetPrnForEachSV(signal));
     }
 
     GetPrnForEachSVPtr GetPrnForEachSV::dynamicCast(CommandBasePtr ptr)

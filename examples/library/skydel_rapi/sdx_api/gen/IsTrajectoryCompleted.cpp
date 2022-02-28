@@ -26,7 +26,7 @@ namespace Sdx
 
     IsTrajectoryCompletedPtr IsTrajectoryCompleted::create()
     {
-      return std::make_shared<IsTrajectoryCompleted>();
+      return IsTrajectoryCompletedPtr(new IsTrajectoryCompleted());
     }
 
     IsTrajectoryCompletedPtr IsTrajectoryCompleted::dynamicCast(CommandBasePtr ptr)

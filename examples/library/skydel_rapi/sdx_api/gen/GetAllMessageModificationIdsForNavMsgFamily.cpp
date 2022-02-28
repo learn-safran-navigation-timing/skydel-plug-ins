@@ -32,7 +32,7 @@ namespace Sdx
 
     GetAllMessageModificationIdsForNavMsgFamilyPtr GetAllMessageModificationIdsForNavMsgFamily::create(const std::string& navMsgFamily, int svId)
     {
-      return std::make_shared<GetAllMessageModificationIdsForNavMsgFamily>(navMsgFamily, svId);
+      return GetAllMessageModificationIdsForNavMsgFamilyPtr(new GetAllMessageModificationIdsForNavMsgFamily(navMsgFamily, svId));
     }
 
     GetAllMessageModificationIdsForNavMsgFamilyPtr GetAllMessageModificationIdsForNavMsgFamily::dynamicCast(CommandBasePtr ptr)

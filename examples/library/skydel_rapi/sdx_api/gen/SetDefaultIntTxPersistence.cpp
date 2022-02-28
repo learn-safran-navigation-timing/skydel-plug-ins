@@ -31,7 +31,7 @@ namespace Sdx
 
     SetDefaultIntTxPersistencePtr SetDefaultIntTxPersistence::create(bool defaultValue)
     {
-      return std::make_shared<SetDefaultIntTxPersistence>(defaultValue);
+      return SetDefaultIntTxPersistencePtr(new SetDefaultIntTxPersistence(defaultValue));
     }
 
     SetDefaultIntTxPersistencePtr SetDefaultIntTxPersistence::dynamicCast(CommandBasePtr ptr)

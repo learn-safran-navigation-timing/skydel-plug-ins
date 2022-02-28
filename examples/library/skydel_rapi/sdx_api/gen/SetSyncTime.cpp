@@ -31,7 +31,7 @@ namespace Sdx
 
     SetSyncTimePtr SetSyncTime::create(double time)
     {
-      return std::make_shared<SetSyncTime>(time);
+      return SetSyncTimePtr(new SetSyncTime(time));
     }
 
     SetSyncTimePtr SetSyncTime::dynamicCast(CommandBasePtr ptr)

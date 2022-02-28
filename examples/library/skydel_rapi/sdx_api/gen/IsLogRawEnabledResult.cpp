@@ -31,7 +31,7 @@ namespace Sdx
 
     IsLogRawEnabledResultPtr IsLogRawEnabledResult::create(CommandBasePtr relatedCommand, bool enabled)
     {
-      return std::make_shared<IsLogRawEnabledResult>(relatedCommand, enabled);
+      return IsLogRawEnabledResultPtr(new IsLogRawEnabledResult(relatedCommand, enabled));
     }
 
     IsLogRawEnabledResultPtr IsLogRawEnabledResult::dynamicCast(CommandBasePtr ptr)

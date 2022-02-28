@@ -26,7 +26,7 @@ namespace Sdx
 
     ClearAutomatePagePtr ClearAutomatePage::create()
     {
-      return std::make_shared<ClearAutomatePage>();
+      return ClearAutomatePagePtr(new ClearAutomatePage());
     }
 
     ClearAutomatePagePtr ClearAutomatePage::dynamicCast(CommandBasePtr ptr)

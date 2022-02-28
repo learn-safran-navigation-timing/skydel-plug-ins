@@ -31,7 +31,7 @@ namespace Sdx
 
     ImportNmeaTrackPtr ImportNmeaTrack::create(const std::string& path)
     {
-      return std::make_shared<ImportNmeaTrack>(path);
+      return ImportNmeaTrackPtr(new ImportNmeaTrack(path));
     }
 
     ImportNmeaTrackPtr ImportNmeaTrack::dynamicCast(CommandBasePtr ptr)

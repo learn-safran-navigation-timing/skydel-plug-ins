@@ -32,7 +32,7 @@ namespace Sdx
 
     ForceIntTxAttitudeToZeroPtr ForceIntTxAttitudeToZero::create(bool enabled, const std::string& id)
     {
-      return std::make_shared<ForceIntTxAttitudeToZero>(enabled, id);
+      return ForceIntTxAttitudeToZeroPtr(new ForceIntTxAttitudeToZero(enabled, id));
     }
 
     ForceIntTxAttitudeToZeroPtr ForceIntTxAttitudeToZero::dynamicCast(CommandBasePtr ptr)

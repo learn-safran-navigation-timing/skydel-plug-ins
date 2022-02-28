@@ -26,7 +26,7 @@ namespace Sdx
 
     RedoCmdPtr RedoCmd::create()
     {
-      return std::make_shared<RedoCmd>();
+      return RedoCmdPtr(new RedoCmd());
     }
 
     RedoCmdPtr RedoCmd::dynamicCast(CommandBasePtr ptr)

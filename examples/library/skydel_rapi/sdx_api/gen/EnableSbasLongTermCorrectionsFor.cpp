@@ -32,7 +32,7 @@ namespace Sdx
 
     EnableSbasLongTermCorrectionsForPtr EnableSbasLongTermCorrectionsFor::create(const std::string& system, bool isEnabled)
     {
-      return std::make_shared<EnableSbasLongTermCorrectionsFor>(system, isEnabled);
+      return EnableSbasLongTermCorrectionsForPtr(new EnableSbasLongTermCorrectionsFor(system, isEnabled));
     }
 
     EnableSbasLongTermCorrectionsForPtr EnableSbasLongTermCorrectionsFor::dynamicCast(CommandBasePtr ptr)

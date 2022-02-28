@@ -31,7 +31,7 @@ namespace Sdx
 
     EnableMasterPpsPtr EnableMasterPps::create(bool enabled)
     {
-      return std::make_shared<EnableMasterPps>(enabled);
+      return EnableMasterPpsPtr(new EnableMasterPps(enabled));
     }
 
     EnableMasterPpsPtr EnableMasterPps::dynamicCast(CommandBasePtr ptr)

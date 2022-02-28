@@ -32,7 +32,7 @@ namespace Sdx
 
     GetEphemerisErrorForSVPtr GetEphemerisErrorForSV::create(const std::string& system, int svId)
     {
-      return std::make_shared<GetEphemerisErrorForSV>(system, svId);
+      return GetEphemerisErrorForSVPtr(new GetEphemerisErrorForSV(system, svId));
     }
 
     GetEphemerisErrorForSVPtr GetEphemerisErrorForSV::dynamicCast(CommandBasePtr ptr)

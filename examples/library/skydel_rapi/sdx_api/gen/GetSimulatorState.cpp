@@ -26,7 +26,7 @@ namespace Sdx
 
     GetSimulatorStatePtr GetSimulatorState::create()
     {
-      return std::make_shared<GetSimulatorState>();
+      return GetSimulatorStatePtr(new GetSimulatorState());
     }
 
     GetSimulatorStatePtr GetSimulatorState::dynamicCast(CommandBasePtr ptr)

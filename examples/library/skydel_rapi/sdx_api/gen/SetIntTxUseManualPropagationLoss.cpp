@@ -32,7 +32,7 @@ namespace Sdx
 
     SetIntTxUseManualPropagationLossPtr SetIntTxUseManualPropagationLoss::create(bool manual, const std::string& id)
     {
-      return std::make_shared<SetIntTxUseManualPropagationLoss>(manual, id);
+      return SetIntTxUseManualPropagationLossPtr(new SetIntTxUseManualPropagationLoss(manual, id));
     }
 
     SetIntTxUseManualPropagationLossPtr SetIntTxUseManualPropagationLoss::dynamicCast(CommandBasePtr ptr)

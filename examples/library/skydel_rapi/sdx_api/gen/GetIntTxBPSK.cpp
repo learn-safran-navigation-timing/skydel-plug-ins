@@ -32,7 +32,7 @@ namespace Sdx
 
     GetIntTxBPSKPtr GetIntTxBPSK::create(const std::string& transmitterId, const std::string& signalId)
     {
-      return std::make_shared<GetIntTxBPSK>(transmitterId, signalId);
+      return GetIntTxBPSKPtr(new GetIntTxBPSK(transmitterId, signalId));
     }
 
     GetIntTxBPSKPtr GetIntTxBPSK::dynamicCast(CommandBasePtr ptr)

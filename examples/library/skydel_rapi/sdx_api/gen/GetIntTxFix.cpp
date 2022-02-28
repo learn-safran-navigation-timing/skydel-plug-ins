@@ -31,7 +31,7 @@ namespace Sdx
 
     GetIntTxFixPtr GetIntTxFix::create(const std::string& id)
     {
-      return std::make_shared<GetIntTxFix>(id);
+      return GetIntTxFixPtr(new GetIntTxFix(id));
     }
 
     GetIntTxFixPtr GetIntTxFix::dynamicCast(CommandBasePtr ptr)

@@ -31,7 +31,7 @@ namespace Sdx
 
     GetGalileoFnavSatelliteKPtr GetGalileoFnavSatelliteK::create(int prn)
     {
-      return std::make_shared<GetGalileoFnavSatelliteK>(prn);
+      return GetGalileoFnavSatelliteKPtr(new GetGalileoFnavSatelliteK(prn));
     }
 
     GetGalileoFnavSatelliteKPtr GetGalileoFnavSatelliteK::dynamicCast(CommandBasePtr ptr)

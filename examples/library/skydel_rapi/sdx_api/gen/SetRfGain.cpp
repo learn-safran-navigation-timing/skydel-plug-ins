@@ -32,7 +32,7 @@ namespace Sdx
 
     SetRfGainPtr SetRfGain::create(int output, double gain)
     {
-      return std::make_shared<SetRfGain>(output, gain);
+      return SetRfGainPtr(new SetRfGain(output, gain));
     }
 
     SetRfGainPtr SetRfGain::dynamicCast(CommandBasePtr ptr)

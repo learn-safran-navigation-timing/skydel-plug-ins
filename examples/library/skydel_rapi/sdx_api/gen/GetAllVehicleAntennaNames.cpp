@@ -26,7 +26,7 @@ namespace Sdx
 
     GetAllVehicleAntennaNamesPtr GetAllVehicleAntennaNames::create()
     {
-      return std::make_shared<GetAllVehicleAntennaNames>();
+      return GetAllVehicleAntennaNamesPtr(new GetAllVehicleAntennaNames());
     }
 
     GetAllVehicleAntennaNamesPtr GetAllVehicleAntennaNames::dynamicCast(CommandBasePtr ptr)

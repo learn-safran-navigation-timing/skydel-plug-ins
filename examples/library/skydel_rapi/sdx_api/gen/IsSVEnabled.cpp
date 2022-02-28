@@ -32,7 +32,7 @@ namespace Sdx
 
     IsSVEnabledPtr IsSVEnabled::create(const std::string& system, int svId)
     {
-      return std::make_shared<IsSVEnabled>(system, svId);
+      return IsSVEnabledPtr(new IsSVEnabled(system, svId));
     }
 
     IsSVEnabledPtr IsSVEnabled::dynamicCast(CommandBasePtr ptr)

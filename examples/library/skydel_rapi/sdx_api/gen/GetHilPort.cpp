@@ -26,7 +26,7 @@ namespace Sdx
 
     GetHilPortPtr GetHilPort::create()
     {
-      return std::make_shared<GetHilPort>();
+      return GetHilPortPtr(new GetHilPort());
     }
 
     GetHilPortPtr GetHilPort::dynamicCast(CommandBasePtr ptr)

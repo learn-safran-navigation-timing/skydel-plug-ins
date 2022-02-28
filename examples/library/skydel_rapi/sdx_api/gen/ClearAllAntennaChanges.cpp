@@ -26,7 +26,7 @@ namespace Sdx
 
     ClearAllAntennaChangesPtr ClearAllAntennaChanges::create()
     {
-      return std::make_shared<ClearAllAntennaChanges>();
+      return ClearAllAntennaChangesPtr(new ClearAllAntennaChanges());
     }
 
     ClearAllAntennaChangesPtr ClearAllAntennaChanges::dynamicCast(CommandBasePtr ptr)

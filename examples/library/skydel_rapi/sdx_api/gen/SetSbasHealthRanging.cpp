@@ -32,7 +32,7 @@ namespace Sdx
 
     SetSbasHealthRangingPtr SetSbasHealthRanging::create(int prn, bool health)
     {
-      return std::make_shared<SetSbasHealthRanging>(prn, health);
+      return SetSbasHealthRangingPtr(new SetSbasHealthRanging(prn, health));
     }
 
     SetSbasHealthRangingPtr SetSbasHealthRanging::dynamicCast(CommandBasePtr ptr)

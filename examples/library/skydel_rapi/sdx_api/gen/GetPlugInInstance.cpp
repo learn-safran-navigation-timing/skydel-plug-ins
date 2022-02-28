@@ -26,7 +26,7 @@ namespace Sdx
 
     GetPlugInInstancePtr GetPlugInInstance::create()
     {
-      return std::make_shared<GetPlugInInstance>();
+      return GetPlugInInstancePtr(new GetPlugInInstance());
     }
 
     GetPlugInInstancePtr GetPlugInInstance::dynamicCast(CommandBasePtr ptr)

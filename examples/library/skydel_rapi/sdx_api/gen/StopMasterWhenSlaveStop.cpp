@@ -31,7 +31,7 @@ namespace Sdx
 
     StopMasterWhenSlaveStopPtr StopMasterWhenSlaveStop::create(bool enabled)
     {
-      return std::make_shared<StopMasterWhenSlaveStop>(enabled);
+      return StopMasterWhenSlaveStopPtr(new StopMasterWhenSlaveStop(enabled));
     }
 
     StopMasterWhenSlaveStopPtr StopMasterWhenSlaveStop::dynamicCast(CommandBasePtr ptr)

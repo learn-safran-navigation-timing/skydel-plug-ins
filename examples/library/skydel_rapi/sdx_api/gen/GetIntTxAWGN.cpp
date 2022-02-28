@@ -32,7 +32,7 @@ namespace Sdx
 
     GetIntTxAWGNPtr GetIntTxAWGN::create(const std::string& transmitterId, const std::string& signalId)
     {
-      return std::make_shared<GetIntTxAWGN>(transmitterId, signalId);
+      return GetIntTxAWGNPtr(new GetIntTxAWGN(transmitterId, signalId));
     }
 
     GetIntTxAWGNPtr GetIntTxAWGN::dynamicCast(CommandBasePtr ptr)

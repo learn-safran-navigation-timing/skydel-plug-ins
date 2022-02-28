@@ -31,7 +31,7 @@ namespace Sdx
 
     GetSpoofTxCircularPtr GetSpoofTxCircular::create(const std::string& id)
     {
-      return std::make_shared<GetSpoofTxCircular>(id);
+      return GetSpoofTxCircularPtr(new GetSpoofTxCircular(id));
     }
 
     GetSpoofTxCircularPtr GetSpoofTxCircular::dynamicCast(CommandBasePtr ptr)

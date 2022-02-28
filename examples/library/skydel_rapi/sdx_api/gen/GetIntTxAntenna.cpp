@@ -31,7 +31,7 @@ namespace Sdx
 
     GetIntTxAntennaPtr GetIntTxAntenna::create(const std::string& id)
     {
-      return std::make_shared<GetIntTxAntenna>(id);
+      return GetIntTxAntennaPtr(new GetIntTxAntenna(id));
     }
 
     GetIntTxAntennaPtr GetIntTxAntenna::dynamicCast(CommandBasePtr ptr)

@@ -32,7 +32,7 @@ namespace Sdx
 
     SetSbasReservedHealthForSVPtr SetSbasReservedHealthForSV::create(int svId, bool health)
     {
-      return std::make_shared<SetSbasReservedHealthForSV>(svId, health);
+      return SetSbasReservedHealthForSVPtr(new SetSbasReservedHealthForSV(svId, health));
     }
 
     SetSbasReservedHealthForSVPtr SetSbasReservedHealthForSV::dynamicCast(CommandBasePtr ptr)

@@ -31,7 +31,7 @@ namespace Sdx
 
     DeleteVehicleAntennaModelPtr DeleteVehicleAntennaModel::create(const std::string& name)
     {
-      return std::make_shared<DeleteVehicleAntennaModel>(name);
+      return DeleteVehicleAntennaModelPtr(new DeleteVehicleAntennaModel(name));
     }
 
     DeleteVehicleAntennaModelPtr DeleteVehicleAntennaModel::dynamicCast(CommandBasePtr ptr)

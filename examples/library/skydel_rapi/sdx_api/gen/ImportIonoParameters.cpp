@@ -32,7 +32,7 @@ namespace Sdx
 
     ImportIonoParametersPtr ImportIonoParameters::create(const std::string& path, const Sdx::optional<std::string>& type)
     {
-      return std::make_shared<ImportIonoParameters>(path, type);
+      return ImportIonoParametersPtr(new ImportIonoParameters(path, type));
     }
 
     ImportIonoParametersPtr ImportIonoParameters::dynamicCast(CommandBasePtr ptr)

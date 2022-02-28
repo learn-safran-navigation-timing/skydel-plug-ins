@@ -31,7 +31,7 @@ namespace Sdx
 
     GetAntennaChangePtr GetAntennaChange::create(const std::string& id)
     {
-      return std::make_shared<GetAntennaChange>(id);
+      return GetAntennaChangePtr(new GetAntennaChange(id));
     }
 
     GetAntennaChangePtr GetAntennaChange::dynamicCast(CommandBasePtr ptr)

@@ -32,7 +32,7 @@ namespace Sdx
 
     SetIntTxHiddenOnMapPtr SetIntTxHiddenOnMap::create(bool hiddenOnMap, const std::string& id)
     {
-      return std::make_shared<SetIntTxHiddenOnMap>(hiddenOnMap, id);
+      return SetIntTxHiddenOnMapPtr(new SetIntTxHiddenOnMap(hiddenOnMap, id));
     }
 
     SetIntTxHiddenOnMapPtr SetIntTxHiddenOnMap::dynamicCast(CommandBasePtr ptr)

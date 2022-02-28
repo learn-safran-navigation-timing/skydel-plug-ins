@@ -26,7 +26,7 @@ namespace Sdx
 
     GetDurationPtr GetDuration::create()
     {
-      return std::make_shared<GetDuration>();
+      return GetDurationPtr(new GetDuration());
     }
 
     GetDurationPtr GetDuration::dynamicCast(CommandBasePtr ptr)

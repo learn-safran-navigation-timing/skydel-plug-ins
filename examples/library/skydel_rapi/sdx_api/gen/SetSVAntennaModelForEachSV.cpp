@@ -32,7 +32,7 @@ namespace Sdx
 
     SetSVAntennaModelForEachSVPtr SetSVAntennaModelForEachSV::create(const std::string& system, const std::vector<std::string>& antennaModelNames)
     {
-      return std::make_shared<SetSVAntennaModelForEachSV>(system, antennaModelNames);
+      return SetSVAntennaModelForEachSVPtr(new SetSVAntennaModelForEachSV(system, antennaModelNames));
     }
 
     SetSVAntennaModelForEachSVPtr SetSVAntennaModelForEachSV::dynamicCast(CommandBasePtr ptr)

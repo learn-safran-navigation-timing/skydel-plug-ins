@@ -31,7 +31,7 @@ namespace Sdx
 
     SetSbasMonitoredSystemsPtr SetSbasMonitoredSystems::create(const std::vector<std::string>& systems)
     {
-      return std::make_shared<SetSbasMonitoredSystems>(systems);
+      return SetSbasMonitoredSystemsPtr(new SetSbasMonitoredSystems(systems));
     }
 
     SetSbasMonitoredSystemsPtr SetSbasMonitoredSystems::dynamicCast(CommandBasePtr ptr)

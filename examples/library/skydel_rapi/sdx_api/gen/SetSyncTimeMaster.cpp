@@ -31,7 +31,7 @@ namespace Sdx
 
     SetSyncTimeMasterPtr SetSyncTimeMaster::create(double time)
     {
-      return std::make_shared<SetSyncTimeMaster>(time);
+      return SetSyncTimeMasterPtr(new SetSyncTimeMaster(time));
     }
 
     SetSyncTimeMasterPtr SetSyncTimeMaster::dynamicCast(CommandBasePtr ptr)

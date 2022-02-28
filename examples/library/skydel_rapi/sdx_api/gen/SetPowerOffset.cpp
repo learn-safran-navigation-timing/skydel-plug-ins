@@ -32,7 +32,7 @@ namespace Sdx
 
     SetPowerOffsetPtr SetPowerOffset::create(const std::string& signal, double offset)
     {
-      return std::make_shared<SetPowerOffset>(signal, offset);
+      return SetPowerOffsetPtr(new SetPowerOffset(signal, offset));
     }
 
     SetPowerOffsetPtr SetPowerOffset::dynamicCast(CommandBasePtr ptr)

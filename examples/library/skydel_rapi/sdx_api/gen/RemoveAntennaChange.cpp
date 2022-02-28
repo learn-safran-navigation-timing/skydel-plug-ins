@@ -31,7 +31,7 @@ namespace Sdx
 
     RemoveAntennaChangePtr RemoveAntennaChange::create(const std::string& id)
     {
-      return std::make_shared<RemoveAntennaChange>(id);
+      return RemoveAntennaChangePtr(new RemoveAntennaChange(id));
     }
 
     RemoveAntennaChangePtr RemoveAntennaChange::dynamicCast(CommandBasePtr ptr)

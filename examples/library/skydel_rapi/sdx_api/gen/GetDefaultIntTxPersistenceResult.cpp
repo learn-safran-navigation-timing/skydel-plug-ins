@@ -31,7 +31,7 @@ namespace Sdx
 
     GetDefaultIntTxPersistenceResultPtr GetDefaultIntTxPersistenceResult::create(CommandBasePtr relatedCommand, bool defaultValue)
     {
-      return std::make_shared<GetDefaultIntTxPersistenceResult>(relatedCommand, defaultValue);
+      return GetDefaultIntTxPersistenceResultPtr(new GetDefaultIntTxPersistenceResult(relatedCommand, defaultValue));
     }
 
     GetDefaultIntTxPersistenceResultPtr GetDefaultIntTxPersistenceResult::dynamicCast(CommandBasePtr ptr)

@@ -31,7 +31,7 @@ namespace Sdx
 
     RemovePlugInInstancePtr RemovePlugInInstance::create(const std::string& name)
     {
-      return std::make_shared<RemovePlugInInstance>(name);
+      return RemovePlugInInstancePtr(new RemovePlugInInstance(name));
     }
 
     RemovePlugInInstancePtr RemovePlugInInstance::dynamicCast(CommandBasePtr ptr)

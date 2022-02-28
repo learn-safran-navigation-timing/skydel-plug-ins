@@ -31,7 +31,7 @@ namespace Sdx
 
     SetDurationPtr SetDuration::create(int second)
     {
-      return std::make_shared<SetDuration>(second);
+      return SetDurationPtr(new SetDuration(second));
     }
 
     SetDurationPtr SetDuration::dynamicCast(CommandBasePtr ptr)

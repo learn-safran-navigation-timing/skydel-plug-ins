@@ -31,7 +31,7 @@ namespace Sdx
 
     GetWFAntennaElementOffsetPtr GetWFAntennaElementOffset::create(int element)
     {
-      return std::make_shared<GetWFAntennaElementOffset>(element);
+      return GetWFAntennaElementOffsetPtr(new GetWFAntennaElementOffset(element));
     }
 
     GetWFAntennaElementOffsetPtr GetWFAntennaElementOffset::dynamicCast(CommandBasePtr ptr)

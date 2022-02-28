@@ -31,7 +31,7 @@ namespace Sdx
 
     GetAllSVAntennaNamesPtr GetAllSVAntennaNames::create(const std::string& system)
     {
-      return std::make_shared<GetAllSVAntennaNames>(system);
+      return GetAllSVAntennaNamesPtr(new GetAllSVAntennaNames(system));
     }
 
     GetAllSVAntennaNamesPtr GetAllSVAntennaNames::dynamicCast(CommandBasePtr ptr)

@@ -26,7 +26,7 @@ namespace Sdx
 
     SavePtr Save::create()
     {
-      return std::make_shared<Save>();
+      return SavePtr(new Save());
     }
 
     SavePtr Save::dynamicCast(CommandBasePtr ptr)

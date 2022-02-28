@@ -26,7 +26,7 @@ namespace Sdx
 
     IsSimulationStopAtTrajectoryEndEnabledPtr IsSimulationStopAtTrajectoryEndEnabled::create()
     {
-      return std::make_shared<IsSimulationStopAtTrajectoryEndEnabled>();
+      return IsSimulationStopAtTrajectoryEndEnabledPtr(new IsSimulationStopAtTrajectoryEndEnabled());
     }
 
     IsSimulationStopAtTrajectoryEndEnabledPtr IsSimulationStopAtTrajectoryEndEnabled::dynamicCast(CommandBasePtr ptr)

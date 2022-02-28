@@ -32,7 +32,7 @@ namespace Sdx
 
     SetAlmanacUploadTimeIntervalPtr SetAlmanacUploadTimeInterval::create(const std::string& system, int interval)
     {
-      return std::make_shared<SetAlmanacUploadTimeInterval>(system, interval);
+      return SetAlmanacUploadTimeIntervalPtr(new SetAlmanacUploadTimeInterval(system, interval));
     }
 
     SetAlmanacUploadTimeIntervalPtr SetAlmanacUploadTimeInterval::dynamicCast(CommandBasePtr ptr)

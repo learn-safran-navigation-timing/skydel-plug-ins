@@ -26,7 +26,7 @@ namespace Sdx
 
     PausePtr Pause::create()
     {
-      return std::make_shared<Pause>();
+      return PausePtr(new Pause());
     }
 
     PausePtr Pause::dynamicCast(CommandBasePtr ptr)

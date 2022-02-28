@@ -31,7 +31,7 @@ namespace Sdx
 
     GetIonoGridMaskAllPtr GetIonoGridMaskAll::create(const std::string& serviceProvider)
     {
-      return std::make_shared<GetIonoGridMaskAll>(serviceProvider);
+      return GetIonoGridMaskAllPtr(new GetIonoGridMaskAll(serviceProvider));
     }
 
     GetIonoGridMaskAllPtr GetIonoGridMaskAll::dynamicCast(CommandBasePtr ptr)

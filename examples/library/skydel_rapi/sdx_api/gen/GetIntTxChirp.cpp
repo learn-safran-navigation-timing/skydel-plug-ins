@@ -32,7 +32,7 @@ namespace Sdx
 
     GetIntTxChirpPtr GetIntTxChirp::create(const std::string& transmitterId, const std::string& signalId)
     {
-      return std::make_shared<GetIntTxChirp>(transmitterId, signalId);
+      return GetIntTxChirpPtr(new GetIntTxChirp(transmitterId, signalId));
     }
 
     GetIntTxChirpPtr GetIntTxChirp::dynamicCast(CommandBasePtr ptr)

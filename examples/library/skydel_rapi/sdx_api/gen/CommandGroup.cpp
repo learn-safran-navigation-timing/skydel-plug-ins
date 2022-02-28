@@ -31,7 +31,7 @@ namespace Sdx
 
     CommandGroupPtr CommandGroup::create(const std::vector<Sdx::CommandBasePtr>& commands)
     {
-      return std::make_shared<CommandGroup>(commands);
+      return CommandGroupPtr(new CommandGroup(commands));
     }
 
     CommandGroupPtr CommandGroup::dynamicCast(CommandBasePtr ptr)

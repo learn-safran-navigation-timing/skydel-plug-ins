@@ -31,7 +31,7 @@ namespace Sdx
 
     ImportVehicleAntennaModelPtr ImportVehicleAntennaModel::create(const std::string& filePath)
     {
-      return std::make_shared<ImportVehicleAntennaModel>(filePath);
+      return ImportVehicleAntennaModelPtr(new ImportVehicleAntennaModel(filePath));
     }
 
     ImportVehicleAntennaModelPtr ImportVehicleAntennaModel::dynamicCast(CommandBasePtr ptr)

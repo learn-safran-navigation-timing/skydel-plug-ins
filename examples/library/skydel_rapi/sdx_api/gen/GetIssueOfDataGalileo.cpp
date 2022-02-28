@@ -26,7 +26,7 @@ namespace Sdx
 
     GetIssueOfDataGalileoPtr GetIssueOfDataGalileo::create()
     {
-      return std::make_shared<GetIssueOfDataGalileo>();
+      return GetIssueOfDataGalileoPtr(new GetIssueOfDataGalileo());
     }
 
     GetIssueOfDataGalileoPtr GetIssueOfDataGalileo::dynamicCast(CommandBasePtr ptr)

@@ -31,7 +31,7 @@ namespace Sdx
 
     GetIntTxPtr GetIntTx::create(const std::string& id)
     {
-      return std::make_shared<GetIntTx>(id);
+      return GetIntTxPtr(new GetIntTx(id));
     }
 
     GetIntTxPtr GetIntTx::dynamicCast(CommandBasePtr ptr)

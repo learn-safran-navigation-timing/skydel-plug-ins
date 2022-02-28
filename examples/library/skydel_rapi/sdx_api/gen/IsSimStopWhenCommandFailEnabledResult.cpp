@@ -31,7 +31,7 @@ namespace Sdx
 
     IsSimStopWhenCommandFailEnabledResultPtr IsSimStopWhenCommandFailEnabledResult::create(CommandBasePtr relatedCommand, bool enabled)
     {
-      return std::make_shared<IsSimStopWhenCommandFailEnabledResult>(relatedCommand, enabled);
+      return IsSimStopWhenCommandFailEnabledResultPtr(new IsSimStopWhenCommandFailEnabledResult(relatedCommand, enabled));
     }
 
     IsSimStopWhenCommandFailEnabledResultPtr IsSimStopWhenCommandFailEnabledResult::dynamicCast(CommandBasePtr ptr)

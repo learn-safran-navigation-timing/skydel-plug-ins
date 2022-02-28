@@ -30,7 +30,7 @@ namespace Sdx
 
     SuccessResultPtr SuccessResult::create(CommandBasePtr relatedCommand)
     {
-      return std::make_shared<SuccessResult>(relatedCommand);
+      return SuccessResultPtr(new SuccessResult(relatedCommand));
     }
 
     SuccessResultPtr SuccessResult::dynamicCast(CommandBasePtr ptr)

@@ -26,7 +26,7 @@ namespace Sdx
 
     RemoveAllInterferencesPtr RemoveAllInterferences::create()
     {
-      return std::make_shared<RemoveAllInterferences>();
+      return RemoveAllInterferencesPtr(new RemoveAllInterferences());
     }
 
     RemoveAllInterferencesPtr RemoveAllInterferences::dynamicCast(CommandBasePtr ptr)

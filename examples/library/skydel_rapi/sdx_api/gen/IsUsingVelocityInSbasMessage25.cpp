@@ -26,7 +26,7 @@ namespace Sdx
 
     IsUsingVelocityInSbasMessage25Ptr IsUsingVelocityInSbasMessage25::create()
     {
-      return std::make_shared<IsUsingVelocityInSbasMessage25>();
+      return IsUsingVelocityInSbasMessage25Ptr(new IsUsingVelocityInSbasMessage25());
     }
 
     IsUsingVelocityInSbasMessage25Ptr IsUsingVelocityInSbasMessage25::dynamicCast(CommandBasePtr ptr)

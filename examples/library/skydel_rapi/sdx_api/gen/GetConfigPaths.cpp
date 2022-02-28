@@ -26,7 +26,7 @@ namespace Sdx
 
     GetConfigPathsPtr GetConfigPaths::create()
     {
-      return std::make_shared<GetConfigPaths>();
+      return GetConfigPathsPtr(new GetConfigPaths());
     }
 
     GetConfigPathsPtr GetConfigPaths::dynamicCast(CommandBasePtr ptr)

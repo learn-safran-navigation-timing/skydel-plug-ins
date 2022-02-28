@@ -26,7 +26,7 @@ namespace Sdx
 
     GetStartTimeModePtr GetStartTimeMode::create()
     {
-      return std::make_shared<GetStartTimeMode>();
+      return GetStartTimeModePtr(new GetStartTimeMode());
     }
 
     GetStartTimeModePtr GetStartTimeMode::dynamicCast(CommandBasePtr ptr)

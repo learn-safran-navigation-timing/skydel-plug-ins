@@ -31,7 +31,7 @@ namespace Sdx
 
     GetMessageModificationToGpsCNavPtr GetMessageModificationToGpsCNav::create(const std::string& id)
     {
-      return std::make_shared<GetMessageModificationToGpsCNav>(id);
+      return GetMessageModificationToGpsCNavPtr(new GetMessageModificationToGpsCNav(id));
     }
 
     GetMessageModificationToGpsCNavPtr GetMessageModificationToGpsCNav::dynamicCast(CommandBasePtr ptr)

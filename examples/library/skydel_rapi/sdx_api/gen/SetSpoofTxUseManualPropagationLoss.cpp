@@ -32,7 +32,7 @@ namespace Sdx
 
     SetSpoofTxUseManualPropagationLossPtr SetSpoofTxUseManualPropagationLoss::create(bool manual, const std::string& id)
     {
-      return std::make_shared<SetSpoofTxUseManualPropagationLoss>(manual, id);
+      return SetSpoofTxUseManualPropagationLossPtr(new SetSpoofTxUseManualPropagationLoss(manual, id));
     }
 
     SetSpoofTxUseManualPropagationLossPtr SetSpoofTxUseManualPropagationLoss::dynamicCast(CommandBasePtr ptr)

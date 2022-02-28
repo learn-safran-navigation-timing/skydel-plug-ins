@@ -31,7 +31,7 @@ namespace Sdx
 
     RemoveAllSignalsFromIntTxPtr RemoveAllSignalsFromIntTx::create(const std::string& transmitterId)
     {
-      return std::make_shared<RemoveAllSignalsFromIntTx>(transmitterId);
+      return RemoveAllSignalsFromIntTxPtr(new RemoveAllSignalsFromIntTx(transmitterId));
     }
 
     RemoveAllSignalsFromIntTxPtr RemoveAllSignalsFromIntTx::dynamicCast(CommandBasePtr ptr)

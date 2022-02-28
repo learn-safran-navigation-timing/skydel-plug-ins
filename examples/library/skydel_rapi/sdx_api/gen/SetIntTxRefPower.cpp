@@ -32,7 +32,7 @@ namespace Sdx
 
     SetIntTxRefPowerPtr SetIntTxRefPower::create(double power, const std::string& id)
     {
-      return std::make_shared<SetIntTxRefPower>(power, id);
+      return SetIntTxRefPowerPtr(new SetIntTxRefPower(power, id));
     }
 
     SetIntTxRefPowerPtr SetIntTxRefPower::dynamicCast(CommandBasePtr ptr)

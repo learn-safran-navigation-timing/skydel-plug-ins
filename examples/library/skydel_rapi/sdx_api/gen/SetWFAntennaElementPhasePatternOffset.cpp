@@ -32,7 +32,7 @@ namespace Sdx
 
     SetWFAntennaElementPhasePatternOffsetPtr SetWFAntennaElementPhasePatternOffset::create(double phaseOffset, int element)
     {
-      return std::make_shared<SetWFAntennaElementPhasePatternOffset>(phaseOffset, element);
+      return SetWFAntennaElementPhasePatternOffsetPtr(new SetWFAntennaElementPhasePatternOffset(phaseOffset, element));
     }
 
     SetWFAntennaElementPhasePatternOffsetPtr SetWFAntennaElementPhasePatternOffset::dynamicCast(CommandBasePtr ptr)

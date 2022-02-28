@@ -32,7 +32,7 @@ namespace Sdx
 
     EnableEachSVPtr EnableEachSV::create(const std::string& system, const std::vector<bool>& enabled)
     {
-      return std::make_shared<EnableEachSV>(system, enabled);
+      return EnableEachSVPtr(new EnableEachSV(system, enabled));
     }
 
     EnableEachSVPtr EnableEachSV::dynamicCast(CommandBasePtr ptr)

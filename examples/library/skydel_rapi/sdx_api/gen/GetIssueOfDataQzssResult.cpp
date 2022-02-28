@@ -33,7 +33,7 @@ namespace Sdx
 
     GetIssueOfDataQzssResultPtr GetIssueOfDataQzssResult::create(CommandBasePtr relatedCommand, int clock, int ephemeris, const Sdx::optional<bool>& overrideRinex)
     {
-      return std::make_shared<GetIssueOfDataQzssResult>(relatedCommand, clock, ephemeris, overrideRinex);
+      return GetIssueOfDataQzssResultPtr(new GetIssueOfDataQzssResult(relatedCommand, clock, ephemeris, overrideRinex));
     }
 
     GetIssueOfDataQzssResultPtr GetIssueOfDataQzssResult::dynamicCast(CommandBasePtr ptr)

@@ -26,7 +26,7 @@ namespace Sdx
 
     ClearVehiculeTrajectoryPtr ClearVehiculeTrajectory::create()
     {
-      return std::make_shared<ClearVehiculeTrajectory>();
+      return ClearVehiculeTrajectoryPtr(new ClearVehiculeTrajectory());
     }
 
     ClearVehiculeTrajectoryPtr ClearVehiculeTrajectory::dynamicCast(CommandBasePtr ptr)
