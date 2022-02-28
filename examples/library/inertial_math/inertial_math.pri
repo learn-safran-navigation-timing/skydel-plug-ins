@@ -1,6 +1,4 @@
-! include (../../../external/blaze/blaze.pri) {
-    error( "Couldn't find the blaze.pri file!" )
-}
+include (../../../external/blaze/blaze.pri)
 
 INCLUDEPATH *= $$PWD $$PWD/include
 
