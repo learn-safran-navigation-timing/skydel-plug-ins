@@ -1,7 +1,7 @@
 #ifndef IML_ROTATION_MATRIX_H
 #define IML_ROTATION_MATRIX_H
 
-#include <blaze/Math.h>
+#include <blaze_math.h>
 
 #include <cmath>
 
