@@ -31,7 +31,7 @@ namespace Sdx
 
     GetSpoofTxAntennaPtr GetSpoofTxAntenna::create(const std::string& id)
     {
-      return GetSpoofTxAntennaPtr(new GetSpoofTxAntenna(id));
+      return std::make_shared<GetSpoofTxAntenna>(id);
     }
 
     GetSpoofTxAntennaPtr GetSpoofTxAntenna::dynamicCast(CommandBasePtr ptr)

@@ -26,7 +26,7 @@ namespace Sdx
 
     GetStatusLogPtr GetStatusLog::create()
     {
-      return GetStatusLogPtr(new GetStatusLog());
+      return std::make_shared<GetStatusLog>();
     }
 
     GetStatusLogPtr GetStatusLog::dynamicCast(CommandBasePtr ptr)

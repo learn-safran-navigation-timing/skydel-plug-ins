@@ -32,7 +32,7 @@ namespace Sdx
 
     EnableLosForEachSVPtr EnableLosForEachSV::create(const std::string& system, const std::vector<bool>& enabled)
     {
-      return EnableLosForEachSVPtr(new EnableLosForEachSV(system, enabled));
+      return std::make_shared<EnableLosForEachSV>(system, enabled);
     }
 
     EnableLosForEachSVPtr EnableLosForEachSV::dynamicCast(CommandBasePtr ptr)

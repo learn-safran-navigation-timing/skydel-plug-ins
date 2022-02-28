@@ -26,7 +26,7 @@ namespace Sdx
 
     GetIssueOfDataBeiDouPtr GetIssueOfDataBeiDou::create()
     {
-      return GetIssueOfDataBeiDouPtr(new GetIssueOfDataBeiDou());
+      return std::make_shared<GetIssueOfDataBeiDou>();
     }
 
     GetIssueOfDataBeiDouPtr GetIssueOfDataBeiDou::dynamicCast(CommandBasePtr ptr)

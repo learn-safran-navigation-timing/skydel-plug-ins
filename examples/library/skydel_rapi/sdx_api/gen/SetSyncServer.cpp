@@ -31,7 +31,7 @@ namespace Sdx
 
     SetSyncServerPtr SetSyncServer::create(int port)
     {
-      return SetSyncServerPtr(new SetSyncServer(port));
+      return std::make_shared<SetSyncServer>(port);
     }
 
     SetSyncServerPtr SetSyncServer::dynamicCast(CommandBasePtr ptr)

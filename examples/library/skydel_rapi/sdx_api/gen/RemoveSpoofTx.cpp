@@ -31,7 +31,7 @@ namespace Sdx
 
     RemoveSpoofTxPtr RemoveSpoofTx::create(const std::string& id)
     {
-      return RemoveSpoofTxPtr(new RemoveSpoofTx(id));
+      return std::make_shared<RemoveSpoofTx>(id);
     }
 
     RemoveSpoofTxPtr RemoveSpoofTx::dynamicCast(CommandBasePtr ptr)

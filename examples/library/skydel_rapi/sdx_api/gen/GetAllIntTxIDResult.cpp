@@ -31,7 +31,7 @@ namespace Sdx
 
     GetAllIntTxIDResultPtr GetAllIntTxIDResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& ids)
     {
-      return GetAllIntTxIDResultPtr(new GetAllIntTxIDResult(relatedCommand, ids));
+      return std::make_shared<GetAllIntTxIDResult>(relatedCommand, ids);
     }
 
     GetAllIntTxIDResultPtr GetAllIntTxIDResult::dynamicCast(CommandBasePtr ptr)

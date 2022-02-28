@@ -33,7 +33,7 @@ namespace Sdx
 
     SetGpsUraIndexForSVPtr SetGpsUraIndexForSV::create(int svId, int urai, const Sdx::optional<std::string>& dataSetName)
     {
-      return SetGpsUraIndexForSVPtr(new SetGpsUraIndexForSV(svId, urai, dataSetName));
+      return std::make_shared<SetGpsUraIndexForSV>(svId, urai, dataSetName);
     }
 
     SetGpsUraIndexForSVPtr SetGpsUraIndexForSV::dynamicCast(CommandBasePtr ptr)

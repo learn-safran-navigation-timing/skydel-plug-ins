@@ -32,7 +32,7 @@ namespace Sdx
 
     GetAllMultipathForSVPtr GetAllMultipathForSV::create(const std::string& system, int svId)
     {
-      return GetAllMultipathForSVPtr(new GetAllMultipathForSV(system, svId));
+      return std::make_shared<GetAllMultipathForSV>(system, svId);
     }
 
     GetAllMultipathForSVPtr GetAllMultipathForSV::dynamicCast(CommandBasePtr ptr)

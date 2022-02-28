@@ -37,7 +37,7 @@ namespace Sdx
 
     GetVehicleTrajectoryFixResultPtr GetVehicleTrajectoryFixResult::create(CommandBasePtr relatedCommand, const std::string& type, double lat, double lon, double alt, double yaw, double pitch, double roll)
     {
-      return GetVehicleTrajectoryFixResultPtr(new GetVehicleTrajectoryFixResult(relatedCommand, type, lat, lon, alt, yaw, pitch, roll));
+      return std::make_shared<GetVehicleTrajectoryFixResult>(relatedCommand, type, lat, lon, alt, yaw, pitch, roll);
     }
 
     GetVehicleTrajectoryFixResultPtr GetVehicleTrajectoryFixResult::dynamicCast(CommandBasePtr ptr)

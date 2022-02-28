@@ -33,7 +33,7 @@ namespace Sdx
 
     SetSpoofTxRemoteAddressPtr SetSpoofTxRemoteAddress::create(const std::string& address, int instanceId, const std::string& id)
     {
-      return SetSpoofTxRemoteAddressPtr(new SetSpoofTxRemoteAddress(address, instanceId, id));
+      return std::make_shared<SetSpoofTxRemoteAddress>(address, instanceId, id);
     }
 
     SetSpoofTxRemoteAddressPtr SetSpoofTxRemoteAddress::dynamicCast(CommandBasePtr ptr)

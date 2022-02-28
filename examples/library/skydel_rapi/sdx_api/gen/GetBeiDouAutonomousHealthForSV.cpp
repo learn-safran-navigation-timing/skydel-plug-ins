@@ -32,7 +32,7 @@ namespace Sdx
 
     GetBeiDouAutonomousHealthForSVPtr GetBeiDouAutonomousHealthForSV::create(int svId, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetBeiDouAutonomousHealthForSVPtr(new GetBeiDouAutonomousHealthForSV(svId, dataSetName));
+      return std::make_shared<GetBeiDouAutonomousHealthForSV>(svId, dataSetName);
     }
 
     GetBeiDouAutonomousHealthForSVPtr GetBeiDouAutonomousHealthForSV::dynamicCast(CommandBasePtr ptr)

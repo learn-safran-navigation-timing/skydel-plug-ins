@@ -26,7 +26,7 @@ namespace Sdx
 
     RemoveAllPilotsPtr RemoveAllPilots::create()
     {
-      return RemoveAllPilotsPtr(new RemoveAllPilots());
+      return std::make_shared<RemoveAllPilots>();
     }
 
     RemoveAllPilotsPtr RemoveAllPilots::dynamicCast(CommandBasePtr ptr)

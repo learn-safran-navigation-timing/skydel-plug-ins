@@ -31,7 +31,7 @@ namespace Sdx
 
     SetVehicleTypePtr SetVehicleType::create(const std::string& type)
     {
-      return SetVehicleTypePtr(new SetVehicleType(type));
+      return std::make_shared<SetVehicleType>(type);
     }
 
     SetVehicleTypePtr SetVehicleType::dynamicCast(CommandBasePtr ptr)

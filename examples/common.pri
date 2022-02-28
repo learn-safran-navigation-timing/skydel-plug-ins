@@ -1,6 +1,4 @@
-! include (../skydel_plugin_sdk.pri) {
-    error( "Couldn't find the skydel_plugin_sdk.pri file!" )
-}
+include (../skydel_plugin_sdk.pri)
 
 TEMPLATE = lib
 CONFIG += plugin
@@ -10,8 +8,6 @@ linux-oe-g++: {
 }
 
 CONFIG += c++17
-
-DEFINES += QT_DEPRECATED_WARNINGS
 
 ROOT=$$PWD/../
 DESTDIR = $$ROOT/bin

@@ -33,7 +33,7 @@ namespace Sdx
 
     SetIonoGridErrorPtr SetIonoGridError::create(int band, int point, double error)
     {
-      return SetIonoGridErrorPtr(new SetIonoGridError(band, point, error));
+      return std::make_shared<SetIonoGridError>(band, point, error);
     }
 
     SetIonoGridErrorPtr SetIonoGridError::dynamicCast(CommandBasePtr ptr)

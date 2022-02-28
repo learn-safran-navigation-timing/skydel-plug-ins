@@ -33,7 +33,7 @@ namespace Sdx
 
     GetMasterStatusResultPtr GetMasterStatusResult::create(CommandBasePtr relatedCommand, bool isMaster, int slaveConnected, int port)
     {
-      return GetMasterStatusResultPtr(new GetMasterStatusResult(relatedCommand, isMaster, slaveConnected, port));
+      return std::make_shared<GetMasterStatusResult>(relatedCommand, isMaster, slaveConnected, port);
     }
 
     GetMasterStatusResultPtr GetMasterStatusResult::dynamicCast(CommandBasePtr ptr)

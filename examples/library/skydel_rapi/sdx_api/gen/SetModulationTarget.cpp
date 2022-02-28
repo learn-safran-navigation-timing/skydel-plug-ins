@@ -35,7 +35,7 @@ namespace Sdx
 
     SetModulationTargetPtr SetModulationTarget::create(const std::string& type, const std::string& path, const std::string& address, bool clockIsExternal, const std::string& id)
     {
-      return SetModulationTargetPtr(new SetModulationTarget(type, path, address, clockIsExternal, id));
+      return std::make_shared<SetModulationTarget>(type, path, address, clockIsExternal, id);
     }
 
     SetModulationTargetPtr SetModulationTarget::dynamicCast(CommandBasePtr ptr)

@@ -37,7 +37,7 @@ namespace Sdx
 
     SetSpoofTxAntennaOffsetPtr SetSpoofTxAntennaOffset::create(double x, double y, double z, double yaw, double pitch, double roll, const std::string& id)
     {
-      return SetSpoofTxAntennaOffsetPtr(new SetSpoofTxAntennaOffset(x, y, z, yaw, pitch, roll, id));
+      return std::make_shared<SetSpoofTxAntennaOffset>(x, y, z, yaw, pitch, roll, id);
     }
 
     SetSpoofTxAntennaOffsetPtr SetSpoofTxAntennaOffset::dynamicCast(CommandBasePtr ptr)

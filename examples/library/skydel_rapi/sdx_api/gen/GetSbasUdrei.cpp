@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetSbasUdrei::CmdName = "GetSbasUdrei";
-    const char* const GetSbasUdrei::Documentation = "Get the global UDREI value transmitted by SBAS";
+    const char* const GetSbasUdrei::Documentation = "Please note the command GetSbasUdrei is deprecated since 22.2. You may use GetUdreiForSV.\n\nGet the global UDREI value transmitted by SBAS";
 
     REGISTER_COMMAND_FACTORY(GetSbasUdrei);
 
@@ -26,7 +26,7 @@ namespace Sdx
 
     GetSbasUdreiPtr GetSbasUdrei::create()
     {
-      return GetSbasUdreiPtr(new GetSbasUdrei());
+      return std::make_shared<GetSbasUdrei>();
     }
 
     GetSbasUdreiPtr GetSbasUdrei::dynamicCast(CommandBasePtr ptr)

@@ -31,7 +31,7 @@ namespace Sdx
 
     GetIonoGridErrorAllResultPtr GetIonoGridErrorAllResult::create(CommandBasePtr relatedCommand, const std::vector<std::vector<double>>& grid)
     {
-      return GetIonoGridErrorAllResultPtr(new GetIonoGridErrorAllResult(relatedCommand, grid));
+      return std::make_shared<GetIonoGridErrorAllResult>(relatedCommand, grid);
     }
 
     GetIonoGridErrorAllResultPtr GetIonoGridErrorAllResult::dynamicCast(CommandBasePtr ptr)

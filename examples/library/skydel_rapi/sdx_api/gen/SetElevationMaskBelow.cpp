@@ -31,7 +31,7 @@ namespace Sdx
 
     SetElevationMaskBelowPtr SetElevationMaskBelow::create(double angle)
     {
-      return SetElevationMaskBelowPtr(new SetElevationMaskBelow(angle));
+      return std::make_shared<SetElevationMaskBelow>(angle);
     }
 
     SetElevationMaskBelowPtr SetElevationMaskBelow::dynamicCast(CommandBasePtr ptr)

@@ -33,7 +33,7 @@ namespace Sdx
 
     IsPYCodeEnabledForSVResultPtr IsPYCodeEnabledForSVResult::create(CommandBasePtr relatedCommand, const std::string& signal, int svId, bool enabled)
     {
-      return IsPYCodeEnabledForSVResultPtr(new IsPYCodeEnabledForSVResult(relatedCommand, signal, svId, enabled));
+      return std::make_shared<IsPYCodeEnabledForSVResult>(relatedCommand, signal, svId, enabled);
     }
 
     IsPYCodeEnabledForSVResultPtr IsPYCodeEnabledForSVResult::dynamicCast(CommandBasePtr ptr)

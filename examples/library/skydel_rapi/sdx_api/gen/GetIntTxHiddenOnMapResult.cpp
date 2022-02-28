@@ -32,7 +32,7 @@ namespace Sdx
 
     GetIntTxHiddenOnMapResultPtr GetIntTxHiddenOnMapResult::create(CommandBasePtr relatedCommand, bool hiddenOnMap, const std::string& id)
     {
-      return GetIntTxHiddenOnMapResultPtr(new GetIntTxHiddenOnMapResult(relatedCommand, hiddenOnMap, id));
+      return std::make_shared<GetIntTxHiddenOnMapResult>(relatedCommand, hiddenOnMap, id);
     }
 
     GetIntTxHiddenOnMapResultPtr GetIntTxHiddenOnMapResult::dynamicCast(CommandBasePtr ptr)

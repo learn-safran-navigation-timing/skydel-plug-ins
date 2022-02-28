@@ -8,8 +8,6 @@ linux-oe-g++: {
     QMAKE_CXXFLAGS *= -std=c++17
 }
 
-DEFINES += QT_DEPRECATED_WARNINGS
-
 LIBS += $$BLAZE_LIBS
 
 HEADERS += \

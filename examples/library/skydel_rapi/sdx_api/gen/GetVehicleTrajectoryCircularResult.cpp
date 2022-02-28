@@ -38,7 +38,7 @@ namespace Sdx
 
     GetVehicleTrajectoryCircularResultPtr GetVehicleTrajectoryCircularResult::create(CommandBasePtr relatedCommand, const std::string& type, double lat, double lon, double alt, double radius, double speed, bool clockwise, const Sdx::optional<double>& originAngle)
     {
-      return GetVehicleTrajectoryCircularResultPtr(new GetVehicleTrajectoryCircularResult(relatedCommand, type, lat, lon, alt, radius, speed, clockwise, originAngle));
+      return std::make_shared<GetVehicleTrajectoryCircularResult>(relatedCommand, type, lat, lon, alt, radius, speed, clockwise, originAngle);
     }
 
     GetVehicleTrajectoryCircularResultPtr GetVehicleTrajectoryCircularResult::dynamicCast(CommandBasePtr ptr)

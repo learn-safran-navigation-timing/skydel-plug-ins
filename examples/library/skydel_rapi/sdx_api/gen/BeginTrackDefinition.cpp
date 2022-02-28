@@ -26,7 +26,7 @@ namespace Sdx
 
     BeginTrackDefinitionPtr BeginTrackDefinition::create()
     {
-      return BeginTrackDefinitionPtr(new BeginTrackDefinition());
+      return std::make_shared<BeginTrackDefinition>();
     }
 
     BeginTrackDefinitionPtr BeginTrackDefinition::dynamicCast(CommandBasePtr ptr)

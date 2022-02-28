@@ -39,7 +39,7 @@ namespace Sdx
 
     GetPerturbationsResultPtr GetPerturbationsResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, double crs, double crc, double cis, double cic, double cus, double cuc, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetPerturbationsResultPtr(new GetPerturbationsResult(relatedCommand, system, svId, crs, crc, cis, cic, cus, cuc, dataSetName));
+      return std::make_shared<GetPerturbationsResult>(relatedCommand, system, svId, crs, crc, cis, cic, cus, cuc, dataSetName);
     }
 
     GetPerturbationsResultPtr GetPerturbationsResult::dynamicCast(CommandBasePtr ptr)

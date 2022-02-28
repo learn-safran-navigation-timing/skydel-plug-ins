@@ -32,7 +32,7 @@ namespace Sdx
 
     GetMessageSequenceResultPtr GetMessageSequenceResult::create(CommandBasePtr relatedCommand, const std::string& signal, const std::vector<int>& sequence)
     {
-      return GetMessageSequenceResultPtr(new GetMessageSequenceResult(relatedCommand, signal, sequence));
+      return std::make_shared<GetMessageSequenceResult>(relatedCommand, signal, sequence);
     }
 
     GetMessageSequenceResultPtr GetMessageSequenceResult::dynamicCast(CommandBasePtr ptr)

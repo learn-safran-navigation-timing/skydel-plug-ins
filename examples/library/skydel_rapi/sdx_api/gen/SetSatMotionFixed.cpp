@@ -33,7 +33,7 @@ namespace Sdx
 
     SetSatMotionFixedPtr SetSatMotionFixed::create(const std::string& system, int svId, bool isFixed)
     {
-      return SetSatMotionFixedPtr(new SetSatMotionFixed(system, svId, isFixed));
+      return std::make_shared<SetSatMotionFixed>(system, svId, isFixed);
     }
 
     SetSatMotionFixedPtr SetSatMotionFixed::dynamicCast(CommandBasePtr ptr)

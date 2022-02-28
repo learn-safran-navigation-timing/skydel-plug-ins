@@ -35,7 +35,7 @@ namespace Sdx
 
     GetEphemerisErrorForSVResultPtr GetEphemerisErrorForSVResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, const Sdx::RIC& orbit, double deltaAf0, double deltaAf1)
     {
-      return GetEphemerisErrorForSVResultPtr(new GetEphemerisErrorForSVResult(relatedCommand, system, svId, orbit, deltaAf0, deltaAf1));
+      return std::make_shared<GetEphemerisErrorForSVResult>(relatedCommand, system, svId, orbit, deltaAf0, deltaAf1);
     }
 
     GetEphemerisErrorForSVResultPtr GetEphemerisErrorForSVResult::dynamicCast(CommandBasePtr ptr)

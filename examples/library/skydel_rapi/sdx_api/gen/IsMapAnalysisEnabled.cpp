@@ -26,7 +26,7 @@ namespace Sdx
 
     IsMapAnalysisEnabledPtr IsMapAnalysisEnabled::create()
     {
-      return IsMapAnalysisEnabledPtr(new IsMapAnalysisEnabled());
+      return std::make_shared<IsMapAnalysisEnabled>();
     }
 
     IsMapAnalysisEnabledPtr IsMapAnalysisEnabled::dynamicCast(CommandBasePtr ptr)

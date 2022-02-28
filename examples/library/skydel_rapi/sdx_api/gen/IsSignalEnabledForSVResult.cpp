@@ -33,7 +33,7 @@ namespace Sdx
 
     IsSignalEnabledForSVResultPtr IsSignalEnabledForSVResult::create(CommandBasePtr relatedCommand, const std::string& signal, int svId, bool enabled)
     {
-      return IsSignalEnabledForSVResultPtr(new IsSignalEnabledForSVResult(relatedCommand, signal, svId, enabled));
+      return std::make_shared<IsSignalEnabledForSVResult>(relatedCommand, signal, svId, enabled);
     }
 
     IsSignalEnabledForSVResultPtr IsSignalEnabledForSVResult::dynamicCast(CommandBasePtr ptr)

@@ -31,7 +31,7 @@ namespace Sdx
 
     RemoveIntTxPtr RemoveIntTx::create(const std::string& id)
     {
-      return RemoveIntTxPtr(new RemoveIntTx(id));
+      return std::make_shared<RemoveIntTx>(id);
     }
 
     RemoveIntTxPtr RemoveIntTx::dynamicCast(CommandBasePtr ptr)

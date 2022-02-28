@@ -32,7 +32,7 @@ namespace Sdx
 
     EnableIntTxPtr EnableIntTx::create(bool enabled, const std::string& id)
     {
-      return EnableIntTxPtr(new EnableIntTx(enabled, id));
+      return std::make_shared<EnableIntTx>(enabled, id);
     }
 
     EnableIntTxPtr EnableIntTx::dynamicCast(CommandBasePtr ptr)

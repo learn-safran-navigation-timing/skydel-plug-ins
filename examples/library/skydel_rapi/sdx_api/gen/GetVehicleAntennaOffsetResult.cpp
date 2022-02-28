@@ -37,7 +37,7 @@ namespace Sdx
 
     GetVehicleAntennaOffsetResultPtr GetVehicleAntennaOffsetResult::create(CommandBasePtr relatedCommand, double x, double y, double z, double yaw, double pitch, double roll, const Sdx::optional<std::string>& name)
     {
-      return GetVehicleAntennaOffsetResultPtr(new GetVehicleAntennaOffsetResult(relatedCommand, x, y, z, yaw, pitch, roll, name));
+      return std::make_shared<GetVehicleAntennaOffsetResult>(relatedCommand, x, y, z, yaw, pitch, roll, name);
     }
 
     GetVehicleAntennaOffsetResultPtr GetVehicleAntennaOffsetResult::dynamicCast(CommandBasePtr ptr)

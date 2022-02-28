@@ -33,7 +33,7 @@ namespace Sdx
 
     IsLosEnabledForSVResultPtr IsLosEnabledForSVResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, bool enabled)
     {
-      return IsLosEnabledForSVResultPtr(new IsLosEnabledForSVResult(relatedCommand, system, svId, enabled));
+      return std::make_shared<IsLosEnabledForSVResult>(relatedCommand, system, svId, enabled);
     }
 
     IsLosEnabledForSVResultPtr IsLosEnabledForSVResult::dynamicCast(CommandBasePtr ptr)

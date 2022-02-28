@@ -26,7 +26,7 @@ namespace Sdx
 
     ResetDefaultConfigurationPtr ResetDefaultConfiguration::create()
     {
-      return ResetDefaultConfigurationPtr(new ResetDefaultConfiguration());
+      return std::make_shared<ResetDefaultConfiguration>();
     }
 
     ResetDefaultConfigurationPtr ResetDefaultConfiguration::dynamicCast(CommandBasePtr ptr)

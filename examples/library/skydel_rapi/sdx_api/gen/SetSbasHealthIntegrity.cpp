@@ -32,7 +32,7 @@ namespace Sdx
 
     SetSbasHealthIntegrityPtr SetSbasHealthIntegrity::create(int prn, bool health)
     {
-      return SetSbasHealthIntegrityPtr(new SetSbasHealthIntegrity(prn, health));
+      return std::make_shared<SetSbasHealthIntegrity>(prn, health);
     }
 
     SetSbasHealthIntegrityPtr SetSbasHealthIntegrity::dynamicCast(CommandBasePtr ptr)

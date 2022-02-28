@@ -34,7 +34,7 @@ namespace Sdx
 
     GetGpsEphBoolParamForSVResultPtr GetGpsEphBoolParamForSVResult::create(CommandBasePtr relatedCommand, int svId, const std::string& paramName, bool val, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetGpsEphBoolParamForSVResultPtr(new GetGpsEphBoolParamForSVResult(relatedCommand, svId, paramName, val, dataSetName));
+      return std::make_shared<GetGpsEphBoolParamForSVResult>(relatedCommand, svId, paramName, val, dataSetName);
     }
 
     GetGpsEphBoolParamForSVResultPtr GetGpsEphBoolParamForSVResult::dynamicCast(CommandBasePtr ptr)

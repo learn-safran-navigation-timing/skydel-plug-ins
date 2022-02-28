@@ -32,7 +32,7 @@ namespace Sdx
 
     SetIntTxIgnoreRxAntennaPhasePatternPtr SetIntTxIgnoreRxAntennaPhasePattern::create(bool ignore, const std::string& id)
     {
-      return SetIntTxIgnoreRxAntennaPhasePatternPtr(new SetIntTxIgnoreRxAntennaPhasePattern(ignore, id));
+      return std::make_shared<SetIntTxIgnoreRxAntennaPhasePattern>(ignore, id);
     }
 
     SetIntTxIgnoreRxAntennaPhasePatternPtr SetIntTxIgnoreRxAntennaPhasePattern::dynamicCast(CommandBasePtr ptr)

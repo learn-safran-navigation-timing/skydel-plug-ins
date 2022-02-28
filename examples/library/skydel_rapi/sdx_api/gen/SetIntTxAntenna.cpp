@@ -33,7 +33,7 @@ namespace Sdx
 
     SetIntTxAntennaPtr SetIntTxAntenna::create(const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const std::string& id)
     {
-      return SetIntTxAntennaPtr(new SetIntTxAntenna(gain, type, id));
+      return std::make_shared<SetIntTxAntenna>(gain, type, id);
     }
 
     SetIntTxAntennaPtr SetIntTxAntenna::dynamicCast(CommandBasePtr ptr)

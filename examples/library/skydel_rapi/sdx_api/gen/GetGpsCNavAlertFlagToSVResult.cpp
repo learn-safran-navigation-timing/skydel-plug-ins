@@ -33,7 +33,7 @@ namespace Sdx
 
     GetGpsCNavAlertFlagToSVResultPtr GetGpsCNavAlertFlagToSVResult::create(CommandBasePtr relatedCommand, int svId, bool alert, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetGpsCNavAlertFlagToSVResultPtr(new GetGpsCNavAlertFlagToSVResult(relatedCommand, svId, alert, dataSetName));
+      return std::make_shared<GetGpsCNavAlertFlagToSVResult>(relatedCommand, svId, alert, dataSetName);
     }
 
     GetGpsCNavAlertFlagToSVResultPtr GetGpsCNavAlertFlagToSVResult::dynamicCast(CommandBasePtr ptr)

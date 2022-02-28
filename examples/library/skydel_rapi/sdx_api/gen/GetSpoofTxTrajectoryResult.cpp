@@ -32,7 +32,7 @@ namespace Sdx
 
     GetSpoofTxTrajectoryResultPtr GetSpoofTxTrajectoryResult::create(CommandBasePtr relatedCommand, const std::string& trajectoryType, const std::string& id)
     {
-      return GetSpoofTxTrajectoryResultPtr(new GetSpoofTxTrajectoryResult(relatedCommand, trajectoryType, id));
+      return std::make_shared<GetSpoofTxTrajectoryResult>(relatedCommand, trajectoryType, id);
     }
 
     GetSpoofTxTrajectoryResultPtr GetSpoofTxTrajectoryResult::dynamicCast(CommandBasePtr ptr)

@@ -31,7 +31,7 @@ namespace Sdx
 
     SetTropoModelPtr SetTropoModel::create(const std::string& model)
     {
-      return SetTropoModelPtr(new SetTropoModel(model));
+      return std::make_shared<SetTropoModel>(model);
     }
 
     SetTropoModelPtr SetTropoModel::dynamicCast(CommandBasePtr ptr)

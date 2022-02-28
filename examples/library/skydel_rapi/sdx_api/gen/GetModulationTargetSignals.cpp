@@ -32,7 +32,7 @@ namespace Sdx
 
     GetModulationTargetSignalsPtr GetModulationTargetSignals::create(int output, const std::string& id)
     {
-      return GetModulationTargetSignalsPtr(new GetModulationTargetSignals(output, id));
+      return std::make_shared<GetModulationTargetSignals>(output, id);
     }
 
     GetModulationTargetSignalsPtr GetModulationTargetSignals::dynamicCast(CommandBasePtr ptr)

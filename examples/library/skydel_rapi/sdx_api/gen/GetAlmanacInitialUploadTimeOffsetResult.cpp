@@ -32,7 +32,7 @@ namespace Sdx
 
     GetAlmanacInitialUploadTimeOffsetResultPtr GetAlmanacInitialUploadTimeOffsetResult::create(CommandBasePtr relatedCommand, const std::string& system, int offset)
     {
-      return GetAlmanacInitialUploadTimeOffsetResultPtr(new GetAlmanacInitialUploadTimeOffsetResult(relatedCommand, system, offset));
+      return std::make_shared<GetAlmanacInitialUploadTimeOffsetResult>(relatedCommand, system, offset);
     }
 
     GetAlmanacInitialUploadTimeOffsetResultPtr GetAlmanacInitialUploadTimeOffsetResult::dynamicCast(CommandBasePtr ptr)

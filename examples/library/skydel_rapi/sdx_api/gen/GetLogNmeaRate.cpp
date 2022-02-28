@@ -26,7 +26,7 @@ namespace Sdx
 
     GetLogNmeaRatePtr GetLogNmeaRate::create()
     {
-      return GetLogNmeaRatePtr(new GetLogNmeaRate());
+      return std::make_shared<GetLogNmeaRate>();
     }
 
     GetLogNmeaRatePtr GetLogNmeaRate::dynamicCast(CommandBasePtr ptr)

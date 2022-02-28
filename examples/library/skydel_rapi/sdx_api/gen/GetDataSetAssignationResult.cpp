@@ -33,7 +33,7 @@ namespace Sdx
 
     GetDataSetAssignationResultPtr GetDataSetAssignationResult::create(CommandBasePtr relatedCommand, const std::string& system, const std::string& dataSetType, const std::string& dataSetName)
     {
-      return GetDataSetAssignationResultPtr(new GetDataSetAssignationResult(relatedCommand, system, dataSetType, dataSetName));
+      return std::make_shared<GetDataSetAssignationResult>(relatedCommand, system, dataSetType, dataSetName);
     }
 
     GetDataSetAssignationResultPtr GetDataSetAssignationResult::dynamicCast(CommandBasePtr ptr)

@@ -34,7 +34,7 @@ namespace Sdx
 
     GetSlaveStatusResultPtr GetSlaveStatusResult::create(CommandBasePtr relatedCommand, bool isSlave, bool isConnected, const std::string& hostName, int hostPort)
     {
-      return GetSlaveStatusResultPtr(new GetSlaveStatusResult(relatedCommand, isSlave, isConnected, hostName, hostPort));
+      return std::make_shared<GetSlaveStatusResult>(relatedCommand, isSlave, isConnected, hostName, hostPort);
     }
 
     GetSlaveStatusResultPtr GetSlaveStatusResult::dynamicCast(CommandBasePtr ptr)

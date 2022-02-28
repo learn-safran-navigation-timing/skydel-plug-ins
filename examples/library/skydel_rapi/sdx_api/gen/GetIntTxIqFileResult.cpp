@@ -37,7 +37,7 @@ namespace Sdx
 
     GetIntTxIqFileResultPtr GetIntTxIqFileResult::create(CommandBasePtr relatedCommand, bool enabled, double centralFreq, double power, const std::string& path, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& group)
     {
-      return GetIntTxIqFileResultPtr(new GetIntTxIqFileResult(relatedCommand, enabled, centralFreq, power, path, transmitterId, signalId, group));
+      return std::make_shared<GetIntTxIqFileResult>(relatedCommand, enabled, centralFreq, power, path, transmitterId, signalId, group);
     }
 
     GetIntTxIqFileResultPtr GetIntTxIqFileResult::dynamicCast(CommandBasePtr ptr)

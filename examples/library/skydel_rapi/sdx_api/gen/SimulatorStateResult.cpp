@@ -34,7 +34,7 @@ namespace Sdx
 
     SimulatorStateResultPtr SimulatorStateResult::create(CommandBasePtr relatedCommand, const std::string& state, const std::string& error, const Sdx::SimulatorState& stateId, const Sdx::SimulatorSubState& subStateId)
     {
-      return SimulatorStateResultPtr(new SimulatorStateResult(relatedCommand, state, error, stateId, subStateId));
+      return std::make_shared<SimulatorStateResult>(relatedCommand, state, error, stateId, subStateId);
     }
 
     SimulatorStateResultPtr SimulatorStateResult::dynamicCast(CommandBasePtr ptr)

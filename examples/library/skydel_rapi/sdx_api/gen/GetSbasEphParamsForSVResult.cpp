@@ -32,7 +32,7 @@ namespace Sdx
 
     GetSbasEphParamsForSVResultPtr GetSbasEphParamsForSVResult::create(CommandBasePtr relatedCommand, int svId, const std::map<std::string, double>& paramValueDict)
     {
-      return GetSbasEphParamsForSVResultPtr(new GetSbasEphParamsForSVResult(relatedCommand, svId, paramValueDict));
+      return std::make_shared<GetSbasEphParamsForSVResult>(relatedCommand, svId, paramValueDict);
     }
 
     GetSbasEphParamsForSVResultPtr GetSbasEphParamsForSVResult::dynamicCast(CommandBasePtr ptr)

@@ -31,7 +31,7 @@ namespace Sdx
 
     EndRouteDefinitionResultPtr EndRouteDefinitionResult::create(CommandBasePtr relatedCommand, int count)
     {
-      return EndRouteDefinitionResultPtr(new EndRouteDefinitionResult(relatedCommand, count));
+      return std::make_shared<EndRouteDefinitionResult>(relatedCommand, count);
     }
 
     EndRouteDefinitionResultPtr EndRouteDefinitionResult::dynamicCast(CommandBasePtr ptr)

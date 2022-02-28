@@ -39,7 +39,7 @@ namespace Sdx
 
     GetMessageModificationToGpsMNavResultPtr GetMessageModificationToGpsMNavResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, int occurrence, const std::string& condition, const std::string& bitModifications, const std::string& id)
     {
-      return GetMessageModificationToGpsMNavResultPtr(new GetMessageModificationToGpsMNavResult(relatedCommand, signalArray, svId, startTime, stopTime, messageType, occurrence, condition, bitModifications, id));
+      return std::make_shared<GetMessageModificationToGpsMNavResult>(relatedCommand, signalArray, svId, startTime, stopTime, messageType, occurrence, condition, bitModifications, id);
     }
 
     GetMessageModificationToGpsMNavResultPtr GetMessageModificationToGpsMNavResult::dynamicCast(CommandBasePtr ptr)

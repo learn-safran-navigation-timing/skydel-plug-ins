@@ -32,7 +32,7 @@ namespace Sdx
 
     IsSbasLongTermCorrectionsEnabledForResultPtr IsSbasLongTermCorrectionsEnabledForResult::create(CommandBasePtr relatedCommand, const std::string& system, bool isEnabled)
     {
-      return IsSbasLongTermCorrectionsEnabledForResultPtr(new IsSbasLongTermCorrectionsEnabledForResult(relatedCommand, system, isEnabled));
+      return std::make_shared<IsSbasLongTermCorrectionsEnabledForResult>(relatedCommand, system, isEnabled);
     }
 
     IsSbasLongTermCorrectionsEnabledForResultPtr IsSbasLongTermCorrectionsEnabledForResult::dynamicCast(CommandBasePtr ptr)

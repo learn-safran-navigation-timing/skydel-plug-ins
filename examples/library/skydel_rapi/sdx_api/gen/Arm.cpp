@@ -26,7 +26,7 @@ namespace Sdx
 
     ArmPtr Arm::create()
     {
-      return ArmPtr(new Arm());
+      return std::make_shared<Arm>();
     }
 
     ArmPtr Arm::dynamicCast(CommandBasePtr ptr)

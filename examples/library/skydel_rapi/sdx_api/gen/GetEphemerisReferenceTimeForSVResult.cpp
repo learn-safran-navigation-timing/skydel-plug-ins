@@ -34,7 +34,7 @@ namespace Sdx
 
     GetEphemerisReferenceTimeForSVResultPtr GetEphemerisReferenceTimeForSVResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, const Sdx::DateTime& time, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetEphemerisReferenceTimeForSVResultPtr(new GetEphemerisReferenceTimeForSVResult(relatedCommand, system, svId, time, dataSetName));
+      return std::make_shared<GetEphemerisReferenceTimeForSVResult>(relatedCommand, system, svId, time, dataSetName);
     }
 
     GetEphemerisReferenceTimeForSVResultPtr GetEphemerisReferenceTimeForSVResult::dynamicCast(CommandBasePtr ptr)

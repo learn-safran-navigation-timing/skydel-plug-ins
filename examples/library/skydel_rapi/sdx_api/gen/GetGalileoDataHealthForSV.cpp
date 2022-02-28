@@ -33,7 +33,7 @@ namespace Sdx
 
     GetGalileoDataHealthForSVPtr GetGalileoDataHealthForSV::create(int svId, const std::string& component, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetGalileoDataHealthForSVPtr(new GetGalileoDataHealthForSV(svId, component, dataSetName));
+      return std::make_shared<GetGalileoDataHealthForSV>(svId, component, dataSetName);
     }
 
     GetGalileoDataHealthForSVPtr GetGalileoDataHealthForSV::dynamicCast(CommandBasePtr ptr)

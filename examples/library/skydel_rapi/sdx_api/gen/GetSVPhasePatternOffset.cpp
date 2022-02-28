@@ -33,7 +33,7 @@ namespace Sdx
 
     GetSVPhasePatternOffsetPtr GetSVPhasePatternOffset::create(const Sdx::GNSSBand& band, const std::string& system, const Sdx::optional<std::string>& antennaName)
     {
-      return GetSVPhasePatternOffsetPtr(new GetSVPhasePatternOffset(band, system, antennaName));
+      return std::make_shared<GetSVPhasePatternOffset>(band, system, antennaName);
     }
 
     GetSVPhasePatternOffsetPtr GetSVPhasePatternOffset::dynamicCast(CommandBasePtr ptr)

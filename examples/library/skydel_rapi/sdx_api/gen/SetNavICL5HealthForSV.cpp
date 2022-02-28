@@ -33,7 +33,7 @@ namespace Sdx
 
     SetNavICL5HealthForSVPtr SetNavICL5HealthForSV::create(int svId, bool health, const Sdx::optional<std::string>& dataSetName)
     {
-      return SetNavICL5HealthForSVPtr(new SetNavICL5HealthForSV(svId, health, dataSetName));
+      return std::make_shared<SetNavICL5HealthForSV>(svId, health, dataSetName);
     }
 
     SetNavICL5HealthForSVPtr SetNavICL5HealthForSV::dynamicCast(CommandBasePtr ptr)

@@ -31,7 +31,7 @@ namespace Sdx
 
     GetIntTxFixEcefPtr GetIntTxFixEcef::create(const std::string& id)
     {
-      return GetIntTxFixEcefPtr(new GetIntTxFixEcef(id));
+      return std::make_shared<GetIntTxFixEcef>(id);
     }
 
     GetIntTxFixEcefPtr GetIntTxFixEcef::dynamicCast(CommandBasePtr ptr)

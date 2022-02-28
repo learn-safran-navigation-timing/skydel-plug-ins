@@ -38,7 +38,7 @@ namespace Sdx
 
     SetMultipathForSVPtr SetMultipathForSV::create(const std::string& signal, int svId, double powerLoss, double pseudorange, double doppler, double carrierPhase, int echo, const std::string& id)
     {
-      return SetMultipathForSVPtr(new SetMultipathForSV(signal, svId, powerLoss, pseudorange, doppler, carrierPhase, echo, id));
+      return std::make_shared<SetMultipathForSV>(signal, svId, powerLoss, pseudorange, doppler, carrierPhase, echo, id);
     }
 
     SetMultipathForSVPtr SetMultipathForSV::dynamicCast(CommandBasePtr ptr)

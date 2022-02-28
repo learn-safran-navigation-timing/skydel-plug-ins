@@ -32,7 +32,7 @@ namespace Sdx
 
     SetSpoofTxIgnorePropagationLossPtr SetSpoofTxIgnorePropagationLoss::create(bool ignore, const std::string& id)
     {
-      return SetSpoofTxIgnorePropagationLossPtr(new SetSpoofTxIgnorePropagationLoss(ignore, id));
+      return std::make_shared<SetSpoofTxIgnorePropagationLoss>(ignore, id);
     }
 
     SetSpoofTxIgnorePropagationLossPtr SetSpoofTxIgnorePropagationLoss::dynamicCast(CommandBasePtr ptr)

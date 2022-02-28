@@ -33,7 +33,7 @@ namespace Sdx
 
     GetBeiDouHealthStatusForSVResultPtr GetBeiDouHealthStatusForSVResult::create(CommandBasePtr relatedCommand, int svId, int health, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetBeiDouHealthStatusForSVResultPtr(new GetBeiDouHealthStatusForSVResult(relatedCommand, svId, health, dataSetName));
+      return std::make_shared<GetBeiDouHealthStatusForSVResult>(relatedCommand, svId, health, dataSetName);
     }
 
     GetBeiDouHealthStatusForSVResultPtr GetBeiDouHealthStatusForSVResult::dynamicCast(CommandBasePtr ptr)

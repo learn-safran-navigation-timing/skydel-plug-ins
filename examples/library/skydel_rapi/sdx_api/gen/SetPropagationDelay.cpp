@@ -32,7 +32,7 @@ namespace Sdx
 
     SetPropagationDelayPtr SetPropagationDelay::create(const std::string& system, bool enabled)
     {
-      return SetPropagationDelayPtr(new SetPropagationDelay(system, enabled));
+      return std::make_shared<SetPropagationDelay>(system, enabled);
     }
 
     SetPropagationDelayPtr SetPropagationDelay::dynamicCast(CommandBasePtr ptr)

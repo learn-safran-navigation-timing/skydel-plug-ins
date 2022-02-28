@@ -32,7 +32,7 @@ namespace Sdx
 
     AddCustomSignalPtr AddCustomSignal::create(const std::string& path, const std::string& id)
     {
-      return AddCustomSignalPtr(new AddCustomSignal(path, id));
+      return std::make_shared<AddCustomSignal>(path, id);
     }
 
     AddCustomSignalPtr AddCustomSignal::dynamicCast(CommandBasePtr ptr)

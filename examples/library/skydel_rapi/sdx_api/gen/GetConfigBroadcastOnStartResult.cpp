@@ -31,7 +31,7 @@ namespace Sdx
 
     GetConfigBroadcastOnStartResultPtr GetConfigBroadcastOnStartResult::create(CommandBasePtr relatedCommand, bool broadcastOnStart)
     {
-      return GetConfigBroadcastOnStartResultPtr(new GetConfigBroadcastOnStartResult(relatedCommand, broadcastOnStart));
+      return std::make_shared<GetConfigBroadcastOnStartResult>(relatedCommand, broadcastOnStart);
     }
 
     GetConfigBroadcastOnStartResultPtr GetConfigBroadcastOnStartResult::dynamicCast(CommandBasePtr ptr)

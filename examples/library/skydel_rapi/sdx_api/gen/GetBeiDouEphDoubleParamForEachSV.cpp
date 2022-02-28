@@ -32,7 +32,7 @@ namespace Sdx
 
     GetBeiDouEphDoubleParamForEachSVPtr GetBeiDouEphDoubleParamForEachSV::create(const std::string& paramName, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetBeiDouEphDoubleParamForEachSVPtr(new GetBeiDouEphDoubleParamForEachSV(paramName, dataSetName));
+      return std::make_shared<GetBeiDouEphDoubleParamForEachSV>(paramName, dataSetName);
     }
 
     GetBeiDouEphDoubleParamForEachSVPtr GetBeiDouEphDoubleParamForEachSV::dynamicCast(CommandBasePtr ptr)

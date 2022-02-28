@@ -32,7 +32,7 @@ namespace Sdx
 
     GetVisibleSVResultPtr GetVisibleSVResult::create(CommandBasePtr relatedCommand, const std::string& system, const std::vector<int>& svId)
     {
-      return GetVisibleSVResultPtr(new GetVisibleSVResult(relatedCommand, system, svId));
+      return std::make_shared<GetVisibleSVResult>(relatedCommand, system, svId);
     }
 
     GetVisibleSVResultPtr GetVisibleSVResult::dynamicCast(CommandBasePtr ptr)

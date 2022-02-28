@@ -33,7 +33,7 @@ namespace Sdx
 
     GetSVAntennaModelForSVResultPtr GetSVAntennaModelForSVResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, const std::string& antennaModelName)
     {
-      return GetSVAntennaModelForSVResultPtr(new GetSVAntennaModelForSVResult(relatedCommand, system, svId, antennaModelName));
+      return std::make_shared<GetSVAntennaModelForSVResult>(relatedCommand, system, svId, antennaModelName);
     }
 
     GetSVAntennaModelForSVResultPtr GetSVAntennaModelForSVResult::dynamicCast(CommandBasePtr ptr)

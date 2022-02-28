@@ -26,7 +26,7 @@ namespace Sdx
 
     ClearStatusLogPtr ClearStatusLog::create()
     {
-      return ClearStatusLogPtr(new ClearStatusLog());
+      return std::make_shared<ClearStatusLog>();
     }
 
     ClearStatusLogPtr ClearStatusLog::dynamicCast(CommandBasePtr ptr)

@@ -32,7 +32,7 @@ namespace Sdx
 
     SetWFAntennaElementModelPtr SetWFAntennaElementModel::create(const std::string& antennaModelName, int element)
     {
-      return SetWFAntennaElementModelPtr(new SetWFAntennaElementModel(antennaModelName, element));
+      return std::make_shared<SetWFAntennaElementModel>(antennaModelName, element);
     }
 
     SetWFAntennaElementModelPtr SetWFAntennaElementModel::dynamicCast(CommandBasePtr ptr)

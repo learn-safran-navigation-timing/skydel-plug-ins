@@ -31,7 +31,7 @@ namespace Sdx
 
     EndTrackDefinitionResultPtr EndTrackDefinitionResult::create(CommandBasePtr relatedCommand, int count)
     {
-      return EndTrackDefinitionResultPtr(new EndTrackDefinitionResult(relatedCommand, count));
+      return std::make_shared<EndTrackDefinitionResult>(relatedCommand, count);
     }
 
     EndTrackDefinitionResultPtr EndTrackDefinitionResult::dynamicCast(CommandBasePtr ptr)

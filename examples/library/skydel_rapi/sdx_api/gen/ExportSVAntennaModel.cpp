@@ -34,7 +34,7 @@ namespace Sdx
 
     ExportSVAntennaModelPtr ExportSVAntennaModel::create(const std::string& antennaName, const std::string& system, const std::string& filePath, bool overwriting)
     {
-      return ExportSVAntennaModelPtr(new ExportSVAntennaModel(antennaName, system, filePath, overwriting));
+      return std::make_shared<ExportSVAntennaModel>(antennaName, system, filePath, overwriting);
     }
 
     ExportSVAntennaModelPtr ExportSVAntennaModel::dynamicCast(CommandBasePtr ptr)

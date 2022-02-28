@@ -35,7 +35,7 @@ namespace Sdx
 
     CalibFunctionPtr CalibFunction::create(int svId, const std::string& signal, bool enableSV, bool enableDoppler, double phaseOffet)
     {
-      return CalibFunctionPtr(new CalibFunction(svId, signal, enableSV, enableDoppler, phaseOffet));
+      return std::make_shared<CalibFunction>(svId, signal, enableSV, enableDoppler, phaseOffet);
     }
 
     CalibFunctionPtr CalibFunction::dynamicCast(CommandBasePtr ptr)

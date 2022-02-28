@@ -31,7 +31,7 @@ namespace Sdx
 
     ImportCCIRFilesFromDirectoryPtr ImportCCIRFilesFromDirectory::create(const std::string& path)
     {
-      return ImportCCIRFilesFromDirectoryPtr(new ImportCCIRFilesFromDirectory(path));
+      return std::make_shared<ImportCCIRFilesFromDirectory>(path);
     }
 
     ImportCCIRFilesFromDirectoryPtr ImportCCIRFilesFromDirectory::dynamicCast(CommandBasePtr ptr)

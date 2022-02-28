@@ -31,7 +31,7 @@ namespace Sdx
 
     GetAllModulationTargetsResultPtr GetAllModulationTargetsResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& ids)
     {
-      return GetAllModulationTargetsResultPtr(new GetAllModulationTargetsResult(relatedCommand, ids));
+      return std::make_shared<GetAllModulationTargetsResult>(relatedCommand, ids);
     }
 
     GetAllModulationTargetsResultPtr GetAllModulationTargetsResult::dynamicCast(CommandBasePtr ptr)

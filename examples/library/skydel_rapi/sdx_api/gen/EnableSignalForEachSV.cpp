@@ -32,7 +32,7 @@ namespace Sdx
 
     EnableSignalForEachSVPtr EnableSignalForEachSV::create(const std::string& signal, const std::vector<bool>& enabled)
     {
-      return EnableSignalForEachSVPtr(new EnableSignalForEachSV(signal, enabled));
+      return std::make_shared<EnableSignalForEachSV>(signal, enabled);
     }
 
     EnableSignalForEachSVPtr EnableSignalForEachSV::dynamicCast(CommandBasePtr ptr)

@@ -32,7 +32,7 @@ namespace Sdx
 
     GetIntTxCWPtr GetIntTxCW::create(const std::string& transmitterId, const std::string& signalId)
     {
-      return GetIntTxCWPtr(new GetIntTxCW(transmitterId, signalId));
+      return std::make_shared<GetIntTxCW>(transmitterId, signalId);
     }
 
     GetIntTxCWPtr GetIntTxCW::dynamicCast(CommandBasePtr ptr)

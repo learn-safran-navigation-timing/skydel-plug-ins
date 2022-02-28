@@ -36,7 +36,7 @@ namespace Sdx
 
     SetInterferenceCWPtr SetInterferenceCW::create(int startTime, int stopTime, double centralFreq, double power, bool enabled, const std::string& id)
     {
-      return SetInterferenceCWPtr(new SetInterferenceCW(startTime, stopTime, centralFreq, power, enabled, id));
+      return std::make_shared<SetInterferenceCW>(startTime, stopTime, centralFreq, power, enabled, id);
     }
 
     SetInterferenceCWPtr SetInterferenceCW::dynamicCast(CommandBasePtr ptr)

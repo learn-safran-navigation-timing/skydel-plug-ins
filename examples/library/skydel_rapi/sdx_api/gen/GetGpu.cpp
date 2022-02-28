@@ -32,7 +32,7 @@ namespace Sdx
 
     GetGpuPtr GetGpu::create(int output, const std::string& id)
     {
-      return GetGpuPtr(new GetGpu(output, id));
+      return std::make_shared<GetGpu>(output, id);
     }
 
     GetGpuPtr GetGpu::dynamicCast(CommandBasePtr ptr)

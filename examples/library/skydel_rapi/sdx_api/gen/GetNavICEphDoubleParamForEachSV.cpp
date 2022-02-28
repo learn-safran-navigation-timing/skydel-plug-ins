@@ -32,7 +32,7 @@ namespace Sdx
 
     GetNavICEphDoubleParamForEachSVPtr GetNavICEphDoubleParamForEachSV::create(const std::string& paramName, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetNavICEphDoubleParamForEachSVPtr(new GetNavICEphDoubleParamForEachSV(paramName, dataSetName));
+      return std::make_shared<GetNavICEphDoubleParamForEachSV>(paramName, dataSetName);
     }
 
     GetNavICEphDoubleParamForEachSVPtr GetNavICEphDoubleParamForEachSV::dynamicCast(CommandBasePtr ptr)

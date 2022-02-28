@@ -35,7 +35,7 @@ namespace Sdx
 
     SetVehicleAntennaPhaseOffsetCSVPtr SetVehicleAntennaPhaseOffsetCSV::create(const std::string& filePath, const Sdx::AntennaPatternFileType& fileFormat, const Sdx::AntennaPatternType& type, const Sdx::GNSSBand& band, const Sdx::optional<std::string>& name)
     {
-      return SetVehicleAntennaPhaseOffsetCSVPtr(new SetVehicleAntennaPhaseOffsetCSV(filePath, fileFormat, type, band, name));
+      return std::make_shared<SetVehicleAntennaPhaseOffsetCSV>(filePath, fileFormat, type, band, name);
     }
 
     SetVehicleAntennaPhaseOffsetCSVPtr SetVehicleAntennaPhaseOffsetCSV::dynamicCast(CommandBasePtr ptr)

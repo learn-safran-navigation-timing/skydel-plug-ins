@@ -32,7 +32,7 @@ namespace Sdx
 
     SetEffectiveIonisationLevelCoefficientPtr SetEffectiveIonisationLevelCoefficient::create(int index, double val)
     {
-      return SetEffectiveIonisationLevelCoefficientPtr(new SetEffectiveIonisationLevelCoefficient(index, val));
+      return std::make_shared<SetEffectiveIonisationLevelCoefficient>(index, val);
     }
 
     SetEffectiveIonisationLevelCoefficientPtr SetEffectiveIonisationLevelCoefficient::dynamicCast(CommandBasePtr ptr)

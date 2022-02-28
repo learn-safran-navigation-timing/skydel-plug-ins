@@ -31,7 +31,7 @@ namespace Sdx
 
     SetStartTimeModePtr SetStartTimeMode::create(const std::string& mode)
     {
-      return SetStartTimeModePtr(new SetStartTimeMode(mode));
+      return std::make_shared<SetStartTimeMode>(mode);
     }
 
     SetStartTimeModePtr SetStartTimeMode::dynamicCast(CommandBasePtr ptr)

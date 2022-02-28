@@ -32,7 +32,7 @@ namespace Sdx
 
     ImportSVAntennaModelPtr ImportSVAntennaModel::create(const std::string& filePath, const std::string& system)
     {
-      return ImportSVAntennaModelPtr(new ImportSVAntennaModel(filePath, system));
+      return std::make_shared<ImportSVAntennaModel>(filePath, system);
     }
 
     ImportSVAntennaModelPtr ImportSVAntennaModel::dynamicCast(CommandBasePtr ptr)

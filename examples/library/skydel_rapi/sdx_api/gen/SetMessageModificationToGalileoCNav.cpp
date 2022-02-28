@@ -37,7 +37,7 @@ namespace Sdx
 
     SetMessageModificationToGalileoCNavPtr SetMessageModificationToGalileoCNav::create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, bool updateCRC, const std::string& bitModifications, const std::string& id)
     {
-      return SetMessageModificationToGalileoCNavPtr(new SetMessageModificationToGalileoCNav(signalArray, svId, startTime, stopTime, updateCRC, bitModifications, id));
+      return std::make_shared<SetMessageModificationToGalileoCNav>(signalArray, svId, startTime, stopTime, updateCRC, bitModifications, id);
     }
 
     SetMessageModificationToGalileoCNavPtr SetMessageModificationToGalileoCNav::dynamicCast(CommandBasePtr ptr)

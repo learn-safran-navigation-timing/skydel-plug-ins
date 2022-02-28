@@ -33,7 +33,7 @@ namespace Sdx
 
     SetBeiDouHealthInfoForSVPtr SetBeiDouHealthInfoForSV::create(int svId, int health, const Sdx::optional<std::string>& dataSetName)
     {
-      return SetBeiDouHealthInfoForSVPtr(new SetBeiDouHealthInfoForSV(svId, health, dataSetName));
+      return std::make_shared<SetBeiDouHealthInfoForSV>(svId, health, dataSetName);
     }
 
     SetBeiDouHealthInfoForSVPtr SetBeiDouHealthInfoForSV::dynamicCast(CommandBasePtr ptr)

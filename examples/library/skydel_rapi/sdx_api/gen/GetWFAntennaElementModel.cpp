@@ -31,7 +31,7 @@ namespace Sdx
 
     GetWFAntennaElementModelPtr GetWFAntennaElementModel::create(int element)
     {
-      return GetWFAntennaElementModelPtr(new GetWFAntennaElementModel(element));
+      return std::make_shared<GetWFAntennaElementModel>(element);
     }
 
     GetWFAntennaElementModelPtr GetWFAntennaElementModel::dynamicCast(CommandBasePtr ptr)

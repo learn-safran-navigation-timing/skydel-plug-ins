@@ -33,7 +33,7 @@ namespace Sdx
 
     ImportIonoGridMaskPtr ImportIonoGridMask::create(const std::string& serviceProvider, bool overwriting, const std::string& path)
     {
-      return ImportIonoGridMaskPtr(new ImportIonoGridMask(serviceProvider, overwriting, path));
+      return std::make_shared<ImportIonoGridMask>(serviceProvider, overwriting, path);
     }
 
     ImportIonoGridMaskPtr ImportIonoGridMask::dynamicCast(CommandBasePtr ptr)

@@ -32,7 +32,7 @@ namespace Sdx
 
     SetIonoBdgimAlphaPtr SetIonoBdgimAlpha::create(int index, double val)
     {
-      return SetIonoBdgimAlphaPtr(new SetIonoBdgimAlpha(index, val));
+      return std::make_shared<SetIonoBdgimAlpha>(index, val);
     }
 
     SetIonoBdgimAlphaPtr SetIonoBdgimAlpha::dynamicCast(CommandBasePtr ptr)

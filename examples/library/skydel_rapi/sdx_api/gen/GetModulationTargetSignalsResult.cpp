@@ -39,7 +39,7 @@ namespace Sdx
 
     GetModulationTargetSignalsResultPtr GetModulationTargetSignalsResult::create(CommandBasePtr relatedCommand, int output, int minRate, int maxRate, const std::string& band, const std::string& signal, int gain, bool gaussianNoise, const std::string& id, const Sdx::optional<double>& centralFrequency)
     {
-      return GetModulationTargetSignalsResultPtr(new GetModulationTargetSignalsResult(relatedCommand, output, minRate, maxRate, band, signal, gain, gaussianNoise, id, centralFrequency));
+      return std::make_shared<GetModulationTargetSignalsResult>(relatedCommand, output, minRate, maxRate, band, signal, gain, gaussianNoise, id, centralFrequency);
     }
 
     GetModulationTargetSignalsResultPtr GetModulationTargetSignalsResult::dynamicCast(CommandBasePtr ptr)

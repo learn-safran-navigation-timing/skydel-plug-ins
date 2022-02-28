@@ -26,7 +26,7 @@ namespace Sdx
 
     GetSbasMonitoredSystemsPtr GetSbasMonitoredSystems::create()
     {
-      return GetSbasMonitoredSystemsPtr(new GetSbasMonitoredSystems());
+      return std::make_shared<GetSbasMonitoredSystems>();
     }
 
     GetSbasMonitoredSystemsPtr GetSbasMonitoredSystems::dynamicCast(CommandBasePtr ptr)

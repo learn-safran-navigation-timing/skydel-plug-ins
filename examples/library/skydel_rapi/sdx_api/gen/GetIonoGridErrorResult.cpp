@@ -33,7 +33,7 @@ namespace Sdx
 
     GetIonoGridErrorResultPtr GetIonoGridErrorResult::create(CommandBasePtr relatedCommand, int band, int point, double error)
     {
-      return GetIonoGridErrorResultPtr(new GetIonoGridErrorResult(relatedCommand, band, point, error));
+      return std::make_shared<GetIonoGridErrorResult>(relatedCommand, band, point, error);
     }
 
     GetIonoGridErrorResultPtr GetIonoGridErrorResult::dynamicCast(CommandBasePtr ptr)

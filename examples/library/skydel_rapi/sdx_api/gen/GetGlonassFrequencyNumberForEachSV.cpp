@@ -26,7 +26,7 @@ namespace Sdx
 
     GetGlonassFrequencyNumberForEachSVPtr GetGlonassFrequencyNumberForEachSV::create()
     {
-      return GetGlonassFrequencyNumberForEachSVPtr(new GetGlonassFrequencyNumberForEachSV());
+      return std::make_shared<GetGlonassFrequencyNumberForEachSV>();
     }
 
     GetGlonassFrequencyNumberForEachSVPtr GetGlonassFrequencyNumberForEachSV::dynamicCast(CommandBasePtr ptr)

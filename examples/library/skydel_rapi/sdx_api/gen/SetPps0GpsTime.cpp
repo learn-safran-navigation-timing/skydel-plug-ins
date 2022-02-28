@@ -31,7 +31,7 @@ namespace Sdx
 
     SetPps0GpsTimePtr SetPps0GpsTime::create(const Sdx::DateTime& gpsTime)
     {
-      return SetPps0GpsTimePtr(new SetPps0GpsTime(gpsTime));
+      return std::make_shared<SetPps0GpsTime>(gpsTime);
     }
 
     SetPps0GpsTimePtr SetPps0GpsTime::dynamicCast(CommandBasePtr ptr)

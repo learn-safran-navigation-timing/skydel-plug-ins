@@ -31,7 +31,7 @@ namespace Sdx
 
     GetCnav2PagesEnabledResultPtr GetCnav2PagesEnabledResult::create(CommandBasePtr relatedCommand, const std::vector<int>& messages)
     {
-      return GetCnav2PagesEnabledResultPtr(new GetCnav2PagesEnabledResult(relatedCommand, messages));
+      return std::make_shared<GetCnav2PagesEnabledResult>(relatedCommand, messages);
     }
 
     GetCnav2PagesEnabledResultPtr GetCnav2PagesEnabledResult::dynamicCast(CommandBasePtr ptr)

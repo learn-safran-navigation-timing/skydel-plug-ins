@@ -32,7 +32,7 @@ namespace Sdx
 
     SetPrnForEachSVPtr SetPrnForEachSV::create(const std::string& signal, const std::vector<int>& prn)
     {
-      return SetPrnForEachSVPtr(new SetPrnForEachSV(signal, prn));
+      return std::make_shared<SetPrnForEachSV>(signal, prn);
     }
 
     SetPrnForEachSVPtr SetPrnForEachSV::dynamicCast(CommandBasePtr ptr)

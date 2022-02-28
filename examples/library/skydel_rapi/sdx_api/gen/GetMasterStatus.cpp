@@ -26,7 +26,7 @@ namespace Sdx
 
     GetMasterStatusPtr GetMasterStatus::create()
     {
-      return GetMasterStatusPtr(new GetMasterStatus());
+      return std::make_shared<GetMasterStatus>();
     }
 
     GetMasterStatusPtr GetMasterStatus::dynamicCast(CommandBasePtr ptr)

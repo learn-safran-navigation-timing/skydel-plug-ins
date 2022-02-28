@@ -33,7 +33,7 @@ namespace Sdx
 
     RemoveAllMultipathForSVPtr RemoveAllMultipathForSV::create(const std::string& system, int svId, bool reset)
     {
-      return RemoveAllMultipathForSVPtr(new RemoveAllMultipathForSV(system, svId, reset));
+      return std::make_shared<RemoveAllMultipathForSV>(system, svId, reset);
     }
 
     RemoveAllMultipathForSVPtr RemoveAllMultipathForSV::dynamicCast(CommandBasePtr ptr)

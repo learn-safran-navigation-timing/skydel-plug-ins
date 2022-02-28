@@ -31,7 +31,7 @@ namespace Sdx
 
     SetIntTxNonePtr SetIntTxNone::create(const std::string& id)
     {
-      return SetIntTxNonePtr(new SetIntTxNone(id));
+      return std::make_shared<SetIntTxNone>(id);
     }
 
     SetIntTxNonePtr SetIntTxNone::dynamicCast(CommandBasePtr ptr)

@@ -33,7 +33,7 @@ namespace Sdx
 
     IsSVForcedGeoPtr IsSVForcedGeo::create(const std::string& system, int svId, const Sdx::optional<std::string>& dataSetName)
     {
-      return IsSVForcedGeoPtr(new IsSVForcedGeo(system, svId, dataSetName));
+      return std::make_shared<IsSVForcedGeo>(system, svId, dataSetName);
     }
 
     IsSVForcedGeoPtr IsSVForcedGeo::dynamicCast(CommandBasePtr ptr)

@@ -31,7 +31,7 @@ namespace Sdx
 
     IsLOSEnabledForEachSVPtr IsLOSEnabledForEachSV::create(const std::string& system)
     {
-      return IsLOSEnabledForEachSVPtr(new IsLOSEnabledForEachSV(system));
+      return std::make_shared<IsLOSEnabledForEachSV>(system);
     }
 
     IsLOSEnabledForEachSVPtr IsLOSEnabledForEachSV::dynamicCast(CommandBasePtr ptr)

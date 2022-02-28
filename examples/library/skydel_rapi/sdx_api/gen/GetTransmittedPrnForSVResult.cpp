@@ -32,7 +32,7 @@ namespace Sdx
 
     GetTransmittedPrnForSVResultPtr GetTransmittedPrnForSVResult::create(CommandBasePtr relatedCommand, int svId, const std::map<std::string, int>& signalPrnDict)
     {
-      return GetTransmittedPrnForSVResultPtr(new GetTransmittedPrnForSVResult(relatedCommand, svId, signalPrnDict));
+      return std::make_shared<GetTransmittedPrnForSVResult>(relatedCommand, svId, signalPrnDict);
     }
 
     GetTransmittedPrnForSVResultPtr GetTransmittedPrnForSVResult::dynamicCast(CommandBasePtr ptr)

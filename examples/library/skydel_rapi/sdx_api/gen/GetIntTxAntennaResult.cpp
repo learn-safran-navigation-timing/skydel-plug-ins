@@ -33,7 +33,7 @@ namespace Sdx
 
     GetIntTxAntennaResultPtr GetIntTxAntennaResult::create(CommandBasePtr relatedCommand, const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const std::string& id)
     {
-      return GetIntTxAntennaResultPtr(new GetIntTxAntennaResult(relatedCommand, gain, type, id));
+      return std::make_shared<GetIntTxAntennaResult>(relatedCommand, gain, type, id);
     }
 
     GetIntTxAntennaResultPtr GetIntTxAntennaResult::dynamicCast(CommandBasePtr ptr)

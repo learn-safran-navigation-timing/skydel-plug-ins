@@ -33,7 +33,7 @@ namespace Sdx
 
     SetLeapSecondFuturePtr SetLeapSecondFuture::create(bool enabled, int seconds, const Sdx::Date& date)
     {
-      return SetLeapSecondFuturePtr(new SetLeapSecondFuture(enabled, seconds, date));
+      return std::make_shared<SetLeapSecondFuture>(enabled, seconds, date);
     }
 
     SetLeapSecondFuturePtr SetLeapSecondFuture::dynamicCast(CommandBasePtr ptr)

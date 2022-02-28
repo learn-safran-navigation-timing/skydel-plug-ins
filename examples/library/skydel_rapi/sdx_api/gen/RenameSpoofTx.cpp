@@ -32,7 +32,7 @@ namespace Sdx
 
     RenameSpoofTxPtr RenameSpoofTx::create(const std::string& usualName, const std::string& id)
     {
-      return RenameSpoofTxPtr(new RenameSpoofTx(usualName, id));
+      return std::make_shared<RenameSpoofTx>(usualName, id);
     }
 
     RenameSpoofTxPtr RenameSpoofTx::dynamicCast(CommandBasePtr ptr)

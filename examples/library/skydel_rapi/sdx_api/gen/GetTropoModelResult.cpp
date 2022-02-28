@@ -31,7 +31,7 @@ namespace Sdx
 
     GetTropoModelResultPtr GetTropoModelResult::create(CommandBasePtr relatedCommand, const std::string& model)
     {
-      return GetTropoModelResultPtr(new GetTropoModelResult(relatedCommand, model));
+      return std::make_shared<GetTropoModelResult>(relatedCommand, model);
     }
 
     GetTropoModelResultPtr GetTropoModelResult::dynamicCast(CommandBasePtr ptr)

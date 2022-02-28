@@ -27,7 +27,6 @@ Q_DECLARE_INTERFACE(SkydelPluginBase, "SkydelPluginBase/1.0")
 #include "internal/skydel_rapi_interface.h"
 #include "skydel_core_interface.h"
 #include "skydel_hil_observer_interface.h"
-#include "skydel_instrumentation_interface.h"
 #include "skydel_licensing_interface.h"
 #include "skydel_position_observer_interface.h"
 #include "skydel_radio_time_observer_interface.h"
@@ -49,7 +48,6 @@ public:
     SKYDEL_PLUGIN_ROLE(SkydelPositionObserverInterface);
     SKYDEL_PLUGIN_ROLE(SkydelRadioTimeObserverInterface);
     SKYDEL_PLUGIN_ROLE(SkydelLicensingInterface);
-    SKYDEL_PLUGIN_ROLE(SkydelInstrumentationInterface);
     SKYDEL_PLUGIN_ROLE(SkydelRapiInterface);
     SKYDEL_PLUGIN_ROLE(SkydelRawDataObserverInterface);
     SKYDEL_PLUGIN_ROLE(SkydelTransmitterObserverInterface);

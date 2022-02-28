@@ -34,7 +34,7 @@ namespace Sdx
 
     SetRFOutputOffsetsPtr SetRFOutputOffsets::create(int outputIdx, double powerOffset, double timeOffset, double phaseOffset)
     {
-      return SetRFOutputOffsetsPtr(new SetRFOutputOffsets(outputIdx, powerOffset, timeOffset, phaseOffset));
+      return std::make_shared<SetRFOutputOffsets>(outputIdx, powerOffset, timeOffset, phaseOffset);
     }
 
     SetRFOutputOffsetsPtr SetRFOutputOffsets::dynamicCast(CommandBasePtr ptr)

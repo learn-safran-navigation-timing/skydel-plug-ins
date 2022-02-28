@@ -32,7 +32,7 @@ namespace Sdx
 
     MessageSequenceImportPtr MessageSequenceImport::create(const std::string& signal, const std::string& filename)
     {
-      return MessageSequenceImportPtr(new MessageSequenceImport(signal, filename));
+      return std::make_shared<MessageSequenceImport>(signal, filename);
     }
 
     MessageSequenceImportPtr MessageSequenceImport::dynamicCast(CommandBasePtr ptr)

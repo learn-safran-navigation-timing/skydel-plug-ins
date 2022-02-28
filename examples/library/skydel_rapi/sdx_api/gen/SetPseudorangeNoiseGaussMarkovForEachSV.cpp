@@ -36,7 +36,7 @@ namespace Sdx
 
     SetPseudorangeNoiseGaussMarkovForEachSVPtr SetPseudorangeNoiseGaussMarkovForEachSV::create(const std::string& system, int process, const std::vector<bool>& enabled, const std::vector<double>& sigma, const std::vector<double>& time, const std::vector<int>& seed)
     {
-      return SetPseudorangeNoiseGaussMarkovForEachSVPtr(new SetPseudorangeNoiseGaussMarkovForEachSV(system, process, enabled, sigma, time, seed));
+      return std::make_shared<SetPseudorangeNoiseGaussMarkovForEachSV>(system, process, enabled, sigma, time, seed);
     }
 
     SetPseudorangeNoiseGaussMarkovForEachSVPtr SetPseudorangeNoiseGaussMarkovForEachSV::dynamicCast(CommandBasePtr ptr)

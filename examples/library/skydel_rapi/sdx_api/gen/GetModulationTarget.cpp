@@ -31,7 +31,7 @@ namespace Sdx
 
     GetModulationTargetPtr GetModulationTarget::create(const std::string& id)
     {
-      return GetModulationTargetPtr(new GetModulationTarget(id));
+      return std::make_shared<GetModulationTarget>(id);
     }
 
     GetModulationTargetPtr GetModulationTarget::dynamicCast(CommandBasePtr ptr)

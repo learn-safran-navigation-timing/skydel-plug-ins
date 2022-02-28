@@ -31,7 +31,7 @@ namespace Sdx
 
     SetSpectrumVisiblePtr SetSpectrumVisible::create(bool visible)
     {
-      return SetSpectrumVisiblePtr(new SetSpectrumVisible(visible));
+      return std::make_shared<SetSpectrumVisible>(visible);
     }
 
     SetSpectrumVisiblePtr SetSpectrumVisible::dynamicCast(CommandBasePtr ptr)

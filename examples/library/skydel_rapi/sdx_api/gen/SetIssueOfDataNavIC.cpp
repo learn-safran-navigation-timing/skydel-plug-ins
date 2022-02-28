@@ -32,7 +32,7 @@ namespace Sdx
 
     SetIssueOfDataNavICPtr SetIssueOfDataNavIC::create(int ephemerisAndClock, const Sdx::optional<bool>& overrideRinex)
     {
-      return SetIssueOfDataNavICPtr(new SetIssueOfDataNavIC(ephemerisAndClock, overrideRinex));
+      return std::make_shared<SetIssueOfDataNavIC>(ephemerisAndClock, overrideRinex);
     }
 
     SetIssueOfDataNavICPtr SetIssueOfDataNavIC::dynamicCast(CommandBasePtr ptr)

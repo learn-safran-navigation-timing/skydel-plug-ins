@@ -26,7 +26,7 @@ namespace Sdx
 
     UndoCmdPtr UndoCmd::create()
     {
-      return UndoCmdPtr(new UndoCmd());
+      return std::make_shared<UndoCmd>();
     }
 
     UndoCmdPtr UndoCmd::dynamicCast(CommandBasePtr ptr)

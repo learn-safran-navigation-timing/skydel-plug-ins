@@ -39,7 +39,7 @@ namespace Sdx
 
     SetMessageModificationToGlonassNavPtr SetMessageModificationToGlonassNav::create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int frame, int stringNumber, bool updateHammingCode, const std::string& stringModification, const std::string& id)
     {
-      return SetMessageModificationToGlonassNavPtr(new SetMessageModificationToGlonassNav(signalArray, svId, startTime, stopTime, frame, stringNumber, updateHammingCode, stringModification, id));
+      return std::make_shared<SetMessageModificationToGlonassNav>(signalArray, svId, startTime, stopTime, frame, stringNumber, updateHammingCode, stringModification, id);
     }
 
     SetMessageModificationToGlonassNavPtr SetMessageModificationToGlonassNav::dynamicCast(CommandBasePtr ptr)

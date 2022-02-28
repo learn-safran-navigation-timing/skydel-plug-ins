@@ -32,7 +32,7 @@ namespace Sdx
 
     SetSbasEphParamsForSVPtr SetSbasEphParamsForSV::create(int svId, const std::map<std::string, double>& paramValueDict)
     {
-      return SetSbasEphParamsForSVPtr(new SetSbasEphParamsForSV(svId, paramValueDict));
+      return std::make_shared<SetSbasEphParamsForSV>(svId, paramValueDict);
     }
 
     SetSbasEphParamsForSVPtr SetSbasEphParamsForSV::dynamicCast(CommandBasePtr ptr)

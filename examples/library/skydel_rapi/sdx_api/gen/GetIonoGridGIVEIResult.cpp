@@ -34,7 +34,7 @@ namespace Sdx
 
     GetIonoGridGIVEIResultPtr GetIonoGridGIVEIResult::create(CommandBasePtr relatedCommand, int band, int point, int giveI, const Sdx::optional<std::string>& serviceProvider)
     {
-      return GetIonoGridGIVEIResultPtr(new GetIonoGridGIVEIResult(relatedCommand, band, point, giveI, serviceProvider));
+      return std::make_shared<GetIonoGridGIVEIResult>(relatedCommand, band, point, giveI, serviceProvider);
     }
 
     GetIonoGridGIVEIResultPtr GetIonoGridGIVEIResult::dynamicCast(CommandBasePtr ptr)

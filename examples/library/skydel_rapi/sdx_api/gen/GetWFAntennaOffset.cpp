@@ -26,7 +26,7 @@ namespace Sdx
 
     GetWFAntennaOffsetPtr GetWFAntennaOffset::create()
     {
-      return GetWFAntennaOffsetPtr(new GetWFAntennaOffset());
+      return std::make_shared<GetWFAntennaOffset>();
     }
 
     GetWFAntennaOffsetPtr GetWFAntennaOffset::dynamicCast(CommandBasePtr ptr)

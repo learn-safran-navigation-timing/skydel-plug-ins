@@ -31,7 +31,7 @@ namespace Sdx
 
     SetEngineLatencyPtr SetEngineLatency::create(int latency)
     {
-      return SetEngineLatencyPtr(new SetEngineLatency(latency));
+      return std::make_shared<SetEngineLatency>(latency);
     }
 
     SetEngineLatencyPtr SetEngineLatency::dynamicCast(CommandBasePtr ptr)

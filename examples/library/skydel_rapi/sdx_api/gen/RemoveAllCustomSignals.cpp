@@ -26,7 +26,7 @@ namespace Sdx
 
     RemoveAllCustomSignalsPtr RemoveAllCustomSignals::create()
     {
-      return RemoveAllCustomSignalsPtr(new RemoveAllCustomSignals());
+      return std::make_shared<RemoveAllCustomSignals>();
     }
 
     RemoveAllCustomSignalsPtr RemoveAllCustomSignals::dynamicCast(CommandBasePtr ptr)

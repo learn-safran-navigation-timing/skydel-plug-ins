@@ -32,7 +32,7 @@ namespace Sdx
 
     OpenPtr Open::create(const std::string& path, bool discardCurrentConfig)
     {
-      return OpenPtr(new Open(path, discardCurrentConfig));
+      return std::make_shared<Open>(path, discardCurrentConfig);
     }
 
     OpenPtr Open::dynamicCast(CommandBasePtr ptr)

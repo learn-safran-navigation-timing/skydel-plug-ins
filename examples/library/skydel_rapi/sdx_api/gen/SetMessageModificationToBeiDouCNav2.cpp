@@ -39,7 +39,7 @@ namespace Sdx
 
     SetMessageModificationToBeiDouCNav2Ptr SetMessageModificationToBeiDouCNav2::create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id)
     {
-      return SetMessageModificationToBeiDouCNav2Ptr(new SetMessageModificationToBeiDouCNav2(signalArray, svId, startTime, stopTime, messageType, condition, updateCRC, bitModifications, id));
+      return std::make_shared<SetMessageModificationToBeiDouCNav2>(signalArray, svId, startTime, stopTime, messageType, condition, updateCRC, bitModifications, id);
     }
 
     SetMessageModificationToBeiDouCNav2Ptr SetMessageModificationToBeiDouCNav2::dynamicCast(CommandBasePtr ptr)

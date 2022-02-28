@@ -31,7 +31,7 @@ namespace Sdx
 
     GetIonoModelResultPtr GetIonoModelResult::create(CommandBasePtr relatedCommand, const std::string& model)
     {
-      return GetIonoModelResultPtr(new GetIonoModelResult(relatedCommand, model));
+      return std::make_shared<GetIonoModelResult>(relatedCommand, model);
     }
 
     GetIonoModelResultPtr GetIonoModelResult::dynamicCast(CommandBasePtr ptr)

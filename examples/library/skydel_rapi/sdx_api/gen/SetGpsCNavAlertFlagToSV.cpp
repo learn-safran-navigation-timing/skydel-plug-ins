@@ -33,7 +33,7 @@ namespace Sdx
 
     SetGpsCNavAlertFlagToSVPtr SetGpsCNavAlertFlagToSV::create(int svId, bool alert, const Sdx::optional<std::string>& dataSetName)
     {
-      return SetGpsCNavAlertFlagToSVPtr(new SetGpsCNavAlertFlagToSV(svId, alert, dataSetName));
+      return std::make_shared<SetGpsCNavAlertFlagToSV>(svId, alert, dataSetName);
     }
 
     SetGpsCNavAlertFlagToSVPtr SetGpsCNavAlertFlagToSV::dynamicCast(CommandBasePtr ptr)

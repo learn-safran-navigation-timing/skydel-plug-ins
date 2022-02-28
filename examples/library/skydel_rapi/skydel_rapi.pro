@@ -13,8 +13,6 @@ unix: {
     DEFINES += GUID_LIBUUID=1
 }
 
-DEFINES += QT_DEPRECATED_WARNINGS
-
 INCLUDEPATH += $$PWD/sdx_api
 
 GEN_RAPI_PRO_FILE = $$PWD/sdx_api/gen_rapi_commands.pro

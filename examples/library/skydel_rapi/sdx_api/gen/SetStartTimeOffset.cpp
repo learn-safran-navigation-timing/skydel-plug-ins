@@ -31,7 +31,7 @@ namespace Sdx
 
     SetStartTimeOffsetPtr SetStartTimeOffset::create(int offset)
     {
-      return SetStartTimeOffsetPtr(new SetStartTimeOffset(offset));
+      return std::make_shared<SetStartTimeOffset>(offset);
     }
 
     SetStartTimeOffsetPtr SetStartTimeOffset::dynamicCast(CommandBasePtr ptr)

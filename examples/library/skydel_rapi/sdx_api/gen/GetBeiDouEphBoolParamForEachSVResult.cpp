@@ -33,7 +33,7 @@ namespace Sdx
 
     GetBeiDouEphBoolParamForEachSVResultPtr GetBeiDouEphBoolParamForEachSVResult::create(CommandBasePtr relatedCommand, const std::string& paramName, const std::vector<bool>& val, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetBeiDouEphBoolParamForEachSVResultPtr(new GetBeiDouEphBoolParamForEachSVResult(relatedCommand, paramName, val, dataSetName));
+      return std::make_shared<GetBeiDouEphBoolParamForEachSVResult>(relatedCommand, paramName, val, dataSetName);
     }
 
     GetBeiDouEphBoolParamForEachSVResultPtr GetBeiDouEphBoolParamForEachSVResult::dynamicCast(CommandBasePtr ptr)

@@ -26,7 +26,7 @@ namespace Sdx
 
     IsLogNmeaEnabledPtr IsLogNmeaEnabled::create()
     {
-      return IsLogNmeaEnabledPtr(new IsLogNmeaEnabled());
+      return std::make_shared<IsLogNmeaEnabled>();
     }
 
     IsLogNmeaEnabledPtr IsLogNmeaEnabled::dynamicCast(CommandBasePtr ptr)

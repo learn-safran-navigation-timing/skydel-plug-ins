@@ -31,7 +31,7 @@ namespace Sdx
 
     IsElevationMaskBelowEnabledResultPtr IsElevationMaskBelowEnabledResult::create(CommandBasePtr relatedCommand, bool enabled)
     {
-      return IsElevationMaskBelowEnabledResultPtr(new IsElevationMaskBelowEnabledResult(relatedCommand, enabled));
+      return std::make_shared<IsElevationMaskBelowEnabledResult>(relatedCommand, enabled);
     }
 
     IsElevationMaskBelowEnabledResultPtr IsElevationMaskBelowEnabledResult::dynamicCast(CommandBasePtr ptr)

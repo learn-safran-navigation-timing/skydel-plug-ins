@@ -31,7 +31,7 @@ namespace Sdx
 
     GetIonoBdgimAlphaPtr GetIonoBdgimAlpha::create(int index)
     {
-      return GetIonoBdgimAlphaPtr(new GetIonoBdgimAlpha(index));
+      return std::make_shared<GetIonoBdgimAlpha>(index);
     }
 
     GetIonoBdgimAlphaPtr GetIonoBdgimAlpha::dynamicCast(CommandBasePtr ptr)

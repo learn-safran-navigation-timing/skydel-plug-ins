@@ -31,7 +31,7 @@ namespace Sdx
 
     GetIntTxPersistencePtr GetIntTxPersistence::create(const std::string& id)
     {
-      return GetIntTxPersistencePtr(new GetIntTxPersistence(id));
+      return std::make_shared<GetIntTxPersistence>(id);
     }
 
     GetIntTxPersistencePtr GetIntTxPersistence::dynamicCast(CommandBasePtr ptr)

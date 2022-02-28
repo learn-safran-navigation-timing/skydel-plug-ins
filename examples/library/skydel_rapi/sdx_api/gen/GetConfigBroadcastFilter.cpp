@@ -26,7 +26,7 @@ namespace Sdx
 
     GetConfigBroadcastFilterPtr GetConfigBroadcastFilter::create()
     {
-      return GetConfigBroadcastFilterPtr(new GetConfigBroadcastFilter());
+      return std::make_shared<GetConfigBroadcastFilter>();
     }
 
     GetConfigBroadcastFilterPtr GetConfigBroadcastFilter::dynamicCast(CommandBasePtr ptr)

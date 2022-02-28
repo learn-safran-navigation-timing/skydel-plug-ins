@@ -37,7 +37,7 @@ namespace Sdx
 
     PushTrackEcefNedPtr PushTrackEcefNed::create(int time, double x, double y, double z, double yaw, double pitch, double roll)
     {
-      return PushTrackEcefNedPtr(new PushTrackEcefNed(time, x, y, z, yaw, pitch, roll));
+      return std::make_shared<PushTrackEcefNed>(time, x, y, z, yaw, pitch, roll);
     }
 
     PushTrackEcefNedPtr PushTrackEcefNed::dynamicCast(CommandBasePtr ptr)

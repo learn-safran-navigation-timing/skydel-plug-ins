@@ -32,7 +32,7 @@ namespace Sdx
 
     IsRFOutputEnabledPtr IsRFOutputEnabled::create(const std::string& system, int svId)
     {
-      return IsRFOutputEnabledPtr(new IsRFOutputEnabled(system, svId));
+      return std::make_shared<IsRFOutputEnabled>(system, svId);
     }
 
     IsRFOutputEnabledPtr IsRFOutputEnabled::dynamicCast(CommandBasePtr ptr)

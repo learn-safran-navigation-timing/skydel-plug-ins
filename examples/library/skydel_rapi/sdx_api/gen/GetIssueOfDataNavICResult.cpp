@@ -32,7 +32,7 @@ namespace Sdx
 
     GetIssueOfDataNavICResultPtr GetIssueOfDataNavICResult::create(CommandBasePtr relatedCommand, int ephemerisAndClock, const Sdx::optional<bool>& overrideRinex)
     {
-      return GetIssueOfDataNavICResultPtr(new GetIssueOfDataNavICResult(relatedCommand, ephemerisAndClock, overrideRinex));
+      return std::make_shared<GetIssueOfDataNavICResult>(relatedCommand, ephemerisAndClock, overrideRinex);
     }
 
     GetIssueOfDataNavICResultPtr GetIssueOfDataNavICResult::dynamicCast(CommandBasePtr ptr)

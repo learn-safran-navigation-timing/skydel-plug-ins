@@ -32,7 +32,7 @@ namespace Sdx
 
     GetPerturbationsForAllSatPtr GetPerturbationsForAllSat::create(const std::string& system, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetPerturbationsForAllSatPtr(new GetPerturbationsForAllSat(system, dataSetName));
+      return std::make_shared<GetPerturbationsForAllSat>(system, dataSetName);
     }
 
     GetPerturbationsForAllSatPtr GetPerturbationsForAllSat::dynamicCast(CommandBasePtr ptr)

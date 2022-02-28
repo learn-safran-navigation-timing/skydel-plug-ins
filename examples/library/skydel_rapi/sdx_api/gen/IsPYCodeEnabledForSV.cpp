@@ -32,7 +32,7 @@ namespace Sdx
 
     IsPYCodeEnabledForSVPtr IsPYCodeEnabledForSV::create(const std::string& signal, int svId)
     {
-      return IsPYCodeEnabledForSVPtr(new IsPYCodeEnabledForSV(signal, svId));
+      return std::make_shared<IsPYCodeEnabledForSV>(signal, svId);
     }
 
     IsPYCodeEnabledForSVPtr IsPYCodeEnabledForSV::dynamicCast(CommandBasePtr ptr)

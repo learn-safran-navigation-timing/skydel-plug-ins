@@ -26,7 +26,7 @@ namespace Sdx
 
     GetAllSpoofTxIDPtr GetAllSpoofTxID::create()
     {
-      return GetAllSpoofTxIDPtr(new GetAllSpoofTxID());
+      return std::make_shared<GetAllSpoofTxID>();
     }
 
     GetAllSpoofTxIDPtr GetAllSpoofTxID::dynamicCast(CommandBasePtr ptr)

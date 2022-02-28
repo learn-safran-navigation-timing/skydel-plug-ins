@@ -32,7 +32,7 @@ namespace Sdx
 
     SetIssueOfDataBeiDouPtr SetIssueOfDataBeiDou::create(int clock, int ephemeris)
     {
-      return SetIssueOfDataBeiDouPtr(new SetIssueOfDataBeiDou(clock, ephemeris));
+      return std::make_shared<SetIssueOfDataBeiDou>(clock, ephemeris);
     }
 
     SetIssueOfDataBeiDouPtr SetIssueOfDataBeiDou::dynamicCast(CommandBasePtr ptr)

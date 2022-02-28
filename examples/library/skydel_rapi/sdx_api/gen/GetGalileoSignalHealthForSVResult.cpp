@@ -34,7 +34,7 @@ namespace Sdx
 
     GetGalileoSignalHealthForSVResultPtr GetGalileoSignalHealthForSVResult::create(CommandBasePtr relatedCommand, int svId, const std::string& component, int health, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetGalileoSignalHealthForSVResultPtr(new GetGalileoSignalHealthForSVResult(relatedCommand, svId, component, health, dataSetName));
+      return std::make_shared<GetGalileoSignalHealthForSVResult>(relatedCommand, svId, component, health, dataSetName);
     }
 
     GetGalileoSignalHealthForSVResultPtr GetGalileoSignalHealthForSVResult::dynamicCast(CommandBasePtr ptr)

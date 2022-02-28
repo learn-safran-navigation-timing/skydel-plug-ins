@@ -31,7 +31,7 @@ namespace Sdx
 
     IsEachSVEnabledPtr IsEachSVEnabled::create(const std::string& system)
     {
-      return IsEachSVEnabledPtr(new IsEachSVEnabled(system));
+      return std::make_shared<IsEachSVEnabled>(system);
     }
 
     IsEachSVEnabledPtr IsEachSVEnabled::dynamicCast(CommandBasePtr ptr)

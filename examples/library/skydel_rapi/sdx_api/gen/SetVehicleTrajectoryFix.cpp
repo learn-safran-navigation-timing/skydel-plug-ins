@@ -37,7 +37,7 @@ namespace Sdx
 
     SetVehicleTrajectoryFixPtr SetVehicleTrajectoryFix::create(const std::string& type, double lat, double lon, double alt, double yaw, double pitch, double roll)
     {
-      return SetVehicleTrajectoryFixPtr(new SetVehicleTrajectoryFix(type, lat, lon, alt, yaw, pitch, roll));
+      return std::make_shared<SetVehicleTrajectoryFix>(type, lat, lon, alt, yaw, pitch, roll);
     }
 
     SetVehicleTrajectoryFixPtr SetVehicleTrajectoryFix::dynamicCast(CommandBasePtr ptr)

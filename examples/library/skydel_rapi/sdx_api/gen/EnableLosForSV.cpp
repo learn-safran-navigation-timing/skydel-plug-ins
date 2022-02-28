@@ -33,7 +33,7 @@ namespace Sdx
 
     EnableLosForSVPtr EnableLosForSV::create(const std::string& system, int svId, bool enabled)
     {
-      return EnableLosForSVPtr(new EnableLosForSV(system, svId, enabled));
+      return std::make_shared<EnableLosForSV>(system, svId, enabled);
     }
 
     EnableLosForSVPtr EnableLosForSV::dynamicCast(CommandBasePtr ptr)

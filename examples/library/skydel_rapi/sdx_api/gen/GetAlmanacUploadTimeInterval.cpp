@@ -26,7 +26,7 @@ namespace Sdx
 
     GetAlmanacUploadTimeIntervalPtr GetAlmanacUploadTimeInterval::create()
     {
-      return GetAlmanacUploadTimeIntervalPtr(new GetAlmanacUploadTimeInterval());
+      return std::make_shared<GetAlmanacUploadTimeInterval>();
     }
 
     GetAlmanacUploadTimeIntervalPtr GetAlmanacUploadTimeInterval::dynamicCast(CommandBasePtr ptr)

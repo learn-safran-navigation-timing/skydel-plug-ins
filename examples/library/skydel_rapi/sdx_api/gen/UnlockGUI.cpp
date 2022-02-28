@@ -26,7 +26,7 @@ namespace Sdx
 
     UnlockGUIPtr UnlockGUI::create()
     {
-      return UnlockGUIPtr(new UnlockGUI());
+      return std::make_shared<UnlockGUI>();
     }
 
     UnlockGUIPtr UnlockGUI::dynamicCast(CommandBasePtr ptr)

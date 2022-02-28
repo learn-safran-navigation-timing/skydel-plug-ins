@@ -35,7 +35,7 @@ namespace Sdx
 
     AddSpoofTxPtr AddSpoofTx::create(const std::string& usualName, bool enabled, const std::string& address, int instanceId, const std::string& id)
     {
-      return AddSpoofTxPtr(new AddSpoofTx(usualName, enabled, address, instanceId, id));
+      return std::make_shared<AddSpoofTx>(usualName, enabled, address, instanceId, id);
     }
 
     AddSpoofTxPtr AddSpoofTx::dynamicCast(CommandBasePtr ptr)

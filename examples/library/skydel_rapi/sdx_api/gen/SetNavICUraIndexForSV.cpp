@@ -33,7 +33,7 @@ namespace Sdx
 
     SetNavICUraIndexForSVPtr SetNavICUraIndexForSV::create(int svId, int urai, const Sdx::optional<std::string>& dataSetName)
     {
-      return SetNavICUraIndexForSVPtr(new SetNavICUraIndexForSV(svId, urai, dataSetName));
+      return std::make_shared<SetNavICUraIndexForSV>(svId, urai, dataSetName);
     }
 
     SetNavICUraIndexForSVPtr SetNavICUraIndexForSV::dynamicCast(CommandBasePtr ptr)

@@ -38,7 +38,7 @@ namespace Sdx
 
     GetPowerForSVResultPtr GetPowerForSVResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, double nominalPower, double signalStrengthModel, double antenna, double signalLevelOffset, double manualGain, double total)
     {
-      return GetPowerForSVResultPtr(new GetPowerForSVResult(relatedCommand, system, svId, nominalPower, signalStrengthModel, antenna, signalLevelOffset, manualGain, total));
+      return std::make_shared<GetPowerForSVResult>(relatedCommand, system, svId, nominalPower, signalStrengthModel, antenna, signalLevelOffset, manualGain, total);
     }
 
     GetPowerForSVResultPtr GetPowerForSVResult::dynamicCast(CommandBasePtr ptr)

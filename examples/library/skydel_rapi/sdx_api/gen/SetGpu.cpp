@@ -33,7 +33,7 @@ namespace Sdx
 
     SetGpuPtr SetGpu::create(int gpuIdx, int output, const std::string& id)
     {
-      return SetGpuPtr(new SetGpu(gpuIdx, output, id));
+      return std::make_shared<SetGpu>(gpuIdx, output, id);
     }
 
     SetGpuPtr SetGpu::dynamicCast(CommandBasePtr ptr)

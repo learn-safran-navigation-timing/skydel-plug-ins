@@ -26,7 +26,7 @@ namespace Sdx
 
     IsElevationMaskAboveEnabledPtr IsElevationMaskAboveEnabled::create()
     {
-      return IsElevationMaskAboveEnabledPtr(new IsElevationMaskAboveEnabled());
+      return std::make_shared<IsElevationMaskAboveEnabled>();
     }
 
     IsElevationMaskAboveEnabledPtr IsElevationMaskAboveEnabled::dynamicCast(CommandBasePtr ptr)

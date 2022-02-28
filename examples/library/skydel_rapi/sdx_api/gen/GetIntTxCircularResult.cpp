@@ -38,7 +38,7 @@ namespace Sdx
 
     GetIntTxCircularResultPtr GetIntTxCircularResult::create(CommandBasePtr relatedCommand, double lat, double lon, double alt, double radius, double speed, bool clockwise, const std::string& id, const Sdx::optional<double>& originAngle)
     {
-      return GetIntTxCircularResultPtr(new GetIntTxCircularResult(relatedCommand, lat, lon, alt, radius, speed, clockwise, id, originAngle));
+      return std::make_shared<GetIntTxCircularResult>(relatedCommand, lat, lon, alt, radius, speed, clockwise, id, originAngle);
     }
 
     GetIntTxCircularResultPtr GetIntTxCircularResult::dynamicCast(CommandBasePtr ptr)

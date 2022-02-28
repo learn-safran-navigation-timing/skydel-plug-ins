@@ -31,7 +31,7 @@ namespace Sdx
 
     ClearAllLOSForSystemPtr ClearAllLOSForSystem::create(const std::string& system)
     {
-      return ClearAllLOSForSystemPtr(new ClearAllLOSForSystem(system));
+      return std::make_shared<ClearAllLOSForSystem>(system);
     }
 
     ClearAllLOSForSystemPtr ClearAllLOSForSystem::dynamicCast(CommandBasePtr ptr)

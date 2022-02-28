@@ -38,7 +38,7 @@ namespace Sdx
 
     ChangeModulationTargetInterferencePtr ChangeModulationTargetInterference::create(int output, int minRate, int maxRate, int group, double centralFreq, int gain, const std::string& id, const Sdx::optional<std::string>& signal)
     {
-      return ChangeModulationTargetInterferencePtr(new ChangeModulationTargetInterference(output, minRate, maxRate, group, centralFreq, gain, id, signal));
+      return std::make_shared<ChangeModulationTargetInterference>(output, minRate, maxRate, group, centralFreq, gain, id, signal);
     }
 
     ChangeModulationTargetInterferencePtr ChangeModulationTargetInterference::dynamicCast(CommandBasePtr ptr)

@@ -31,7 +31,7 @@ namespace Sdx
 
     BeginIntTxTrackDefinitionPtr BeginIntTxTrackDefinition::create(const std::string& id)
     {
-      return BeginIntTxTrackDefinitionPtr(new BeginIntTxTrackDefinition(id));
+      return std::make_shared<BeginIntTxTrackDefinition>(id);
     }
 
     BeginIntTxTrackDefinitionPtr BeginIntTxTrackDefinition::dynamicCast(CommandBasePtr ptr)

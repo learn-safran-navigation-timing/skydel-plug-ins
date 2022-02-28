@@ -33,7 +33,7 @@ namespace Sdx
 
     SetSVTypePtr SetSVType::create(const std::string& system, int svId, const std::string& svType)
     {
-      return SetSVTypePtr(new SetSVType(system, svId, svType));
+      return std::make_shared<SetSVType>(system, svId, svType);
     }
 
     SetSVTypePtr SetSVType::dynamicCast(CommandBasePtr ptr)

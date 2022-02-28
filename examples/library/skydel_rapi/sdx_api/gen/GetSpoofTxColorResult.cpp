@@ -32,7 +32,7 @@ namespace Sdx
 
     GetSpoofTxColorResultPtr GetSpoofTxColorResult::create(CommandBasePtr relatedCommand, const std::string& color, const std::string& id)
     {
-      return GetSpoofTxColorResultPtr(new GetSpoofTxColorResult(relatedCommand, color, id));
+      return std::make_shared<GetSpoofTxColorResult>(relatedCommand, color, id);
     }
 
     GetSpoofTxColorResultPtr GetSpoofTxColorResult::dynamicCast(CommandBasePtr ptr)
