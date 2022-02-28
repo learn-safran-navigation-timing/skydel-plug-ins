@@ -6,6 +6,7 @@ win32: {
     } else {
         BLAZE_LIBS = -L$$PWD/build/win64 -llapack -lblas -llibf2c
     }
+    QMAKE_CXXFLAGS_WARN_ON += /wd 2593
 }
 else:linux-oe-g++: {
     BLAZE_LIBS = -Wl,-Bstatic -llapack -lblas -Wl,-Bdynamic -lgfortran
