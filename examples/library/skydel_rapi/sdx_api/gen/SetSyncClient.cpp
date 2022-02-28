@@ -32,7 +32,7 @@ namespace Sdx
 
     SetSyncClientPtr SetSyncClient::create(const std::string& host, int port)
     {
-      return SetSyncClientPtr(new SetSyncClient(host, port));
+      return std::make_shared<SetSyncClient>(host, port);
     }
 
     SetSyncClientPtr SetSyncClient::dynamicCast(CommandBasePtr ptr)

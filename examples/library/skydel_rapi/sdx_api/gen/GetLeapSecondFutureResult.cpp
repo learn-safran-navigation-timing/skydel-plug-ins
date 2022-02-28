@@ -33,7 +33,7 @@ namespace Sdx
 
     GetLeapSecondFutureResultPtr GetLeapSecondFutureResult::create(CommandBasePtr relatedCommand, bool enabled, int seconds, const Sdx::Date& date)
     {
-      return GetLeapSecondFutureResultPtr(new GetLeapSecondFutureResult(relatedCommand, enabled, seconds, date));
+      return std::make_shared<GetLeapSecondFutureResult>(relatedCommand, enabled, seconds, date);
     }
 
     GetLeapSecondFutureResultPtr GetLeapSecondFutureResult::dynamicCast(CommandBasePtr ptr)

@@ -32,7 +32,7 @@ namespace Sdx
 
     GetIntTxPulsePtr GetIntTxPulse::create(const std::string& transmitterId, const std::string& signalId)
     {
-      return GetIntTxPulsePtr(new GetIntTxPulse(transmitterId, signalId));
+      return std::make_shared<GetIntTxPulse>(transmitterId, signalId);
     }
 
     GetIntTxPulsePtr GetIntTxPulse::dynamicCast(CommandBasePtr ptr)

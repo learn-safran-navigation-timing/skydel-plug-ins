@@ -32,7 +32,7 @@ namespace Sdx
 
     GetIonoGridMaskAllResultPtr GetIonoGridMaskAllResult::create(CommandBasePtr relatedCommand, const std::string& serviceProvider, const std::vector<std::vector<bool>>& grid)
     {
-      return GetIonoGridMaskAllResultPtr(new GetIonoGridMaskAllResult(relatedCommand, serviceProvider, grid));
+      return std::make_shared<GetIonoGridMaskAllResult>(relatedCommand, serviceProvider, grid);
     }
 
     GetIonoGridMaskAllResultPtr GetIonoGridMaskAllResult::dynamicCast(CommandBasePtr ptr)

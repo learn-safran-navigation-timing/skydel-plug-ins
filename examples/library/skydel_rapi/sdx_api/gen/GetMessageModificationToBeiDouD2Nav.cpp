@@ -31,7 +31,7 @@ namespace Sdx
 
     GetMessageModificationToBeiDouD2NavPtr GetMessageModificationToBeiDouD2Nav::create(const std::string& id)
     {
-      return GetMessageModificationToBeiDouD2NavPtr(new GetMessageModificationToBeiDouD2Nav(id));
+      return std::make_shared<GetMessageModificationToBeiDouD2Nav>(id);
     }
 
     GetMessageModificationToBeiDouD2NavPtr GetMessageModificationToBeiDouD2Nav::dynamicCast(CommandBasePtr ptr)

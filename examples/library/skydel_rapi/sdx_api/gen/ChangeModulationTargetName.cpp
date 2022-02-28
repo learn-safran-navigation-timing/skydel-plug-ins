@@ -32,7 +32,7 @@ namespace Sdx
 
     ChangeModulationTargetNamePtr ChangeModulationTargetName::create(const std::string& targetName, const std::string& id)
     {
-      return ChangeModulationTargetNamePtr(new ChangeModulationTargetName(targetName, id));
+      return std::make_shared<ChangeModulationTargetName>(targetName, id);
     }
 
     ChangeModulationTargetNamePtr ChangeModulationTargetName::dynamicCast(CommandBasePtr ptr)

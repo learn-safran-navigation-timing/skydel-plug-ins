@@ -32,7 +32,7 @@ namespace Sdx
 
     GetIssueOfDataBeiDouResultPtr GetIssueOfDataBeiDouResult::create(CommandBasePtr relatedCommand, int clock, int ephemeris)
     {
-      return GetIssueOfDataBeiDouResultPtr(new GetIssueOfDataBeiDouResult(relatedCommand, clock, ephemeris));
+      return std::make_shared<GetIssueOfDataBeiDouResult>(relatedCommand, clock, ephemeris);
     }
 
     GetIssueOfDataBeiDouResultPtr GetIssueOfDataBeiDouResult::dynamicCast(CommandBasePtr ptr)

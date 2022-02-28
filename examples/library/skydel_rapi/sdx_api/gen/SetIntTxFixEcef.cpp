@@ -37,7 +37,7 @@ namespace Sdx
 
     SetIntTxFixEcefPtr SetIntTxFixEcef::create(double x, double y, double z, double yaw, double pitch, double roll, const std::string& id)
     {
-      return SetIntTxFixEcefPtr(new SetIntTxFixEcef(x, y, z, yaw, pitch, roll, id));
+      return std::make_shared<SetIntTxFixEcef>(x, y, z, yaw, pitch, roll, id);
     }
 
     SetIntTxFixEcefPtr SetIntTxFixEcef::dynamicCast(CommandBasePtr ptr)

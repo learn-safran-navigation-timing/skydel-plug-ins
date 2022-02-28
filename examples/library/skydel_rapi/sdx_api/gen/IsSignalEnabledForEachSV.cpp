@@ -31,7 +31,7 @@ namespace Sdx
 
     IsSignalEnabledForEachSVPtr IsSignalEnabledForEachSV::create(const std::string& signal)
     {
-      return IsSignalEnabledForEachSVPtr(new IsSignalEnabledForEachSV(signal));
+      return std::make_shared<IsSignalEnabledForEachSV>(signal);
     }
 
     IsSignalEnabledForEachSVPtr IsSignalEnabledForEachSV::dynamicCast(CommandBasePtr ptr)

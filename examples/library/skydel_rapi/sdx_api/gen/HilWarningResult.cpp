@@ -32,7 +32,7 @@ namespace Sdx
 
     HilWarningResultPtr HilWarningResult::create(CommandBasePtr relatedCommand, bool isExtrapolated, int extrapolationTime)
     {
-      return HilWarningResultPtr(new HilWarningResult(relatedCommand, isExtrapolated, extrapolationTime));
+      return std::make_shared<HilWarningResult>(relatedCommand, isExtrapolated, extrapolationTime);
     }
 
     HilWarningResultPtr HilWarningResult::dynamicCast(CommandBasePtr ptr)

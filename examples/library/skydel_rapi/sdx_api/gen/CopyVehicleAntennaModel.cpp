@@ -32,7 +32,7 @@ namespace Sdx
 
     CopyVehicleAntennaModelPtr CopyVehicleAntennaModel::create(const std::string& name, const std::string& copyName)
     {
-      return CopyVehicleAntennaModelPtr(new CopyVehicleAntennaModel(name, copyName));
+      return std::make_shared<CopyVehicleAntennaModel>(name, copyName);
     }
 
     CopyVehicleAntennaModelPtr CopyVehicleAntennaModel::dynamicCast(CommandBasePtr ptr)

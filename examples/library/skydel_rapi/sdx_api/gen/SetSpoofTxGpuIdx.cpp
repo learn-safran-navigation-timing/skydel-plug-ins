@@ -33,7 +33,7 @@ namespace Sdx
 
     SetSpoofTxGpuIdxPtr SetSpoofTxGpuIdx::create(int gpuIdx, int signalId, const std::string& id)
     {
-      return SetSpoofTxGpuIdxPtr(new SetSpoofTxGpuIdx(gpuIdx, signalId, id));
+      return std::make_shared<SetSpoofTxGpuIdx>(gpuIdx, signalId, id);
     }
 
     SetSpoofTxGpuIdxPtr SetSpoofTxGpuIdx::dynamicCast(CommandBasePtr ptr)

@@ -32,7 +32,7 @@ namespace Sdx
 
     SetIntTxGroupPtr SetIntTxGroup::create(int group, const std::string& id)
     {
-      return SetIntTxGroupPtr(new SetIntTxGroup(group, id));
+      return std::make_shared<SetIntTxGroup>(group, id);
     }
 
     SetIntTxGroupPtr SetIntTxGroup::dynamicCast(CommandBasePtr ptr)

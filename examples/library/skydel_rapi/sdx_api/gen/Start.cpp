@@ -26,7 +26,7 @@ namespace Sdx
 
     StartPtr Start::create()
     {
-      return StartPtr(new Start());
+      return std::make_shared<Start>();
     }
 
     StartPtr Start::dynamicCast(CommandBasePtr ptr)

@@ -32,7 +32,7 @@ namespace Sdx
 
     SetIonoBetaPtr SetIonoBeta::create(int index, double val)
     {
-      return SetIonoBetaPtr(new SetIonoBeta(index, val));
+      return std::make_shared<SetIonoBeta>(index, val);
     }
 
     SetIonoBetaPtr SetIonoBeta::dynamicCast(CommandBasePtr ptr)

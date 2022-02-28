@@ -26,7 +26,7 @@ namespace Sdx
 
     GetAlmanacInitialUploadTimeOffsetPtr GetAlmanacInitialUploadTimeOffset::create()
     {
-      return GetAlmanacInitialUploadTimeOffsetPtr(new GetAlmanacInitialUploadTimeOffset());
+      return std::make_shared<GetAlmanacInitialUploadTimeOffset>();
     }
 
     GetAlmanacInitialUploadTimeOffsetPtr GetAlmanacInitialUploadTimeOffset::dynamicCast(CommandBasePtr ptr)

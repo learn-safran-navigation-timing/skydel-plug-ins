@@ -31,7 +31,7 @@ namespace Sdx
 
     QuitPtr Quit::create(bool forceQuit)
     {
-      return QuitPtr(new Quit(forceQuit));
+      return std::make_shared<Quit>(forceQuit);
     }
 
     QuitPtr Quit::dynamicCast(CommandBasePtr ptr)

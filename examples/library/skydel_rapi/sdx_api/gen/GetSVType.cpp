@@ -32,7 +32,7 @@ namespace Sdx
 
     GetSVTypePtr GetSVType::create(const std::string& system, int svId)
     {
-      return GetSVTypePtr(new GetSVType(system, svId));
+      return std::make_shared<GetSVType>(system, svId);
     }
 
     GetSVTypePtr GetSVType::dynamicCast(CommandBasePtr ptr)

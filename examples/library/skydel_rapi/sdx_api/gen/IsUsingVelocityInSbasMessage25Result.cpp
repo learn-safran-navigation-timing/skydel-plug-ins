@@ -31,7 +31,7 @@ namespace Sdx
 
     IsUsingVelocityInSbasMessage25ResultPtr IsUsingVelocityInSbasMessage25Result::create(CommandBasePtr relatedCommand, bool useVelocity)
     {
-      return IsUsingVelocityInSbasMessage25ResultPtr(new IsUsingVelocityInSbasMessage25Result(relatedCommand, useVelocity));
+      return std::make_shared<IsUsingVelocityInSbasMessage25Result>(relatedCommand, useVelocity);
     }
 
     IsUsingVelocityInSbasMessage25ResultPtr IsUsingVelocityInSbasMessage25Result::dynamicCast(CommandBasePtr ptr)

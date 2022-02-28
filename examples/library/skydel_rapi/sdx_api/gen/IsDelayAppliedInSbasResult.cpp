@@ -31,7 +31,7 @@ namespace Sdx
 
     IsDelayAppliedInSbasResultPtr IsDelayAppliedInSbasResult::create(CommandBasePtr relatedCommand, bool isEnabled)
     {
-      return IsDelayAppliedInSbasResultPtr(new IsDelayAppliedInSbasResult(relatedCommand, isEnabled));
+      return std::make_shared<IsDelayAppliedInSbasResult>(relatedCommand, isEnabled);
     }
 
     IsDelayAppliedInSbasResultPtr IsDelayAppliedInSbasResult::dynamicCast(CommandBasePtr ptr)

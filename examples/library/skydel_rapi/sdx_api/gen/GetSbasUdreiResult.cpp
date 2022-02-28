@@ -31,7 +31,7 @@ namespace Sdx
 
     GetSbasUdreiResultPtr GetSbasUdreiResult::create(CommandBasePtr relatedCommand, int udrei)
     {
-      return GetSbasUdreiResultPtr(new GetSbasUdreiResult(relatedCommand, udrei));
+      return std::make_shared<GetSbasUdreiResult>(relatedCommand, udrei);
     }
 
     GetSbasUdreiResultPtr GetSbasUdreiResult::dynamicCast(CommandBasePtr ptr)

@@ -32,7 +32,7 @@ namespace Sdx
 
     RemoveMessageModificationForNavMsgFamilyPtr RemoveMessageModificationForNavMsgFamily::create(const std::string& navMsgFamily, const std::string& id)
     {
-      return RemoveMessageModificationForNavMsgFamilyPtr(new RemoveMessageModificationForNavMsgFamily(navMsgFamily, id));
+      return std::make_shared<RemoveMessageModificationForNavMsgFamily>(navMsgFamily, id);
     }
 
     RemoveMessageModificationForNavMsgFamilyPtr RemoveMessageModificationForNavMsgFamily::dynamicCast(CommandBasePtr ptr)

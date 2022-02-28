@@ -33,7 +33,7 @@ namespace Sdx
 
     GetSVTypeResultPtr GetSVTypeResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, const std::string& svType)
     {
-      return GetSVTypeResultPtr(new GetSVTypeResult(relatedCommand, system, svId, svType));
+      return std::make_shared<GetSVTypeResult>(relatedCommand, system, svId, svType);
     }
 
     GetSVTypeResultPtr GetSVTypeResult::dynamicCast(CommandBasePtr ptr)

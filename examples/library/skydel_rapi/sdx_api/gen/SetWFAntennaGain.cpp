@@ -31,7 +31,7 @@ namespace Sdx
 
     SetWFAntennaGainPtr SetWFAntennaGain::create(int gain)
     {
-      return SetWFAntennaGainPtr(new SetWFAntennaGain(gain));
+      return std::make_shared<SetWFAntennaGain>(gain);
     }
 
     SetWFAntennaGainPtr SetWFAntennaGain::dynamicCast(CommandBasePtr ptr)

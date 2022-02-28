@@ -31,7 +31,7 @@ namespace Sdx
 
     RemoveModulationTargetPtr RemoveModulationTarget::create(const std::string& id)
     {
-      return RemoveModulationTargetPtr(new RemoveModulationTarget(id));
+      return std::make_shared<RemoveModulationTarget>(id);
     }
 
     RemoveModulationTargetPtr RemoveModulationTarget::dynamicCast(CommandBasePtr ptr)

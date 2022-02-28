@@ -31,7 +31,7 @@ namespace Sdx
 
     IsPYCodeEnabledForEachSVPtr IsPYCodeEnabledForEachSV::create(const std::string& signal)
     {
-      return IsPYCodeEnabledForEachSVPtr(new IsPYCodeEnabledForEachSV(signal));
+      return std::make_shared<IsPYCodeEnabledForEachSV>(signal);
     }
 
     IsPYCodeEnabledForEachSVPtr IsPYCodeEnabledForEachSV::dynamicCast(CommandBasePtr ptr)

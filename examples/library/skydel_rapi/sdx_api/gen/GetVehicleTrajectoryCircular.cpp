@@ -26,7 +26,7 @@ namespace Sdx
 
     GetVehicleTrajectoryCircularPtr GetVehicleTrajectoryCircular::create()
     {
-      return GetVehicleTrajectoryCircularPtr(new GetVehicleTrajectoryCircular());
+      return std::make_shared<GetVehicleTrajectoryCircular>();
     }
 
     GetVehicleTrajectoryCircularPtr GetVehicleTrajectoryCircular::dynamicCast(CommandBasePtr ptr)

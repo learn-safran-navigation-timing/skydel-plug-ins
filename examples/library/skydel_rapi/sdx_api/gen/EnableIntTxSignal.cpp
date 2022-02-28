@@ -33,7 +33,7 @@ namespace Sdx
 
     EnableIntTxSignalPtr EnableIntTxSignal::create(bool enabled, const std::string& transmitterId, const std::string& signalId)
     {
-      return EnableIntTxSignalPtr(new EnableIntTxSignal(enabled, transmitterId, signalId));
+      return std::make_shared<EnableIntTxSignal>(enabled, transmitterId, signalId);
     }
 
     EnableIntTxSignalPtr EnableIntTxSignal::dynamicCast(CommandBasePtr ptr)

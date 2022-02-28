@@ -33,7 +33,7 @@ namespace Sdx
 
     GetPseudorangeNoiseOffsetForEachSVResultPtr GetPseudorangeNoiseOffsetForEachSVResult::create(CommandBasePtr relatedCommand, const std::string& system, const std::vector<bool>& enabled, const std::vector<double>& offset)
     {
-      return GetPseudorangeNoiseOffsetForEachSVResultPtr(new GetPseudorangeNoiseOffsetForEachSVResult(relatedCommand, system, enabled, offset));
+      return std::make_shared<GetPseudorangeNoiseOffsetForEachSVResult>(relatedCommand, system, enabled, offset);
     }
 
     GetPseudorangeNoiseOffsetForEachSVResultPtr GetPseudorangeNoiseOffsetForEachSVResult::dynamicCast(CommandBasePtr ptr)

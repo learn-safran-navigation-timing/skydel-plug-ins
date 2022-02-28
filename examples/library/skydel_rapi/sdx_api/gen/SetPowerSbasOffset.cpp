@@ -32,7 +32,7 @@ namespace Sdx
 
     SetPowerSbasOffsetPtr SetPowerSbasOffset::create(const std::string& serviceProvider, double offset)
     {
-      return SetPowerSbasOffsetPtr(new SetPowerSbasOffset(serviceProvider, offset));
+      return std::make_shared<SetPowerSbasOffset>(serviceProvider, offset);
     }
 
     SetPowerSbasOffsetPtr SetPowerSbasOffset::dynamicCast(CommandBasePtr ptr)

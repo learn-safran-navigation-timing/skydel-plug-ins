@@ -38,7 +38,7 @@ namespace Sdx
 
     GetPerturbationsForAllSatResultPtr GetPerturbationsForAllSatResult::create(CommandBasePtr relatedCommand, const std::string& system, const std::vector<double>& crs, const std::vector<double>& crc, const std::vector<double>& cis, const std::vector<double>& cic, const std::vector<double>& cus, const std::vector<double>& cuc, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetPerturbationsForAllSatResultPtr(new GetPerturbationsForAllSatResult(relatedCommand, system, crs, crc, cis, cic, cus, cuc, dataSetName));
+      return std::make_shared<GetPerturbationsForAllSatResult>(relatedCommand, system, crs, crc, cis, cic, cus, cuc, dataSetName);
     }
 
     GetPerturbationsForAllSatResultPtr GetPerturbationsForAllSatResult::dynamicCast(CommandBasePtr ptr)

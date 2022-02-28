@@ -26,7 +26,7 @@ namespace Sdx
 
     AbortWaitSimulatorStatePtr AbortWaitSimulatorState::create()
     {
-      return AbortWaitSimulatorStatePtr(new AbortWaitSimulatorState());
+      return std::make_shared<AbortWaitSimulatorState>();
     }
 
     AbortWaitSimulatorStatePtr AbortWaitSimulatorState::dynamicCast(CommandBasePtr ptr)

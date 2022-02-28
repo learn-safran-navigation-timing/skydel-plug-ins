@@ -31,7 +31,7 @@ namespace Sdx
 
     EnableSignalStrengthModelPtr EnableSignalStrengthModel::create(bool enabled)
     {
-      return EnableSignalStrengthModelPtr(new EnableSignalStrengthModel(enabled));
+      return std::make_shared<EnableSignalStrengthModel>(enabled);
     }
 
     EnableSignalStrengthModelPtr EnableSignalStrengthModel::dynamicCast(CommandBasePtr ptr)

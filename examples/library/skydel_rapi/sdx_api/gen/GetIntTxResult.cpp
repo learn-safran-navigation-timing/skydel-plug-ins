@@ -36,7 +36,7 @@ namespace Sdx
 
     GetIntTxResultPtr GetIntTxResult::create(CommandBasePtr relatedCommand, const std::string& usualName, bool enabled, int group, bool dynamic, double power, const std::string& id)
     {
-      return GetIntTxResultPtr(new GetIntTxResult(relatedCommand, usualName, enabled, group, dynamic, power, id));
+      return std::make_shared<GetIntTxResult>(relatedCommand, usualName, enabled, group, dynamic, power, id);
     }
 
     GetIntTxResultPtr GetIntTxResult::dynamicCast(CommandBasePtr ptr)

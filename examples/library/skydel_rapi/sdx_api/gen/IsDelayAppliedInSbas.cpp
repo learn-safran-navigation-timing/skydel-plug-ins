@@ -26,7 +26,7 @@ namespace Sdx
 
     IsDelayAppliedInSbasPtr IsDelayAppliedInSbas::create()
     {
-      return IsDelayAppliedInSbasPtr(new IsDelayAppliedInSbas());
+      return std::make_shared<IsDelayAppliedInSbas>();
     }
 
     IsDelayAppliedInSbasPtr IsDelayAppliedInSbas::dynamicCast(CommandBasePtr ptr)

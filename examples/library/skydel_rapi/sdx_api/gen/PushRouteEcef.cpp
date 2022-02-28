@@ -34,7 +34,7 @@ namespace Sdx
 
     PushRouteEcefPtr PushRouteEcef::create(double speed, double x, double y, double z)
     {
-      return PushRouteEcefPtr(new PushRouteEcef(speed, x, y, z));
+      return std::make_shared<PushRouteEcef>(speed, x, y, z);
     }
 
     PushRouteEcefPtr PushRouteEcef::dynamicCast(CommandBasePtr ptr)

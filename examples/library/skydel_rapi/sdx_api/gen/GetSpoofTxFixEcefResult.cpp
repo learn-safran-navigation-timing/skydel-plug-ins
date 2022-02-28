@@ -37,7 +37,7 @@ namespace Sdx
 
     GetSpoofTxFixEcefResultPtr GetSpoofTxFixEcefResult::create(CommandBasePtr relatedCommand, double x, double y, double z, double yaw, double pitch, double roll, const std::string& id)
     {
-      return GetSpoofTxFixEcefResultPtr(new GetSpoofTxFixEcefResult(relatedCommand, x, y, z, yaw, pitch, roll, id));
+      return std::make_shared<GetSpoofTxFixEcefResult>(relatedCommand, x, y, z, yaw, pitch, roll, id);
     }
 
     GetSpoofTxFixEcefResultPtr GetSpoofTxFixEcefResult::dynamicCast(CommandBasePtr ptr)

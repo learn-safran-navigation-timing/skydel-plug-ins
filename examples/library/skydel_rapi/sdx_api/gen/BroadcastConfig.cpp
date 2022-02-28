@@ -26,7 +26,7 @@ namespace Sdx
 
     BroadcastConfigPtr BroadcastConfig::create()
     {
-      return BroadcastConfigPtr(new BroadcastConfig());
+      return std::make_shared<BroadcastConfig>();
     }
 
     BroadcastConfigPtr BroadcastConfig::dynamicCast(CommandBasePtr ptr)

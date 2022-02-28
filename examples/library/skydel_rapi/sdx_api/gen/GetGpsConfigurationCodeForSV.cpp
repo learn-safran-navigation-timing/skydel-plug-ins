@@ -32,7 +32,7 @@ namespace Sdx
 
     GetGpsConfigurationCodeForSVPtr GetGpsConfigurationCodeForSV::create(int svId, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetGpsConfigurationCodeForSVPtr(new GetGpsConfigurationCodeForSV(svId, dataSetName));
+      return std::make_shared<GetGpsConfigurationCodeForSV>(svId, dataSetName);
     }
 
     GetGpsConfigurationCodeForSVPtr GetGpsConfigurationCodeForSV::dynamicCast(CommandBasePtr ptr)

@@ -26,7 +26,7 @@ namespace Sdx
 
     CancelBroadcastConfigPtr CancelBroadcastConfig::create()
     {
-      return CancelBroadcastConfigPtr(new CancelBroadcastConfig());
+      return std::make_shared<CancelBroadcastConfig>();
     }
 
     CancelBroadcastConfigPtr CancelBroadcastConfig::dynamicCast(CommandBasePtr ptr)

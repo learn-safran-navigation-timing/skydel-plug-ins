@@ -39,7 +39,7 @@ namespace Sdx
 
     GetMultipathForIDResultPtr GetMultipathForIDResult::create(CommandBasePtr relatedCommand, const std::string& id, const std::string& system, const std::string& signal, int svId, double powerLoss, double pseudorange, double doppler, double carrierPhase, int echo)
     {
-      return GetMultipathForIDResultPtr(new GetMultipathForIDResult(relatedCommand, id, system, signal, svId, powerLoss, pseudorange, doppler, carrierPhase, echo));
+      return std::make_shared<GetMultipathForIDResult>(relatedCommand, id, system, signal, svId, powerLoss, pseudorange, doppler, carrierPhase, echo);
     }
 
     GetMultipathForIDResultPtr GetMultipathForIDResult::dynamicCast(CommandBasePtr ptr)

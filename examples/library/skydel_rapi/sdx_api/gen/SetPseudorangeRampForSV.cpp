@@ -38,7 +38,7 @@ namespace Sdx
 
     SetPseudorangeRampForSVPtr SetPseudorangeRampForSV::create(const std::string& system, int svId, double offset, int startTime, int holdStartTime, int holdStopTime, int stopTime, const std::string& id)
     {
-      return SetPseudorangeRampForSVPtr(new SetPseudorangeRampForSV(system, svId, offset, startTime, holdStartTime, holdStopTime, stopTime, id));
+      return std::make_shared<SetPseudorangeRampForSV>(system, svId, offset, startTime, holdStartTime, holdStopTime, stopTime, id);
     }
 
     SetPseudorangeRampForSVPtr SetPseudorangeRampForSV::dynamicCast(CommandBasePtr ptr)

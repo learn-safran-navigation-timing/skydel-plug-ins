@@ -31,7 +31,7 @@ namespace Sdx
 
     IsIntTxAttitudeToZeroForcedPtr IsIntTxAttitudeToZeroForced::create(const std::string& id)
     {
-      return IsIntTxAttitudeToZeroForcedPtr(new IsIntTxAttitudeToZeroForced(id));
+      return std::make_shared<IsIntTxAttitudeToZeroForced>(id);
     }
 
     IsIntTxAttitudeToZeroForcedPtr IsIntTxAttitudeToZeroForced::dynamicCast(CommandBasePtr ptr)

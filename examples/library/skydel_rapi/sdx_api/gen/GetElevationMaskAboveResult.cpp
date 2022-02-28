@@ -31,7 +31,7 @@ namespace Sdx
 
     GetElevationMaskAboveResultPtr GetElevationMaskAboveResult::create(CommandBasePtr relatedCommand, double angle)
     {
-      return GetElevationMaskAboveResultPtr(new GetElevationMaskAboveResult(relatedCommand, angle));
+      return std::make_shared<GetElevationMaskAboveResult>(relatedCommand, angle);
     }
 
     GetElevationMaskAboveResultPtr GetElevationMaskAboveResult::dynamicCast(CommandBasePtr ptr)

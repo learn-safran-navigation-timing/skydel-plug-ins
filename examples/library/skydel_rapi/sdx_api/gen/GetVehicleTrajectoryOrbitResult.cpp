@@ -38,7 +38,7 @@ namespace Sdx
 
     GetVehicleTrajectoryOrbitResultPtr GetVehicleTrajectoryOrbitResult::create(CommandBasePtr relatedCommand, const std::string& type, const Sdx::DateTime& reference, double semiMajorAxis, double inclination, double rightAscension, double eccentricity, double meanAnomaly, double argumentOfPerigee)
     {
-      return GetVehicleTrajectoryOrbitResultPtr(new GetVehicleTrajectoryOrbitResult(relatedCommand, type, reference, semiMajorAxis, inclination, rightAscension, eccentricity, meanAnomaly, argumentOfPerigee));
+      return std::make_shared<GetVehicleTrajectoryOrbitResult>(relatedCommand, type, reference, semiMajorAxis, inclination, rightAscension, eccentricity, meanAnomaly, argumentOfPerigee);
     }
 
     GetVehicleTrajectoryOrbitResultPtr GetVehicleTrajectoryOrbitResult::dynamicCast(CommandBasePtr ptr)

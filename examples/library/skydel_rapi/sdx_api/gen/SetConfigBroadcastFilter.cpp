@@ -31,7 +31,7 @@ namespace Sdx
 
     SetConfigBroadcastFilterPtr SetConfigBroadcastFilter::create(const std::vector<Sdx::ConfigFilter>& filter)
     {
-      return SetConfigBroadcastFilterPtr(new SetConfigBroadcastFilter(filter));
+      return std::make_shared<SetConfigBroadcastFilter>(filter);
     }
 
     SetConfigBroadcastFilterPtr SetConfigBroadcastFilter::dynamicCast(CommandBasePtr ptr)

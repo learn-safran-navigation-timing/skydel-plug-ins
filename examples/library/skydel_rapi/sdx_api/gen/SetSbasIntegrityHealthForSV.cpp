@@ -32,7 +32,7 @@ namespace Sdx
 
     SetSbasIntegrityHealthForSVPtr SetSbasIntegrityHealthForSV::create(int svId, bool health)
     {
-      return SetSbasIntegrityHealthForSVPtr(new SetSbasIntegrityHealthForSV(svId, health));
+      return std::make_shared<SetSbasIntegrityHealthForSV>(svId, health);
     }
 
     SetSbasIntegrityHealthForSVPtr SetSbasIntegrityHealthForSV::dynamicCast(CommandBasePtr ptr)

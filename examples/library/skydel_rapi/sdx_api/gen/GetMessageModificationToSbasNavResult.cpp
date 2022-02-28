@@ -39,7 +39,7 @@ namespace Sdx
 
     GetMessageModificationToSbasNavResultPtr GetMessageModificationToSbasNavResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id)
     {
-      return GetMessageModificationToSbasNavResultPtr(new GetMessageModificationToSbasNavResult(relatedCommand, signalArray, svId, startTime, stopTime, messageType, condition, updateCRC, bitModifications, id));
+      return std::make_shared<GetMessageModificationToSbasNavResult>(relatedCommand, signalArray, svId, startTime, stopTime, messageType, condition, updateCRC, bitModifications, id);
     }
 
     GetMessageModificationToSbasNavResultPtr GetMessageModificationToSbasNavResult::dynamicCast(CommandBasePtr ptr)

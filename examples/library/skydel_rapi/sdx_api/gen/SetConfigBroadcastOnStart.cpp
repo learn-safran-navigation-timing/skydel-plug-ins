@@ -31,7 +31,7 @@ namespace Sdx
 
     SetConfigBroadcastOnStartPtr SetConfigBroadcastOnStart::create(bool broadcastOnStart)
     {
-      return SetConfigBroadcastOnStartPtr(new SetConfigBroadcastOnStart(broadcastOnStart));
+      return std::make_shared<SetConfigBroadcastOnStart>(broadcastOnStart);
     }
 
     SetConfigBroadcastOnStartPtr SetConfigBroadcastOnStart::dynamicCast(CommandBasePtr ptr)

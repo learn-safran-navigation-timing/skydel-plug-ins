@@ -33,7 +33,7 @@ namespace Sdx
 
     GetNavICL5HealthForSVResultPtr GetNavICL5HealthForSVResult::create(CommandBasePtr relatedCommand, int svId, bool health, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetNavICL5HealthForSVResultPtr(new GetNavICL5HealthForSVResult(relatedCommand, svId, health, dataSetName));
+      return std::make_shared<GetNavICL5HealthForSVResult>(relatedCommand, svId, health, dataSetName);
     }
 
     GetNavICL5HealthForSVResultPtr GetNavICL5HealthForSVResult::dynamicCast(CommandBasePtr ptr)

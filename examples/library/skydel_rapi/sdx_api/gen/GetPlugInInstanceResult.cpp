@@ -32,7 +32,7 @@ namespace Sdx
 
     GetPlugInInstanceResultPtr GetPlugInInstanceResult::create(CommandBasePtr relatedCommand, const std::string& name, const std::string& type)
     {
-      return GetPlugInInstanceResultPtr(new GetPlugInInstanceResult(relatedCommand, name, type));
+      return std::make_shared<GetPlugInInstanceResult>(relatedCommand, name, type);
     }
 
     GetPlugInInstanceResultPtr GetPlugInInstanceResult::dynamicCast(CommandBasePtr ptr)

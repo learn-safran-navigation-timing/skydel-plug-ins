@@ -33,7 +33,7 @@ namespace Sdx
 
     EnableSVPtr EnableSV::create(const std::string& system, int svId, bool enabled)
     {
-      return EnableSVPtr(new EnableSV(system, svId, enabled));
+      return std::make_shared<EnableSV>(system, svId, enabled);
     }
 
     EnableSVPtr EnableSV::dynamicCast(CommandBasePtr ptr)

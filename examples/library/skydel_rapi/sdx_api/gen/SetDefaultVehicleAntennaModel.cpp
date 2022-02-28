@@ -31,7 +31,7 @@ namespace Sdx
 
     SetDefaultVehicleAntennaModelPtr SetDefaultVehicleAntennaModel::create(const std::string& name)
     {
-      return SetDefaultVehicleAntennaModelPtr(new SetDefaultVehicleAntennaModel(name));
+      return std::make_shared<SetDefaultVehicleAntennaModel>(name);
     }
 
     SetDefaultVehicleAntennaModelPtr SetDefaultVehicleAntennaModel::dynamicCast(CommandBasePtr ptr)

@@ -31,7 +31,7 @@ namespace Sdx
 
     GetDurationResultPtr GetDurationResult::create(CommandBasePtr relatedCommand, int second)
     {
-      return GetDurationResultPtr(new GetDurationResult(relatedCommand, second));
+      return std::make_shared<GetDurationResult>(relatedCommand, second);
     }
 
     GetDurationResultPtr GetDurationResult::dynamicCast(CommandBasePtr ptr)

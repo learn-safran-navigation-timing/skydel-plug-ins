@@ -32,7 +32,7 @@ namespace Sdx
 
     SetIonoGridMaskAllPtr SetIonoGridMaskAll::create(const std::string& serviceProvider, const std::vector<std::vector<bool>>& grid)
     {
-      return SetIonoGridMaskAllPtr(new SetIonoGridMaskAll(serviceProvider, grid));
+      return std::make_shared<SetIonoGridMaskAll>(serviceProvider, grid);
     }
 
     SetIonoGridMaskAllPtr SetIonoGridMaskAll::dynamicCast(CommandBasePtr ptr)

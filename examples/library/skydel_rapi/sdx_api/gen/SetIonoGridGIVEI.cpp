@@ -34,7 +34,7 @@ namespace Sdx
 
     SetIonoGridGIVEIPtr SetIonoGridGIVEI::create(int band, int point, int giveI, const Sdx::optional<std::string>& serviceProvider)
     {
-      return SetIonoGridGIVEIPtr(new SetIonoGridGIVEI(band, point, giveI, serviceProvider));
+      return std::make_shared<SetIonoGridGIVEI>(band, point, giveI, serviceProvider);
     }
 
     SetIonoGridGIVEIPtr SetIonoGridGIVEI::dynamicCast(CommandBasePtr ptr)

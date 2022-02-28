@@ -33,7 +33,7 @@ namespace Sdx
 
     IsSVEnabledResultPtr IsSVEnabledResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, bool enabled)
     {
-      return IsSVEnabledResultPtr(new IsSVEnabledResult(relatedCommand, system, svId, enabled));
+      return std::make_shared<IsSVEnabledResult>(relatedCommand, system, svId, enabled);
     }
 
     IsSVEnabledResultPtr IsSVEnabledResult::dynamicCast(CommandBasePtr ptr)

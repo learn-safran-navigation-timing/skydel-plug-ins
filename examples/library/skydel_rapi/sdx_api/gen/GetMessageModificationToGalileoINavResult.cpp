@@ -40,7 +40,7 @@ namespace Sdx
 
     GetMessageModificationToGalileoINavResultPtr GetMessageModificationToGalileoINavResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int page, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id)
     {
-      return GetMessageModificationToGalileoINavResultPtr(new GetMessageModificationToGalileoINavResult(relatedCommand, signalArray, svId, startTime, stopTime, subframe, page, condition, updateCRC, bitModifications, id));
+      return std::make_shared<GetMessageModificationToGalileoINavResult>(relatedCommand, signalArray, svId, startTime, stopTime, subframe, page, condition, updateCRC, bitModifications, id);
     }
 
     GetMessageModificationToGalileoINavResultPtr GetMessageModificationToGalileoINavResult::dynamicCast(CommandBasePtr ptr)

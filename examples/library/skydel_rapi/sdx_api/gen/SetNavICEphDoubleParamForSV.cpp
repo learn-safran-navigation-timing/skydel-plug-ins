@@ -34,7 +34,7 @@ namespace Sdx
 
     SetNavICEphDoubleParamForSVPtr SetNavICEphDoubleParamForSV::create(int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName)
     {
-      return SetNavICEphDoubleParamForSVPtr(new SetNavICEphDoubleParamForSV(svId, paramName, val, dataSetName));
+      return std::make_shared<SetNavICEphDoubleParamForSV>(svId, paramName, val, dataSetName);
     }
 
     SetNavICEphDoubleParamForSVPtr SetNavICEphDoubleParamForSV::dynamicCast(CommandBasePtr ptr)

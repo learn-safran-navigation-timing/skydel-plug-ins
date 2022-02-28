@@ -31,7 +31,7 @@ namespace Sdx
 
     GetMessageModificationToSbasNavPtr GetMessageModificationToSbasNav::create(const std::string& id)
     {
-      return GetMessageModificationToSbasNavPtr(new GetMessageModificationToSbasNav(id));
+      return std::make_shared<GetMessageModificationToSbasNav>(id);
     }
 
     GetMessageModificationToSbasNavPtr GetMessageModificationToSbasNav::dynamicCast(CommandBasePtr ptr)

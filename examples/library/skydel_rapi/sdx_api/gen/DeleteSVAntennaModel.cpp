@@ -32,7 +32,7 @@ namespace Sdx
 
     DeleteSVAntennaModelPtr DeleteSVAntennaModel::create(const std::string& name, const std::string& system)
     {
-      return DeleteSVAntennaModelPtr(new DeleteSVAntennaModel(name, system));
+      return std::make_shared<DeleteSVAntennaModel>(name, system);
     }
 
     DeleteSVAntennaModelPtr DeleteSVAntennaModel::dynamicCast(CommandBasePtr ptr)

@@ -37,7 +37,7 @@ namespace Sdx
 
     SetPilotPRNPtr SetPilotPRN::create(bool enabled, int outputIdx, double centralFreqOffset, double power, int prn, const std::string& type, const std::string& pilotId)
     {
-      return SetPilotPRNPtr(new SetPilotPRN(enabled, outputIdx, centralFreqOffset, power, prn, type, pilotId));
+      return std::make_shared<SetPilotPRN>(enabled, outputIdx, centralFreqOffset, power, prn, type, pilotId);
     }
 
     SetPilotPRNPtr SetPilotPRN::dynamicCast(CommandBasePtr ptr)

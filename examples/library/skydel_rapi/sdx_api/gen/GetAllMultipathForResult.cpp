@@ -31,7 +31,7 @@ namespace Sdx
 
     GetAllMultipathForResultPtr GetAllMultipathForResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& ids)
     {
-      return GetAllMultipathForResultPtr(new GetAllMultipathForResult(relatedCommand, ids));
+      return std::make_shared<GetAllMultipathForResult>(relatedCommand, ids);
     }
 
     GetAllMultipathForResultPtr GetAllMultipathForResult::dynamicCast(CommandBasePtr ptr)

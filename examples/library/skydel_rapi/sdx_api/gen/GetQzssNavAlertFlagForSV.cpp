@@ -32,7 +32,7 @@ namespace Sdx
 
     GetQzssNavAlertFlagForSVPtr GetQzssNavAlertFlagForSV::create(int svId, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetQzssNavAlertFlagForSVPtr(new GetQzssNavAlertFlagForSV(svId, dataSetName));
+      return std::make_shared<GetQzssNavAlertFlagForSV>(svId, dataSetName);
     }
 
     GetQzssNavAlertFlagForSVPtr GetQzssNavAlertFlagForSV::dynamicCast(CommandBasePtr ptr)

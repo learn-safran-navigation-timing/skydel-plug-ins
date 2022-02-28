@@ -31,7 +31,7 @@ namespace Sdx
 
     IsLogNmeaEnabledResultPtr IsLogNmeaEnabledResult::create(CommandBasePtr relatedCommand, bool enabled)
     {
-      return IsLogNmeaEnabledResultPtr(new IsLogNmeaEnabledResult(relatedCommand, enabled));
+      return std::make_shared<IsLogNmeaEnabledResult>(relatedCommand, enabled);
     }
 
     IsLogNmeaEnabledResultPtr IsLogNmeaEnabledResult::dynamicCast(CommandBasePtr ptr)

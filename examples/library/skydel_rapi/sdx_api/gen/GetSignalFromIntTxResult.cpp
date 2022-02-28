@@ -33,7 +33,7 @@ namespace Sdx
 
     GetSignalFromIntTxResultPtr GetSignalFromIntTxResult::create(CommandBasePtr relatedCommand, const std::string& idTransmitter, const std::string& signalType, const std::vector<std::string>& idsSignal)
     {
-      return GetSignalFromIntTxResultPtr(new GetSignalFromIntTxResult(relatedCommand, idTransmitter, signalType, idsSignal));
+      return std::make_shared<GetSignalFromIntTxResult>(relatedCommand, idTransmitter, signalType, idsSignal);
     }
 
     GetSignalFromIntTxResultPtr GetSignalFromIntTxResult::dynamicCast(CommandBasePtr ptr)

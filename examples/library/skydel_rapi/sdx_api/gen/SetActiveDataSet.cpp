@@ -32,7 +32,7 @@ namespace Sdx
 
     SetActiveDataSetPtr SetActiveDataSet::create(const std::string& system, const std::string& dataSetName)
     {
-      return SetActiveDataSetPtr(new SetActiveDataSet(system, dataSetName));
+      return std::make_shared<SetActiveDataSet>(system, dataSetName);
     }
 
     SetActiveDataSetPtr SetActiveDataSet::dynamicCast(CommandBasePtr ptr)

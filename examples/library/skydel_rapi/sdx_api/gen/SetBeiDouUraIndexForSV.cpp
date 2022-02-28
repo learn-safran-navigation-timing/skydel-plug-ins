@@ -33,7 +33,7 @@ namespace Sdx
 
     SetBeiDouUraIndexForSVPtr SetBeiDouUraIndexForSV::create(int svId, int urai, const Sdx::optional<std::string>& dataSetName)
     {
-      return SetBeiDouUraIndexForSVPtr(new SetBeiDouUraIndexForSV(svId, urai, dataSetName));
+      return std::make_shared<SetBeiDouUraIndexForSV>(svId, urai, dataSetName);
     }
 
     SetBeiDouUraIndexForSVPtr SetBeiDouUraIndexForSV::dynamicCast(CommandBasePtr ptr)

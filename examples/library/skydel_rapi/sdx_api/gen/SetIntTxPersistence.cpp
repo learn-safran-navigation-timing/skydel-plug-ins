@@ -32,7 +32,7 @@ namespace Sdx
 
     SetIntTxPersistencePtr SetIntTxPersistence::create(bool persistence, const std::string& id)
     {
-      return SetIntTxPersistencePtr(new SetIntTxPersistence(persistence, id));
+      return std::make_shared<SetIntTxPersistence>(persistence, id);
     }
 
     SetIntTxPersistencePtr SetIntTxPersistence::dynamicCast(CommandBasePtr ptr)

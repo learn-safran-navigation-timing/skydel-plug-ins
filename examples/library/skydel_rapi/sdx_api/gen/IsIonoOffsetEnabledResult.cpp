@@ -31,7 +31,7 @@ namespace Sdx
 
     IsIonoOffsetEnabledResultPtr IsIonoOffsetEnabledResult::create(CommandBasePtr relatedCommand, bool isEnabled)
     {
-      return IsIonoOffsetEnabledResultPtr(new IsIonoOffsetEnabledResult(relatedCommand, isEnabled));
+      return std::make_shared<IsIonoOffsetEnabledResult>(relatedCommand, isEnabled);
     }
 
     IsIonoOffsetEnabledResultPtr IsIonoOffsetEnabledResult::dynamicCast(CommandBasePtr ptr)

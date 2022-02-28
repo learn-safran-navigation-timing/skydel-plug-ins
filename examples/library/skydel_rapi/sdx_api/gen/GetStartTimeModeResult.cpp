@@ -31,7 +31,7 @@ namespace Sdx
 
     GetStartTimeModeResultPtr GetStartTimeModeResult::create(CommandBasePtr relatedCommand, const std::string& mode)
     {
-      return GetStartTimeModeResultPtr(new GetStartTimeModeResult(relatedCommand, mode));
+      return std::make_shared<GetStartTimeModeResult>(relatedCommand, mode);
     }
 
     GetStartTimeModeResultPtr GetStartTimeModeResult::dynamicCast(CommandBasePtr ptr)

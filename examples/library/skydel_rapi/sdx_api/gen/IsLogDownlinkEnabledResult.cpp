@@ -33,7 +33,7 @@ namespace Sdx
 
     IsLogDownlinkEnabledResultPtr IsLogDownlinkEnabledResult::create(CommandBasePtr relatedCommand, bool enabled, const Sdx::optional<bool>& beforeEncoding, const Sdx::optional<bool>& afterEncoding)
     {
-      return IsLogDownlinkEnabledResultPtr(new IsLogDownlinkEnabledResult(relatedCommand, enabled, beforeEncoding, afterEncoding));
+      return std::make_shared<IsLogDownlinkEnabledResult>(relatedCommand, enabled, beforeEncoding, afterEncoding);
     }
 
     IsLogDownlinkEnabledResultPtr IsLogDownlinkEnabledResult::dynamicCast(CommandBasePtr ptr)

@@ -33,7 +33,7 @@ namespace Sdx
 
     MessageSequenceSwapPtr MessageSequenceSwap::create(const std::string& signal, int indexI, int indexJ)
     {
-      return MessageSequenceSwapPtr(new MessageSequenceSwap(signal, indexI, indexJ));
+      return std::make_shared<MessageSequenceSwap>(signal, indexI, indexJ);
     }
 
     MessageSequenceSwapPtr MessageSequenceSwap::dynamicCast(CommandBasePtr ptr)

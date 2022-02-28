@@ -31,7 +31,7 @@ namespace Sdx
 
     GetGlonassEphemerisHealthFlagForSVPtr GetGlonassEphemerisHealthFlagForSV::create(int svId)
     {
-      return GetGlonassEphemerisHealthFlagForSVPtr(new GetGlonassEphemerisHealthFlagForSV(svId));
+      return std::make_shared<GetGlonassEphemerisHealthFlagForSV>(svId);
     }
 
     GetGlonassEphemerisHealthFlagForSVPtr GetGlonassEphemerisHealthFlagForSV::dynamicCast(CommandBasePtr ptr)

@@ -26,7 +26,7 @@ namespace Sdx
 
     GetIssueOfDataPtr GetIssueOfData::create()
     {
-      return GetIssueOfDataPtr(new GetIssueOfData());
+      return std::make_shared<GetIssueOfData>();
     }
 
     GetIssueOfDataPtr GetIssueOfData::dynamicCast(CommandBasePtr ptr)

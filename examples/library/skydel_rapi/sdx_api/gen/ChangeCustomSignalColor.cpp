@@ -32,7 +32,7 @@ namespace Sdx
 
     ChangeCustomSignalColorPtr ChangeCustomSignalColor::create(const std::string& color, const std::string& id)
     {
-      return ChangeCustomSignalColorPtr(new ChangeCustomSignalColor(color, id));
+      return std::make_shared<ChangeCustomSignalColor>(color, id);
     }
 
     ChangeCustomSignalColorPtr ChangeCustomSignalColor::dynamicCast(CommandBasePtr ptr)

@@ -32,7 +32,7 @@ namespace Sdx
 
     EndIntTxTrackDefinitionResultPtr EndIntTxTrackDefinitionResult::create(CommandBasePtr relatedCommand, int count, const std::string& id)
     {
-      return EndIntTxTrackDefinitionResultPtr(new EndIntTxTrackDefinitionResult(relatedCommand, count, id));
+      return std::make_shared<EndIntTxTrackDefinitionResult>(relatedCommand, count, id);
     }
 
     EndIntTxTrackDefinitionResultPtr EndIntTxTrackDefinitionResult::dynamicCast(CommandBasePtr ptr)

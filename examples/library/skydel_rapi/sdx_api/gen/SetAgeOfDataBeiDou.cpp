@@ -33,7 +33,7 @@ namespace Sdx
 
     SetAgeOfDataBeiDouPtr SetAgeOfDataBeiDou::create(int clock, int ephemeris, const Sdx::optional<bool>& overrideRinex)
     {
-      return SetAgeOfDataBeiDouPtr(new SetAgeOfDataBeiDou(clock, ephemeris, overrideRinex));
+      return std::make_shared<SetAgeOfDataBeiDou>(clock, ephemeris, overrideRinex);
     }
 
     SetAgeOfDataBeiDouPtr SetAgeOfDataBeiDou::dynamicCast(CommandBasePtr ptr)

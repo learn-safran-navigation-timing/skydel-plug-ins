@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const EnableSbasFastCorrectionsFor::CmdName = "EnableSbasFastCorrectionsFor";
-    const char* const EnableSbasFastCorrectionsFor::Documentation = "Set whether pseudorange errors for this constellation should be compensated in SBAS fast corrections";
+    const char* const EnableSbasFastCorrectionsFor::Documentation = "Set whether specific errors type for this constellation should be compensated in SBAS fast corrections";
 
     REGISTER_COMMAND_FACTORY(EnableSbasFastCorrectionsFor);
 
@@ -21,18 +21,19 @@ namespace Sdx
       : CommandBase(CmdName)
     {}
 
-    EnableSbasFastCorrectionsFor::EnableSbasFastCorrectionsFor(const std::string& system, bool isEnabled)
+    EnableSbasFastCorrectionsFor::EnableSbasFastCorrectionsFor(const std::string& system, bool isEnabled, const Sdx::optional<std::string>& errorType)
       : CommandBase(CmdName)
     {
 
       setSystem(system);
       setIsEnabled(isEnabled);
+      setErrorType(errorType);
     }
 
 
-    EnableSbasFastCorrectionsForPtr EnableSbasFastCorrectionsFor::create(const std::string& system, bool isEnabled)
+    EnableSbasFastCorrectionsForPtr EnableSbasFastCorrectionsFor::create(const std::string& system, bool isEnabled, const Sdx::optional<std::string>& errorType)
     {
-      return EnableSbasFastCorrectionsForPtr(new EnableSbasFastCorrectionsFor(system, isEnabled));
+      return std::make_shared<EnableSbasFastCorrectionsFor>(system, isEnabled, errorType);
     }
 
     EnableSbasFastCorrectionsForPtr EnableSbasFastCorrectionsFor::dynamicCast(CommandBasePtr ptr)
@@ -46,6 +47,7 @@ namespace Sdx
         return m_values.IsObject()
           && parse_json<std::string>::is_valid(m_values["System"])
           && parse_json<bool>::is_valid(m_values["IsEnabled"])
+          && parse_json<Sdx::optional<std::string>>::is_valid(m_values["ErrorType"])
         ;
 
     }
@@ -79,6 +81,18 @@ namespace Sdx
     void EnableSbasFastCorrectionsFor::setIsEnabled(bool isEnabled)
     {
       m_values.AddMember("IsEnabled", parse_json<bool>::format(isEnabled, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    Sdx::optional<std::string> EnableSbasFastCorrectionsFor::errorType() const
+    {
+      return parse_json<Sdx::optional<std::string>>::parse(m_values["ErrorType"]);
+    }
+
+    void EnableSbasFastCorrectionsFor::setErrorType(const Sdx::optional<std::string>& errorType)
+    {
+      m_values.AddMember("ErrorType", parse_json<Sdx::optional<std::string>>::format(errorType, m_values.GetAllocator()), m_values.GetAllocator());
     }
 
 

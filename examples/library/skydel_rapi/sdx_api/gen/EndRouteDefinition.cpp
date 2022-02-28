@@ -26,7 +26,7 @@ namespace Sdx
 
     EndRouteDefinitionPtr EndRouteDefinition::create()
     {
-      return EndRouteDefinitionPtr(new EndRouteDefinition());
+      return std::make_shared<EndRouteDefinition>();
     }
 
     EndRouteDefinitionPtr EndRouteDefinition::dynamicCast(CommandBasePtr ptr)

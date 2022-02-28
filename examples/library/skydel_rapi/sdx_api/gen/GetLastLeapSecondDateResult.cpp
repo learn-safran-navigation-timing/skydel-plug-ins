@@ -31,7 +31,7 @@ namespace Sdx
 
     GetLastLeapSecondDateResultPtr GetLastLeapSecondDateResult::create(CommandBasePtr relatedCommand, const Sdx::Date& date)
     {
-      return GetLastLeapSecondDateResultPtr(new GetLastLeapSecondDateResult(relatedCommand, date));
+      return std::make_shared<GetLastLeapSecondDateResult>(relatedCommand, date);
     }
 
     GetLastLeapSecondDateResultPtr GetLastLeapSecondDateResult::dynamicCast(CommandBasePtr ptr)

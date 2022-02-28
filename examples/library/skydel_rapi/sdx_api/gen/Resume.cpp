@@ -26,7 +26,7 @@ namespace Sdx
 
     ResumePtr Resume::create()
     {
-      return ResumePtr(new Resume());
+      return std::make_shared<Resume>();
     }
 
     ResumePtr Resume::dynamicCast(CommandBasePtr ptr)

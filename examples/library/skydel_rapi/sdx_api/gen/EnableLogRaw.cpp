@@ -31,7 +31,7 @@ namespace Sdx
 
     EnableLogRawPtr EnableLogRaw::create(bool enabled)
     {
-      return EnableLogRawPtr(new EnableLogRaw(enabled));
+      return std::make_shared<EnableLogRaw>(enabled);
     }
 
     EnableLogRawPtr EnableLogRaw::dynamicCast(CommandBasePtr ptr)

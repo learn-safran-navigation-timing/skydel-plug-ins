@@ -26,7 +26,7 @@ namespace Sdx
 
     IsAttitudeToZeroForcedPtr IsAttitudeToZeroForced::create()
     {
-      return IsAttitudeToZeroForcedPtr(new IsAttitudeToZeroForced());
+      return std::make_shared<IsAttitudeToZeroForced>();
     }
 
     IsAttitudeToZeroForcedPtr IsAttitudeToZeroForced::dynamicCast(CommandBasePtr ptr)

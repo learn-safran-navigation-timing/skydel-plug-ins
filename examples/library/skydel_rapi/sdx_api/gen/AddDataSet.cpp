@@ -34,7 +34,7 @@ namespace Sdx
 
     AddDataSetPtr AddDataSet::create(const std::string& system, const std::string& path, const Sdx::optional<int>& rollover, const Sdx::optional<std::string>& dataSetName)
     {
-      return AddDataSetPtr(new AddDataSet(system, path, rollover, dataSetName));
+      return std::make_shared<AddDataSet>(system, path, rollover, dataSetName);
     }
 
     AddDataSetPtr AddDataSet::dynamicCast(CommandBasePtr ptr)

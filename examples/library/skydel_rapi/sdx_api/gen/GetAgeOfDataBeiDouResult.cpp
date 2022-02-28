@@ -33,7 +33,7 @@ namespace Sdx
 
     GetAgeOfDataBeiDouResultPtr GetAgeOfDataBeiDouResult::create(CommandBasePtr relatedCommand, int clock, int ephemeris, const Sdx::optional<bool>& overrideRinex)
     {
-      return GetAgeOfDataBeiDouResultPtr(new GetAgeOfDataBeiDouResult(relatedCommand, clock, ephemeris, overrideRinex));
+      return std::make_shared<GetAgeOfDataBeiDouResult>(relatedCommand, clock, ephemeris, overrideRinex);
     }
 
     GetAgeOfDataBeiDouResultPtr GetAgeOfDataBeiDouResult::dynamicCast(CommandBasePtr ptr)

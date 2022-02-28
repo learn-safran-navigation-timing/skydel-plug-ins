@@ -39,7 +39,7 @@ namespace Sdx
 
     SetMessageModificationToGpsMNavPtr SetMessageModificationToGpsMNav::create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, int occurrence, const std::string& condition, const std::string& bitModifications, const std::string& id)
     {
-      return SetMessageModificationToGpsMNavPtr(new SetMessageModificationToGpsMNav(signalArray, svId, startTime, stopTime, messageType, occurrence, condition, bitModifications, id));
+      return std::make_shared<SetMessageModificationToGpsMNav>(signalArray, svId, startTime, stopTime, messageType, occurrence, condition, bitModifications, id);
     }
 
     SetMessageModificationToGpsMNavPtr SetMessageModificationToGpsMNav::dynamicCast(CommandBasePtr ptr)

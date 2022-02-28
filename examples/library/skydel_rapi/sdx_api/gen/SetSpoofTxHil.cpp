@@ -31,7 +31,7 @@ namespace Sdx
 
     SetSpoofTxHilPtr SetSpoofTxHil::create(const std::string& id)
     {
-      return SetSpoofTxHilPtr(new SetSpoofTxHil(id));
+      return std::make_shared<SetSpoofTxHil>(id);
     }
 
     SetSpoofTxHilPtr SetSpoofTxHil::dynamicCast(CommandBasePtr ptr)

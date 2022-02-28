@@ -31,7 +31,7 @@ namespace Sdx
 
     RemoveQzssL1SAugmentationPtr RemoveQzssL1SAugmentation::create(const std::string& id)
     {
-      return RemoveQzssL1SAugmentationPtr(new RemoveQzssL1SAugmentation(id));
+      return std::make_shared<RemoveQzssL1SAugmentation>(id);
     }
 
     RemoveQzssL1SAugmentationPtr RemoveQzssL1SAugmentation::dynamicCast(CommandBasePtr ptr)

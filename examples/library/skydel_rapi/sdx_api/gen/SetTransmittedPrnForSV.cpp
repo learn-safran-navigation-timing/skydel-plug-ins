@@ -32,7 +32,7 @@ namespace Sdx
 
     SetTransmittedPrnForSVPtr SetTransmittedPrnForSV::create(int svId, const std::map<std::string, int>& signalPrnDict)
     {
-      return SetTransmittedPrnForSVPtr(new SetTransmittedPrnForSV(svId, signalPrnDict));
+      return std::make_shared<SetTransmittedPrnForSV>(svId, signalPrnDict);
     }
 
     SetTransmittedPrnForSVPtr SetTransmittedPrnForSV::dynamicCast(CommandBasePtr ptr)

@@ -32,7 +32,7 @@ namespace Sdx
 
     GetPowerSbasOffsetResultPtr GetPowerSbasOffsetResult::create(CommandBasePtr relatedCommand, const std::string& serviceProvider, double offset)
     {
-      return GetPowerSbasOffsetResultPtr(new GetPowerSbasOffsetResult(relatedCommand, serviceProvider, offset));
+      return std::make_shared<GetPowerSbasOffsetResult>(relatedCommand, serviceProvider, offset);
     }
 
     GetPowerSbasOffsetResultPtr GetPowerSbasOffsetResult::dynamicCast(CommandBasePtr ptr)

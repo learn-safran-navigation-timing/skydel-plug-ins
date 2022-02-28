@@ -32,7 +32,7 @@ namespace Sdx
 
     SetWFAntennaElementEnabledPtr SetWFAntennaElementEnabled::create(int element, bool enabled)
     {
-      return SetWFAntennaElementEnabledPtr(new SetWFAntennaElementEnabled(element, enabled));
+      return std::make_shared<SetWFAntennaElementEnabled>(element, enabled);
     }
 
     SetWFAntennaElementEnabledPtr SetWFAntennaElementEnabled::dynamicCast(CommandBasePtr ptr)

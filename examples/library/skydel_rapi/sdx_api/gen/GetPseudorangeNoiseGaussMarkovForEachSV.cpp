@@ -32,7 +32,7 @@ namespace Sdx
 
     GetPseudorangeNoiseGaussMarkovForEachSVPtr GetPseudorangeNoiseGaussMarkovForEachSV::create(const std::string& system, int process)
     {
-      return GetPseudorangeNoiseGaussMarkovForEachSVPtr(new GetPseudorangeNoiseGaussMarkovForEachSV(system, process));
+      return std::make_shared<GetPseudorangeNoiseGaussMarkovForEachSV>(system, process);
     }
 
     GetPseudorangeNoiseGaussMarkovForEachSVPtr GetPseudorangeNoiseGaussMarkovForEachSV::dynamicCast(CommandBasePtr ptr)

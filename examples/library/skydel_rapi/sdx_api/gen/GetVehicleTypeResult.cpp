@@ -31,7 +31,7 @@ namespace Sdx
 
     GetVehicleTypeResultPtr GetVehicleTypeResult::create(CommandBasePtr relatedCommand, const std::string& type)
     {
-      return GetVehicleTypeResultPtr(new GetVehicleTypeResult(relatedCommand, type));
+      return std::make_shared<GetVehicleTypeResult>(relatedCommand, type);
     }
 
     GetVehicleTypeResultPtr GetVehicleTypeResult::dynamicCast(CommandBasePtr ptr)

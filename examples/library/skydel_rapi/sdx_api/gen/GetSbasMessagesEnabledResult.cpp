@@ -31,7 +31,7 @@ namespace Sdx
 
     GetSbasMessagesEnabledResultPtr GetSbasMessagesEnabledResult::create(CommandBasePtr relatedCommand, const std::vector<int>& messages)
     {
-      return GetSbasMessagesEnabledResultPtr(new GetSbasMessagesEnabledResult(relatedCommand, messages));
+      return std::make_shared<GetSbasMessagesEnabledResult>(relatedCommand, messages);
     }
 
     GetSbasMessagesEnabledResultPtr GetSbasMessagesEnabledResult::dynamicCast(CommandBasePtr ptr)

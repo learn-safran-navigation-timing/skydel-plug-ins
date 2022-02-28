@@ -32,7 +32,7 @@ namespace Sdx
 
     SaveAsPtr SaveAs::create(const std::string& path, bool overwrite)
     {
-      return SaveAsPtr(new SaveAs(path, overwrite));
+      return std::make_shared<SaveAs>(path, overwrite);
     }
 
     SaveAsPtr SaveAs::dynamicCast(CommandBasePtr ptr)

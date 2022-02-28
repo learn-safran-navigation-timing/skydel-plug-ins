@@ -33,7 +33,7 @@ namespace Sdx
 
     ChangeModulationAnechoicTargetInterferencePtr ChangeModulationAnechoicTargetInterference::create(int group, const std::string& output, double centralFreq)
     {
-      return ChangeModulationAnechoicTargetInterferencePtr(new ChangeModulationAnechoicTargetInterference(group, output, centralFreq));
+      return std::make_shared<ChangeModulationAnechoicTargetInterference>(group, output, centralFreq);
     }
 
     ChangeModulationAnechoicTargetInterferencePtr ChangeModulationAnechoicTargetInterference::dynamicCast(CommandBasePtr ptr)

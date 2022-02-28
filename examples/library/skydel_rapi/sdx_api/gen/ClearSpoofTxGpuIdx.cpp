@@ -32,7 +32,7 @@ namespace Sdx
 
     ClearSpoofTxGpuIdxPtr ClearSpoofTxGpuIdx::create(int signalId, const std::string& id)
     {
-      return ClearSpoofTxGpuIdxPtr(new ClearSpoofTxGpuIdx(signalId, id));
+      return std::make_shared<ClearSpoofTxGpuIdx>(signalId, id);
     }
 
     ClearSpoofTxGpuIdxPtr ClearSpoofTxGpuIdx::dynamicCast(CommandBasePtr ptr)

@@ -31,7 +31,7 @@ namespace Sdx
 
     IsSpectrumVisibleResultPtr IsSpectrumVisibleResult::create(CommandBasePtr relatedCommand, bool visible)
     {
-      return IsSpectrumVisibleResultPtr(new IsSpectrumVisibleResult(relatedCommand, visible));
+      return std::make_shared<IsSpectrumVisibleResult>(relatedCommand, visible);
     }
 
     IsSpectrumVisibleResultPtr IsSpectrumVisibleResult::dynamicCast(CommandBasePtr ptr)

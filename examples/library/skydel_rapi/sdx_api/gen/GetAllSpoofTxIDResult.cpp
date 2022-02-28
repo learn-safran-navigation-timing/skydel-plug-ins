@@ -31,7 +31,7 @@ namespace Sdx
 
     GetAllSpoofTxIDResultPtr GetAllSpoofTxIDResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& ids)
     {
-      return GetAllSpoofTxIDResultPtr(new GetAllSpoofTxIDResult(relatedCommand, ids));
+      return std::make_shared<GetAllSpoofTxIDResult>(relatedCommand, ids);
     }
 
     GetAllSpoofTxIDResultPtr GetAllSpoofTxIDResult::dynamicCast(CommandBasePtr ptr)

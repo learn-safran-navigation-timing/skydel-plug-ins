@@ -26,7 +26,7 @@ namespace Sdx
 
     GetIssueOfDataQzssPtr GetIssueOfDataQzss::create()
     {
-      return GetIssueOfDataQzssPtr(new GetIssueOfDataQzss());
+      return std::make_shared<GetIssueOfDataQzss>();
     }
 
     GetIssueOfDataQzssPtr GetIssueOfDataQzss::dynamicCast(CommandBasePtr ptr)

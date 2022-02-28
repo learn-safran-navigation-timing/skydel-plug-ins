@@ -34,7 +34,7 @@ namespace Sdx
 
     SetPowerForSVPtr SetPowerForSV::create(const std::string& system, int svId, double powerOffset, bool otherSatsFollow)
     {
-      return SetPowerForSVPtr(new SetPowerForSV(system, svId, powerOffset, otherSatsFollow));
+      return std::make_shared<SetPowerForSV>(system, svId, powerOffset, otherSatsFollow);
     }
 
     SetPowerForSVPtr SetPowerForSV::dynamicCast(CommandBasePtr ptr)

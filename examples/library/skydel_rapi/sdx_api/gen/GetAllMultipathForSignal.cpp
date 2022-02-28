@@ -31,7 +31,7 @@ namespace Sdx
 
     GetAllMultipathForSignalPtr GetAllMultipathForSignal::create(const std::string& signal)
     {
-      return GetAllMultipathForSignalPtr(new GetAllMultipathForSignal(signal));
+      return std::make_shared<GetAllMultipathForSignal>(signal);
     }
 
     GetAllMultipathForSignalPtr GetAllMultipathForSignal::dynamicCast(CommandBasePtr ptr)

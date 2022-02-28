@@ -37,7 +37,7 @@ namespace Sdx
 
     SetVehicleAntennaOffsetPtr SetVehicleAntennaOffset::create(double x, double y, double z, double yaw, double pitch, double roll, const Sdx::optional<std::string>& name)
     {
-      return SetVehicleAntennaOffsetPtr(new SetVehicleAntennaOffset(x, y, z, yaw, pitch, roll, name));
+      return std::make_shared<SetVehicleAntennaOffset>(x, y, z, yaw, pitch, roll, name);
     }
 
     SetVehicleAntennaOffsetPtr SetVehicleAntennaOffset::dynamicCast(CommandBasePtr ptr)

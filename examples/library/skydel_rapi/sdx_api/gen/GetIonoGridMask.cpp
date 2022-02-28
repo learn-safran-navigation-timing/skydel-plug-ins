@@ -33,7 +33,7 @@ namespace Sdx
 
     GetIonoGridMaskPtr GetIonoGridMask::create(const std::string& serviceProvider, int band, int point)
     {
-      return GetIonoGridMaskPtr(new GetIonoGridMask(serviceProvider, band, point));
+      return std::make_shared<GetIonoGridMask>(serviceProvider, band, point);
     }
 
     GetIonoGridMaskPtr GetIonoGridMask::dynamicCast(CommandBasePtr ptr)

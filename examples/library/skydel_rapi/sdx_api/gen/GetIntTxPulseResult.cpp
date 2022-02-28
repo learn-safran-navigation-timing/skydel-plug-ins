@@ -38,7 +38,7 @@ namespace Sdx
 
     GetIntTxPulseResultPtr GetIntTxPulseResult::create(CommandBasePtr relatedCommand, bool enabled, double centralFreq, double power, double dutyCycle, int pulseRate, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& group)
     {
-      return GetIntTxPulseResultPtr(new GetIntTxPulseResult(relatedCommand, enabled, centralFreq, power, dutyCycle, pulseRate, transmitterId, signalId, group));
+      return std::make_shared<GetIntTxPulseResult>(relatedCommand, enabled, centralFreq, power, dutyCycle, pulseRate, transmitterId, signalId, group);
     }
 
     GetIntTxPulseResultPtr GetIntTxPulseResult::dynamicCast(CommandBasePtr ptr)

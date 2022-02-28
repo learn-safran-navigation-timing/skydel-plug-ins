@@ -33,7 +33,7 @@ namespace Sdx
 
     EnableLogDownlinkPtr EnableLogDownlink::create(bool enabled, const Sdx::optional<bool>& beforeEncoding, const Sdx::optional<bool>& afterEncoding)
     {
-      return EnableLogDownlinkPtr(new EnableLogDownlink(enabled, beforeEncoding, afterEncoding));
+      return std::make_shared<EnableLogDownlink>(enabled, beforeEncoding, afterEncoding);
     }
 
     EnableLogDownlinkPtr EnableLogDownlink::dynamicCast(CommandBasePtr ptr)

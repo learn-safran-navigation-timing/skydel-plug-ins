@@ -31,7 +31,7 @@ namespace Sdx
 
     GetAllMessageModificationIdsForNavMsgFamilyResultPtr GetAllMessageModificationIdsForNavMsgFamilyResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& ids)
     {
-      return GetAllMessageModificationIdsForNavMsgFamilyResultPtr(new GetAllMessageModificationIdsForNavMsgFamilyResult(relatedCommand, ids));
+      return std::make_shared<GetAllMessageModificationIdsForNavMsgFamilyResult>(relatedCommand, ids);
     }
 
     GetAllMessageModificationIdsForNavMsgFamilyResultPtr GetAllMessageModificationIdsForNavMsgFamilyResult::dynamicCast(CommandBasePtr ptr)

@@ -26,7 +26,7 @@ namespace Sdx
 
     SetDefaultConfigurationPtr SetDefaultConfiguration::create()
     {
-      return SetDefaultConfigurationPtr(new SetDefaultConfiguration());
+      return std::make_shared<SetDefaultConfiguration>();
     }
 
     SetDefaultConfigurationPtr SetDefaultConfiguration::dynamicCast(CommandBasePtr ptr)

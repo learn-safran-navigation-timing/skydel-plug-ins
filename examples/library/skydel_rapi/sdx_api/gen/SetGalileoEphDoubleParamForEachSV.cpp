@@ -33,7 +33,7 @@ namespace Sdx
 
     SetGalileoEphDoubleParamForEachSVPtr SetGalileoEphDoubleParamForEachSV::create(const std::string& paramName, const std::vector<double>& val, const Sdx::optional<std::string>& dataSetName)
     {
-      return SetGalileoEphDoubleParamForEachSVPtr(new SetGalileoEphDoubleParamForEachSV(paramName, val, dataSetName));
+      return std::make_shared<SetGalileoEphDoubleParamForEachSV>(paramName, val, dataSetName);
     }
 
     SetGalileoEphDoubleParamForEachSVPtr SetGalileoEphDoubleParamForEachSV::dynamicCast(CommandBasePtr ptr)

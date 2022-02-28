@@ -31,7 +31,7 @@ namespace Sdx
 
     SetLogNmeaRatePtr SetLogNmeaRate::create(int rate)
     {
-      return SetLogNmeaRatePtr(new SetLogNmeaRate(rate));
+      return std::make_shared<SetLogNmeaRate>(rate);
     }
 
     SetLogNmeaRatePtr SetLogNmeaRate::dynamicCast(CommandBasePtr ptr)

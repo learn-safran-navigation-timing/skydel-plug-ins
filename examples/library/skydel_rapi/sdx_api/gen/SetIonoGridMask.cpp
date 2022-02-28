@@ -34,7 +34,7 @@ namespace Sdx
 
     SetIonoGridMaskPtr SetIonoGridMask::create(const std::string& serviceProvider, int band, int point, bool flag)
     {
-      return SetIonoGridMaskPtr(new SetIonoGridMask(serviceProvider, band, point, flag));
+      return std::make_shared<SetIonoGridMask>(serviceProvider, band, point, flag);
     }
 
     SetIonoGridMaskPtr SetIonoGridMask::dynamicCast(CommandBasePtr ptr)

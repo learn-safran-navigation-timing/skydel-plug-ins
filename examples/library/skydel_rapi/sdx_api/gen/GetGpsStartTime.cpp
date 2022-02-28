@@ -26,7 +26,7 @@ namespace Sdx
 
     GetGpsStartTimePtr GetGpsStartTime::create()
     {
-      return GetGpsStartTimePtr(new GetGpsStartTime());
+      return std::make_shared<GetGpsStartTime>();
     }
 
     GetGpsStartTimePtr GetGpsStartTime::dynamicCast(CommandBasePtr ptr)

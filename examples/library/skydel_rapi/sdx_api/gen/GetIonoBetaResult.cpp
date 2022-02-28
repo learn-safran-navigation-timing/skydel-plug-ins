@@ -32,7 +32,7 @@ namespace Sdx
 
     GetIonoBetaResultPtr GetIonoBetaResult::create(CommandBasePtr relatedCommand, int index, double val)
     {
-      return GetIonoBetaResultPtr(new GetIonoBetaResult(relatedCommand, index, val));
+      return std::make_shared<GetIonoBetaResult>(relatedCommand, index, val);
     }
 
     GetIonoBetaResultPtr GetIonoBetaResult::dynamicCast(CommandBasePtr ptr)

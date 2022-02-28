@@ -31,7 +31,7 @@ namespace Sdx
 
     GetGlonassFrequencyNumberForEachSVResultPtr GetGlonassFrequencyNumberForEachSVResult::create(CommandBasePtr relatedCommand, const std::vector<int>& frequencyNumber)
     {
-      return GetGlonassFrequencyNumberForEachSVResultPtr(new GetGlonassFrequencyNumberForEachSVResult(relatedCommand, frequencyNumber));
+      return std::make_shared<GetGlonassFrequencyNumberForEachSVResult>(relatedCommand, frequencyNumber);
     }
 
     GetGlonassFrequencyNumberForEachSVResultPtr GetGlonassFrequencyNumberForEachSVResult::dynamicCast(CommandBasePtr ptr)

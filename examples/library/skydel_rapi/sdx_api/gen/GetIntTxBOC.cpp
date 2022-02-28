@@ -32,7 +32,7 @@ namespace Sdx
 
     GetIntTxBOCPtr GetIntTxBOC::create(const std::string& transmitterId, const std::string& signalId)
     {
-      return GetIntTxBOCPtr(new GetIntTxBOC(transmitterId, signalId));
+      return std::make_shared<GetIntTxBOC>(transmitterId, signalId);
     }
 
     GetIntTxBOCPtr GetIntTxBOC::dynamicCast(CommandBasePtr ptr)

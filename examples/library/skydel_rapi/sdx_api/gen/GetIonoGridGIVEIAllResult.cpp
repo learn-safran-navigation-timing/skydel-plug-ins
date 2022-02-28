@@ -32,7 +32,7 @@ namespace Sdx
 
     GetIonoGridGIVEIAllResultPtr GetIonoGridGIVEIAllResult::create(CommandBasePtr relatedCommand, const std::vector<std::vector<int>>& grid, const Sdx::optional<std::string>& serviceProvider)
     {
-      return GetIonoGridGIVEIAllResultPtr(new GetIonoGridGIVEIAllResult(relatedCommand, grid, serviceProvider));
+      return std::make_shared<GetIonoGridGIVEIAllResult>(relatedCommand, grid, serviceProvider);
     }
 
     GetIonoGridGIVEIAllResultPtr GetIonoGridGIVEIAllResult::dynamicCast(CommandBasePtr ptr)

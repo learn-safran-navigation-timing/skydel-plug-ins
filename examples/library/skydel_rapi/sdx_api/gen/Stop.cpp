@@ -26,7 +26,7 @@ namespace Sdx
 
     StopPtr Stop::create()
     {
-      return StopPtr(new Stop());
+      return std::make_shared<Stop>();
     }
 
     StopPtr Stop::dynamicCast(CommandBasePtr ptr)

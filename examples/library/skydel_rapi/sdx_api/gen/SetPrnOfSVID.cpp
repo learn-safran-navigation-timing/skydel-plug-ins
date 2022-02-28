@@ -33,7 +33,7 @@ namespace Sdx
 
     SetPrnOfSVIDPtr SetPrnOfSVID::create(const std::string& signal, int svId, int prn)
     {
-      return SetPrnOfSVIDPtr(new SetPrnOfSVID(signal, svId, prn));
+      return std::make_shared<SetPrnOfSVID>(signal, svId, prn);
     }
 
     SetPrnOfSVIDPtr SetPrnOfSVID::dynamicCast(CommandBasePtr ptr)

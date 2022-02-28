@@ -26,7 +26,7 @@ namespace Sdx
 
     GetVehicleTypePtr GetVehicleType::create()
     {
-      return GetVehicleTypePtr(new GetVehicleType());
+      return std::make_shared<GetVehicleType>();
     }
 
     GetVehicleTypePtr GetVehicleType::dynamicCast(CommandBasePtr ptr)

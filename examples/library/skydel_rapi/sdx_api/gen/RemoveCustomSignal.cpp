@@ -31,7 +31,7 @@ namespace Sdx
 
     RemoveCustomSignalPtr RemoveCustomSignal::create(const std::string& id)
     {
-      return RemoveCustomSignalPtr(new RemoveCustomSignal(id));
+      return std::make_shared<RemoveCustomSignal>(id);
     }
 
     RemoveCustomSignalPtr RemoveCustomSignal::dynamicCast(CommandBasePtr ptr)

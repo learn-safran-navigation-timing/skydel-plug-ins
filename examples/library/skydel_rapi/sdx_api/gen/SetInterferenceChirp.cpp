@@ -38,7 +38,7 @@ namespace Sdx
 
     SetInterferenceChirpPtr SetInterferenceChirp::create(int startTime, int stopTime, double centralFreq, double power, double bandwidth, double sweepTime, bool enabled, const std::string& id)
     {
-      return SetInterferenceChirpPtr(new SetInterferenceChirp(startTime, stopTime, centralFreq, power, bandwidth, sweepTime, enabled, id));
+      return std::make_shared<SetInterferenceChirp>(startTime, stopTime, centralFreq, power, bandwidth, sweepTime, enabled, id);
     }
 
     SetInterferenceChirpPtr SetInterferenceChirp::dynamicCast(CommandBasePtr ptr)

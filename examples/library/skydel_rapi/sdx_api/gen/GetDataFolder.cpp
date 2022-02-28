@@ -26,7 +26,7 @@ namespace Sdx
 
     GetDataFolderPtr GetDataFolder::create()
     {
-      return GetDataFolderPtr(new GetDataFolder());
+      return std::make_shared<GetDataFolder>();
     }
 
     GetDataFolderPtr GetDataFolder::dynamicCast(CommandBasePtr ptr)

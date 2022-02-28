@@ -31,7 +31,7 @@ namespace Sdx
 
     IsRFOutputEnabledForEachSVPtr IsRFOutputEnabledForEachSV::create(const std::string& system)
     {
-      return IsRFOutputEnabledForEachSVPtr(new IsRFOutputEnabledForEachSV(system));
+      return std::make_shared<IsRFOutputEnabledForEachSV>(system);
     }
 
     IsRFOutputEnabledForEachSVPtr IsRFOutputEnabledForEachSV::dynamicCast(CommandBasePtr ptr)

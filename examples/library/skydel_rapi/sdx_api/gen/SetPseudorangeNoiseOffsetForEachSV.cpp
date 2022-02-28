@@ -33,7 +33,7 @@ namespace Sdx
 
     SetPseudorangeNoiseOffsetForEachSVPtr SetPseudorangeNoiseOffsetForEachSV::create(const std::string& system, const std::vector<bool>& enabled, const std::vector<double>& offset)
     {
-      return SetPseudorangeNoiseOffsetForEachSVPtr(new SetPseudorangeNoiseOffsetForEachSV(system, enabled, offset));
+      return std::make_shared<SetPseudorangeNoiseOffsetForEachSV>(system, enabled, offset);
     }
 
     SetPseudorangeNoiseOffsetForEachSVPtr SetPseudorangeNoiseOffsetForEachSV::dynamicCast(CommandBasePtr ptr)

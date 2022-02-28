@@ -26,7 +26,7 @@ namespace Sdx
 
     RemoveAllIntTxPtr RemoveAllIntTx::create()
     {
-      return RemoveAllIntTxPtr(new RemoveAllIntTx());
+      return std::make_shared<RemoveAllIntTx>();
     }
 
     RemoveAllIntTxPtr RemoveAllIntTx::dynamicCast(CommandBasePtr ptr)

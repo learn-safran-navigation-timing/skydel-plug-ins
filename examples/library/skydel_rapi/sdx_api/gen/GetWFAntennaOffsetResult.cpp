@@ -36,7 +36,7 @@ namespace Sdx
 
     GetWFAntennaOffsetResultPtr GetWFAntennaOffsetResult::create(CommandBasePtr relatedCommand, double x, double y, double z, double yaw, double pitch, double roll)
     {
-      return GetWFAntennaOffsetResultPtr(new GetWFAntennaOffsetResult(relatedCommand, x, y, z, yaw, pitch, roll));
+      return std::make_shared<GetWFAntennaOffsetResult>(relatedCommand, x, y, z, yaw, pitch, roll);
     }
 
     GetWFAntennaOffsetResultPtr GetWFAntennaOffsetResult::dynamicCast(CommandBasePtr ptr)

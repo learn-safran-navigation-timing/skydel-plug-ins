@@ -32,7 +32,7 @@ namespace Sdx
 
     SetSbasCorrectionsHealthForSVPtr SetSbasCorrectionsHealthForSV::create(int svId, bool health)
     {
-      return SetSbasCorrectionsHealthForSVPtr(new SetSbasCorrectionsHealthForSV(svId, health));
+      return std::make_shared<SetSbasCorrectionsHealthForSV>(svId, health);
     }
 
     SetSbasCorrectionsHealthForSVPtr SetSbasCorrectionsHealthForSV::dynamicCast(CommandBasePtr ptr)

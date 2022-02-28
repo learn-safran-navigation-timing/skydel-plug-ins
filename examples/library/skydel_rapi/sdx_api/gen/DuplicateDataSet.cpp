@@ -33,7 +33,7 @@ namespace Sdx
 
     DuplicateDataSetPtr DuplicateDataSet::create(const std::string& system, const std::string& dataSetName, const Sdx::optional<std::string>& newDataSetName)
     {
-      return DuplicateDataSetPtr(new DuplicateDataSet(system, dataSetName, newDataSetName));
+      return std::make_shared<DuplicateDataSet>(system, dataSetName, newDataSetName);
     }
 
     DuplicateDataSetPtr DuplicateDataSet::dynamicCast(CommandBasePtr ptr)

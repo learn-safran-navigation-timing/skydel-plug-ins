@@ -40,7 +40,7 @@ namespace Sdx
 
     SetMessageModificationToGpsLNavPtr SetMessageModificationToGpsLNav::create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int page, int word, bool updateParity, const std::string& wordModification, const std::string& id)
     {
-      return SetMessageModificationToGpsLNavPtr(new SetMessageModificationToGpsLNav(signalArray, svId, startTime, stopTime, subframe, page, word, updateParity, wordModification, id));
+      return std::make_shared<SetMessageModificationToGpsLNav>(signalArray, svId, startTime, stopTime, subframe, page, word, updateParity, wordModification, id);
     }
 
     SetMessageModificationToGpsLNavPtr SetMessageModificationToGpsLNav::dynamicCast(CommandBasePtr ptr)

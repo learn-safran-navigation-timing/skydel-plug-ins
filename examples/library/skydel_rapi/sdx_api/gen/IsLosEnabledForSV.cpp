@@ -32,7 +32,7 @@ namespace Sdx
 
     IsLosEnabledForSVPtr IsLosEnabledForSV::create(const std::string& system, int svId)
     {
-      return IsLosEnabledForSVPtr(new IsLosEnabledForSV(system, svId));
+      return std::make_shared<IsLosEnabledForSV>(system, svId);
     }
 
     IsLosEnabledForSVPtr IsLosEnabledForSV::dynamicCast(CommandBasePtr ptr)

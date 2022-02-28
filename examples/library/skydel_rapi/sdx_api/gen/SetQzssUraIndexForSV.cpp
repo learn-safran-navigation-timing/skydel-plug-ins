@@ -33,7 +33,7 @@ namespace Sdx
 
     SetQzssUraIndexForSVPtr SetQzssUraIndexForSV::create(int svId, int urai, const Sdx::optional<std::string>& dataSetName)
     {
-      return SetQzssUraIndexForSVPtr(new SetQzssUraIndexForSV(svId, urai, dataSetName));
+      return std::make_shared<SetQzssUraIndexForSV>(svId, urai, dataSetName);
     }
 
     SetQzssUraIndexForSVPtr SetQzssUraIndexForSV::dynamicCast(CommandBasePtr ptr)

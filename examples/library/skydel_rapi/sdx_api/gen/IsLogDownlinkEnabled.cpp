@@ -26,7 +26,7 @@ namespace Sdx
 
     IsLogDownlinkEnabledPtr IsLogDownlinkEnabled::create()
     {
-      return IsLogDownlinkEnabledPtr(new IsLogDownlinkEnabled());
+      return std::make_shared<IsLogDownlinkEnabled>();
     }
 
     IsLogDownlinkEnabledPtr IsLogDownlinkEnabled::dynamicCast(CommandBasePtr ptr)

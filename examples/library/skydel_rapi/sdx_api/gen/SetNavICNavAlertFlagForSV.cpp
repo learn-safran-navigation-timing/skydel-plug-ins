@@ -33,7 +33,7 @@ namespace Sdx
 
     SetNavICNavAlertFlagForSVPtr SetNavICNavAlertFlagForSV::create(int svId, bool alert, const Sdx::optional<std::string>& dataSetName)
     {
-      return SetNavICNavAlertFlagForSVPtr(new SetNavICNavAlertFlagForSV(svId, alert, dataSetName));
+      return std::make_shared<SetNavICNavAlertFlagForSV>(svId, alert, dataSetName);
     }
 
     SetNavICNavAlertFlagForSVPtr SetNavICNavAlertFlagForSV::dynamicCast(CommandBasePtr ptr)

@@ -31,7 +31,7 @@ namespace Sdx
 
     SimulationElapsedTimeResultPtr SimulationElapsedTimeResult::create(CommandBasePtr relatedCommand, int milliseconds)
     {
-      return SimulationElapsedTimeResultPtr(new SimulationElapsedTimeResult(relatedCommand, milliseconds));
+      return std::make_shared<SimulationElapsedTimeResult>(relatedCommand, milliseconds);
     }
 
     SimulationElapsedTimeResultPtr SimulationElapsedTimeResult::dynamicCast(CommandBasePtr ptr)

@@ -33,7 +33,7 @@ namespace Sdx
 
     RenameDataSetPtr RenameDataSet::create(const std::string& system, const std::string& dataSetName, const std::string& newDataSetName)
     {
-      return RenameDataSetPtr(new RenameDataSet(system, dataSetName, newDataSetName));
+      return std::make_shared<RenameDataSet>(system, dataSetName, newDataSetName);
     }
 
     RenameDataSetPtr RenameDataSet::dynamicCast(CommandBasePtr ptr)

@@ -32,7 +32,7 @@ namespace Sdx
 
     GetIntTxColorResultPtr GetIntTxColorResult::create(CommandBasePtr relatedCommand, const std::string& color, const std::string& id)
     {
-      return GetIntTxColorResultPtr(new GetIntTxColorResult(relatedCommand, color, id));
+      return std::make_shared<GetIntTxColorResult>(relatedCommand, color, id);
     }
 
     GetIntTxColorResultPtr GetIntTxColorResult::dynamicCast(CommandBasePtr ptr)

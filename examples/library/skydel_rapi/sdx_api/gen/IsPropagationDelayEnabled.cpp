@@ -31,7 +31,7 @@ namespace Sdx
 
     IsPropagationDelayEnabledPtr IsPropagationDelayEnabled::create(const std::string& system)
     {
-      return IsPropagationDelayEnabledPtr(new IsPropagationDelayEnabled(system));
+      return std::make_shared<IsPropagationDelayEnabled>(system);
     }
 
     IsPropagationDelayEnabledPtr IsPropagationDelayEnabled::dynamicCast(CommandBasePtr ptr)

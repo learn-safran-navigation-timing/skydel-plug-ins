@@ -31,7 +31,7 @@ namespace Sdx
 
     IsWFAntennaElementEnabledPtr IsWFAntennaElementEnabled::create(int element)
     {
-      return IsWFAntennaElementEnabledPtr(new IsWFAntennaElementEnabled(element));
+      return std::make_shared<IsWFAntennaElementEnabled>(element);
     }
 
     IsWFAntennaElementEnabledPtr IsWFAntennaElementEnabled::dynamicCast(CommandBasePtr ptr)

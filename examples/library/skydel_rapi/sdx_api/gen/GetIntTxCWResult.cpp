@@ -37,7 +37,7 @@ namespace Sdx
 
     GetIntTxCWResultPtr GetIntTxCWResult::create(CommandBasePtr relatedCommand, bool enabled, double centralFreq, double power, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<double>& initialPhaseOffset, const Sdx::optional<int>& group)
     {
-      return GetIntTxCWResultPtr(new GetIntTxCWResult(relatedCommand, enabled, centralFreq, power, transmitterId, signalId, initialPhaseOffset, group));
+      return std::make_shared<GetIntTxCWResult>(relatedCommand, enabled, centralFreq, power, transmitterId, signalId, initialPhaseOffset, group);
     }
 
     GetIntTxCWResultPtr GetIntTxCWResult::dynamicCast(CommandBasePtr ptr)

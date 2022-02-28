@@ -31,7 +31,7 @@ namespace Sdx
 
     GetMessageModificationToGlonassNavPtr GetMessageModificationToGlonassNav::create(const std::string& id)
     {
-      return GetMessageModificationToGlonassNavPtr(new GetMessageModificationToGlonassNav(id));
+      return std::make_shared<GetMessageModificationToGlonassNav>(id);
     }
 
     GetMessageModificationToGlonassNavPtr GetMessageModificationToGlonassNav::dynamicCast(CommandBasePtr ptr)

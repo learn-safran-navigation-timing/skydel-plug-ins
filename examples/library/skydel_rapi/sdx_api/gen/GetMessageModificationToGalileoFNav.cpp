@@ -31,7 +31,7 @@ namespace Sdx
 
     GetMessageModificationToGalileoFNavPtr GetMessageModificationToGalileoFNav::create(const std::string& id)
     {
-      return GetMessageModificationToGalileoFNavPtr(new GetMessageModificationToGalileoFNav(id));
+      return std::make_shared<GetMessageModificationToGalileoFNav>(id);
     }
 
     GetMessageModificationToGalileoFNavPtr GetMessageModificationToGalileoFNav::dynamicCast(CommandBasePtr ptr)
