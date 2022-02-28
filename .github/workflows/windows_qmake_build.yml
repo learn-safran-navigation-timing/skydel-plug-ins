@@ -28,7 +28,7 @@ jobs:
       - name: Build Setup
         uses: ilammy/msvc-dev-cmd@v1
         with:
-          toolset: '15.9.28307'
+          toolset: '15.XX'
 
       - name: Build
         run: |
