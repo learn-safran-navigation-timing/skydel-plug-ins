@@ -33,7 +33,7 @@ namespace Sdx
 
     GetIssueOfDataResultPtr GetIssueOfDataResult::create(CommandBasePtr relatedCommand, int clock, int ephemeris, const Sdx::optional<bool>& overrideRinex)
     {
-      return GetIssueOfDataResultPtr(new GetIssueOfDataResult(relatedCommand, clock, ephemeris, overrideRinex));
+      return std::make_shared<GetIssueOfDataResult>(relatedCommand, clock, ephemeris, overrideRinex);
     }
 
     GetIssueOfDataResultPtr GetIssueOfDataResult::dynamicCast(CommandBasePtr ptr)

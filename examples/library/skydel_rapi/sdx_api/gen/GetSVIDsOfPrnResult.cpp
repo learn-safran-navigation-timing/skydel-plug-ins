@@ -33,7 +33,7 @@ namespace Sdx
 
     GetSVIDsOfPrnResultPtr GetSVIDsOfPrnResult::create(CommandBasePtr relatedCommand, const std::string& signal, int prn, const std::vector<int>& svIdList)
     {
-      return GetSVIDsOfPrnResultPtr(new GetSVIDsOfPrnResult(relatedCommand, signal, prn, svIdList));
+      return std::make_shared<GetSVIDsOfPrnResult>(relatedCommand, signal, prn, svIdList);
     }
 
     GetSVIDsOfPrnResultPtr GetSVIDsOfPrnResult::dynamicCast(CommandBasePtr ptr)

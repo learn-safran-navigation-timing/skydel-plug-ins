@@ -26,7 +26,7 @@ namespace Sdx
 
     GetSlaveStatusPtr GetSlaveStatus::create()
     {
-      return GetSlaveStatusPtr(new GetSlaveStatus());
+      return std::make_shared<GetSlaveStatus>();
     }
 
     GetSlaveStatusPtr GetSlaveStatus::dynamicCast(CommandBasePtr ptr)

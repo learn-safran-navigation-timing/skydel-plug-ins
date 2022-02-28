@@ -31,7 +31,7 @@ namespace Sdx
 
     GetIntTxAntennaOffsetPtr GetIntTxAntennaOffset::create(const std::string& id)
     {
-      return GetIntTxAntennaOffsetPtr(new GetIntTxAntennaOffset(id));
+      return std::make_shared<GetIntTxAntennaOffset>(id);
     }
 
     GetIntTxAntennaOffsetPtr GetIntTxAntennaOffset::dynamicCast(CommandBasePtr ptr)

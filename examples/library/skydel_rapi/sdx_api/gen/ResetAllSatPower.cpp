@@ -31,7 +31,7 @@ namespace Sdx
 
     ResetAllSatPowerPtr ResetAllSatPower::create(const std::string& system)
     {
-      return ResetAllSatPowerPtr(new ResetAllSatPower(system));
+      return std::make_shared<ResetAllSatPower>(system);
     }
 
     ResetAllSatPowerPtr ResetAllSatPower::dynamicCast(CommandBasePtr ptr)

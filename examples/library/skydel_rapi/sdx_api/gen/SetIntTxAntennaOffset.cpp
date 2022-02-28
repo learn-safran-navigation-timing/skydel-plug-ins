@@ -37,7 +37,7 @@ namespace Sdx
 
     SetIntTxAntennaOffsetPtr SetIntTxAntennaOffset::create(double x, double y, double z, double yaw, double pitch, double roll, const std::string& id)
     {
-      return SetIntTxAntennaOffsetPtr(new SetIntTxAntennaOffset(x, y, z, yaw, pitch, roll, id));
+      return std::make_shared<SetIntTxAntennaOffset>(x, y, z, yaw, pitch, roll, id);
     }
 
     SetIntTxAntennaOffsetPtr SetIntTxAntennaOffset::dynamicCast(CommandBasePtr ptr)

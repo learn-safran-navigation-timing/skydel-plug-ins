@@ -34,7 +34,7 @@ namespace Sdx
 
     GetGalileoEphDoubleParamForSVResultPtr GetGalileoEphDoubleParamForSVResult::create(CommandBasePtr relatedCommand, int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetGalileoEphDoubleParamForSVResultPtr(new GetGalileoEphDoubleParamForSVResult(relatedCommand, svId, paramName, val, dataSetName));
+      return std::make_shared<GetGalileoEphDoubleParamForSVResult>(relatedCommand, svId, paramName, val, dataSetName);
     }
 
     GetGalileoEphDoubleParamForSVResultPtr GetGalileoEphDoubleParamForSVResult::dynamicCast(CommandBasePtr ptr)

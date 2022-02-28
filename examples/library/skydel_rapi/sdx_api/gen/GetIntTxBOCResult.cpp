@@ -40,7 +40,7 @@ namespace Sdx
 
     GetIntTxBOCResultPtr GetIntTxBOCResult::create(CommandBasePtr relatedCommand, bool enabled, double centralFreq, double power, int codeRate, int codeLengthMs, int subCarrierRate, bool cosinePhaseBoc, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& group)
     {
-      return GetIntTxBOCResultPtr(new GetIntTxBOCResult(relatedCommand, enabled, centralFreq, power, codeRate, codeLengthMs, subCarrierRate, cosinePhaseBoc, transmitterId, signalId, group));
+      return std::make_shared<GetIntTxBOCResult>(relatedCommand, enabled, centralFreq, power, codeRate, codeLengthMs, subCarrierRate, cosinePhaseBoc, transmitterId, signalId, group);
     }
 
     GetIntTxBOCResultPtr GetIntTxBOCResult::dynamicCast(CommandBasePtr ptr)

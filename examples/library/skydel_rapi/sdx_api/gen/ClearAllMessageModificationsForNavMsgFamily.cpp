@@ -31,7 +31,7 @@ namespace Sdx
 
     ClearAllMessageModificationsForNavMsgFamilyPtr ClearAllMessageModificationsForNavMsgFamily::create(const std::string& navMsgFamily)
     {
-      return ClearAllMessageModificationsForNavMsgFamilyPtr(new ClearAllMessageModificationsForNavMsgFamily(navMsgFamily));
+      return std::make_shared<ClearAllMessageModificationsForNavMsgFamily>(navMsgFamily);
     }
 
     ClearAllMessageModificationsForNavMsgFamilyPtr ClearAllMessageModificationsForNavMsgFamily::dynamicCast(CommandBasePtr ptr)

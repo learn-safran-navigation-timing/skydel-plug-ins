@@ -33,7 +33,7 @@ namespace Sdx
 
     SetIntTxSignalManualPropagationLossPtr SetIntTxSignalManualPropagationLoss::create(double propagationLoss, const std::string& transmitterId, const std::string& signalId)
     {
-      return SetIntTxSignalManualPropagationLossPtr(new SetIntTxSignalManualPropagationLoss(propagationLoss, transmitterId, signalId));
+      return std::make_shared<SetIntTxSignalManualPropagationLoss>(propagationLoss, transmitterId, signalId);
     }
 
     SetIntTxSignalManualPropagationLossPtr SetIntTxSignalManualPropagationLoss::dynamicCast(CommandBasePtr ptr)

@@ -31,7 +31,7 @@ namespace Sdx
 
     SetVehicleTrajectoryPtr SetVehicleTrajectory::create(const std::string& type)
     {
-      return SetVehicleTrajectoryPtr(new SetVehicleTrajectory(type));
+      return std::make_shared<SetVehicleTrajectory>(type);
     }
 
     SetVehicleTrajectoryPtr SetVehicleTrajectory::dynamicCast(CommandBasePtr ptr)

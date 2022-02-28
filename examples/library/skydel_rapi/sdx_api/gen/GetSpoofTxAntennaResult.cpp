@@ -33,7 +33,7 @@ namespace Sdx
 
     GetSpoofTxAntennaResultPtr GetSpoofTxAntennaResult::create(CommandBasePtr relatedCommand, const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const std::string& id)
     {
-      return GetSpoofTxAntennaResultPtr(new GetSpoofTxAntennaResult(relatedCommand, gain, type, id));
+      return std::make_shared<GetSpoofTxAntennaResult>(relatedCommand, gain, type, id);
     }
 
     GetSpoofTxAntennaResultPtr GetSpoofTxAntennaResult::dynamicCast(CommandBasePtr ptr)

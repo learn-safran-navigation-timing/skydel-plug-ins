@@ -31,7 +31,7 @@ namespace Sdx
 
     ClearAllMessageModificationsForSignalPtr ClearAllMessageModificationsForSignal::create(const std::string& signal)
     {
-      return ClearAllMessageModificationsForSignalPtr(new ClearAllMessageModificationsForSignal(signal));
+      return std::make_shared<ClearAllMessageModificationsForSignal>(signal);
     }
 
     ClearAllMessageModificationsForSignalPtr ClearAllMessageModificationsForSignal::dynamicCast(CommandBasePtr ptr)

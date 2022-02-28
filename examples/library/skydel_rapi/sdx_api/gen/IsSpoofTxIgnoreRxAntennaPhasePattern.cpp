@@ -31,7 +31,7 @@ namespace Sdx
 
     IsSpoofTxIgnoreRxAntennaPhasePatternPtr IsSpoofTxIgnoreRxAntennaPhasePattern::create(const std::string& id)
     {
-      return IsSpoofTxIgnoreRxAntennaPhasePatternPtr(new IsSpoofTxIgnoreRxAntennaPhasePattern(id));
+      return std::make_shared<IsSpoofTxIgnoreRxAntennaPhasePattern>(id);
     }
 
     IsSpoofTxIgnoreRxAntennaPhasePatternPtr IsSpoofTxIgnoreRxAntennaPhasePattern::dynamicCast(CommandBasePtr ptr)

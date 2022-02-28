@@ -34,7 +34,7 @@ namespace Sdx
 
     GetBeiDouEphDoubleParamForSVResultPtr GetBeiDouEphDoubleParamForSVResult::create(CommandBasePtr relatedCommand, int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetBeiDouEphDoubleParamForSVResultPtr(new GetBeiDouEphDoubleParamForSVResult(relatedCommand, svId, paramName, val, dataSetName));
+      return std::make_shared<GetBeiDouEphDoubleParamForSVResult>(relatedCommand, svId, paramName, val, dataSetName);
     }
 
     GetBeiDouEphDoubleParamForSVResultPtr GetBeiDouEphDoubleParamForSVResult::dynamicCast(CommandBasePtr ptr)

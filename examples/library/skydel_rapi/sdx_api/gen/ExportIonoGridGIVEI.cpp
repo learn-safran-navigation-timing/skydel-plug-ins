@@ -33,7 +33,7 @@ namespace Sdx
 
     ExportIonoGridGIVEIPtr ExportIonoGridGIVEI::create(bool overwriting, const std::string& path, const Sdx::optional<std::string>& serviceProvider)
     {
-      return ExportIonoGridGIVEIPtr(new ExportIonoGridGIVEI(overwriting, path, serviceProvider));
+      return std::make_shared<ExportIonoGridGIVEI>(overwriting, path, serviceProvider);
     }
 
     ExportIonoGridGIVEIPtr ExportIonoGridGIVEI::dynamicCast(CommandBasePtr ptr)

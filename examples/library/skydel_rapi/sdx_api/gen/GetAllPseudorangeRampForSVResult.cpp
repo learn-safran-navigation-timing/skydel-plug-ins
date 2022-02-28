@@ -33,7 +33,7 @@ namespace Sdx
 
     GetAllPseudorangeRampForSVResultPtr GetAllPseudorangeRampForSVResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, const std::vector<std::string>& ids)
     {
-      return GetAllPseudorangeRampForSVResultPtr(new GetAllPseudorangeRampForSVResult(relatedCommand, system, svId, ids));
+      return std::make_shared<GetAllPseudorangeRampForSVResult>(relatedCommand, system, svId, ids);
     }
 
     GetAllPseudorangeRampForSVResultPtr GetAllPseudorangeRampForSVResult::dynamicCast(CommandBasePtr ptr)

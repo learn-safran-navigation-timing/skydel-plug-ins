@@ -37,7 +37,7 @@ namespace Sdx
 
     GetVehicleTrajectoryFixEcefResultPtr GetVehicleTrajectoryFixEcefResult::create(CommandBasePtr relatedCommand, const std::string& type, double x, double y, double z, double yaw, double pitch, double roll)
     {
-      return GetVehicleTrajectoryFixEcefResultPtr(new GetVehicleTrajectoryFixEcefResult(relatedCommand, type, x, y, z, yaw, pitch, roll));
+      return std::make_shared<GetVehicleTrajectoryFixEcefResult>(relatedCommand, type, x, y, z, yaw, pitch, roll);
     }
 
     GetVehicleTrajectoryFixEcefResultPtr GetVehicleTrajectoryFixEcefResult::dynamicCast(CommandBasePtr ptr)

@@ -31,7 +31,7 @@ namespace Sdx
 
     RemoveModulationAnechoicTargetInterferencePtr RemoveModulationAnechoicTargetInterference::create(int group)
     {
-      return RemoveModulationAnechoicTargetInterferencePtr(new RemoveModulationAnechoicTargetInterference(group));
+      return std::make_shared<RemoveModulationAnechoicTargetInterference>(group);
     }
 
     RemoveModulationAnechoicTargetInterferencePtr RemoveModulationAnechoicTargetInterference::dynamicCast(CommandBasePtr ptr)

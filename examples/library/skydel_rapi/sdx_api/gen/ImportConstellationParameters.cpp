@@ -34,7 +34,7 @@ namespace Sdx
 
     ImportConstellationParametersPtr ImportConstellationParameters::create(const std::string& system, const std::string& path, const Sdx::optional<int>& rollover, const Sdx::optional<std::string>& dataSetName)
     {
-      return ImportConstellationParametersPtr(new ImportConstellationParameters(system, path, rollover, dataSetName));
+      return std::make_shared<ImportConstellationParameters>(system, path, rollover, dataSetName);
     }
 
     ImportConstellationParametersPtr ImportConstellationParameters::dynamicCast(CommandBasePtr ptr)

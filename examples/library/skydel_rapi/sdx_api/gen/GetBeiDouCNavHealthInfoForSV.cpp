@@ -32,7 +32,7 @@ namespace Sdx
 
     GetBeiDouCNavHealthInfoForSVPtr GetBeiDouCNavHealthInfoForSV::create(int svId, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetBeiDouCNavHealthInfoForSVPtr(new GetBeiDouCNavHealthInfoForSV(svId, dataSetName));
+      return std::make_shared<GetBeiDouCNavHealthInfoForSV>(svId, dataSetName);
     }
 
     GetBeiDouCNavHealthInfoForSVPtr GetBeiDouCNavHealthInfoForSV::dynamicCast(CommandBasePtr ptr)

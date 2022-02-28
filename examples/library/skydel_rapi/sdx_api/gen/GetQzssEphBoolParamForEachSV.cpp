@@ -32,7 +32,7 @@ namespace Sdx
 
     GetQzssEphBoolParamForEachSVPtr GetQzssEphBoolParamForEachSV::create(const std::string& paramName, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetQzssEphBoolParamForEachSVPtr(new GetQzssEphBoolParamForEachSV(paramName, dataSetName));
+      return std::make_shared<GetQzssEphBoolParamForEachSV>(paramName, dataSetName);
     }
 
     GetQzssEphBoolParamForEachSVPtr GetQzssEphBoolParamForEachSV::dynamicCast(CommandBasePtr ptr)

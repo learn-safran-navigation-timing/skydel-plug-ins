@@ -33,7 +33,7 @@ namespace Sdx
 
     SetIssueOfDataPtr SetIssueOfData::create(int clock, int ephemeris, const Sdx::optional<bool>& overrideRinex)
     {
-      return SetIssueOfDataPtr(new SetIssueOfData(clock, ephemeris, overrideRinex));
+      return std::make_shared<SetIssueOfData>(clock, ephemeris, overrideRinex);
     }
 
     SetIssueOfDataPtr SetIssueOfData::dynamicCast(CommandBasePtr ptr)

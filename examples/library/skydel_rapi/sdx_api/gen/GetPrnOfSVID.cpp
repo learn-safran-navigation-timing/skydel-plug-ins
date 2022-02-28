@@ -32,7 +32,7 @@ namespace Sdx
 
     GetPrnOfSVIDPtr GetPrnOfSVID::create(const std::string& signal, int svId)
     {
-      return GetPrnOfSVIDPtr(new GetPrnOfSVID(signal, svId));
+      return std::make_shared<GetPrnOfSVID>(signal, svId);
     }
 
     GetPrnOfSVIDPtr GetPrnOfSVID::dynamicCast(CommandBasePtr ptr)

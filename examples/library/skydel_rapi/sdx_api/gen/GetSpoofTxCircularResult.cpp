@@ -38,7 +38,7 @@ namespace Sdx
 
     GetSpoofTxCircularResultPtr GetSpoofTxCircularResult::create(CommandBasePtr relatedCommand, double lat, double lon, double alt, double radius, double speed, bool clockwise, const std::string& id, const Sdx::optional<double>& originAngle)
     {
-      return GetSpoofTxCircularResultPtr(new GetSpoofTxCircularResult(relatedCommand, lat, lon, alt, radius, speed, clockwise, id, originAngle));
+      return std::make_shared<GetSpoofTxCircularResult>(relatedCommand, lat, lon, alt, radius, speed, clockwise, id, originAngle);
     }
 
     GetSpoofTxCircularResultPtr GetSpoofTxCircularResult::dynamicCast(CommandBasePtr ptr)

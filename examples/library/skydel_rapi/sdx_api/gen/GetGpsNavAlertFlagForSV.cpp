@@ -32,7 +32,7 @@ namespace Sdx
 
     GetGpsNavAlertFlagForSVPtr GetGpsNavAlertFlagForSV::create(int svId, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetGpsNavAlertFlagForSVPtr(new GetGpsNavAlertFlagForSV(svId, dataSetName));
+      return std::make_shared<GetGpsNavAlertFlagForSV>(svId, dataSetName);
     }
 
     GetGpsNavAlertFlagForSVPtr GetGpsNavAlertFlagForSV::dynamicCast(CommandBasePtr ptr)

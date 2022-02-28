@@ -38,7 +38,7 @@ namespace Sdx
 
     GetModulationTargetInterferencesResultPtr GetModulationTargetInterferencesResult::create(CommandBasePtr relatedCommand, int output, int minRate, int maxRate, int group, double centralFreq, int gain, const std::string& id, const Sdx::optional<std::string>& signal)
     {
-      return GetModulationTargetInterferencesResultPtr(new GetModulationTargetInterferencesResult(relatedCommand, output, minRate, maxRate, group, centralFreq, gain, id, signal));
+      return std::make_shared<GetModulationTargetInterferencesResult>(relatedCommand, output, minRate, maxRate, group, centralFreq, gain, id, signal);
     }
 
     GetModulationTargetInterferencesResultPtr GetModulationTargetInterferencesResult::dynamicCast(CommandBasePtr ptr)

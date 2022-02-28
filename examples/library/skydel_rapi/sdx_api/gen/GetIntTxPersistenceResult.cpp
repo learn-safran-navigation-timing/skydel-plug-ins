@@ -32,7 +32,7 @@ namespace Sdx
 
     GetIntTxPersistenceResultPtr GetIntTxPersistenceResult::create(CommandBasePtr relatedCommand, bool persistence, const std::string& id)
     {
-      return GetIntTxPersistenceResultPtr(new GetIntTxPersistenceResult(relatedCommand, persistence, id));
+      return std::make_shared<GetIntTxPersistenceResult>(relatedCommand, persistence, id);
     }
 
     GetIntTxPersistenceResultPtr GetIntTxPersistenceResult::dynamicCast(CommandBasePtr ptr)

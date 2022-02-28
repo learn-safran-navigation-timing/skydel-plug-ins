@@ -38,7 +38,7 @@ namespace Sdx
 
     SetVehicleTrajectoryOrbitPtr SetVehicleTrajectoryOrbit::create(const std::string& type, const Sdx::DateTime& reference, double semiMajorAxis, double inclination, double rightAscension, double eccentricity, double meanAnomaly, double argumentOfPerigee)
     {
-      return SetVehicleTrajectoryOrbitPtr(new SetVehicleTrajectoryOrbit(type, reference, semiMajorAxis, inclination, rightAscension, eccentricity, meanAnomaly, argumentOfPerigee));
+      return std::make_shared<SetVehicleTrajectoryOrbit>(type, reference, semiMajorAxis, inclination, rightAscension, eccentricity, meanAnomaly, argumentOfPerigee);
     }
 
     SetVehicleTrajectoryOrbitPtr SetVehicleTrajectoryOrbit::dynamicCast(CommandBasePtr ptr)

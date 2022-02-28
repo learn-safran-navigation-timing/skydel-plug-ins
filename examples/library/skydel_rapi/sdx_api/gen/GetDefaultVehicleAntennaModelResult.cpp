@@ -31,7 +31,7 @@ namespace Sdx
 
     GetDefaultVehicleAntennaModelResultPtr GetDefaultVehicleAntennaModelResult::create(CommandBasePtr relatedCommand, const std::string& name)
     {
-      return GetDefaultVehicleAntennaModelResultPtr(new GetDefaultVehicleAntennaModelResult(relatedCommand, name));
+      return std::make_shared<GetDefaultVehicleAntennaModelResult>(relatedCommand, name);
     }
 
     GetDefaultVehicleAntennaModelResultPtr GetDefaultVehicleAntennaModelResult::dynamicCast(CommandBasePtr ptr)

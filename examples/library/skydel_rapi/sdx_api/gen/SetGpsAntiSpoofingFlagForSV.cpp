@@ -33,7 +33,7 @@ namespace Sdx
 
     SetGpsAntiSpoofingFlagForSVPtr SetGpsAntiSpoofingFlagForSV::create(int svId, const Sdx::GpsASFlag& antiSpoofing, const Sdx::optional<std::string>& dataSetName)
     {
-      return SetGpsAntiSpoofingFlagForSVPtr(new SetGpsAntiSpoofingFlagForSV(svId, antiSpoofing, dataSetName));
+      return std::make_shared<SetGpsAntiSpoofingFlagForSV>(svId, antiSpoofing, dataSetName);
     }
 
     SetGpsAntiSpoofingFlagForSVPtr SetGpsAntiSpoofingFlagForSV::dynamicCast(CommandBasePtr ptr)

@@ -33,7 +33,7 @@ namespace Sdx
 
     IsSatMotionFixedResultPtr IsSatMotionFixedResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, bool isFixed)
     {
-      return IsSatMotionFixedResultPtr(new IsSatMotionFixedResult(relatedCommand, system, svId, isFixed));
+      return std::make_shared<IsSatMotionFixedResult>(relatedCommand, system, svId, isFixed);
     }
 
     IsSatMotionFixedResultPtr IsSatMotionFixedResult::dynamicCast(CommandBasePtr ptr)

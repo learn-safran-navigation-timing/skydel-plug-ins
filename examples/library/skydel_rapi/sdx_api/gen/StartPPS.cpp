@@ -31,7 +31,7 @@ namespace Sdx
 
     StartPPSPtr StartPPS::create(int msec)
     {
-      return StartPPSPtr(new StartPPS(msec));
+      return std::make_shared<StartPPS>(msec);
     }
 
     StartPPSPtr StartPPS::dynamicCast(CommandBasePtr ptr)

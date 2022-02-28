@@ -32,7 +32,7 @@ namespace Sdx
 
     EnablePYCodeForEachSVPtr EnablePYCodeForEachSV::create(const std::string& signal, const std::vector<bool>& enabled)
     {
-      return EnablePYCodeForEachSVPtr(new EnablePYCodeForEachSV(signal, enabled));
+      return std::make_shared<EnablePYCodeForEachSV>(signal, enabled);
     }
 
     EnablePYCodeForEachSVPtr EnablePYCodeForEachSV::dynamicCast(CommandBasePtr ptr)

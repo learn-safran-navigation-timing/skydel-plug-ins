@@ -31,7 +31,7 @@ namespace Sdx
 
     RandomizePseudorangeNoiseGaussMarkovSeedsForAllSVPtr RandomizePseudorangeNoiseGaussMarkovSeedsForAllSV::create(const std::string& system)
     {
-      return RandomizePseudorangeNoiseGaussMarkovSeedsForAllSVPtr(new RandomizePseudorangeNoiseGaussMarkovSeedsForAllSV(system));
+      return std::make_shared<RandomizePseudorangeNoiseGaussMarkovSeedsForAllSV>(system);
     }
 
     RandomizePseudorangeNoiseGaussMarkovSeedsForAllSVPtr RandomizePseudorangeNoiseGaussMarkovSeedsForAllSV::dynamicCast(CommandBasePtr ptr)

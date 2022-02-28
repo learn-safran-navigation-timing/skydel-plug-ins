@@ -31,7 +31,7 @@ namespace Sdx
 
     GetWFAntennaElementPhasePatternOffsetPtr GetWFAntennaElementPhasePatternOffset::create(int element)
     {
-      return GetWFAntennaElementPhasePatternOffsetPtr(new GetWFAntennaElementPhasePatternOffset(element));
+      return std::make_shared<GetWFAntennaElementPhasePatternOffset>(element);
     }
 
     GetWFAntennaElementPhasePatternOffsetPtr GetWFAntennaElementPhasePatternOffset::dynamicCast(CommandBasePtr ptr)

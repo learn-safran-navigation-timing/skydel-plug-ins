@@ -37,7 +37,7 @@ namespace Sdx
 
     SetIntTxFixPtr SetIntTxFix::create(double lat, double lon, double alt, double yaw, double pitch, double roll, const std::string& id)
     {
-      return SetIntTxFixPtr(new SetIntTxFix(lat, lon, alt, yaw, pitch, roll, id));
+      return std::make_shared<SetIntTxFix>(lat, lon, alt, yaw, pitch, roll, id);
     }
 
     SetIntTxFixPtr SetIntTxFix::dynamicCast(CommandBasePtr ptr)

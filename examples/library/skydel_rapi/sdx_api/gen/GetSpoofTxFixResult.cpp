@@ -37,7 +37,7 @@ namespace Sdx
 
     GetSpoofTxFixResultPtr GetSpoofTxFixResult::create(CommandBasePtr relatedCommand, double lat, double lon, double alt, double yaw, double pitch, double roll, const std::string& id)
     {
-      return GetSpoofTxFixResultPtr(new GetSpoofTxFixResult(relatedCommand, lat, lon, alt, yaw, pitch, roll, id));
+      return std::make_shared<GetSpoofTxFixResult>(relatedCommand, lat, lon, alt, yaw, pitch, roll, id);
     }
 
     GetSpoofTxFixResultPtr GetSpoofTxFixResult::dynamicCast(CommandBasePtr ptr)

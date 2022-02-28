@@ -31,7 +31,7 @@ namespace Sdx
 
     GetWFAntennaGainResultPtr GetWFAntennaGainResult::create(CommandBasePtr relatedCommand, int gain)
     {
-      return GetWFAntennaGainResultPtr(new GetWFAntennaGainResult(relatedCommand, gain));
+      return std::make_shared<GetWFAntennaGainResult>(relatedCommand, gain);
     }
 
     GetWFAntennaGainResultPtr GetWFAntennaGainResult::dynamicCast(CommandBasePtr ptr)

@@ -26,7 +26,7 @@ namespace Sdx
 
     LockGUIPtr LockGUI::create()
     {
-      return LockGUIPtr(new LockGUI());
+      return std::make_shared<LockGUI>();
     }
 
     LockGUIPtr LockGUI::dynamicCast(CommandBasePtr ptr)

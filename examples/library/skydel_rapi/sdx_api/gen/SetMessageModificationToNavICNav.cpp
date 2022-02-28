@@ -40,7 +40,7 @@ namespace Sdx
 
     SetMessageModificationToNavICNavPtr SetMessageModificationToNavICNav::create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int messageType, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id)
     {
-      return SetMessageModificationToNavICNavPtr(new SetMessageModificationToNavICNav(signalArray, svId, startTime, stopTime, subframe, messageType, condition, updateCRC, bitModifications, id));
+      return std::make_shared<SetMessageModificationToNavICNav>(signalArray, svId, startTime, stopTime, subframe, messageType, condition, updateCRC, bitModifications, id);
     }
 
     SetMessageModificationToNavICNavPtr SetMessageModificationToNavICNav::dynamicCast(CommandBasePtr ptr)

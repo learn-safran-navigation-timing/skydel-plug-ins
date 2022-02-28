@@ -31,7 +31,7 @@ namespace Sdx
 
     GetQzssL1SAugmentationsResultPtr GetQzssL1SAugmentationsResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& ids)
     {
-      return GetQzssL1SAugmentationsResultPtr(new GetQzssL1SAugmentationsResult(relatedCommand, ids));
+      return std::make_shared<GetQzssL1SAugmentationsResult>(relatedCommand, ids);
     }
 
     GetQzssL1SAugmentationsResultPtr GetQzssL1SAugmentationsResult::dynamicCast(CommandBasePtr ptr)

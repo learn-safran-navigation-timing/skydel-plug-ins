@@ -32,7 +32,7 @@ namespace Sdx
 
     SetSpoofTxIgnoreRxAntennaGainPatternPtr SetSpoofTxIgnoreRxAntennaGainPattern::create(bool ignore, const std::string& id)
     {
-      return SetSpoofTxIgnoreRxAntennaGainPatternPtr(new SetSpoofTxIgnoreRxAntennaGainPattern(ignore, id));
+      return std::make_shared<SetSpoofTxIgnoreRxAntennaGainPattern>(ignore, id);
     }
 
     SetSpoofTxIgnoreRxAntennaGainPatternPtr SetSpoofTxIgnoreRxAntennaGainPattern::dynamicCast(CommandBasePtr ptr)

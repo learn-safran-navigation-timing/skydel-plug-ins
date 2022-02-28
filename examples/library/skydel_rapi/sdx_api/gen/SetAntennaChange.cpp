@@ -33,7 +33,7 @@ namespace Sdx
 
     SetAntennaChangePtr SetAntennaChange::create(double startTime, const std::string& antenna, const std::string& id)
     {
-      return SetAntennaChangePtr(new SetAntennaChange(startTime, antenna, id));
+      return std::make_shared<SetAntennaChange>(startTime, antenna, id);
     }
 
     SetAntennaChangePtr SetAntennaChange::dynamicCast(CommandBasePtr ptr)

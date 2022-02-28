@@ -31,7 +31,7 @@ namespace Sdx
 
     GetIntTxCircularPtr GetIntTxCircular::create(const std::string& id)
     {
-      return GetIntTxCircularPtr(new GetIntTxCircular(id));
+      return std::make_shared<GetIntTxCircular>(id);
     }
 
     GetIntTxCircularPtr GetIntTxCircular::dynamicCast(CommandBasePtr ptr)

@@ -31,7 +31,7 @@ namespace Sdx
 
     LogNmeaRateResultPtr LogNmeaRateResult::create(CommandBasePtr relatedCommand, int rate)
     {
-      return LogNmeaRateResultPtr(new LogNmeaRateResult(relatedCommand, rate));
+      return std::make_shared<LogNmeaRateResult>(relatedCommand, rate);
     }
 
     LogNmeaRateResultPtr LogNmeaRateResult::dynamicCast(CommandBasePtr ptr)

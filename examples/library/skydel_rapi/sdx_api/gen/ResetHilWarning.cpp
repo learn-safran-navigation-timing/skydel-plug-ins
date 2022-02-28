@@ -26,7 +26,7 @@ namespace Sdx
 
     ResetHilWarningPtr ResetHilWarning::create()
     {
-      return ResetHilWarningPtr(new ResetHilWarning());
+      return std::make_shared<ResetHilWarning>();
     }
 
     ResetHilWarningPtr ResetHilWarning::dynamicCast(CommandBasePtr ptr)

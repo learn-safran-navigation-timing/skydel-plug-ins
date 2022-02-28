@@ -34,7 +34,7 @@ namespace Sdx
 
     PushTrackEcefPtr PushTrackEcef::create(int time, double x, double y, double z)
     {
-      return PushTrackEcefPtr(new PushTrackEcef(time, x, y, z));
+      return std::make_shared<PushTrackEcef>(time, x, y, z);
     }
 
     PushTrackEcefPtr PushTrackEcef::dynamicCast(CommandBasePtr ptr)

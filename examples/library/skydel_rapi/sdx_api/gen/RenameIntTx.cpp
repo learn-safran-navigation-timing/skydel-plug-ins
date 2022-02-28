@@ -32,7 +32,7 @@ namespace Sdx
 
     RenameIntTxPtr RenameIntTx::create(const std::string& usualName, const std::string& id)
     {
-      return RenameIntTxPtr(new RenameIntTx(usualName, id));
+      return std::make_shared<RenameIntTx>(usualName, id);
     }
 
     RenameIntTxPtr RenameIntTx::dynamicCast(CommandBasePtr ptr)

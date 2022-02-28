@@ -33,7 +33,7 @@ namespace Sdx
 
     GetSpoofTxRemoteAddressResultPtr GetSpoofTxRemoteAddressResult::create(CommandBasePtr relatedCommand, const std::string& address, int instanceId, const std::string& id)
     {
-      return GetSpoofTxRemoteAddressResultPtr(new GetSpoofTxRemoteAddressResult(relatedCommand, address, instanceId, id));
+      return std::make_shared<GetSpoofTxRemoteAddressResult>(relatedCommand, address, instanceId, id);
     }
 
     GetSpoofTxRemoteAddressResultPtr GetSpoofTxRemoteAddressResult::dynamicCast(CommandBasePtr ptr)

@@ -31,7 +31,7 @@ namespace Sdx
 
     SetLeapSecondPtr SetLeapSecond::create(int leapSecond)
     {
-      return SetLeapSecondPtr(new SetLeapSecond(leapSecond));
+      return std::make_shared<SetLeapSecond>(leapSecond);
     }
 
     SetLeapSecondPtr SetLeapSecond::dynamicCast(CommandBasePtr ptr)

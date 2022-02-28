@@ -26,7 +26,7 @@ namespace Sdx
 
     GetLastHilWarningPtr GetLastHilWarning::create()
     {
-      return GetLastHilWarningPtr(new GetLastHilWarning());
+      return std::make_shared<GetLastHilWarning>();
     }
 
     GetLastHilWarningPtr GetLastHilWarning::dynamicCast(CommandBasePtr ptr)

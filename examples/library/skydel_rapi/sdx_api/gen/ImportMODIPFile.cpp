@@ -31,7 +31,7 @@ namespace Sdx
 
     ImportMODIPFilePtr ImportMODIPFile::create(const std::string& path)
     {
-      return ImportMODIPFilePtr(new ImportMODIPFile(path));
+      return std::make_shared<ImportMODIPFile>(path);
     }
 
     ImportMODIPFilePtr ImportMODIPFile::dynamicCast(CommandBasePtr ptr)

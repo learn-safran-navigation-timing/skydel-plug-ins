@@ -33,7 +33,7 @@ namespace Sdx
 
     SetIssueOfDataQzssPtr SetIssueOfDataQzss::create(int clock, int ephemeris, const Sdx::optional<bool>& overrideRinex)
     {
-      return SetIssueOfDataQzssPtr(new SetIssueOfDataQzss(clock, ephemeris, overrideRinex));
+      return std::make_shared<SetIssueOfDataQzss>(clock, ephemeris, overrideRinex);
     }
 
     SetIssueOfDataQzssPtr SetIssueOfDataQzss::dynamicCast(CommandBasePtr ptr)

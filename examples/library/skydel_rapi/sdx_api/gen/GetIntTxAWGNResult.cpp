@@ -38,7 +38,7 @@ namespace Sdx
 
     GetIntTxAWGNResultPtr GetIntTxAWGNResult::create(CommandBasePtr relatedCommand, bool enabled, double centralFreq, double power, double bandwidth, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& seed, const Sdx::optional<int>& group)
     {
-      return GetIntTxAWGNResultPtr(new GetIntTxAWGNResult(relatedCommand, enabled, centralFreq, power, bandwidth, transmitterId, signalId, seed, group));
+      return std::make_shared<GetIntTxAWGNResult>(relatedCommand, enabled, centralFreq, power, bandwidth, transmitterId, signalId, seed, group);
     }
 
     GetIntTxAWGNResultPtr GetIntTxAWGNResult::dynamicCast(CommandBasePtr ptr)

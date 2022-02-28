@@ -34,7 +34,7 @@ namespace Sdx
 
     CalibratePilotOutputPtr CalibratePilotOutput::create(int outputIdx, double power, double time, double carrierPhase)
     {
-      return CalibratePilotOutputPtr(new CalibratePilotOutput(outputIdx, power, time, carrierPhase));
+      return std::make_shared<CalibratePilotOutput>(outputIdx, power, time, carrierPhase);
     }
 
     CalibratePilotOutputPtr CalibratePilotOutput::dynamicCast(CommandBasePtr ptr)

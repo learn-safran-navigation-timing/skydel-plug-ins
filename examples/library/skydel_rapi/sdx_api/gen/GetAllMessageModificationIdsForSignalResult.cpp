@@ -31,7 +31,7 @@ namespace Sdx
 
     GetAllMessageModificationIdsForSignalResultPtr GetAllMessageModificationIdsForSignalResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& ids)
     {
-      return GetAllMessageModificationIdsForSignalResultPtr(new GetAllMessageModificationIdsForSignalResult(relatedCommand, ids));
+      return std::make_shared<GetAllMessageModificationIdsForSignalResult>(relatedCommand, ids);
     }
 
     GetAllMessageModificationIdsForSignalResultPtr GetAllMessageModificationIdsForSignalResult::dynamicCast(CommandBasePtr ptr)

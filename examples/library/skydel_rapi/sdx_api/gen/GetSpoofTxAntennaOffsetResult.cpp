@@ -37,7 +37,7 @@ namespace Sdx
 
     GetSpoofTxAntennaOffsetResultPtr GetSpoofTxAntennaOffsetResult::create(CommandBasePtr relatedCommand, double x, double y, double z, double yaw, double pitch, double roll, const std::string& id)
     {
-      return GetSpoofTxAntennaOffsetResultPtr(new GetSpoofTxAntennaOffsetResult(relatedCommand, x, y, z, yaw, pitch, roll, id));
+      return std::make_shared<GetSpoofTxAntennaOffsetResult>(relatedCommand, x, y, z, yaw, pitch, roll, id);
     }
 
     GetSpoofTxAntennaOffsetResultPtr GetSpoofTxAntennaOffsetResult::dynamicCast(CommandBasePtr ptr)

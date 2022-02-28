@@ -32,7 +32,7 @@ namespace Sdx
 
     GetGpsEphDoubleParamForEachSVPtr GetGpsEphDoubleParamForEachSV::create(const std::string& paramName, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetGpsEphDoubleParamForEachSVPtr(new GetGpsEphDoubleParamForEachSV(paramName, dataSetName));
+      return std::make_shared<GetGpsEphDoubleParamForEachSV>(paramName, dataSetName);
     }
 
     GetGpsEphDoubleParamForEachSVPtr GetGpsEphDoubleParamForEachSV::dynamicCast(CommandBasePtr ptr)

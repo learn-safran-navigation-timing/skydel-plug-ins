@@ -33,7 +33,7 @@ namespace Sdx
 
     GetEphemerisReferenceTimeForSVPtr GetEphemerisReferenceTimeForSV::create(const std::string& system, int svId, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetEphemerisReferenceTimeForSVPtr(new GetEphemerisReferenceTimeForSV(system, svId, dataSetName));
+      return std::make_shared<GetEphemerisReferenceTimeForSV>(system, svId, dataSetName);
     }
 
     GetEphemerisReferenceTimeForSVPtr GetEphemerisReferenceTimeForSV::dynamicCast(CommandBasePtr ptr)

@@ -38,7 +38,7 @@ namespace Sdx
 
     SetIntTxCircularPtr SetIntTxCircular::create(double lat, double lon, double alt, double radius, double speed, bool clockwise, const std::string& id, const Sdx::optional<double>& originAngle)
     {
-      return SetIntTxCircularPtr(new SetIntTxCircular(lat, lon, alt, radius, speed, clockwise, id, originAngle));
+      return std::make_shared<SetIntTxCircular>(lat, lon, alt, radius, speed, clockwise, id, originAngle);
     }
 
     SetIntTxCircularPtr SetIntTxCircular::dynamicCast(CommandBasePtr ptr)

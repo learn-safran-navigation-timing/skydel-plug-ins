@@ -39,7 +39,7 @@ namespace Sdx
 
     SetMessageModificationToQzssSlasPtr SetMessageModificationToQzssSlas::create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id)
     {
-      return SetMessageModificationToQzssSlasPtr(new SetMessageModificationToQzssSlas(signalArray, svId, startTime, stopTime, messageType, condition, updateCRC, bitModifications, id));
+      return std::make_shared<SetMessageModificationToQzssSlas>(signalArray, svId, startTime, stopTime, messageType, condition, updateCRC, bitModifications, id);
     }
 
     SetMessageModificationToQzssSlasPtr SetMessageModificationToQzssSlas::dynamicCast(CommandBasePtr ptr)

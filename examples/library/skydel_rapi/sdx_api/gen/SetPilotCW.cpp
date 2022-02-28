@@ -35,7 +35,7 @@ namespace Sdx
 
     SetPilotCWPtr SetPilotCW::create(bool enabled, int outputIdx, double centralFreqOffset, double power, const std::string& pilotId)
     {
-      return SetPilotCWPtr(new SetPilotCW(enabled, outputIdx, centralFreqOffset, power, pilotId));
+      return std::make_shared<SetPilotCW>(enabled, outputIdx, centralFreqOffset, power, pilotId);
     }
 
     SetPilotCWPtr SetPilotCW::dynamicCast(CommandBasePtr ptr)

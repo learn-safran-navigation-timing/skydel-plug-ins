@@ -37,7 +37,7 @@ namespace Sdx
 
     GetIntTxFixEcefResultPtr GetIntTxFixEcefResult::create(CommandBasePtr relatedCommand, double x, double y, double z, double yaw, double pitch, double roll, const std::string& id)
     {
-      return GetIntTxFixEcefResultPtr(new GetIntTxFixEcefResult(relatedCommand, x, y, z, yaw, pitch, roll, id));
+      return std::make_shared<GetIntTxFixEcefResult>(relatedCommand, x, y, z, yaw, pitch, roll, id);
     }
 
     GetIntTxFixEcefResultPtr GetIntTxFixEcefResult::dynamicCast(CommandBasePtr ptr)

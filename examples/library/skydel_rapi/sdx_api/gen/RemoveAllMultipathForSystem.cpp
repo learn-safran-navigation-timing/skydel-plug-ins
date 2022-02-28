@@ -32,7 +32,7 @@ namespace Sdx
 
     RemoveAllMultipathForSystemPtr RemoveAllMultipathForSystem::create(const std::string& system, bool reset)
     {
-      return RemoveAllMultipathForSystemPtr(new RemoveAllMultipathForSystem(system, reset));
+      return std::make_shared<RemoveAllMultipathForSystem>(system, reset);
     }
 
     RemoveAllMultipathForSystemPtr RemoveAllMultipathForSystem::dynamicCast(CommandBasePtr ptr)

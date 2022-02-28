@@ -36,7 +36,7 @@ namespace Sdx
 
     AddIntTxPtr AddIntTx::create(const std::string& usualName, bool enabled, int group, bool dynamic, double power, const std::string& id)
     {
-      return AddIntTxPtr(new AddIntTx(usualName, enabled, group, dynamic, power, id));
+      return std::make_shared<AddIntTx>(usualName, enabled, group, dynamic, power, id);
     }
 
     AddIntTxPtr AddIntTx::dynamicCast(CommandBasePtr ptr)

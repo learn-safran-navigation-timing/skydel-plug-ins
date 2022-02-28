@@ -32,7 +32,7 @@ namespace Sdx
 
     NewPtr New::create(bool discardCurrentConfig, const Sdx::optional<bool>& loadDefaultConfig)
     {
-      return NewPtr(new New(discardCurrentConfig, loadDefaultConfig));
+      return std::make_shared<New>(discardCurrentConfig, loadDefaultConfig);
     }
 
     NewPtr New::dynamicCast(CommandBasePtr ptr)

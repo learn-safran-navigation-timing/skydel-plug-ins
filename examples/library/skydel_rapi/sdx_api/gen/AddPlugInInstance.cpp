@@ -32,7 +32,7 @@ namespace Sdx
 
     AddPlugInInstancePtr AddPlugInInstance::create(const std::string& name, const std::string& type)
     {
-      return AddPlugInInstancePtr(new AddPlugInInstance(name, type));
+      return std::make_shared<AddPlugInInstance>(name, type);
     }
 
     AddPlugInInstancePtr AddPlugInInstance::dynamicCast(CommandBasePtr ptr)

@@ -33,7 +33,7 @@ namespace Sdx
 
     EnableRFOutputForSVPtr EnableRFOutputForSV::create(const std::string& system, int svId, bool enabled)
     {
-      return EnableRFOutputForSVPtr(new EnableRFOutputForSV(system, svId, enabled));
+      return std::make_shared<EnableRFOutputForSV>(system, svId, enabled);
     }
 
     EnableRFOutputForSVPtr EnableRFOutputForSV::dynamicCast(CommandBasePtr ptr)

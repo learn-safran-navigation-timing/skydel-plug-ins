@@ -32,7 +32,7 @@ namespace Sdx
 
     GetElevationAzimuthForSVPtr GetElevationAzimuthForSV::create(const std::string& system, int svId)
     {
-      return GetElevationAzimuthForSVPtr(new GetElevationAzimuthForSV(system, svId));
+      return std::make_shared<GetElevationAzimuthForSV>(system, svId);
     }
 
     GetElevationAzimuthForSVPtr GetElevationAzimuthForSV::dynamicCast(CommandBasePtr ptr)

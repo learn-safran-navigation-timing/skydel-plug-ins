@@ -31,7 +31,7 @@ namespace Sdx
 
     EnableSbasMessagesPtr EnableSbasMessages::create(const std::vector<int>& messages)
     {
-      return EnableSbasMessagesPtr(new EnableSbasMessages(messages));
+      return std::make_shared<EnableSbasMessages>(messages);
     }
 
     EnableSbasMessagesPtr EnableSbasMessages::dynamicCast(CommandBasePtr ptr)

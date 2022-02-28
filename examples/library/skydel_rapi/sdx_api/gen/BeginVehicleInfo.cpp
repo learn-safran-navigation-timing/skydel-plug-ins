@@ -26,7 +26,7 @@ namespace Sdx
 
     BeginVehicleInfoPtr BeginVehicleInfo::create()
     {
-      return BeginVehicleInfoPtr(new BeginVehicleInfo());
+      return std::make_shared<BeginVehicleInfo>();
     }
 
     BeginVehicleInfoPtr BeginVehicleInfo::dynamicCast(CommandBasePtr ptr)

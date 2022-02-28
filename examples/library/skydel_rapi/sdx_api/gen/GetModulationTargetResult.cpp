@@ -35,7 +35,7 @@ namespace Sdx
 
     GetModulationTargetResultPtr GetModulationTargetResult::create(CommandBasePtr relatedCommand, const std::string& type, const std::string& path, const std::string& address, bool clockIsExternal, const std::string& id)
     {
-      return GetModulationTargetResultPtr(new GetModulationTargetResult(relatedCommand, type, path, address, clockIsExternal, id));
+      return std::make_shared<GetModulationTargetResult>(relatedCommand, type, path, address, clockIsExternal, id);
     }
 
     GetModulationTargetResultPtr GetModulationTargetResult::dynamicCast(CommandBasePtr ptr)

@@ -31,7 +31,7 @@ namespace Sdx
 
     GetIntTxTrajectoryPtr GetIntTxTrajectory::create(const std::string& id)
     {
-      return GetIntTxTrajectoryPtr(new GetIntTxTrajectory(id));
+      return std::make_shared<GetIntTxTrajectory>(id);
     }
 
     GetIntTxTrajectoryPtr GetIntTxTrajectory::dynamicCast(CommandBasePtr ptr)

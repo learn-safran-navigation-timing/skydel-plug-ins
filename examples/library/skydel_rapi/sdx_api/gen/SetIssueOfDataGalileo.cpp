@@ -33,7 +33,7 @@ namespace Sdx
 
     SetIssueOfDataGalileoPtr SetIssueOfDataGalileo::create(int navigation, int almanac, const Sdx::optional<bool>& overrideRinex)
     {
-      return SetIssueOfDataGalileoPtr(new SetIssueOfDataGalileo(navigation, almanac, overrideRinex));
+      return std::make_shared<SetIssueOfDataGalileo>(navigation, almanac, overrideRinex);
     }
 
     SetIssueOfDataGalileoPtr SetIssueOfDataGalileo::dynamicCast(CommandBasePtr ptr)

@@ -33,7 +33,7 @@ namespace Sdx
 
     MessageSequenceInsertPtr MessageSequenceInsert::create(const std::string& signal, int index, int type)
     {
-      return MessageSequenceInsertPtr(new MessageSequenceInsert(signal, index, type));
+      return std::make_shared<MessageSequenceInsert>(signal, index, type);
     }
 
     MessageSequenceInsertPtr MessageSequenceInsert::dynamicCast(CommandBasePtr ptr)

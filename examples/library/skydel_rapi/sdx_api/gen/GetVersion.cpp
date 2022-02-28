@@ -26,7 +26,7 @@ namespace Sdx
 
     GetVersionPtr GetVersion::create()
     {
-      return GetVersionPtr(new GetVersion());
+      return std::make_shared<GetVersion>();
     }
 
     GetVersionPtr GetVersion::dynamicCast(CommandBasePtr ptr)

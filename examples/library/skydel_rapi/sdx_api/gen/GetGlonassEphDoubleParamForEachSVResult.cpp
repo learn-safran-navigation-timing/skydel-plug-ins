@@ -32,7 +32,7 @@ namespace Sdx
 
     GetGlonassEphDoubleParamForEachSVResultPtr GetGlonassEphDoubleParamForEachSVResult::create(CommandBasePtr relatedCommand, const std::string& paramName, const std::vector<double>& val)
     {
-      return GetGlonassEphDoubleParamForEachSVResultPtr(new GetGlonassEphDoubleParamForEachSVResult(relatedCommand, paramName, val));
+      return std::make_shared<GetGlonassEphDoubleParamForEachSVResult>(relatedCommand, paramName, val);
     }
 
     GetGlonassEphDoubleParamForEachSVResultPtr GetGlonassEphDoubleParamForEachSVResult::dynamicCast(CommandBasePtr ptr)

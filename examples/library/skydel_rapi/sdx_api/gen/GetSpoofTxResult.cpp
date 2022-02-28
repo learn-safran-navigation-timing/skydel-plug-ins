@@ -35,7 +35,7 @@ namespace Sdx
 
     GetSpoofTxResultPtr GetSpoofTxResult::create(CommandBasePtr relatedCommand, const std::string& usualName, bool enabled, const std::string& address, int instanceId, const std::string& id)
     {
-      return GetSpoofTxResultPtr(new GetSpoofTxResult(relatedCommand, usualName, enabled, address, instanceId, id));
+      return std::make_shared<GetSpoofTxResult>(relatedCommand, usualName, enabled, address, instanceId, id);
     }
 
     GetSpoofTxResultPtr GetSpoofTxResult::dynamicCast(CommandBasePtr ptr)

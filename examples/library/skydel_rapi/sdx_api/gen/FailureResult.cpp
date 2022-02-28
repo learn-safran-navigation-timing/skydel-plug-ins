@@ -31,7 +31,7 @@ namespace Sdx
 
     FailureResultPtr FailureResult::create(CommandBasePtr relatedCommand, const std::string& errorMsg)
     {
-      return FailureResultPtr(new FailureResult(relatedCommand, errorMsg));
+      return std::make_shared<FailureResult>(relatedCommand, errorMsg);
     }
 
     FailureResultPtr FailureResult::dynamicCast(CommandBasePtr ptr)

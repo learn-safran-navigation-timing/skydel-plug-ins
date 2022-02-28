@@ -33,7 +33,7 @@ namespace Sdx
 
     GetIssueOfDataGalileoResultPtr GetIssueOfDataGalileoResult::create(CommandBasePtr relatedCommand, int navigation, int almanac, const Sdx::optional<bool>& overrideRinex)
     {
-      return GetIssueOfDataGalileoResultPtr(new GetIssueOfDataGalileoResult(relatedCommand, navigation, almanac, overrideRinex));
+      return std::make_shared<GetIssueOfDataGalileoResult>(relatedCommand, navigation, almanac, overrideRinex);
     }
 
     GetIssueOfDataGalileoResultPtr GetIssueOfDataGalileoResult::dynamicCast(CommandBasePtr ptr)

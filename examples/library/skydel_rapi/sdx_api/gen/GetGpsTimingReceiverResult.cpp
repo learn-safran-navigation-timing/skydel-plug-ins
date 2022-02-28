@@ -36,7 +36,7 @@ namespace Sdx
 
     GetGpsTimingReceiverResultPtr GetGpsTimingReceiverResult::create(CommandBasePtr relatedCommand, const std::string& port, const Sdx::optional<int>& baudRate, const Sdx::optional<int>& dataBits, const Sdx::optional<Sdx::SerialPortParity>& parity, const Sdx::optional<int>& stopBits, const Sdx::optional<Sdx::SerialPortFlowControl>& flowControl)
     {
-      return GetGpsTimingReceiverResultPtr(new GetGpsTimingReceiverResult(relatedCommand, port, baudRate, dataBits, parity, stopBits, flowControl));
+      return std::make_shared<GetGpsTimingReceiverResult>(relatedCommand, port, baudRate, dataBits, parity, stopBits, flowControl);
     }
 
     GetGpsTimingReceiverResultPtr GetGpsTimingReceiverResult::dynamicCast(CommandBasePtr ptr)

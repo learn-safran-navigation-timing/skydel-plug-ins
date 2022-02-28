@@ -32,7 +32,7 @@ namespace Sdx
 
     RemoveAllMultipathForSignalPtr RemoveAllMultipathForSignal::create(const std::string& signal, bool reset)
     {
-      return RemoveAllMultipathForSignalPtr(new RemoveAllMultipathForSignal(signal, reset));
+      return std::make_shared<RemoveAllMultipathForSignal>(signal, reset);
     }
 
     RemoveAllMultipathForSignalPtr RemoveAllMultipathForSignal::dynamicCast(CommandBasePtr ptr)

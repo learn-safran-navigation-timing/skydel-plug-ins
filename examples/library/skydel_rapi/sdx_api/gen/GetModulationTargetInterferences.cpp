@@ -32,7 +32,7 @@ namespace Sdx
 
     GetModulationTargetInterferencesPtr GetModulationTargetInterferences::create(int output, const std::string& id)
     {
-      return GetModulationTargetInterferencesPtr(new GetModulationTargetInterferences(output, id));
+      return std::make_shared<GetModulationTargetInterferences>(output, id);
     }
 
     GetModulationTargetInterferencesPtr GetModulationTargetInterferences::dynamicCast(CommandBasePtr ptr)

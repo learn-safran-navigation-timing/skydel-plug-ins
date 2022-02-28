@@ -31,7 +31,7 @@ namespace Sdx
 
     GetOfficialLeapSecondPtr GetOfficialLeapSecond::create(const Sdx::DateTime& date)
     {
-      return GetOfficialLeapSecondPtr(new GetOfficialLeapSecond(date));
+      return std::make_shared<GetOfficialLeapSecond>(date);
     }
 
     GetOfficialLeapSecondPtr GetOfficialLeapSecond::dynamicCast(CommandBasePtr ptr)

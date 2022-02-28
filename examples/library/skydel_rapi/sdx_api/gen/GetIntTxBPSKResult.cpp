@@ -21,7 +21,7 @@ namespace Sdx
       : CommandResult(CmdName)
     {}
 
-    GetIntTxBPSKResult::GetIntTxBPSKResult(CommandBasePtr relatedCommand, bool enabled, double centralFreq, double power, int codeRate, int codeLengthMs, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& group)
+    GetIntTxBPSKResult::GetIntTxBPSKResult(CommandBasePtr relatedCommand, bool enabled, double centralFreq, double power, int codeRate, int codeLengthMs, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& group, const Sdx::optional<int>& prn)
       : CommandResult(CmdName, relatedCommand)
     {
 
@@ -33,12 +33,13 @@ namespace Sdx
       setTransmitterId(transmitterId);
       setSignalId(signalId);
       setGroup(group);
+      setPrn(prn);
     }
 
 
-    GetIntTxBPSKResultPtr GetIntTxBPSKResult::create(CommandBasePtr relatedCommand, bool enabled, double centralFreq, double power, int codeRate, int codeLengthMs, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& group)
+    GetIntTxBPSKResultPtr GetIntTxBPSKResult::create(CommandBasePtr relatedCommand, bool enabled, double centralFreq, double power, int codeRate, int codeLengthMs, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& group, const Sdx::optional<int>& prn)
     {
-      return GetIntTxBPSKResultPtr(new GetIntTxBPSKResult(relatedCommand, enabled, centralFreq, power, codeRate, codeLengthMs, transmitterId, signalId, group));
+      return std::make_shared<GetIntTxBPSKResult>(relatedCommand, enabled, centralFreq, power, codeRate, codeLengthMs, transmitterId, signalId, group, prn);
     }
 
     GetIntTxBPSKResultPtr GetIntTxBPSKResult::dynamicCast(CommandBasePtr ptr)
@@ -58,6 +59,7 @@ namespace Sdx
           && parse_json<std::string>::is_valid(m_values["TransmitterId"])
           && parse_json<std::string>::is_valid(m_values["SignalId"])
           && parse_json<Sdx::optional<int>>::is_valid(m_values["Group"])
+          && parse_json<Sdx::optional<int>>::is_valid(m_values["Prn"])
         ;
 
     }
@@ -157,6 +159,18 @@ namespace Sdx
     void GetIntTxBPSKResult::setGroup(const Sdx::optional<int>& group)
     {
       m_values.AddMember("Group", parse_json<Sdx::optional<int>>::format(group, m_values.GetAllocator()), m_values.GetAllocator());
+    }
+
+
+
+    Sdx::optional<int> GetIntTxBPSKResult::prn() const
+    {
+      return parse_json<Sdx::optional<int>>::parse(m_values["Prn"]);
+    }
+
+    void GetIntTxBPSKResult::setPrn(const Sdx::optional<int>& prn)
+    {
+      m_values.AddMember("Prn", parse_json<Sdx::optional<int>>::format(prn, m_values.GetAllocator()), m_values.GetAllocator());
     }
 
 

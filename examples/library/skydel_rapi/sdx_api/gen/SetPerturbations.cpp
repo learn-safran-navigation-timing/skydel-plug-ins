@@ -39,7 +39,7 @@ namespace Sdx
 
     SetPerturbationsPtr SetPerturbations::create(const std::string& system, int svId, double crs, double crc, double cis, double cic, double cus, double cuc, const Sdx::optional<std::string>& dataSetName)
     {
-      return SetPerturbationsPtr(new SetPerturbations(system, svId, crs, crc, cis, cic, cus, cuc, dataSetName));
+      return std::make_shared<SetPerturbations>(system, svId, crs, crc, cis, cic, cus, cuc, dataSetName);
     }
 
     SetPerturbationsPtr SetPerturbations::dynamicCast(CommandBasePtr ptr)

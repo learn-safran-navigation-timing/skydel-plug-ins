@@ -38,7 +38,7 @@ namespace Sdx
 
     SetVehicleTrajectoryCircularPtr SetVehicleTrajectoryCircular::create(const std::string& type, double lat, double lon, double alt, double radius, double speed, bool clockwise, const Sdx::optional<double>& originAngle)
     {
-      return SetVehicleTrajectoryCircularPtr(new SetVehicleTrajectoryCircular(type, lat, lon, alt, radius, speed, clockwise, originAngle));
+      return std::make_shared<SetVehicleTrajectoryCircular>(type, lat, lon, alt, radius, speed, clockwise, originAngle);
     }
 
     SetVehicleTrajectoryCircularPtr SetVehicleTrajectoryCircular::dynamicCast(CommandBasePtr ptr)

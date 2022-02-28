@@ -32,7 +32,7 @@ namespace Sdx
 
     ChangeIntTxColorPtr ChangeIntTxColor::create(const std::string& color, const std::string& id)
     {
-      return ChangeIntTxColorPtr(new ChangeIntTxColor(color, id));
+      return std::make_shared<ChangeIntTxColor>(color, id);
     }
 
     ChangeIntTxColorPtr ChangeIntTxColor::dynamicCast(CommandBasePtr ptr)

@@ -26,7 +26,7 @@ namespace Sdx
 
     IsLogRawEnabledPtr IsLogRawEnabled::create()
     {
-      return IsLogRawEnabledPtr(new IsLogRawEnabled());
+      return std::make_shared<IsLogRawEnabled>();
     }
 
     IsLogRawEnabledPtr IsLogRawEnabled::dynamicCast(CommandBasePtr ptr)

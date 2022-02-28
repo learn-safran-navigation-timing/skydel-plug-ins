@@ -35,7 +35,7 @@ namespace Sdx
 
     ForceSVGeoPtr ForceSVGeo::create(const std::string& system, int svId, bool isGeo, double longitude, const Sdx::optional<std::string>& dataSetName)
     {
-      return ForceSVGeoPtr(new ForceSVGeo(system, svId, isGeo, longitude, dataSetName));
+      return std::make_shared<ForceSVGeo>(system, svId, isGeo, longitude, dataSetName);
     }
 
     ForceSVGeoPtr ForceSVGeo::dynamicCast(CommandBasePtr ptr)

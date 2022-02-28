@@ -31,7 +31,7 @@ namespace Sdx
 
     IsIntTxTrajectorySmoothingEnabledPtr IsIntTxTrajectorySmoothingEnabled::create(const std::string& id)
     {
-      return IsIntTxTrajectorySmoothingEnabledPtr(new IsIntTxTrajectorySmoothingEnabled(id));
+      return std::make_shared<IsIntTxTrajectorySmoothingEnabled>(id);
     }
 
     IsIntTxTrajectorySmoothingEnabledPtr IsIntTxTrajectorySmoothingEnabled::dynamicCast(CommandBasePtr ptr)

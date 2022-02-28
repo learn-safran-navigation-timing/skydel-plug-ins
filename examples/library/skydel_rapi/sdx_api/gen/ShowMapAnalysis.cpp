@@ -31,7 +31,7 @@ namespace Sdx
 
     ShowMapAnalysisPtr ShowMapAnalysis::create(bool show)
     {
-      return ShowMapAnalysisPtr(new ShowMapAnalysis(show));
+      return std::make_shared<ShowMapAnalysis>(show);
     }
 
     ShowMapAnalysisPtr ShowMapAnalysis::dynamicCast(CommandBasePtr ptr)

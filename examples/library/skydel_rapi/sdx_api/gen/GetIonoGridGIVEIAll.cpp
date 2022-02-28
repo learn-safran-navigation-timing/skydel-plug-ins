@@ -27,7 +27,7 @@ namespace Sdx
 
     GetIonoGridGIVEIAllPtr GetIonoGridGIVEIAll::create(const Sdx::optional<std::string>& serviceProvider)
     {
-      return GetIonoGridGIVEIAllPtr(new GetIonoGridGIVEIAll(serviceProvider));
+      return std::make_shared<GetIonoGridGIVEIAll>(serviceProvider);
     }
 
     GetIonoGridGIVEIAllPtr GetIonoGridGIVEIAll::dynamicCast(CommandBasePtr ptr)

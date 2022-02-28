@@ -37,7 +37,7 @@ namespace Sdx
 
     SetVehicleTrajectoryFixEcefPtr SetVehicleTrajectoryFixEcef::create(const std::string& type, double x, double y, double z, double yaw, double pitch, double roll)
     {
-      return SetVehicleTrajectoryFixEcefPtr(new SetVehicleTrajectoryFixEcef(type, x, y, z, yaw, pitch, roll));
+      return std::make_shared<SetVehicleTrajectoryFixEcef>(type, x, y, z, yaw, pitch, roll);
     }
 
     SetVehicleTrajectoryFixEcefPtr SetVehicleTrajectoryFixEcef::dynamicCast(CommandBasePtr ptr)

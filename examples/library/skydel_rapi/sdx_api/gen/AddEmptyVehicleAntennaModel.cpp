@@ -31,7 +31,7 @@ namespace Sdx
 
     AddEmptyVehicleAntennaModelPtr AddEmptyVehicleAntennaModel::create(const std::string& name)
     {
-      return AddEmptyVehicleAntennaModelPtr(new AddEmptyVehicleAntennaModel(name));
+      return std::make_shared<AddEmptyVehicleAntennaModel>(name);
     }
 
     AddEmptyVehicleAntennaModelPtr AddEmptyVehicleAntennaModel::dynamicCast(CommandBasePtr ptr)

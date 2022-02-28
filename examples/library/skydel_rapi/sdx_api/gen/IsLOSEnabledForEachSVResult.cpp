@@ -32,7 +32,7 @@ namespace Sdx
 
     IsLOSEnabledForEachSVResultPtr IsLOSEnabledForEachSVResult::create(CommandBasePtr relatedCommand, const std::string& system, const std::vector<bool>& enabled)
     {
-      return IsLOSEnabledForEachSVResultPtr(new IsLOSEnabledForEachSVResult(relatedCommand, system, enabled));
+      return std::make_shared<IsLOSEnabledForEachSVResult>(relatedCommand, system, enabled);
     }
 
     IsLOSEnabledForEachSVResultPtr IsLOSEnabledForEachSVResult::dynamicCast(CommandBasePtr ptr)

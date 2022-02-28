@@ -32,7 +32,7 @@ namespace Sdx
 
     IsIntTxIgnoreRxAntennaGainPatternResultPtr IsIntTxIgnoreRxAntennaGainPatternResult::create(CommandBasePtr relatedCommand, bool ignore, const std::string& id)
     {
-      return IsIntTxIgnoreRxAntennaGainPatternResultPtr(new IsIntTxIgnoreRxAntennaGainPatternResult(relatedCommand, ignore, id));
+      return std::make_shared<IsIntTxIgnoreRxAntennaGainPatternResult>(relatedCommand, ignore, id);
     }
 
     IsIntTxIgnoreRxAntennaGainPatternResultPtr IsIntTxIgnoreRxAntennaGainPatternResult::dynamicCast(CommandBasePtr ptr)

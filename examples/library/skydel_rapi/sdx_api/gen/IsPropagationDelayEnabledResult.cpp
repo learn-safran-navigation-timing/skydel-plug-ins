@@ -32,7 +32,7 @@ namespace Sdx
 
     IsPropagationDelayEnabledResultPtr IsPropagationDelayEnabledResult::create(CommandBasePtr relatedCommand, const std::string& system, bool enabled)
     {
-      return IsPropagationDelayEnabledResultPtr(new IsPropagationDelayEnabledResult(relatedCommand, system, enabled));
+      return std::make_shared<IsPropagationDelayEnabledResult>(relatedCommand, system, enabled);
     }
 
     IsPropagationDelayEnabledResultPtr IsPropagationDelayEnabledResult::dynamicCast(CommandBasePtr ptr)

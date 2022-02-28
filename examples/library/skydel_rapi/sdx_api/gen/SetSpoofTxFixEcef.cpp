@@ -37,7 +37,7 @@ namespace Sdx
 
     SetSpoofTxFixEcefPtr SetSpoofTxFixEcef::create(double x, double y, double z, double yaw, double pitch, double roll, const std::string& id)
     {
-      return SetSpoofTxFixEcefPtr(new SetSpoofTxFixEcef(x, y, z, yaw, pitch, roll, id));
+      return std::make_shared<SetSpoofTxFixEcef>(x, y, z, yaw, pitch, roll, id);
     }
 
     SetSpoofTxFixEcefPtr SetSpoofTxFixEcef::dynamicCast(CommandBasePtr ptr)

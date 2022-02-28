@@ -26,7 +26,7 @@ namespace Sdx
 
     WaitAndResetPPSPtr WaitAndResetPPS::create()
     {
-      return WaitAndResetPPSPtr(new WaitAndResetPPS());
+      return std::make_shared<WaitAndResetPPS>();
     }
 
     WaitAndResetPPSPtr WaitAndResetPPS::dynamicCast(CommandBasePtr ptr)

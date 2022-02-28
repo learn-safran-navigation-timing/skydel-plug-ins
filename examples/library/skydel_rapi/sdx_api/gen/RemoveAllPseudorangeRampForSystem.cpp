@@ -31,7 +31,7 @@ namespace Sdx
 
     RemoveAllPseudorangeRampForSystemPtr RemoveAllPseudorangeRampForSystem::create(const std::string& system)
     {
-      return RemoveAllPseudorangeRampForSystemPtr(new RemoveAllPseudorangeRampForSystem(system));
+      return std::make_shared<RemoveAllPseudorangeRampForSystem>(system);
     }
 
     RemoveAllPseudorangeRampForSystemPtr RemoveAllPseudorangeRampForSystem::dynamicCast(CommandBasePtr ptr)

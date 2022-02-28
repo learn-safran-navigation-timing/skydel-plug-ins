@@ -32,7 +32,7 @@ namespace Sdx
 
     GetAlmanacUploadTimeIntervalResultPtr GetAlmanacUploadTimeIntervalResult::create(CommandBasePtr relatedCommand, const std::string& system, int interval)
     {
-      return GetAlmanacUploadTimeIntervalResultPtr(new GetAlmanacUploadTimeIntervalResult(relatedCommand, system, interval));
+      return std::make_shared<GetAlmanacUploadTimeIntervalResult>(relatedCommand, system, interval);
     }
 
     GetAlmanacUploadTimeIntervalResultPtr GetAlmanacUploadTimeIntervalResult::dynamicCast(CommandBasePtr ptr)

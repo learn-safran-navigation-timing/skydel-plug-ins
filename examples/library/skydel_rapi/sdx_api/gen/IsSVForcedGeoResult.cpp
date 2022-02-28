@@ -35,7 +35,7 @@ namespace Sdx
 
     IsSVForcedGeoResultPtr IsSVForcedGeoResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, bool isGeo, double longitude, const Sdx::optional<std::string>& dataSetName)
     {
-      return IsSVForcedGeoResultPtr(new IsSVForcedGeoResult(relatedCommand, system, svId, isGeo, longitude, dataSetName));
+      return std::make_shared<IsSVForcedGeoResult>(relatedCommand, system, svId, isGeo, longitude, dataSetName);
     }
 
     IsSVForcedGeoResultPtr IsSVForcedGeoResult::dynamicCast(CommandBasePtr ptr)

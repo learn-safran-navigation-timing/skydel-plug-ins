@@ -32,7 +32,7 @@ namespace Sdx
 
     AddEmptySVAntennaModelPtr AddEmptySVAntennaModel::create(const std::string& name, const std::string& system)
     {
-      return AddEmptySVAntennaModelPtr(new AddEmptySVAntennaModel(name, system));
+      return std::make_shared<AddEmptySVAntennaModel>(name, system);
     }
 
     AddEmptySVAntennaModelPtr AddEmptySVAntennaModel::dynamicCast(CommandBasePtr ptr)

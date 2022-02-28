@@ -31,7 +31,7 @@ namespace Sdx
 
     GetSbasMonitoredSystemsResultPtr GetSbasMonitoredSystemsResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& systems)
     {
-      return GetSbasMonitoredSystemsResultPtr(new GetSbasMonitoredSystemsResult(relatedCommand, systems));
+      return std::make_shared<GetSbasMonitoredSystemsResult>(relatedCommand, systems);
     }
 
     GetSbasMonitoredSystemsResultPtr GetSbasMonitoredSystemsResult::dynamicCast(CommandBasePtr ptr)

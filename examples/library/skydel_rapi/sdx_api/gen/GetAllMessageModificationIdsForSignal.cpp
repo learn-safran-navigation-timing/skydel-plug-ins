@@ -32,7 +32,7 @@ namespace Sdx
 
     GetAllMessageModificationIdsForSignalPtr GetAllMessageModificationIdsForSignal::create(const std::string& signal, int svId)
     {
-      return GetAllMessageModificationIdsForSignalPtr(new GetAllMessageModificationIdsForSignal(signal, svId));
+      return std::make_shared<GetAllMessageModificationIdsForSignal>(signal, svId);
     }
 
     GetAllMessageModificationIdsForSignalPtr GetAllMessageModificationIdsForSignal::dynamicCast(CommandBasePtr ptr)

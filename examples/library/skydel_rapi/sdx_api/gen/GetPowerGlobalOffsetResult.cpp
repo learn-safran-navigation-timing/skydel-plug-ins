@@ -31,7 +31,7 @@ namespace Sdx
 
     GetPowerGlobalOffsetResultPtr GetPowerGlobalOffsetResult::create(CommandBasePtr relatedCommand, double offset)
     {
-      return GetPowerGlobalOffsetResultPtr(new GetPowerGlobalOffsetResult(relatedCommand, offset));
+      return std::make_shared<GetPowerGlobalOffsetResult>(relatedCommand, offset);
     }
 
     GetPowerGlobalOffsetResultPtr GetPowerGlobalOffsetResult::dynamicCast(CommandBasePtr ptr)

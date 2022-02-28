@@ -39,7 +39,7 @@ namespace Sdx
 
     SetMessageModificationToQzssCNav2Ptr SetMessageModificationToQzssCNav2::create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int page, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id)
     {
-      return SetMessageModificationToQzssCNav2Ptr(new SetMessageModificationToQzssCNav2(signalArray, svId, startTime, stopTime, page, condition, updateCRC, bitModifications, id));
+      return std::make_shared<SetMessageModificationToQzssCNav2>(signalArray, svId, startTime, stopTime, page, condition, updateCRC, bitModifications, id);
     }
 
     SetMessageModificationToQzssCNav2Ptr SetMessageModificationToQzssCNav2::dynamicCast(CommandBasePtr ptr)

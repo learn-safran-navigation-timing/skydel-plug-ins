@@ -36,7 +36,7 @@ namespace Sdx
 
     GetPseudorangeNoiseSineWaveForEachSVResultPtr GetPseudorangeNoiseSineWaveForEachSVResult::create(CommandBasePtr relatedCommand, const std::string& system, int sineWave, const std::vector<bool>& enabled, const std::vector<double>& amplitude, const std::vector<int>& period, const std::vector<double>& offset)
     {
-      return GetPseudorangeNoiseSineWaveForEachSVResultPtr(new GetPseudorangeNoiseSineWaveForEachSVResult(relatedCommand, system, sineWave, enabled, amplitude, period, offset));
+      return std::make_shared<GetPseudorangeNoiseSineWaveForEachSVResult>(relatedCommand, system, sineWave, enabled, amplitude, period, offset);
     }
 
     GetPseudorangeNoiseSineWaveForEachSVResultPtr GetPseudorangeNoiseSineWaveForEachSVResult::dynamicCast(CommandBasePtr ptr)

@@ -31,7 +31,7 @@ namespace Sdx
 
     SetUsingVelocityInSbasMessage25Ptr SetUsingVelocityInSbasMessage25::create(bool useVelocity)
     {
-      return SetUsingVelocityInSbasMessage25Ptr(new SetUsingVelocityInSbasMessage25(useVelocity));
+      return std::make_shared<SetUsingVelocityInSbasMessage25>(useVelocity);
     }
 
     SetUsingVelocityInSbasMessage25Ptr SetUsingVelocityInSbasMessage25::dynamicCast(CommandBasePtr ptr)

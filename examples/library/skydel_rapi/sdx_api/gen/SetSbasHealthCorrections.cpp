@@ -32,7 +32,7 @@ namespace Sdx
 
     SetSbasHealthCorrectionsPtr SetSbasHealthCorrections::create(int prn, bool health)
     {
-      return SetSbasHealthCorrectionsPtr(new SetSbasHealthCorrections(prn, health));
+      return std::make_shared<SetSbasHealthCorrections>(prn, health);
     }
 
     SetSbasHealthCorrectionsPtr SetSbasHealthCorrections::dynamicCast(CommandBasePtr ptr)

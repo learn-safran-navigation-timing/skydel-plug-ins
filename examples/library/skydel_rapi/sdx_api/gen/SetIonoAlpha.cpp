@@ -32,7 +32,7 @@ namespace Sdx
 
     SetIonoAlphaPtr SetIonoAlpha::create(int index, double val)
     {
-      return SetIonoAlphaPtr(new SetIonoAlpha(index, val));
+      return std::make_shared<SetIonoAlpha>(index, val);
     }
 
     SetIonoAlphaPtr SetIonoAlpha::dynamicCast(CommandBasePtr ptr)

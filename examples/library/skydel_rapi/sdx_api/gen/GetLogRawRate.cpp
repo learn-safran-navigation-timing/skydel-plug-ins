@@ -26,7 +26,7 @@ namespace Sdx
 
     GetLogRawRatePtr GetLogRawRate::create()
     {
-      return GetLogRawRatePtr(new GetLogRawRate());
+      return std::make_shared<GetLogRawRate>();
     }
 
     GetLogRawRatePtr GetLogRawRate::dynamicCast(CommandBasePtr ptr)

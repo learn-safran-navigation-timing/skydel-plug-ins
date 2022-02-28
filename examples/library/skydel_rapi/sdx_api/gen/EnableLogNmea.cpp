@@ -31,7 +31,7 @@ namespace Sdx
 
     EnableLogNmeaPtr EnableLogNmea::create(bool enabled)
     {
-      return EnableLogNmeaPtr(new EnableLogNmea(enabled));
+      return std::make_shared<EnableLogNmea>(enabled);
     }
 
     EnableLogNmeaPtr EnableLogNmea::dynamicCast(CommandBasePtr ptr)

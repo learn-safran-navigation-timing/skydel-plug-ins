@@ -32,7 +32,7 @@ namespace Sdx
 
     SetIonoGridGIVEIAllPtr SetIonoGridGIVEIAll::create(const std::vector<std::vector<int>>& grid, const Sdx::optional<std::string>& serviceProvider)
     {
-      return SetIonoGridGIVEIAllPtr(new SetIonoGridGIVEIAll(grid, serviceProvider));
+      return std::make_shared<SetIonoGridGIVEIAll>(grid, serviceProvider);
     }
 
     SetIonoGridGIVEIAllPtr SetIonoGridGIVEIAll::dynamicCast(CommandBasePtr ptr)

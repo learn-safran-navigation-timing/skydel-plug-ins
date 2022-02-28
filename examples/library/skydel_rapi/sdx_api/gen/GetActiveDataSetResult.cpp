@@ -32,7 +32,7 @@ namespace Sdx
 
     GetActiveDataSetResultPtr GetActiveDataSetResult::create(CommandBasePtr relatedCommand, const std::string& system, const std::string& dataSetName)
     {
-      return GetActiveDataSetResultPtr(new GetActiveDataSetResult(relatedCommand, system, dataSetName));
+      return std::make_shared<GetActiveDataSetResult>(relatedCommand, system, dataSetName);
     }
 
     GetActiveDataSetResultPtr GetActiveDataSetResult::dynamicCast(CommandBasePtr ptr)

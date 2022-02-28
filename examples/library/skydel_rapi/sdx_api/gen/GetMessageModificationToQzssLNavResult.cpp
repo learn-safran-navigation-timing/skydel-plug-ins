@@ -40,7 +40,7 @@ namespace Sdx
 
     GetMessageModificationToQzssLNavResultPtr GetMessageModificationToQzssLNavResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int lNavSvId, int word, bool updateParity, const std::string& wordModification, const std::string& id)
     {
-      return GetMessageModificationToQzssLNavResultPtr(new GetMessageModificationToQzssLNavResult(relatedCommand, signalArray, svId, startTime, stopTime, subframe, lNavSvId, word, updateParity, wordModification, id));
+      return std::make_shared<GetMessageModificationToQzssLNavResult>(relatedCommand, signalArray, svId, startTime, stopTime, subframe, lNavSvId, word, updateParity, wordModification, id);
     }
 
     GetMessageModificationToQzssLNavResultPtr GetMessageModificationToQzssLNavResult::dynamicCast(CommandBasePtr ptr)

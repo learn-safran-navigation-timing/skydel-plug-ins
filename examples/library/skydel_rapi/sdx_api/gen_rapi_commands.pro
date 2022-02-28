@@ -58,6 +58,7 @@ HEADERS += \
   sdx_api/gen/ClearAllMessageModifications.h	\
   sdx_api/gen/ClearAllMessageModificationsForNavMsgFamily.h	\
   sdx_api/gen/ClearAllMessageModificationsForSignal.h	\
+  sdx_api/gen/ClearAllSbasServiceMessageRegionGroup.h	\
   sdx_api/gen/ClearAutomatePage.h	\
   sdx_api/gen/ClearQzssL1SAugmentations.h	\
   sdx_api/gen/ClearSpoofTxGpuIdx.h	\
@@ -115,6 +116,7 @@ HEADERS += \
   sdx_api/gen/ExportIonoGridErrors.h	\
   sdx_api/gen/ExportIonoGridGIVEI.h	\
   sdx_api/gen/ExportIonoGridMask.h	\
+  sdx_api/gen/ExportPerformanceDataToCSV.h	\
   sdx_api/gen/ExportSVAntennaModel.h	\
   sdx_api/gen/ExportVehicleAntennaModel.h	\
   sdx_api/gen/FailureResult.h	\
@@ -469,12 +471,16 @@ HEADERS += \
   sdx_api/gen/GetQzssSatelliteL2Health.h	\
   sdx_api/gen/GetQzssSatelliteL5Health.h	\
   sdx_api/gen/GetQzssSatelliteNavAlertFlag.h	\
+  sdx_api/gen/GetSbasDeltaUdreiOutsideOfRegions.h	\
+  sdx_api/gen/GetSbasDeltaUdreiOutsideOfRegionsResult.h	\
   sdx_api/gen/GetSbasEphParamsForSV.h	\
   sdx_api/gen/GetSbasEphParamsForSVResult.h	\
   sdx_api/gen/GetSbasMessagesEnabled.h	\
   sdx_api/gen/GetSbasMessagesEnabledResult.h	\
   sdx_api/gen/GetSbasMonitoredSystems.h	\
   sdx_api/gen/GetSbasMonitoredSystemsResult.h	\
+  sdx_api/gen/GetSbasServiceMessageRegionGroup.h	\
+  sdx_api/gen/GetSbasServiceMessageRegionGroupResult.h	\
   sdx_api/gen/GetSbasUdrei.h	\
   sdx_api/gen/GetSbasUdreiResult.h	\
   sdx_api/gen/GetSignalFromIntTx.h	\
@@ -531,6 +537,10 @@ HEADERS += \
   sdx_api/gen/GetTransmittedPrnForSVResult.h	\
   sdx_api/gen/GetTropoModel.h	\
   sdx_api/gen/GetTropoModelResult.h	\
+  sdx_api/gen/GetUdreiForEachSV.h	\
+  sdx_api/gen/GetUdreiForEachSVResult.h	\
+  sdx_api/gen/GetUdreiForSV.h	\
+  sdx_api/gen/GetUdreiForSVResult.h	\
   sdx_api/gen/GetVehicleAntennaGain.h	\
   sdx_api/gen/GetVehicleAntennaGainResult.h	\
   sdx_api/gen/GetVehicleAntennaModel.h	\
@@ -662,6 +672,8 @@ HEADERS += \
   sdx_api/gen/IsTrajectoryCompletedResult.h	\
   sdx_api/gen/IsTrajectorySmoothingEnabled.h	\
   sdx_api/gen/IsTrajectorySmoothingEnabledResult.h	\
+  sdx_api/gen/IsTransmitMessage2InSbasMessage0.h	\
+  sdx_api/gen/IsTransmitMessage2InSbasMessage0Result.h	\
   sdx_api/gen/IsUsingVelocityInSbasMessage25.h	\
   sdx_api/gen/IsUsingVelocityInSbasMessage25Result.h	\
   sdx_api/gen/IsWFAntennaElementEnabled.h	\
@@ -712,6 +724,7 @@ HEADERS += \
   sdx_api/gen/RemovePlugInInstance.h	\
   sdx_api/gen/RemovePseudorangeRamp.h	\
   sdx_api/gen/RemoveQzssL1SAugmentation.h	\
+  sdx_api/gen/RemoveSbasServiceMessageRegionGroup.h	\
   sdx_api/gen/RemoveSignalFromIntTx.h	\
   sdx_api/gen/RemoveSpoofTx.h	\
   sdx_api/gen/RenameDataSet.h	\
@@ -728,6 +741,7 @@ HEADERS += \
   sdx_api/gen/RIC.h	\
   sdx_api/gen/Save.h	\
   sdx_api/gen/SaveAs.h	\
+  sdx_api/gen/SbasServiceMessageRegion.h	\
   sdx_api/gen/SerialPortFlowControl.h	\
   sdx_api/gen/SerialPortParity.h	\
   sdx_api/gen/SetActiveDataSet.h	\
@@ -922,6 +936,7 @@ HEADERS += \
   sdx_api/gen/SetRFOutputOffsets.h	\
   sdx_api/gen/SetSatMotionFixed.h	\
   sdx_api/gen/SetSbasCorrectionsHealthForSV.h	\
+  sdx_api/gen/SetSbasDeltaUdreiOutsideOfRegions.h	\
   sdx_api/gen/SetSbasEphParamsForSV.h	\
   sdx_api/gen/SetSbasHealthCorrections.h	\
   sdx_api/gen/SetSbasHealthIntegrity.h	\
@@ -933,7 +948,9 @@ HEADERS += \
   sdx_api/gen/SetSbasRangingHealthForSV.h	\
   sdx_api/gen/SetSbasReservedHealthForSV.h	\
   sdx_api/gen/SetSbasServiceHealthForSV.h	\
+  sdx_api/gen/SetSbasServiceMessageRegionGroup.h	\
   sdx_api/gen/SetSbasUdrei.h	\
+  sdx_api/gen/SetSbasUraIndexForSV.h	\
   sdx_api/gen/SetSpectrumVisible.h	\
   sdx_api/gen/SetSpoofSignalManualPropagationLoss.h	\
   sdx_api/gen/SetSpoofTxAntenna.h	\
@@ -964,8 +981,11 @@ HEADERS += \
   sdx_api/gen/SetSyncServer.h	\
   sdx_api/gen/SetSyncTime.h	\
   sdx_api/gen/SetSyncTimeMaster.h	\
+  sdx_api/gen/SetTransmitMessage2InSbasMessage0.h	\
   sdx_api/gen/SetTransmittedPrnForSV.h	\
   sdx_api/gen/SetTropoModel.h	\
+  sdx_api/gen/SetUdreiForEachSV.h	\
+  sdx_api/gen/SetUdreiForSV.h	\
   sdx_api/gen/SetUsingVelocityInSbasMessage25.h	\
   sdx_api/gen/SetVehicleAntennaGain.h	\
   sdx_api/gen/SetVehicleAntennaGainCSV.h	\
@@ -997,6 +1017,7 @@ HEADERS += \
   sdx_api/gen/StopWhenCommandFail.h	\
   sdx_api/gen/StringPair.h	\
   sdx_api/gen/SuccessResult.h	\
+  sdx_api/gen/SwapSbasServiceMessageRegionGroup.h	\
   sdx_api/gen/UndoCmd.h	\
   sdx_api/gen/UnlockGUI.h	\
   sdx_api/gen/VersionResult.h	\
@@ -1080,6 +1101,7 @@ SOURCES += \
   sdx_api/gen/ClearAllLOSForSystem.cpp	\
   sdx_api/gen/ClearAllMessageModificationsForNavMsgFamily.cpp	\
   sdx_api/gen/ClearAllMessageModificationsForSignal.cpp	\
+  sdx_api/gen/ClearAllSbasServiceMessageRegionGroup.cpp	\
   sdx_api/gen/ClearAutomatePage.cpp	\
   sdx_api/gen/ClearQzssL1SAugmentations.cpp	\
   sdx_api/gen/ClearSpoofTxGpuIdx.cpp	\
@@ -1135,6 +1157,7 @@ SOURCES += \
   sdx_api/gen/ExportIonoGridErrors.cpp	\
   sdx_api/gen/ExportIonoGridGIVEI.cpp	\
   sdx_api/gen/ExportIonoGridMask.cpp	\
+  sdx_api/gen/ExportPerformanceDataToCSV.cpp	\
   sdx_api/gen/ExportSVAntennaModel.cpp	\
   sdx_api/gen/ExportVehicleAntennaModel.cpp	\
   sdx_api/gen/FailureResult.cpp	\
@@ -1464,12 +1487,16 @@ SOURCES += \
   sdx_api/gen/GetQzssL5HealthForSVResult.cpp	\
   sdx_api/gen/GetQzssNavAlertFlagForSV.cpp	\
   sdx_api/gen/GetQzssNavAlertFlagForSVResult.cpp	\
+  sdx_api/gen/GetSbasDeltaUdreiOutsideOfRegions.cpp	\
+  sdx_api/gen/GetSbasDeltaUdreiOutsideOfRegionsResult.cpp	\
   sdx_api/gen/GetSbasEphParamsForSV.cpp	\
   sdx_api/gen/GetSbasEphParamsForSVResult.cpp	\
   sdx_api/gen/GetSbasMessagesEnabled.cpp	\
   sdx_api/gen/GetSbasMessagesEnabledResult.cpp	\
   sdx_api/gen/GetSbasMonitoredSystems.cpp	\
   sdx_api/gen/GetSbasMonitoredSystemsResult.cpp	\
+  sdx_api/gen/GetSbasServiceMessageRegionGroup.cpp	\
+  sdx_api/gen/GetSbasServiceMessageRegionGroupResult.cpp	\
   sdx_api/gen/GetSbasUdrei.cpp	\
   sdx_api/gen/GetSbasUdreiResult.cpp	\
   sdx_api/gen/GetSignalFromIntTx.cpp	\
@@ -1526,6 +1553,10 @@ SOURCES += \
   sdx_api/gen/GetTransmittedPrnForSVResult.cpp	\
   sdx_api/gen/GetTropoModel.cpp	\
   sdx_api/gen/GetTropoModelResult.cpp	\
+  sdx_api/gen/GetUdreiForEachSV.cpp	\
+  sdx_api/gen/GetUdreiForEachSVResult.cpp	\
+  sdx_api/gen/GetUdreiForSV.cpp	\
+  sdx_api/gen/GetUdreiForSVResult.cpp	\
   sdx_api/gen/GetVehicleAntennaGain.cpp	\
   sdx_api/gen/GetVehicleAntennaGainResult.cpp	\
   sdx_api/gen/GetVehicleAntennaModel.cpp	\
@@ -1655,6 +1686,8 @@ SOURCES += \
   sdx_api/gen/IsTrajectoryCompletedResult.cpp	\
   sdx_api/gen/IsTrajectorySmoothingEnabled.cpp	\
   sdx_api/gen/IsTrajectorySmoothingEnabledResult.cpp	\
+  sdx_api/gen/IsTransmitMessage2InSbasMessage0.cpp	\
+  sdx_api/gen/IsTransmitMessage2InSbasMessage0Result.cpp	\
   sdx_api/gen/IsUsingVelocityInSbasMessage25.cpp	\
   sdx_api/gen/IsUsingVelocityInSbasMessage25Result.cpp	\
   sdx_api/gen/IsWFAntennaElementEnabled.cpp	\
@@ -1700,6 +1733,7 @@ SOURCES += \
   sdx_api/gen/RemovePlugInInstance.cpp	\
   sdx_api/gen/RemovePseudorangeRamp.cpp	\
   sdx_api/gen/RemoveQzssL1SAugmentation.cpp	\
+  sdx_api/gen/RemoveSbasServiceMessageRegionGroup.cpp	\
   sdx_api/gen/RemoveSignalFromIntTx.cpp	\
   sdx_api/gen/RemoveSpoofTx.cpp	\
   sdx_api/gen/RenameDataSet.cpp	\
@@ -1879,6 +1913,7 @@ SOURCES += \
   sdx_api/gen/SetRFOutputOffsets.cpp	\
   sdx_api/gen/SetSatMotionFixed.cpp	\
   sdx_api/gen/SetSbasCorrectionsHealthForSV.cpp	\
+  sdx_api/gen/SetSbasDeltaUdreiOutsideOfRegions.cpp	\
   sdx_api/gen/SetSbasEphParamsForSV.cpp	\
   sdx_api/gen/SetSbasHealthCorrections.cpp	\
   sdx_api/gen/SetSbasHealthIntegrity.cpp	\
@@ -1890,7 +1925,9 @@ SOURCES += \
   sdx_api/gen/SetSbasRangingHealthForSV.cpp	\
   sdx_api/gen/SetSbasReservedHealthForSV.cpp	\
   sdx_api/gen/SetSbasServiceHealthForSV.cpp	\
+  sdx_api/gen/SetSbasServiceMessageRegionGroup.cpp	\
   sdx_api/gen/SetSbasUdrei.cpp	\
+  sdx_api/gen/SetSbasUraIndexForSV.cpp	\
   sdx_api/gen/SetSpectrumVisible.cpp	\
   sdx_api/gen/SetSpoofSignalManualPropagationLoss.cpp	\
   sdx_api/gen/SetSpoofTxAntenna.cpp	\
@@ -1921,8 +1958,11 @@ SOURCES += \
   sdx_api/gen/SetSyncServer.cpp	\
   sdx_api/gen/SetSyncTime.cpp	\
   sdx_api/gen/SetSyncTimeMaster.cpp	\
+  sdx_api/gen/SetTransmitMessage2InSbasMessage0.cpp	\
   sdx_api/gen/SetTransmittedPrnForSV.cpp	\
   sdx_api/gen/SetTropoModel.cpp	\
+  sdx_api/gen/SetUdreiForEachSV.cpp	\
+  sdx_api/gen/SetUdreiForSV.cpp	\
   sdx_api/gen/SetUsingVelocityInSbasMessage25.cpp	\
   sdx_api/gen/SetVehicleAntennaGain.cpp	\
   sdx_api/gen/SetVehicleAntennaGainCSV.cpp	\
@@ -1951,6 +1991,7 @@ SOURCES += \
   sdx_api/gen/StopMasterWhenSlaveStop.cpp	\
   sdx_api/gen/StopWhenCommandFail.cpp	\
   sdx_api/gen/SuccessResult.cpp	\
+  sdx_api/gen/SwapSbasServiceMessageRegionGroup.cpp	\
   sdx_api/gen/UndoCmd.cpp	\
   sdx_api/gen/UnlockGUI.cpp	\
   sdx_api/gen/VersionResult.cpp	\

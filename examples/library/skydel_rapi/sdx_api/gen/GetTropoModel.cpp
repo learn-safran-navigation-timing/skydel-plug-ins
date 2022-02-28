@@ -26,7 +26,7 @@ namespace Sdx
 
     GetTropoModelPtr GetTropoModel::create()
     {
-      return GetTropoModelPtr(new GetTropoModel());
+      return std::make_shared<GetTropoModel>();
     }
 
     GetTropoModelPtr GetTropoModel::dynamicCast(CommandBasePtr ptr)

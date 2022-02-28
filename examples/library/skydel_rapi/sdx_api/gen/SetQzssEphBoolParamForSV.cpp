@@ -34,7 +34,7 @@ namespace Sdx
 
     SetQzssEphBoolParamForSVPtr SetQzssEphBoolParamForSV::create(int svId, const std::string& paramName, bool val, const Sdx::optional<std::string>& dataSetName)
     {
-      return SetQzssEphBoolParamForSVPtr(new SetQzssEphBoolParamForSV(svId, paramName, val, dataSetName));
+      return std::make_shared<SetQzssEphBoolParamForSV>(svId, paramName, val, dataSetName);
     }
 
     SetQzssEphBoolParamForSVPtr SetQzssEphBoolParamForSV::dynamicCast(CommandBasePtr ptr)

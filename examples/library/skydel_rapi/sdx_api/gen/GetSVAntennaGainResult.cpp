@@ -35,7 +35,7 @@ namespace Sdx
 
     GetSVAntennaGainResultPtr GetSVAntennaGainResult::create(CommandBasePtr relatedCommand, const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const Sdx::GNSSBand& band, const std::string& system, const Sdx::optional<std::string>& name)
     {
-      return GetSVAntennaGainResultPtr(new GetSVAntennaGainResult(relatedCommand, gain, type, band, system, name));
+      return std::make_shared<GetSVAntennaGainResult>(relatedCommand, gain, type, band, system, name);
     }
 
     GetSVAntennaGainResultPtr GetSVAntennaGainResult::dynamicCast(CommandBasePtr ptr)

@@ -31,7 +31,7 @@ namespace Sdx
 
     HilPortResultPtr HilPortResult::create(CommandBasePtr relatedCommand, int port)
     {
-      return HilPortResultPtr(new HilPortResult(relatedCommand, port));
+      return std::make_shared<HilPortResult>(relatedCommand, port);
     }
 
     HilPortResultPtr HilPortResult::dynamicCast(CommandBasePtr ptr)

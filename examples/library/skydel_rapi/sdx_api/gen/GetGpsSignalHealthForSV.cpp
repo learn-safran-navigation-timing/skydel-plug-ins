@@ -32,7 +32,7 @@ namespace Sdx
 
     GetGpsSignalHealthForSVPtr GetGpsSignalHealthForSV::create(int svId, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetGpsSignalHealthForSVPtr(new GetGpsSignalHealthForSV(svId, dataSetName));
+      return std::make_shared<GetGpsSignalHealthForSV>(svId, dataSetName);
     }
 
     GetGpsSignalHealthForSVPtr GetGpsSignalHealthForSV::dynamicCast(CommandBasePtr ptr)

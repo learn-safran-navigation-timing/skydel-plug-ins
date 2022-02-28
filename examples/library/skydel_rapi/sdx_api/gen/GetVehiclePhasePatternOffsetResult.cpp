@@ -33,7 +33,7 @@ namespace Sdx
 
     GetVehiclePhasePatternOffsetResultPtr GetVehiclePhasePatternOffsetResult::create(CommandBasePtr relatedCommand, const Sdx::GNSSBand& band, double offset, const Sdx::optional<std::string>& antennaName)
     {
-      return GetVehiclePhasePatternOffsetResultPtr(new GetVehiclePhasePatternOffsetResult(relatedCommand, band, offset, antennaName));
+      return std::make_shared<GetVehiclePhasePatternOffsetResult>(relatedCommand, band, offset, antennaName);
     }
 
     GetVehiclePhasePatternOffsetResultPtr GetVehiclePhasePatternOffsetResult::dynamicCast(CommandBasePtr ptr)

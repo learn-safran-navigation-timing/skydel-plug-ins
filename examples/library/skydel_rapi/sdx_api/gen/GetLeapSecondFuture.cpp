@@ -26,7 +26,7 @@ namespace Sdx
 
     GetLeapSecondFuturePtr GetLeapSecondFuture::create()
     {
-      return GetLeapSecondFuturePtr(new GetLeapSecondFuture());
+      return std::make_shared<GetLeapSecondFuture>();
     }
 
     GetLeapSecondFuturePtr GetLeapSecondFuture::dynamicCast(CommandBasePtr ptr)

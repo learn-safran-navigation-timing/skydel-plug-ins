@@ -32,7 +32,7 @@ namespace Sdx
 
     RemoveSignalFromIntTxPtr RemoveSignalFromIntTx::create(const std::string& transmitterId, const std::string& signalId)
     {
-      return RemoveSignalFromIntTxPtr(new RemoveSignalFromIntTx(transmitterId, signalId));
+      return std::make_shared<RemoveSignalFromIntTx>(transmitterId, signalId);
     }
 
     RemoveSignalFromIntTxPtr RemoveSignalFromIntTx::dynamicCast(CommandBasePtr ptr)

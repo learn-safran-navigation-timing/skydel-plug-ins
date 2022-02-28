@@ -31,7 +31,7 @@ namespace Sdx
 
     VersionResultPtr VersionResult::create(CommandBasePtr relatedCommand, const std::string& version)
     {
-      return VersionResultPtr(new VersionResult(relatedCommand, version));
+      return std::make_shared<VersionResult>(relatedCommand, version);
     }
 
     VersionResultPtr VersionResult::dynamicCast(CommandBasePtr ptr)

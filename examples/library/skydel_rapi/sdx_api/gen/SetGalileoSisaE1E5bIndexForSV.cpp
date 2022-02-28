@@ -33,7 +33,7 @@ namespace Sdx
 
     SetGalileoSisaE1E5bIndexForSVPtr SetGalileoSisaE1E5bIndexForSV::create(int svId, int sisai, const Sdx::optional<std::string>& dataSetName)
     {
-      return SetGalileoSisaE1E5bIndexForSVPtr(new SetGalileoSisaE1E5bIndexForSV(svId, sisai, dataSetName));
+      return std::make_shared<SetGalileoSisaE1E5bIndexForSV>(svId, sisai, dataSetName);
     }
 
     SetGalileoSisaE1E5bIndexForSVPtr SetGalileoSisaE1E5bIndexForSV::dynamicCast(CommandBasePtr ptr)

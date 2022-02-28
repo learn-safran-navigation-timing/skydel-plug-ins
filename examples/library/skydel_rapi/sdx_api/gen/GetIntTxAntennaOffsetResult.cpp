@@ -37,7 +37,7 @@ namespace Sdx
 
     GetIntTxAntennaOffsetResultPtr GetIntTxAntennaOffsetResult::create(CommandBasePtr relatedCommand, double x, double y, double z, double yaw, double pitch, double roll, const std::string& id)
     {
-      return GetIntTxAntennaOffsetResultPtr(new GetIntTxAntennaOffsetResult(relatedCommand, x, y, z, yaw, pitch, roll, id));
+      return std::make_shared<GetIntTxAntennaOffsetResult>(relatedCommand, x, y, z, yaw, pitch, roll, id);
     }
 
     GetIntTxAntennaOffsetResultPtr GetIntTxAntennaOffsetResult::dynamicCast(CommandBasePtr ptr)

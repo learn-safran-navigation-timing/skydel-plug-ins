@@ -26,7 +26,7 @@ namespace Sdx
 
     GetIssueOfDataNavICPtr GetIssueOfDataNavIC::create()
     {
-      return GetIssueOfDataNavICPtr(new GetIssueOfDataNavIC());
+      return std::make_shared<GetIssueOfDataNavIC>();
     }
 
     GetIssueOfDataNavICPtr GetIssueOfDataNavIC::dynamicCast(CommandBasePtr ptr)

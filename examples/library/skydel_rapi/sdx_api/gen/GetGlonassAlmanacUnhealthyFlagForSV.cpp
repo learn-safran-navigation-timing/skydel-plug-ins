@@ -31,7 +31,7 @@ namespace Sdx
 
     GetGlonassAlmanacUnhealthyFlagForSVPtr GetGlonassAlmanacUnhealthyFlagForSV::create(int svId)
     {
-      return GetGlonassAlmanacUnhealthyFlagForSVPtr(new GetGlonassAlmanacUnhealthyFlagForSV(svId));
+      return std::make_shared<GetGlonassAlmanacUnhealthyFlagForSV>(svId);
     }
 
     GetGlonassAlmanacUnhealthyFlagForSVPtr GetGlonassAlmanacUnhealthyFlagForSV::dynamicCast(CommandBasePtr ptr)

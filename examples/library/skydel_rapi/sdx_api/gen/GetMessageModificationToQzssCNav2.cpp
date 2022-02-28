@@ -31,7 +31,7 @@ namespace Sdx
 
     GetMessageModificationToQzssCNav2Ptr GetMessageModificationToQzssCNav2::create(const std::string& id)
     {
-      return GetMessageModificationToQzssCNav2Ptr(new GetMessageModificationToQzssCNav2(id));
+      return std::make_shared<GetMessageModificationToQzssCNav2>(id);
     }
 
     GetMessageModificationToQzssCNav2Ptr GetMessageModificationToQzssCNav2::dynamicCast(CommandBasePtr ptr)

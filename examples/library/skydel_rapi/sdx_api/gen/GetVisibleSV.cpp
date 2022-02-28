@@ -31,7 +31,7 @@ namespace Sdx
 
     GetVisibleSVPtr GetVisibleSV::create(const std::string& system)
     {
-      return GetVisibleSVPtr(new GetVisibleSV(system));
+      return std::make_shared<GetVisibleSV>(system);
     }
 
     GetVisibleSVPtr GetVisibleSV::dynamicCast(CommandBasePtr ptr)

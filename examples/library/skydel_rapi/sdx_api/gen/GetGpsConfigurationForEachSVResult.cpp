@@ -32,7 +32,7 @@ namespace Sdx
 
     GetGpsConfigurationForEachSVResultPtr GetGpsConfigurationForEachSVResult::create(CommandBasePtr relatedCommand, const std::vector<int>& svConfigs, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetGpsConfigurationForEachSVResultPtr(new GetGpsConfigurationForEachSVResult(relatedCommand, svConfigs, dataSetName));
+      return std::make_shared<GetGpsConfigurationForEachSVResult>(relatedCommand, svConfigs, dataSetName);
     }
 
     GetGpsConfigurationForEachSVResultPtr GetGpsConfigurationForEachSVResult::dynamicCast(CommandBasePtr ptr)

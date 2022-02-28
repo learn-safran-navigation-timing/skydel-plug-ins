@@ -31,7 +31,7 @@ namespace Sdx
 
     GetConfigPathsResultPtr GetConfigPathsResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& paths)
     {
-      return GetConfigPathsResultPtr(new GetConfigPathsResult(relatedCommand, paths));
+      return std::make_shared<GetConfigPathsResult>(relatedCommand, paths);
     }
 
     GetConfigPathsResultPtr GetConfigPathsResult::dynamicCast(CommandBasePtr ptr)

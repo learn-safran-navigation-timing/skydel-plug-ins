@@ -38,7 +38,7 @@ namespace Sdx
 
     SetIntTxAWGNPtr SetIntTxAWGN::create(bool enabled, double centralFreq, double power, double bandwidth, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& seed, const Sdx::optional<int>& group)
     {
-      return SetIntTxAWGNPtr(new SetIntTxAWGN(enabled, centralFreq, power, bandwidth, transmitterId, signalId, seed, group));
+      return std::make_shared<SetIntTxAWGN>(enabled, centralFreq, power, bandwidth, transmitterId, signalId, seed, group);
     }
 
     SetIntTxAWGNPtr SetIntTxAWGN::dynamicCast(CommandBasePtr ptr)

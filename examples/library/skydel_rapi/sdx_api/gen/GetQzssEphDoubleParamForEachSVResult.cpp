@@ -33,7 +33,7 @@ namespace Sdx
 
     GetQzssEphDoubleParamForEachSVResultPtr GetQzssEphDoubleParamForEachSVResult::create(CommandBasePtr relatedCommand, const std::string& paramName, const std::vector<double>& val, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetQzssEphDoubleParamForEachSVResultPtr(new GetQzssEphDoubleParamForEachSVResult(relatedCommand, paramName, val, dataSetName));
+      return std::make_shared<GetQzssEphDoubleParamForEachSVResult>(relatedCommand, paramName, val, dataSetName);
     }
 
     GetQzssEphDoubleParamForEachSVResultPtr GetQzssEphDoubleParamForEachSVResult::dynamicCast(CommandBasePtr ptr)

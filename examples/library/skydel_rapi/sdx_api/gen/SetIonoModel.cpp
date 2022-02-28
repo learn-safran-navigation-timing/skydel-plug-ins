@@ -31,7 +31,7 @@ namespace Sdx
 
     SetIonoModelPtr SetIonoModel::create(const std::string& model)
     {
-      return SetIonoModelPtr(new SetIonoModel(model));
+      return std::make_shared<SetIonoModel>(model);
     }
 
     SetIonoModelPtr SetIonoModel::dynamicCast(CommandBasePtr ptr)

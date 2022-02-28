@@ -33,7 +33,7 @@ namespace Sdx
 
     GetQzssL2HealthForSVResultPtr GetQzssL2HealthForSVResult::create(CommandBasePtr relatedCommand, int svId, bool health, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetQzssL2HealthForSVResultPtr(new GetQzssL2HealthForSVResult(relatedCommand, svId, health, dataSetName));
+      return std::make_shared<GetQzssL2HealthForSVResult>(relatedCommand, svId, health, dataSetName);
     }
 
     GetQzssL2HealthForSVResultPtr GetQzssL2HealthForSVResult::dynamicCast(CommandBasePtr ptr)

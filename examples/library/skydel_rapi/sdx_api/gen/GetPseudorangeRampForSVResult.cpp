@@ -38,7 +38,7 @@ namespace Sdx
 
     GetPseudorangeRampForSVResultPtr GetPseudorangeRampForSVResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, double offset, int startTime, int holdStartTime, int holdStopTime, int stopTime, const std::string& id)
     {
-      return GetPseudorangeRampForSVResultPtr(new GetPseudorangeRampForSVResult(relatedCommand, system, svId, offset, startTime, holdStartTime, holdStopTime, stopTime, id));
+      return std::make_shared<GetPseudorangeRampForSVResult>(relatedCommand, system, svId, offset, startTime, holdStartTime, holdStopTime, stopTime, id);
     }
 
     GetPseudorangeRampForSVResultPtr GetPseudorangeRampForSVResult::dynamicCast(CommandBasePtr ptr)

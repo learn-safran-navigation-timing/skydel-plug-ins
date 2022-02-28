@@ -40,7 +40,7 @@ namespace Sdx
 
     SetIntTxBOCPtr SetIntTxBOC::create(bool enabled, double centralFreq, double power, int codeRate, int codeLengthMs, int subCarrierRate, bool cosinePhaseBoc, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& group)
     {
-      return SetIntTxBOCPtr(new SetIntTxBOC(enabled, centralFreq, power, codeRate, codeLengthMs, subCarrierRate, cosinePhaseBoc, transmitterId, signalId, group));
+      return std::make_shared<SetIntTxBOC>(enabled, centralFreq, power, codeRate, codeLengthMs, subCarrierRate, cosinePhaseBoc, transmitterId, signalId, group);
     }
 
     SetIntTxBOCPtr SetIntTxBOC::dynamicCast(CommandBasePtr ptr)

@@ -31,7 +31,7 @@ namespace Sdx
 
     GetAllVehicleAntennaNamesResultPtr GetAllVehicleAntennaNamesResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& antennaNames)
     {
-      return GetAllVehicleAntennaNamesResultPtr(new GetAllVehicleAntennaNamesResult(relatedCommand, antennaNames));
+      return std::make_shared<GetAllVehicleAntennaNamesResult>(relatedCommand, antennaNames);
     }
 
     GetAllVehicleAntennaNamesResultPtr GetAllVehicleAntennaNamesResult::dynamicCast(CommandBasePtr ptr)

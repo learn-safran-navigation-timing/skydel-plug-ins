@@ -34,7 +34,7 @@ namespace Sdx
 
     SetBeiDouEphDoubleParamForSVPtr SetBeiDouEphDoubleParamForSV::create(int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName)
     {
-      return SetBeiDouEphDoubleParamForSVPtr(new SetBeiDouEphDoubleParamForSV(svId, paramName, val, dataSetName));
+      return std::make_shared<SetBeiDouEphDoubleParamForSV>(svId, paramName, val, dataSetName);
     }
 
     SetBeiDouEphDoubleParamForSVPtr SetBeiDouEphDoubleParamForSV::dynamicCast(CommandBasePtr ptr)

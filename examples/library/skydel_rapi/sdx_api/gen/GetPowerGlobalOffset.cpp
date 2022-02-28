@@ -26,7 +26,7 @@ namespace Sdx
 
     GetPowerGlobalOffsetPtr GetPowerGlobalOffset::create()
     {
-      return GetPowerGlobalOffsetPtr(new GetPowerGlobalOffset());
+      return std::make_shared<GetPowerGlobalOffset>();
     }
 
     GetPowerGlobalOffsetPtr GetPowerGlobalOffset::dynamicCast(CommandBasePtr ptr)

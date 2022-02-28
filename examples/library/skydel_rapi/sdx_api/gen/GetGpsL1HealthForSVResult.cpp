@@ -33,7 +33,7 @@ namespace Sdx
 
     GetGpsL1HealthForSVResultPtr GetGpsL1HealthForSVResult::create(CommandBasePtr relatedCommand, int svId, bool health, const Sdx::optional<std::string>& dataSetName)
     {
-      return GetGpsL1HealthForSVResultPtr(new GetGpsL1HealthForSVResult(relatedCommand, svId, health, dataSetName));
+      return std::make_shared<GetGpsL1HealthForSVResult>(relatedCommand, svId, health, dataSetName);
     }
 
     GetGpsL1HealthForSVResultPtr GetGpsL1HealthForSVResult::dynamicCast(CommandBasePtr ptr)

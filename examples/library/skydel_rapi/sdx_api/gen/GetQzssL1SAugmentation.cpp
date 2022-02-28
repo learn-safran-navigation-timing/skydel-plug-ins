@@ -31,7 +31,7 @@ namespace Sdx
 
     GetQzssL1SAugmentationPtr GetQzssL1SAugmentation::create(const std::string& id)
     {
-      return GetQzssL1SAugmentationPtr(new GetQzssL1SAugmentation(id));
+      return std::make_shared<GetQzssL1SAugmentation>(id);
     }
 
     GetQzssL1SAugmentationPtr GetQzssL1SAugmentation::dynamicCast(CommandBasePtr ptr)

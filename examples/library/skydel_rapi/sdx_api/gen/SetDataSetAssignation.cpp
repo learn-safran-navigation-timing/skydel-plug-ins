@@ -33,7 +33,7 @@ namespace Sdx
 
     SetDataSetAssignationPtr SetDataSetAssignation::create(const std::string& system, const std::string& dataSetType, const std::string& dataSetName)
     {
-      return SetDataSetAssignationPtr(new SetDataSetAssignation(system, dataSetType, dataSetName));
+      return std::make_shared<SetDataSetAssignation>(system, dataSetType, dataSetName);
     }
 
     SetDataSetAssignationPtr SetDataSetAssignation::dynamicCast(CommandBasePtr ptr)

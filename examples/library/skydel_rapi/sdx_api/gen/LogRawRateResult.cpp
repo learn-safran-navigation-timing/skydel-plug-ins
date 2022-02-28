@@ -31,7 +31,7 @@ namespace Sdx
 
     LogRawRateResultPtr LogRawRateResult::create(CommandBasePtr relatedCommand, int rate)
     {
-      return LogRawRateResultPtr(new LogRawRateResult(relatedCommand, rate));
+      return std::make_shared<LogRawRateResult>(relatedCommand, rate);
     }
 
     LogRawRateResultPtr LogRawRateResult::dynamicCast(CommandBasePtr ptr)

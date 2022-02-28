@@ -33,7 +33,7 @@ namespace Sdx
 
     SetGlonassEphDoubleParamForSVPtr SetGlonassEphDoubleParamForSV::create(int svId, const std::string& paramName, double val)
     {
-      return SetGlonassEphDoubleParamForSVPtr(new SetGlonassEphDoubleParamForSV(svId, paramName, val));
+      return std::make_shared<SetGlonassEphDoubleParamForSV>(svId, paramName, val);
     }
 
     SetGlonassEphDoubleParamForSVPtr SetGlonassEphDoubleParamForSV::dynamicCast(CommandBasePtr ptr)

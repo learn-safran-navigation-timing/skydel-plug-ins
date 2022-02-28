@@ -32,7 +32,7 @@ namespace Sdx
 
     GetGpsStartTimeResultPtr GetGpsStartTimeResult::create(CommandBasePtr relatedCommand, const Sdx::DateTime& startTime, int leapSecond)
     {
-      return GetGpsStartTimeResultPtr(new GetGpsStartTimeResult(relatedCommand, startTime, leapSecond));
+      return std::make_shared<GetGpsStartTimeResult>(relatedCommand, startTime, leapSecond);
     }
 
     GetGpsStartTimeResultPtr GetGpsStartTimeResult::dynamicCast(CommandBasePtr ptr)

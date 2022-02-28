@@ -32,7 +32,7 @@ namespace Sdx
 
     EnableMultipathPtr EnableMultipath::create(bool enabled, const std::string& id)
     {
-      return EnableMultipathPtr(new EnableMultipath(enabled, id));
+      return std::make_shared<EnableMultipath>(enabled, id);
     }
 
     EnableMultipathPtr EnableMultipath::dynamicCast(CommandBasePtr ptr)

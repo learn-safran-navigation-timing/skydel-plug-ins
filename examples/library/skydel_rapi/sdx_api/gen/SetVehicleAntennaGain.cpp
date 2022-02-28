@@ -34,7 +34,7 @@ namespace Sdx
 
     SetVehicleAntennaGainPtr SetVehicleAntennaGain::create(const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const Sdx::GNSSBand& band, const Sdx::optional<std::string>& name)
     {
-      return SetVehicleAntennaGainPtr(new SetVehicleAntennaGain(gain, type, band, name));
+      return std::make_shared<SetVehicleAntennaGain>(gain, type, band, name);
     }
 
     SetVehicleAntennaGainPtr SetVehicleAntennaGain::dynamicCast(CommandBasePtr ptr)

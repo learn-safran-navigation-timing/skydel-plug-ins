@@ -31,7 +31,7 @@ namespace Sdx
 
     GetStatusLogResultPtr GetStatusLogResult::create(CommandBasePtr relatedCommand, const std::vector<Sdx::LogRecord>& records)
     {
-      return GetStatusLogResultPtr(new GetStatusLogResult(relatedCommand, records));
+      return std::make_shared<GetStatusLogResult>(relatedCommand, records);
     }
 
     GetStatusLogResultPtr GetStatusLogResult::dynamicCast(CommandBasePtr ptr)
