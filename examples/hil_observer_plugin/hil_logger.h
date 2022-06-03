@@ -24,9 +24,9 @@ signals:
 private:
   QString toString(const SkydelRuntimeHilObserver::TimedPosition& p);
 
-  SkydelNotifierInterface* m_skydelNotifier;
-  bool m_enableFileLogging;
   QFile m_file;
+  bool m_enableFileLogging;
+  SkydelNotifierInterface* m_skydelNotifier;
   int64_t m_displayedPosTimestamp; // ms
 };
 

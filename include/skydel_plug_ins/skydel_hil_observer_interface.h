@@ -2,7 +2,6 @@
 #define SKYDEL_HIL_OBSERVER_INTERFACE_H
 
 #include <QObject>
-#include <QWidget>
 
 class SkydelRuntimeHilObserver : public QObject
 {
@@ -23,7 +22,7 @@ public:
   };
   struct TimedPosition
   {
-    int64_t time;            // ms
+    double time;             // ms
     Ecef position;           // m
     Orientation orientation; // rad
   };
@@ -40,7 +39,7 @@ public:
   virtual SkydelRuntimeHilObserver* createRuntimeHilObserver() = 0;
 
   static constexpr auto ID = "SkydelHilObserver";
-  static constexpr auto VERSION = 1;
+  static constexpr auto VERSION = 2;
 };
 
 #endif // SKYDEL_HIL_OBSERVER_INTERFACE_H

@@ -8,9 +8,9 @@
 #include "hil_observer_view.h"
 
 HilLogger::HilLogger(const QString& logPath, bool enableFileLogging, SkydelNotifierInterface* skydelNotifier) :
-  m_skydelNotifier(skydelNotifier),
-  m_enableFileLogging(enableFileLogging),
   m_file(logPath + QDir::separator() + "hil_observer_output.csv"),
+  m_enableFileLogging(enableFileLogging),
+  m_skydelNotifier(skydelNotifier),
   m_displayedPosTimestamp(0)
 {
   if (!m_file.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text))

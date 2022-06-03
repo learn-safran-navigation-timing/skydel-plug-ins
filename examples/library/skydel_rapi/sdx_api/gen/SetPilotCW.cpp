@@ -61,7 +61,7 @@ namespace Sdx
 
     int SetPilotCW::executePermission() const
     {
-      return EXECUTE_IF_SIMULATING | EXECUTE_IF_IDLE;
+      return EXECUTE_IF_SIMULATING;
     }
 
 

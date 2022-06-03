@@ -2,7 +2,6 @@
 #define SKYDEL_POSITON_OBSERVER_INTERFACE_H
 
 #include <QObject>
-#include <QWidget>
 
 #include <cstdint>
 

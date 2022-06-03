@@ -53,7 +53,7 @@ namespace Sdx
 
     int SetEngineLatency::executePermission() const
     {
-      return EXECUTE_IF_NO_CONFIG | EXECUTE_IF_IDLE;
+      return EXECUTE_IF_IDLE;
     }
 
 

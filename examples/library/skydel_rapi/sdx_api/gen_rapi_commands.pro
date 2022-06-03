@@ -17,6 +17,7 @@ HEADERS += \
   sdx_api/gps_constants.h	\
   sdx_api/guid.h	\
   sdx_api/hil_client.h	\
+  sdx_api/hil_helper.h	\
   sdx_api/lla.h	\
   sdx_api/remote_simulator.h	\
   sdx_api/sdx_optional.h	\
@@ -113,10 +114,12 @@ HEADERS += \
   sdx_api/gen/EndTrackDefinition.h	\
   sdx_api/gen/EndTrackDefinitionResult.h	\
   sdx_api/gen/EndVehicleInfo.h	\
+  sdx_api/gen/ExportHilGraphDataToCSV.h	\
   sdx_api/gen/ExportIonoGridErrors.h	\
   sdx_api/gen/ExportIonoGridGIVEI.h	\
   sdx_api/gen/ExportIonoGridMask.h	\
   sdx_api/gen/ExportPerformanceDataToCSV.h	\
+  sdx_api/gen/ExportSbasMessageSequence.h	\
   sdx_api/gen/ExportSVAntennaModel.h	\
   sdx_api/gen/ExportVehicleAntennaModel.h	\
   sdx_api/gen/FailureResult.h	\
@@ -178,6 +181,8 @@ HEADERS += \
   sdx_api/gen/GetBeiDouHealthStatusForSVResult.h	\
   sdx_api/gen/GetCnav2PagesEnabled.h	\
   sdx_api/gen/GetCnav2PagesEnabledResult.h	\
+  sdx_api/gen/GetComputerSystemTimeSinceEpochAtPps0.h	\
+  sdx_api/gen/GetComputerSystemTimeSinceEpochAtPps0Result.h	\
   sdx_api/gen/GetConfigBroadcastFilter.h	\
   sdx_api/gen/GetConfigBroadcastFilterResult.h	\
   sdx_api/gen/GetConfigBroadcastOnStart.h	\
@@ -203,6 +208,8 @@ HEADERS += \
   sdx_api/gen/GetElevationMaskAboveResult.h	\
   sdx_api/gen/GetElevationMaskBelow.h	\
   sdx_api/gen/GetElevationMaskBelowResult.h	\
+  sdx_api/gen/GetEngineLatency.h	\
+  sdx_api/gen/GetEngineLatencyResult.h	\
   sdx_api/gen/GetEphemerisErrorForSV.h	\
   sdx_api/gen/GetEphemerisErrorForSVResult.h	\
   sdx_api/gen/GetEphemerisReferenceTime.h	\
@@ -269,6 +276,8 @@ HEADERS += \
   sdx_api/gen/GetGpsTimingReceiverResult.h	\
   sdx_api/gen/GetGpu.h	\
   sdx_api/gen/GetGpuResult.h	\
+  sdx_api/gen/GetHilExtrapolationState.h	\
+  sdx_api/gen/GetHilExtrapolationStateResult.h	\
   sdx_api/gen/GetHilPort.h	\
   sdx_api/gen/GetIntTx.h	\
   sdx_api/gen/GetIntTxAntenna.h	\
@@ -477,6 +486,8 @@ HEADERS += \
   sdx_api/gen/GetSbasEphParamsForSVResult.h	\
   sdx_api/gen/GetSbasMessagesEnabled.h	\
   sdx_api/gen/GetSbasMessagesEnabledResult.h	\
+  sdx_api/gen/GetSbasMessageUpdateInterval.h	\
+  sdx_api/gen/GetSbasMessageUpdateIntervalResult.h	\
   sdx_api/gen/GetSbasMonitoredSystems.h	\
   sdx_api/gen/GetSbasMonitoredSystemsResult.h	\
   sdx_api/gen/GetSbasServiceMessageRegionGroup.h	\
@@ -513,6 +524,8 @@ HEADERS += \
   sdx_api/gen/GetStartTimeOffsetResult.h	\
   sdx_api/gen/GetStatusLog.h	\
   sdx_api/gen/GetStatusLogResult.h	\
+  sdx_api/gen/GetStreamingBuffer.h	\
+  sdx_api/gen/GetStreamingBufferResult.h	\
   sdx_api/gen/GetSVAntennaGain.h	\
   sdx_api/gen/GetSVAntennaGainResult.h	\
   sdx_api/gen/GetSVAntennaModelForEachSV.h	\
@@ -580,6 +593,7 @@ HEADERS += \
   sdx_api/gen/GetWFAntennaOffsetResult.h	\
   sdx_api/gen/GNSSBand.h	\
   sdx_api/gen/GpsASFlag.h	\
+  sdx_api/gen/HilExtrapolationState.h	\
   sdx_api/gen/HilPortResult.h	\
   sdx_api/gen/HilWarningResult.h	\
   sdx_api/gen/ImportCCIRFilesFromDirectory.h	\
@@ -813,6 +827,7 @@ HEADERS += \
   sdx_api/gen/SetGpsTimingReceiver.h	\
   sdx_api/gen/SetGpsUraIndexForSV.h	\
   sdx_api/gen/SetGpu.h	\
+  sdx_api/gen/SetHilTjoin.h	\
   sdx_api/gen/SetInterferenceChirp.h	\
   sdx_api/gen/SetInterferenceCW.h	\
   sdx_api/gen/SetIntTxAntenna.h	\
@@ -944,6 +959,7 @@ HEADERS += \
   sdx_api/gen/SetSbasHealthReserved.h	\
   sdx_api/gen/SetSbasHealthService.h	\
   sdx_api/gen/SetSbasIntegrityHealthForSV.h	\
+  sdx_api/gen/SetSbasMessageUpdateInterval.h	\
   sdx_api/gen/SetSbasMonitoredSystems.h	\
   sdx_api/gen/SetSbasRangingHealthForSV.h	\
   sdx_api/gen/SetSbasReservedHealthForSV.h	\
@@ -1154,10 +1170,12 @@ SOURCES += \
   sdx_api/gen/EndTrackDefinition.cpp	\
   sdx_api/gen/EndTrackDefinitionResult.cpp	\
   sdx_api/gen/EndVehicleInfo.cpp	\
+  sdx_api/gen/ExportHilGraphDataToCSV.cpp	\
   sdx_api/gen/ExportIonoGridErrors.cpp	\
   sdx_api/gen/ExportIonoGridGIVEI.cpp	\
   sdx_api/gen/ExportIonoGridMask.cpp	\
   sdx_api/gen/ExportPerformanceDataToCSV.cpp	\
+  sdx_api/gen/ExportSbasMessageSequence.cpp	\
   sdx_api/gen/ExportSVAntennaModel.cpp	\
   sdx_api/gen/ExportVehicleAntennaModel.cpp	\
   sdx_api/gen/FailureResult.cpp	\
@@ -1214,6 +1232,8 @@ SOURCES += \
   sdx_api/gen/GetBeiDouHealthStatusForSVResult.cpp	\
   sdx_api/gen/GetCnav2PagesEnabled.cpp	\
   sdx_api/gen/GetCnav2PagesEnabledResult.cpp	\
+  sdx_api/gen/GetComputerSystemTimeSinceEpochAtPps0.cpp	\
+  sdx_api/gen/GetComputerSystemTimeSinceEpochAtPps0Result.cpp	\
   sdx_api/gen/GetConfigBroadcastFilter.cpp	\
   sdx_api/gen/GetConfigBroadcastFilterResult.cpp	\
   sdx_api/gen/GetConfigBroadcastOnStart.cpp	\
@@ -1239,6 +1259,8 @@ SOURCES += \
   sdx_api/gen/GetElevationMaskAboveResult.cpp	\
   sdx_api/gen/GetElevationMaskBelow.cpp	\
   sdx_api/gen/GetElevationMaskBelowResult.cpp	\
+  sdx_api/gen/GetEngineLatency.cpp	\
+  sdx_api/gen/GetEngineLatencyResult.cpp	\
   sdx_api/gen/GetEphemerisErrorForSV.cpp	\
   sdx_api/gen/GetEphemerisErrorForSVResult.cpp	\
   sdx_api/gen/GetEphemerisReferenceTimeForSV.cpp	\
@@ -1299,6 +1321,8 @@ SOURCES += \
   sdx_api/gen/GetGpsTimingReceiverResult.cpp	\
   sdx_api/gen/GetGpu.cpp	\
   sdx_api/gen/GetGpuResult.cpp	\
+  sdx_api/gen/GetHilExtrapolationState.cpp	\
+  sdx_api/gen/GetHilExtrapolationStateResult.cpp	\
   sdx_api/gen/GetHilPort.cpp	\
   sdx_api/gen/GetIntTx.cpp	\
   sdx_api/gen/GetIntTxAntenna.cpp	\
@@ -1493,6 +1517,8 @@ SOURCES += \
   sdx_api/gen/GetSbasEphParamsForSVResult.cpp	\
   sdx_api/gen/GetSbasMessagesEnabled.cpp	\
   sdx_api/gen/GetSbasMessagesEnabledResult.cpp	\
+  sdx_api/gen/GetSbasMessageUpdateInterval.cpp	\
+  sdx_api/gen/GetSbasMessageUpdateIntervalResult.cpp	\
   sdx_api/gen/GetSbasMonitoredSystems.cpp	\
   sdx_api/gen/GetSbasMonitoredSystemsResult.cpp	\
   sdx_api/gen/GetSbasServiceMessageRegionGroup.cpp	\
@@ -1529,6 +1555,8 @@ SOURCES += \
   sdx_api/gen/GetStartTimeOffsetResult.cpp	\
   sdx_api/gen/GetStatusLog.cpp	\
   sdx_api/gen/GetStatusLogResult.cpp	\
+  sdx_api/gen/GetStreamingBuffer.cpp	\
+  sdx_api/gen/GetStreamingBufferResult.cpp	\
   sdx_api/gen/GetSVAntennaGain.cpp	\
   sdx_api/gen/GetSVAntennaGainResult.cpp	\
   sdx_api/gen/GetSVAntennaModelForEachSV.cpp	\
@@ -1807,6 +1835,7 @@ SOURCES += \
   sdx_api/gen/SetGpsTimingReceiver.cpp	\
   sdx_api/gen/SetGpsUraIndexForSV.cpp	\
   sdx_api/gen/SetGpu.cpp	\
+  sdx_api/gen/SetHilTjoin.cpp	\
   sdx_api/gen/SetInterferenceChirp.cpp	\
   sdx_api/gen/SetInterferenceCW.cpp	\
   sdx_api/gen/SetIntTxAntenna.cpp	\
@@ -1921,6 +1950,7 @@ SOURCES += \
   sdx_api/gen/SetSbasHealthReserved.cpp	\
   sdx_api/gen/SetSbasHealthService.cpp	\
   sdx_api/gen/SetSbasIntegrityHealthForSV.cpp	\
+  sdx_api/gen/SetSbasMessageUpdateInterval.cpp	\
   sdx_api/gen/SetSbasMonitoredSystems.cpp	\
   sdx_api/gen/SetSbasRangingHealthForSV.cpp	\
   sdx_api/gen/SetSbasReservedHealthForSV.cpp	\

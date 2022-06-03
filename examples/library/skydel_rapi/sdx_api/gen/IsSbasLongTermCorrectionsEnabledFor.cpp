@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const IsSbasLongTermCorrectionsEnabledFor::CmdName = "IsSbasLongTermCorrectionsEnabledFor";
-    const char* const IsSbasLongTermCorrectionsEnabledFor::Documentation = "Get whether ephemeris errors for this constellation should be compensated in SBAS long term corrections";
+    const char* const IsSbasLongTermCorrectionsEnabledFor::Documentation = "Get whether ephemeris errors for this constellation should be compensated in SBAS long term corrections.";
 
     REGISTER_COMMAND_FACTORY(IsSbasLongTermCorrectionsEnabledFor);
 
@@ -53,7 +53,7 @@ namespace Sdx
 
     int IsSbasLongTermCorrectionsEnabledFor::executePermission() const
     {
-      return EXECUTE_IF_IDLE;
+      return EXECUTE_IF_IDLE | EXECUTE_IF_SIMULATING;
     }
 
 
