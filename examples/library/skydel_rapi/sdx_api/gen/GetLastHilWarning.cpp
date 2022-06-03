@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const GetLastHilWarning::CmdName = "GetLastHilWarning";
-    const char* const GetLastHilWarning::Documentation = "Get last Hardware in the loop trajectory server warning message. Returns HilWarningResult.";
+    const char* const GetLastHilWarning::Documentation = "Please note the command GetLastHilWarning is deprecated since 22.5. You may use GetHilExtrapolationState.\n\nGet last Hardware in the loop trajectory server warning message. Returns HilWarningResult.";
 
     REGISTER_COMMAND_FACTORY(GetLastHilWarning);
 

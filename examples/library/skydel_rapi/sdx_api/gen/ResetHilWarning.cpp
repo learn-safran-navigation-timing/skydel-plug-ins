@@ -12,7 +12,7 @@ namespace Sdx
   namespace Cmd
   {
     const char* const ResetHilWarning::CmdName = "ResetHilWarning";
-    const char* const ResetHilWarning::Documentation = "Reset Hardware in the loop trajectory server warning message.";
+    const char* const ResetHilWarning::Documentation = "Please note the command ResetHilWarning is deprecated since 22.5. You may use GetHilExtrapolationState.\n\nReset Hardware in the loop trajectory server warning message.";
 
     REGISTER_COMMAND_FACTORY(ResetHilWarning);
 

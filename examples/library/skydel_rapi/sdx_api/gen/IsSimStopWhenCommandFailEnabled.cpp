@@ -47,7 +47,7 @@ namespace Sdx
 
     int IsSimStopWhenCommandFailEnabled::executePermission() const
     {
-      return EXECUTE_IF_IDLE;
+      return EXECUTE_IF_IDLE | EXECUTE_IF_SIMULATING;
     }
 
   }

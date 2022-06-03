@@ -47,7 +47,7 @@ namespace Sdx
 
     int GetSbasMessagesEnabled::executePermission() const
     {
-      return EXECUTE_IF_IDLE;
+      return EXECUTE_IF_IDLE | EXECUTE_IF_SIMULATING;
     }
 
   }
