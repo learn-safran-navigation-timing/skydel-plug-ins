@@ -1,7 +1,5 @@
 [![Ubuntu CMake Build](https://github.com/learn-orolia/skydel-plug-ins/actions/workflows/ubuntu_cmake_build.yml/badge.svg)](https://github.com/learn-orolia/skydel-plug-ins/actions/workflows/ubuntu_cmake_build.yml)
 [![Windows CMake Build](https://github.com/learn-orolia/skydel-plug-ins/actions/workflows/windows_cmake_build.yml/badge.svg)](https://github.com/learn-orolia/skydel-plug-ins/actions/workflows/windows_cmake_build.yml)
-[![Ubuntu QMake Build](https://github.com/learn-orolia/skydel-plug-ins/actions/workflows/ubuntu_qmake_build.yml/badge.svg)](https://github.com/learn-orolia/skydel-plug-ins/actions/workflows/ubuntu_qmake_build.yml)
-[![Windows QMake Build](https://github.com/learn-orolia/skydel-plug-ins/actions/workflows/windows_qmake_build.yml/badge.svg)](https://github.com/learn-orolia/skydel-plug-ins/actions/workflows/windows_qmake_build.yml)
 [![Style Check](https://github.com/learn-orolia/skydel-plug-ins/actions/workflows/style_check.yml/badge.svg)](https://github.com/learn-orolia/skydel-plug-ins/actions/workflows/style_check.yml)
 
 ## Welcome to the Public Skydel Plug-ins Github Repository!
