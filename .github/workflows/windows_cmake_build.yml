@@ -40,12 +40,12 @@ jobs:
           cd blaze 
           mkdir build && cd build 
           cmake -G"NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DBLAZE_BLAS_MODE=OFF -DUSE_LAPACK=OFF -DBLAZE_CACHE_SIZE_AUTO=OFF ..
-          cmake --install . 
+          cmake --install .
         shell: cmd
 
       - name: Build
         run: |
           mkdir build && cd build
           cmake -G"NMake Makefiles" -DCMAKE_BUILD_TYPE=Release ..
-          cmake --build . 
+          cmake --build .
         shell: cmd
