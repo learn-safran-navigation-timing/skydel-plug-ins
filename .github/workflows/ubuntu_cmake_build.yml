@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout repository and submodules
@@ -28,7 +28,7 @@ jobs:
         uses: jurplel/install-qt-action@v2
         with:
           cached: ${{ steps.cache-qt.outputs.cache-hit }}
-          version: '5.12.3'
+          version: '5.15.2'
 
       - name: Install uuid-dev
         run: sudo apt-get install uuid-dev
