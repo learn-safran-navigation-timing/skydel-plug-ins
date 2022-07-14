@@ -27,7 +27,7 @@ jobs:
       - name: Build Setup
         uses: ilammy/msvc-dev-cmd@v1
         with:
-          toolset: '14.28'
+          toolset: '14.29'
 
       - name: Setup cmake
         uses: jwlawson/actions-setup-cmake@v1.9

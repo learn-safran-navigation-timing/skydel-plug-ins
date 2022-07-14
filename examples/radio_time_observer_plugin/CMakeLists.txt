@@ -16,10 +16,6 @@ target_link_libraries(radio_time_observer_plugin PUBLIC
 	Qt5::Network
     )
 
-target_include_directories(radio_time_observer_plugin PUBLIC
-    ${RADIO_TIME_OBSERVER_PLUGIN_SRC}
-    )
-
 set_target_properties(radio_time_observer_plugin PROPERTIES CXX_STANDARD 17)
 
 install(TARGETS radio_time_observer_plugin DESTINATION ${PLUGIN_INSTALL_DIR})

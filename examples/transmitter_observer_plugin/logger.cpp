@@ -114,7 +114,7 @@ void Logger::processMs()
   if (m_enableNetworkLogging)
   {
     QByteArray byteArray;
-    byteArray.append(formattedTransmitter);
+    byteArray.append(formattedTransmitter.toUtf8());
     if (m_socket.writeDatagram(byteArray, m_address, m_port) == -1)
     {
       throw std::runtime_error(m_socket.errorString().toStdString().c_str());

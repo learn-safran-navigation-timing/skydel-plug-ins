@@ -12,10 +12,6 @@ target_link_libraries(hil_observer_plugin PUBLIC
     Skydel::SkydelPlugin
     )
 
-target_include_directories(hil_observer_plugin PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}
-    )
-
 set_target_properties(hil_observer_plugin PROPERTIES CXX_STANDARD 17)
 
 install(TARGETS hil_observer_plugin DESTINATION ${PLUGIN_INSTALL_DIR})
