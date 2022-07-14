@@ -25,14 +25,18 @@ jobs:
       - name: Install uuid-dev
         run: sudo apt-get install uuid-dev
 
+      - name: Get number of CPU cores
+        uses: SimenB/github-actions-cpu-cores@v1
+        id: cpu-cores
+
       - name: Install blaze 
         run: |
           git clone https://github.com/parsa/blaze 
           cd blaze && mkdir build && cd build 
-          cmake -DBLAZE_BLAS_MODE=ON .. && sudo make install
+          cmake -DBLAZE_BLAS_MODE=ON .. && sudo make install -j${{ steps.cpu-cores.outputs.count }}
 
       - name: Build
         run: |
           mkdir build && cd build
           cmake -DCMAKE_BUILD_TYPE=Release ..
-          make
+          make -j${{ steps.cpu-cores.outputs.count }}

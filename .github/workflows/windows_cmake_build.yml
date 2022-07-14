@@ -34,18 +34,22 @@ jobs:
         with:
           cmake-version: '3.22.x'
 
+      - name: Get number of CPU cores
+        uses: SimenB/github-actions-cpu-cores@v1
+        id: cpu-cores
+
       - name: Install blaze 
         run: |
           git clone https://github.com/parsa/blaze 
           cd blaze 
           mkdir build && cd build 
           cmake -G"NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DBLAZE_BLAS_MODE=OFF -DUSE_LAPACK=OFF -DBLAZE_CACHE_SIZE_AUTO=OFF ..
-          cmake --install . 
+          cmake --install . -- -j${{ steps.cpu-cores.outputs.count }}
         shell: cmd
 
       - name: Build
         run: |
           mkdir build && cd build
           cmake -G"NMake Makefiles" -DCMAKE_BUILD_TYPE=Release ..
-          cmake --build . 
+          cmake --build . -- -j${{ steps.cpu-cores.outputs.count }}
         shell: cmd
