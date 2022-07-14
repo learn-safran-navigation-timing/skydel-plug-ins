@@ -20,20 +20,19 @@ jobs:
       - name: Install Qt
         uses: jurplel/install-qt-action@v2
         with:
-          version: '5.12.3'
+          version: '5.15.2'
           host: 'windows'
-          arch: 'win64_msvc2017_64'
-          tools: 'tools_qtcreator,6.0.2-0,qt.tools.qtcreator'
+          arch: 'win64_msvc2019_64'
 
       - name: Build Setup
         uses: ilammy/msvc-dev-cmd@v1
         with:
-          toolset: '14.16'
+          toolset: '14.28'
 
       - name: Setup cmake
         uses: jwlawson/actions-setup-cmake@v1.9
         with:
-          cmake-version: '3.17.x'
+          cmake-version: '3.22.x'
 
       - name: Install blaze 
         run: |
