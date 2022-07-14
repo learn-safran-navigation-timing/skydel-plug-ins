@@ -16,10 +16,6 @@ target_link_libraries(position_observer_plugin PUBLIC
     Qt5::Network
     )
 
-target_include_directories(position_observer_plugin PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}
-    )
-
 set_target_properties(position_observer_plugin PROPERTIES CXX_STANDARD 17)
 
 install(TARGETS position_observer_plugin DESTINATION ${PLUGIN_INSTALL_DIR})

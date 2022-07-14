@@ -49,7 +49,7 @@ void PositionLogger::pushPosition(const TimedPosition& p)
   if (m_enableNetworkLogging)
   {
     QByteArray byteArray;
-    byteArray.append(formatedPosition);
+    byteArray.append(formatedPosition.toUtf8());
     if (m_socket.writeDatagram(byteArray, m_address, m_port) == -1)
     {
       throw std::runtime_error(m_socket.errorString().toStdString().c_str());

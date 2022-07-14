@@ -15,10 +15,6 @@ target_link_libraries(transmitter_observer_plugin PUBLIC
 	Qt5::Network
     )
 
-target_include_directories(transmitter_observer_plugin PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}
-    )
-
 set_target_properties(transmitter_observer_plugin PROPERTIES CXX_STANDARD 17)
 
 install(TARGETS transmitter_observer_plugin DESTINATION ${PLUGIN_INSTALL_DIR})
