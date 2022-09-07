@@ -22,6 +22,11 @@ jobs:
         with:
           version: '5.15.2'
 
+      - name: Setup Ninja
+        uses: ashutoshvarma/setup-ninja@master
+        with:
+          version: 1.10.1
+
       - name: Install uuid-dev
         run: sudo apt-get install uuid-dev
 
@@ -35,8 +40,11 @@ jobs:
           cd blaze && mkdir build && cd build 
           cmake -DBLAZE_BLAS_MODE=ON .. && sudo make install -j${{ steps.cpu-cores.outputs.count }}
 
-      - name: Build
-        run: |
-          mkdir build && cd build
-          cmake -DCMAKE_BUILD_TYPE=Release ..
-          make -j${{ steps.cpu-cores.outputs.count }}
+      - name: Build with CMake
+        uses: ashutoshvarma/action-cmake-build@master
+        with:
+          build-dir: ${{ runner.workspace }}/build
+          cc: gcc
+          cxx: g++
+          configure-options: -G Ninja
+          build-type: Release
