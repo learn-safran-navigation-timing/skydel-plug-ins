@@ -48,9 +48,11 @@ jobs:
           cmake --install .
         shell: cmd
 
-      - name: Build
-        run: |
-          mkdir build && cd build
-          cmake -G"Ninja" -DCMAKE_BUILD_TYPE=Release ..
-          cmake --build .
-        shell: cmd
+      - name: Build with CMake
+        uses: ashutoshvarma/action-cmake-build@master
+        with:
+          build-dir: ${{ runner.workspace }}/build
+          cc: cl
+          cxx: cl
+          configure-options: -G Ninja
+          build-type: Release

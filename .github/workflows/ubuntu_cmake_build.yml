@@ -40,8 +40,11 @@ jobs:
           cd blaze && mkdir build && cd build 
           cmake -DBLAZE_BLAS_MODE=ON .. && sudo make install -j${{ steps.cpu-cores.outputs.count }}
 
-      - name: Build
-        run: |
-          mkdir build && cd build
-          cmake -GNinja -DCMAKE_BUILD_TYPE=Release ..
-          cmake --build .
+      - name: Build with CMake
+        uses: ashutoshvarma/action-cmake-build@master
+        with:
+          build-dir: ${{ runner.workspace }}/build
+          cc: gcc
+          cxx: g++
+          configure-options: -G Ninja
+          build-type: Release
