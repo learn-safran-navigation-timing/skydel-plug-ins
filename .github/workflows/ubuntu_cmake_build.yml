@@ -12,13 +12,11 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-      - name: Checkout repository and submodules
-        uses: actions/checkout@v2
-        with:
-          submodules: recursive
+      - name: Checkout repository
+        uses: actions/checkout@master
 
       - name: Install Qt
-        uses: jurplel/install-qt-action@v2
+        uses: jurplel/install-qt-action@master
         with:
           version: '5.15.2'
 
@@ -31,7 +29,7 @@ jobs:
         run: sudo apt-get install uuid-dev
 
       - name: Get number of CPU cores
-        uses: SimenB/github-actions-cpu-cores@v1
+        uses: SimenB/github-actions-cpu-cores@master
         id: cpu-cores
 
       - name: Install blaze 
