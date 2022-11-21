@@ -12,13 +12,11 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout repository and submodules
-        uses: actions/checkout@v2
-        with:
-          submodules: recursive
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       - name: Install Qt
-        uses: jurplel/install-qt-action@v2
+        uses: jurplel/install-qt-action@v3
         with:
           version: '5.15.2'
           host: 'windows'
@@ -35,7 +33,7 @@ jobs:
           toolset: '14.29'
 
       - name: Setup cmake
-        uses: jwlawson/actions-setup-cmake@v1.9
+        uses: jwlawson/actions-setup-cmake@v1.13
         with:
           cmake-version: '3.22.x'
 
