@@ -6,7 +6,7 @@
 
 With plug-ins, users can develop features and integrate them to the Skydel user interface and the real-time simulation engine. In Skydel's context, a plug-in is a dynamic library (*.so* on Ubuntu and *.dll* on Windows).
 
-This repository contains the Skydel Plug-ins Software Development Kit (SDK) and multiple plug-in examples.
+This repository contains the Skydel Plug-ins Software Development Kit (SDK).
 
 ### Getting Started
 
@@ -24,4 +24,5 @@ Having a good idea to improve the SDK or there is something bothering you? Open 
 
 Would you like your plug-in to be featured in this repository? Add your project to the list bellow and send us a pull request!
 
+- [Example Plug-ins](https://github.com/learn-safran-navigation-timing/skydel-example-plugins): Multiple plugin examples are available to help understand how to use the SDK.
 - [IMU Plug-in](https://github.com/learn-safran-navigation-timing/skydel-imu-plugin): Simulates an inertial measurement unit with real-time position data from Skydel.

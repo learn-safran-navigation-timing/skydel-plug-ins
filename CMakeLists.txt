@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 3.17)
 
 project(SkydelPlugin VERSION 0.0.1 LANGUAGES CXX)
 
-set(BUILD_SKYDEL_PLUGIN_EXAMPLES ON CACHE BOOL "If TRUE the plug-in examples are built")
 if(NOT WIN32)
     set(CMAKE_CXX_COMPILER /usr/bin/g++-11 CACHE FILEPATH "GNU C++ compiler")
     set(Qt5_VERSION 5.15.2 CACHE STRING "Version of Qt5 you want to find")
@@ -27,9 +26,7 @@ target_link_libraries(SkydelPlugin INTERFACE Qt5::Core Qt5::Widgets)
 
 add_library(Skydel::SkydelPlugin ALIAS SkydelPlugin)
 
-if(BUILD_SKYDEL_PLUGIN_EXAMPLES)
-    add_subdirectory(examples)
-endif(BUILD_SKYDEL_PLUGIN_EXAMPLES)
+add_subdirectory(source)
 
 ### Installation / Export
 include(CMakePackageConfigHelpers)

@@ -15,7 +15,7 @@ jobs:
       matrix:
         path:
           - check: 'include'
-          - check: 'examples'
+          - check: 'source'
             exclude: '(sdx_api)'
     steps:
     - uses: actions/checkout@v3
