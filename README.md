@@ -12,6 +12,9 @@ This repository contains the Skydel Plug-ins Software Development Kit (SDK).
 
 See [documentation](https://skydel.gitbook.io/skydel-plug-ins-documentation/) to have more details on how to get started.
 
+### Starting From Scratch
+You can easily create your own custom plugin based on [this](https://github.com/learn-safran-navigation-timing/skydel-template-plugin) template repository.
+
 ## Contributing
 
 Would you like your plug-in to be part of the Skydel Plug-ins repository? You found an improvement on an existing plug-in example? We suggest forking our repository and when you're all set, open a pull request!
