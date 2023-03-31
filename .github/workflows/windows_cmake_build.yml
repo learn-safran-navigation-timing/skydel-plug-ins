@@ -37,15 +37,6 @@ jobs:
         with:
           cmake-version: '3.22.x'
 
-      - name: Install blaze 
-        run: |
-          git clone https://github.com/parsa/blaze 
-          cd blaze 
-          mkdir build && cd build 
-          cmake -G"NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DBLAZE_BLAS_MODE=OFF -DUSE_LAPACK=OFF -DBLAZE_CACHE_SIZE_AUTO=OFF ..
-          cmake --install .
-        shell: cmd
-
       - name: Build with CMake
         uses: ashutoshvarma/action-cmake-build@master
         with:

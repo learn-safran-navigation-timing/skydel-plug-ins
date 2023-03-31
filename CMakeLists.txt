@@ -16,8 +16,6 @@ else()
 endif()
 
 ### Dependencies
-find_package(blaze 3.7 REQUIRED)
-
 find_package(Qt5 COMPONENTS Core Widgets REQUIRED)
 
 ### Project
@@ -25,7 +23,7 @@ add_library(SkydelPlugin INTERFACE)
 
 target_include_directories(SkydelPlugin INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> $<INSTALL_INTERFACE:include>)
 
-target_link_libraries(SkydelPlugin INTERFACE blaze::blaze Qt5::Core Qt5::Widgets)
+target_link_libraries(SkydelPlugin INTERFACE Qt5::Core Qt5::Widgets)
 
 add_library(Skydel::SkydelPlugin ALIAS SkydelPlugin)
 

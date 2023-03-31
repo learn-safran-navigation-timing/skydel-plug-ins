@@ -1,5 +1,0 @@
-{
-    "Name": "IMU Plugin",
-    "Description": "Converts Skydel position to IMU data",
-    "Version": "20.10.1"
-}
