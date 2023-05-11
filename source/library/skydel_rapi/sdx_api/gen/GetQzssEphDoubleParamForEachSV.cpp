@@ -1,3 +1,6 @@
+
+#include "gen/GetQzssEphDoubleParamForEachSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,13 @@
 ///
 /// Definition of GetQzssEphDoubleParamForEachSV
 ///
-#include "gen/GetQzssEphDoubleParamForEachSV.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const GetQzssEphDoubleParamForEachSV::CmdName = "GetQzssEphDoubleParamForEachSV";
-    const char* const GetQzssEphDoubleParamForEachSV::Documentation = "Please note the command GetQzssEphemerisDoubleParams is deprecated since 21.3. You may use GetQzssEphDoubleParamForEachSV.\n\nGet QZSS ephemeris parameter value for all satellites";
+    const char* const GetQzssEphDoubleParamForEachSV::Documentation = "Get QZSS ephemeris parameter value for all satellites";
 
     REGISTER_COMMAND_FACTORY(GetQzssEphDoubleParamForEachSV);
 
@@ -28,7 +30,6 @@ namespace Sdx
       setParamName(paramName);
       setDataSetName(dataSetName);
     }
-
 
     GetQzssEphDoubleParamForEachSVPtr GetQzssEphDoubleParamForEachSV::create(const std::string& paramName, const Sdx::optional<std::string>& dataSetName)
     {

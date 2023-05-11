@@ -1,3 +1,6 @@
+
+#include "gen/SetTropoModel.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetTropoModel
 ///
-#include "gen/SetTropoModel.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setModel(model);
     }
-
 
     SetTropoModelPtr SetTropoModel::create(const std::string& model)
     {

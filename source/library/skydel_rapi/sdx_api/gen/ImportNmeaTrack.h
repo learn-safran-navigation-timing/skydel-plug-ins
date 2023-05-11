@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -30,7 +31,7 @@ namespace Sdx
       ImportNmeaTrack();
 
       ImportNmeaTrack(const std::string& path);
-  
+
       static ImportNmeaTrackPtr create(const std::string& path);
       static ImportNmeaTrackPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -43,6 +44,7 @@ namespace Sdx
       std::string path() const;
       void setPath(const std::string& path);
     };
+    
   }
 }
 

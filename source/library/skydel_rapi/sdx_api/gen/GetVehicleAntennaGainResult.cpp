@@ -1,3 +1,6 @@
+
+#include "gen/GetVehicleAntennaGainResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetVehicleAntennaGainResult
 ///
-#include "gen/GetVehicleAntennaGainResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,22 @@ namespace Sdx
     const char* const GetVehicleAntennaGainResult::CmdName = "GetVehicleAntennaGainResult";
     const char* const GetVehicleAntennaGainResult::Documentation = "Result of GetVehicleAntennaGain.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetVehicleAntennaGainResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetVehicleAntennaGainResult);
 
 
     GetVehicleAntennaGainResult::GetVehicleAntennaGainResult()
       : CommandResult(CmdName)
     {}
+
+    GetVehicleAntennaGainResult::GetVehicleAntennaGainResult(const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const Sdx::GNSSBand& band, const Sdx::optional<std::string>& name)
+      : CommandResult(CmdName)
+    {
+
+      setGain(gain);
+      setType(type);
+      setBand(band);
+      setName(name);
+    }
 
     GetVehicleAntennaGainResult::GetVehicleAntennaGainResult(CommandBasePtr relatedCommand, const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const Sdx::GNSSBand& band, const Sdx::optional<std::string>& name)
       : CommandResult(CmdName, relatedCommand)
@@ -31,6 +43,11 @@ namespace Sdx
       setName(name);
     }
 
+
+    GetVehicleAntennaGainResultPtr GetVehicleAntennaGainResult::create(const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const Sdx::GNSSBand& band, const Sdx::optional<std::string>& name)
+    {
+      return std::make_shared<GetVehicleAntennaGainResult>(gain, type, band, name);
+    }
 
     GetVehicleAntennaGainResultPtr GetVehicleAntennaGainResult::create(CommandBasePtr relatedCommand, const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const Sdx::GNSSBand& band, const Sdx::optional<std::string>& name)
     {

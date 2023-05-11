@@ -1,3 +1,6 @@
+
+#include "gen/IsIonoOffsetEnabledResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of IsIonoOffsetEnabledResult
 ///
-#include "gen/IsIonoOffsetEnabledResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const IsIonoOffsetEnabledResult::CmdName = "IsIonoOffsetEnabledResult";
     const char* const IsIonoOffsetEnabledResult::Documentation = "Result of IsIonoOffsetEnabled.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(IsIonoOffsetEnabledResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsIonoOffsetEnabledResult);
 
 
     IsIonoOffsetEnabledResult::IsIonoOffsetEnabledResult()
       : CommandResult(CmdName)
     {}
+
+    IsIonoOffsetEnabledResult::IsIonoOffsetEnabledResult(bool isEnabled)
+      : CommandResult(CmdName)
+    {
+
+      setIsEnabled(isEnabled);
+    }
 
     IsIonoOffsetEnabledResult::IsIonoOffsetEnabledResult(CommandBasePtr relatedCommand, bool isEnabled)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setIsEnabled(isEnabled);
     }
 
+
+    IsIonoOffsetEnabledResultPtr IsIonoOffsetEnabledResult::create(bool isEnabled)
+    {
+      return std::make_shared<IsIonoOffsetEnabledResult>(isEnabled);
+    }
 
     IsIonoOffsetEnabledResultPtr IsIonoOffsetEnabledResult::create(CommandBasePtr relatedCommand, bool isEnabled)
     {

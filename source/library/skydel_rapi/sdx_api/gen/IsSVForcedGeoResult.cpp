@@ -1,3 +1,6 @@
+
+#include "gen/IsSVForcedGeoResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of IsSVForcedGeoResult
 ///
-#include "gen/IsSVForcedGeoResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,23 @@ namespace Sdx
     const char* const IsSVForcedGeoResult::CmdName = "IsSVForcedGeoResult";
     const char* const IsSVForcedGeoResult::Documentation = "Result of IsSVForcedGeo.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(IsSVForcedGeoResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsSVForcedGeoResult);
 
 
     IsSVForcedGeoResult::IsSVForcedGeoResult()
       : CommandResult(CmdName)
     {}
+
+    IsSVForcedGeoResult::IsSVForcedGeoResult(const std::string& system, int svId, bool isGeo, double longitude, const Sdx::optional<std::string>& dataSetName)
+      : CommandResult(CmdName)
+    {
+
+      setSystem(system);
+      setSvId(svId);
+      setIsGeo(isGeo);
+      setLongitude(longitude);
+      setDataSetName(dataSetName);
+    }
 
     IsSVForcedGeoResult::IsSVForcedGeoResult(CommandBasePtr relatedCommand, const std::string& system, int svId, bool isGeo, double longitude, const Sdx::optional<std::string>& dataSetName)
       : CommandResult(CmdName, relatedCommand)
@@ -32,6 +45,11 @@ namespace Sdx
       setDataSetName(dataSetName);
     }
 
+
+    IsSVForcedGeoResultPtr IsSVForcedGeoResult::create(const std::string& system, int svId, bool isGeo, double longitude, const Sdx::optional<std::string>& dataSetName)
+    {
+      return std::make_shared<IsSVForcedGeoResult>(system, svId, isGeo, longitude, dataSetName);
+    }
 
     IsSVForcedGeoResultPtr IsSVForcedGeoResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, bool isGeo, double longitude, const Sdx::optional<std::string>& dataSetName)
     {

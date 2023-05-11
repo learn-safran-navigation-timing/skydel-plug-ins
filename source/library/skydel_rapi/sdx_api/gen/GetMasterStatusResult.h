@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -31,8 +32,12 @@ namespace Sdx
 
       GetMasterStatusResult();
 
+      GetMasterStatusResult(bool isMaster, int slaveConnected, int port);
+
       GetMasterStatusResult(CommandBasePtr relatedCommand, bool isMaster, int slaveConnected, int port);
-  
+
+      static GetMasterStatusResultPtr create(bool isMaster, int slaveConnected, int port);
+
       static GetMasterStatusResultPtr create(CommandBasePtr relatedCommand, bool isMaster, int slaveConnected, int port);
       static GetMasterStatusResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -53,6 +58,7 @@ namespace Sdx
       int port() const;
       void setPort(int port);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetMasterStatusResult);
   }
 }
 

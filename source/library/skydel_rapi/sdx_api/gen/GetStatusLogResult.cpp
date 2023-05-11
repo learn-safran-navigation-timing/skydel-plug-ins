@@ -1,3 +1,6 @@
+
+#include "gen/GetStatusLogResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetStatusLogResult
 ///
-#include "gen/GetStatusLogResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const GetStatusLogResult::CmdName = "GetStatusLogResult";
     const char* const GetStatusLogResult::Documentation = "Result of GetStatusLog.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetStatusLogResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetStatusLogResult);
 
 
     GetStatusLogResult::GetStatusLogResult()
       : CommandResult(CmdName)
     {}
+
+    GetStatusLogResult::GetStatusLogResult(const std::vector<Sdx::LogRecord>& records)
+      : CommandResult(CmdName)
+    {
+
+      setRecords(records);
+    }
 
     GetStatusLogResult::GetStatusLogResult(CommandBasePtr relatedCommand, const std::vector<Sdx::LogRecord>& records)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setRecords(records);
     }
 
+
+    GetStatusLogResultPtr GetStatusLogResult::create(const std::vector<Sdx::LogRecord>& records)
+    {
+      return std::make_shared<GetStatusLogResult>(records);
+    }
 
     GetStatusLogResultPtr GetStatusLogResult::create(CommandBasePtr relatedCommand, const std::vector<Sdx::LogRecord>& records)
     {

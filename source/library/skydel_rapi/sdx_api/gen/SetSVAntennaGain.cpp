@@ -1,3 +1,6 @@
+
+#include "gen/SetSVAntennaGain.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetSVAntennaGain
 ///
-#include "gen/SetSVAntennaGain.h"
 
 namespace Sdx
 {
@@ -31,7 +33,6 @@ namespace Sdx
       setSystem(system);
       setName(name);
     }
-
 
     SetSVAntennaGainPtr SetSVAntennaGain::create(const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const Sdx::GNSSBand& band, const std::string& system, const Sdx::optional<std::string>& name)
     {

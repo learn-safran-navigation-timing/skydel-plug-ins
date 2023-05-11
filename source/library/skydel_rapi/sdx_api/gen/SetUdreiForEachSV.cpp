@@ -1,3 +1,6 @@
+
+#include "gen/SetUdreiForEachSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetUdreiForEachSV
 ///
-#include "gen/SetUdreiForEachSV.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setSystem(system);
       setUdreis(udreis);
     }
-
 
     SetUdreiForEachSVPtr SetUdreiForEachSV::create(const std::string& system, const std::vector<int>& udreis)
     {

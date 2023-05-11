@@ -1,3 +1,6 @@
+
+#include "gen/IsSimStopWhenCommandFailEnabledResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of IsSimStopWhenCommandFailEnabledResult
 ///
-#include "gen/IsSimStopWhenCommandFailEnabledResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const IsSimStopWhenCommandFailEnabledResult::CmdName = "IsSimStopWhenCommandFailEnabledResult";
     const char* const IsSimStopWhenCommandFailEnabledResult::Documentation = "Result of IsSimStopWhenCommandFailEnabled.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(IsSimStopWhenCommandFailEnabledResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsSimStopWhenCommandFailEnabledResult);
 
 
     IsSimStopWhenCommandFailEnabledResult::IsSimStopWhenCommandFailEnabledResult()
       : CommandResult(CmdName)
     {}
+
+    IsSimStopWhenCommandFailEnabledResult::IsSimStopWhenCommandFailEnabledResult(bool enabled)
+      : CommandResult(CmdName)
+    {
+
+      setEnabled(enabled);
+    }
 
     IsSimStopWhenCommandFailEnabledResult::IsSimStopWhenCommandFailEnabledResult(CommandBasePtr relatedCommand, bool enabled)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setEnabled(enabled);
     }
 
+
+    IsSimStopWhenCommandFailEnabledResultPtr IsSimStopWhenCommandFailEnabledResult::create(bool enabled)
+    {
+      return std::make_shared<IsSimStopWhenCommandFailEnabledResult>(enabled);
+    }
 
     IsSimStopWhenCommandFailEnabledResultPtr IsSimStopWhenCommandFailEnabledResult::create(CommandBasePtr relatedCommand, bool enabled)
     {

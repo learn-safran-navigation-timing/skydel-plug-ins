@@ -1,3 +1,6 @@
+
+#include "gen/GetGpsEphBoolParamForSVResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetGpsEphBoolParamForSVResult
 ///
-#include "gen/GetGpsEphBoolParamForSVResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,22 @@ namespace Sdx
     const char* const GetGpsEphBoolParamForSVResult::CmdName = "GetGpsEphBoolParamForSVResult";
     const char* const GetGpsEphBoolParamForSVResult::Documentation = "Result of GetGpsEphBoolParamForSV.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetGpsEphBoolParamForSVResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetGpsEphBoolParamForSVResult);
 
 
     GetGpsEphBoolParamForSVResult::GetGpsEphBoolParamForSVResult()
       : CommandResult(CmdName)
     {}
+
+    GetGpsEphBoolParamForSVResult::GetGpsEphBoolParamForSVResult(int svId, const std::string& paramName, bool val, const Sdx::optional<std::string>& dataSetName)
+      : CommandResult(CmdName)
+    {
+
+      setSvId(svId);
+      setParamName(paramName);
+      setVal(val);
+      setDataSetName(dataSetName);
+    }
 
     GetGpsEphBoolParamForSVResult::GetGpsEphBoolParamForSVResult(CommandBasePtr relatedCommand, int svId, const std::string& paramName, bool val, const Sdx::optional<std::string>& dataSetName)
       : CommandResult(CmdName, relatedCommand)
@@ -31,6 +43,11 @@ namespace Sdx
       setDataSetName(dataSetName);
     }
 
+
+    GetGpsEphBoolParamForSVResultPtr GetGpsEphBoolParamForSVResult::create(int svId, const std::string& paramName, bool val, const Sdx::optional<std::string>& dataSetName)
+    {
+      return std::make_shared<GetGpsEphBoolParamForSVResult>(svId, paramName, val, dataSetName);
+    }
 
     GetGpsEphBoolParamForSVResultPtr GetGpsEphBoolParamForSVResult::create(CommandBasePtr relatedCommand, int svId, const std::string& paramName, bool val, const Sdx::optional<std::string>& dataSetName)
     {

@@ -1,3 +1,6 @@
+
+#include "gen/GetBeiDouEphDoubleParamForEachSVResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetBeiDouEphDoubleParamForEachSVResult
 ///
-#include "gen/GetBeiDouEphDoubleParamForEachSVResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,21 @@ namespace Sdx
     const char* const GetBeiDouEphDoubleParamForEachSVResult::CmdName = "GetBeiDouEphDoubleParamForEachSVResult";
     const char* const GetBeiDouEphDoubleParamForEachSVResult::Documentation = "Result of GetBeiDouEphDoubleParamForEachSV.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetBeiDouEphDoubleParamForEachSVResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetBeiDouEphDoubleParamForEachSVResult);
 
 
     GetBeiDouEphDoubleParamForEachSVResult::GetBeiDouEphDoubleParamForEachSVResult()
       : CommandResult(CmdName)
     {}
+
+    GetBeiDouEphDoubleParamForEachSVResult::GetBeiDouEphDoubleParamForEachSVResult(const std::string& paramName, const std::vector<double>& val, const Sdx::optional<std::string>& dataSetName)
+      : CommandResult(CmdName)
+    {
+
+      setParamName(paramName);
+      setVal(val);
+      setDataSetName(dataSetName);
+    }
 
     GetBeiDouEphDoubleParamForEachSVResult::GetBeiDouEphDoubleParamForEachSVResult(CommandBasePtr relatedCommand, const std::string& paramName, const std::vector<double>& val, const Sdx::optional<std::string>& dataSetName)
       : CommandResult(CmdName, relatedCommand)
@@ -30,6 +41,11 @@ namespace Sdx
       setDataSetName(dataSetName);
     }
 
+
+    GetBeiDouEphDoubleParamForEachSVResultPtr GetBeiDouEphDoubleParamForEachSVResult::create(const std::string& paramName, const std::vector<double>& val, const Sdx::optional<std::string>& dataSetName)
+    {
+      return std::make_shared<GetBeiDouEphDoubleParamForEachSVResult>(paramName, val, dataSetName);
+    }
 
     GetBeiDouEphDoubleParamForEachSVResultPtr GetBeiDouEphDoubleParamForEachSVResult::create(CommandBasePtr relatedCommand, const std::string& paramName, const std::vector<double>& val, const Sdx::optional<std::string>& dataSetName)
     {

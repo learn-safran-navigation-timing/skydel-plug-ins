@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -29,8 +30,12 @@ namespace Sdx
 
       LogRawRateResult();
 
+      LogRawRateResult(int rate);
+
       LogRawRateResult(CommandBasePtr relatedCommand, int rate);
-  
+
+      static LogRawRateResultPtr create(int rate);
+
       static LogRawRateResultPtr create(CommandBasePtr relatedCommand, int rate);
       static LogRawRateResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -41,6 +46,7 @@ namespace Sdx
       int rate() const;
       void setRate(int rate);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(LogRawRateResult);
   }
 }
 

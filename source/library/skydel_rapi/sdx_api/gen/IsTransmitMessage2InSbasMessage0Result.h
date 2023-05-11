@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -29,8 +30,12 @@ namespace Sdx
 
       IsTransmitMessage2InSbasMessage0Result();
 
+      IsTransmitMessage2InSbasMessage0Result(bool transmitMessage2);
+
       IsTransmitMessage2InSbasMessage0Result(CommandBasePtr relatedCommand, bool transmitMessage2);
-  
+
+      static IsTransmitMessage2InSbasMessage0ResultPtr create(bool transmitMessage2);
+
       static IsTransmitMessage2InSbasMessage0ResultPtr create(CommandBasePtr relatedCommand, bool transmitMessage2);
       static IsTransmitMessage2InSbasMessage0ResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -41,6 +46,7 @@ namespace Sdx
       bool transmitMessage2() const;
       void setTransmitMessage2(bool transmitMessage2);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(IsTransmitMessage2InSbasMessage0Result);
   }
 }
 

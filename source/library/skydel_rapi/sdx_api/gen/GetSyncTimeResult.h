@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -29,8 +30,12 @@ namespace Sdx
 
       GetSyncTimeResult();
 
+      GetSyncTimeResult(double time);
+
       GetSyncTimeResult(CommandBasePtr relatedCommand, double time);
-  
+
+      static GetSyncTimeResultPtr create(double time);
+
       static GetSyncTimeResultPtr create(CommandBasePtr relatedCommand, double time);
       static GetSyncTimeResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -41,6 +46,7 @@ namespace Sdx
       double time() const;
       void setTime(double time);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetSyncTimeResult);
   }
 }
 

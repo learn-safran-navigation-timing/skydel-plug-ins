@@ -1,3 +1,6 @@
+
+#include "gen/GetIonoGridGIVEIResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetIonoGridGIVEIResult
 ///
-#include "gen/GetIonoGridGIVEIResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,22 @@ namespace Sdx
     const char* const GetIonoGridGIVEIResult::CmdName = "GetIonoGridGIVEIResult";
     const char* const GetIonoGridGIVEIResult::Documentation = "Result of GetIonoGridGIVEI.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetIonoGridGIVEIResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetIonoGridGIVEIResult);
 
 
     GetIonoGridGIVEIResult::GetIonoGridGIVEIResult()
       : CommandResult(CmdName)
     {}
+
+    GetIonoGridGIVEIResult::GetIonoGridGIVEIResult(int band, int point, int giveI, const Sdx::optional<std::string>& serviceProvider)
+      : CommandResult(CmdName)
+    {
+
+      setBand(band);
+      setPoint(point);
+      setGiveI(giveI);
+      setServiceProvider(serviceProvider);
+    }
 
     GetIonoGridGIVEIResult::GetIonoGridGIVEIResult(CommandBasePtr relatedCommand, int band, int point, int giveI, const Sdx::optional<std::string>& serviceProvider)
       : CommandResult(CmdName, relatedCommand)
@@ -31,6 +43,11 @@ namespace Sdx
       setServiceProvider(serviceProvider);
     }
 
+
+    GetIonoGridGIVEIResultPtr GetIonoGridGIVEIResult::create(int band, int point, int giveI, const Sdx::optional<std::string>& serviceProvider)
+    {
+      return std::make_shared<GetIonoGridGIVEIResult>(band, point, giveI, serviceProvider);
+    }
 
     GetIonoGridGIVEIResultPtr GetIonoGridGIVEIResult::create(CommandBasePtr relatedCommand, int band, int point, int giveI, const Sdx::optional<std::string>& serviceProvider)
     {

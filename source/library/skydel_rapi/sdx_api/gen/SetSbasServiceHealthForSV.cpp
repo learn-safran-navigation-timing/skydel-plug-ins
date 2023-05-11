@@ -1,3 +1,6 @@
+
+#include "gen/SetSbasServiceHealthForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetSbasServiceHealthForSV
 ///
-#include "gen/SetSbasServiceHealthForSV.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setSvId(svId);
       setHealth(health);
     }
-
 
     SetSbasServiceHealthForSVPtr SetSbasServiceHealthForSV::create(int svId, int health)
     {

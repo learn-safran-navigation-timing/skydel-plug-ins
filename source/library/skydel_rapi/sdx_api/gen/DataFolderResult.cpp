@@ -1,3 +1,6 @@
+
+#include "gen/DataFolderResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of DataFolderResult
 ///
-#include "gen/DataFolderResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const DataFolderResult::CmdName = "DataFolderResult";
     const char* const DataFolderResult::Documentation = "Result of GetDataFolder.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(DataFolderResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(DataFolderResult);
 
 
     DataFolderResult::DataFolderResult()
       : CommandResult(CmdName)
     {}
+
+    DataFolderResult::DataFolderResult(const std::string& folder)
+      : CommandResult(CmdName)
+    {
+
+      setFolder(folder);
+    }
 
     DataFolderResult::DataFolderResult(CommandBasePtr relatedCommand, const std::string& folder)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setFolder(folder);
     }
 
+
+    DataFolderResultPtr DataFolderResult::create(const std::string& folder)
+    {
+      return std::make_shared<DataFolderResult>(folder);
+    }
 
     DataFolderResultPtr DataFolderResult::create(CommandBasePtr relatedCommand, const std::string& folder)
     {

@@ -1,3 +1,6 @@
+
+#include "gen/SetIssueOfDataNavIC.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetIssueOfDataNavIC
 ///
-#include "gen/SetIssueOfDataNavIC.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setEphemerisAndClock(ephemerisAndClock);
       setOverrideRinex(overrideRinex);
     }
-
 
     SetIssueOfDataNavICPtr SetIssueOfDataNavIC::create(int ephemerisAndClock, const Sdx::optional<bool>& overrideRinex)
     {

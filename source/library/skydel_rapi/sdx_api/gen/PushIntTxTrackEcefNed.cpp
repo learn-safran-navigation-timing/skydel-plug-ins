@@ -1,3 +1,6 @@
+
+#include "gen/PushIntTxTrackEcefNed.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of PushIntTxTrackEcefNed
 ///
-#include "gen/PushIntTxTrackEcefNed.h"
 
 namespace Sdx
 {
@@ -34,7 +36,6 @@ namespace Sdx
       setRoll(roll);
       setId(id);
     }
-
 
     PushIntTxTrackEcefNedPtr PushIntTxTrackEcefNed::create(int time, double x, double y, double z, double yaw, double pitch, double roll, const std::string& id)
     {

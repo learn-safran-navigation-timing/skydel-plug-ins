@@ -1,3 +1,6 @@
+
+#include "gen/SetSpoofTxIgnoreRxAntennaPhasePattern.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetSpoofTxIgnoreRxAntennaPhasePattern
 ///
-#include "gen/SetSpoofTxIgnoreRxAntennaPhasePattern.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setIgnore(ignore);
       setId(id);
     }
-
 
     SetSpoofTxIgnoreRxAntennaPhasePatternPtr SetSpoofTxIgnoreRxAntennaPhasePattern::create(bool ignore, const std::string& id)
     {

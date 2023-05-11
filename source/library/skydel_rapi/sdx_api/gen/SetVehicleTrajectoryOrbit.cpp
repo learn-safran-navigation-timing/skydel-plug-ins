@@ -1,3 +1,6 @@
+
+#include "gen/SetVehicleTrajectoryOrbit.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetVehicleTrajectoryOrbit
 ///
-#include "gen/SetVehicleTrajectoryOrbit.h"
 
 namespace Sdx
 {
@@ -34,7 +36,6 @@ namespace Sdx
       setMeanAnomaly(meanAnomaly);
       setArgumentOfPerigee(argumentOfPerigee);
     }
-
 
     SetVehicleTrajectoryOrbitPtr SetVehicleTrajectoryOrbit::create(const std::string& type, const Sdx::DateTime& reference, double semiMajorAxis, double inclination, double rightAscension, double eccentricity, double meanAnomaly, double argumentOfPerigee)
     {

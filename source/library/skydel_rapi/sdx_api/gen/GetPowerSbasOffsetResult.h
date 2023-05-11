@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include <string>
 
 namespace Sdx
@@ -30,8 +31,12 @@ namespace Sdx
 
       GetPowerSbasOffsetResult();
 
+      GetPowerSbasOffsetResult(const std::string& serviceProvider, double offset);
+
       GetPowerSbasOffsetResult(CommandBasePtr relatedCommand, const std::string& serviceProvider, double offset);
-  
+
+      static GetPowerSbasOffsetResultPtr create(const std::string& serviceProvider, double offset);
+
       static GetPowerSbasOffsetResultPtr create(CommandBasePtr relatedCommand, const std::string& serviceProvider, double offset);
       static GetPowerSbasOffsetResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -47,6 +52,7 @@ namespace Sdx
       double offset() const;
       void setOffset(double offset);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetPowerSbasOffsetResult);
   }
 }
 

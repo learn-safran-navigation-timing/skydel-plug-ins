@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -36,7 +37,7 @@ namespace Sdx
       SetSpoofTxFixEcef();
 
       SetSpoofTxFixEcef(double x, double y, double z, double yaw, double pitch, double roll, const std::string& id);
-  
+
       static SetSpoofTxFixEcefPtr create(double x, double y, double z, double yaw, double pitch, double roll, const std::string& id);
       static SetSpoofTxFixEcefPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -79,6 +80,7 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
+    
   }
 }
 

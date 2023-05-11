@@ -1,3 +1,6 @@
+
+#include "gen/SetModulationTarget.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetModulationTarget
 ///
-#include "gen/SetModulationTarget.h"
 
 namespace Sdx
 {
@@ -31,7 +33,6 @@ namespace Sdx
       setClockIsExternal(clockIsExternal);
       setId(id);
     }
-
 
     SetModulationTargetPtr SetModulationTarget::create(const std::string& type, const std::string& path, const std::string& address, bool clockIsExternal, const std::string& id)
     {

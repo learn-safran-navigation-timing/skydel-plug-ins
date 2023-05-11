@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include "sdx_optional.h"
 #include <string>
 
@@ -37,8 +38,12 @@ namespace Sdx
 
       GetSpoofTxCircularResult();
 
+      GetSpoofTxCircularResult(double lat, double lon, double alt, double radius, double speed, bool clockwise, const std::string& id, const Sdx::optional<double>& originAngle = {});
+
       GetSpoofTxCircularResult(CommandBasePtr relatedCommand, double lat, double lon, double alt, double radius, double speed, bool clockwise, const std::string& id, const Sdx::optional<double>& originAngle = {});
-  
+
+      static GetSpoofTxCircularResultPtr create(double lat, double lon, double alt, double radius, double speed, bool clockwise, const std::string& id, const Sdx::optional<double>& originAngle = {});
+
       static GetSpoofTxCircularResultPtr create(CommandBasePtr relatedCommand, double lat, double lon, double alt, double radius, double speed, bool clockwise, const std::string& id, const Sdx::optional<double>& originAngle = {});
       static GetSpoofTxCircularResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -84,6 +89,7 @@ namespace Sdx
       Sdx::optional<double> originAngle() const;
       void setOriginAngle(const Sdx::optional<double>& originAngle);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetSpoofTxCircularResult);
   }
 }
 

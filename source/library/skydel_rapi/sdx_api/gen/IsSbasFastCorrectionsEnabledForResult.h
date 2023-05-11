@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include "sdx_optional.h"
 #include <string>
 
@@ -33,8 +34,12 @@ namespace Sdx
 
       IsSbasFastCorrectionsEnabledForResult();
 
+      IsSbasFastCorrectionsEnabledForResult(const std::string& system, bool isEnabled, const Sdx::optional<std::string>& errorType = {});
+
       IsSbasFastCorrectionsEnabledForResult(CommandBasePtr relatedCommand, const std::string& system, bool isEnabled, const Sdx::optional<std::string>& errorType = {});
-  
+
+      static IsSbasFastCorrectionsEnabledForResultPtr create(const std::string& system, bool isEnabled, const Sdx::optional<std::string>& errorType = {});
+
       static IsSbasFastCorrectionsEnabledForResultPtr create(CommandBasePtr relatedCommand, const std::string& system, bool isEnabled, const Sdx::optional<std::string>& errorType = {});
       static IsSbasFastCorrectionsEnabledForResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -55,6 +60,7 @@ namespace Sdx
       Sdx::optional<std::string> errorType() const;
       void setErrorType(const Sdx::optional<std::string>& errorType);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(IsSbasFastCorrectionsEnabledForResult);
   }
 }
 

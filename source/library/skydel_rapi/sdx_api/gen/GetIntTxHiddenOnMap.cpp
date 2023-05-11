@@ -1,3 +1,6 @@
+
+#include "gen/GetIntTxHiddenOnMap.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetIntTxHiddenOnMap
 ///
-#include "gen/GetIntTxHiddenOnMap.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setId(id);
     }
-
 
     GetIntTxHiddenOnMapPtr GetIntTxHiddenOnMap::create(const std::string& id)
     {

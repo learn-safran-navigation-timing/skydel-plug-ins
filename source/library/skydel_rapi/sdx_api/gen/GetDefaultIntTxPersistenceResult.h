@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -29,8 +30,12 @@ namespace Sdx
 
       GetDefaultIntTxPersistenceResult();
 
+      GetDefaultIntTxPersistenceResult(bool defaultValue);
+
       GetDefaultIntTxPersistenceResult(CommandBasePtr relatedCommand, bool defaultValue);
-  
+
+      static GetDefaultIntTxPersistenceResultPtr create(bool defaultValue);
+
       static GetDefaultIntTxPersistenceResultPtr create(CommandBasePtr relatedCommand, bool defaultValue);
       static GetDefaultIntTxPersistenceResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -41,6 +46,7 @@ namespace Sdx
       bool defaultValue() const;
       void setDefaultValue(bool defaultValue);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetDefaultIntTxPersistenceResult);
   }
 }
 

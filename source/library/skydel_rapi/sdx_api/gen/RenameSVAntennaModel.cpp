@@ -1,3 +1,6 @@
+
+#include "gen/RenameSVAntennaModel.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of RenameSVAntennaModel
 ///
-#include "gen/RenameSVAntennaModel.h"
 
 namespace Sdx
 {
@@ -29,7 +31,6 @@ namespace Sdx
       setNewName(newName);
       setSystem(system);
     }
-
 
     RenameSVAntennaModelPtr RenameSVAntennaModel::create(const std::string& name, const std::string& newName, const std::string& system)
     {

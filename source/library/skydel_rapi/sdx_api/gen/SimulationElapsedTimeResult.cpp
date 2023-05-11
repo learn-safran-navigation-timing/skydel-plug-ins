@@ -1,3 +1,6 @@
+
+#include "gen/SimulationElapsedTimeResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SimulationElapsedTimeResult
 ///
-#include "gen/SimulationElapsedTimeResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const SimulationElapsedTimeResult::CmdName = "SimulationElapsedTimeResult";
     const char* const SimulationElapsedTimeResult::Documentation = "Result of GetSimulationElapsedTime.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(SimulationElapsedTimeResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(SimulationElapsedTimeResult);
 
 
     SimulationElapsedTimeResult::SimulationElapsedTimeResult()
       : CommandResult(CmdName)
     {}
+
+    SimulationElapsedTimeResult::SimulationElapsedTimeResult(int milliseconds)
+      : CommandResult(CmdName)
+    {
+
+      setMilliseconds(milliseconds);
+    }
 
     SimulationElapsedTimeResult::SimulationElapsedTimeResult(CommandBasePtr relatedCommand, int milliseconds)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setMilliseconds(milliseconds);
     }
 
+
+    SimulationElapsedTimeResultPtr SimulationElapsedTimeResult::create(int milliseconds)
+    {
+      return std::make_shared<SimulationElapsedTimeResult>(milliseconds);
+    }
 
     SimulationElapsedTimeResultPtr SimulationElapsedTimeResult::create(CommandBasePtr relatedCommand, int milliseconds)
     {

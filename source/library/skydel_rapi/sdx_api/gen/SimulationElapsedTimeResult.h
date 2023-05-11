@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -29,8 +30,12 @@ namespace Sdx
 
       SimulationElapsedTimeResult();
 
+      SimulationElapsedTimeResult(int milliseconds);
+
       SimulationElapsedTimeResult(CommandBasePtr relatedCommand, int milliseconds);
-  
+
+      static SimulationElapsedTimeResultPtr create(int milliseconds);
+
       static SimulationElapsedTimeResultPtr create(CommandBasePtr relatedCommand, int milliseconds);
       static SimulationElapsedTimeResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -41,6 +46,7 @@ namespace Sdx
       int milliseconds() const;
       void setMilliseconds(int milliseconds);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(SimulationElapsedTimeResult);
   }
 }
 

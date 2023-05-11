@@ -1,3 +1,6 @@
+
+#include "gen/CalibFunction.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of CalibFunction
 ///
-#include "gen/CalibFunction.h"
 
 namespace Sdx
 {
@@ -31,7 +33,6 @@ namespace Sdx
       setEnableDoppler(enableDoppler);
       setPhaseOffet(phaseOffet);
     }
-
 
     CalibFunctionPtr CalibFunction::create(int svId, const std::string& signal, bool enableSV, bool enableDoppler, double phaseOffet)
     {

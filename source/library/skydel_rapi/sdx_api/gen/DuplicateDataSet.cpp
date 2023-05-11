@@ -1,3 +1,6 @@
+
+#include "gen/DuplicateDataSet.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of DuplicateDataSet
 ///
-#include "gen/DuplicateDataSet.h"
 
 namespace Sdx
 {
@@ -29,7 +31,6 @@ namespace Sdx
       setDataSetName(dataSetName);
       setNewDataSetName(newDataSetName);
     }
-
 
     DuplicateDataSetPtr DuplicateDataSet::create(const std::string& system, const std::string& dataSetName, const Sdx::optional<std::string>& newDataSetName)
     {

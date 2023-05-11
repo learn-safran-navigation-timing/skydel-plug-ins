@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -34,7 +35,7 @@ namespace Sdx
       PushIntTxTrackEcef();
 
       PushIntTxTrackEcef(int time, double x, double y, double z, const std::string& id);
-  
+
       static PushIntTxTrackEcefPtr create(int time, double x, double y, double z, const std::string& id);
       static PushIntTxTrackEcefPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -67,6 +68,7 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
+    
   }
 }
 

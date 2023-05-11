@@ -1,3 +1,6 @@
+
+#include "gen/SetMessageModificationToGalileoFNav.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetMessageModificationToGalileoFNav
 ///
-#include "gen/SetMessageModificationToGalileoFNav.h"
 
 namespace Sdx
 {
@@ -36,7 +38,6 @@ namespace Sdx
       setBitModifications(bitModifications);
       setId(id);
     }
-
 
     SetMessageModificationToGalileoFNavPtr SetMessageModificationToGalileoFNav::create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int page, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id)
     {

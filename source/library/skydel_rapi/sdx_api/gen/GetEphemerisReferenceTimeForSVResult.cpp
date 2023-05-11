@@ -1,3 +1,6 @@
+
+#include "gen/GetEphemerisReferenceTimeForSVResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetEphemerisReferenceTimeForSVResult
 ///
-#include "gen/GetEphemerisReferenceTimeForSVResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,22 @@ namespace Sdx
     const char* const GetEphemerisReferenceTimeForSVResult::CmdName = "GetEphemerisReferenceTimeForSVResult";
     const char* const GetEphemerisReferenceTimeForSVResult::Documentation = "Result of GetEphemerisReferenceTimeForSV.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetEphemerisReferenceTimeForSVResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetEphemerisReferenceTimeForSVResult);
 
 
     GetEphemerisReferenceTimeForSVResult::GetEphemerisReferenceTimeForSVResult()
       : CommandResult(CmdName)
     {}
+
+    GetEphemerisReferenceTimeForSVResult::GetEphemerisReferenceTimeForSVResult(const std::string& system, int svId, const Sdx::DateTime& time, const Sdx::optional<std::string>& dataSetName)
+      : CommandResult(CmdName)
+    {
+
+      setSystem(system);
+      setSvId(svId);
+      setTime(time);
+      setDataSetName(dataSetName);
+    }
 
     GetEphemerisReferenceTimeForSVResult::GetEphemerisReferenceTimeForSVResult(CommandBasePtr relatedCommand, const std::string& system, int svId, const Sdx::DateTime& time, const Sdx::optional<std::string>& dataSetName)
       : CommandResult(CmdName, relatedCommand)
@@ -31,6 +43,11 @@ namespace Sdx
       setDataSetName(dataSetName);
     }
 
+
+    GetEphemerisReferenceTimeForSVResultPtr GetEphemerisReferenceTimeForSVResult::create(const std::string& system, int svId, const Sdx::DateTime& time, const Sdx::optional<std::string>& dataSetName)
+    {
+      return std::make_shared<GetEphemerisReferenceTimeForSVResult>(system, svId, time, dataSetName);
+    }
 
     GetEphemerisReferenceTimeForSVResultPtr GetEphemerisReferenceTimeForSVResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, const Sdx::DateTime& time, const Sdx::optional<std::string>& dataSetName)
     {

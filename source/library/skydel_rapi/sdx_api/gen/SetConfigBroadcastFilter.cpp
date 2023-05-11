@@ -1,3 +1,6 @@
+
+#include "gen/SetConfigBroadcastFilter.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetConfigBroadcastFilter
 ///
-#include "gen/SetConfigBroadcastFilter.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setFilter(filter);
     }
-
 
     SetConfigBroadcastFilterPtr SetConfigBroadcastFilter::create(const std::vector<Sdx::ConfigFilter>& filter)
     {

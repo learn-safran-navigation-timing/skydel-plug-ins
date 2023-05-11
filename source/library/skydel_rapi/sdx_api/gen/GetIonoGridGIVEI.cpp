@@ -1,3 +1,6 @@
+
+#include "gen/GetIonoGridGIVEI.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetIonoGridGIVEI
 ///
-#include "gen/GetIonoGridGIVEI.h"
 
 namespace Sdx
 {
@@ -29,7 +31,6 @@ namespace Sdx
       setPoint(point);
       setServiceProvider(serviceProvider);
     }
-
 
     GetIonoGridGIVEIPtr GetIonoGridGIVEI::create(int band, int point, const Sdx::optional<std::string>& serviceProvider)
     {

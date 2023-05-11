@@ -1,3 +1,6 @@
+
+#include "gen/SetGpsStartTime.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetGpsStartTime
 ///
-#include "gen/SetGpsStartTime.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setStart(start);
     }
-
 
     SetGpsStartTimePtr SetGpsStartTime::create(const Sdx::DateTime& start)
     {

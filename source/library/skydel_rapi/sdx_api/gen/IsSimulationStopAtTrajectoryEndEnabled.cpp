@@ -1,3 +1,6 @@
+
+#include "gen/IsSimulationStopAtTrajectoryEndEnabled.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of IsSimulationStopAtTrajectoryEndEnabled
 ///
-#include "gen/IsSimulationStopAtTrajectoryEndEnabled.h"
 
 namespace Sdx
 {
@@ -22,7 +24,6 @@ namespace Sdx
     {
 
     }
-
 
     IsSimulationStopAtTrajectoryEndEnabledPtr IsSimulationStopAtTrajectoryEndEnabled::create()
     {

@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -29,8 +30,12 @@ namespace Sdx
 
       GetStreamingBufferResult();
 
+      GetStreamingBufferResult(int size);
+
       GetStreamingBufferResult(CommandBasePtr relatedCommand, int size);
-  
+
+      static GetStreamingBufferResultPtr create(int size);
+
       static GetStreamingBufferResultPtr create(CommandBasePtr relatedCommand, int size);
       static GetStreamingBufferResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -41,6 +46,7 @@ namespace Sdx
       int size() const;
       void setSize(int size);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetStreamingBufferResult);
   }
 }
 

@@ -1,3 +1,6 @@
+
+#include "gen/SetIntTxBPSK.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetIntTxBPSK
 ///
-#include "gen/SetIntTxBPSK.h"
 
 namespace Sdx
 {
@@ -35,7 +37,6 @@ namespace Sdx
       setGroup(group);
       setPrn(prn);
     }
-
 
     SetIntTxBPSKPtr SetIntTxBPSK::create(bool enabled, double centralFreq, double power, int codeRate, int codeLengthMs, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& group, const Sdx::optional<int>& prn)
     {

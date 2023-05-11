@@ -1,3 +1,6 @@
+
+#include "gen/SetSVAntennaModelForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetSVAntennaModelForSV
 ///
-#include "gen/SetSVAntennaModelForSV.h"
 
 namespace Sdx
 {
@@ -29,7 +31,6 @@ namespace Sdx
       setSvId(svId);
       setAntennaModelName(antennaModelName);
     }
-
 
     SetSVAntennaModelForSVPtr SetSVAntennaModelForSV::create(const std::string& system, int svId, const std::string& antennaModelName)
     {

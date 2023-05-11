@@ -1,3 +1,6 @@
+
+#include "gen/GetSpoofTxAntennaOffsetResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetSpoofTxAntennaOffsetResult
 ///
-#include "gen/GetSpoofTxAntennaOffsetResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,25 @@ namespace Sdx
     const char* const GetSpoofTxAntennaOffsetResult::CmdName = "GetSpoofTxAntennaOffsetResult";
     const char* const GetSpoofTxAntennaOffsetResult::Documentation = "Result of GetSpoofTxAntennaOffset.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetSpoofTxAntennaOffsetResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetSpoofTxAntennaOffsetResult);
 
 
     GetSpoofTxAntennaOffsetResult::GetSpoofTxAntennaOffsetResult()
       : CommandResult(CmdName)
     {}
+
+    GetSpoofTxAntennaOffsetResult::GetSpoofTxAntennaOffsetResult(double x, double y, double z, double yaw, double pitch, double roll, const std::string& id)
+      : CommandResult(CmdName)
+    {
+
+      setX(x);
+      setY(y);
+      setZ(z);
+      setYaw(yaw);
+      setPitch(pitch);
+      setRoll(roll);
+      setId(id);
+    }
 
     GetSpoofTxAntennaOffsetResult::GetSpoofTxAntennaOffsetResult(CommandBasePtr relatedCommand, double x, double y, double z, double yaw, double pitch, double roll, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -34,6 +49,11 @@ namespace Sdx
       setId(id);
     }
 
+
+    GetSpoofTxAntennaOffsetResultPtr GetSpoofTxAntennaOffsetResult::create(double x, double y, double z, double yaw, double pitch, double roll, const std::string& id)
+    {
+      return std::make_shared<GetSpoofTxAntennaOffsetResult>(x, y, z, yaw, pitch, roll, id);
+    }
 
     GetSpoofTxAntennaOffsetResultPtr GetSpoofTxAntennaOffsetResult::create(CommandBasePtr relatedCommand, double x, double y, double z, double yaw, double pitch, double roll, const std::string& id)
     {

@@ -1,3 +1,6 @@
+
+#include "gen/SetAlmanacInitialUploadTimeOffset.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetAlmanacInitialUploadTimeOffset
 ///
-#include "gen/SetAlmanacInitialUploadTimeOffset.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setSystem(system);
       setOffset(offset);
     }
-
 
     SetAlmanacInitialUploadTimeOffsetPtr SetAlmanacInitialUploadTimeOffset::create(const std::string& system, int offset)
     {

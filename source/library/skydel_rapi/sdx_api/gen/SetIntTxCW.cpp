@@ -1,3 +1,6 @@
+
+#include "gen/SetIntTxCW.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetIntTxCW
 ///
-#include "gen/SetIntTxCW.h"
 
 namespace Sdx
 {
@@ -33,7 +35,6 @@ namespace Sdx
       setInitialPhaseOffset(initialPhaseOffset);
       setGroup(group);
     }
-
 
     SetIntTxCWPtr SetIntTxCW::create(bool enabled, double centralFreq, double power, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<double>& initialPhaseOffset, const Sdx::optional<int>& group)
     {

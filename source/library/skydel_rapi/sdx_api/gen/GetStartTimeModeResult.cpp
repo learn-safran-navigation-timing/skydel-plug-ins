@@ -1,3 +1,6 @@
+
+#include "gen/GetStartTimeModeResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetStartTimeModeResult
 ///
-#include "gen/GetStartTimeModeResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const GetStartTimeModeResult::CmdName = "GetStartTimeModeResult";
     const char* const GetStartTimeModeResult::Documentation = "Result of GetStartTimeMode.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetStartTimeModeResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetStartTimeModeResult);
 
 
     GetStartTimeModeResult::GetStartTimeModeResult()
       : CommandResult(CmdName)
     {}
+
+    GetStartTimeModeResult::GetStartTimeModeResult(const std::string& mode)
+      : CommandResult(CmdName)
+    {
+
+      setMode(mode);
+    }
 
     GetStartTimeModeResult::GetStartTimeModeResult(CommandBasePtr relatedCommand, const std::string& mode)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setMode(mode);
     }
 
+
+    GetStartTimeModeResultPtr GetStartTimeModeResult::create(const std::string& mode)
+    {
+      return std::make_shared<GetStartTimeModeResult>(mode);
+    }
 
     GetStartTimeModeResultPtr GetStartTimeModeResult::create(CommandBasePtr relatedCommand, const std::string& mode)
     {

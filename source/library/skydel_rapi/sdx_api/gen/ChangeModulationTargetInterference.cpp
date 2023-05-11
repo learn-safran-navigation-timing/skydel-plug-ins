@@ -1,3 +1,6 @@
+
+#include "gen/ChangeModulationTargetInterference.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of ChangeModulationTargetInterference
 ///
-#include "gen/ChangeModulationTargetInterference.h"
 
 namespace Sdx
 {
@@ -34,7 +36,6 @@ namespace Sdx
       setId(id);
       setSignal(signal);
     }
-
 
     ChangeModulationTargetInterferencePtr ChangeModulationTargetInterference::create(int output, int minRate, int maxRate, int group, double centralFreq, int gain, const std::string& id, const Sdx::optional<std::string>& signal)
     {

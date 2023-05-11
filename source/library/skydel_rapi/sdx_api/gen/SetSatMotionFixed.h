@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -32,7 +33,7 @@ namespace Sdx
       SetSatMotionFixed();
 
       SetSatMotionFixed(const std::string& system, int svId, bool isFixed);
-  
+
       static SetSatMotionFixedPtr create(const std::string& system, int svId, bool isFixed);
       static SetSatMotionFixedPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -55,6 +56,7 @@ namespace Sdx
       bool isFixed() const;
       void setIsFixed(bool isFixed);
     };
+    
   }
 }
 

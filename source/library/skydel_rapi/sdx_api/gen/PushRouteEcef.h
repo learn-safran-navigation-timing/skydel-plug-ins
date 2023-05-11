@@ -4,6 +4,7 @@
 #include "command_base.h"
 
 
+
 namespace Sdx
 {
   namespace Cmd
@@ -33,7 +34,7 @@ namespace Sdx
       PushRouteEcef();
 
       PushRouteEcef(double speed, double x, double y, double z);
-  
+
       static PushRouteEcefPtr create(double speed, double x, double y, double z);
       static PushRouteEcefPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -61,6 +62,7 @@ namespace Sdx
       double z() const;
       void setZ(double z);
     };
+    
   }
 }
 

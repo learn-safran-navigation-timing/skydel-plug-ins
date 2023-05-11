@@ -1,3 +1,6 @@
+
+#include "gen/GetAllSVAntennaNames.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetAllSVAntennaNames
 ///
-#include "gen/GetAllSVAntennaNames.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setSystem(system);
     }
-
 
     GetAllSVAntennaNamesPtr GetAllSVAntennaNames::create(const std::string& system)
     {

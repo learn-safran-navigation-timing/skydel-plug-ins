@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include <string>
 #include <vector>
 
@@ -31,8 +32,12 @@ namespace Sdx
 
       GetAllSignalsFromIntTxResult();
 
+      GetAllSignalsFromIntTxResult(const std::string& id, const std::vector<std::string>& idsSignal);
+
       GetAllSignalsFromIntTxResult(CommandBasePtr relatedCommand, const std::string& id, const std::vector<std::string>& idsSignal);
-  
+
+      static GetAllSignalsFromIntTxResultPtr create(const std::string& id, const std::vector<std::string>& idsSignal);
+
       static GetAllSignalsFromIntTxResultPtr create(CommandBasePtr relatedCommand, const std::string& id, const std::vector<std::string>& idsSignal);
       static GetAllSignalsFromIntTxResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -48,6 +53,7 @@ namespace Sdx
       std::vector<std::string> idsSignal() const;
       void setIdsSignal(const std::vector<std::string>& idsSignal);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetAllSignalsFromIntTxResult);
   }
 }
 

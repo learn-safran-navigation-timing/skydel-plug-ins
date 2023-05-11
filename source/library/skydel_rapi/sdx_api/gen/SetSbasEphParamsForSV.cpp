@@ -1,3 +1,6 @@
+
+#include "gen/SetSbasEphParamsForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetSbasEphParamsForSV
 ///
-#include "gen/SetSbasEphParamsForSV.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setSvId(svId);
       setParamValueDict(paramValueDict);
     }
-
 
     SetSbasEphParamsForSVPtr SetSbasEphParamsForSV::create(int svId, const std::map<std::string, double>& paramValueDict)
     {

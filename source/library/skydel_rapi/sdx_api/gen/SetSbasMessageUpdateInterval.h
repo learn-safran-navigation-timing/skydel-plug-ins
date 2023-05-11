@@ -4,6 +4,7 @@
 #include "command_base.h"
 
 
+
 namespace Sdx
 {
   namespace Cmd
@@ -31,7 +32,7 @@ namespace Sdx
       SetSbasMessageUpdateInterval();
 
       SetSbasMessageUpdateInterval(int message, int updateInterval);
-  
+
       static SetSbasMessageUpdateIntervalPtr create(int message, int updateInterval);
       static SetSbasMessageUpdateIntervalPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -49,6 +50,7 @@ namespace Sdx
       int updateInterval() const;
       void setUpdateInterval(int updateInterval);
     };
+    
   }
 }
 

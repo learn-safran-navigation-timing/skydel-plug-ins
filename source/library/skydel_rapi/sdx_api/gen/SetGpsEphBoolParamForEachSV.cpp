@@ -1,3 +1,6 @@
+
+#include "gen/SetGpsEphBoolParamForEachSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,13 @@
 ///
 /// Definition of SetGpsEphBoolParamForEachSV
 ///
-#include "gen/SetGpsEphBoolParamForEachSV.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const SetGpsEphBoolParamForEachSV::CmdName = "SetGpsEphBoolParamForEachSV";
-    const char* const SetGpsEphBoolParamForEachSV::Documentation = "Please note the command SetGpsEphemerisBoolParams is deprecated since 21.3. You may use SetGpsEphBoolParamForEachSV.\n\nSet GPS ephemeris boolean parameter value for all satellites";
+    const char* const SetGpsEphBoolParamForEachSV::Documentation = "Set GPS ephemeris boolean parameter value for all satellites";
 
     REGISTER_COMMAND_FACTORY(SetGpsEphBoolParamForEachSV);
 
@@ -29,7 +31,6 @@ namespace Sdx
       setVal(val);
       setDataSetName(dataSetName);
     }
-
 
     SetGpsEphBoolParamForEachSVPtr SetGpsEphBoolParamForEachSV::create(const std::string& paramName, const std::vector<bool>& val, const Sdx::optional<std::string>& dataSetName)
     {

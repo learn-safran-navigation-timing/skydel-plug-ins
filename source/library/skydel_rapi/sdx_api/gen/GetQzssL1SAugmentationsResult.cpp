@@ -1,3 +1,6 @@
+
+#include "gen/GetQzssL1SAugmentationsResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetQzssL1SAugmentationsResult
 ///
-#include "gen/GetQzssL1SAugmentationsResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const GetQzssL1SAugmentationsResult::CmdName = "GetQzssL1SAugmentationsResult";
     const char* const GetQzssL1SAugmentationsResult::Documentation = "Result of GetQzssL1SAugmentations.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetQzssL1SAugmentationsResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetQzssL1SAugmentationsResult);
 
 
     GetQzssL1SAugmentationsResult::GetQzssL1SAugmentationsResult()
       : CommandResult(CmdName)
     {}
+
+    GetQzssL1SAugmentationsResult::GetQzssL1SAugmentationsResult(const std::vector<std::string>& ids)
+      : CommandResult(CmdName)
+    {
+
+      setIds(ids);
+    }
 
     GetQzssL1SAugmentationsResult::GetQzssL1SAugmentationsResult(CommandBasePtr relatedCommand, const std::vector<std::string>& ids)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setIds(ids);
     }
 
+
+    GetQzssL1SAugmentationsResultPtr GetQzssL1SAugmentationsResult::create(const std::vector<std::string>& ids)
+    {
+      return std::make_shared<GetQzssL1SAugmentationsResult>(ids);
+    }
 
     GetQzssL1SAugmentationsResultPtr GetQzssL1SAugmentationsResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& ids)
     {

@@ -1,3 +1,6 @@
+
+#include "gen/SetIntTxAWGN.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetIntTxAWGN
 ///
-#include "gen/SetIntTxAWGN.h"
 
 namespace Sdx
 {
@@ -34,7 +36,6 @@ namespace Sdx
       setSeed(seed);
       setGroup(group);
     }
-
 
     SetIntTxAWGNPtr SetIntTxAWGN::create(bool enabled, double centralFreq, double power, double bandwidth, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& seed, const Sdx::optional<int>& group)
     {

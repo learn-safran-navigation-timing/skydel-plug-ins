@@ -1,3 +1,6 @@
+
+#include "gen/SetVehicleTrajectoryFix.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetVehicleTrajectoryFix
 ///
-#include "gen/SetVehicleTrajectoryFix.h"
 
 namespace Sdx
 {
@@ -33,7 +35,6 @@ namespace Sdx
       setPitch(pitch);
       setRoll(roll);
     }
-
 
     SetVehicleTrajectoryFixPtr SetVehicleTrajectoryFix::create(const std::string& type, double lat, double lon, double alt, double yaw, double pitch, double roll)
     {

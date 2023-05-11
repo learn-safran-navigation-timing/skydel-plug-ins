@@ -1,3 +1,6 @@
+
+#include "gen/GetPseudorangeRampForSVResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetPseudorangeRampForSVResult
 ///
-#include "gen/GetPseudorangeRampForSVResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,26 @@ namespace Sdx
     const char* const GetPseudorangeRampForSVResult::CmdName = "GetPseudorangeRampForSVResult";
     const char* const GetPseudorangeRampForSVResult::Documentation = "Result of GetPseudorangeRampForSV.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetPseudorangeRampForSVResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetPseudorangeRampForSVResult);
 
 
     GetPseudorangeRampForSVResult::GetPseudorangeRampForSVResult()
       : CommandResult(CmdName)
     {}
+
+    GetPseudorangeRampForSVResult::GetPseudorangeRampForSVResult(const std::string& system, int svId, double offset, int startTime, int holdStartTime, int holdStopTime, int stopTime, const std::string& id)
+      : CommandResult(CmdName)
+    {
+
+      setSystem(system);
+      setSvId(svId);
+      setOffset(offset);
+      setStartTime(startTime);
+      setHoldStartTime(holdStartTime);
+      setHoldStopTime(holdStopTime);
+      setStopTime(stopTime);
+      setId(id);
+    }
 
     GetPseudorangeRampForSVResult::GetPseudorangeRampForSVResult(CommandBasePtr relatedCommand, const std::string& system, int svId, double offset, int startTime, int holdStartTime, int holdStopTime, int stopTime, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -35,6 +51,11 @@ namespace Sdx
       setId(id);
     }
 
+
+    GetPseudorangeRampForSVResultPtr GetPseudorangeRampForSVResult::create(const std::string& system, int svId, double offset, int startTime, int holdStartTime, int holdStopTime, int stopTime, const std::string& id)
+    {
+      return std::make_shared<GetPseudorangeRampForSVResult>(system, svId, offset, startTime, holdStartTime, holdStopTime, stopTime, id);
+    }
 
     GetPseudorangeRampForSVResultPtr GetPseudorangeRampForSVResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, double offset, int startTime, int holdStartTime, int holdStopTime, int stopTime, const std::string& id)
     {

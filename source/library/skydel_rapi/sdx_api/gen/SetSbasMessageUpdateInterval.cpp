@@ -1,3 +1,6 @@
+
+#include "gen/SetSbasMessageUpdateInterval.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetSbasMessageUpdateInterval
 ///
-#include "gen/SetSbasMessageUpdateInterval.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setMessage(message);
       setUpdateInterval(updateInterval);
     }
-
 
     SetSbasMessageUpdateIntervalPtr SetSbasMessageUpdateInterval::create(int message, int updateInterval)
     {

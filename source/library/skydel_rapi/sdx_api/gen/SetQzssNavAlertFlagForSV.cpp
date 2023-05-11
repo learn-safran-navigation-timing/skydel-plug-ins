@@ -1,3 +1,6 @@
+
+#include "gen/SetQzssNavAlertFlagForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,13 @@
 ///
 /// Definition of SetQzssNavAlertFlagForSV
 ///
-#include "gen/SetQzssNavAlertFlagForSV.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const SetQzssNavAlertFlagForSV::CmdName = "SetQzssNavAlertFlagForSV";
-    const char* const SetQzssNavAlertFlagForSV::Documentation = "Please note the command SetQzssSatelliteNavAlertFlag is deprecated since 21.3. You may use SetQzssNavAlertFlagForSV.\n\nSet QZSS NAV Alert Flag";
+    const char* const SetQzssNavAlertFlagForSV::Documentation = "Set QZSS NAV Alert Flag";
 
     REGISTER_COMMAND_FACTORY(SetQzssNavAlertFlagForSV);
 
@@ -29,7 +31,6 @@ namespace Sdx
       setAlert(alert);
       setDataSetName(dataSetName);
     }
-
 
     SetQzssNavAlertFlagForSVPtr SetQzssNavAlertFlagForSV::create(int svId, bool alert, const Sdx::optional<std::string>& dataSetName)
     {

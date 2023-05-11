@@ -1,3 +1,6 @@
+
+#include "gen/MessageSequenceImport.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of MessageSequenceImport
 ///
-#include "gen/MessageSequenceImport.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setSignal(signal);
       setFilename(filename);
     }
-
 
     MessageSequenceImportPtr MessageSequenceImport::create(const std::string& signal, const std::string& filename)
     {

@@ -1,3 +1,6 @@
+
+#include "gen/RenameVehicleAntennaModel.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of RenameVehicleAntennaModel
 ///
-#include "gen/RenameVehicleAntennaModel.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setName(name);
       setNewName(newName);
     }
-
 
     RenameVehicleAntennaModelPtr RenameVehicleAntennaModel::create(const std::string& name, const std::string& newName)
     {

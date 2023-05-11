@@ -1,3 +1,6 @@
+
+#include "gen/GetVehicleAntennaOffset.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetVehicleAntennaOffset
 ///
-#include "gen/GetVehicleAntennaOffset.h"
 
 namespace Sdx
 {
@@ -23,7 +25,6 @@ namespace Sdx
 
       setName(name);
     }
-
 
     GetVehicleAntennaOffsetPtr GetVehicleAntennaOffset::create(const Sdx::optional<std::string>& name)
     {

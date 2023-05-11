@@ -1,3 +1,6 @@
+
+#include "gen/SetIonoGridErrorAll.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetIonoGridErrorAll
 ///
-#include "gen/SetIonoGridErrorAll.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setGrid(grid);
     }
-
 
     SetIonoGridErrorAllPtr SetIonoGridErrorAll::create(const std::vector<std::vector<double>>& grid)
     {

@@ -1,3 +1,6 @@
+
+#include "gen/GetGpsConfigurationForEachSVResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetGpsConfigurationForEachSVResult
 ///
-#include "gen/GetGpsConfigurationForEachSVResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,20 @@ namespace Sdx
     const char* const GetGpsConfigurationForEachSVResult::CmdName = "GetGpsConfigurationForEachSVResult";
     const char* const GetGpsConfigurationForEachSVResult::Documentation = "Result of GetGpsConfigurationForEachSV.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetGpsConfigurationForEachSVResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetGpsConfigurationForEachSVResult);
 
 
     GetGpsConfigurationForEachSVResult::GetGpsConfigurationForEachSVResult()
       : CommandResult(CmdName)
     {}
+
+    GetGpsConfigurationForEachSVResult::GetGpsConfigurationForEachSVResult(const std::vector<int>& svConfigs, const Sdx::optional<std::string>& dataSetName)
+      : CommandResult(CmdName)
+    {
+
+      setSvConfigs(svConfigs);
+      setDataSetName(dataSetName);
+    }
 
     GetGpsConfigurationForEachSVResult::GetGpsConfigurationForEachSVResult(CommandBasePtr relatedCommand, const std::vector<int>& svConfigs, const Sdx::optional<std::string>& dataSetName)
       : CommandResult(CmdName, relatedCommand)
@@ -29,6 +39,11 @@ namespace Sdx
       setDataSetName(dataSetName);
     }
 
+
+    GetGpsConfigurationForEachSVResultPtr GetGpsConfigurationForEachSVResult::create(const std::vector<int>& svConfigs, const Sdx::optional<std::string>& dataSetName)
+    {
+      return std::make_shared<GetGpsConfigurationForEachSVResult>(svConfigs, dataSetName);
+    }
 
     GetGpsConfigurationForEachSVResultPtr GetGpsConfigurationForEachSVResult::create(CommandBasePtr relatedCommand, const std::vector<int>& svConfigs, const Sdx::optional<std::string>& dataSetName)
     {

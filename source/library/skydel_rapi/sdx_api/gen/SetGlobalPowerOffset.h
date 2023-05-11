@@ -4,6 +4,7 @@
 #include "command_base.h"
 
 
+
 namespace Sdx
 {
   namespace Cmd
@@ -30,7 +31,7 @@ namespace Sdx
       SetGlobalPowerOffset();
 
       SetGlobalPowerOffset(double offset);
-  
+
       static SetGlobalPowerOffsetPtr create(double offset);
       static SetGlobalPowerOffsetPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -43,6 +44,7 @@ namespace Sdx
       double offset() const;
       void setOffset(double offset);
     };
+    
   }
 }
 

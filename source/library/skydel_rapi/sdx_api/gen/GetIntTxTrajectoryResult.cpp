@@ -1,3 +1,6 @@
+
+#include "gen/GetIntTxTrajectoryResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetIntTxTrajectoryResult
 ///
-#include "gen/GetIntTxTrajectoryResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,20 @@ namespace Sdx
     const char* const GetIntTxTrajectoryResult::CmdName = "GetIntTxTrajectoryResult";
     const char* const GetIntTxTrajectoryResult::Documentation = "Result of GetIntTxTrajectory.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetIntTxTrajectoryResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetIntTxTrajectoryResult);
 
 
     GetIntTxTrajectoryResult::GetIntTxTrajectoryResult()
       : CommandResult(CmdName)
     {}
+
+    GetIntTxTrajectoryResult::GetIntTxTrajectoryResult(const std::string& trajectoryType, const std::string& id)
+      : CommandResult(CmdName)
+    {
+
+      setTrajectoryType(trajectoryType);
+      setId(id);
+    }
 
     GetIntTxTrajectoryResult::GetIntTxTrajectoryResult(CommandBasePtr relatedCommand, const std::string& trajectoryType, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -29,6 +39,11 @@ namespace Sdx
       setId(id);
     }
 
+
+    GetIntTxTrajectoryResultPtr GetIntTxTrajectoryResult::create(const std::string& trajectoryType, const std::string& id)
+    {
+      return std::make_shared<GetIntTxTrajectoryResult>(trajectoryType, id);
+    }
 
     GetIntTxTrajectoryResultPtr GetIntTxTrajectoryResult::create(CommandBasePtr relatedCommand, const std::string& trajectoryType, const std::string& id)
     {

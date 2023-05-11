@@ -1,3 +1,6 @@
+
+#include "gen/GetAlmanacUploadTimeIntervalResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetAlmanacUploadTimeIntervalResult
 ///
-#include "gen/GetAlmanacUploadTimeIntervalResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,20 @@ namespace Sdx
     const char* const GetAlmanacUploadTimeIntervalResult::CmdName = "GetAlmanacUploadTimeIntervalResult";
     const char* const GetAlmanacUploadTimeIntervalResult::Documentation = "Result of GetAlmanacUploadTimeInterval.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetAlmanacUploadTimeIntervalResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetAlmanacUploadTimeIntervalResult);
 
 
     GetAlmanacUploadTimeIntervalResult::GetAlmanacUploadTimeIntervalResult()
       : CommandResult(CmdName)
     {}
+
+    GetAlmanacUploadTimeIntervalResult::GetAlmanacUploadTimeIntervalResult(const std::string& system, int interval)
+      : CommandResult(CmdName)
+    {
+
+      setSystem(system);
+      setInterval(interval);
+    }
 
     GetAlmanacUploadTimeIntervalResult::GetAlmanacUploadTimeIntervalResult(CommandBasePtr relatedCommand, const std::string& system, int interval)
       : CommandResult(CmdName, relatedCommand)
@@ -29,6 +39,11 @@ namespace Sdx
       setInterval(interval);
     }
 
+
+    GetAlmanacUploadTimeIntervalResultPtr GetAlmanacUploadTimeIntervalResult::create(const std::string& system, int interval)
+    {
+      return std::make_shared<GetAlmanacUploadTimeIntervalResult>(system, interval);
+    }
 
     GetAlmanacUploadTimeIntervalResultPtr GetAlmanacUploadTimeIntervalResult::create(CommandBasePtr relatedCommand, const std::string& system, int interval)
     {

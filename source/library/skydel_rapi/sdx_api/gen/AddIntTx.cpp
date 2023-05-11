@@ -1,3 +1,6 @@
+
+#include "gen/AddIntTx.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,13 @@
 ///
 /// Definition of AddIntTx
 ///
-#include "gen/AddIntTx.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const AddIntTx::CmdName = "AddIntTx";
-    const char* const AddIntTx::Documentation = "Set an interference transmitter. For set : the transmitter Id parameter is not set (empty string),\nSkydel will assign a unique Id to the transmitter. If the Id is set and already used by Skydel, the\ncommand will fail.";
+    const char* const AddIntTx::Documentation = "Set an interference transmitter. If the transmitter ID parameter is not set (empty string),\nSkydel will assign a unique ID to the transmitter. If the ID is set and already used by Skydel, the\ncommand will fail.";
 
     REGISTER_COMMAND_FACTORY(AddIntTx);
 
@@ -32,7 +34,6 @@ namespace Sdx
       setPower(power);
       setId(id);
     }
-
 
     AddIntTxPtr AddIntTx::create(const std::string& usualName, bool enabled, int group, bool dynamic, double power, const std::string& id)
     {

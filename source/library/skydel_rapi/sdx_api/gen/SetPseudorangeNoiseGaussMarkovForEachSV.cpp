@@ -1,3 +1,6 @@
+
+#include "gen/SetPseudorangeNoiseGaussMarkovForEachSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,13 @@
 ///
 /// Definition of SetPseudorangeNoiseGaussMarkovForEachSV
 ///
-#include "gen/SetPseudorangeNoiseGaussMarkovForEachSV.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const SetPseudorangeNoiseGaussMarkovForEachSV::CmdName = "SetPseudorangeNoiseGaussMarkovForEachSV";
-    const char* const SetPseudorangeNoiseGaussMarkovForEachSV::Documentation = "Please note the command SetAllSatellitesPseudorangeNoiseGaussMarkov is deprecated since 21.3. You may use SetPseudorangeNoiseGaussMarkovForEachSV.\n\nSet the satellite pseudorange noise Gauss-Markov process attributes for all satellites.";
+    const char* const SetPseudorangeNoiseGaussMarkovForEachSV::Documentation = "Set the satellite pseudorange noise Gauss-Markov process attributes for all satellites.";
 
     REGISTER_COMMAND_FACTORY(SetPseudorangeNoiseGaussMarkovForEachSV);
 
@@ -32,7 +34,6 @@ namespace Sdx
       setTime(time);
       setSeed(seed);
     }
-
 
     SetPseudorangeNoiseGaussMarkovForEachSVPtr SetPseudorangeNoiseGaussMarkovForEachSV::create(const std::string& system, int process, const std::vector<bool>& enabled, const std::vector<double>& sigma, const std::vector<double>& time, const std::vector<int>& seed)
     {

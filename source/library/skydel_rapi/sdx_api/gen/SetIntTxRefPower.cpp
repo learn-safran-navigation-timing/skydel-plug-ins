@@ -1,3 +1,6 @@
+
+#include "gen/SetIntTxRefPower.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetIntTxRefPower
 ///
-#include "gen/SetIntTxRefPower.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setPower(power);
       setId(id);
     }
-
 
     SetIntTxRefPowerPtr SetIntTxRefPower::create(double power, const std::string& id)
     {

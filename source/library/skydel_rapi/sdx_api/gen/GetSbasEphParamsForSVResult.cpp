@@ -1,3 +1,6 @@
+
+#include "gen/GetSbasEphParamsForSVResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetSbasEphParamsForSVResult
 ///
-#include "gen/GetSbasEphParamsForSVResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,20 @@ namespace Sdx
     const char* const GetSbasEphParamsForSVResult::CmdName = "GetSbasEphParamsForSVResult";
     const char* const GetSbasEphParamsForSVResult::Documentation = "Result of GetSbasEphParamsForSV.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetSbasEphParamsForSVResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetSbasEphParamsForSVResult);
 
 
     GetSbasEphParamsForSVResult::GetSbasEphParamsForSVResult()
       : CommandResult(CmdName)
     {}
+
+    GetSbasEphParamsForSVResult::GetSbasEphParamsForSVResult(int svId, const std::map<std::string, double>& paramValueDict)
+      : CommandResult(CmdName)
+    {
+
+      setSvId(svId);
+      setParamValueDict(paramValueDict);
+    }
 
     GetSbasEphParamsForSVResult::GetSbasEphParamsForSVResult(CommandBasePtr relatedCommand, int svId, const std::map<std::string, double>& paramValueDict)
       : CommandResult(CmdName, relatedCommand)
@@ -29,6 +39,11 @@ namespace Sdx
       setParamValueDict(paramValueDict);
     }
 
+
+    GetSbasEphParamsForSVResultPtr GetSbasEphParamsForSVResult::create(int svId, const std::map<std::string, double>& paramValueDict)
+    {
+      return std::make_shared<GetSbasEphParamsForSVResult>(svId, paramValueDict);
+    }
 
     GetSbasEphParamsForSVResultPtr GetSbasEphParamsForSVResult::create(CommandBasePtr relatedCommand, int svId, const std::map<std::string, double>& paramValueDict)
     {

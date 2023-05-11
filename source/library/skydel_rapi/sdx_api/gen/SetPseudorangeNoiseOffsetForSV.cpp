@@ -1,3 +1,6 @@
+
+#include "gen/SetPseudorangeNoiseOffsetForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetPseudorangeNoiseOffsetForSV
 ///
-#include "gen/SetPseudorangeNoiseOffsetForSV.h"
 
 namespace Sdx
 {
@@ -30,7 +32,6 @@ namespace Sdx
       setEnabled(enabled);
       setOffset(offset);
     }
-
 
     SetPseudorangeNoiseOffsetForSVPtr SetPseudorangeNoiseOffsetForSV::create(const std::string& system, int svId, bool enabled, double offset)
     {

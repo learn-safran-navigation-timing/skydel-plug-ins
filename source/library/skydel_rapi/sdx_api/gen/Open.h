@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -31,7 +32,7 @@ namespace Sdx
       Open();
 
       Open(const std::string& path, bool discardCurrentConfig);
-  
+
       static OpenPtr create(const std::string& path, bool discardCurrentConfig);
       static OpenPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -49,6 +50,7 @@ namespace Sdx
       bool discardCurrentConfig() const;
       void setDiscardCurrentConfig(bool discardCurrentConfig);
     };
+    
   }
 }
 

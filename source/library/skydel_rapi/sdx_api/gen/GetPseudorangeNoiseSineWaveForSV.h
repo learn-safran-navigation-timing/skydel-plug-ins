@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -32,7 +33,7 @@ namespace Sdx
       GetPseudorangeNoiseSineWaveForSV();
 
       GetPseudorangeNoiseSineWaveForSV(const std::string& system, int svId, int sineWave);
-  
+
       static GetPseudorangeNoiseSineWaveForSVPtr create(const std::string& system, int svId, int sineWave);
       static GetPseudorangeNoiseSineWaveForSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -55,6 +56,7 @@ namespace Sdx
       int sineWave() const;
       void setSineWave(int sineWave);
     };
+    
   }
 }
 

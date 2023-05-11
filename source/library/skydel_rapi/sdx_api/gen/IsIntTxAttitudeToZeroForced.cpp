@@ -1,3 +1,6 @@
+
+#include "gen/IsIntTxAttitudeToZeroForced.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of IsIntTxAttitudeToZeroForced
 ///
-#include "gen/IsIntTxAttitudeToZeroForced.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setId(id);
     }
-
 
     IsIntTxAttitudeToZeroForcedPtr IsIntTxAttitudeToZeroForced::create(const std::string& id)
     {

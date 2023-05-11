@@ -1,3 +1,6 @@
+
+#include "gen/GetModulationTargetSignals.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetModulationTargetSignals
 ///
-#include "gen/GetModulationTargetSignals.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setOutput(output);
       setId(id);
     }
-
 
     GetModulationTargetSignalsPtr GetModulationTargetSignals::create(int output, const std::string& id)
     {

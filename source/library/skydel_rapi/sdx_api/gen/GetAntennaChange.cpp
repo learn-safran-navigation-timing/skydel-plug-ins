@@ -1,3 +1,6 @@
+
+#include "gen/GetAntennaChange.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetAntennaChange
 ///
-#include "gen/GetAntennaChange.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setId(id);
     }
-
 
     GetAntennaChangePtr GetAntennaChange::create(const std::string& id)
     {

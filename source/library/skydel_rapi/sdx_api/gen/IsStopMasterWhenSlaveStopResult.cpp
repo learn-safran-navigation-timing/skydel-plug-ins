@@ -1,3 +1,6 @@
+
+#include "gen/IsStopMasterWhenSlaveStopResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of IsStopMasterWhenSlaveStopResult
 ///
-#include "gen/IsStopMasterWhenSlaveStopResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const IsStopMasterWhenSlaveStopResult::CmdName = "IsStopMasterWhenSlaveStopResult";
     const char* const IsStopMasterWhenSlaveStopResult::Documentation = "Result of IsStopMasterWhenSlaveStop.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(IsStopMasterWhenSlaveStopResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsStopMasterWhenSlaveStopResult);
 
 
     IsStopMasterWhenSlaveStopResult::IsStopMasterWhenSlaveStopResult()
       : CommandResult(CmdName)
     {}
+
+    IsStopMasterWhenSlaveStopResult::IsStopMasterWhenSlaveStopResult(bool enabled)
+      : CommandResult(CmdName)
+    {
+
+      setEnabled(enabled);
+    }
 
     IsStopMasterWhenSlaveStopResult::IsStopMasterWhenSlaveStopResult(CommandBasePtr relatedCommand, bool enabled)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setEnabled(enabled);
     }
 
+
+    IsStopMasterWhenSlaveStopResultPtr IsStopMasterWhenSlaveStopResult::create(bool enabled)
+    {
+      return std::make_shared<IsStopMasterWhenSlaveStopResult>(enabled);
+    }
 
     IsStopMasterWhenSlaveStopResultPtr IsStopMasterWhenSlaveStopResult::create(CommandBasePtr relatedCommand, bool enabled)
     {

@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include <string>
 #include <vector>
 
@@ -39,8 +40,12 @@ namespace Sdx
 
       GetMessageModificationToQzssLNavResult();
 
+      GetMessageModificationToQzssLNavResult(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int lNavSvId, int word, bool updateParity, const std::string& wordModification, const std::string& id);
+
       GetMessageModificationToQzssLNavResult(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int lNavSvId, int word, bool updateParity, const std::string& wordModification, const std::string& id);
-  
+
+      static GetMessageModificationToQzssLNavResultPtr create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int lNavSvId, int word, bool updateParity, const std::string& wordModification, const std::string& id);
+
       static GetMessageModificationToQzssLNavResultPtr create(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int lNavSvId, int word, bool updateParity, const std::string& wordModification, const std::string& id);
       static GetMessageModificationToQzssLNavResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -96,6 +101,7 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetMessageModificationToQzssLNavResult);
   }
 }
 

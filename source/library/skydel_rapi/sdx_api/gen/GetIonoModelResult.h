@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include <string>
 
 namespace Sdx
@@ -29,8 +30,12 @@ namespace Sdx
 
       GetIonoModelResult();
 
+      GetIonoModelResult(const std::string& model);
+
       GetIonoModelResult(CommandBasePtr relatedCommand, const std::string& model);
-  
+
+      static GetIonoModelResultPtr create(const std::string& model);
+
       static GetIonoModelResultPtr create(CommandBasePtr relatedCommand, const std::string& model);
       static GetIonoModelResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -41,6 +46,7 @@ namespace Sdx
       std::string model() const;
       void setModel(const std::string& model);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetIonoModelResult);
   }
 }
 

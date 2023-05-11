@@ -1,3 +1,6 @@
+
+#include "gen/IsLogHILInputEnabledResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of IsLogHILInputEnabledResult
 ///
-#include "gen/IsLogHILInputEnabledResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const IsLogHILInputEnabledResult::CmdName = "IsLogHILInputEnabledResult";
     const char* const IsLogHILInputEnabledResult::Documentation = "Result of IsLogHILInputEnabled.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(IsLogHILInputEnabledResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsLogHILInputEnabledResult);
 
 
     IsLogHILInputEnabledResult::IsLogHILInputEnabledResult()
       : CommandResult(CmdName)
     {}
+
+    IsLogHILInputEnabledResult::IsLogHILInputEnabledResult(bool enabled)
+      : CommandResult(CmdName)
+    {
+
+      setEnabled(enabled);
+    }
 
     IsLogHILInputEnabledResult::IsLogHILInputEnabledResult(CommandBasePtr relatedCommand, bool enabled)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setEnabled(enabled);
     }
 
+
+    IsLogHILInputEnabledResultPtr IsLogHILInputEnabledResult::create(bool enabled)
+    {
+      return std::make_shared<IsLogHILInputEnabledResult>(enabled);
+    }
 
     IsLogHILInputEnabledResultPtr IsLogHILInputEnabledResult::create(CommandBasePtr relatedCommand, bool enabled)
     {

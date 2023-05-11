@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include "date_time.h"
 #include <string>
 
@@ -37,8 +38,12 @@ namespace Sdx
 
       GetVehicleTrajectoryOrbitResult();
 
+      GetVehicleTrajectoryOrbitResult(const std::string& type, const Sdx::DateTime& reference, double semiMajorAxis, double inclination, double rightAscension, double eccentricity, double meanAnomaly, double argumentOfPerigee);
+
       GetVehicleTrajectoryOrbitResult(CommandBasePtr relatedCommand, const std::string& type, const Sdx::DateTime& reference, double semiMajorAxis, double inclination, double rightAscension, double eccentricity, double meanAnomaly, double argumentOfPerigee);
-  
+
+      static GetVehicleTrajectoryOrbitResultPtr create(const std::string& type, const Sdx::DateTime& reference, double semiMajorAxis, double inclination, double rightAscension, double eccentricity, double meanAnomaly, double argumentOfPerigee);
+
       static GetVehicleTrajectoryOrbitResultPtr create(CommandBasePtr relatedCommand, const std::string& type, const Sdx::DateTime& reference, double semiMajorAxis, double inclination, double rightAscension, double eccentricity, double meanAnomaly, double argumentOfPerigee);
       static GetVehicleTrajectoryOrbitResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -84,6 +89,7 @@ namespace Sdx
       double argumentOfPerigee() const;
       void setArgumentOfPerigee(double argumentOfPerigee);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetVehicleTrajectoryOrbitResult);
   }
 }
 

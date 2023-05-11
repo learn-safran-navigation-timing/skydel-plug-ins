@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include <string>
 
 namespace Sdx
@@ -33,8 +34,12 @@ namespace Sdx
 
       GetModulationTargetResult();
 
+      GetModulationTargetResult(const std::string& type, const std::string& path, const std::string& address, bool clockIsExternal, const std::string& id);
+
       GetModulationTargetResult(CommandBasePtr relatedCommand, const std::string& type, const std::string& path, const std::string& address, bool clockIsExternal, const std::string& id);
-  
+
+      static GetModulationTargetResultPtr create(const std::string& type, const std::string& path, const std::string& address, bool clockIsExternal, const std::string& id);
+
       static GetModulationTargetResultPtr create(CommandBasePtr relatedCommand, const std::string& type, const std::string& path, const std::string& address, bool clockIsExternal, const std::string& id);
       static GetModulationTargetResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -65,6 +70,7 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetModulationTargetResult);
   }
 }
 

@@ -1,3 +1,6 @@
+
+#include "gen/GetIntTxFixResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetIntTxFixResult
 ///
-#include "gen/GetIntTxFixResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,25 @@ namespace Sdx
     const char* const GetIntTxFixResult::CmdName = "GetIntTxFixResult";
     const char* const GetIntTxFixResult::Documentation = "Result of GetIntTxFix.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetIntTxFixResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetIntTxFixResult);
 
 
     GetIntTxFixResult::GetIntTxFixResult()
       : CommandResult(CmdName)
     {}
+
+    GetIntTxFixResult::GetIntTxFixResult(double lat, double lon, double alt, double yaw, double pitch, double roll, const std::string& id)
+      : CommandResult(CmdName)
+    {
+
+      setLat(lat);
+      setLon(lon);
+      setAlt(alt);
+      setYaw(yaw);
+      setPitch(pitch);
+      setRoll(roll);
+      setId(id);
+    }
 
     GetIntTxFixResult::GetIntTxFixResult(CommandBasePtr relatedCommand, double lat, double lon, double alt, double yaw, double pitch, double roll, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -34,6 +49,11 @@ namespace Sdx
       setId(id);
     }
 
+
+    GetIntTxFixResultPtr GetIntTxFixResult::create(double lat, double lon, double alt, double yaw, double pitch, double roll, const std::string& id)
+    {
+      return std::make_shared<GetIntTxFixResult>(lat, lon, alt, yaw, pitch, roll, id);
+    }
 
     GetIntTxFixResultPtr GetIntTxFixResult::create(CommandBasePtr relatedCommand, double lat, double lon, double alt, double yaw, double pitch, double roll, const std::string& id)
     {

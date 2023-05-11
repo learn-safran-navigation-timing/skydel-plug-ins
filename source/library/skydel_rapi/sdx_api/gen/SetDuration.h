@@ -4,6 +4,7 @@
 #include "command_base.h"
 
 
+
 namespace Sdx
 {
   namespace Cmd
@@ -30,7 +31,7 @@ namespace Sdx
       SetDuration();
 
       SetDuration(int second);
-  
+
       static SetDurationPtr create(int second);
       static SetDurationPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -43,6 +44,7 @@ namespace Sdx
       int second() const;
       void setSecond(int second);
     };
+    
   }
 }
 

@@ -1,3 +1,6 @@
+
+#include "gen/GetGpsEphDoubleParamForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetGpsEphDoubleParamForSV
 ///
-#include "gen/GetGpsEphDoubleParamForSV.h"
 
 namespace Sdx
 {
@@ -29,7 +31,6 @@ namespace Sdx
       setParamName(paramName);
       setDataSetName(dataSetName);
     }
-
 
     GetGpsEphDoubleParamForSVPtr GetGpsEphDoubleParamForSV::create(int svId, const std::string& paramName, const Sdx::optional<std::string>& dataSetName)
     {

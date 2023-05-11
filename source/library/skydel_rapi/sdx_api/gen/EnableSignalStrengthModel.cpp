@@ -1,3 +1,6 @@
+
+#include "gen/EnableSignalStrengthModel.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of EnableSignalStrengthModel
 ///
-#include "gen/EnableSignalStrengthModel.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setEnabled(enabled);
     }
-
 
     EnableSignalStrengthModelPtr EnableSignalStrengthModel::create(bool enabled)
     {

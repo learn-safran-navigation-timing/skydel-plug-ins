@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -32,7 +33,7 @@ namespace Sdx
       GetModulationTarget();
 
       GetModulationTarget(const std::string& id);
-  
+
       static GetModulationTargetPtr create(const std::string& id);
       static GetModulationTargetPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -45,6 +46,7 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
+    
   }
 }
 

@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include "sdx_optional.h"
 #include <string>
 
@@ -34,7 +35,7 @@ namespace Sdx
       GetQzssSatelliteL1Health();
 
       GetQzssSatelliteL1Health(int svId, const Sdx::optional<std::string>& dataSetName = {});
-  
+
       static GetQzssSatelliteL1HealthPtr create(int svId, const Sdx::optional<std::string>& dataSetName = {});
       static GetQzssSatelliteL1HealthPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -52,6 +53,7 @@ namespace Sdx
       Sdx::optional<std::string> dataSetName() const;
       void setDataSetName(const Sdx::optional<std::string>& dataSetName);
     };
+    
   }
 }
 

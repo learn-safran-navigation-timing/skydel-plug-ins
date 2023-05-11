@@ -1,3 +1,6 @@
+
+#include "gen/SetPrnOfSVID.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetPrnOfSVID
 ///
-#include "gen/SetPrnOfSVID.h"
 
 namespace Sdx
 {
@@ -29,7 +31,6 @@ namespace Sdx
       setSvId(svId);
       setPrn(prn);
     }
-
 
     SetPrnOfSVIDPtr SetPrnOfSVID::create(const std::string& signal, int svId, int prn)
     {

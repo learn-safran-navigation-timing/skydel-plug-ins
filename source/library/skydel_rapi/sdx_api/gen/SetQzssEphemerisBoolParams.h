@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include "sdx_optional.h"
 #include <string>
 #include <vector>
@@ -36,7 +37,7 @@ namespace Sdx
       SetQzssEphemerisBoolParams();
 
       SetQzssEphemerisBoolParams(const std::string& paramName, const std::vector<bool>& val, const Sdx::optional<std::string>& dataSetName = {});
-  
+
       static SetQzssEphemerisBoolParamsPtr create(const std::string& paramName, const std::vector<bool>& val, const Sdx::optional<std::string>& dataSetName = {});
       static SetQzssEphemerisBoolParamsPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -59,6 +60,7 @@ namespace Sdx
       Sdx::optional<std::string> dataSetName() const;
       void setDataSetName(const Sdx::optional<std::string>& dataSetName);
     };
+    
   }
 }
 

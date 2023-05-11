@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -32,7 +33,7 @@ namespace Sdx
       SetAlmanacUploadTimeInterval();
 
       SetAlmanacUploadTimeInterval(const std::string& system, int interval);
-  
+
       static SetAlmanacUploadTimeIntervalPtr create(const std::string& system, int interval);
       static SetAlmanacUploadTimeIntervalPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -50,6 +51,7 @@ namespace Sdx
       int interval() const;
       void setInterval(int interval);
     };
+    
   }
 }
 

@@ -1,3 +1,6 @@
+
+#include "gen/IsTransmitMessage2InSbasMessage0.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of IsTransmitMessage2InSbasMessage0
 ///
-#include "gen/IsTransmitMessage2InSbasMessage0.h"
 
 namespace Sdx
 {
@@ -22,7 +24,6 @@ namespace Sdx
     {
 
     }
-
 
     IsTransmitMessage2InSbasMessage0Ptr IsTransmitMessage2InSbasMessage0::create()
     {

@@ -1,3 +1,6 @@
+
+#include "gen/GetPseudorangeNoiseOffsetForEachSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,13 @@
 ///
 /// Definition of GetPseudorangeNoiseOffsetForEachSV
 ///
-#include "gen/GetPseudorangeNoiseOffsetForEachSV.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const GetPseudorangeNoiseOffsetForEachSV::CmdName = "GetPseudorangeNoiseOffsetForEachSV";
-    const char* const GetPseudorangeNoiseOffsetForEachSV::Documentation = "Please note the command GetAllSatellitesPseudorangeNoiseOffset is deprecated since 21.3. You may use GetPseudorangeNoiseOffsetForEachSV.\n\nGet the satellite pseudorange noise constant offset for all satellites.";
+    const char* const GetPseudorangeNoiseOffsetForEachSV::Documentation = "Get the satellite pseudorange noise constant offset for all satellites.";
 
     REGISTER_COMMAND_FACTORY(GetPseudorangeNoiseOffsetForEachSV);
 
@@ -27,7 +29,6 @@ namespace Sdx
 
       setSystem(system);
     }
-
 
     GetPseudorangeNoiseOffsetForEachSVPtr GetPseudorangeNoiseOffsetForEachSV::create(const std::string& system)
     {

@@ -1,3 +1,6 @@
+
+#include "gen/EnableSbasMessages.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of EnableSbasMessages
 ///
-#include "gen/EnableSbasMessages.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setMessages(messages);
     }
-
 
     EnableSbasMessagesPtr EnableSbasMessages::create(const std::vector<int>& messages)
     {

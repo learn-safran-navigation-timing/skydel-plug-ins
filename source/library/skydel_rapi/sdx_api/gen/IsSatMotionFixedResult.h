@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include <string>
 
 namespace Sdx
@@ -31,8 +32,12 @@ namespace Sdx
 
       IsSatMotionFixedResult();
 
+      IsSatMotionFixedResult(const std::string& system, int svId, bool isFixed);
+
       IsSatMotionFixedResult(CommandBasePtr relatedCommand, const std::string& system, int svId, bool isFixed);
-  
+
+      static IsSatMotionFixedResultPtr create(const std::string& system, int svId, bool isFixed);
+
       static IsSatMotionFixedResultPtr create(CommandBasePtr relatedCommand, const std::string& system, int svId, bool isFixed);
       static IsSatMotionFixedResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -53,6 +58,7 @@ namespace Sdx
       bool isFixed() const;
       void setIsFixed(bool isFixed);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(IsSatMotionFixedResult);
   }
 }
 

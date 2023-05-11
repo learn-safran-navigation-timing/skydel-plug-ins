@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -29,8 +30,12 @@ namespace Sdx
 
       GetStartTimeOffsetResult();
 
+      GetStartTimeOffsetResult(int offset);
+
       GetStartTimeOffsetResult(CommandBasePtr relatedCommand, int offset);
-  
+
+      static GetStartTimeOffsetResultPtr create(int offset);
+
       static GetStartTimeOffsetResultPtr create(CommandBasePtr relatedCommand, int offset);
       static GetStartTimeOffsetResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -41,6 +46,7 @@ namespace Sdx
       int offset() const;
       void setOffset(int offset);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetStartTimeOffsetResult);
   }
 }
 

@@ -1,3 +1,6 @@
+
+#include "gen/GetQzssEphBoolParamForEachSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,13 @@
 ///
 /// Definition of GetQzssEphBoolParamForEachSV
 ///
-#include "gen/GetQzssEphBoolParamForEachSV.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const GetQzssEphBoolParamForEachSV::CmdName = "GetQzssEphBoolParamForEachSV";
-    const char* const GetQzssEphBoolParamForEachSV::Documentation = "Please note the command GetQzssEphemerisBoolParams is deprecated since 21.3. You may use GetQzssEphBoolParamForEachSV.\n\nGet QZSS ephemeris boolean parameter value for all satellites";
+    const char* const GetQzssEphBoolParamForEachSV::Documentation = "Get QZSS ephemeris boolean parameter value for all satellites";
 
     REGISTER_COMMAND_FACTORY(GetQzssEphBoolParamForEachSV);
 
@@ -28,7 +30,6 @@ namespace Sdx
       setParamName(paramName);
       setDataSetName(dataSetName);
     }
-
 
     GetQzssEphBoolParamForEachSVPtr GetQzssEphBoolParamForEachSV::create(const std::string& paramName, const Sdx::optional<std::string>& dataSetName)
     {

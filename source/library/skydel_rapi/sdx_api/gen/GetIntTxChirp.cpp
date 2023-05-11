@@ -1,3 +1,6 @@
+
+#include "gen/GetIntTxChirp.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetIntTxChirp
 ///
-#include "gen/GetIntTxChirp.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setTransmitterId(transmitterId);
       setSignalId(signalId);
     }
-
 
     GetIntTxChirpPtr GetIntTxChirp::create(const std::string& transmitterId, const std::string& signalId)
     {

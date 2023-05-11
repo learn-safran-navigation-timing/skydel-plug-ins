@@ -1,3 +1,6 @@
+
+#include "gen/IsLosEnabledForSVResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of IsLosEnabledForSVResult
 ///
-#include "gen/IsLosEnabledForSVResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,21 @@ namespace Sdx
     const char* const IsLosEnabledForSVResult::CmdName = "IsLosEnabledForSVResult";
     const char* const IsLosEnabledForSVResult::Documentation = "Result of IsLosEnabledForSV.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(IsLosEnabledForSVResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsLosEnabledForSVResult);
 
 
     IsLosEnabledForSVResult::IsLosEnabledForSVResult()
       : CommandResult(CmdName)
     {}
+
+    IsLosEnabledForSVResult::IsLosEnabledForSVResult(const std::string& system, int svId, bool enabled)
+      : CommandResult(CmdName)
+    {
+
+      setSystem(system);
+      setSvId(svId);
+      setEnabled(enabled);
+    }
 
     IsLosEnabledForSVResult::IsLosEnabledForSVResult(CommandBasePtr relatedCommand, const std::string& system, int svId, bool enabled)
       : CommandResult(CmdName, relatedCommand)
@@ -30,6 +41,11 @@ namespace Sdx
       setEnabled(enabled);
     }
 
+
+    IsLosEnabledForSVResultPtr IsLosEnabledForSVResult::create(const std::string& system, int svId, bool enabled)
+    {
+      return std::make_shared<IsLosEnabledForSVResult>(system, svId, enabled);
+    }
 
     IsLosEnabledForSVResultPtr IsLosEnabledForSVResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, bool enabled)
     {

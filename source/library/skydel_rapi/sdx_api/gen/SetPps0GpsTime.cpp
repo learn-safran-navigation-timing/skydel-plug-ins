@@ -1,3 +1,6 @@
+
+#include "gen/SetPps0GpsTime.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetPps0GpsTime
 ///
-#include "gen/SetPps0GpsTime.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setGpsTime(gpsTime);
     }
-
 
     SetPps0GpsTimePtr SetPps0GpsTime::create(const Sdx::DateTime& gpsTime)
     {

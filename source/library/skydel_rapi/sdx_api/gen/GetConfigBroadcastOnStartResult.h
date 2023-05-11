@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -29,8 +30,12 @@ namespace Sdx
 
       GetConfigBroadcastOnStartResult();
 
+      GetConfigBroadcastOnStartResult(bool broadcastOnStart);
+
       GetConfigBroadcastOnStartResult(CommandBasePtr relatedCommand, bool broadcastOnStart);
-  
+
+      static GetConfigBroadcastOnStartResultPtr create(bool broadcastOnStart);
+
       static GetConfigBroadcastOnStartResultPtr create(CommandBasePtr relatedCommand, bool broadcastOnStart);
       static GetConfigBroadcastOnStartResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -41,6 +46,7 @@ namespace Sdx
       bool broadcastOnStart() const;
       void setBroadcastOnStart(bool broadcastOnStart);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetConfigBroadcastOnStartResult);
   }
 }
 

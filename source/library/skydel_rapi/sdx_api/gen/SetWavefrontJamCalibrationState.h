@@ -4,6 +4,7 @@
 #include "command_base.h"
 
 
+
 namespace Sdx
 {
   namespace Cmd
@@ -30,7 +31,7 @@ namespace Sdx
       SetWavefrontJamCalibrationState();
 
       SetWavefrontJamCalibrationState(bool state);
-  
+
       static SetWavefrontJamCalibrationStatePtr create(bool state);
       static SetWavefrontJamCalibrationStatePtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -43,6 +44,7 @@ namespace Sdx
       bool state() const;
       void setState(bool state);
     };
+    
   }
 }
 

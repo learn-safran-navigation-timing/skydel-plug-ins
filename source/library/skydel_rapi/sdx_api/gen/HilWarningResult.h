@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -30,8 +31,12 @@ namespace Sdx
 
       HilWarningResult();
 
+      HilWarningResult(bool isExtrapolated, int extrapolationTime);
+
       HilWarningResult(CommandBasePtr relatedCommand, bool isExtrapolated, int extrapolationTime);
-  
+
+      static HilWarningResultPtr create(bool isExtrapolated, int extrapolationTime);
+
       static HilWarningResultPtr create(CommandBasePtr relatedCommand, bool isExtrapolated, int extrapolationTime);
       static HilWarningResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -47,6 +52,7 @@ namespace Sdx
       int extrapolationTime() const;
       void setExtrapolationTime(int extrapolationTime);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(HilWarningResult);
   }
 }
 

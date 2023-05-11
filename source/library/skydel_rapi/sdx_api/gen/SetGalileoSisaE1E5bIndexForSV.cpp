@@ -1,3 +1,6 @@
+
+#include "gen/SetGalileoSisaE1E5bIndexForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetGalileoSisaE1E5bIndexForSV
 ///
-#include "gen/SetGalileoSisaE1E5bIndexForSV.h"
 
 namespace Sdx
 {
@@ -29,7 +31,6 @@ namespace Sdx
       setSisai(sisai);
       setDataSetName(dataSetName);
     }
-
 
     SetGalileoSisaE1E5bIndexForSVPtr SetGalileoSisaE1E5bIndexForSV::create(int svId, int sisai, const Sdx::optional<std::string>& dataSetName)
     {

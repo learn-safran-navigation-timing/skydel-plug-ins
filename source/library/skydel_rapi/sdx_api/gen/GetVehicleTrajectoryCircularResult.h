@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include "sdx_optional.h"
 #include <string>
 
@@ -37,8 +38,12 @@ namespace Sdx
 
       GetVehicleTrajectoryCircularResult();
 
+      GetVehicleTrajectoryCircularResult(const std::string& type, double lat, double lon, double alt, double radius, double speed, bool clockwise, const Sdx::optional<double>& originAngle = {});
+
       GetVehicleTrajectoryCircularResult(CommandBasePtr relatedCommand, const std::string& type, double lat, double lon, double alt, double radius, double speed, bool clockwise, const Sdx::optional<double>& originAngle = {});
-  
+
+      static GetVehicleTrajectoryCircularResultPtr create(const std::string& type, double lat, double lon, double alt, double radius, double speed, bool clockwise, const Sdx::optional<double>& originAngle = {});
+
       static GetVehicleTrajectoryCircularResultPtr create(CommandBasePtr relatedCommand, const std::string& type, double lat, double lon, double alt, double radius, double speed, bool clockwise, const Sdx::optional<double>& originAngle = {});
       static GetVehicleTrajectoryCircularResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -84,6 +89,7 @@ namespace Sdx
       Sdx::optional<double> originAngle() const;
       void setOriginAngle(const Sdx::optional<double>& originAngle);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetVehicleTrajectoryCircularResult);
   }
 }
 

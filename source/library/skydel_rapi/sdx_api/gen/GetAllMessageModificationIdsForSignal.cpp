@@ -1,3 +1,6 @@
+
+#include "gen/GetAllMessageModificationIdsForSignal.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetAllMessageModificationIdsForSignal
 ///
-#include "gen/GetAllMessageModificationIdsForSignal.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setSignal(signal);
       setSvId(svId);
     }
-
 
     GetAllMessageModificationIdsForSignalPtr GetAllMessageModificationIdsForSignal::create(const std::string& signal, int svId)
     {

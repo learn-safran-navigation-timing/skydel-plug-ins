@@ -1,3 +1,6 @@
+
+#include "gen/SetSpoofTxAntenna.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetSpoofTxAntenna
 ///
-#include "gen/SetSpoofTxAntenna.h"
 
 namespace Sdx
 {
@@ -29,7 +31,6 @@ namespace Sdx
       setType(type);
       setId(id);
     }
-
 
     SetSpoofTxAntennaPtr SetSpoofTxAntenna::create(const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const std::string& id)
     {

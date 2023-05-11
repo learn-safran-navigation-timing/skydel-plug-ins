@@ -1,3 +1,6 @@
+
+#include "gen/GetGpsConfigurationCodeForSVResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetGpsConfigurationCodeForSVResult
 ///
-#include "gen/GetGpsConfigurationCodeForSVResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,21 @@ namespace Sdx
     const char* const GetGpsConfigurationCodeForSVResult::CmdName = "GetGpsConfigurationCodeForSVResult";
     const char* const GetGpsConfigurationCodeForSVResult::Documentation = "Result of GetGpsConfigurationCodeForSV.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetGpsConfigurationCodeForSVResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetGpsConfigurationCodeForSVResult);
 
 
     GetGpsConfigurationCodeForSVResult::GetGpsConfigurationCodeForSVResult()
       : CommandResult(CmdName)
     {}
+
+    GetGpsConfigurationCodeForSVResult::GetGpsConfigurationCodeForSVResult(int svId, int svConfig, const Sdx::optional<std::string>& dataSetName)
+      : CommandResult(CmdName)
+    {
+
+      setSvId(svId);
+      setSvConfig(svConfig);
+      setDataSetName(dataSetName);
+    }
 
     GetGpsConfigurationCodeForSVResult::GetGpsConfigurationCodeForSVResult(CommandBasePtr relatedCommand, int svId, int svConfig, const Sdx::optional<std::string>& dataSetName)
       : CommandResult(CmdName, relatedCommand)
@@ -30,6 +41,11 @@ namespace Sdx
       setDataSetName(dataSetName);
     }
 
+
+    GetGpsConfigurationCodeForSVResultPtr GetGpsConfigurationCodeForSVResult::create(int svId, int svConfig, const Sdx::optional<std::string>& dataSetName)
+    {
+      return std::make_shared<GetGpsConfigurationCodeForSVResult>(svId, svConfig, dataSetName);
+    }
 
     GetGpsConfigurationCodeForSVResultPtr GetGpsConfigurationCodeForSVResult::create(CommandBasePtr relatedCommand, int svId, int svConfig, const Sdx::optional<std::string>& dataSetName)
     {

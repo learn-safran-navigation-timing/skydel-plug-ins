@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include <string>
 #include <vector>
 
@@ -32,8 +33,12 @@ namespace Sdx
 
       GetEnabledSignalsForSVResult();
 
+      GetEnabledSignalsForSVResult(const std::string& system, int svId, const std::vector<std::string>& signalArray);
+
       GetEnabledSignalsForSVResult(CommandBasePtr relatedCommand, const std::string& system, int svId, const std::vector<std::string>& signalArray);
-  
+
+      static GetEnabledSignalsForSVResultPtr create(const std::string& system, int svId, const std::vector<std::string>& signalArray);
+
       static GetEnabledSignalsForSVResultPtr create(CommandBasePtr relatedCommand, const std::string& system, int svId, const std::vector<std::string>& signalArray);
       static GetEnabledSignalsForSVResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -54,6 +59,7 @@ namespace Sdx
       std::vector<std::string> signalArray() const;
       void setSignalArray(const std::vector<std::string>& signalArray);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetEnabledSignalsForSVResult);
   }
 }
 

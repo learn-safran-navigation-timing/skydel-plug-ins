@@ -1,3 +1,6 @@
+
+#include "gen/SetIntTxCircular.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetIntTxCircular
 ///
-#include "gen/SetIntTxCircular.h"
 
 namespace Sdx
 {
@@ -34,7 +36,6 @@ namespace Sdx
       setId(id);
       setOriginAngle(originAngle);
     }
-
 
     SetIntTxCircularPtr SetIntTxCircular::create(double lat, double lon, double alt, double radius, double speed, bool clockwise, const std::string& id, const Sdx::optional<double>& originAngle)
     {

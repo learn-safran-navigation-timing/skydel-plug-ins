@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -31,7 +32,7 @@ namespace Sdx
       RemoveSpoofTx();
 
       RemoveSpoofTx(const std::string& id);
-  
+
       static RemoveSpoofTxPtr create(const std::string& id);
       static RemoveSpoofTxPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,6 +45,7 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
+    
   }
 }
 

@@ -1,3 +1,6 @@
+
+#include "gen/GetPseudorangeNoiseSineWaveForSVResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetPseudorangeNoiseSineWaveForSVResult
 ///
-#include "gen/GetPseudorangeNoiseSineWaveForSVResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,25 @@ namespace Sdx
     const char* const GetPseudorangeNoiseSineWaveForSVResult::CmdName = "GetPseudorangeNoiseSineWaveForSVResult";
     const char* const GetPseudorangeNoiseSineWaveForSVResult::Documentation = "Result of GetPseudorangeNoiseSineWaveForSV.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetPseudorangeNoiseSineWaveForSVResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetPseudorangeNoiseSineWaveForSVResult);
 
 
     GetPseudorangeNoiseSineWaveForSVResult::GetPseudorangeNoiseSineWaveForSVResult()
       : CommandResult(CmdName)
     {}
+
+    GetPseudorangeNoiseSineWaveForSVResult::GetPseudorangeNoiseSineWaveForSVResult(const std::string& system, int svId, int sineWave, bool enabled, double amplitude, int period, double offset)
+      : CommandResult(CmdName)
+    {
+
+      setSystem(system);
+      setSvId(svId);
+      setSineWave(sineWave);
+      setEnabled(enabled);
+      setAmplitude(amplitude);
+      setPeriod(period);
+      setOffset(offset);
+    }
 
     GetPseudorangeNoiseSineWaveForSVResult::GetPseudorangeNoiseSineWaveForSVResult(CommandBasePtr relatedCommand, const std::string& system, int svId, int sineWave, bool enabled, double amplitude, int period, double offset)
       : CommandResult(CmdName, relatedCommand)
@@ -34,6 +49,11 @@ namespace Sdx
       setOffset(offset);
     }
 
+
+    GetPseudorangeNoiseSineWaveForSVResultPtr GetPseudorangeNoiseSineWaveForSVResult::create(const std::string& system, int svId, int sineWave, bool enabled, double amplitude, int period, double offset)
+    {
+      return std::make_shared<GetPseudorangeNoiseSineWaveForSVResult>(system, svId, sineWave, enabled, amplitude, period, offset);
+    }
 
     GetPseudorangeNoiseSineWaveForSVResultPtr GetPseudorangeNoiseSineWaveForSVResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, int sineWave, bool enabled, double amplitude, int period, double offset)
     {

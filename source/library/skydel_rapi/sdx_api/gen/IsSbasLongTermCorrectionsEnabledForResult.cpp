@@ -1,3 +1,6 @@
+
+#include "gen/IsSbasLongTermCorrectionsEnabledForResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of IsSbasLongTermCorrectionsEnabledForResult
 ///
-#include "gen/IsSbasLongTermCorrectionsEnabledForResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,20 @@ namespace Sdx
     const char* const IsSbasLongTermCorrectionsEnabledForResult::CmdName = "IsSbasLongTermCorrectionsEnabledForResult";
     const char* const IsSbasLongTermCorrectionsEnabledForResult::Documentation = "Result of IsSbasLongTermCorrectionsEnabledFor.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(IsSbasLongTermCorrectionsEnabledForResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsSbasLongTermCorrectionsEnabledForResult);
 
 
     IsSbasLongTermCorrectionsEnabledForResult::IsSbasLongTermCorrectionsEnabledForResult()
       : CommandResult(CmdName)
     {}
+
+    IsSbasLongTermCorrectionsEnabledForResult::IsSbasLongTermCorrectionsEnabledForResult(const std::string& system, bool isEnabled)
+      : CommandResult(CmdName)
+    {
+
+      setSystem(system);
+      setIsEnabled(isEnabled);
+    }
 
     IsSbasLongTermCorrectionsEnabledForResult::IsSbasLongTermCorrectionsEnabledForResult(CommandBasePtr relatedCommand, const std::string& system, bool isEnabled)
       : CommandResult(CmdName, relatedCommand)
@@ -29,6 +39,11 @@ namespace Sdx
       setIsEnabled(isEnabled);
     }
 
+
+    IsSbasLongTermCorrectionsEnabledForResultPtr IsSbasLongTermCorrectionsEnabledForResult::create(const std::string& system, bool isEnabled)
+    {
+      return std::make_shared<IsSbasLongTermCorrectionsEnabledForResult>(system, isEnabled);
+    }
 
     IsSbasLongTermCorrectionsEnabledForResultPtr IsSbasLongTermCorrectionsEnabledForResult::create(CommandBasePtr relatedCommand, const std::string& system, bool isEnabled)
     {

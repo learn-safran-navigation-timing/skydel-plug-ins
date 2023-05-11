@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -35,8 +36,12 @@ namespace Sdx
 
       GetWFAntennaElementOffsetResult();
 
+      GetWFAntennaElementOffsetResult(double x, double y, double z, double yaw, double pitch, double roll, int element);
+
       GetWFAntennaElementOffsetResult(CommandBasePtr relatedCommand, double x, double y, double z, double yaw, double pitch, double roll, int element);
-  
+
+      static GetWFAntennaElementOffsetResultPtr create(double x, double y, double z, double yaw, double pitch, double roll, int element);
+
       static GetWFAntennaElementOffsetResultPtr create(CommandBasePtr relatedCommand, double x, double y, double z, double yaw, double pitch, double roll, int element);
       static GetWFAntennaElementOffsetResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -77,6 +82,7 @@ namespace Sdx
       int element() const;
       void setElement(int element);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetWFAntennaElementOffsetResult);
   }
 }
 

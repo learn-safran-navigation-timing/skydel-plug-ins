@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -31,7 +32,7 @@ namespace Sdx
       ExportSbasMessageSequence();
 
       ExportSbasMessageSequence(const std::string& path, bool overwriting);
-  
+
       static ExportSbasMessageSequencePtr create(const std::string& path, bool overwriting);
       static ExportSbasMessageSequencePtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -49,6 +50,7 @@ namespace Sdx
       bool overwriting() const;
       void setOverwriting(bool overwriting);
     };
+    
   }
 }
 

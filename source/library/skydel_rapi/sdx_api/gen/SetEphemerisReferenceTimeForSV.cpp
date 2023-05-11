@@ -1,3 +1,6 @@
+
+#include "gen/SetEphemerisReferenceTimeForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,13 @@
 ///
 /// Definition of SetEphemerisReferenceTimeForSV
 ///
-#include "gen/SetEphemerisReferenceTimeForSV.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const SetEphemerisReferenceTimeForSV::CmdName = "SetEphemerisReferenceTimeForSV";
-    const char* const SetEphemerisReferenceTimeForSV::Documentation = "Please note the command SetEphemerisReferenceTime is deprecated since 21.3. You may use SetEphemerisReferenceTimeForSV.\n\nSet the ephemeris reference time for the specified constellation.";
+    const char* const SetEphemerisReferenceTimeForSV::Documentation = "Set the ephemeris reference time for the specified constellation.";
 
     REGISTER_COMMAND_FACTORY(SetEphemerisReferenceTimeForSV);
 
@@ -30,7 +32,6 @@ namespace Sdx
       setTime(time);
       setDataSetName(dataSetName);
     }
-
 
     SetEphemerisReferenceTimeForSVPtr SetEphemerisReferenceTimeForSV::create(const std::string& system, int svId, const Sdx::DateTime& time, const Sdx::optional<std::string>& dataSetName)
     {

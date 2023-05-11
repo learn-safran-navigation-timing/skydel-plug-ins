@@ -1,3 +1,6 @@
+
+#include "gen/GetHilExtrapolationState.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetHilExtrapolationState
 ///
-#include "gen/GetHilExtrapolationState.h"
 
 namespace Sdx
 {
@@ -22,7 +24,6 @@ namespace Sdx
     {
 
     }
-
 
     GetHilExtrapolationStatePtr GetHilExtrapolationState::create()
     {

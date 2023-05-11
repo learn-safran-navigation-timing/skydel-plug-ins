@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 #include <vector>
 
@@ -32,7 +33,7 @@ namespace Sdx
       EnableEachSV();
 
       EnableEachSV(const std::string& system, const std::vector<bool>& enabled);
-  
+
       static EnableEachSVPtr create(const std::string& system, const std::vector<bool>& enabled);
       static EnableEachSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -50,6 +51,7 @@ namespace Sdx
       std::vector<bool> enabled() const;
       void setEnabled(const std::vector<bool>& enabled);
     };
+    
   }
 }
 

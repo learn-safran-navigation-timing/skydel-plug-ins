@@ -1,3 +1,6 @@
+
+#include "gen/SetSpoofTxFixEcef.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetSpoofTxFixEcef
 ///
-#include "gen/SetSpoofTxFixEcef.h"
 
 namespace Sdx
 {
@@ -33,7 +35,6 @@ namespace Sdx
       setRoll(roll);
       setId(id);
     }
-
 
     SetSpoofTxFixEcefPtr SetSpoofTxFixEcef::create(double x, double y, double z, double yaw, double pitch, double roll, const std::string& id)
     {

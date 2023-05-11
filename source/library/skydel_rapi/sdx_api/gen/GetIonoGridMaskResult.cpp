@@ -1,3 +1,6 @@
+
+#include "gen/GetIonoGridMaskResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetIonoGridMaskResult
 ///
-#include "gen/GetIonoGridMaskResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,22 @@ namespace Sdx
     const char* const GetIonoGridMaskResult::CmdName = "GetIonoGridMaskResult";
     const char* const GetIonoGridMaskResult::Documentation = "Result of GetIonoGridMask.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetIonoGridMaskResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetIonoGridMaskResult);
 
 
     GetIonoGridMaskResult::GetIonoGridMaskResult()
       : CommandResult(CmdName)
     {}
+
+    GetIonoGridMaskResult::GetIonoGridMaskResult(const std::string& serviceProvider, int band, int point, bool flag)
+      : CommandResult(CmdName)
+    {
+
+      setServiceProvider(serviceProvider);
+      setBand(band);
+      setPoint(point);
+      setFlag(flag);
+    }
 
     GetIonoGridMaskResult::GetIonoGridMaskResult(CommandBasePtr relatedCommand, const std::string& serviceProvider, int band, int point, bool flag)
       : CommandResult(CmdName, relatedCommand)
@@ -31,6 +43,11 @@ namespace Sdx
       setFlag(flag);
     }
 
+
+    GetIonoGridMaskResultPtr GetIonoGridMaskResult::create(const std::string& serviceProvider, int band, int point, bool flag)
+    {
+      return std::make_shared<GetIonoGridMaskResult>(serviceProvider, band, point, flag);
+    }
 
     GetIonoGridMaskResultPtr GetIonoGridMaskResult::create(CommandBasePtr relatedCommand, const std::string& serviceProvider, int band, int point, bool flag)
     {

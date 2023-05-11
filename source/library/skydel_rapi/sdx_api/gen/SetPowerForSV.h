@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -31,15 +32,19 @@ namespace Sdx
       static const char* const CmdName;
       static const char* const Documentation;
 
+      static const char* const Deprecated;
+
 
       SetPowerForSV();
 
       SetPowerForSV(const std::string& system, int svId, double powerOffset, bool otherSatsFollow);
-  
+
       static SetPowerForSVPtr create(const std::string& system, int svId, double powerOffset, bool otherSatsFollow);
       static SetPowerForSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
       virtual std::string documentation() const override;
+
+      virtual Sdx::optional<std::string> deprecated() const override;
 
       virtual int executePermission() const override;
 
@@ -63,6 +68,7 @@ namespace Sdx
       bool otherSatsFollow() const;
       void setOtherSatsFollow(bool otherSatsFollow);
     };
+    
   }
 }
 

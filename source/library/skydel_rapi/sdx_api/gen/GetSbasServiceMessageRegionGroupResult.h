@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include "gen/SbasServiceMessageRegion.h"
 #include <string>
 #include <vector>
@@ -35,8 +36,12 @@ namespace Sdx
 
       GetSbasServiceMessageRegionGroupResult();
 
+      GetSbasServiceMessageRegionGroupResult(const std::string& serviceProvider, int deltaUdrei, int priorityCode, const std::vector<Sdx::SbasServiceMessageRegion>& regions, const std::string& id);
+
       GetSbasServiceMessageRegionGroupResult(CommandBasePtr relatedCommand, const std::string& serviceProvider, int deltaUdrei, int priorityCode, const std::vector<Sdx::SbasServiceMessageRegion>& regions, const std::string& id);
-  
+
+      static GetSbasServiceMessageRegionGroupResultPtr create(const std::string& serviceProvider, int deltaUdrei, int priorityCode, const std::vector<Sdx::SbasServiceMessageRegion>& regions, const std::string& id);
+
       static GetSbasServiceMessageRegionGroupResultPtr create(CommandBasePtr relatedCommand, const std::string& serviceProvider, int deltaUdrei, int priorityCode, const std::vector<Sdx::SbasServiceMessageRegion>& regions, const std::string& id);
       static GetSbasServiceMessageRegionGroupResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -67,6 +72,7 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetSbasServiceMessageRegionGroupResult);
   }
 }
 

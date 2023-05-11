@@ -1,3 +1,6 @@
+
+#include "gen/GetPerturbationsResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetPerturbationsResult
 ///
-#include "gen/GetPerturbationsResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,27 @@ namespace Sdx
     const char* const GetPerturbationsResult::CmdName = "GetPerturbationsResult";
     const char* const GetPerturbationsResult::Documentation = "Result of GetPerturbations.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetPerturbationsResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetPerturbationsResult);
 
 
     GetPerturbationsResult::GetPerturbationsResult()
       : CommandResult(CmdName)
     {}
+
+    GetPerturbationsResult::GetPerturbationsResult(const std::string& system, int svId, double crs, double crc, double cis, double cic, double cus, double cuc, const Sdx::optional<std::string>& dataSetName)
+      : CommandResult(CmdName)
+    {
+
+      setSystem(system);
+      setSvId(svId);
+      setCrs(crs);
+      setCrc(crc);
+      setCis(cis);
+      setCic(cic);
+      setCus(cus);
+      setCuc(cuc);
+      setDataSetName(dataSetName);
+    }
 
     GetPerturbationsResult::GetPerturbationsResult(CommandBasePtr relatedCommand, const std::string& system, int svId, double crs, double crc, double cis, double cic, double cus, double cuc, const Sdx::optional<std::string>& dataSetName)
       : CommandResult(CmdName, relatedCommand)
@@ -36,6 +53,11 @@ namespace Sdx
       setDataSetName(dataSetName);
     }
 
+
+    GetPerturbationsResultPtr GetPerturbationsResult::create(const std::string& system, int svId, double crs, double crc, double cis, double cic, double cus, double cuc, const Sdx::optional<std::string>& dataSetName)
+    {
+      return std::make_shared<GetPerturbationsResult>(system, svId, crs, crc, cis, cic, cus, cuc, dataSetName);
+    }
 
     GetPerturbationsResultPtr GetPerturbationsResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, double crs, double crc, double cis, double cic, double cus, double cuc, const Sdx::optional<std::string>& dataSetName)
     {

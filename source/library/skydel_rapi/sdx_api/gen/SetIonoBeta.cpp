@@ -1,3 +1,6 @@
+
+#include "gen/SetIonoBeta.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetIonoBeta
 ///
-#include "gen/SetIonoBeta.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setIndex(index);
       setVal(val);
     }
-
 
     SetIonoBetaPtr SetIonoBeta::create(int index, double val)
     {
