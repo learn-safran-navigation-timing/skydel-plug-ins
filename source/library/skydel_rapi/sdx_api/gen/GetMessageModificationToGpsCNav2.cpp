@@ -1,3 +1,6 @@
+
+#include "gen/GetMessageModificationToGpsCNav2.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetMessageModificationToGpsCNav2
 ///
-#include "gen/GetMessageModificationToGpsCNav2.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setId(id);
     }
-
 
     GetMessageModificationToGpsCNav2Ptr GetMessageModificationToGpsCNav2::create(const std::string& id)
     {

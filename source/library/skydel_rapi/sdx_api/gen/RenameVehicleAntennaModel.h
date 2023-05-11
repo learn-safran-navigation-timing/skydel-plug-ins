@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -31,7 +32,7 @@ namespace Sdx
       RenameVehicleAntennaModel();
 
       RenameVehicleAntennaModel(const std::string& name, const std::string& newName);
-  
+
       static RenameVehicleAntennaModelPtr create(const std::string& name, const std::string& newName);
       static RenameVehicleAntennaModelPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -49,6 +50,7 @@ namespace Sdx
       std::string newName() const;
       void setNewName(const std::string& newName);
     };
+    
   }
 }
 

@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -29,8 +30,12 @@ namespace Sdx
 
       IsStopMasterWhenSlaveStopResult();
 
+      IsStopMasterWhenSlaveStopResult(bool enabled);
+
       IsStopMasterWhenSlaveStopResult(CommandBasePtr relatedCommand, bool enabled);
-  
+
+      static IsStopMasterWhenSlaveStopResultPtr create(bool enabled);
+
       static IsStopMasterWhenSlaveStopResultPtr create(CommandBasePtr relatedCommand, bool enabled);
       static IsStopMasterWhenSlaveStopResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -41,6 +46,7 @@ namespace Sdx
       bool enabled() const;
       void setEnabled(bool enabled);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(IsStopMasterWhenSlaveStopResult);
   }
 }
 

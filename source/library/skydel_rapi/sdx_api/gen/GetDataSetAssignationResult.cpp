@@ -1,3 +1,6 @@
+
+#include "gen/GetDataSetAssignationResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetDataSetAssignationResult
 ///
-#include "gen/GetDataSetAssignationResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,21 @@ namespace Sdx
     const char* const GetDataSetAssignationResult::CmdName = "GetDataSetAssignationResult";
     const char* const GetDataSetAssignationResult::Documentation = "Result of GetDataSetAssignation.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetDataSetAssignationResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetDataSetAssignationResult);
 
 
     GetDataSetAssignationResult::GetDataSetAssignationResult()
       : CommandResult(CmdName)
     {}
+
+    GetDataSetAssignationResult::GetDataSetAssignationResult(const std::string& system, const std::string& dataSetType, const std::string& dataSetName)
+      : CommandResult(CmdName)
+    {
+
+      setSystem(system);
+      setDataSetType(dataSetType);
+      setDataSetName(dataSetName);
+    }
 
     GetDataSetAssignationResult::GetDataSetAssignationResult(CommandBasePtr relatedCommand, const std::string& system, const std::string& dataSetType, const std::string& dataSetName)
       : CommandResult(CmdName, relatedCommand)
@@ -30,6 +41,11 @@ namespace Sdx
       setDataSetName(dataSetName);
     }
 
+
+    GetDataSetAssignationResultPtr GetDataSetAssignationResult::create(const std::string& system, const std::string& dataSetType, const std::string& dataSetName)
+    {
+      return std::make_shared<GetDataSetAssignationResult>(system, dataSetType, dataSetName);
+    }
 
     GetDataSetAssignationResultPtr GetDataSetAssignationResult::create(CommandBasePtr relatedCommand, const std::string& system, const std::string& dataSetType, const std::string& dataSetName)
     {

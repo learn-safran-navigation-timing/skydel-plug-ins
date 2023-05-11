@@ -1,3 +1,6 @@
+
+#include "gen/GetSVAntennaModelForEachSVResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetSVAntennaModelForEachSVResult
 ///
-#include "gen/GetSVAntennaModelForEachSVResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,20 @@ namespace Sdx
     const char* const GetSVAntennaModelForEachSVResult::CmdName = "GetSVAntennaModelForEachSVResult";
     const char* const GetSVAntennaModelForEachSVResult::Documentation = "Result of GetSVAntennaModelForEachSV.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetSVAntennaModelForEachSVResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetSVAntennaModelForEachSVResult);
 
 
     GetSVAntennaModelForEachSVResult::GetSVAntennaModelForEachSVResult()
       : CommandResult(CmdName)
     {}
+
+    GetSVAntennaModelForEachSVResult::GetSVAntennaModelForEachSVResult(const std::string& system, const std::vector<std::string>& antennaModelNames)
+      : CommandResult(CmdName)
+    {
+
+      setSystem(system);
+      setAntennaModelNames(antennaModelNames);
+    }
 
     GetSVAntennaModelForEachSVResult::GetSVAntennaModelForEachSVResult(CommandBasePtr relatedCommand, const std::string& system, const std::vector<std::string>& antennaModelNames)
       : CommandResult(CmdName, relatedCommand)
@@ -29,6 +39,11 @@ namespace Sdx
       setAntennaModelNames(antennaModelNames);
     }
 
+
+    GetSVAntennaModelForEachSVResultPtr GetSVAntennaModelForEachSVResult::create(const std::string& system, const std::vector<std::string>& antennaModelNames)
+    {
+      return std::make_shared<GetSVAntennaModelForEachSVResult>(system, antennaModelNames);
+    }
 
     GetSVAntennaModelForEachSVResultPtr GetSVAntennaModelForEachSVResult::create(CommandBasePtr relatedCommand, const std::string& system, const std::vector<std::string>& antennaModelNames)
     {

@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -36,7 +37,7 @@ namespace Sdx
       SetVehicleTrajectoryFixEcef();
 
       SetVehicleTrajectoryFixEcef(const std::string& type, double x, double y, double z, double yaw, double pitch, double roll);
-  
+
       static SetVehicleTrajectoryFixEcefPtr create(const std::string& type, double x, double y, double z, double yaw, double pitch, double roll);
       static SetVehicleTrajectoryFixEcefPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -79,6 +80,7 @@ namespace Sdx
       double roll() const;
       void setRoll(double roll);
     };
+    
   }
 }
 

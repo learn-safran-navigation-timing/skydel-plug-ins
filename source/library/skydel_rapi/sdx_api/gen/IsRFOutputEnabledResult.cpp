@@ -1,3 +1,6 @@
+
+#include "gen/IsRFOutputEnabledResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of IsRFOutputEnabledResult
 ///
-#include "gen/IsRFOutputEnabledResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,21 @@ namespace Sdx
     const char* const IsRFOutputEnabledResult::CmdName = "IsRFOutputEnabledResult";
     const char* const IsRFOutputEnabledResult::Documentation = "Result of IsRFOutputEnabled.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(IsRFOutputEnabledResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsRFOutputEnabledResult);
 
 
     IsRFOutputEnabledResult::IsRFOutputEnabledResult()
       : CommandResult(CmdName)
     {}
+
+    IsRFOutputEnabledResult::IsRFOutputEnabledResult(const std::string& system, int svId, bool enabled)
+      : CommandResult(CmdName)
+    {
+
+      setSystem(system);
+      setSvId(svId);
+      setEnabled(enabled);
+    }
 
     IsRFOutputEnabledResult::IsRFOutputEnabledResult(CommandBasePtr relatedCommand, const std::string& system, int svId, bool enabled)
       : CommandResult(CmdName, relatedCommand)
@@ -30,6 +41,11 @@ namespace Sdx
       setEnabled(enabled);
     }
 
+
+    IsRFOutputEnabledResultPtr IsRFOutputEnabledResult::create(const std::string& system, int svId, bool enabled)
+    {
+      return std::make_shared<IsRFOutputEnabledResult>(system, svId, enabled);
+    }
 
     IsRFOutputEnabledResultPtr IsRFOutputEnabledResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, bool enabled)
     {

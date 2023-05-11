@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include <string>
 
 namespace Sdx
@@ -35,8 +36,12 @@ namespace Sdx
 
       GetPseudorangeNoiseSineWaveForSVResult();
 
+      GetPseudorangeNoiseSineWaveForSVResult(const std::string& system, int svId, int sineWave, bool enabled, double amplitude, int period, double offset);
+
       GetPseudorangeNoiseSineWaveForSVResult(CommandBasePtr relatedCommand, const std::string& system, int svId, int sineWave, bool enabled, double amplitude, int period, double offset);
-  
+
+      static GetPseudorangeNoiseSineWaveForSVResultPtr create(const std::string& system, int svId, int sineWave, bool enabled, double amplitude, int period, double offset);
+
       static GetPseudorangeNoiseSineWaveForSVResultPtr create(CommandBasePtr relatedCommand, const std::string& system, int svId, int sineWave, bool enabled, double amplitude, int period, double offset);
       static GetPseudorangeNoiseSineWaveForSVResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -77,6 +82,7 @@ namespace Sdx
       double offset() const;
       void setOffset(double offset);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetPseudorangeNoiseSineWaveForSVResult);
   }
 }
 

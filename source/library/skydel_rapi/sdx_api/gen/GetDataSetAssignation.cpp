@@ -1,3 +1,6 @@
+
+#include "gen/GetDataSetAssignation.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetDataSetAssignation
 ///
-#include "gen/GetDataSetAssignation.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setSystem(system);
       setDataSetType(dataSetType);
     }
-
 
     GetDataSetAssignationPtr GetDataSetAssignation::create(const std::string& system, const std::string& dataSetType)
     {

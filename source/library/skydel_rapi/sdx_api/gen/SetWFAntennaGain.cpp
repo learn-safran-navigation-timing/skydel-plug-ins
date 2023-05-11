@@ -1,3 +1,6 @@
+
+#include "gen/SetWFAntennaGain.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetWFAntennaGain
 ///
-#include "gen/SetWFAntennaGain.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setGain(gain);
     }
-
 
     SetWFAntennaGainPtr SetWFAntennaGain::create(int gain)
     {

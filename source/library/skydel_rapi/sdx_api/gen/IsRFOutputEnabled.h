@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -31,7 +32,7 @@ namespace Sdx
       IsRFOutputEnabled();
 
       IsRFOutputEnabled(const std::string& system, int svId);
-  
+
       static IsRFOutputEnabledPtr create(const std::string& system, int svId);
       static IsRFOutputEnabledPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -49,6 +50,7 @@ namespace Sdx
       int svId() const;
       void setSvId(int svId);
     };
+    
   }
 }
 

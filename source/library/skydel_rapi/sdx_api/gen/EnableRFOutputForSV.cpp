@@ -1,3 +1,6 @@
+
+#include "gen/EnableRFOutputForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of EnableRFOutputForSV
 ///
-#include "gen/EnableRFOutputForSV.h"
 
 namespace Sdx
 {
@@ -29,7 +31,6 @@ namespace Sdx
       setSvId(svId);
       setEnabled(enabled);
     }
-
 
     EnableRFOutputForSVPtr EnableRFOutputForSV::create(const std::string& system, int svId, bool enabled)
     {

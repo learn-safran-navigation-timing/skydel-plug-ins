@@ -1,3 +1,6 @@
+
+#include "gen/SetPowerOffset.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,13 @@
 ///
 /// Definition of SetPowerOffset
 ///
-#include "gen/SetPowerOffset.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const SetPowerOffset::CmdName = "SetPowerOffset";
-    const char* const SetPowerOffset::Documentation = "Set power offset default value for the signal given in argument";
+    const char* const SetPowerOffset::Documentation = "Please note the command SetPowerOffset is deprecated since 21.7. You may use SetSignalPowerOffset.\n\nSet power offset default value for the signal given in argument";
 
     REGISTER_COMMAND_FACTORY(SetPowerOffset);
 
@@ -28,7 +30,6 @@ namespace Sdx
       setSignal(signal);
       setOffset(offset);
     }
-
 
     SetPowerOffsetPtr SetPowerOffset::create(const std::string& signal, double offset)
     {

@@ -1,3 +1,6 @@
+
+#include "gen/SetPilotPRN.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetPilotPRN
 ///
-#include "gen/SetPilotPRN.h"
 
 namespace Sdx
 {
@@ -33,7 +35,6 @@ namespace Sdx
       setType(type);
       setPilotId(pilotId);
     }
-
 
     SetPilotPRNPtr SetPilotPRN::create(bool enabled, int outputIdx, double centralFreqOffset, double power, int prn, const std::string& type, const std::string& pilotId)
     {

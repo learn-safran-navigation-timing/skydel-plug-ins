@@ -1,3 +1,6 @@
+
+#include "gen/GetGlonassEphDoubleParamForEachSVResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetGlonassEphDoubleParamForEachSVResult
 ///
-#include "gen/GetGlonassEphDoubleParamForEachSVResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,20 @@ namespace Sdx
     const char* const GetGlonassEphDoubleParamForEachSVResult::CmdName = "GetGlonassEphDoubleParamForEachSVResult";
     const char* const GetGlonassEphDoubleParamForEachSVResult::Documentation = "Result of GetGlonassEphDoubleParamForEachSV.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetGlonassEphDoubleParamForEachSVResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetGlonassEphDoubleParamForEachSVResult);
 
 
     GetGlonassEphDoubleParamForEachSVResult::GetGlonassEphDoubleParamForEachSVResult()
       : CommandResult(CmdName)
     {}
+
+    GetGlonassEphDoubleParamForEachSVResult::GetGlonassEphDoubleParamForEachSVResult(const std::string& paramName, const std::vector<double>& val)
+      : CommandResult(CmdName)
+    {
+
+      setParamName(paramName);
+      setVal(val);
+    }
 
     GetGlonassEphDoubleParamForEachSVResult::GetGlonassEphDoubleParamForEachSVResult(CommandBasePtr relatedCommand, const std::string& paramName, const std::vector<double>& val)
       : CommandResult(CmdName, relatedCommand)
@@ -29,6 +39,11 @@ namespace Sdx
       setVal(val);
     }
 
+
+    GetGlonassEphDoubleParamForEachSVResultPtr GetGlonassEphDoubleParamForEachSVResult::create(const std::string& paramName, const std::vector<double>& val)
+    {
+      return std::make_shared<GetGlonassEphDoubleParamForEachSVResult>(paramName, val);
+    }
 
     GetGlonassEphDoubleParamForEachSVResultPtr GetGlonassEphDoubleParamForEachSVResult::create(CommandBasePtr relatedCommand, const std::string& paramName, const std::vector<double>& val)
     {

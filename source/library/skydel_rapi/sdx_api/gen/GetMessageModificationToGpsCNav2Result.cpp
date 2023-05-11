@@ -1,3 +1,6 @@
+
+#include "gen/GetMessageModificationToGpsCNav2Result.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetMessageModificationToGpsCNav2Result
 ///
-#include "gen/GetMessageModificationToGpsCNav2Result.h"
 
 namespace Sdx
 {
@@ -14,12 +16,27 @@ namespace Sdx
     const char* const GetMessageModificationToGpsCNav2Result::CmdName = "GetMessageModificationToGpsCNav2Result";
     const char* const GetMessageModificationToGpsCNav2Result::Documentation = "Result of GetMessageModificationToGpsCNav2.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetMessageModificationToGpsCNav2Result);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetMessageModificationToGpsCNav2Result);
 
 
     GetMessageModificationToGpsCNav2Result::GetMessageModificationToGpsCNav2Result()
       : CommandResult(CmdName)
     {}
+
+    GetMessageModificationToGpsCNav2Result::GetMessageModificationToGpsCNav2Result(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int page, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id)
+      : CommandResult(CmdName)
+    {
+
+      setSignalArray(signalArray);
+      setSvId(svId);
+      setStartTime(startTime);
+      setStopTime(stopTime);
+      setPage(page);
+      setCondition(condition);
+      setUpdateCRC(updateCRC);
+      setBitModifications(bitModifications);
+      setId(id);
+    }
 
     GetMessageModificationToGpsCNav2Result::GetMessageModificationToGpsCNav2Result(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int page, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -36,6 +53,11 @@ namespace Sdx
       setId(id);
     }
 
+
+    GetMessageModificationToGpsCNav2ResultPtr GetMessageModificationToGpsCNav2Result::create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int page, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id)
+    {
+      return std::make_shared<GetMessageModificationToGpsCNav2Result>(signalArray, svId, startTime, stopTime, page, condition, updateCRC, bitModifications, id);
+    }
 
     GetMessageModificationToGpsCNav2ResultPtr GetMessageModificationToGpsCNav2Result::create(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int page, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id)
     {

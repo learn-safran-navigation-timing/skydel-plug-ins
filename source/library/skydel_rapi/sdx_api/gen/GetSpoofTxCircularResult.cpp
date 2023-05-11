@@ -1,3 +1,6 @@
+
+#include "gen/GetSpoofTxCircularResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetSpoofTxCircularResult
 ///
-#include "gen/GetSpoofTxCircularResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,26 @@ namespace Sdx
     const char* const GetSpoofTxCircularResult::CmdName = "GetSpoofTxCircularResult";
     const char* const GetSpoofTxCircularResult::Documentation = "Result of GetSpoofTxCircular.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetSpoofTxCircularResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetSpoofTxCircularResult);
 
 
     GetSpoofTxCircularResult::GetSpoofTxCircularResult()
       : CommandResult(CmdName)
     {}
+
+    GetSpoofTxCircularResult::GetSpoofTxCircularResult(double lat, double lon, double alt, double radius, double speed, bool clockwise, const std::string& id, const Sdx::optional<double>& originAngle)
+      : CommandResult(CmdName)
+    {
+
+      setLat(lat);
+      setLon(lon);
+      setAlt(alt);
+      setRadius(radius);
+      setSpeed(speed);
+      setClockwise(clockwise);
+      setId(id);
+      setOriginAngle(originAngle);
+    }
 
     GetSpoofTxCircularResult::GetSpoofTxCircularResult(CommandBasePtr relatedCommand, double lat, double lon, double alt, double radius, double speed, bool clockwise, const std::string& id, const Sdx::optional<double>& originAngle)
       : CommandResult(CmdName, relatedCommand)
@@ -35,6 +51,11 @@ namespace Sdx
       setOriginAngle(originAngle);
     }
 
+
+    GetSpoofTxCircularResultPtr GetSpoofTxCircularResult::create(double lat, double lon, double alt, double radius, double speed, bool clockwise, const std::string& id, const Sdx::optional<double>& originAngle)
+    {
+      return std::make_shared<GetSpoofTxCircularResult>(lat, lon, alt, radius, speed, clockwise, id, originAngle);
+    }
 
     GetSpoofTxCircularResultPtr GetSpoofTxCircularResult::create(CommandBasePtr relatedCommand, double lat, double lon, double alt, double radius, double speed, bool clockwise, const std::string& id, const Sdx::optional<double>& originAngle)
     {

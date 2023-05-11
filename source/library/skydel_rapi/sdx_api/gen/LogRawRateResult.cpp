@@ -1,3 +1,6 @@
+
+#include "gen/LogRawRateResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of LogRawRateResult
 ///
-#include "gen/LogRawRateResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const LogRawRateResult::CmdName = "LogRawRateResult";
     const char* const LogRawRateResult::Documentation = "Result of GetLogRawRate.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(LogRawRateResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(LogRawRateResult);
 
 
     LogRawRateResult::LogRawRateResult()
       : CommandResult(CmdName)
     {}
+
+    LogRawRateResult::LogRawRateResult(int rate)
+      : CommandResult(CmdName)
+    {
+
+      setRate(rate);
+    }
 
     LogRawRateResult::LogRawRateResult(CommandBasePtr relatedCommand, int rate)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setRate(rate);
     }
 
+
+    LogRawRateResultPtr LogRawRateResult::create(int rate)
+    {
+      return std::make_shared<LogRawRateResult>(rate);
+    }
 
     LogRawRateResultPtr LogRawRateResult::create(CommandBasePtr relatedCommand, int rate)
     {

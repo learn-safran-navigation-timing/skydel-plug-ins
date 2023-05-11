@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -29,8 +30,12 @@ namespace Sdx
 
       HilPortResult();
 
+      HilPortResult(int port);
+
       HilPortResult(CommandBasePtr relatedCommand, int port);
-  
+
+      static HilPortResultPtr create(int port);
+
       static HilPortResultPtr create(CommandBasePtr relatedCommand, int port);
       static HilPortResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -41,6 +46,7 @@ namespace Sdx
       int port() const;
       void setPort(int port);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(HilPortResult);
   }
 }
 

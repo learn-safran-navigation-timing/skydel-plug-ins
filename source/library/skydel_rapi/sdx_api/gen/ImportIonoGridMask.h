@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -32,7 +33,7 @@ namespace Sdx
       ImportIonoGridMask();
 
       ImportIonoGridMask(const std::string& serviceProvider, bool overwriting, const std::string& path);
-  
+
       static ImportIonoGridMaskPtr create(const std::string& serviceProvider, bool overwriting, const std::string& path);
       static ImportIonoGridMaskPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -55,6 +56,7 @@ namespace Sdx
       std::string path() const;
       void setPath(const std::string& path);
     };
+    
   }
 }
 

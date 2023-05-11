@@ -1,3 +1,6 @@
+
+#include "gen/IsTrajectorySmoothingEnabledResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of IsTrajectorySmoothingEnabledResult
 ///
-#include "gen/IsTrajectorySmoothingEnabledResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const IsTrajectorySmoothingEnabledResult::CmdName = "IsTrajectorySmoothingEnabledResult";
     const char* const IsTrajectorySmoothingEnabledResult::Documentation = "Result of IsTrajectorySmoothingEnabled.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(IsTrajectorySmoothingEnabledResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsTrajectorySmoothingEnabledResult);
 
 
     IsTrajectorySmoothingEnabledResult::IsTrajectorySmoothingEnabledResult()
       : CommandResult(CmdName)
     {}
+
+    IsTrajectorySmoothingEnabledResult::IsTrajectorySmoothingEnabledResult(bool enabled)
+      : CommandResult(CmdName)
+    {
+
+      setEnabled(enabled);
+    }
 
     IsTrajectorySmoothingEnabledResult::IsTrajectorySmoothingEnabledResult(CommandBasePtr relatedCommand, bool enabled)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setEnabled(enabled);
     }
 
+
+    IsTrajectorySmoothingEnabledResultPtr IsTrajectorySmoothingEnabledResult::create(bool enabled)
+    {
+      return std::make_shared<IsTrajectorySmoothingEnabledResult>(enabled);
+    }
 
     IsTrajectorySmoothingEnabledResultPtr IsTrajectorySmoothingEnabledResult::create(CommandBasePtr relatedCommand, bool enabled)
     {

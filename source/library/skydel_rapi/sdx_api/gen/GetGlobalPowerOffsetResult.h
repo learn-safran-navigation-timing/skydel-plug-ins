@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -30,8 +31,12 @@ namespace Sdx
 
       GetGlobalPowerOffsetResult();
 
+      GetGlobalPowerOffsetResult(double offset);
+
       GetGlobalPowerOffsetResult(CommandBasePtr relatedCommand, double offset);
-  
+
+      static GetGlobalPowerOffsetResultPtr create(double offset);
+
       static GetGlobalPowerOffsetResultPtr create(CommandBasePtr relatedCommand, double offset);
       static GetGlobalPowerOffsetResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -42,6 +47,7 @@ namespace Sdx
       double offset() const;
       void setOffset(double offset);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetGlobalPowerOffsetResult);
   }
 }
 

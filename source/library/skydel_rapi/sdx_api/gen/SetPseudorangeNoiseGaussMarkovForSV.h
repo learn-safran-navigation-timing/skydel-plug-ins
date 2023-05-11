@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -36,7 +37,7 @@ namespace Sdx
       SetPseudorangeNoiseGaussMarkovForSV();
 
       SetPseudorangeNoiseGaussMarkovForSV(const std::string& system, int svId, int process, bool enabled, double sigma, double time, int seed);
-  
+
       static SetPseudorangeNoiseGaussMarkovForSVPtr create(const std::string& system, int svId, int process, bool enabled, double sigma, double time, int seed);
       static SetPseudorangeNoiseGaussMarkovForSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -79,6 +80,7 @@ namespace Sdx
       int seed() const;
       void setSeed(int seed);
     };
+    
   }
 }
 

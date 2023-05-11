@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -32,7 +33,7 @@ namespace Sdx
       SetIntTxSignalManualPropagationLoss();
 
       SetIntTxSignalManualPropagationLoss(double propagationLoss, const std::string& transmitterId, const std::string& signalId);
-  
+
       static SetIntTxSignalManualPropagationLossPtr create(double propagationLoss, const std::string& transmitterId, const std::string& signalId);
       static SetIntTxSignalManualPropagationLossPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -55,6 +56,7 @@ namespace Sdx
       std::string signalId() const;
       void setSignalId(const std::string& signalId);
     };
+    
   }
 }
 

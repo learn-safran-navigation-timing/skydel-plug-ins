@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include <string>
 #include <vector>
 
@@ -32,8 +33,12 @@ namespace Sdx
 
       GetSVIDsOfPrnResult();
 
+      GetSVIDsOfPrnResult(const std::string& signal, int prn, const std::vector<int>& svIdList);
+
       GetSVIDsOfPrnResult(CommandBasePtr relatedCommand, const std::string& signal, int prn, const std::vector<int>& svIdList);
-  
+
+      static GetSVIDsOfPrnResultPtr create(const std::string& signal, int prn, const std::vector<int>& svIdList);
+
       static GetSVIDsOfPrnResultPtr create(CommandBasePtr relatedCommand, const std::string& signal, int prn, const std::vector<int>& svIdList);
       static GetSVIDsOfPrnResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -54,6 +59,7 @@ namespace Sdx
       std::vector<int> svIdList() const;
       void setSvIdList(const std::vector<int>& svIdList);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetSVIDsOfPrnResult);
   }
 }
 

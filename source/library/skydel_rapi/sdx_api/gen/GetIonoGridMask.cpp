@@ -1,3 +1,6 @@
+
+#include "gen/GetIonoGridMask.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetIonoGridMask
 ///
-#include "gen/GetIonoGridMask.h"
 
 namespace Sdx
 {
@@ -29,7 +31,6 @@ namespace Sdx
       setBand(band);
       setPoint(point);
     }
-
 
     GetIonoGridMaskPtr GetIonoGridMask::create(const std::string& serviceProvider, int band, int point)
     {

@@ -4,6 +4,7 @@
 #include "command_base.h"
 
 
+
 namespace Sdx
 {
   namespace Cmd
@@ -32,7 +33,7 @@ namespace Sdx
       SetSyncTimeMaster();
 
       SetSyncTimeMaster(double time);
-  
+
       static SetSyncTimeMasterPtr create(double time);
       static SetSyncTimeMasterPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -45,6 +46,7 @@ namespace Sdx
       double time() const;
       void setTime(double time);
     };
+    
   }
 }
 

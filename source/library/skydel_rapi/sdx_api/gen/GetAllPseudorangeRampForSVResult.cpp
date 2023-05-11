@@ -1,3 +1,6 @@
+
+#include "gen/GetAllPseudorangeRampForSVResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetAllPseudorangeRampForSVResult
 ///
-#include "gen/GetAllPseudorangeRampForSVResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,21 @@ namespace Sdx
     const char* const GetAllPseudorangeRampForSVResult::CmdName = "GetAllPseudorangeRampForSVResult";
     const char* const GetAllPseudorangeRampForSVResult::Documentation = "Result of GetAllPseudorangeRampForSV.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetAllPseudorangeRampForSVResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetAllPseudorangeRampForSVResult);
 
 
     GetAllPseudorangeRampForSVResult::GetAllPseudorangeRampForSVResult()
       : CommandResult(CmdName)
     {}
+
+    GetAllPseudorangeRampForSVResult::GetAllPseudorangeRampForSVResult(const std::string& system, int svId, const std::vector<std::string>& ids)
+      : CommandResult(CmdName)
+    {
+
+      setSystem(system);
+      setSvId(svId);
+      setIds(ids);
+    }
 
     GetAllPseudorangeRampForSVResult::GetAllPseudorangeRampForSVResult(CommandBasePtr relatedCommand, const std::string& system, int svId, const std::vector<std::string>& ids)
       : CommandResult(CmdName, relatedCommand)
@@ -30,6 +41,11 @@ namespace Sdx
       setIds(ids);
     }
 
+
+    GetAllPseudorangeRampForSVResultPtr GetAllPseudorangeRampForSVResult::create(const std::string& system, int svId, const std::vector<std::string>& ids)
+    {
+      return std::make_shared<GetAllPseudorangeRampForSVResult>(system, svId, ids);
+    }
 
     GetAllPseudorangeRampForSVResultPtr GetAllPseudorangeRampForSVResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, const std::vector<std::string>& ids)
     {

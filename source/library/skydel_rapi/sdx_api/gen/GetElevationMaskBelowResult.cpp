@@ -1,3 +1,6 @@
+
+#include "gen/GetElevationMaskBelowResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetElevationMaskBelowResult
 ///
-#include "gen/GetElevationMaskBelowResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const GetElevationMaskBelowResult::CmdName = "GetElevationMaskBelowResult";
     const char* const GetElevationMaskBelowResult::Documentation = "Result of GetElevationMaskBelow.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetElevationMaskBelowResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetElevationMaskBelowResult);
 
 
     GetElevationMaskBelowResult::GetElevationMaskBelowResult()
       : CommandResult(CmdName)
     {}
+
+    GetElevationMaskBelowResult::GetElevationMaskBelowResult(double angle)
+      : CommandResult(CmdName)
+    {
+
+      setAngle(angle);
+    }
 
     GetElevationMaskBelowResult::GetElevationMaskBelowResult(CommandBasePtr relatedCommand, double angle)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setAngle(angle);
     }
 
+
+    GetElevationMaskBelowResultPtr GetElevationMaskBelowResult::create(double angle)
+    {
+      return std::make_shared<GetElevationMaskBelowResult>(angle);
+    }
 
     GetElevationMaskBelowResultPtr GetElevationMaskBelowResult::create(CommandBasePtr relatedCommand, double angle)
     {

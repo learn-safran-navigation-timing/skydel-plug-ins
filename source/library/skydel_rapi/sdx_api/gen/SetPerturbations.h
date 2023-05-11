@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include "sdx_optional.h"
 #include <string>
 
@@ -39,7 +40,7 @@ namespace Sdx
       SetPerturbations();
 
       SetPerturbations(const std::string& system, int svId, double crs, double crc, double cis, double cic, double cus, double cuc, const Sdx::optional<std::string>& dataSetName = {});
-  
+
       static SetPerturbationsPtr create(const std::string& system, int svId, double crs, double crc, double cis, double cic, double cus, double cuc, const Sdx::optional<std::string>& dataSetName = {});
       static SetPerturbationsPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -92,6 +93,7 @@ namespace Sdx
       Sdx::optional<std::string> dataSetName() const;
       void setDataSetName(const Sdx::optional<std::string>& dataSetName);
     };
+    
   }
 }
 

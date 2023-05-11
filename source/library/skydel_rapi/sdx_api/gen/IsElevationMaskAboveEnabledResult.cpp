@@ -1,3 +1,6 @@
+
+#include "gen/IsElevationMaskAboveEnabledResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of IsElevationMaskAboveEnabledResult
 ///
-#include "gen/IsElevationMaskAboveEnabledResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const IsElevationMaskAboveEnabledResult::CmdName = "IsElevationMaskAboveEnabledResult";
     const char* const IsElevationMaskAboveEnabledResult::Documentation = "Result of IsElevationMaskAboveEnabled.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(IsElevationMaskAboveEnabledResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsElevationMaskAboveEnabledResult);
 
 
     IsElevationMaskAboveEnabledResult::IsElevationMaskAboveEnabledResult()
       : CommandResult(CmdName)
     {}
+
+    IsElevationMaskAboveEnabledResult::IsElevationMaskAboveEnabledResult(bool enabled)
+      : CommandResult(CmdName)
+    {
+
+      setEnabled(enabled);
+    }
 
     IsElevationMaskAboveEnabledResult::IsElevationMaskAboveEnabledResult(CommandBasePtr relatedCommand, bool enabled)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setEnabled(enabled);
     }
 
+
+    IsElevationMaskAboveEnabledResultPtr IsElevationMaskAboveEnabledResult::create(bool enabled)
+    {
+      return std::make_shared<IsElevationMaskAboveEnabledResult>(enabled);
+    }
 
     IsElevationMaskAboveEnabledResultPtr IsElevationMaskAboveEnabledResult::create(CommandBasePtr relatedCommand, bool enabled)
     {

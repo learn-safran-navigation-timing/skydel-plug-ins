@@ -24,6 +24,7 @@ public:
 
 Q_DECLARE_INTERFACE(SkydelPluginBase, "SkydelPluginBase/1.0")
 
+#include "internal/skydel_command_handler_interface.h"
 #include "internal/skydel_rapi_interface.h"
 #include "skydel_core_interface.h"
 #include "skydel_hil_observer_interface.h"
@@ -52,10 +53,11 @@ public:
     SKYDEL_PLUGIN_ROLE(SkydelRawDataObserverInterface);
     SKYDEL_PLUGIN_ROLE(SkydelTransmitterObserverInterface);
     SKYDEL_PLUGIN_ROLE(SkydelHilObserverInterface);
+    SKYDEL_PLUGIN_ROLE(SkydelCommandHandlerInterface);
   }
 
   QObject* createInstance() override { return new T {}; }
-  virtual std::vector<Interface> implementedInterfaces() { return m_implementedInterfaces; }
+  std::vector<Interface> implementedInterfaces() override { return m_implementedInterfaces; }
 
 private:
   std::vector<Interface> m_implementedInterfaces;

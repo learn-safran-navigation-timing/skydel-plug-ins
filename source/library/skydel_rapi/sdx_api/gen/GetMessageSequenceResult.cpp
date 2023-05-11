@@ -1,3 +1,6 @@
+
+#include "gen/GetMessageSequenceResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetMessageSequenceResult
 ///
-#include "gen/GetMessageSequenceResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,20 @@ namespace Sdx
     const char* const GetMessageSequenceResult::CmdName = "GetMessageSequenceResult";
     const char* const GetMessageSequenceResult::Documentation = "Result of GetMessageSequence.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetMessageSequenceResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetMessageSequenceResult);
 
 
     GetMessageSequenceResult::GetMessageSequenceResult()
       : CommandResult(CmdName)
     {}
+
+    GetMessageSequenceResult::GetMessageSequenceResult(const std::string& signal, const std::vector<int>& sequence)
+      : CommandResult(CmdName)
+    {
+
+      setSignal(signal);
+      setSequence(sequence);
+    }
 
     GetMessageSequenceResult::GetMessageSequenceResult(CommandBasePtr relatedCommand, const std::string& signal, const std::vector<int>& sequence)
       : CommandResult(CmdName, relatedCommand)
@@ -29,6 +39,11 @@ namespace Sdx
       setSequence(sequence);
     }
 
+
+    GetMessageSequenceResultPtr GetMessageSequenceResult::create(const std::string& signal, const std::vector<int>& sequence)
+    {
+      return std::make_shared<GetMessageSequenceResult>(signal, sequence);
+    }
 
     GetMessageSequenceResultPtr GetMessageSequenceResult::create(CommandBasePtr relatedCommand, const std::string& signal, const std::vector<int>& sequence)
     {

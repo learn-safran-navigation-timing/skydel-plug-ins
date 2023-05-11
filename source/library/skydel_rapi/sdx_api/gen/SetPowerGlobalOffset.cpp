@@ -1,3 +1,6 @@
+
+#include "gen/SetPowerGlobalOffset.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,13 @@
 ///
 /// Definition of SetPowerGlobalOffset
 ///
-#include "gen/SetPowerGlobalOffset.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const SetPowerGlobalOffset::CmdName = "SetPowerGlobalOffset";
-    const char* const SetPowerGlobalOffset::Documentation = "Set global power offset default value for all signals and all systems";
+    const char* const SetPowerGlobalOffset::Documentation = "Please note the command SetPowerGlobalOffset is deprecated since 21.7. You may use SetGlobalPowerOffset.\n\nSet global power offset default value for all signals and all systems";
 
     REGISTER_COMMAND_FACTORY(SetPowerGlobalOffset);
 
@@ -27,7 +29,6 @@ namespace Sdx
 
       setOffset(offset);
     }
-
 
     SetPowerGlobalOffsetPtr SetPowerGlobalOffset::create(double offset)
     {

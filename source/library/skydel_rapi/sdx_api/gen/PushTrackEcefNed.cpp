@@ -1,3 +1,6 @@
+
+#include "gen/PushTrackEcefNed.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of PushTrackEcefNed
 ///
-#include "gen/PushTrackEcefNed.h"
 
 namespace Sdx
 {
@@ -33,7 +35,6 @@ namespace Sdx
       setPitch(pitch);
       setRoll(roll);
     }
-
 
     PushTrackEcefNedPtr PushTrackEcefNed::create(int time, double x, double y, double z, double yaw, double pitch, double roll)
     {

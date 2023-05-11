@@ -1,3 +1,6 @@
+
+#include "gen/SwapSbasServiceMessageRegionGroup.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SwapSbasServiceMessageRegionGroup
 ///
-#include "gen/SwapSbasServiceMessageRegionGroup.h"
 
 namespace Sdx
 {
@@ -29,7 +31,6 @@ namespace Sdx
       setFirstId(firstId);
       setSecondId(secondId);
     }
-
 
     SwapSbasServiceMessageRegionGroupPtr SwapSbasServiceMessageRegionGroup::create(const std::string& serviceProvider, const std::string& firstId, const std::string& secondId)
     {

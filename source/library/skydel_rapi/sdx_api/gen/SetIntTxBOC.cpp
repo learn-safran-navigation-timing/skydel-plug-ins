@@ -1,3 +1,6 @@
+
+#include "gen/SetIntTxBOC.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetIntTxBOC
 ///
-#include "gen/SetIntTxBOC.h"
 
 namespace Sdx
 {
@@ -36,7 +38,6 @@ namespace Sdx
       setSignalId(signalId);
       setGroup(group);
     }
-
 
     SetIntTxBOCPtr SetIntTxBOC::create(bool enabled, double centralFreq, double power, int codeRate, int codeLengthMs, int subCarrierRate, bool cosinePhaseBoc, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& group)
     {

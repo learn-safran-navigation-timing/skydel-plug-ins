@@ -1,3 +1,6 @@
+
+#include "gen/GetVehicleTrajectoryCircular.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetVehicleTrajectoryCircular
 ///
-#include "gen/GetVehicleTrajectoryCircular.h"
 
 namespace Sdx
 {
@@ -22,7 +24,6 @@ namespace Sdx
     {
 
     }
-
 
     GetVehicleTrajectoryCircularPtr GetVehicleTrajectoryCircular::create()
     {

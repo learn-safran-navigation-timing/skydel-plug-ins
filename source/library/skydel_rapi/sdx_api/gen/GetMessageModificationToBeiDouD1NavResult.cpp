@@ -1,3 +1,6 @@
+
+#include "gen/GetMessageModificationToBeiDouD1NavResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetMessageModificationToBeiDouD1NavResult
 ///
-#include "gen/GetMessageModificationToBeiDouD1NavResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,28 @@ namespace Sdx
     const char* const GetMessageModificationToBeiDouD1NavResult::CmdName = "GetMessageModificationToBeiDouD1NavResult";
     const char* const GetMessageModificationToBeiDouD1NavResult::Documentation = "Result of GetMessageModificationToBeiDouD1Nav.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetMessageModificationToBeiDouD1NavResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetMessageModificationToBeiDouD1NavResult);
 
 
     GetMessageModificationToBeiDouD1NavResult::GetMessageModificationToBeiDouD1NavResult()
       : CommandResult(CmdName)
     {}
+
+    GetMessageModificationToBeiDouD1NavResult::GetMessageModificationToBeiDouD1NavResult(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int page, int word, bool updateParity, const std::string& wordModification, const std::string& id)
+      : CommandResult(CmdName)
+    {
+
+      setSignalArray(signalArray);
+      setSvId(svId);
+      setStartTime(startTime);
+      setStopTime(stopTime);
+      setSubframe(subframe);
+      setPage(page);
+      setWord(word);
+      setUpdateParity(updateParity);
+      setWordModification(wordModification);
+      setId(id);
+    }
 
     GetMessageModificationToBeiDouD1NavResult::GetMessageModificationToBeiDouD1NavResult(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int page, int word, bool updateParity, const std::string& wordModification, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -37,6 +55,11 @@ namespace Sdx
       setId(id);
     }
 
+
+    GetMessageModificationToBeiDouD1NavResultPtr GetMessageModificationToBeiDouD1NavResult::create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int page, int word, bool updateParity, const std::string& wordModification, const std::string& id)
+    {
+      return std::make_shared<GetMessageModificationToBeiDouD1NavResult>(signalArray, svId, startTime, stopTime, subframe, page, word, updateParity, wordModification, id);
+    }
 
     GetMessageModificationToBeiDouD1NavResultPtr GetMessageModificationToBeiDouD1NavResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int page, int word, bool updateParity, const std::string& wordModification, const std::string& id)
     {

@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -31,7 +32,7 @@ namespace Sdx
       AddCustomSignal();
 
       AddCustomSignal(const std::string& path, const std::string& id);
-  
+
       static AddCustomSignalPtr create(const std::string& path, const std::string& id);
       static AddCustomSignalPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -49,6 +50,7 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
+    
   }
 }
 

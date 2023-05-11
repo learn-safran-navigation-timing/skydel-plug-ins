@@ -1,3 +1,6 @@
+
+#include "gen/SaveAs.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SaveAs
 ///
-#include "gen/SaveAs.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setPath(path);
       setOverwrite(overwrite);
     }
-
 
     SaveAsPtr SaveAs::create(const std::string& path, bool overwrite)
     {

@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -29,8 +30,12 @@ namespace Sdx
 
       IsDelayAppliedInSbasResult();
 
+      IsDelayAppliedInSbasResult(bool isEnabled);
+
       IsDelayAppliedInSbasResult(CommandBasePtr relatedCommand, bool isEnabled);
-  
+
+      static IsDelayAppliedInSbasResultPtr create(bool isEnabled);
+
       static IsDelayAppliedInSbasResultPtr create(CommandBasePtr relatedCommand, bool isEnabled);
       static IsDelayAppliedInSbasResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -41,6 +46,7 @@ namespace Sdx
       bool isEnabled() const;
       void setIsEnabled(bool isEnabled);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(IsDelayAppliedInSbasResult);
   }
 }
 

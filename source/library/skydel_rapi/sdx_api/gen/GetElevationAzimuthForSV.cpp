@@ -1,3 +1,6 @@
+
+#include "gen/GetElevationAzimuthForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetElevationAzimuthForSV
 ///
-#include "gen/GetElevationAzimuthForSV.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setSystem(system);
       setSvId(svId);
     }
-
 
     GetElevationAzimuthForSVPtr GetElevationAzimuthForSV::create(const std::string& system, int svId)
     {

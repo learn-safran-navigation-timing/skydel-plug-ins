@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include "gen/SerialPortFlowControl.h"
 #include "gen/SerialPortParity.h"
 #include "sdx_optional.h"
@@ -37,8 +38,12 @@ namespace Sdx
 
       GetGpsTimingReceiverResult();
 
+      GetGpsTimingReceiverResult(const std::string& port, const Sdx::optional<int>& baudRate = {}, const Sdx::optional<int>& dataBits = {}, const Sdx::optional<Sdx::SerialPortParity>& parity = {}, const Sdx::optional<int>& stopBits = {}, const Sdx::optional<Sdx::SerialPortFlowControl>& flowControl = {});
+
       GetGpsTimingReceiverResult(CommandBasePtr relatedCommand, const std::string& port, const Sdx::optional<int>& baudRate = {}, const Sdx::optional<int>& dataBits = {}, const Sdx::optional<Sdx::SerialPortParity>& parity = {}, const Sdx::optional<int>& stopBits = {}, const Sdx::optional<Sdx::SerialPortFlowControl>& flowControl = {});
-  
+
+      static GetGpsTimingReceiverResultPtr create(const std::string& port, const Sdx::optional<int>& baudRate = {}, const Sdx::optional<int>& dataBits = {}, const Sdx::optional<Sdx::SerialPortParity>& parity = {}, const Sdx::optional<int>& stopBits = {}, const Sdx::optional<Sdx::SerialPortFlowControl>& flowControl = {});
+
       static GetGpsTimingReceiverResultPtr create(CommandBasePtr relatedCommand, const std::string& port, const Sdx::optional<int>& baudRate = {}, const Sdx::optional<int>& dataBits = {}, const Sdx::optional<Sdx::SerialPortParity>& parity = {}, const Sdx::optional<int>& stopBits = {}, const Sdx::optional<Sdx::SerialPortFlowControl>& flowControl = {});
       static GetGpsTimingReceiverResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -74,6 +79,7 @@ namespace Sdx
       Sdx::optional<Sdx::SerialPortFlowControl> flowControl() const;
       void setFlowControl(const Sdx::optional<Sdx::SerialPortFlowControl>& flowControl);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetGpsTimingReceiverResult);
   }
 }
 

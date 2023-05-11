@@ -1,3 +1,6 @@
+
+#include "gen/EnableLogNmea.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of EnableLogNmea
 ///
-#include "gen/EnableLogNmea.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setEnabled(enabled);
     }
-
 
     EnableLogNmeaPtr EnableLogNmea::create(bool enabled)
     {

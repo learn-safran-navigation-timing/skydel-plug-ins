@@ -1,3 +1,6 @@
+
+#include "gen/GetQzssEphDoubleParamForSVResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetQzssEphDoubleParamForSVResult
 ///
-#include "gen/GetQzssEphDoubleParamForSVResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,22 @@ namespace Sdx
     const char* const GetQzssEphDoubleParamForSVResult::CmdName = "GetQzssEphDoubleParamForSVResult";
     const char* const GetQzssEphDoubleParamForSVResult::Documentation = "Result of GetQzssEphDoubleParamForSV.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetQzssEphDoubleParamForSVResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetQzssEphDoubleParamForSVResult);
 
 
     GetQzssEphDoubleParamForSVResult::GetQzssEphDoubleParamForSVResult()
       : CommandResult(CmdName)
     {}
+
+    GetQzssEphDoubleParamForSVResult::GetQzssEphDoubleParamForSVResult(int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName)
+      : CommandResult(CmdName)
+    {
+
+      setSvId(svId);
+      setParamName(paramName);
+      setVal(val);
+      setDataSetName(dataSetName);
+    }
 
     GetQzssEphDoubleParamForSVResult::GetQzssEphDoubleParamForSVResult(CommandBasePtr relatedCommand, int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName)
       : CommandResult(CmdName, relatedCommand)
@@ -31,6 +43,11 @@ namespace Sdx
       setDataSetName(dataSetName);
     }
 
+
+    GetQzssEphDoubleParamForSVResultPtr GetQzssEphDoubleParamForSVResult::create(int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName)
+    {
+      return std::make_shared<GetQzssEphDoubleParamForSVResult>(svId, paramName, val, dataSetName);
+    }
 
     GetQzssEphDoubleParamForSVResultPtr GetQzssEphDoubleParamForSVResult::create(CommandBasePtr relatedCommand, int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName)
     {

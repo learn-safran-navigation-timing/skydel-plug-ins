@@ -1,3 +1,6 @@
+
+#include "gen/GetStartTimeMode.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetStartTimeMode
 ///
-#include "gen/GetStartTimeMode.h"
 
 namespace Sdx
 {
@@ -22,7 +24,6 @@ namespace Sdx
     {
 
     }
-
 
     GetStartTimeModePtr GetStartTimeMode::create()
     {

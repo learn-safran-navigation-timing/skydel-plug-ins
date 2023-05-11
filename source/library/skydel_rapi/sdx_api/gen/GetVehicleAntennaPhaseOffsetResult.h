@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include "gen/AntennaPatternType.h"
 #include "gen/GNSSBand.h"
 #include "sdx_optional.h"
@@ -36,8 +37,12 @@ namespace Sdx
 
       GetVehicleAntennaPhaseOffsetResult();
 
+      GetVehicleAntennaPhaseOffsetResult(const std::vector<std::vector<double>>& phaseOffset, const Sdx::AntennaPatternType& type, const Sdx::GNSSBand& band, const Sdx::optional<std::string>& name = {});
+
       GetVehicleAntennaPhaseOffsetResult(CommandBasePtr relatedCommand, const std::vector<std::vector<double>>& phaseOffset, const Sdx::AntennaPatternType& type, const Sdx::GNSSBand& band, const Sdx::optional<std::string>& name = {});
-  
+
+      static GetVehicleAntennaPhaseOffsetResultPtr create(const std::vector<std::vector<double>>& phaseOffset, const Sdx::AntennaPatternType& type, const Sdx::GNSSBand& band, const Sdx::optional<std::string>& name = {});
+
       static GetVehicleAntennaPhaseOffsetResultPtr create(CommandBasePtr relatedCommand, const std::vector<std::vector<double>>& phaseOffset, const Sdx::AntennaPatternType& type, const Sdx::GNSSBand& band, const Sdx::optional<std::string>& name = {});
       static GetVehicleAntennaPhaseOffsetResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -63,6 +68,7 @@ namespace Sdx
       Sdx::optional<std::string> name() const;
       void setName(const Sdx::optional<std::string>& name);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetVehicleAntennaPhaseOffsetResult);
   }
 }
 

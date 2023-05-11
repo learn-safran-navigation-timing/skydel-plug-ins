@@ -1,3 +1,6 @@
+
+#include "gen/EnableIonoOffset.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of EnableIonoOffset
 ///
-#include "gen/EnableIonoOffset.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setIsEnabled(isEnabled);
     }
-
 
     EnableIonoOffsetPtr EnableIonoOffset::create(bool isEnabled)
     {

@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <vector>
 
 namespace Sdx
@@ -30,7 +31,7 @@ namespace Sdx
       SetIonoGridErrorAll();
 
       SetIonoGridErrorAll(const std::vector<std::vector<double>>& grid);
-  
+
       static SetIonoGridErrorAllPtr create(const std::vector<std::vector<double>>& grid);
       static SetIonoGridErrorAllPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -43,6 +44,7 @@ namespace Sdx
       std::vector<std::vector<double>> grid() const;
       void setGrid(const std::vector<std::vector<double>>& grid);
     };
+    
   }
 }
 

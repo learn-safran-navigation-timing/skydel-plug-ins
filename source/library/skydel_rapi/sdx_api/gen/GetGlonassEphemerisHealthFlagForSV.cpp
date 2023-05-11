@@ -1,3 +1,6 @@
+
+#include "gen/GetGlonassEphemerisHealthFlagForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetGlonassEphemerisHealthFlagForSV
 ///
-#include "gen/GetGlonassEphemerisHealthFlagForSV.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setSvId(svId);
     }
-
 
     GetGlonassEphemerisHealthFlagForSVPtr GetGlonassEphemerisHealthFlagForSV::create(int svId)
     {

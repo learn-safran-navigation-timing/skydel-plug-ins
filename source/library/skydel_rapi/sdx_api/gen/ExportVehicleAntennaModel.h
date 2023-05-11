@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -32,7 +33,7 @@ namespace Sdx
       ExportVehicleAntennaModel();
 
       ExportVehicleAntennaModel(const std::string& antennaName, const std::string& filePath, bool overwriting);
-  
+
       static ExportVehicleAntennaModelPtr create(const std::string& antennaName, const std::string& filePath, bool overwriting);
       static ExportVehicleAntennaModelPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -55,6 +56,7 @@ namespace Sdx
       bool overwriting() const;
       void setOverwriting(bool overwriting);
     };
+    
   }
 }
 

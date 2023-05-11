@@ -1,3 +1,6 @@
+
+#include "gen/GetGalileoFnavSatelliteKResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetGalileoFnavSatelliteKResult
 ///
-#include "gen/GetGalileoFnavSatelliteKResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,20 @@ namespace Sdx
     const char* const GetGalileoFnavSatelliteKResult::CmdName = "GetGalileoFnavSatelliteKResult";
     const char* const GetGalileoFnavSatelliteKResult::Documentation = "Result of GetGalileoFnavSatelliteK.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetGalileoFnavSatelliteKResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetGalileoFnavSatelliteKResult);
 
 
     GetGalileoFnavSatelliteKResult::GetGalileoFnavSatelliteKResult()
       : CommandResult(CmdName)
     {}
+
+    GetGalileoFnavSatelliteKResult::GetGalileoFnavSatelliteKResult(int prn, int k)
+      : CommandResult(CmdName)
+    {
+
+      setPrn(prn);
+      setK(k);
+    }
 
     GetGalileoFnavSatelliteKResult::GetGalileoFnavSatelliteKResult(CommandBasePtr relatedCommand, int prn, int k)
       : CommandResult(CmdName, relatedCommand)
@@ -29,6 +39,11 @@ namespace Sdx
       setK(k);
     }
 
+
+    GetGalileoFnavSatelliteKResultPtr GetGalileoFnavSatelliteKResult::create(int prn, int k)
+    {
+      return std::make_shared<GetGalileoFnavSatelliteKResult>(prn, k);
+    }
 
     GetGalileoFnavSatelliteKResultPtr GetGalileoFnavSatelliteKResult::create(CommandBasePtr relatedCommand, int prn, int k)
     {

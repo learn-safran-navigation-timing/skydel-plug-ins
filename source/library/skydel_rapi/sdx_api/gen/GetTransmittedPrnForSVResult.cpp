@@ -1,3 +1,6 @@
+
+#include "gen/GetTransmittedPrnForSVResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetTransmittedPrnForSVResult
 ///
-#include "gen/GetTransmittedPrnForSVResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,20 @@ namespace Sdx
     const char* const GetTransmittedPrnForSVResult::CmdName = "GetTransmittedPrnForSVResult";
     const char* const GetTransmittedPrnForSVResult::Documentation = "Result of GetTransmittedPrnForSV.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetTransmittedPrnForSVResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetTransmittedPrnForSVResult);
 
 
     GetTransmittedPrnForSVResult::GetTransmittedPrnForSVResult()
       : CommandResult(CmdName)
     {}
+
+    GetTransmittedPrnForSVResult::GetTransmittedPrnForSVResult(int svId, const std::map<std::string, int>& signalPrnDict)
+      : CommandResult(CmdName)
+    {
+
+      setSvId(svId);
+      setSignalPrnDict(signalPrnDict);
+    }
 
     GetTransmittedPrnForSVResult::GetTransmittedPrnForSVResult(CommandBasePtr relatedCommand, int svId, const std::map<std::string, int>& signalPrnDict)
       : CommandResult(CmdName, relatedCommand)
@@ -29,6 +39,11 @@ namespace Sdx
       setSignalPrnDict(signalPrnDict);
     }
 
+
+    GetTransmittedPrnForSVResultPtr GetTransmittedPrnForSVResult::create(int svId, const std::map<std::string, int>& signalPrnDict)
+    {
+      return std::make_shared<GetTransmittedPrnForSVResult>(svId, signalPrnDict);
+    }
 
     GetTransmittedPrnForSVResultPtr GetTransmittedPrnForSVResult::create(CommandBasePtr relatedCommand, int svId, const std::map<std::string, int>& signalPrnDict)
     {

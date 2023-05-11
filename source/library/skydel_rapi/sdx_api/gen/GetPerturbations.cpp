@@ -1,3 +1,6 @@
+
+#include "gen/GetPerturbations.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetPerturbations
 ///
-#include "gen/GetPerturbations.h"
 
 namespace Sdx
 {
@@ -29,7 +31,6 @@ namespace Sdx
       setSvId(svId);
       setDataSetName(dataSetName);
     }
-
 
     GetPerturbationsPtr GetPerturbations::create(const std::string& system, int svId, const Sdx::optional<std::string>& dataSetName)
     {

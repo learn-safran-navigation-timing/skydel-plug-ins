@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include "gen/GNSSBand.h"
 #include "sdx_optional.h"
 #include <string>
@@ -34,8 +35,12 @@ namespace Sdx
 
       GetSVPhasePatternOffsetResult();
 
+      GetSVPhasePatternOffsetResult(const Sdx::GNSSBand& band, const std::string& system, double offset, const Sdx::optional<std::string>& antennaName = {});
+
       GetSVPhasePatternOffsetResult(CommandBasePtr relatedCommand, const Sdx::GNSSBand& band, const std::string& system, double offset, const Sdx::optional<std::string>& antennaName = {});
-  
+
+      static GetSVPhasePatternOffsetResultPtr create(const Sdx::GNSSBand& band, const std::string& system, double offset, const Sdx::optional<std::string>& antennaName = {});
+
       static GetSVPhasePatternOffsetResultPtr create(CommandBasePtr relatedCommand, const Sdx::GNSSBand& band, const std::string& system, double offset, const Sdx::optional<std::string>& antennaName = {});
       static GetSVPhasePatternOffsetResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -61,6 +66,7 @@ namespace Sdx
       Sdx::optional<std::string> antennaName() const;
       void setAntennaName(const Sdx::optional<std::string>& antennaName);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetSVPhasePatternOffsetResult);
   }
 }
 

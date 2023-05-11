@@ -1,3 +1,6 @@
+
+#include "gen/GetActiveDataSetResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetActiveDataSetResult
 ///
-#include "gen/GetActiveDataSetResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,20 @@ namespace Sdx
     const char* const GetActiveDataSetResult::CmdName = "GetActiveDataSetResult";
     const char* const GetActiveDataSetResult::Documentation = "Result of GetActiveDataSet.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetActiveDataSetResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetActiveDataSetResult);
 
 
     GetActiveDataSetResult::GetActiveDataSetResult()
       : CommandResult(CmdName)
     {}
+
+    GetActiveDataSetResult::GetActiveDataSetResult(const std::string& system, const std::string& dataSetName)
+      : CommandResult(CmdName)
+    {
+
+      setSystem(system);
+      setDataSetName(dataSetName);
+    }
 
     GetActiveDataSetResult::GetActiveDataSetResult(CommandBasePtr relatedCommand, const std::string& system, const std::string& dataSetName)
       : CommandResult(CmdName, relatedCommand)
@@ -29,6 +39,11 @@ namespace Sdx
       setDataSetName(dataSetName);
     }
 
+
+    GetActiveDataSetResultPtr GetActiveDataSetResult::create(const std::string& system, const std::string& dataSetName)
+    {
+      return std::make_shared<GetActiveDataSetResult>(system, dataSetName);
+    }
 
     GetActiveDataSetResultPtr GetActiveDataSetResult::create(CommandBasePtr relatedCommand, const std::string& system, const std::string& dataSetName)
     {

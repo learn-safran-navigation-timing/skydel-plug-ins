@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -31,7 +32,7 @@ namespace Sdx
       SetWFAntennaElementModel();
 
       SetWFAntennaElementModel(const std::string& antennaModelName, int element);
-  
+
       static SetWFAntennaElementModelPtr create(const std::string& antennaModelName, int element);
       static SetWFAntennaElementModelPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -49,6 +50,7 @@ namespace Sdx
       int element() const;
       void setElement(int element);
     };
+    
   }
 }
 

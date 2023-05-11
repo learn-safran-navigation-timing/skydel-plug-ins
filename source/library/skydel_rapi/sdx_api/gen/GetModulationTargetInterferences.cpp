@@ -1,3 +1,6 @@
+
+#include "gen/GetModulationTargetInterferences.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetModulationTargetInterferences
 ///
-#include "gen/GetModulationTargetInterferences.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setOutput(output);
       setId(id);
     }
-
 
     GetModulationTargetInterferencesPtr GetModulationTargetInterferences::create(int output, const std::string& id)
     {

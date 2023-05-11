@@ -1,3 +1,6 @@
+
+#include "gen/SetVehicleType.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetVehicleType
 ///
-#include "gen/SetVehicleType.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setType(type);
     }
-
 
     SetVehicleTypePtr SetVehicleType::create(const std::string& type)
     {

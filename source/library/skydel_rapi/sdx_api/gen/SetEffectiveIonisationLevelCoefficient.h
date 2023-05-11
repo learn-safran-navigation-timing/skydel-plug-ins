@@ -4,6 +4,7 @@
 #include "command_base.h"
 
 
+
 namespace Sdx
 {
   namespace Cmd
@@ -31,7 +32,7 @@ namespace Sdx
       SetEffectiveIonisationLevelCoefficient();
 
       SetEffectiveIonisationLevelCoefficient(int index, double val);
-  
+
       static SetEffectiveIonisationLevelCoefficientPtr create(int index, double val);
       static SetEffectiveIonisationLevelCoefficientPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -49,6 +50,7 @@ namespace Sdx
       double val() const;
       void setVal(double val);
     };
+    
   }
 }
 

@@ -1,3 +1,6 @@
+
+#include "gen/IsLogDownlinkEnabledResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of IsLogDownlinkEnabledResult
 ///
-#include "gen/IsLogDownlinkEnabledResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,21 @@ namespace Sdx
     const char* const IsLogDownlinkEnabledResult::CmdName = "IsLogDownlinkEnabledResult";
     const char* const IsLogDownlinkEnabledResult::Documentation = "Result of IsLogDownlinkEnabled.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(IsLogDownlinkEnabledResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsLogDownlinkEnabledResult);
 
 
     IsLogDownlinkEnabledResult::IsLogDownlinkEnabledResult()
       : CommandResult(CmdName)
     {}
+
+    IsLogDownlinkEnabledResult::IsLogDownlinkEnabledResult(bool enabled, const Sdx::optional<bool>& beforeEncoding, const Sdx::optional<bool>& afterEncoding)
+      : CommandResult(CmdName)
+    {
+
+      setEnabled(enabled);
+      setBeforeEncoding(beforeEncoding);
+      setAfterEncoding(afterEncoding);
+    }
 
     IsLogDownlinkEnabledResult::IsLogDownlinkEnabledResult(CommandBasePtr relatedCommand, bool enabled, const Sdx::optional<bool>& beforeEncoding, const Sdx::optional<bool>& afterEncoding)
       : CommandResult(CmdName, relatedCommand)
@@ -30,6 +41,11 @@ namespace Sdx
       setAfterEncoding(afterEncoding);
     }
 
+
+    IsLogDownlinkEnabledResultPtr IsLogDownlinkEnabledResult::create(bool enabled, const Sdx::optional<bool>& beforeEncoding, const Sdx::optional<bool>& afterEncoding)
+    {
+      return std::make_shared<IsLogDownlinkEnabledResult>(enabled, beforeEncoding, afterEncoding);
+    }
 
     IsLogDownlinkEnabledResultPtr IsLogDownlinkEnabledResult::create(CommandBasePtr relatedCommand, bool enabled, const Sdx::optional<bool>& beforeEncoding, const Sdx::optional<bool>& afterEncoding)
     {

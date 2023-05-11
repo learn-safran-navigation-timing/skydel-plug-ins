@@ -1,3 +1,6 @@
+
+#include "gen/SetMessageModificationToBeiDouCNav2.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetMessageModificationToBeiDouCNav2
 ///
-#include "gen/SetMessageModificationToBeiDouCNav2.h"
 
 namespace Sdx
 {
@@ -35,7 +37,6 @@ namespace Sdx
       setBitModifications(bitModifications);
       setId(id);
     }
-
 
     SetMessageModificationToBeiDouCNav2Ptr SetMessageModificationToBeiDouCNav2::create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id)
     {

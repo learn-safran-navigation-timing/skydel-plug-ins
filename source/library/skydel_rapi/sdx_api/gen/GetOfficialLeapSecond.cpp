@@ -1,3 +1,6 @@
+
+#include "gen/GetOfficialLeapSecond.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetOfficialLeapSecond
 ///
-#include "gen/GetOfficialLeapSecond.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setDate(date);
     }
-
 
     GetOfficialLeapSecondPtr GetOfficialLeapSecond::create(const Sdx::DateTime& date)
     {

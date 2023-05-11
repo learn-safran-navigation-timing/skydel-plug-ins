@@ -1,3 +1,6 @@
+
+#include "gen/SetQzssL1SAugmentation.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetQzssL1SAugmentation
 ///
-#include "gen/SetQzssL1SAugmentation.h"
 
 namespace Sdx
 {
@@ -32,7 +34,6 @@ namespace Sdx
       setPrc(prc);
       setId(id);
     }
-
 
     SetQzssL1SAugmentationPtr SetQzssL1SAugmentation::create(const std::string& system, int prn, bool augmentIOD, bool augmentPRC, double prc, const std::string& id)
     {

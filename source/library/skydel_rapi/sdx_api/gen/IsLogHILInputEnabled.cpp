@@ -1,3 +1,6 @@
+
+#include "gen/IsLogHILInputEnabled.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of IsLogHILInputEnabled
 ///
-#include "gen/IsLogHILInputEnabled.h"
 
 namespace Sdx
 {
@@ -22,7 +24,6 @@ namespace Sdx
     {
 
     }
-
 
     IsLogHILInputEnabledPtr IsLogHILInputEnabled::create()
     {

@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -31,7 +32,7 @@ namespace Sdx
       DeleteDataSet();
 
       DeleteDataSet(const std::string& system, const std::string& dataSetName);
-  
+
       static DeleteDataSetPtr create(const std::string& system, const std::string& dataSetName);
       static DeleteDataSetPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -49,6 +50,7 @@ namespace Sdx
       std::string dataSetName() const;
       void setDataSetName(const std::string& dataSetName);
     };
+    
   }
 }
 

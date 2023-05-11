@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include <string>
 
 namespace Sdx
@@ -35,8 +36,12 @@ namespace Sdx
 
       GetIntTxFixResult();
 
+      GetIntTxFixResult(double lat, double lon, double alt, double yaw, double pitch, double roll, const std::string& id);
+
       GetIntTxFixResult(CommandBasePtr relatedCommand, double lat, double lon, double alt, double yaw, double pitch, double roll, const std::string& id);
-  
+
+      static GetIntTxFixResultPtr create(double lat, double lon, double alt, double yaw, double pitch, double roll, const std::string& id);
+
       static GetIntTxFixResultPtr create(CommandBasePtr relatedCommand, double lat, double lon, double alt, double yaw, double pitch, double roll, const std::string& id);
       static GetIntTxFixResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -77,6 +82,7 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetIntTxFixResult);
   }
 }
 

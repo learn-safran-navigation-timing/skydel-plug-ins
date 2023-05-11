@@ -1,3 +1,6 @@
+
+#include "gen/SetIonoModel.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetIonoModel
 ///
-#include "gen/SetIonoModel.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setModel(model);
     }
-
 
     SetIonoModelPtr SetIonoModel::create(const std::string& model)
     {

@@ -1,3 +1,6 @@
+
+#include "gen/GetIntTx.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,13 @@
 ///
 /// Definition of GetIntTx
 ///
-#include "gen/GetIntTx.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const GetIntTx::CmdName = "GetIntTx";
-    const char* const GetIntTx::Documentation = "Get an interference transmitter. For set : the transmitter Id parameter is not set (empty string),\nSkydel will assign a unique Id to the transmitter. If the Id is set and already used by Skydel, the\ncommand will fail.";
+    const char* const GetIntTx::Documentation = "Get an interference transmitter.";
 
     REGISTER_COMMAND_FACTORY(GetIntTx);
 
@@ -27,7 +29,6 @@ namespace Sdx
 
       setId(id);
     }
-
 
     GetIntTxPtr GetIntTx::create(const std::string& id)
     {

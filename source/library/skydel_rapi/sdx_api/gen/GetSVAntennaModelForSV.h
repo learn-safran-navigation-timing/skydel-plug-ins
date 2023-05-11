@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -31,7 +32,7 @@ namespace Sdx
       GetSVAntennaModelForSV();
 
       GetSVAntennaModelForSV(const std::string& system, int svId);
-  
+
       static GetSVAntennaModelForSVPtr create(const std::string& system, int svId);
       static GetSVAntennaModelForSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -49,6 +50,7 @@ namespace Sdx
       int svId() const;
       void setSvId(int svId);
     };
+    
   }
 }
 

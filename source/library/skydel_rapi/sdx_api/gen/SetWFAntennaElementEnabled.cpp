@@ -1,3 +1,6 @@
+
+#include "gen/SetWFAntennaElementEnabled.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetWFAntennaElementEnabled
 ///
-#include "gen/SetWFAntennaElementEnabled.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setElement(element);
       setEnabled(enabled);
     }
-
 
     SetWFAntennaElementEnabledPtr SetWFAntennaElementEnabled::create(int element, bool enabled)
     {

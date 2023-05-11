@@ -1,3 +1,6 @@
+
+#include "gen/HilWarningResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of HilWarningResult
 ///
-#include "gen/HilWarningResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,20 @@ namespace Sdx
     const char* const HilWarningResult::CmdName = "HilWarningResult";
     const char* const HilWarningResult::Documentation = "Result of GetLastHilWarning.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(HilWarningResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(HilWarningResult);
 
 
     HilWarningResult::HilWarningResult()
       : CommandResult(CmdName)
     {}
+
+    HilWarningResult::HilWarningResult(bool isExtrapolated, int extrapolationTime)
+      : CommandResult(CmdName)
+    {
+
+      setIsExtrapolated(isExtrapolated);
+      setExtrapolationTime(extrapolationTime);
+    }
 
     HilWarningResult::HilWarningResult(CommandBasePtr relatedCommand, bool isExtrapolated, int extrapolationTime)
       : CommandResult(CmdName, relatedCommand)
@@ -29,6 +39,11 @@ namespace Sdx
       setExtrapolationTime(extrapolationTime);
     }
 
+
+    HilWarningResultPtr HilWarningResult::create(bool isExtrapolated, int extrapolationTime)
+    {
+      return std::make_shared<HilWarningResult>(isExtrapolated, extrapolationTime);
+    }
 
     HilWarningResultPtr HilWarningResult::create(CommandBasePtr relatedCommand, bool isExtrapolated, int extrapolationTime)
     {

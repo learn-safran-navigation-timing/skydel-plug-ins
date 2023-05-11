@@ -1,3 +1,6 @@
+
+#include "gen/IsMapAnalysisEnabledResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of IsMapAnalysisEnabledResult
 ///
-#include "gen/IsMapAnalysisEnabledResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const IsMapAnalysisEnabledResult::CmdName = "IsMapAnalysisEnabledResult";
     const char* const IsMapAnalysisEnabledResult::Documentation = "Result of IsMapAnalysisEnabled.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(IsMapAnalysisEnabledResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsMapAnalysisEnabledResult);
 
 
     IsMapAnalysisEnabledResult::IsMapAnalysisEnabledResult()
       : CommandResult(CmdName)
     {}
+
+    IsMapAnalysisEnabledResult::IsMapAnalysisEnabledResult(bool show)
+      : CommandResult(CmdName)
+    {
+
+      setShow(show);
+    }
 
     IsMapAnalysisEnabledResult::IsMapAnalysisEnabledResult(CommandBasePtr relatedCommand, bool show)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setShow(show);
     }
 
+
+    IsMapAnalysisEnabledResultPtr IsMapAnalysisEnabledResult::create(bool show)
+    {
+      return std::make_shared<IsMapAnalysisEnabledResult>(show);
+    }
 
     IsMapAnalysisEnabledResultPtr IsMapAnalysisEnabledResult::create(CommandBasePtr relatedCommand, bool show)
     {

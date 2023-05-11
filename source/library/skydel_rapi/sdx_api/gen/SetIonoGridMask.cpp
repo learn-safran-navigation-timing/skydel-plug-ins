@@ -1,3 +1,6 @@
+
+#include "gen/SetIonoGridMask.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetIonoGridMask
 ///
-#include "gen/SetIonoGridMask.h"
 
 namespace Sdx
 {
@@ -30,7 +32,6 @@ namespace Sdx
       setPoint(point);
       setFlag(flag);
     }
-
 
     SetIonoGridMaskPtr SetIonoGridMask::create(const std::string& serviceProvider, int band, int point, bool flag)
     {

@@ -1,3 +1,6 @@
+
+#include "gen/EnableLogRinex.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of EnableLogRinex
 ///
-#include "gen/EnableLogRinex.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setEnabled(enabled);
     }
-
 
     EnableLogRinexPtr EnableLogRinex::create(bool enabled)
     {

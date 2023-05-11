@@ -1,3 +1,6 @@
+
+#include "gen/GetModulationTargetResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetModulationTargetResult
 ///
-#include "gen/GetModulationTargetResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,23 @@ namespace Sdx
     const char* const GetModulationTargetResult::CmdName = "GetModulationTargetResult";
     const char* const GetModulationTargetResult::Documentation = "Result of GetModulationTarget.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetModulationTargetResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetModulationTargetResult);
 
 
     GetModulationTargetResult::GetModulationTargetResult()
       : CommandResult(CmdName)
     {}
+
+    GetModulationTargetResult::GetModulationTargetResult(const std::string& type, const std::string& path, const std::string& address, bool clockIsExternal, const std::string& id)
+      : CommandResult(CmdName)
+    {
+
+      setType(type);
+      setPath(path);
+      setAddress(address);
+      setClockIsExternal(clockIsExternal);
+      setId(id);
+    }
 
     GetModulationTargetResult::GetModulationTargetResult(CommandBasePtr relatedCommand, const std::string& type, const std::string& path, const std::string& address, bool clockIsExternal, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -32,6 +45,11 @@ namespace Sdx
       setId(id);
     }
 
+
+    GetModulationTargetResultPtr GetModulationTargetResult::create(const std::string& type, const std::string& path, const std::string& address, bool clockIsExternal, const std::string& id)
+    {
+      return std::make_shared<GetModulationTargetResult>(type, path, address, clockIsExternal, id);
+    }
 
     GetModulationTargetResultPtr GetModulationTargetResult::create(CommandBasePtr relatedCommand, const std::string& type, const std::string& path, const std::string& address, bool clockIsExternal, const std::string& id)
     {

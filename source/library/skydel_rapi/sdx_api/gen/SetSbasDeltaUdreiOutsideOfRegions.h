@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -31,7 +32,7 @@ namespace Sdx
       SetSbasDeltaUdreiOutsideOfRegions();
 
       SetSbasDeltaUdreiOutsideOfRegions(const std::string& serviceProvider, int deltaUdrei);
-  
+
       static SetSbasDeltaUdreiOutsideOfRegionsPtr create(const std::string& serviceProvider, int deltaUdrei);
       static SetSbasDeltaUdreiOutsideOfRegionsPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -49,6 +50,7 @@ namespace Sdx
       int deltaUdrei() const;
       void setDeltaUdrei(int deltaUdrei);
     };
+    
   }
 }
 

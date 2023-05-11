@@ -1,3 +1,6 @@
+
+#include "gen/GetIonoGridErrorAllResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetIonoGridErrorAllResult
 ///
-#include "gen/GetIonoGridErrorAllResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const GetIonoGridErrorAllResult::CmdName = "GetIonoGridErrorAllResult";
     const char* const GetIonoGridErrorAllResult::Documentation = "Result of GetIonoGridErrorAll.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetIonoGridErrorAllResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetIonoGridErrorAllResult);
 
 
     GetIonoGridErrorAllResult::GetIonoGridErrorAllResult()
       : CommandResult(CmdName)
     {}
+
+    GetIonoGridErrorAllResult::GetIonoGridErrorAllResult(const std::vector<std::vector<double>>& grid)
+      : CommandResult(CmdName)
+    {
+
+      setGrid(grid);
+    }
 
     GetIonoGridErrorAllResult::GetIonoGridErrorAllResult(CommandBasePtr relatedCommand, const std::vector<std::vector<double>>& grid)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setGrid(grid);
     }
 
+
+    GetIonoGridErrorAllResultPtr GetIonoGridErrorAllResult::create(const std::vector<std::vector<double>>& grid)
+    {
+      return std::make_shared<GetIonoGridErrorAllResult>(grid);
+    }
 
     GetIonoGridErrorAllResultPtr GetIonoGridErrorAllResult::create(CommandBasePtr relatedCommand, const std::vector<std::vector<double>>& grid)
     {

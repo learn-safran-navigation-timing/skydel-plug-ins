@@ -1,3 +1,6 @@
+
+#include "gen/RemoveMessageModificationForNavMsgFamily.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of RemoveMessageModificationForNavMsgFamily
 ///
-#include "gen/RemoveMessageModificationForNavMsgFamily.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setNavMsgFamily(navMsgFamily);
       setId(id);
     }
-
 
     RemoveMessageModificationForNavMsgFamilyPtr RemoveMessageModificationForNavMsgFamily::create(const std::string& navMsgFamily, const std::string& id)
     {

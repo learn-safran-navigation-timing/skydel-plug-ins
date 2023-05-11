@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include <string>
 
 namespace Sdx
@@ -31,8 +32,12 @@ namespace Sdx
 
       IsSVEnabledResult();
 
+      IsSVEnabledResult(const std::string& system, int svId, bool enabled);
+
       IsSVEnabledResult(CommandBasePtr relatedCommand, const std::string& system, int svId, bool enabled);
-  
+
+      static IsSVEnabledResultPtr create(const std::string& system, int svId, bool enabled);
+
       static IsSVEnabledResultPtr create(CommandBasePtr relatedCommand, const std::string& system, int svId, bool enabled);
       static IsSVEnabledResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -53,6 +58,7 @@ namespace Sdx
       bool enabled() const;
       void setEnabled(bool enabled);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(IsSVEnabledResult);
   }
 }
 

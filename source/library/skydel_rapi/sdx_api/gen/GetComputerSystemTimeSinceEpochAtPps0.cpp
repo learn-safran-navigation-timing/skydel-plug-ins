@@ -1,3 +1,6 @@
+
+#include "gen/GetComputerSystemTimeSinceEpochAtPps0.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetComputerSystemTimeSinceEpochAtPps0
 ///
-#include "gen/GetComputerSystemTimeSinceEpochAtPps0.h"
 
 namespace Sdx
 {
@@ -22,7 +24,6 @@ namespace Sdx
     {
 
     }
-
 
     GetComputerSystemTimeSinceEpochAtPps0Ptr GetComputerSystemTimeSinceEpochAtPps0::create()
     {

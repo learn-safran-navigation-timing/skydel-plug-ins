@@ -1,3 +1,6 @@
+
+#include "gen/GetLogRawRate.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetLogRawRate
 ///
-#include "gen/GetLogRawRate.h"
 
 namespace Sdx
 {
@@ -22,7 +24,6 @@ namespace Sdx
     {
 
     }
-
 
     GetLogRawRatePtr GetLogRawRate::create()
     {

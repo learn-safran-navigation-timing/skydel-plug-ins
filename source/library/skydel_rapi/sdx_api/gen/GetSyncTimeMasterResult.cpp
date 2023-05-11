@@ -1,3 +1,6 @@
+
+#include "gen/GetSyncTimeMasterResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetSyncTimeMasterResult
 ///
-#include "gen/GetSyncTimeMasterResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const GetSyncTimeMasterResult::CmdName = "GetSyncTimeMasterResult";
     const char* const GetSyncTimeMasterResult::Documentation = "Result of GetSyncTimeMaster.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetSyncTimeMasterResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetSyncTimeMasterResult);
 
 
     GetSyncTimeMasterResult::GetSyncTimeMasterResult()
       : CommandResult(CmdName)
     {}
+
+    GetSyncTimeMasterResult::GetSyncTimeMasterResult(double time)
+      : CommandResult(CmdName)
+    {
+
+      setTime(time);
+    }
 
     GetSyncTimeMasterResult::GetSyncTimeMasterResult(CommandBasePtr relatedCommand, double time)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setTime(time);
     }
 
+
+    GetSyncTimeMasterResultPtr GetSyncTimeMasterResult::create(double time)
+    {
+      return std::make_shared<GetSyncTimeMasterResult>(time);
+    }
 
     GetSyncTimeMasterResultPtr GetSyncTimeMasterResult::create(CommandBasePtr relatedCommand, double time)
     {

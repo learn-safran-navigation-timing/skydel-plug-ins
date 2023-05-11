@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -30,7 +31,7 @@ namespace Sdx
       SetTropoModel();
 
       SetTropoModel(const std::string& model);
-  
+
       static SetTropoModelPtr create(const std::string& model);
       static SetTropoModelPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -43,6 +44,7 @@ namespace Sdx
       std::string model() const;
       void setModel(const std::string& model);
     };
+    
   }
 }
 

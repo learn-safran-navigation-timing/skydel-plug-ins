@@ -1,3 +1,6 @@
+
+#include "gen/SetSyncServer.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetSyncServer
 ///
-#include "gen/SetSyncServer.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setPort(port);
     }
-
 
     SetSyncServerPtr SetSyncServer::create(int port)
     {

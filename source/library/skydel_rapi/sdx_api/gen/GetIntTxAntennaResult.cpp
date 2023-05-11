@@ -1,3 +1,6 @@
+
+#include "gen/GetIntTxAntennaResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetIntTxAntennaResult
 ///
-#include "gen/GetIntTxAntennaResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,21 @@ namespace Sdx
     const char* const GetIntTxAntennaResult::CmdName = "GetIntTxAntennaResult";
     const char* const GetIntTxAntennaResult::Documentation = "Result of GetIntTxAntenna.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetIntTxAntennaResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetIntTxAntennaResult);
 
 
     GetIntTxAntennaResult::GetIntTxAntennaResult()
       : CommandResult(CmdName)
     {}
+
+    GetIntTxAntennaResult::GetIntTxAntennaResult(const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const std::string& id)
+      : CommandResult(CmdName)
+    {
+
+      setGain(gain);
+      setType(type);
+      setId(id);
+    }
 
     GetIntTxAntennaResult::GetIntTxAntennaResult(CommandBasePtr relatedCommand, const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -30,6 +41,11 @@ namespace Sdx
       setId(id);
     }
 
+
+    GetIntTxAntennaResultPtr GetIntTxAntennaResult::create(const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const std::string& id)
+    {
+      return std::make_shared<GetIntTxAntennaResult>(gain, type, id);
+    }
 
     GetIntTxAntennaResultPtr GetIntTxAntennaResult::create(CommandBasePtr relatedCommand, const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const std::string& id)
     {

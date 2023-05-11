@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include "sdx_optional.h"
 #include <string>
 
@@ -59,7 +60,7 @@ namespace Sdx
       GetGalileoEphDoubleParamForSV();
 
       GetGalileoEphDoubleParamForSV(int svId, const std::string& paramName, const Sdx::optional<std::string>& dataSetName = {});
-  
+
       static GetGalileoEphDoubleParamForSVPtr create(int svId, const std::string& paramName, const Sdx::optional<std::string>& dataSetName = {});
       static GetGalileoEphDoubleParamForSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -82,6 +83,7 @@ namespace Sdx
       Sdx::optional<std::string> dataSetName() const;
       void setDataSetName(const Sdx::optional<std::string>& dataSetName);
     };
+    
   }
 }
 

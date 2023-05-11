@@ -1,3 +1,6 @@
+
+#include "gen/SetGpsUraIndexForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetGpsUraIndexForSV
 ///
-#include "gen/SetGpsUraIndexForSV.h"
 
 namespace Sdx
 {
@@ -29,7 +31,6 @@ namespace Sdx
       setUrai(urai);
       setDataSetName(dataSetName);
     }
-
 
     SetGpsUraIndexForSVPtr SetGpsUraIndexForSV::create(int svId, int urai, const Sdx::optional<std::string>& dataSetName)
     {

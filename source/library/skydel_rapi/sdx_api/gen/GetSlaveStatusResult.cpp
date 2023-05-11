@@ -1,3 +1,6 @@
+
+#include "gen/GetSlaveStatusResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetSlaveStatusResult
 ///
-#include "gen/GetSlaveStatusResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,22 @@ namespace Sdx
     const char* const GetSlaveStatusResult::CmdName = "GetSlaveStatusResult";
     const char* const GetSlaveStatusResult::Documentation = "Result of GetSlaveStatus.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetSlaveStatusResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetSlaveStatusResult);
 
 
     GetSlaveStatusResult::GetSlaveStatusResult()
       : CommandResult(CmdName)
     {}
+
+    GetSlaveStatusResult::GetSlaveStatusResult(bool isSlave, bool isConnected, const std::string& hostName, int hostPort)
+      : CommandResult(CmdName)
+    {
+
+      setIsSlave(isSlave);
+      setIsConnected(isConnected);
+      setHostName(hostName);
+      setHostPort(hostPort);
+    }
 
     GetSlaveStatusResult::GetSlaveStatusResult(CommandBasePtr relatedCommand, bool isSlave, bool isConnected, const std::string& hostName, int hostPort)
       : CommandResult(CmdName, relatedCommand)
@@ -31,6 +43,11 @@ namespace Sdx
       setHostPort(hostPort);
     }
 
+
+    GetSlaveStatusResultPtr GetSlaveStatusResult::create(bool isSlave, bool isConnected, const std::string& hostName, int hostPort)
+    {
+      return std::make_shared<GetSlaveStatusResult>(isSlave, isConnected, hostName, hostPort);
+    }
 
     GetSlaveStatusResultPtr GetSlaveStatusResult::create(CommandBasePtr relatedCommand, bool isSlave, bool isConnected, const std::string& hostName, int hostPort)
     {

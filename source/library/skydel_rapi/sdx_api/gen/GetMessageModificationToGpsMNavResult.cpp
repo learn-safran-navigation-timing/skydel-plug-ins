@@ -1,3 +1,6 @@
+
+#include "gen/GetMessageModificationToGpsMNavResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetMessageModificationToGpsMNavResult
 ///
-#include "gen/GetMessageModificationToGpsMNavResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,27 @@ namespace Sdx
     const char* const GetMessageModificationToGpsMNavResult::CmdName = "GetMessageModificationToGpsMNavResult";
     const char* const GetMessageModificationToGpsMNavResult::Documentation = "Result of GetMessageModificationToGpsMNav.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetMessageModificationToGpsMNavResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetMessageModificationToGpsMNavResult);
 
 
     GetMessageModificationToGpsMNavResult::GetMessageModificationToGpsMNavResult()
       : CommandResult(CmdName)
     {}
+
+    GetMessageModificationToGpsMNavResult::GetMessageModificationToGpsMNavResult(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, int occurrence, const std::string& condition, const std::string& bitModifications, const std::string& id)
+      : CommandResult(CmdName)
+    {
+
+      setSignalArray(signalArray);
+      setSvId(svId);
+      setStartTime(startTime);
+      setStopTime(stopTime);
+      setMessageType(messageType);
+      setOccurrence(occurrence);
+      setCondition(condition);
+      setBitModifications(bitModifications);
+      setId(id);
+    }
 
     GetMessageModificationToGpsMNavResult::GetMessageModificationToGpsMNavResult(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, int occurrence, const std::string& condition, const std::string& bitModifications, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -36,6 +53,11 @@ namespace Sdx
       setId(id);
     }
 
+
+    GetMessageModificationToGpsMNavResultPtr GetMessageModificationToGpsMNavResult::create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, int occurrence, const std::string& condition, const std::string& bitModifications, const std::string& id)
+    {
+      return std::make_shared<GetMessageModificationToGpsMNavResult>(signalArray, svId, startTime, stopTime, messageType, occurrence, condition, bitModifications, id);
+    }
 
     GetMessageModificationToGpsMNavResultPtr GetMessageModificationToGpsMNavResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, int occurrence, const std::string& condition, const std::string& bitModifications, const std::string& id)
     {

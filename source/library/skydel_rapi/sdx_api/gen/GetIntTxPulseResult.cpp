@@ -1,3 +1,6 @@
+
+#include "gen/GetIntTxPulseResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetIntTxPulseResult
 ///
-#include "gen/GetIntTxPulseResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,26 @@ namespace Sdx
     const char* const GetIntTxPulseResult::CmdName = "GetIntTxPulseResult";
     const char* const GetIntTxPulseResult::Documentation = "Result of GetIntTxPulse.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetIntTxPulseResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetIntTxPulseResult);
 
 
     GetIntTxPulseResult::GetIntTxPulseResult()
       : CommandResult(CmdName)
     {}
+
+    GetIntTxPulseResult::GetIntTxPulseResult(bool enabled, double centralFreq, double power, double dutyCycle, int pulseRate, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& group)
+      : CommandResult(CmdName)
+    {
+
+      setEnabled(enabled);
+      setCentralFreq(centralFreq);
+      setPower(power);
+      setDutyCycle(dutyCycle);
+      setPulseRate(pulseRate);
+      setTransmitterId(transmitterId);
+      setSignalId(signalId);
+      setGroup(group);
+    }
 
     GetIntTxPulseResult::GetIntTxPulseResult(CommandBasePtr relatedCommand, bool enabled, double centralFreq, double power, double dutyCycle, int pulseRate, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& group)
       : CommandResult(CmdName, relatedCommand)
@@ -35,6 +51,11 @@ namespace Sdx
       setGroup(group);
     }
 
+
+    GetIntTxPulseResultPtr GetIntTxPulseResult::create(bool enabled, double centralFreq, double power, double dutyCycle, int pulseRate, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& group)
+    {
+      return std::make_shared<GetIntTxPulseResult>(enabled, centralFreq, power, dutyCycle, pulseRate, transmitterId, signalId, group);
+    }
 
     GetIntTxPulseResultPtr GetIntTxPulseResult::create(CommandBasePtr relatedCommand, bool enabled, double centralFreq, double power, double dutyCycle, int pulseRate, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& group)
     {

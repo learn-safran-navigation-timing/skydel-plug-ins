@@ -1,3 +1,6 @@
+
+#include "gen/ClearAllMessageModificationsForNavMsgFamily.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of ClearAllMessageModificationsForNavMsgFamily
 ///
-#include "gen/ClearAllMessageModificationsForNavMsgFamily.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setNavMsgFamily(navMsgFamily);
     }
-
 
     ClearAllMessageModificationsForNavMsgFamilyPtr ClearAllMessageModificationsForNavMsgFamily::create(const std::string& navMsgFamily)
     {

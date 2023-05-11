@@ -4,6 +4,7 @@
 #include "command_base.h"
 
 
+
 namespace Sdx
 {
   namespace Cmd
@@ -35,7 +36,7 @@ namespace Sdx
       SetIonoBeta();
 
       SetIonoBeta(int index, double val);
-  
+
       static SetIonoBetaPtr create(int index, double val);
       static SetIonoBetaPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -53,6 +54,7 @@ namespace Sdx
       double val() const;
       void setVal(double val);
     };
+    
   }
 }
 

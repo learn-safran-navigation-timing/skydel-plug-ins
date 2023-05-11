@@ -4,6 +4,7 @@
 #include "command_base.h"
 
 
+
 namespace Sdx
 {
   namespace Cmd
@@ -33,7 +34,7 @@ namespace Sdx
       PushTrackEcef();
 
       PushTrackEcef(int time, double x, double y, double z);
-  
+
       static PushTrackEcefPtr create(int time, double x, double y, double z);
       static PushTrackEcefPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -61,6 +62,7 @@ namespace Sdx
       double z() const;
       void setZ(double z);
     };
+    
   }
 }
 

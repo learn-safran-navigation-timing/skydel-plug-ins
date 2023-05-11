@@ -1,3 +1,6 @@
+
+#include "gen/GetElevationAzimuthForSVResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetElevationAzimuthForSVResult
 ///
-#include "gen/GetElevationAzimuthForSVResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,21 @@ namespace Sdx
     const char* const GetElevationAzimuthForSVResult::CmdName = "GetElevationAzimuthForSVResult";
     const char* const GetElevationAzimuthForSVResult::Documentation = "Result of GetElevationAzimuthForSV.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetElevationAzimuthForSVResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetElevationAzimuthForSVResult);
 
 
     GetElevationAzimuthForSVResult::GetElevationAzimuthForSVResult()
       : CommandResult(CmdName)
     {}
+
+    GetElevationAzimuthForSVResult::GetElevationAzimuthForSVResult(const std::string& system, int svId, const Sdx::optional<Sdx::ElevationAzimuth>& elevationAzimuth)
+      : CommandResult(CmdName)
+    {
+
+      setSystem(system);
+      setSvId(svId);
+      setElevationAzimuth(elevationAzimuth);
+    }
 
     GetElevationAzimuthForSVResult::GetElevationAzimuthForSVResult(CommandBasePtr relatedCommand, const std::string& system, int svId, const Sdx::optional<Sdx::ElevationAzimuth>& elevationAzimuth)
       : CommandResult(CmdName, relatedCommand)
@@ -30,6 +41,11 @@ namespace Sdx
       setElevationAzimuth(elevationAzimuth);
     }
 
+
+    GetElevationAzimuthForSVResultPtr GetElevationAzimuthForSVResult::create(const std::string& system, int svId, const Sdx::optional<Sdx::ElevationAzimuth>& elevationAzimuth)
+    {
+      return std::make_shared<GetElevationAzimuthForSVResult>(system, svId, elevationAzimuth);
+    }
 
     GetElevationAzimuthForSVResultPtr GetElevationAzimuthForSVResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, const Sdx::optional<Sdx::ElevationAzimuth>& elevationAzimuth)
     {

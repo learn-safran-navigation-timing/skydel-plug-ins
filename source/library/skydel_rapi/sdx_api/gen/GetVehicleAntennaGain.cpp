@@ -1,3 +1,6 @@
+
+#include "gen/GetVehicleAntennaGain.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetVehicleAntennaGain
 ///
-#include "gen/GetVehicleAntennaGain.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setBand(band);
       setName(name);
     }
-
 
     GetVehicleAntennaGainPtr GetVehicleAntennaGain::create(const Sdx::GNSSBand& band, const Sdx::optional<std::string>& name)
     {

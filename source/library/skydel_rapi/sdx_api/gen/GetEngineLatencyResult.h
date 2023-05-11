@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -29,8 +30,12 @@ namespace Sdx
 
       GetEngineLatencyResult();
 
+      GetEngineLatencyResult(int latency);
+
       GetEngineLatencyResult(CommandBasePtr relatedCommand, int latency);
-  
+
+      static GetEngineLatencyResultPtr create(int latency);
+
       static GetEngineLatencyResultPtr create(CommandBasePtr relatedCommand, int latency);
       static GetEngineLatencyResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -41,6 +46,7 @@ namespace Sdx
       int latency() const;
       void setLatency(int latency);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetEngineLatencyResult);
   }
 }
 

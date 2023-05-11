@@ -1,3 +1,6 @@
+
+#include "gen/ImportIonoGridErrors.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of ImportIonoGridErrors
 ///
-#include "gen/ImportIonoGridErrors.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setOverwriting(overwriting);
       setPath(path);
     }
-
 
     ImportIonoGridErrorsPtr ImportIonoGridErrors::create(bool overwriting, const std::string& path)
     {

@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -31,7 +32,7 @@ namespace Sdx
       SetAlmanacInitialUploadTimeOffset();
 
       SetAlmanacInitialUploadTimeOffset(const std::string& system, int offset);
-  
+
       static SetAlmanacInitialUploadTimeOffsetPtr create(const std::string& system, int offset);
       static SetAlmanacInitialUploadTimeOffsetPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -49,6 +50,7 @@ namespace Sdx
       int offset() const;
       void setOffset(int offset);
     };
+    
   }
 }
 

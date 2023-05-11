@@ -1,3 +1,6 @@
+
+#include "gen/GetMessageModificationToGalileoCNavResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetMessageModificationToGalileoCNavResult
 ///
-#include "gen/GetMessageModificationToGalileoCNavResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,25 @@ namespace Sdx
     const char* const GetMessageModificationToGalileoCNavResult::CmdName = "GetMessageModificationToGalileoCNavResult";
     const char* const GetMessageModificationToGalileoCNavResult::Documentation = "Result of GetMessageModificationToGalileoCNav.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetMessageModificationToGalileoCNavResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetMessageModificationToGalileoCNavResult);
 
 
     GetMessageModificationToGalileoCNavResult::GetMessageModificationToGalileoCNavResult()
       : CommandResult(CmdName)
     {}
+
+    GetMessageModificationToGalileoCNavResult::GetMessageModificationToGalileoCNavResult(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, bool updateCRC, const std::string& bitModifications, const std::string& id)
+      : CommandResult(CmdName)
+    {
+
+      setSignalArray(signalArray);
+      setSvId(svId);
+      setStartTime(startTime);
+      setStopTime(stopTime);
+      setUpdateCRC(updateCRC);
+      setBitModifications(bitModifications);
+      setId(id);
+    }
 
     GetMessageModificationToGalileoCNavResult::GetMessageModificationToGalileoCNavResult(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, bool updateCRC, const std::string& bitModifications, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -34,6 +49,11 @@ namespace Sdx
       setId(id);
     }
 
+
+    GetMessageModificationToGalileoCNavResultPtr GetMessageModificationToGalileoCNavResult::create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, bool updateCRC, const std::string& bitModifications, const std::string& id)
+    {
+      return std::make_shared<GetMessageModificationToGalileoCNavResult>(signalArray, svId, startTime, stopTime, updateCRC, bitModifications, id);
+    }
 
     GetMessageModificationToGalileoCNavResultPtr GetMessageModificationToGalileoCNavResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, bool updateCRC, const std::string& bitModifications, const std::string& id)
     {

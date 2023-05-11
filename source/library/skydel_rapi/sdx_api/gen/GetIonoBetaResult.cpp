@@ -1,3 +1,6 @@
+
+#include "gen/GetIonoBetaResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetIonoBetaResult
 ///
-#include "gen/GetIonoBetaResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,20 @@ namespace Sdx
     const char* const GetIonoBetaResult::CmdName = "GetIonoBetaResult";
     const char* const GetIonoBetaResult::Documentation = "Result of GetIonoBeta.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetIonoBetaResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetIonoBetaResult);
 
 
     GetIonoBetaResult::GetIonoBetaResult()
       : CommandResult(CmdName)
     {}
+
+    GetIonoBetaResult::GetIonoBetaResult(int index, double val)
+      : CommandResult(CmdName)
+    {
+
+      setIndex(index);
+      setVal(val);
+    }
 
     GetIonoBetaResult::GetIonoBetaResult(CommandBasePtr relatedCommand, int index, double val)
       : CommandResult(CmdName, relatedCommand)
@@ -29,6 +39,11 @@ namespace Sdx
       setVal(val);
     }
 
+
+    GetIonoBetaResultPtr GetIonoBetaResult::create(int index, double val)
+    {
+      return std::make_shared<GetIonoBetaResult>(index, val);
+    }
 
     GetIonoBetaResultPtr GetIonoBetaResult::create(CommandBasePtr relatedCommand, int index, double val)
     {

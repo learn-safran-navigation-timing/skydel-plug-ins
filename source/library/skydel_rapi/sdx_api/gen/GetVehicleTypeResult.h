@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include <string>
 
 namespace Sdx
@@ -29,8 +30,12 @@ namespace Sdx
 
       GetVehicleTypeResult();
 
+      GetVehicleTypeResult(const std::string& type);
+
       GetVehicleTypeResult(CommandBasePtr relatedCommand, const std::string& type);
-  
+
+      static GetVehicleTypeResultPtr create(const std::string& type);
+
       static GetVehicleTypeResultPtr create(CommandBasePtr relatedCommand, const std::string& type);
       static GetVehicleTypeResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -41,6 +46,7 @@ namespace Sdx
       std::string type() const;
       void setType(const std::string& type);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetVehicleTypeResult);
   }
 }
 

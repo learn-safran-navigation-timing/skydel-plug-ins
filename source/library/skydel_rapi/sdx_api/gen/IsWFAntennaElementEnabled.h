@@ -4,6 +4,7 @@
 #include "command_base.h"
 
 
+
 namespace Sdx
 {
   namespace Cmd
@@ -30,7 +31,7 @@ namespace Sdx
       IsWFAntennaElementEnabled();
 
       IsWFAntennaElementEnabled(int element);
-  
+
       static IsWFAntennaElementEnabledPtr create(int element);
       static IsWFAntennaElementEnabledPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -43,6 +44,7 @@ namespace Sdx
       int element() const;
       void setElement(int element);
     };
+    
   }
 }
 

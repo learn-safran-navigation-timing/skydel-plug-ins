@@ -1,3 +1,6 @@
+
+#include "gen/GetVehicleTypeResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetVehicleTypeResult
 ///
-#include "gen/GetVehicleTypeResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const GetVehicleTypeResult::CmdName = "GetVehicleTypeResult";
     const char* const GetVehicleTypeResult::Documentation = "Result of GetVehicleType.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetVehicleTypeResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetVehicleTypeResult);
 
 
     GetVehicleTypeResult::GetVehicleTypeResult()
       : CommandResult(CmdName)
     {}
+
+    GetVehicleTypeResult::GetVehicleTypeResult(const std::string& type)
+      : CommandResult(CmdName)
+    {
+
+      setType(type);
+    }
 
     GetVehicleTypeResult::GetVehicleTypeResult(CommandBasePtr relatedCommand, const std::string& type)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setType(type);
     }
 
+
+    GetVehicleTypeResultPtr GetVehicleTypeResult::create(const std::string& type)
+    {
+      return std::make_shared<GetVehicleTypeResult>(type);
+    }
 
     GetVehicleTypeResultPtr GetVehicleTypeResult::create(CommandBasePtr relatedCommand, const std::string& type)
     {

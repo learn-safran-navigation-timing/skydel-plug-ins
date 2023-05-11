@@ -1,3 +1,6 @@
+
+#include "gen/SetInterferenceChirp.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetInterferenceChirp
 ///
-#include "gen/SetInterferenceChirp.h"
 
 namespace Sdx
 {
@@ -34,7 +36,6 @@ namespace Sdx
       setEnabled(enabled);
       setId(id);
     }
-
 
     SetInterferenceChirpPtr SetInterferenceChirp::create(int startTime, int stopTime, double centralFreq, double power, double bandwidth, double sweepTime, bool enabled, const std::string& id)
     {

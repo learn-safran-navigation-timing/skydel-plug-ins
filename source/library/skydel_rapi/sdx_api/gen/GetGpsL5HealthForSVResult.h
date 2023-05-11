@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include "sdx_optional.h"
 #include <string>
 
@@ -32,8 +33,12 @@ namespace Sdx
 
       GetGpsL5HealthForSVResult();
 
+      GetGpsL5HealthForSVResult(int svId, bool health, const Sdx::optional<std::string>& dataSetName = {});
+
       GetGpsL5HealthForSVResult(CommandBasePtr relatedCommand, int svId, bool health, const Sdx::optional<std::string>& dataSetName = {});
-  
+
+      static GetGpsL5HealthForSVResultPtr create(int svId, bool health, const Sdx::optional<std::string>& dataSetName = {});
+
       static GetGpsL5HealthForSVResultPtr create(CommandBasePtr relatedCommand, int svId, bool health, const Sdx::optional<std::string>& dataSetName = {});
       static GetGpsL5HealthForSVResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -54,6 +59,7 @@ namespace Sdx
       Sdx::optional<std::string> dataSetName() const;
       void setDataSetName(const Sdx::optional<std::string>& dataSetName);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetGpsL5HealthForSVResult);
   }
 }
 

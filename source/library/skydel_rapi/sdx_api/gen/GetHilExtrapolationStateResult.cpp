@@ -1,3 +1,6 @@
+
+#include "gen/GetHilExtrapolationStateResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetHilExtrapolationStateResult
 ///
-#include "gen/GetHilExtrapolationStateResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,20 @@ namespace Sdx
     const char* const GetHilExtrapolationStateResult::CmdName = "GetHilExtrapolationStateResult";
     const char* const GetHilExtrapolationStateResult::Documentation = "Result of GetHilExtrapolationState.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetHilExtrapolationStateResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetHilExtrapolationStateResult);
 
 
     GetHilExtrapolationStateResult::GetHilExtrapolationStateResult()
       : CommandResult(CmdName)
     {}
+
+    GetHilExtrapolationStateResult::GetHilExtrapolationStateResult(const Sdx::HilExtrapolationState& state, int elapsedTime)
+      : CommandResult(CmdName)
+    {
+
+      setState(state);
+      setElapsedTime(elapsedTime);
+    }
 
     GetHilExtrapolationStateResult::GetHilExtrapolationStateResult(CommandBasePtr relatedCommand, const Sdx::HilExtrapolationState& state, int elapsedTime)
       : CommandResult(CmdName, relatedCommand)
@@ -29,6 +39,11 @@ namespace Sdx
       setElapsedTime(elapsedTime);
     }
 
+
+    GetHilExtrapolationStateResultPtr GetHilExtrapolationStateResult::create(const Sdx::HilExtrapolationState& state, int elapsedTime)
+    {
+      return std::make_shared<GetHilExtrapolationStateResult>(state, elapsedTime);
+    }
 
     GetHilExtrapolationStateResultPtr GetHilExtrapolationStateResult::create(CommandBasePtr relatedCommand, const Sdx::HilExtrapolationState& state, int elapsedTime)
     {

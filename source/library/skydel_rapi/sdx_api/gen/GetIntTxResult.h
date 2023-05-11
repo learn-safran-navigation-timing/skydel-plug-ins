@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include <string>
 
 namespace Sdx
@@ -34,8 +35,12 @@ namespace Sdx
 
       GetIntTxResult();
 
+      GetIntTxResult(const std::string& usualName, bool enabled, int group, bool dynamic, double power, const std::string& id);
+
       GetIntTxResult(CommandBasePtr relatedCommand, const std::string& usualName, bool enabled, int group, bool dynamic, double power, const std::string& id);
-  
+
+      static GetIntTxResultPtr create(const std::string& usualName, bool enabled, int group, bool dynamic, double power, const std::string& id);
+
       static GetIntTxResultPtr create(CommandBasePtr relatedCommand, const std::string& usualName, bool enabled, int group, bool dynamic, double power, const std::string& id);
       static GetIntTxResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -71,6 +76,7 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetIntTxResult);
   }
 }
 

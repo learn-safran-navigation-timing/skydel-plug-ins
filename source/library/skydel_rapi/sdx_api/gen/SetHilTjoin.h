@@ -4,6 +4,7 @@
 #include "command_base.h"
 
 
+
 namespace Sdx
 {
   namespace Cmd
@@ -30,7 +31,7 @@ namespace Sdx
       SetHilTjoin();
 
       SetHilTjoin(int hilTjoin);
-  
+
       static SetHilTjoinPtr create(int hilTjoin);
       static SetHilTjoinPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -43,6 +44,7 @@ namespace Sdx
       int hilTjoin() const;
       void setHilTjoin(int hilTjoin);
     };
+    
   }
 }
 

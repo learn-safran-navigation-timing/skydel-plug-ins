@@ -4,6 +4,7 @@
 #include "command_base.h"
 
 
+
 namespace Sdx
 {
   namespace Cmd
@@ -26,7 +27,7 @@ namespace Sdx
 
 
       ClearStatusLog();
-  
+
       static ClearStatusLogPtr create();
       static ClearStatusLogPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -34,6 +35,7 @@ namespace Sdx
 
       virtual int executePermission() const override;
     };
+    
   }
 }
 

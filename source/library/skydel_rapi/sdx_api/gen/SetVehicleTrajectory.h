@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -30,7 +31,7 @@ namespace Sdx
       SetVehicleTrajectory();
 
       SetVehicleTrajectory(const std::string& type);
-  
+
       static SetVehicleTrajectoryPtr create(const std::string& type);
       static SetVehicleTrajectoryPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -43,6 +44,7 @@ namespace Sdx
       std::string type() const;
       void setType(const std::string& type);
     };
+    
   }
 }
 

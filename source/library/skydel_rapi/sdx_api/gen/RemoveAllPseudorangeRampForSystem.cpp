@@ -1,3 +1,6 @@
+
+#include "gen/RemoveAllPseudorangeRampForSystem.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,13 @@
 ///
 /// Definition of RemoveAllPseudorangeRampForSystem
 ///
-#include "gen/RemoveAllPseudorangeRampForSystem.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const RemoveAllPseudorangeRampForSystem::CmdName = "RemoveAllPseudorangeRampForSystem";
-    const char* const RemoveAllPseudorangeRampForSystem::Documentation = "Please note the command RemoveAllPseudorangeRamp is deprecated since 21.3. You may use RemoveAllPseudorangeRampForSystem.\n\nRemove all PSR Ramps for all satellites of the specified system.";
+    const char* const RemoveAllPseudorangeRampForSystem::Documentation = "Remove all PSR Ramps for all satellites of the specified system.";
 
     REGISTER_COMMAND_FACTORY(RemoveAllPseudorangeRampForSystem);
 
@@ -27,7 +29,6 @@ namespace Sdx
 
       setSystem(system);
     }
-
 
     RemoveAllPseudorangeRampForSystemPtr RemoveAllPseudorangeRampForSystem::create(const std::string& system)
     {

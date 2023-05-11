@@ -1,3 +1,6 @@
+
+#include "gen/GetMasterStatusResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetMasterStatusResult
 ///
-#include "gen/GetMasterStatusResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,21 @@ namespace Sdx
     const char* const GetMasterStatusResult::CmdName = "GetMasterStatusResult";
     const char* const GetMasterStatusResult::Documentation = "Result of GetMasterStatus.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetMasterStatusResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetMasterStatusResult);
 
 
     GetMasterStatusResult::GetMasterStatusResult()
       : CommandResult(CmdName)
     {}
+
+    GetMasterStatusResult::GetMasterStatusResult(bool isMaster, int slaveConnected, int port)
+      : CommandResult(CmdName)
+    {
+
+      setIsMaster(isMaster);
+      setSlaveConnected(slaveConnected);
+      setPort(port);
+    }
 
     GetMasterStatusResult::GetMasterStatusResult(CommandBasePtr relatedCommand, bool isMaster, int slaveConnected, int port)
       : CommandResult(CmdName, relatedCommand)
@@ -30,6 +41,11 @@ namespace Sdx
       setPort(port);
     }
 
+
+    GetMasterStatusResultPtr GetMasterStatusResult::create(bool isMaster, int slaveConnected, int port)
+    {
+      return std::make_shared<GetMasterStatusResult>(isMaster, slaveConnected, port);
+    }
 
     GetMasterStatusResultPtr GetMasterStatusResult::create(CommandBasePtr relatedCommand, bool isMaster, int slaveConnected, int port)
     {

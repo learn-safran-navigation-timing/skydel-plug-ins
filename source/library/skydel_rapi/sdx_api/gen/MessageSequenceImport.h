@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -32,7 +33,7 @@ namespace Sdx
       MessageSequenceImport();
 
       MessageSequenceImport(const std::string& signal, const std::string& filename);
-  
+
       static MessageSequenceImportPtr create(const std::string& signal, const std::string& filename);
       static MessageSequenceImportPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -50,6 +51,7 @@ namespace Sdx
       std::string filename() const;
       void setFilename(const std::string& filename);
     };
+    
   }
 }
 

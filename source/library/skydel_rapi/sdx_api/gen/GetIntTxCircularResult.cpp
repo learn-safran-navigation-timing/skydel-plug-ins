@@ -1,3 +1,6 @@
+
+#include "gen/GetIntTxCircularResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetIntTxCircularResult
 ///
-#include "gen/GetIntTxCircularResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,26 @@ namespace Sdx
     const char* const GetIntTxCircularResult::CmdName = "GetIntTxCircularResult";
     const char* const GetIntTxCircularResult::Documentation = "Result of GetIntTxCircular.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetIntTxCircularResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetIntTxCircularResult);
 
 
     GetIntTxCircularResult::GetIntTxCircularResult()
       : CommandResult(CmdName)
     {}
+
+    GetIntTxCircularResult::GetIntTxCircularResult(double lat, double lon, double alt, double radius, double speed, bool clockwise, const std::string& id, const Sdx::optional<double>& originAngle)
+      : CommandResult(CmdName)
+    {
+
+      setLat(lat);
+      setLon(lon);
+      setAlt(alt);
+      setRadius(radius);
+      setSpeed(speed);
+      setClockwise(clockwise);
+      setId(id);
+      setOriginAngle(originAngle);
+    }
 
     GetIntTxCircularResult::GetIntTxCircularResult(CommandBasePtr relatedCommand, double lat, double lon, double alt, double radius, double speed, bool clockwise, const std::string& id, const Sdx::optional<double>& originAngle)
       : CommandResult(CmdName, relatedCommand)
@@ -35,6 +51,11 @@ namespace Sdx
       setOriginAngle(originAngle);
     }
 
+
+    GetIntTxCircularResultPtr GetIntTxCircularResult::create(double lat, double lon, double alt, double radius, double speed, bool clockwise, const std::string& id, const Sdx::optional<double>& originAngle)
+    {
+      return std::make_shared<GetIntTxCircularResult>(lat, lon, alt, radius, speed, clockwise, id, originAngle);
+    }
 
     GetIntTxCircularResultPtr GetIntTxCircularResult::create(CommandBasePtr relatedCommand, double lat, double lon, double alt, double radius, double speed, bool clockwise, const std::string& id, const Sdx::optional<double>& originAngle)
     {

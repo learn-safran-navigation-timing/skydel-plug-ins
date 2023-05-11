@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include "sdx_optional.h"
 #include <string>
 
@@ -32,7 +33,7 @@ namespace Sdx
       GetBeiDouEphDoubleParamForEachSV();
 
       GetBeiDouEphDoubleParamForEachSV(const std::string& paramName, const Sdx::optional<std::string>& dataSetName = {});
-  
+
       static GetBeiDouEphDoubleParamForEachSVPtr create(const std::string& paramName, const Sdx::optional<std::string>& dataSetName = {});
       static GetBeiDouEphDoubleParamForEachSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -50,6 +51,7 @@ namespace Sdx
       Sdx::optional<std::string> dataSetName() const;
       void setDataSetName(const Sdx::optional<std::string>& dataSetName);
     };
+    
   }
 }
 

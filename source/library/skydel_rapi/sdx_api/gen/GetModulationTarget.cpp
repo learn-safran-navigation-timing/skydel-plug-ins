@@ -1,3 +1,6 @@
+
+#include "gen/GetModulationTarget.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetModulationTarget
 ///
-#include "gen/GetModulationTarget.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setId(id);
     }
-
 
     GetModulationTargetPtr GetModulationTarget::create(const std::string& id)
     {

@@ -1,3 +1,6 @@
+
+#include "gen/SetPilotCW.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetPilotCW
 ///
-#include "gen/SetPilotCW.h"
 
 namespace Sdx
 {
@@ -31,7 +33,6 @@ namespace Sdx
       setPower(power);
       setPilotId(pilotId);
     }
-
 
     SetPilotCWPtr SetPilotCW::create(bool enabled, int outputIdx, double centralFreqOffset, double power, const std::string& pilotId)
     {

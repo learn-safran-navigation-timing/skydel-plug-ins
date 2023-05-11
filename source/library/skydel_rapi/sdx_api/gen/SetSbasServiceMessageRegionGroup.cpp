@@ -1,3 +1,6 @@
+
+#include "gen/SetSbasServiceMessageRegionGroup.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetSbasServiceMessageRegionGroup
 ///
-#include "gen/SetSbasServiceMessageRegionGroup.h"
 
 namespace Sdx
 {
@@ -31,7 +33,6 @@ namespace Sdx
       setRegions(regions);
       setId(id);
     }
-
 
     SetSbasServiceMessageRegionGroupPtr SetSbasServiceMessageRegionGroup::create(const std::string& serviceProvider, int deltaUdrei, int priorityCode, const std::vector<Sdx::SbasServiceMessageRegion>& regions, const std::string& id)
     {

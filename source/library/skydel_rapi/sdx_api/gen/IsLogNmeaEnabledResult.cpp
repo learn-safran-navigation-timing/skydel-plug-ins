@@ -1,3 +1,6 @@
+
+#include "gen/IsLogNmeaEnabledResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of IsLogNmeaEnabledResult
 ///
-#include "gen/IsLogNmeaEnabledResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const IsLogNmeaEnabledResult::CmdName = "IsLogNmeaEnabledResult";
     const char* const IsLogNmeaEnabledResult::Documentation = "Result of IsLogNmeaEnabled.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(IsLogNmeaEnabledResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsLogNmeaEnabledResult);
 
 
     IsLogNmeaEnabledResult::IsLogNmeaEnabledResult()
       : CommandResult(CmdName)
     {}
+
+    IsLogNmeaEnabledResult::IsLogNmeaEnabledResult(bool enabled)
+      : CommandResult(CmdName)
+    {
+
+      setEnabled(enabled);
+    }
 
     IsLogNmeaEnabledResult::IsLogNmeaEnabledResult(CommandBasePtr relatedCommand, bool enabled)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setEnabled(enabled);
     }
 
+
+    IsLogNmeaEnabledResultPtr IsLogNmeaEnabledResult::create(bool enabled)
+    {
+      return std::make_shared<IsLogNmeaEnabledResult>(enabled);
+    }
 
     IsLogNmeaEnabledResultPtr IsLogNmeaEnabledResult::create(CommandBasePtr relatedCommand, bool enabled)
     {

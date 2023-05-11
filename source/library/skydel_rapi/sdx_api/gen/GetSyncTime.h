@@ -4,6 +4,7 @@
 #include "command_base.h"
 
 
+
 namespace Sdx
 {
   namespace Cmd
@@ -27,7 +28,7 @@ namespace Sdx
 
 
       GetSyncTime();
-  
+
       static GetSyncTimePtr create();
       static GetSyncTimePtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -35,6 +36,7 @@ namespace Sdx
 
       virtual int executePermission() const override;
     };
+    
   }
 }
 
