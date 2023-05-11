@@ -1,3 +1,6 @@
+
+#include "gen/MessageSequenceInsert.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of MessageSequenceInsert
 ///
-#include "gen/MessageSequenceInsert.h"
 
 namespace Sdx
 {
@@ -29,7 +31,6 @@ namespace Sdx
       setIndex(index);
       setType(type);
     }
-
 
     MessageSequenceInsertPtr MessageSequenceInsert::create(const std::string& signal, int index, int type)
     {

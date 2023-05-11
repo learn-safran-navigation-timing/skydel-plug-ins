@@ -1,3 +1,6 @@
+
+#include "gen/IsUsingVelocityInSbasMessage25Result.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of IsUsingVelocityInSbasMessage25Result
 ///
-#include "gen/IsUsingVelocityInSbasMessage25Result.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const IsUsingVelocityInSbasMessage25Result::CmdName = "IsUsingVelocityInSbasMessage25Result";
     const char* const IsUsingVelocityInSbasMessage25Result::Documentation = "Result of IsUsingVelocityInSbasMessage25.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(IsUsingVelocityInSbasMessage25Result);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsUsingVelocityInSbasMessage25Result);
 
 
     IsUsingVelocityInSbasMessage25Result::IsUsingVelocityInSbasMessage25Result()
       : CommandResult(CmdName)
     {}
+
+    IsUsingVelocityInSbasMessage25Result::IsUsingVelocityInSbasMessage25Result(bool useVelocity)
+      : CommandResult(CmdName)
+    {
+
+      setUseVelocity(useVelocity);
+    }
 
     IsUsingVelocityInSbasMessage25Result::IsUsingVelocityInSbasMessage25Result(CommandBasePtr relatedCommand, bool useVelocity)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setUseVelocity(useVelocity);
     }
 
+
+    IsUsingVelocityInSbasMessage25ResultPtr IsUsingVelocityInSbasMessage25Result::create(bool useVelocity)
+    {
+      return std::make_shared<IsUsingVelocityInSbasMessage25Result>(useVelocity);
+    }
 
     IsUsingVelocityInSbasMessage25ResultPtr IsUsingVelocityInSbasMessage25Result::create(CommandBasePtr relatedCommand, bool useVelocity)
     {

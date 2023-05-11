@@ -1,3 +1,6 @@
+
+#include "gen/ClearAllMessageModificationsForSignal.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,13 @@
 ///
 /// Definition of ClearAllMessageModificationsForSignal
 ///
-#include "gen/ClearAllMessageModificationsForSignal.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const ClearAllMessageModificationsForSignal::CmdName = "ClearAllMessageModificationsForSignal";
-    const char* const ClearAllMessageModificationsForSignal::Documentation = "Please note the command ClearAllMessageModifications is deprecated since 21.3. You may use ClearAllMessageModificationsForSignal.\n\nClear the signal for all message modifications.";
+    const char* const ClearAllMessageModificationsForSignal::Documentation = "Clear the signal for all message modifications.";
 
     REGISTER_COMMAND_FACTORY(ClearAllMessageModificationsForSignal);
 
@@ -27,7 +29,6 @@ namespace Sdx
 
       setSignal(signal);
     }
-
 
     ClearAllMessageModificationsForSignalPtr ClearAllMessageModificationsForSignal::create(const std::string& signal)
     {

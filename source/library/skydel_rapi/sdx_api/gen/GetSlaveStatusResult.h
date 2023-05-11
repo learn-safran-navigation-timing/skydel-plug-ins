@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include <string>
 
 namespace Sdx
@@ -32,8 +33,12 @@ namespace Sdx
 
       GetSlaveStatusResult();
 
+      GetSlaveStatusResult(bool isSlave, bool isConnected, const std::string& hostName, int hostPort);
+
       GetSlaveStatusResult(CommandBasePtr relatedCommand, bool isSlave, bool isConnected, const std::string& hostName, int hostPort);
-  
+
+      static GetSlaveStatusResultPtr create(bool isSlave, bool isConnected, const std::string& hostName, int hostPort);
+
       static GetSlaveStatusResultPtr create(CommandBasePtr relatedCommand, bool isSlave, bool isConnected, const std::string& hostName, int hostPort);
       static GetSlaveStatusResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -59,6 +64,7 @@ namespace Sdx
       int hostPort() const;
       void setHostPort(int hostPort);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetSlaveStatusResult);
   }
 }
 

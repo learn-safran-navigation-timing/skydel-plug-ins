@@ -1,3 +1,6 @@
+
+#include "gen/SetPseudorangeRampForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,13 @@
 ///
 /// Definition of SetPseudorangeRampForSV
 ///
-#include "gen/SetPseudorangeRampForSV.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const SetPseudorangeRampForSV::CmdName = "SetPseudorangeRampForSV";
-    const char* const SetPseudorangeRampForSV::Documentation = "Set PSR ramp event. This function lets user change the pseudorange of any satellite.\nIf SV ID is set to 0, the change is applied to all satellites.\n\n         Hold Start Time\n         |     Hold Stop Time\n         |     |\n         ...........\n       ..       ...\n       ..        ...\n  .......           .........> Time\n      |           |\n      Start Time      Stop Time\n";
+    const char* const SetPseudorangeRampForSV::Documentation = "Set PSR ramp event. This function lets user change the pseudorange of any satellite.\nIf SV ID is set to 0, the change is applied to all satellites.\n\n          Hold Start Time\n          |         Hold Stop Time\n          |         |\n          ...........\n         ..         ...\n        ..            ...\n  .......               .........> Time\n        |               |\n        Start Time      Stop Time\n";
 
     REGISTER_COMMAND_FACTORY(SetPseudorangeRampForSV);
 
@@ -34,7 +36,6 @@ namespace Sdx
       setStopTime(stopTime);
       setId(id);
     }
-
 
     SetPseudorangeRampForSVPtr SetPseudorangeRampForSV::create(const std::string& system, int svId, double offset, int startTime, int holdStartTime, int holdStopTime, int stopTime, const std::string& id)
     {

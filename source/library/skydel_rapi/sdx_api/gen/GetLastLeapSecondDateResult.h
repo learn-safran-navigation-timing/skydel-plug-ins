@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include "date.h"
 
 namespace Sdx
@@ -29,8 +30,12 @@ namespace Sdx
 
       GetLastLeapSecondDateResult();
 
+      GetLastLeapSecondDateResult(const Sdx::Date& date);
+
       GetLastLeapSecondDateResult(CommandBasePtr relatedCommand, const Sdx::Date& date);
-  
+
+      static GetLastLeapSecondDateResultPtr create(const Sdx::Date& date);
+
       static GetLastLeapSecondDateResultPtr create(CommandBasePtr relatedCommand, const Sdx::Date& date);
       static GetLastLeapSecondDateResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -41,6 +46,7 @@ namespace Sdx
       Sdx::Date date() const;
       void setDate(const Sdx::Date& date);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetLastLeapSecondDateResult);
   }
 }
 

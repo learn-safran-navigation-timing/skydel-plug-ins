@@ -1,3 +1,6 @@
+
+#include "gen/GetEngineLatency.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetEngineLatency
 ///
-#include "gen/GetEngineLatency.h"
 
 namespace Sdx
 {
@@ -22,7 +24,6 @@ namespace Sdx
     {
 
     }
-
 
     GetEngineLatencyPtr GetEngineLatency::create()
     {
@@ -47,7 +48,7 @@ namespace Sdx
 
     int GetEngineLatency::executePermission() const
     {
-      return EXECUTE_IF_IDLE | EXECUTE_IF_SIMULATING;
+      return EXECUTE_IF_NO_CONFIG | EXECUTE_IF_IDLE | EXECUTE_IF_SIMULATING;
     }
 
   }

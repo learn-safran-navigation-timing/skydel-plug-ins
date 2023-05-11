@@ -1,3 +1,6 @@
+
+#include "gen/ResetAllSatPower.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,13 @@
 ///
 /// Definition of ResetAllSatPower
 ///
-#include "gen/ResetAllSatPower.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const ResetAllSatPower::CmdName = "ResetAllSatPower";
-    const char* const ResetAllSatPower::Documentation = "Reset power offset for all satellites is specified system to default value";
+    const char* const ResetAllSatPower::Documentation = "Please note the command ResetAllSatPower is deprecated since 21.7. You may use ResetManualPowerOffsets.\n\nReset power offset for all satellites is specified system to default value";
 
     REGISTER_COMMAND_FACTORY(ResetAllSatPower);
 
@@ -27,7 +29,6 @@ namespace Sdx
 
       setSystem(system);
     }
-
 
     ResetAllSatPowerPtr ResetAllSatPower::create(const std::string& system)
     {

@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include "sdx_optional.h"
 #include <string>
 
@@ -38,7 +39,7 @@ namespace Sdx
       SetSpoofTxCircular();
 
       SetSpoofTxCircular(double lat, double lon, double alt, double radius, double speed, bool clockwise, const std::string& id, const Sdx::optional<double>& originAngle = {});
-  
+
       static SetSpoofTxCircularPtr create(double lat, double lon, double alt, double radius, double speed, bool clockwise, const std::string& id, const Sdx::optional<double>& originAngle = {});
       static SetSpoofTxCircularPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -86,6 +87,7 @@ namespace Sdx
       Sdx::optional<double> originAngle() const;
       void setOriginAngle(const Sdx::optional<double>& originAngle);
     };
+    
   }
 }
 

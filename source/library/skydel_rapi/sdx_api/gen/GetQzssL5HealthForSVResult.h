@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include "sdx_optional.h"
 #include <string>
 
@@ -33,8 +34,12 @@ namespace Sdx
 
       GetQzssL5HealthForSVResult();
 
+      GetQzssL5HealthForSVResult(int svId, bool health, const Sdx::optional<std::string>& dataSetName = {});
+
       GetQzssL5HealthForSVResult(CommandBasePtr relatedCommand, int svId, bool health, const Sdx::optional<std::string>& dataSetName = {});
-  
+
+      static GetQzssL5HealthForSVResultPtr create(int svId, bool health, const Sdx::optional<std::string>& dataSetName = {});
+
       static GetQzssL5HealthForSVResultPtr create(CommandBasePtr relatedCommand, int svId, bool health, const Sdx::optional<std::string>& dataSetName = {});
       static GetQzssL5HealthForSVResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -55,6 +60,7 @@ namespace Sdx
       Sdx::optional<std::string> dataSetName() const;
       void setDataSetName(const Sdx::optional<std::string>& dataSetName);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetQzssL5HealthForSVResult);
   }
 }
 

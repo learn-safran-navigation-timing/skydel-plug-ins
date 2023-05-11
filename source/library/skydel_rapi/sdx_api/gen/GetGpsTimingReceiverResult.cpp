@@ -1,3 +1,6 @@
+
+#include "gen/GetGpsTimingReceiverResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetGpsTimingReceiverResult
 ///
-#include "gen/GetGpsTimingReceiverResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,24 @@ namespace Sdx
     const char* const GetGpsTimingReceiverResult::CmdName = "GetGpsTimingReceiverResult";
     const char* const GetGpsTimingReceiverResult::Documentation = "Result of GetGpsTimingReceiver.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetGpsTimingReceiverResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetGpsTimingReceiverResult);
 
 
     GetGpsTimingReceiverResult::GetGpsTimingReceiverResult()
       : CommandResult(CmdName)
     {}
+
+    GetGpsTimingReceiverResult::GetGpsTimingReceiverResult(const std::string& port, const Sdx::optional<int>& baudRate, const Sdx::optional<int>& dataBits, const Sdx::optional<Sdx::SerialPortParity>& parity, const Sdx::optional<int>& stopBits, const Sdx::optional<Sdx::SerialPortFlowControl>& flowControl)
+      : CommandResult(CmdName)
+    {
+
+      setPort(port);
+      setBaudRate(baudRate);
+      setDataBits(dataBits);
+      setParity(parity);
+      setStopBits(stopBits);
+      setFlowControl(flowControl);
+    }
 
     GetGpsTimingReceiverResult::GetGpsTimingReceiverResult(CommandBasePtr relatedCommand, const std::string& port, const Sdx::optional<int>& baudRate, const Sdx::optional<int>& dataBits, const Sdx::optional<Sdx::SerialPortParity>& parity, const Sdx::optional<int>& stopBits, const Sdx::optional<Sdx::SerialPortFlowControl>& flowControl)
       : CommandResult(CmdName, relatedCommand)
@@ -33,6 +47,11 @@ namespace Sdx
       setFlowControl(flowControl);
     }
 
+
+    GetGpsTimingReceiverResultPtr GetGpsTimingReceiverResult::create(const std::string& port, const Sdx::optional<int>& baudRate, const Sdx::optional<int>& dataBits, const Sdx::optional<Sdx::SerialPortParity>& parity, const Sdx::optional<int>& stopBits, const Sdx::optional<Sdx::SerialPortFlowControl>& flowControl)
+    {
+      return std::make_shared<GetGpsTimingReceiverResult>(port, baudRate, dataBits, parity, stopBits, flowControl);
+    }
 
     GetGpsTimingReceiverResultPtr GetGpsTimingReceiverResult::create(CommandBasePtr relatedCommand, const std::string& port, const Sdx::optional<int>& baudRate, const Sdx::optional<int>& dataBits, const Sdx::optional<Sdx::SerialPortParity>& parity, const Sdx::optional<int>& stopBits, const Sdx::optional<Sdx::SerialPortFlowControl>& flowControl)
     {

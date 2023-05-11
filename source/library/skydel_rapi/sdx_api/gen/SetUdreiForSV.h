@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -32,7 +33,7 @@ namespace Sdx
       SetUdreiForSV();
 
       SetUdreiForSV(const std::string& system, int svId, int udrei);
-  
+
       static SetUdreiForSVPtr create(const std::string& system, int svId, int udrei);
       static SetUdreiForSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -55,6 +56,7 @@ namespace Sdx
       int udrei() const;
       void setUdrei(int udrei);
     };
+    
   }
 }
 

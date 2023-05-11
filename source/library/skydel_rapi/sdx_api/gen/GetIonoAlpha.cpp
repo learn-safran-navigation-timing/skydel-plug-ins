@@ -1,3 +1,6 @@
+
+#include "gen/GetIonoAlpha.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetIonoAlpha
 ///
-#include "gen/GetIonoAlpha.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setIndex(index);
     }
-
 
     GetIonoAlphaPtr GetIonoAlpha::create(int index)
     {

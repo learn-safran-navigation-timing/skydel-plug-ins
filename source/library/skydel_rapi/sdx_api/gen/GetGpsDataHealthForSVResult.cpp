@@ -1,3 +1,6 @@
+
+#include "gen/GetGpsDataHealthForSVResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetGpsDataHealthForSVResult
 ///
-#include "gen/GetGpsDataHealthForSVResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,21 @@ namespace Sdx
     const char* const GetGpsDataHealthForSVResult::CmdName = "GetGpsDataHealthForSVResult";
     const char* const GetGpsDataHealthForSVResult::Documentation = "Result of GetGpsDataHealthForSV.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetGpsDataHealthForSVResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetGpsDataHealthForSVResult);
 
 
     GetGpsDataHealthForSVResult::GetGpsDataHealthForSVResult()
       : CommandResult(CmdName)
     {}
+
+    GetGpsDataHealthForSVResult::GetGpsDataHealthForSVResult(int svId, int health, const Sdx::optional<std::string>& dataSetName)
+      : CommandResult(CmdName)
+    {
+
+      setSvId(svId);
+      setHealth(health);
+      setDataSetName(dataSetName);
+    }
 
     GetGpsDataHealthForSVResult::GetGpsDataHealthForSVResult(CommandBasePtr relatedCommand, int svId, int health, const Sdx::optional<std::string>& dataSetName)
       : CommandResult(CmdName, relatedCommand)
@@ -30,6 +41,11 @@ namespace Sdx
       setDataSetName(dataSetName);
     }
 
+
+    GetGpsDataHealthForSVResultPtr GetGpsDataHealthForSVResult::create(int svId, int health, const Sdx::optional<std::string>& dataSetName)
+    {
+      return std::make_shared<GetGpsDataHealthForSVResult>(svId, health, dataSetName);
+    }
 
     GetGpsDataHealthForSVResultPtr GetGpsDataHealthForSVResult::create(CommandBasePtr relatedCommand, int svId, int health, const Sdx::optional<std::string>& dataSetName)
     {

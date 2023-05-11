@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include "sdx_optional.h"
 #include <string>
 
@@ -33,8 +34,12 @@ namespace Sdx
 
       GetIonoGridGIVEIResult();
 
+      GetIonoGridGIVEIResult(int band, int point, int giveI, const Sdx::optional<std::string>& serviceProvider = {});
+
       GetIonoGridGIVEIResult(CommandBasePtr relatedCommand, int band, int point, int giveI, const Sdx::optional<std::string>& serviceProvider = {});
-  
+
+      static GetIonoGridGIVEIResultPtr create(int band, int point, int giveI, const Sdx::optional<std::string>& serviceProvider = {});
+
       static GetIonoGridGIVEIResultPtr create(CommandBasePtr relatedCommand, int band, int point, int giveI, const Sdx::optional<std::string>& serviceProvider = {});
       static GetIonoGridGIVEIResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -60,6 +65,7 @@ namespace Sdx
       Sdx::optional<std::string> serviceProvider() const;
       void setServiceProvider(const Sdx::optional<std::string>& serviceProvider);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetIonoGridGIVEIResult);
   }
 }
 

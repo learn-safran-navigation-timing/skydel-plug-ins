@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <vector>
 
 namespace Sdx
@@ -30,7 +31,7 @@ namespace Sdx
       CommandGroup();
 
       CommandGroup(const std::vector<Sdx::CommandBasePtr>& commands);
-  
+
       static CommandGroupPtr create(const std::vector<Sdx::CommandBasePtr>& commands);
       static CommandGroupPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -43,6 +44,7 @@ namespace Sdx
       std::vector<Sdx::CommandBasePtr> commands() const;
       void setCommands(const std::vector<Sdx::CommandBasePtr>& commands);
     };
+    
   }
 }
 

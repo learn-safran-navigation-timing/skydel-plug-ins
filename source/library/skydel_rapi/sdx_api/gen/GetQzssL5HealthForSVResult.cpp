@@ -1,3 +1,6 @@
+
+#include "gen/GetQzssL5HealthForSVResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetQzssL5HealthForSVResult
 ///
-#include "gen/GetQzssL5HealthForSVResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,21 @@ namespace Sdx
     const char* const GetQzssL5HealthForSVResult::CmdName = "GetQzssL5HealthForSVResult";
     const char* const GetQzssL5HealthForSVResult::Documentation = "Result of GetQzssL5HealthForSV.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetQzssL5HealthForSVResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetQzssL5HealthForSVResult);
 
 
     GetQzssL5HealthForSVResult::GetQzssL5HealthForSVResult()
       : CommandResult(CmdName)
     {}
+
+    GetQzssL5HealthForSVResult::GetQzssL5HealthForSVResult(int svId, bool health, const Sdx::optional<std::string>& dataSetName)
+      : CommandResult(CmdName)
+    {
+
+      setSvId(svId);
+      setHealth(health);
+      setDataSetName(dataSetName);
+    }
 
     GetQzssL5HealthForSVResult::GetQzssL5HealthForSVResult(CommandBasePtr relatedCommand, int svId, bool health, const Sdx::optional<std::string>& dataSetName)
       : CommandResult(CmdName, relatedCommand)
@@ -30,6 +41,11 @@ namespace Sdx
       setDataSetName(dataSetName);
     }
 
+
+    GetQzssL5HealthForSVResultPtr GetQzssL5HealthForSVResult::create(int svId, bool health, const Sdx::optional<std::string>& dataSetName)
+    {
+      return std::make_shared<GetQzssL5HealthForSVResult>(svId, health, dataSetName);
+    }
 
     GetQzssL5HealthForSVResultPtr GetQzssL5HealthForSVResult::create(CommandBasePtr relatedCommand, int svId, bool health, const Sdx::optional<std::string>& dataSetName)
     {

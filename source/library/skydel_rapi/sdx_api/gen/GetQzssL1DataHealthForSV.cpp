@@ -1,3 +1,6 @@
+
+#include "gen/GetQzssL1DataHealthForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,13 @@
 ///
 /// Definition of GetQzssL1DataHealthForSV
 ///
-#include "gen/GetQzssL1DataHealthForSV.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const GetQzssL1DataHealthForSV::CmdName = "GetQzssL1DataHealthForSV";
-    const char* const GetQzssL1DataHealthForSV::Documentation = "Please note the command GetQzssSatelliteL1DataHealth is deprecated since 21.3. You may use GetQzssL1DataHealthForSV.\n\nGet QZSS L1 C/A nav data health";
+    const char* const GetQzssL1DataHealthForSV::Documentation = "Get QZSS L1 C/A nav data health";
 
     REGISTER_COMMAND_FACTORY(GetQzssL1DataHealthForSV);
 
@@ -28,7 +30,6 @@ namespace Sdx
       setSvId(svId);
       setDataSetName(dataSetName);
     }
-
 
     GetQzssL1DataHealthForSVPtr GetQzssL1DataHealthForSV::create(int svId, const Sdx::optional<std::string>& dataSetName)
     {

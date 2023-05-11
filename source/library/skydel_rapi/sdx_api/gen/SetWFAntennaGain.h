@@ -4,6 +4,7 @@
 #include "command_base.h"
 
 
+
 namespace Sdx
 {
   namespace Cmd
@@ -30,7 +31,7 @@ namespace Sdx
       SetWFAntennaGain();
 
       SetWFAntennaGain(int gain);
-  
+
       static SetWFAntennaGainPtr create(int gain);
       static SetWFAntennaGainPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -43,6 +44,7 @@ namespace Sdx
       int gain() const;
       void setGain(int gain);
     };
+    
   }
 }
 

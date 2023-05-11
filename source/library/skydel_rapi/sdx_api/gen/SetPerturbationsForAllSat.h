@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include "sdx_optional.h"
 #include <string>
 #include <vector>
@@ -40,7 +41,7 @@ namespace Sdx
       SetPerturbationsForAllSat();
 
       SetPerturbationsForAllSat(const std::string& system, const std::vector<double>& crs, const std::vector<double>& crc, const std::vector<double>& cis, const std::vector<double>& cic, const std::vector<double>& cus, const std::vector<double>& cuc, const Sdx::optional<std::string>& dataSetName = {});
-  
+
       static SetPerturbationsForAllSatPtr create(const std::string& system, const std::vector<double>& crs, const std::vector<double>& crc, const std::vector<double>& cis, const std::vector<double>& cic, const std::vector<double>& cus, const std::vector<double>& cuc, const Sdx::optional<std::string>& dataSetName = {});
       static SetPerturbationsForAllSatPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -88,6 +89,7 @@ namespace Sdx
       Sdx::optional<std::string> dataSetName() const;
       void setDataSetName(const Sdx::optional<std::string>& dataSetName);
     };
+    
   }
 }
 

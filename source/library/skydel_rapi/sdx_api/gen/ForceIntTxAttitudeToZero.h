@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -31,7 +32,7 @@ namespace Sdx
       ForceIntTxAttitudeToZero();
 
       ForceIntTxAttitudeToZero(bool enabled, const std::string& id);
-  
+
       static ForceIntTxAttitudeToZeroPtr create(bool enabled, const std::string& id);
       static ForceIntTxAttitudeToZeroPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -49,6 +50,7 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
+    
   }
 }
 

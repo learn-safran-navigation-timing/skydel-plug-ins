@@ -1,3 +1,6 @@
+
+#include "gen/UnlockGUI.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of UnlockGUI
 ///
-#include "gen/UnlockGUI.h"
 
 namespace Sdx
 {
@@ -22,7 +24,6 @@ namespace Sdx
     {
 
     }
-
 
     UnlockGUIPtr UnlockGUI::create()
     {

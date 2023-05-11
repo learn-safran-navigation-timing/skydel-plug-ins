@@ -1,3 +1,6 @@
+
+#include "gen/GetEngineLatencyResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetEngineLatencyResult
 ///
-#include "gen/GetEngineLatencyResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const GetEngineLatencyResult::CmdName = "GetEngineLatencyResult";
     const char* const GetEngineLatencyResult::Documentation = "Result of GetEngineLatency.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetEngineLatencyResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetEngineLatencyResult);
 
 
     GetEngineLatencyResult::GetEngineLatencyResult()
       : CommandResult(CmdName)
     {}
+
+    GetEngineLatencyResult::GetEngineLatencyResult(int latency)
+      : CommandResult(CmdName)
+    {
+
+      setLatency(latency);
+    }
 
     GetEngineLatencyResult::GetEngineLatencyResult(CommandBasePtr relatedCommand, int latency)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setLatency(latency);
     }
 
+
+    GetEngineLatencyResultPtr GetEngineLatencyResult::create(int latency)
+    {
+      return std::make_shared<GetEngineLatencyResult>(latency);
+    }
 
     GetEngineLatencyResultPtr GetEngineLatencyResult::create(CommandBasePtr relatedCommand, int latency)
     {

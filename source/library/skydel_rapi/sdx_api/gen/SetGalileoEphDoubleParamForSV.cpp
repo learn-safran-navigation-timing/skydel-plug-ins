@@ -1,3 +1,6 @@
+
+#include "gen/SetGalileoEphDoubleParamForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetGalileoEphDoubleParamForSV
 ///
-#include "gen/SetGalileoEphDoubleParamForSV.h"
 
 namespace Sdx
 {
@@ -30,7 +32,6 @@ namespace Sdx
       setVal(val);
       setDataSetName(dataSetName);
     }
-
 
     SetGalileoEphDoubleParamForSVPtr SetGalileoEphDoubleParamForSV::create(int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName)
     {

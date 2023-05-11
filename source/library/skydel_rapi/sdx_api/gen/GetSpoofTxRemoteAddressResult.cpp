@@ -1,3 +1,6 @@
+
+#include "gen/GetSpoofTxRemoteAddressResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetSpoofTxRemoteAddressResult
 ///
-#include "gen/GetSpoofTxRemoteAddressResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,21 @@ namespace Sdx
     const char* const GetSpoofTxRemoteAddressResult::CmdName = "GetSpoofTxRemoteAddressResult";
     const char* const GetSpoofTxRemoteAddressResult::Documentation = "Result of GetSpoofTxRemoteAddress.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetSpoofTxRemoteAddressResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetSpoofTxRemoteAddressResult);
 
 
     GetSpoofTxRemoteAddressResult::GetSpoofTxRemoteAddressResult()
       : CommandResult(CmdName)
     {}
+
+    GetSpoofTxRemoteAddressResult::GetSpoofTxRemoteAddressResult(const std::string& address, int instanceId, const std::string& id)
+      : CommandResult(CmdName)
+    {
+
+      setAddress(address);
+      setInstanceId(instanceId);
+      setId(id);
+    }
 
     GetSpoofTxRemoteAddressResult::GetSpoofTxRemoteAddressResult(CommandBasePtr relatedCommand, const std::string& address, int instanceId, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -30,6 +41,11 @@ namespace Sdx
       setId(id);
     }
 
+
+    GetSpoofTxRemoteAddressResultPtr GetSpoofTxRemoteAddressResult::create(const std::string& address, int instanceId, const std::string& id)
+    {
+      return std::make_shared<GetSpoofTxRemoteAddressResult>(address, instanceId, id);
+    }
 
     GetSpoofTxRemoteAddressResultPtr GetSpoofTxRemoteAddressResult::create(CommandBasePtr relatedCommand, const std::string& address, int instanceId, const std::string& id)
     {

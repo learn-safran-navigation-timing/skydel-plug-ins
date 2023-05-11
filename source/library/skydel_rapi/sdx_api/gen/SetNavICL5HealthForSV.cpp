@@ -1,3 +1,6 @@
+
+#include "gen/SetNavICL5HealthForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,13 @@
 ///
 /// Definition of SetNavICL5HealthForSV
 ///
-#include "gen/SetNavICL5HealthForSV.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const SetNavICL5HealthForSV::CmdName = "SetNavICL5HealthForSV";
-    const char* const SetNavICL5HealthForSV::Documentation = "Please note the command SetNavICSatelliteL5Health is deprecated since 21.3. You may use SetNavICL5HealthForSV.\n\nSet NavIC L5 health (Health of L5 signal)";
+    const char* const SetNavICL5HealthForSV::Documentation = "Set NavIC L5 health (Health of L5 signal)";
 
     REGISTER_COMMAND_FACTORY(SetNavICL5HealthForSV);
 
@@ -29,7 +31,6 @@ namespace Sdx
       setHealth(health);
       setDataSetName(dataSetName);
     }
-
 
     SetNavICL5HealthForSVPtr SetNavICL5HealthForSV::create(int svId, bool health, const Sdx::optional<std::string>& dataSetName)
     {

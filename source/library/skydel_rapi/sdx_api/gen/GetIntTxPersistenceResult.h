@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include <string>
 
 namespace Sdx
@@ -30,8 +31,12 @@ namespace Sdx
 
       GetIntTxPersistenceResult();
 
+      GetIntTxPersistenceResult(bool persistence, const std::string& id);
+
       GetIntTxPersistenceResult(CommandBasePtr relatedCommand, bool persistence, const std::string& id);
-  
+
+      static GetIntTxPersistenceResultPtr create(bool persistence, const std::string& id);
+
       static GetIntTxPersistenceResultPtr create(CommandBasePtr relatedCommand, bool persistence, const std::string& id);
       static GetIntTxPersistenceResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -47,6 +52,7 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetIntTxPersistenceResult);
   }
 }
 

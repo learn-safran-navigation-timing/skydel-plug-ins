@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include "sdx_optional.h"
 
 namespace Sdx
@@ -31,8 +32,12 @@ namespace Sdx
 
       GetIssueOfDataGalileoResult();
 
+      GetIssueOfDataGalileoResult(int navigation, int almanac, const Sdx::optional<bool>& overrideRinex = {});
+
       GetIssueOfDataGalileoResult(CommandBasePtr relatedCommand, int navigation, int almanac, const Sdx::optional<bool>& overrideRinex = {});
-  
+
+      static GetIssueOfDataGalileoResultPtr create(int navigation, int almanac, const Sdx::optional<bool>& overrideRinex = {});
+
       static GetIssueOfDataGalileoResultPtr create(CommandBasePtr relatedCommand, int navigation, int almanac, const Sdx::optional<bool>& overrideRinex = {});
       static GetIssueOfDataGalileoResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -53,6 +58,7 @@ namespace Sdx
       Sdx::optional<bool> overrideRinex() const;
       void setOverrideRinex(const Sdx::optional<bool>& overrideRinex);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetIssueOfDataGalileoResult);
   }
 }
 

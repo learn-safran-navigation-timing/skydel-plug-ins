@@ -1,3 +1,6 @@
+
+#include "gen/GetSVAntennaGainResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetSVAntennaGainResult
 ///
-#include "gen/GetSVAntennaGainResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,23 @@ namespace Sdx
     const char* const GetSVAntennaGainResult::CmdName = "GetSVAntennaGainResult";
     const char* const GetSVAntennaGainResult::Documentation = "Result of GetSVAntennaGain.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetSVAntennaGainResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetSVAntennaGainResult);
 
 
     GetSVAntennaGainResult::GetSVAntennaGainResult()
       : CommandResult(CmdName)
     {}
+
+    GetSVAntennaGainResult::GetSVAntennaGainResult(const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const Sdx::GNSSBand& band, const std::string& system, const Sdx::optional<std::string>& name)
+      : CommandResult(CmdName)
+    {
+
+      setGain(gain);
+      setType(type);
+      setBand(band);
+      setSystem(system);
+      setName(name);
+    }
 
     GetSVAntennaGainResult::GetSVAntennaGainResult(CommandBasePtr relatedCommand, const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const Sdx::GNSSBand& band, const std::string& system, const Sdx::optional<std::string>& name)
       : CommandResult(CmdName, relatedCommand)
@@ -32,6 +45,11 @@ namespace Sdx
       setName(name);
     }
 
+
+    GetSVAntennaGainResultPtr GetSVAntennaGainResult::create(const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const Sdx::GNSSBand& band, const std::string& system, const Sdx::optional<std::string>& name)
+    {
+      return std::make_shared<GetSVAntennaGainResult>(gain, type, band, system, name);
+    }
 
     GetSVAntennaGainResultPtr GetSVAntennaGainResult::create(CommandBasePtr relatedCommand, const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const Sdx::GNSSBand& band, const std::string& system, const Sdx::optional<std::string>& name)
     {

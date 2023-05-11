@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -31,7 +32,7 @@ namespace Sdx
       EnableSbasLongTermCorrectionsFor();
 
       EnableSbasLongTermCorrectionsFor(const std::string& system, bool isEnabled);
-  
+
       static EnableSbasLongTermCorrectionsForPtr create(const std::string& system, bool isEnabled);
       static EnableSbasLongTermCorrectionsForPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -49,6 +50,7 @@ namespace Sdx
       bool isEnabled() const;
       void setIsEnabled(bool isEnabled);
     };
+    
   }
 }
 

@@ -1,3 +1,6 @@
+
+#include "gen/CopySVAntennaModel.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of CopySVAntennaModel
 ///
-#include "gen/CopySVAntennaModel.h"
 
 namespace Sdx
 {
@@ -29,7 +31,6 @@ namespace Sdx
       setCopyName(copyName);
       setSystem(system);
     }
-
 
     CopySVAntennaModelPtr CopySVAntennaModel::create(const std::string& name, const std::string& copyName, const std::string& system)
     {

@@ -1,3 +1,6 @@
+
+#include "gen/GetActiveDataSet.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetActiveDataSet
 ///
-#include "gen/GetActiveDataSet.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setSystem(system);
     }
-
 
     GetActiveDataSetPtr GetActiveDataSet::create(const std::string& system)
     {

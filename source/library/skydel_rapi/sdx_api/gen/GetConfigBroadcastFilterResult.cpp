@@ -1,3 +1,6 @@
+
+#include "gen/GetConfigBroadcastFilterResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetConfigBroadcastFilterResult
 ///
-#include "gen/GetConfigBroadcastFilterResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const GetConfigBroadcastFilterResult::CmdName = "GetConfigBroadcastFilterResult";
     const char* const GetConfigBroadcastFilterResult::Documentation = "Result of GetConfigBroadcastFilter.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetConfigBroadcastFilterResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetConfigBroadcastFilterResult);
 
 
     GetConfigBroadcastFilterResult::GetConfigBroadcastFilterResult()
       : CommandResult(CmdName)
     {}
+
+    GetConfigBroadcastFilterResult::GetConfigBroadcastFilterResult(const std::vector<Sdx::ConfigFilter>& filter)
+      : CommandResult(CmdName)
+    {
+
+      setFilter(filter);
+    }
 
     GetConfigBroadcastFilterResult::GetConfigBroadcastFilterResult(CommandBasePtr relatedCommand, const std::vector<Sdx::ConfigFilter>& filter)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setFilter(filter);
     }
 
+
+    GetConfigBroadcastFilterResultPtr GetConfigBroadcastFilterResult::create(const std::vector<Sdx::ConfigFilter>& filter)
+    {
+      return std::make_shared<GetConfigBroadcastFilterResult>(filter);
+    }
 
     GetConfigBroadcastFilterResultPtr GetConfigBroadcastFilterResult::create(CommandBasePtr relatedCommand, const std::vector<Sdx::ConfigFilter>& filter)
     {

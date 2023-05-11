@@ -4,6 +4,7 @@
 #include "command_base.h"
 
 
+
 namespace Sdx
 {
   namespace Cmd
@@ -30,7 +31,7 @@ namespace Sdx
       SetSyncServer();
 
       SetSyncServer(int port);
-  
+
       static SetSyncServerPtr create(int port);
       static SetSyncServerPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -43,6 +44,7 @@ namespace Sdx
       int port() const;
       void setPort(int port);
     };
+    
   }
 }
 

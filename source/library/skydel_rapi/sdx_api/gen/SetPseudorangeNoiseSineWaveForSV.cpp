@@ -1,3 +1,6 @@
+
+#include "gen/SetPseudorangeNoiseSineWaveForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetPseudorangeNoiseSineWaveForSV
 ///
-#include "gen/SetPseudorangeNoiseSineWaveForSV.h"
 
 namespace Sdx
 {
@@ -33,7 +35,6 @@ namespace Sdx
       setPeriod(period);
       setOffset(offset);
     }
-
 
     SetPseudorangeNoiseSineWaveForSVPtr SetPseudorangeNoiseSineWaveForSV::create(const std::string& system, int svId, int sineWave, bool enabled, double amplitude, int period, double offset)
     {

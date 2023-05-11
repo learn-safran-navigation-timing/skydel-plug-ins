@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include <string>
 
 namespace Sdx
@@ -30,8 +31,12 @@ namespace Sdx
 
       GetSbasDeltaUdreiOutsideOfRegionsResult();
 
+      GetSbasDeltaUdreiOutsideOfRegionsResult(const std::string& serviceProvider, int deltaUdrei);
+
       GetSbasDeltaUdreiOutsideOfRegionsResult(CommandBasePtr relatedCommand, const std::string& serviceProvider, int deltaUdrei);
-  
+
+      static GetSbasDeltaUdreiOutsideOfRegionsResultPtr create(const std::string& serviceProvider, int deltaUdrei);
+
       static GetSbasDeltaUdreiOutsideOfRegionsResultPtr create(CommandBasePtr relatedCommand, const std::string& serviceProvider, int deltaUdrei);
       static GetSbasDeltaUdreiOutsideOfRegionsResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -47,6 +52,7 @@ namespace Sdx
       int deltaUdrei() const;
       void setDeltaUdrei(int deltaUdrei);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetSbasDeltaUdreiOutsideOfRegionsResult);
   }
 }
 

@@ -1,3 +1,6 @@
+
+#include "gen/GetAllPseudorangeRampForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetAllPseudorangeRampForSV
 ///
-#include "gen/GetAllPseudorangeRampForSV.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setSystem(system);
       setSvId(svId);
     }
-
 
     GetAllPseudorangeRampForSVPtr GetAllPseudorangeRampForSV::create(const std::string& system, int svId)
     {

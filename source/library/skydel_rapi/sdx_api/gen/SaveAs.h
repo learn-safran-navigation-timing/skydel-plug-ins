@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -31,7 +32,7 @@ namespace Sdx
       SaveAs();
 
       SaveAs(const std::string& path, bool overwrite);
-  
+
       static SaveAsPtr create(const std::string& path, bool overwrite);
       static SaveAsPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -49,6 +50,7 @@ namespace Sdx
       bool overwrite() const;
       void setOverwrite(bool overwrite);
     };
+    
   }
 }
 

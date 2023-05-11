@@ -1,3 +1,6 @@
+
+#include "gen/AddDataSet.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of AddDataSet
 ///
-#include "gen/AddDataSet.h"
 
 namespace Sdx
 {
@@ -30,7 +32,6 @@ namespace Sdx
       setRollover(rollover);
       setDataSetName(dataSetName);
     }
-
 
     AddDataSetPtr AddDataSet::create(const std::string& system, const std::string& path, const Sdx::optional<int>& rollover, const Sdx::optional<std::string>& dataSetName)
     {

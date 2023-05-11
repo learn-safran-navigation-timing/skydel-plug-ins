@@ -1,3 +1,6 @@
+
+#include "gen/RemoveMessageModificationForSignal.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,13 @@
 ///
 /// Definition of RemoveMessageModificationForSignal
 ///
-#include "gen/RemoveMessageModificationForSignal.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const RemoveMessageModificationForSignal::CmdName = "RemoveMessageModificationForSignal";
-    const char* const RemoveMessageModificationForSignal::Documentation = "Please note the command RemoveMessageModification is deprecated since 21.3. You may use RemoveMessageModificationForSignal.\n\nRemoves the signal for the message modification.";
+    const char* const RemoveMessageModificationForSignal::Documentation = "Removes the signal for the message modification.";
 
     REGISTER_COMMAND_FACTORY(RemoveMessageModificationForSignal);
 
@@ -28,7 +30,6 @@ namespace Sdx
       setSignal(signal);
       setId(id);
     }
-
 
     RemoveMessageModificationForSignalPtr RemoveMessageModificationForSignal::create(const std::string& signal, const std::string& id)
     {

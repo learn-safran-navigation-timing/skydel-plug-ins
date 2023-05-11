@@ -1,3 +1,6 @@
+
+#include "gen/GetVehicleTrajectoryOrbitResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetVehicleTrajectoryOrbitResult
 ///
-#include "gen/GetVehicleTrajectoryOrbitResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,26 @@ namespace Sdx
     const char* const GetVehicleTrajectoryOrbitResult::CmdName = "GetVehicleTrajectoryOrbitResult";
     const char* const GetVehicleTrajectoryOrbitResult::Documentation = "Result of GetVehicleTrajectoryOrbit.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetVehicleTrajectoryOrbitResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetVehicleTrajectoryOrbitResult);
 
 
     GetVehicleTrajectoryOrbitResult::GetVehicleTrajectoryOrbitResult()
       : CommandResult(CmdName)
     {}
+
+    GetVehicleTrajectoryOrbitResult::GetVehicleTrajectoryOrbitResult(const std::string& type, const Sdx::DateTime& reference, double semiMajorAxis, double inclination, double rightAscension, double eccentricity, double meanAnomaly, double argumentOfPerigee)
+      : CommandResult(CmdName)
+    {
+
+      setType(type);
+      setReference(reference);
+      setSemiMajorAxis(semiMajorAxis);
+      setInclination(inclination);
+      setRightAscension(rightAscension);
+      setEccentricity(eccentricity);
+      setMeanAnomaly(meanAnomaly);
+      setArgumentOfPerigee(argumentOfPerigee);
+    }
 
     GetVehicleTrajectoryOrbitResult::GetVehicleTrajectoryOrbitResult(CommandBasePtr relatedCommand, const std::string& type, const Sdx::DateTime& reference, double semiMajorAxis, double inclination, double rightAscension, double eccentricity, double meanAnomaly, double argumentOfPerigee)
       : CommandResult(CmdName, relatedCommand)
@@ -35,6 +51,11 @@ namespace Sdx
       setArgumentOfPerigee(argumentOfPerigee);
     }
 
+
+    GetVehicleTrajectoryOrbitResultPtr GetVehicleTrajectoryOrbitResult::create(const std::string& type, const Sdx::DateTime& reference, double semiMajorAxis, double inclination, double rightAscension, double eccentricity, double meanAnomaly, double argumentOfPerigee)
+    {
+      return std::make_shared<GetVehicleTrajectoryOrbitResult>(type, reference, semiMajorAxis, inclination, rightAscension, eccentricity, meanAnomaly, argumentOfPerigee);
+    }
 
     GetVehicleTrajectoryOrbitResultPtr GetVehicleTrajectoryOrbitResult::create(CommandBasePtr relatedCommand, const std::string& type, const Sdx::DateTime& reference, double semiMajorAxis, double inclination, double rightAscension, double eccentricity, double meanAnomaly, double argumentOfPerigee)
     {

@@ -1,3 +1,6 @@
+
+#include "gen/SetEngineLatency.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetEngineLatency
 ///
-#include "gen/SetEngineLatency.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setLatency(latency);
     }
-
 
     SetEngineLatencyPtr SetEngineLatency::create(int latency)
     {
@@ -53,7 +54,7 @@ namespace Sdx
 
     int SetEngineLatency::executePermission() const
     {
-      return EXECUTE_IF_IDLE;
+      return EXECUTE_IF_NO_CONFIG | EXECUTE_IF_IDLE;
     }
 
 

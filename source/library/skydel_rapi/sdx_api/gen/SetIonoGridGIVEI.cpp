@@ -1,3 +1,6 @@
+
+#include "gen/SetIonoGridGIVEI.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetIonoGridGIVEI
 ///
-#include "gen/SetIonoGridGIVEI.h"
 
 namespace Sdx
 {
@@ -30,7 +32,6 @@ namespace Sdx
       setGiveI(giveI);
       setServiceProvider(serviceProvider);
     }
-
 
     SetIonoGridGIVEIPtr SetIonoGridGIVEI::create(int band, int point, int giveI, const Sdx::optional<std::string>& serviceProvider)
     {

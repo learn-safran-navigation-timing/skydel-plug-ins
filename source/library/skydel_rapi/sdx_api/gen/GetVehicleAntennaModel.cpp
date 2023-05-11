@@ -1,3 +1,6 @@
+
+#include "gen/GetVehicleAntennaModel.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetVehicleAntennaModel
 ///
-#include "gen/GetVehicleAntennaModel.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setName(name);
     }
-
 
     GetVehicleAntennaModelPtr GetVehicleAntennaModel::create(const std::string& name)
     {

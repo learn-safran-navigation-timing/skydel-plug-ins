@@ -1,3 +1,6 @@
+
+#include "gen/GetPrnOfSVIDResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetPrnOfSVIDResult
 ///
-#include "gen/GetPrnOfSVIDResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,21 @@ namespace Sdx
     const char* const GetPrnOfSVIDResult::CmdName = "GetPrnOfSVIDResult";
     const char* const GetPrnOfSVIDResult::Documentation = "Result of GetPrnOfSVID.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetPrnOfSVIDResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetPrnOfSVIDResult);
 
 
     GetPrnOfSVIDResult::GetPrnOfSVIDResult()
       : CommandResult(CmdName)
     {}
+
+    GetPrnOfSVIDResult::GetPrnOfSVIDResult(const std::string& signal, int svId, int prn)
+      : CommandResult(CmdName)
+    {
+
+      setSignal(signal);
+      setSvId(svId);
+      setPrn(prn);
+    }
 
     GetPrnOfSVIDResult::GetPrnOfSVIDResult(CommandBasePtr relatedCommand, const std::string& signal, int svId, int prn)
       : CommandResult(CmdName, relatedCommand)
@@ -30,6 +41,11 @@ namespace Sdx
       setPrn(prn);
     }
 
+
+    GetPrnOfSVIDResultPtr GetPrnOfSVIDResult::create(const std::string& signal, int svId, int prn)
+    {
+      return std::make_shared<GetPrnOfSVIDResult>(signal, svId, prn);
+    }
 
     GetPrnOfSVIDResultPtr GetPrnOfSVIDResult::create(CommandBasePtr relatedCommand, const std::string& signal, int svId, int prn)
     {

@@ -1,3 +1,6 @@
+
+#include "gen/SetSbasMonitoredSystems.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetSbasMonitoredSystems
 ///
-#include "gen/SetSbasMonitoredSystems.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setSystems(systems);
     }
-
 
     SetSbasMonitoredSystemsPtr SetSbasMonitoredSystems::create(const std::vector<std::string>& systems)
     {

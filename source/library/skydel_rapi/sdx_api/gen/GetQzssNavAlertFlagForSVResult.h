@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include "sdx_optional.h"
 #include <string>
 
@@ -33,8 +34,12 @@ namespace Sdx
 
       GetQzssNavAlertFlagForSVResult();
 
+      GetQzssNavAlertFlagForSVResult(int svId, bool alert, const Sdx::optional<std::string>& dataSetName = {});
+
       GetQzssNavAlertFlagForSVResult(CommandBasePtr relatedCommand, int svId, bool alert, const Sdx::optional<std::string>& dataSetName = {});
-  
+
+      static GetQzssNavAlertFlagForSVResultPtr create(int svId, bool alert, const Sdx::optional<std::string>& dataSetName = {});
+
       static GetQzssNavAlertFlagForSVResultPtr create(CommandBasePtr relatedCommand, int svId, bool alert, const Sdx::optional<std::string>& dataSetName = {});
       static GetQzssNavAlertFlagForSVResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -55,6 +60,7 @@ namespace Sdx
       Sdx::optional<std::string> dataSetName() const;
       void setDataSetName(const Sdx::optional<std::string>& dataSetName);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetQzssNavAlertFlagForSVResult);
   }
 }
 

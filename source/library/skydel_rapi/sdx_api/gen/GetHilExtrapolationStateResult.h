@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include "gen/HilExtrapolationState.h"
 
 namespace Sdx
@@ -30,8 +31,12 @@ namespace Sdx
 
       GetHilExtrapolationStateResult();
 
+      GetHilExtrapolationStateResult(const Sdx::HilExtrapolationState& state, int elapsedTime);
+
       GetHilExtrapolationStateResult(CommandBasePtr relatedCommand, const Sdx::HilExtrapolationState& state, int elapsedTime);
-  
+
+      static GetHilExtrapolationStateResultPtr create(const Sdx::HilExtrapolationState& state, int elapsedTime);
+
       static GetHilExtrapolationStateResultPtr create(CommandBasePtr relatedCommand, const Sdx::HilExtrapolationState& state, int elapsedTime);
       static GetHilExtrapolationStateResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -47,6 +52,7 @@ namespace Sdx
       int elapsedTime() const;
       void setElapsedTime(int elapsedTime);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetHilExtrapolationStateResult);
   }
 }
 

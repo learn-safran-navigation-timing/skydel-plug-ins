@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -30,7 +31,7 @@ namespace Sdx
       GetMessageSequence();
 
       GetMessageSequence(const std::string& signal);
-  
+
       static GetMessageSequencePtr create(const std::string& signal);
       static GetMessageSequencePtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -43,6 +44,7 @@ namespace Sdx
       std::string signal() const;
       void setSignal(const std::string& signal);
     };
+    
   }
 }
 

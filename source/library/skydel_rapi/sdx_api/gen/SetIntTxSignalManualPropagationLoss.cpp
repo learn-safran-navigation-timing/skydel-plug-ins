@@ -1,3 +1,6 @@
+
+#include "gen/SetIntTxSignalManualPropagationLoss.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetIntTxSignalManualPropagationLoss
 ///
-#include "gen/SetIntTxSignalManualPropagationLoss.h"
 
 namespace Sdx
 {
@@ -29,7 +31,6 @@ namespace Sdx
       setTransmitterId(transmitterId);
       setSignalId(signalId);
     }
-
 
     SetIntTxSignalManualPropagationLossPtr SetIntTxSignalManualPropagationLoss::create(double propagationLoss, const std::string& transmitterId, const std::string& signalId)
     {

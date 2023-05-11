@@ -1,3 +1,6 @@
+
+#include "gen/GetWFAntennaOffsetResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetWFAntennaOffsetResult
 ///
-#include "gen/GetWFAntennaOffsetResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,24 @@ namespace Sdx
     const char* const GetWFAntennaOffsetResult::CmdName = "GetWFAntennaOffsetResult";
     const char* const GetWFAntennaOffsetResult::Documentation = "Result of GetWFAntennaOffset.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetWFAntennaOffsetResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetWFAntennaOffsetResult);
 
 
     GetWFAntennaOffsetResult::GetWFAntennaOffsetResult()
       : CommandResult(CmdName)
     {}
+
+    GetWFAntennaOffsetResult::GetWFAntennaOffsetResult(double x, double y, double z, double yaw, double pitch, double roll)
+      : CommandResult(CmdName)
+    {
+
+      setX(x);
+      setY(y);
+      setZ(z);
+      setYaw(yaw);
+      setPitch(pitch);
+      setRoll(roll);
+    }
 
     GetWFAntennaOffsetResult::GetWFAntennaOffsetResult(CommandBasePtr relatedCommand, double x, double y, double z, double yaw, double pitch, double roll)
       : CommandResult(CmdName, relatedCommand)
@@ -33,6 +47,11 @@ namespace Sdx
       setRoll(roll);
     }
 
+
+    GetWFAntennaOffsetResultPtr GetWFAntennaOffsetResult::create(double x, double y, double z, double yaw, double pitch, double roll)
+    {
+      return std::make_shared<GetWFAntennaOffsetResult>(x, y, z, yaw, pitch, roll);
+    }
 
     GetWFAntennaOffsetResultPtr GetWFAntennaOffsetResult::create(CommandBasePtr relatedCommand, double x, double y, double z, double yaw, double pitch, double roll)
     {

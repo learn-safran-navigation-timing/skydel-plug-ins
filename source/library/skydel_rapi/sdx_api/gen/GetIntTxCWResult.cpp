@@ -1,3 +1,6 @@
+
+#include "gen/GetIntTxCWResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetIntTxCWResult
 ///
-#include "gen/GetIntTxCWResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,25 @@ namespace Sdx
     const char* const GetIntTxCWResult::CmdName = "GetIntTxCWResult";
     const char* const GetIntTxCWResult::Documentation = "Result of GetIntTxCW.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetIntTxCWResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetIntTxCWResult);
 
 
     GetIntTxCWResult::GetIntTxCWResult()
       : CommandResult(CmdName)
     {}
+
+    GetIntTxCWResult::GetIntTxCWResult(bool enabled, double centralFreq, double power, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<double>& initialPhaseOffset, const Sdx::optional<int>& group)
+      : CommandResult(CmdName)
+    {
+
+      setEnabled(enabled);
+      setCentralFreq(centralFreq);
+      setPower(power);
+      setTransmitterId(transmitterId);
+      setSignalId(signalId);
+      setInitialPhaseOffset(initialPhaseOffset);
+      setGroup(group);
+    }
 
     GetIntTxCWResult::GetIntTxCWResult(CommandBasePtr relatedCommand, bool enabled, double centralFreq, double power, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<double>& initialPhaseOffset, const Sdx::optional<int>& group)
       : CommandResult(CmdName, relatedCommand)
@@ -34,6 +49,11 @@ namespace Sdx
       setGroup(group);
     }
 
+
+    GetIntTxCWResultPtr GetIntTxCWResult::create(bool enabled, double centralFreq, double power, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<double>& initialPhaseOffset, const Sdx::optional<int>& group)
+    {
+      return std::make_shared<GetIntTxCWResult>(enabled, centralFreq, power, transmitterId, signalId, initialPhaseOffset, group);
+    }
 
     GetIntTxCWResultPtr GetIntTxCWResult::create(CommandBasePtr relatedCommand, bool enabled, double centralFreq, double power, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<double>& initialPhaseOffset, const Sdx::optional<int>& group)
     {

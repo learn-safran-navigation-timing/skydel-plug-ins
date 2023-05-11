@@ -4,6 +4,7 @@
 #include "command_base.h"
 
 
+
 namespace Sdx
 {
   namespace Cmd
@@ -30,7 +31,7 @@ namespace Sdx
       SetSpectrumVisible();
 
       SetSpectrumVisible(bool visible);
-  
+
       static SetSpectrumVisiblePtr create(bool visible);
       static SetSpectrumVisiblePtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -43,6 +44,7 @@ namespace Sdx
       bool visible() const;
       void setVisible(bool visible);
     };
+    
   }
 }
 

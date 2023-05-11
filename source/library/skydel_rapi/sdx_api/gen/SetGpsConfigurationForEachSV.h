@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include "sdx_optional.h"
 #include <string>
 #include <vector>
@@ -33,7 +34,7 @@ namespace Sdx
       SetGpsConfigurationForEachSV();
 
       SetGpsConfigurationForEachSV(const std::vector<int>& svConfigs, const Sdx::optional<std::string>& dataSetName = {});
-  
+
       static SetGpsConfigurationForEachSVPtr create(const std::vector<int>& svConfigs, const Sdx::optional<std::string>& dataSetName = {});
       static SetGpsConfigurationForEachSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -51,6 +52,7 @@ namespace Sdx
       Sdx::optional<std::string> dataSetName() const;
       void setDataSetName(const Sdx::optional<std::string>& dataSetName);
     };
+    
   }
 }
 

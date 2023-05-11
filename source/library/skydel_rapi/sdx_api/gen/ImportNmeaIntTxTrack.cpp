@@ -1,3 +1,6 @@
+
+#include "gen/ImportNmeaIntTxTrack.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of ImportNmeaIntTxTrack
 ///
-#include "gen/ImportNmeaIntTxTrack.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setPath(path);
       setId(id);
     }
-
 
     ImportNmeaIntTxTrackPtr ImportNmeaIntTxTrack::create(const std::string& path, const std::string& id)
     {

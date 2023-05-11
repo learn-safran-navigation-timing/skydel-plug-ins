@@ -1,3 +1,6 @@
+
+#include "gen/GetPerturbationsForAllSat.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetPerturbationsForAllSat
 ///
-#include "gen/GetPerturbationsForAllSat.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setSystem(system);
       setDataSetName(dataSetName);
     }
-
 
     GetPerturbationsForAllSatPtr GetPerturbationsForAllSat::create(const std::string& system, const Sdx::optional<std::string>& dataSetName)
     {

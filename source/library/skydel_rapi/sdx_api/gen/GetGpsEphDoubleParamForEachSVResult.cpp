@@ -1,3 +1,6 @@
+
+#include "gen/GetGpsEphDoubleParamForEachSVResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetGpsEphDoubleParamForEachSVResult
 ///
-#include "gen/GetGpsEphDoubleParamForEachSVResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,21 @@ namespace Sdx
     const char* const GetGpsEphDoubleParamForEachSVResult::CmdName = "GetGpsEphDoubleParamForEachSVResult";
     const char* const GetGpsEphDoubleParamForEachSVResult::Documentation = "Result of GetGpsEphDoubleParamForEachSV.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetGpsEphDoubleParamForEachSVResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetGpsEphDoubleParamForEachSVResult);
 
 
     GetGpsEphDoubleParamForEachSVResult::GetGpsEphDoubleParamForEachSVResult()
       : CommandResult(CmdName)
     {}
+
+    GetGpsEphDoubleParamForEachSVResult::GetGpsEphDoubleParamForEachSVResult(const std::string& paramName, const std::vector<double>& val, const Sdx::optional<std::string>& dataSetName)
+      : CommandResult(CmdName)
+    {
+
+      setParamName(paramName);
+      setVal(val);
+      setDataSetName(dataSetName);
+    }
 
     GetGpsEphDoubleParamForEachSVResult::GetGpsEphDoubleParamForEachSVResult(CommandBasePtr relatedCommand, const std::string& paramName, const std::vector<double>& val, const Sdx::optional<std::string>& dataSetName)
       : CommandResult(CmdName, relatedCommand)
@@ -30,6 +41,11 @@ namespace Sdx
       setDataSetName(dataSetName);
     }
 
+
+    GetGpsEphDoubleParamForEachSVResultPtr GetGpsEphDoubleParamForEachSVResult::create(const std::string& paramName, const std::vector<double>& val, const Sdx::optional<std::string>& dataSetName)
+    {
+      return std::make_shared<GetGpsEphDoubleParamForEachSVResult>(paramName, val, dataSetName);
+    }
 
     GetGpsEphDoubleParamForEachSVResultPtr GetGpsEphDoubleParamForEachSVResult::create(CommandBasePtr relatedCommand, const std::string& paramName, const std::vector<double>& val, const Sdx::optional<std::string>& dataSetName)
     {

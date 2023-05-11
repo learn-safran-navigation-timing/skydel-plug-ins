@@ -1,3 +1,6 @@
+
+#include "gen/SetAlmanacUploadTimeInterval.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetAlmanacUploadTimeInterval
 ///
-#include "gen/SetAlmanacUploadTimeInterval.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setSystem(system);
       setInterval(interval);
     }
-
 
     SetAlmanacUploadTimeIntervalPtr SetAlmanacUploadTimeInterval::create(const std::string& system, int interval)
     {

@@ -1,3 +1,6 @@
+
+#include "gen/GetMessageModificationToBeiDouCNav2Result.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetMessageModificationToBeiDouCNav2Result
 ///
-#include "gen/GetMessageModificationToBeiDouCNav2Result.h"
 
 namespace Sdx
 {
@@ -14,12 +16,27 @@ namespace Sdx
     const char* const GetMessageModificationToBeiDouCNav2Result::CmdName = "GetMessageModificationToBeiDouCNav2Result";
     const char* const GetMessageModificationToBeiDouCNav2Result::Documentation = "Result of GetMessageModificationToBeiDouCNav2.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetMessageModificationToBeiDouCNav2Result);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetMessageModificationToBeiDouCNav2Result);
 
 
     GetMessageModificationToBeiDouCNav2Result::GetMessageModificationToBeiDouCNav2Result()
       : CommandResult(CmdName)
     {}
+
+    GetMessageModificationToBeiDouCNav2Result::GetMessageModificationToBeiDouCNav2Result(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id)
+      : CommandResult(CmdName)
+    {
+
+      setSignalArray(signalArray);
+      setSvId(svId);
+      setStartTime(startTime);
+      setStopTime(stopTime);
+      setMessageType(messageType);
+      setCondition(condition);
+      setUpdateCRC(updateCRC);
+      setBitModifications(bitModifications);
+      setId(id);
+    }
 
     GetMessageModificationToBeiDouCNav2Result::GetMessageModificationToBeiDouCNav2Result(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -36,6 +53,11 @@ namespace Sdx
       setId(id);
     }
 
+
+    GetMessageModificationToBeiDouCNav2ResultPtr GetMessageModificationToBeiDouCNav2Result::create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id)
+    {
+      return std::make_shared<GetMessageModificationToBeiDouCNav2Result>(signalArray, svId, startTime, stopTime, messageType, condition, updateCRC, bitModifications, id);
+    }
 
     GetMessageModificationToBeiDouCNav2ResultPtr GetMessageModificationToBeiDouCNav2Result::create(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id)
     {

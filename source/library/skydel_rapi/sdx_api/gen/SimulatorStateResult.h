@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include "gen/SimulatorState.h"
 #include "gen/SimulatorSubState.h"
 #include <string>
@@ -50,8 +51,12 @@ namespace Sdx
 
       SimulatorStateResult();
 
+      SimulatorStateResult(const std::string& state, const std::string& error, const Sdx::SimulatorState& stateId, const Sdx::SimulatorSubState& subStateId);
+
       SimulatorStateResult(CommandBasePtr relatedCommand, const std::string& state, const std::string& error, const Sdx::SimulatorState& stateId, const Sdx::SimulatorSubState& subStateId);
-  
+
+      static SimulatorStateResultPtr create(const std::string& state, const std::string& error, const Sdx::SimulatorState& stateId, const Sdx::SimulatorSubState& subStateId);
+
       static SimulatorStateResultPtr create(CommandBasePtr relatedCommand, const std::string& state, const std::string& error, const Sdx::SimulatorState& stateId, const Sdx::SimulatorSubState& subStateId);
       static SimulatorStateResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -77,6 +82,7 @@ namespace Sdx
       Sdx::SimulatorSubState subStateId() const;
       void setSubStateId(const Sdx::SimulatorSubState& subStateId);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(SimulatorStateResult);
   }
 }
 

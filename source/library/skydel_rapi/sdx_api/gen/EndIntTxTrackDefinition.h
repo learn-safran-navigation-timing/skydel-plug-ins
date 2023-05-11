@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -33,7 +34,7 @@ namespace Sdx
       EndIntTxTrackDefinition();
 
       EndIntTxTrackDefinition(const std::string& id);
-  
+
       static EndIntTxTrackDefinitionPtr create(const std::string& id);
       static EndIntTxTrackDefinitionPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -46,6 +47,7 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
+    
   }
 }
 

@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -32,7 +33,7 @@ namespace Sdx
       EnableLosForSV();
 
       EnableLosForSV(const std::string& system, int svId, bool enabled);
-  
+
       static EnableLosForSVPtr create(const std::string& system, int svId, bool enabled);
       static EnableLosForSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -55,6 +56,7 @@ namespace Sdx
       bool enabled() const;
       void setEnabled(bool enabled);
     };
+    
   }
 }
 

@@ -4,6 +4,7 @@
 #include "command_base.h"
 
 
+
 namespace Sdx
 {
   namespace Cmd
@@ -30,7 +31,7 @@ namespace Sdx
       EnableElevationMaskAbove();
 
       EnableElevationMaskAbove(bool enabled);
-  
+
       static EnableElevationMaskAbovePtr create(bool enabled);
       static EnableElevationMaskAbovePtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -43,6 +44,7 @@ namespace Sdx
       bool enabled() const;
       void setEnabled(bool enabled);
     };
+    
   }
 }
 

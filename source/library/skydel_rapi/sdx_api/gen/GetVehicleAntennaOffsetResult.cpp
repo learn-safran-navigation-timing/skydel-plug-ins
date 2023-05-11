@@ -1,3 +1,6 @@
+
+#include "gen/GetVehicleAntennaOffsetResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetVehicleAntennaOffsetResult
 ///
-#include "gen/GetVehicleAntennaOffsetResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,25 @@ namespace Sdx
     const char* const GetVehicleAntennaOffsetResult::CmdName = "GetVehicleAntennaOffsetResult";
     const char* const GetVehicleAntennaOffsetResult::Documentation = "Result of GetVehicleAntennaOffset.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetVehicleAntennaOffsetResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetVehicleAntennaOffsetResult);
 
 
     GetVehicleAntennaOffsetResult::GetVehicleAntennaOffsetResult()
       : CommandResult(CmdName)
     {}
+
+    GetVehicleAntennaOffsetResult::GetVehicleAntennaOffsetResult(double x, double y, double z, double yaw, double pitch, double roll, const Sdx::optional<std::string>& name)
+      : CommandResult(CmdName)
+    {
+
+      setX(x);
+      setY(y);
+      setZ(z);
+      setYaw(yaw);
+      setPitch(pitch);
+      setRoll(roll);
+      setName(name);
+    }
 
     GetVehicleAntennaOffsetResult::GetVehicleAntennaOffsetResult(CommandBasePtr relatedCommand, double x, double y, double z, double yaw, double pitch, double roll, const Sdx::optional<std::string>& name)
       : CommandResult(CmdName, relatedCommand)
@@ -34,6 +49,11 @@ namespace Sdx
       setName(name);
     }
 
+
+    GetVehicleAntennaOffsetResultPtr GetVehicleAntennaOffsetResult::create(double x, double y, double z, double yaw, double pitch, double roll, const Sdx::optional<std::string>& name)
+    {
+      return std::make_shared<GetVehicleAntennaOffsetResult>(x, y, z, yaw, pitch, roll, name);
+    }
 
     GetVehicleAntennaOffsetResultPtr GetVehicleAntennaOffsetResult::create(CommandBasePtr relatedCommand, double x, double y, double z, double yaw, double pitch, double roll, const Sdx::optional<std::string>& name)
     {

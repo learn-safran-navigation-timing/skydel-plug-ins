@@ -1,3 +1,6 @@
+
+#include "gen/IsPYCodeEnabledForEachSVResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of IsPYCodeEnabledForEachSVResult
 ///
-#include "gen/IsPYCodeEnabledForEachSVResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,20 @@ namespace Sdx
     const char* const IsPYCodeEnabledForEachSVResult::CmdName = "IsPYCodeEnabledForEachSVResult";
     const char* const IsPYCodeEnabledForEachSVResult::Documentation = "Result of IsPYCodeEnabledForEachSV.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(IsPYCodeEnabledForEachSVResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsPYCodeEnabledForEachSVResult);
 
 
     IsPYCodeEnabledForEachSVResult::IsPYCodeEnabledForEachSVResult()
       : CommandResult(CmdName)
     {}
+
+    IsPYCodeEnabledForEachSVResult::IsPYCodeEnabledForEachSVResult(const std::string& signal, const std::vector<bool>& enabled)
+      : CommandResult(CmdName)
+    {
+
+      setSignal(signal);
+      setEnabled(enabled);
+    }
 
     IsPYCodeEnabledForEachSVResult::IsPYCodeEnabledForEachSVResult(CommandBasePtr relatedCommand, const std::string& signal, const std::vector<bool>& enabled)
       : CommandResult(CmdName, relatedCommand)
@@ -29,6 +39,11 @@ namespace Sdx
       setEnabled(enabled);
     }
 
+
+    IsPYCodeEnabledForEachSVResultPtr IsPYCodeEnabledForEachSVResult::create(const std::string& signal, const std::vector<bool>& enabled)
+    {
+      return std::make_shared<IsPYCodeEnabledForEachSVResult>(signal, enabled);
+    }
 
     IsPYCodeEnabledForEachSVResultPtr IsPYCodeEnabledForEachSVResult::create(CommandBasePtr relatedCommand, const std::string& signal, const std::vector<bool>& enabled)
     {

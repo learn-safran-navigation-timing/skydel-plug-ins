@@ -1,3 +1,6 @@
+
+#include "gen/BeginTrackDefinition.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of BeginTrackDefinition
 ///
-#include "gen/BeginTrackDefinition.h"
 
 namespace Sdx
 {
@@ -22,7 +24,6 @@ namespace Sdx
     {
 
     }
-
 
     BeginTrackDefinitionPtr BeginTrackDefinition::create()
     {

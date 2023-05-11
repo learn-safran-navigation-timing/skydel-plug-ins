@@ -1,3 +1,6 @@
+
+#include "gen/GetPowerForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,15 @@
 ///
 /// Definition of GetPowerForSV
 ///
-#include "gen/GetPowerForSV.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const GetPowerForSV::CmdName = "GetPowerForSV";
-    const char* const GetPowerForSV::Documentation = "Get the power offset for specified satellite SV ID.";
+    const char* const GetPowerForSV::Documentation = "Please note the command GetPowerForSV is deprecated since 22.7. You may use GetAllPowerForSV.\n\nGet the power offset for specified satellite SV ID.";
+
+    const char* const GetPowerForSV::Deprecated = "Please note the command GetPowerForSV is deprecated since 22.7. You may use GetAllPowerForSV.";
 
     REGISTER_COMMAND_FACTORY(GetPowerForSV);
 
@@ -28,7 +32,6 @@ namespace Sdx
       setSystem(system);
       setSvId(svId);
     }
-
 
     GetPowerForSVPtr GetPowerForSV::create(const std::string& system, int svId)
     {
@@ -51,6 +54,8 @@ namespace Sdx
     }
 
     std::string GetPowerForSV::documentation() const { return Documentation; }
+
+    Sdx::optional<std::string> GetPowerForSV::deprecated() const { return Sdx::optional<std::string>{Deprecated}; }
 
 
     int GetPowerForSV::executePermission() const

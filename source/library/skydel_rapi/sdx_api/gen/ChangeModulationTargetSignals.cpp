@@ -1,3 +1,6 @@
+
+#include "gen/ChangeModulationTargetSignals.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of ChangeModulationTargetSignals
 ///
-#include "gen/ChangeModulationTargetSignals.h"
 
 namespace Sdx
 {
@@ -35,7 +37,6 @@ namespace Sdx
       setId(id);
       setCentralFrequency(centralFrequency);
     }
-
 
     ChangeModulationTargetSignalsPtr ChangeModulationTargetSignals::create(int output, int minRate, int maxRate, const std::string& band, const std::string& signal, int gain, bool gaussianNoise, const std::string& id, const Sdx::optional<double>& centralFrequency)
     {

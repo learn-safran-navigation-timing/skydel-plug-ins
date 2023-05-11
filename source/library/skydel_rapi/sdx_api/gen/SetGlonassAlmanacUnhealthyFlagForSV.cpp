@@ -1,3 +1,6 @@
+
+#include "gen/SetGlonassAlmanacUnhealthyFlagForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetGlonassAlmanacUnhealthyFlagForSV
 ///
-#include "gen/SetGlonassAlmanacUnhealthyFlagForSV.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setSvId(svId);
       setHealth(health);
     }
-
 
     SetGlonassAlmanacUnhealthyFlagForSVPtr SetGlonassAlmanacUnhealthyFlagForSV::create(int svId, bool health)
     {

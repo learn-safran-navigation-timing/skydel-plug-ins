@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -31,7 +32,7 @@ namespace Sdx
       ClearSpoofTxGpuIdx();
 
       ClearSpoofTxGpuIdx(int signalId, const std::string& id);
-  
+
       static ClearSpoofTxGpuIdxPtr create(int signalId, const std::string& id);
       static ClearSpoofTxGpuIdxPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -49,6 +50,7 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
+    
   }
 }
 

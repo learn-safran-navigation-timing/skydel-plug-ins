@@ -1,3 +1,6 @@
+
+#include "gen/IsRFOutputEnabledForEachSVResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of IsRFOutputEnabledForEachSVResult
 ///
-#include "gen/IsRFOutputEnabledForEachSVResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,20 @@ namespace Sdx
     const char* const IsRFOutputEnabledForEachSVResult::CmdName = "IsRFOutputEnabledForEachSVResult";
     const char* const IsRFOutputEnabledForEachSVResult::Documentation = "Result of IsRFOutputEnabledForEachSV.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(IsRFOutputEnabledForEachSVResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsRFOutputEnabledForEachSVResult);
 
 
     IsRFOutputEnabledForEachSVResult::IsRFOutputEnabledForEachSVResult()
       : CommandResult(CmdName)
     {}
+
+    IsRFOutputEnabledForEachSVResult::IsRFOutputEnabledForEachSVResult(const std::string& system, const std::vector<bool>& enabled)
+      : CommandResult(CmdName)
+    {
+
+      setSystem(system);
+      setEnabled(enabled);
+    }
 
     IsRFOutputEnabledForEachSVResult::IsRFOutputEnabledForEachSVResult(CommandBasePtr relatedCommand, const std::string& system, const std::vector<bool>& enabled)
       : CommandResult(CmdName, relatedCommand)
@@ -29,6 +39,11 @@ namespace Sdx
       setEnabled(enabled);
     }
 
+
+    IsRFOutputEnabledForEachSVResultPtr IsRFOutputEnabledForEachSVResult::create(const std::string& system, const std::vector<bool>& enabled)
+    {
+      return std::make_shared<IsRFOutputEnabledForEachSVResult>(system, enabled);
+    }
 
     IsRFOutputEnabledForEachSVResultPtr IsRFOutputEnabledForEachSVResult::create(CommandBasePtr relatedCommand, const std::string& system, const std::vector<bool>& enabled)
     {

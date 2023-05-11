@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include "sdx_optional.h"
 #include <string>
 
@@ -34,7 +35,7 @@ namespace Sdx
       ImportConstellationParameters();
 
       ImportConstellationParameters(const std::string& system, const std::string& path, const Sdx::optional<int>& rollover = {}, const Sdx::optional<std::string>& dataSetName = {});
-  
+
       static ImportConstellationParametersPtr create(const std::string& system, const std::string& path, const Sdx::optional<int>& rollover = {}, const Sdx::optional<std::string>& dataSetName = {});
       static ImportConstellationParametersPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -62,6 +63,7 @@ namespace Sdx
       Sdx::optional<std::string> dataSetName() const;
       void setDataSetName(const Sdx::optional<std::string>& dataSetName);
     };
+    
   }
 }
 

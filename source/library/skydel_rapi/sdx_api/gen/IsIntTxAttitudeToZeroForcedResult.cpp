@@ -1,3 +1,6 @@
+
+#include "gen/IsIntTxAttitudeToZeroForcedResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of IsIntTxAttitudeToZeroForcedResult
 ///
-#include "gen/IsIntTxAttitudeToZeroForcedResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,20 @@ namespace Sdx
     const char* const IsIntTxAttitudeToZeroForcedResult::CmdName = "IsIntTxAttitudeToZeroForcedResult";
     const char* const IsIntTxAttitudeToZeroForcedResult::Documentation = "Result of IsIntTxAttitudeToZeroForced.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(IsIntTxAttitudeToZeroForcedResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsIntTxAttitudeToZeroForcedResult);
 
 
     IsIntTxAttitudeToZeroForcedResult::IsIntTxAttitudeToZeroForcedResult()
       : CommandResult(CmdName)
     {}
+
+    IsIntTxAttitudeToZeroForcedResult::IsIntTxAttitudeToZeroForcedResult(bool enabled, const std::string& id)
+      : CommandResult(CmdName)
+    {
+
+      setEnabled(enabled);
+      setId(id);
+    }
 
     IsIntTxAttitudeToZeroForcedResult::IsIntTxAttitudeToZeroForcedResult(CommandBasePtr relatedCommand, bool enabled, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -29,6 +39,11 @@ namespace Sdx
       setId(id);
     }
 
+
+    IsIntTxAttitudeToZeroForcedResultPtr IsIntTxAttitudeToZeroForcedResult::create(bool enabled, const std::string& id)
+    {
+      return std::make_shared<IsIntTxAttitudeToZeroForcedResult>(enabled, id);
+    }
 
     IsIntTxAttitudeToZeroForcedResultPtr IsIntTxAttitudeToZeroForcedResult::create(CommandBasePtr relatedCommand, bool enabled, const std::string& id)
     {

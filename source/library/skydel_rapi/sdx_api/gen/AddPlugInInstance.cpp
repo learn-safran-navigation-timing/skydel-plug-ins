@@ -1,3 +1,6 @@
+
+#include "gen/AddPlugInInstance.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,13 @@
 ///
 /// Definition of AddPlugInInstance
 ///
-#include "gen/AddPlugInInstance.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const AddPlugInInstance::CmdName = "AddPlugInInstance";
-    const char* const AddPlugInInstance::Documentation = "Set Add a plug-in instance of specified type.";
+    const char* const AddPlugInInstance::Documentation = "Add a plug-in instance of specified type.";
 
     REGISTER_COMMAND_FACTORY(AddPlugInInstance);
 
@@ -28,7 +30,6 @@ namespace Sdx
       setName(name);
       setType(type);
     }
-
 
     AddPlugInInstancePtr AddPlugInInstance::create(const std::string& name, const std::string& type)
     {

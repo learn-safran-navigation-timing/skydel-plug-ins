@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -35,7 +36,7 @@ namespace Sdx
       SetQzssL1SAugmentation();
 
       SetQzssL1SAugmentation(const std::string& system, int prn, bool augmentIOD, bool augmentPRC, double prc, const std::string& id);
-  
+
       static SetQzssL1SAugmentationPtr create(const std::string& system, int prn, bool augmentIOD, bool augmentPRC, double prc, const std::string& id);
       static SetQzssL1SAugmentationPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -73,6 +74,7 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
+    
   }
 }
 

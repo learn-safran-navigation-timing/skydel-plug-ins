@@ -1,3 +1,6 @@
+
+#include "gen/SetGpsEphDoubleParamForEachSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,13 @@
 ///
 /// Definition of SetGpsEphDoubleParamForEachSV
 ///
-#include "gen/SetGpsEphDoubleParamForEachSV.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const SetGpsEphDoubleParamForEachSV::CmdName = "SetGpsEphDoubleParamForEachSV";
-    const char* const SetGpsEphDoubleParamForEachSV::Documentation = "Please note the command SetGpsEphemerisDoubleParams is deprecated since 21.3. You may use SetGpsEphDoubleParamForEachSV.\n\nSet GPS ephemeris parameter value for all satellites";
+    const char* const SetGpsEphDoubleParamForEachSV::Documentation = "Set GPS ephemeris parameter value for all satellites";
 
     REGISTER_COMMAND_FACTORY(SetGpsEphDoubleParamForEachSV);
 
@@ -29,7 +31,6 @@ namespace Sdx
       setVal(val);
       setDataSetName(dataSetName);
     }
-
 
     SetGpsEphDoubleParamForEachSVPtr SetGpsEphDoubleParamForEachSV::create(const std::string& paramName, const std::vector<double>& val, const Sdx::optional<std::string>& dataSetName)
     {

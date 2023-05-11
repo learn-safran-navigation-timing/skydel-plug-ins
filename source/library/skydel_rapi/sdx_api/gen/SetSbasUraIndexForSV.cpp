@@ -1,3 +1,6 @@
+
+#include "gen/SetSbasUraIndexForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetSbasUraIndexForSV
 ///
-#include "gen/SetSbasUraIndexForSV.h"
 
 namespace Sdx
 {
@@ -29,7 +31,6 @@ namespace Sdx
       setUrai(urai);
       setDataSetName(dataSetName);
     }
-
 
     SetSbasUraIndexForSVPtr SetSbasUraIndexForSV::create(int svId, int urai, const Sdx::optional<std::string>& dataSetName)
     {

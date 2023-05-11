@@ -1,3 +1,6 @@
+
+#include "gen/GetAllMultipathForResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetAllMultipathForResult
 ///
-#include "gen/GetAllMultipathForResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const GetAllMultipathForResult::CmdName = "GetAllMultipathForResult";
     const char* const GetAllMultipathForResult::Documentation = "Result of GetAllMultipathFor(Signal|SV|System) commands.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetAllMultipathForResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetAllMultipathForResult);
 
 
     GetAllMultipathForResult::GetAllMultipathForResult()
       : CommandResult(CmdName)
     {}
+
+    GetAllMultipathForResult::GetAllMultipathForResult(const std::vector<std::string>& ids)
+      : CommandResult(CmdName)
+    {
+
+      setIds(ids);
+    }
 
     GetAllMultipathForResult::GetAllMultipathForResult(CommandBasePtr relatedCommand, const std::vector<std::string>& ids)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setIds(ids);
     }
 
+
+    GetAllMultipathForResultPtr GetAllMultipathForResult::create(const std::vector<std::string>& ids)
+    {
+      return std::make_shared<GetAllMultipathForResult>(ids);
+    }
 
     GetAllMultipathForResultPtr GetAllMultipathForResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& ids)
     {

@@ -1,3 +1,6 @@
+
+#include "gen/GetPowerOffset.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,13 @@
 ///
 /// Definition of GetPowerOffset
 ///
-#include "gen/GetPowerOffset.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const GetPowerOffset::CmdName = "GetPowerOffset";
-    const char* const GetPowerOffset::Documentation = "Get power offset default value for the signal given in argument";
+    const char* const GetPowerOffset::Documentation = "Please note the command GetPowerOffset is deprecated since 21.7. You may use GetSignalPowerOffset.\n\nGet power offset default value for the signal given in argument";
 
     REGISTER_COMMAND_FACTORY(GetPowerOffset);
 
@@ -27,7 +29,6 @@ namespace Sdx
 
       setSignal(signal);
     }
-
 
     GetPowerOffsetPtr GetPowerOffset::create(const std::string& signal)
     {

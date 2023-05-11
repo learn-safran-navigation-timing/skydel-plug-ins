@@ -1,3 +1,6 @@
+
+#include "gen/GetCnav2PagesEnabledResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetCnav2PagesEnabledResult
 ///
-#include "gen/GetCnav2PagesEnabledResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const GetCnav2PagesEnabledResult::CmdName = "GetCnav2PagesEnabledResult";
     const char* const GetCnav2PagesEnabledResult::Documentation = "Result of GetCnav2PagesEnabled.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetCnav2PagesEnabledResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetCnav2PagesEnabledResult);
 
 
     GetCnav2PagesEnabledResult::GetCnav2PagesEnabledResult()
       : CommandResult(CmdName)
     {}
+
+    GetCnav2PagesEnabledResult::GetCnav2PagesEnabledResult(const std::vector<int>& messages)
+      : CommandResult(CmdName)
+    {
+
+      setMessages(messages);
+    }
 
     GetCnav2PagesEnabledResult::GetCnav2PagesEnabledResult(CommandBasePtr relatedCommand, const std::vector<int>& messages)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setMessages(messages);
     }
 
+
+    GetCnav2PagesEnabledResultPtr GetCnav2PagesEnabledResult::create(const std::vector<int>& messages)
+    {
+      return std::make_shared<GetCnav2PagesEnabledResult>(messages);
+    }
 
     GetCnav2PagesEnabledResultPtr GetCnav2PagesEnabledResult::create(CommandBasePtr relatedCommand, const std::vector<int>& messages)
     {

@@ -1,3 +1,6 @@
+
+#include "gen/SetGalileoEphDoubleParamForEachSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,13 @@
 ///
 /// Definition of SetGalileoEphDoubleParamForEachSV
 ///
-#include "gen/SetGalileoEphDoubleParamForEachSV.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const SetGalileoEphDoubleParamForEachSV::CmdName = "SetGalileoEphDoubleParamForEachSV";
-    const char* const SetGalileoEphDoubleParamForEachSV::Documentation = "Please note the command SetGalileoEphemerisDoubleParams is deprecated since 21.3. You may use SetGalileoEphDoubleParamForEachSV.\n\nSet Galileo ephemeris parameter value for all satellites";
+    const char* const SetGalileoEphDoubleParamForEachSV::Documentation = "Set Galileo ephemeris parameter value for all satellites";
 
     REGISTER_COMMAND_FACTORY(SetGalileoEphDoubleParamForEachSV);
 
@@ -29,7 +31,6 @@ namespace Sdx
       setVal(val);
       setDataSetName(dataSetName);
     }
-
 
     SetGalileoEphDoubleParamForEachSVPtr SetGalileoEphDoubleParamForEachSV::create(const std::string& paramName, const std::vector<double>& val, const Sdx::optional<std::string>& dataSetName)
     {

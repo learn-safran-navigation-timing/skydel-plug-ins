@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include "sdx_optional.h"
 
 namespace Sdx
@@ -31,7 +32,7 @@ namespace Sdx
       SetIssueOfDataNavIC();
 
       SetIssueOfDataNavIC(int ephemerisAndClock, const Sdx::optional<bool>& overrideRinex = {});
-  
+
       static SetIssueOfDataNavICPtr create(int ephemerisAndClock, const Sdx::optional<bool>& overrideRinex = {});
       static SetIssueOfDataNavICPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -49,6 +50,7 @@ namespace Sdx
       Sdx::optional<bool> overrideRinex() const;
       void setOverrideRinex(const Sdx::optional<bool>& overrideRinex);
     };
+    
   }
 }
 

@@ -1,3 +1,6 @@
+
+#include "gen/AddEmptySVAntennaModel.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of AddEmptySVAntennaModel
 ///
-#include "gen/AddEmptySVAntennaModel.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setName(name);
       setSystem(system);
     }
-
 
     AddEmptySVAntennaModelPtr AddEmptySVAntennaModel::create(const std::string& name, const std::string& system)
     {

@@ -1,3 +1,6 @@
+
+#include "gen/ClearSpoofTxGpuIdx.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of ClearSpoofTxGpuIdx
 ///
-#include "gen/ClearSpoofTxGpuIdx.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setSignalId(signalId);
       setId(id);
     }
-
 
     ClearSpoofTxGpuIdxPtr ClearSpoofTxGpuIdx::create(int signalId, const std::string& id)
     {

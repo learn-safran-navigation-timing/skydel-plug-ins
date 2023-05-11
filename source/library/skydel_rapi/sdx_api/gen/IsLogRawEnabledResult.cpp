@@ -1,3 +1,6 @@
+
+#include "gen/IsLogRawEnabledResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of IsLogRawEnabledResult
 ///
-#include "gen/IsLogRawEnabledResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const IsLogRawEnabledResult::CmdName = "IsLogRawEnabledResult";
     const char* const IsLogRawEnabledResult::Documentation = "Result of IsLogRawEnabled.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(IsLogRawEnabledResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsLogRawEnabledResult);
 
 
     IsLogRawEnabledResult::IsLogRawEnabledResult()
       : CommandResult(CmdName)
     {}
+
+    IsLogRawEnabledResult::IsLogRawEnabledResult(bool enabled)
+      : CommandResult(CmdName)
+    {
+
+      setEnabled(enabled);
+    }
 
     IsLogRawEnabledResult::IsLogRawEnabledResult(CommandBasePtr relatedCommand, bool enabled)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setEnabled(enabled);
     }
 
+
+    IsLogRawEnabledResultPtr IsLogRawEnabledResult::create(bool enabled)
+    {
+      return std::make_shared<IsLogRawEnabledResult>(enabled);
+    }
 
     IsLogRawEnabledResultPtr IsLogRawEnabledResult::create(CommandBasePtr relatedCommand, bool enabled)
     {

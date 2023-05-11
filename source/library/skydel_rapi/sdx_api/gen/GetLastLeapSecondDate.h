@@ -4,6 +4,7 @@
 #include "command_base.h"
 
 
+
 namespace Sdx
 {
   namespace Cmd
@@ -26,7 +27,7 @@ namespace Sdx
 
 
       GetLastLeapSecondDate();
-  
+
       static GetLastLeapSecondDatePtr create();
       static GetLastLeapSecondDatePtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -34,6 +35,7 @@ namespace Sdx
 
       virtual int executePermission() const override;
     };
+    
   }
 }
 

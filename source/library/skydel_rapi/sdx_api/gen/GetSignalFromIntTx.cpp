@@ -1,3 +1,6 @@
+
+#include "gen/GetSignalFromIntTx.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetSignalFromIntTx
 ///
-#include "gen/GetSignalFromIntTx.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setIdTransmitter(idTransmitter);
       setSignalType(signalType);
     }
-
 
     GetSignalFromIntTxPtr GetSignalFromIntTx::create(const std::string& idTransmitter, const std::string& signalType)
     {

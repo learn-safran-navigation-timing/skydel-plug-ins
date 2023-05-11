@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <vector>
 
 namespace Sdx
@@ -30,7 +31,7 @@ namespace Sdx
       EnableSbasMessages();
 
       EnableSbasMessages(const std::vector<int>& messages);
-  
+
       static EnableSbasMessagesPtr create(const std::vector<int>& messages);
       static EnableSbasMessagesPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -43,6 +44,7 @@ namespace Sdx
       std::vector<int> messages() const;
       void setMessages(const std::vector<int>& messages);
     };
+    
   }
 }
 

@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -29,8 +30,12 @@ namespace Sdx
 
       EndRouteDefinitionResult();
 
+      EndRouteDefinitionResult(int count);
+
       EndRouteDefinitionResult(CommandBasePtr relatedCommand, int count);
-  
+
+      static EndRouteDefinitionResultPtr create(int count);
+
       static EndRouteDefinitionResultPtr create(CommandBasePtr relatedCommand, int count);
       static EndRouteDefinitionResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -41,6 +46,7 @@ namespace Sdx
       int count() const;
       void setCount(int count);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(EndRouteDefinitionResult);
   }
 }
 

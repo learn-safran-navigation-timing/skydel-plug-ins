@@ -1,3 +1,6 @@
+
+#include "gen/SetIssueOfData.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetIssueOfData
 ///
-#include "gen/SetIssueOfData.h"
 
 namespace Sdx
 {
@@ -29,7 +31,6 @@ namespace Sdx
       setEphemeris(ephemeris);
       setOverrideRinex(overrideRinex);
     }
-
 
     SetIssueOfDataPtr SetIssueOfData::create(int clock, int ephemeris, const Sdx::optional<bool>& overrideRinex)
     {

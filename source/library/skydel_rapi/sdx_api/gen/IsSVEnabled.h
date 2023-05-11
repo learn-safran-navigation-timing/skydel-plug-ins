@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -31,7 +32,7 @@ namespace Sdx
       IsSVEnabled();
 
       IsSVEnabled(const std::string& system, int svId);
-  
+
       static IsSVEnabledPtr create(const std::string& system, int svId);
       static IsSVEnabledPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -49,6 +50,7 @@ namespace Sdx
       int svId() const;
       void setSvId(int svId);
     };
+    
   }
 }
 

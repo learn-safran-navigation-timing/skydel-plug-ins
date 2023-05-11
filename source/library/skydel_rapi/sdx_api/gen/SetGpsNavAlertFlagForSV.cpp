@@ -1,3 +1,6 @@
+
+#include "gen/SetGpsNavAlertFlagForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetGpsNavAlertFlagForSV
 ///
-#include "gen/SetGpsNavAlertFlagForSV.h"
 
 namespace Sdx
 {
@@ -29,7 +31,6 @@ namespace Sdx
       setAlert(alert);
       setDataSetName(dataSetName);
     }
-
 
     SetGpsNavAlertFlagForSVPtr SetGpsNavAlertFlagForSV::create(int svId, bool alert, const Sdx::optional<std::string>& dataSetName)
     {

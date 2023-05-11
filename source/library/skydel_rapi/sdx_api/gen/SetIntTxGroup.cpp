@@ -1,3 +1,6 @@
+
+#include "gen/SetIntTxGroup.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetIntTxGroup
 ///
-#include "gen/SetIntTxGroup.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setGroup(group);
       setId(id);
     }
-
 
     SetIntTxGroupPtr SetIntTxGroup::create(int group, const std::string& id)
     {

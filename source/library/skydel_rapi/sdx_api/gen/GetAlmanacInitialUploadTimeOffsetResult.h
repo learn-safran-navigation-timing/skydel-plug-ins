@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include <string>
 
 namespace Sdx
@@ -30,8 +31,12 @@ namespace Sdx
 
       GetAlmanacInitialUploadTimeOffsetResult();
 
+      GetAlmanacInitialUploadTimeOffsetResult(const std::string& system, int offset);
+
       GetAlmanacInitialUploadTimeOffsetResult(CommandBasePtr relatedCommand, const std::string& system, int offset);
-  
+
+      static GetAlmanacInitialUploadTimeOffsetResultPtr create(const std::string& system, int offset);
+
       static GetAlmanacInitialUploadTimeOffsetResultPtr create(CommandBasePtr relatedCommand, const std::string& system, int offset);
       static GetAlmanacInitialUploadTimeOffsetResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -47,6 +52,7 @@ namespace Sdx
       int offset() const;
       void setOffset(int offset);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetAlmanacInitialUploadTimeOffsetResult);
   }
 }
 

@@ -1,3 +1,6 @@
+
+#include "gen/GetLeapSecondFuture.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetLeapSecondFuture
 ///
-#include "gen/GetLeapSecondFuture.h"
 
 namespace Sdx
 {
@@ -22,7 +24,6 @@ namespace Sdx
     {
 
     }
-
 
     GetLeapSecondFuturePtr GetLeapSecondFuture::create()
     {

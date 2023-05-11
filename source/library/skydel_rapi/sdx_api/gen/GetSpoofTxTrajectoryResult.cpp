@@ -1,3 +1,6 @@
+
+#include "gen/GetSpoofTxTrajectoryResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetSpoofTxTrajectoryResult
 ///
-#include "gen/GetSpoofTxTrajectoryResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,20 @@ namespace Sdx
     const char* const GetSpoofTxTrajectoryResult::CmdName = "GetSpoofTxTrajectoryResult";
     const char* const GetSpoofTxTrajectoryResult::Documentation = "Result of GetSpoofTxTrajectory.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetSpoofTxTrajectoryResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetSpoofTxTrajectoryResult);
 
 
     GetSpoofTxTrajectoryResult::GetSpoofTxTrajectoryResult()
       : CommandResult(CmdName)
     {}
+
+    GetSpoofTxTrajectoryResult::GetSpoofTxTrajectoryResult(const std::string& trajectoryType, const std::string& id)
+      : CommandResult(CmdName)
+    {
+
+      setTrajectoryType(trajectoryType);
+      setId(id);
+    }
 
     GetSpoofTxTrajectoryResult::GetSpoofTxTrajectoryResult(CommandBasePtr relatedCommand, const std::string& trajectoryType, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -29,6 +39,11 @@ namespace Sdx
       setId(id);
     }
 
+
+    GetSpoofTxTrajectoryResultPtr GetSpoofTxTrajectoryResult::create(const std::string& trajectoryType, const std::string& id)
+    {
+      return std::make_shared<GetSpoofTxTrajectoryResult>(trajectoryType, id);
+    }
 
     GetSpoofTxTrajectoryResultPtr GetSpoofTxTrajectoryResult::create(CommandBasePtr relatedCommand, const std::string& trajectoryType, const std::string& id)
     {

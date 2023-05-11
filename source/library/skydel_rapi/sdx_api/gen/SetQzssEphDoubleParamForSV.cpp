@@ -1,3 +1,6 @@
+
+#include "gen/SetQzssEphDoubleParamForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,13 @@
 ///
 /// Definition of SetQzssEphDoubleParamForSV
 ///
-#include "gen/SetQzssEphDoubleParamForSV.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const SetQzssEphDoubleParamForSV::CmdName = "SetQzssEphDoubleParamForSV";
-    const char* const SetQzssEphDoubleParamForSV::Documentation = "Please note the command SetQzssEphemerisDoubleParam is deprecated since 21.3. You may use SetQzssEphDoubleParamForSV.\n\nSet various parameters in the QZSS ephemeris.";
+    const char* const SetQzssEphDoubleParamForSV::Documentation = "Set various parameters in the QZSS ephemeris.";
 
     REGISTER_COMMAND_FACTORY(SetQzssEphDoubleParamForSV);
 
@@ -30,7 +32,6 @@ namespace Sdx
       setVal(val);
       setDataSetName(dataSetName);
     }
-
 
     SetQzssEphDoubleParamForSVPtr SetQzssEphDoubleParamForSV::create(int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName)
     {

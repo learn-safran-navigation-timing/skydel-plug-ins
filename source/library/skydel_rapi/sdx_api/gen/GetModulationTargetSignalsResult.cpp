@@ -1,3 +1,6 @@
+
+#include "gen/GetModulationTargetSignalsResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetModulationTargetSignalsResult
 ///
-#include "gen/GetModulationTargetSignalsResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,27 @@ namespace Sdx
     const char* const GetModulationTargetSignalsResult::CmdName = "GetModulationTargetSignalsResult";
     const char* const GetModulationTargetSignalsResult::Documentation = "Result of GetModulationTargetSignals.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetModulationTargetSignalsResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetModulationTargetSignalsResult);
 
 
     GetModulationTargetSignalsResult::GetModulationTargetSignalsResult()
       : CommandResult(CmdName)
     {}
+
+    GetModulationTargetSignalsResult::GetModulationTargetSignalsResult(int output, int minRate, int maxRate, const std::string& band, const std::string& signal, int gain, bool gaussianNoise, const std::string& id, const Sdx::optional<double>& centralFrequency)
+      : CommandResult(CmdName)
+    {
+
+      setOutput(output);
+      setMinRate(minRate);
+      setMaxRate(maxRate);
+      setBand(band);
+      setSignal(signal);
+      setGain(gain);
+      setGaussianNoise(gaussianNoise);
+      setId(id);
+      setCentralFrequency(centralFrequency);
+    }
 
     GetModulationTargetSignalsResult::GetModulationTargetSignalsResult(CommandBasePtr relatedCommand, int output, int minRate, int maxRate, const std::string& band, const std::string& signal, int gain, bool gaussianNoise, const std::string& id, const Sdx::optional<double>& centralFrequency)
       : CommandResult(CmdName, relatedCommand)
@@ -36,6 +53,11 @@ namespace Sdx
       setCentralFrequency(centralFrequency);
     }
 
+
+    GetModulationTargetSignalsResultPtr GetModulationTargetSignalsResult::create(int output, int minRate, int maxRate, const std::string& band, const std::string& signal, int gain, bool gaussianNoise, const std::string& id, const Sdx::optional<double>& centralFrequency)
+    {
+      return std::make_shared<GetModulationTargetSignalsResult>(output, minRate, maxRate, band, signal, gain, gaussianNoise, id, centralFrequency);
+    }
 
     GetModulationTargetSignalsResultPtr GetModulationTargetSignalsResult::create(CommandBasePtr relatedCommand, int output, int minRate, int maxRate, const std::string& band, const std::string& signal, int gain, bool gaussianNoise, const std::string& id, const Sdx::optional<double>& centralFrequency)
     {

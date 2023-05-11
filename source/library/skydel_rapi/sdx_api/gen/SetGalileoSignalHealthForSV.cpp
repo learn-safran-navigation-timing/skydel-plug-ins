@@ -1,3 +1,6 @@
+
+#include "gen/SetGalileoSignalHealthForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetGalileoSignalHealthForSV
 ///
-#include "gen/SetGalileoSignalHealthForSV.h"
 
 namespace Sdx
 {
@@ -30,7 +32,6 @@ namespace Sdx
       setHealth(health);
       setDataSetName(dataSetName);
     }
-
 
     SetGalileoSignalHealthForSVPtr SetGalileoSignalHealthForSV::create(int svId, const std::string& component, int health, const Sdx::optional<std::string>& dataSetName)
     {

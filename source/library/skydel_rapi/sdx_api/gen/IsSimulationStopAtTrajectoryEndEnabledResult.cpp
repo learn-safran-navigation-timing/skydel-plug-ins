@@ -1,3 +1,6 @@
+
+#include "gen/IsSimulationStopAtTrajectoryEndEnabledResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of IsSimulationStopAtTrajectoryEndEnabledResult
 ///
-#include "gen/IsSimulationStopAtTrajectoryEndEnabledResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const IsSimulationStopAtTrajectoryEndEnabledResult::CmdName = "IsSimulationStopAtTrajectoryEndEnabledResult";
     const char* const IsSimulationStopAtTrajectoryEndEnabledResult::Documentation = "Result of IsSimulationStopAtTrajectoryEndEnabled.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(IsSimulationStopAtTrajectoryEndEnabledResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsSimulationStopAtTrajectoryEndEnabledResult);
 
 
     IsSimulationStopAtTrajectoryEndEnabledResult::IsSimulationStopAtTrajectoryEndEnabledResult()
       : CommandResult(CmdName)
     {}
+
+    IsSimulationStopAtTrajectoryEndEnabledResult::IsSimulationStopAtTrajectoryEndEnabledResult(bool enabled)
+      : CommandResult(CmdName)
+    {
+
+      setEnabled(enabled);
+    }
 
     IsSimulationStopAtTrajectoryEndEnabledResult::IsSimulationStopAtTrajectoryEndEnabledResult(CommandBasePtr relatedCommand, bool enabled)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setEnabled(enabled);
     }
 
+
+    IsSimulationStopAtTrajectoryEndEnabledResultPtr IsSimulationStopAtTrajectoryEndEnabledResult::create(bool enabled)
+    {
+      return std::make_shared<IsSimulationStopAtTrajectoryEndEnabledResult>(enabled);
+    }
 
     IsSimulationStopAtTrajectoryEndEnabledResultPtr IsSimulationStopAtTrajectoryEndEnabledResult::create(CommandBasePtr relatedCommand, bool enabled)
     {

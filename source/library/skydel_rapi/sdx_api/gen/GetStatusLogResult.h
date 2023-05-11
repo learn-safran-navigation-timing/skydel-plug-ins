@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include "gen/LogRecord.h"
 #include <vector>
 
@@ -30,8 +31,12 @@ namespace Sdx
 
       GetStatusLogResult();
 
+      GetStatusLogResult(const std::vector<Sdx::LogRecord>& records);
+
       GetStatusLogResult(CommandBasePtr relatedCommand, const std::vector<Sdx::LogRecord>& records);
-  
+
+      static GetStatusLogResultPtr create(const std::vector<Sdx::LogRecord>& records);
+
       static GetStatusLogResultPtr create(CommandBasePtr relatedCommand, const std::vector<Sdx::LogRecord>& records);
       static GetStatusLogResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -42,6 +47,7 @@ namespace Sdx
       std::vector<Sdx::LogRecord> records() const;
       void setRecords(const std::vector<Sdx::LogRecord>& records);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetStatusLogResult);
   }
 }
 

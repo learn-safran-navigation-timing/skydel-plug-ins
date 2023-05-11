@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include "sdx_optional.h"
 #include <string>
 
@@ -36,7 +37,7 @@ namespace Sdx
       SetQzssEphDoubleParamForSV();
 
       SetQzssEphDoubleParamForSV(int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName = {});
-  
+
       static SetQzssEphDoubleParamForSVPtr create(int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName = {});
       static SetQzssEphDoubleParamForSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -64,6 +65,7 @@ namespace Sdx
       Sdx::optional<std::string> dataSetName() const;
       void setDataSetName(const Sdx::optional<std::string>& dataSetName);
     };
+    
   }
 }
 

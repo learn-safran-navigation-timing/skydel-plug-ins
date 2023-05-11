@@ -1,3 +1,6 @@
+
+#include "gen/ExportIonoGridMask.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of ExportIonoGridMask
 ///
-#include "gen/ExportIonoGridMask.h"
 
 namespace Sdx
 {
@@ -29,7 +31,6 @@ namespace Sdx
       setOverwriting(overwriting);
       setPath(path);
     }
-
 
     ExportIonoGridMaskPtr ExportIonoGridMask::create(const std::string& serviceProvider, bool overwriting, const std::string& path)
     {

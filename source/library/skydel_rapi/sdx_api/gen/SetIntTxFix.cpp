@@ -1,3 +1,6 @@
+
+#include "gen/SetIntTxFix.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetIntTxFix
 ///
-#include "gen/SetIntTxFix.h"
 
 namespace Sdx
 {
@@ -33,7 +35,6 @@ namespace Sdx
       setRoll(roll);
       setId(id);
     }
-
 
     SetIntTxFixPtr SetIntTxFix::create(double lat, double lon, double alt, double yaw, double pitch, double roll, const std::string& id)
     {

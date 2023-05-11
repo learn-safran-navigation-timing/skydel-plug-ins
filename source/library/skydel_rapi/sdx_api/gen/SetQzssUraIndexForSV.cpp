@@ -1,3 +1,6 @@
+
+#include "gen/SetQzssUraIndexForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,13 @@
 ///
 /// Definition of SetQzssUraIndexForSV
 ///
-#include "gen/SetQzssUraIndexForSV.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const SetQzssUraIndexForSV::CmdName = "SetQzssUraIndexForSV";
-    const char* const SetQzssUraIndexForSV::Documentation = "Please note the command SetQzssUraIndex is deprecated since 21.3. You may use SetQzssUraIndexForSV.\n\nSet the URA index of a QZSS satellite";
+    const char* const SetQzssUraIndexForSV::Documentation = "Set the URA index of a QZSS satellite";
 
     REGISTER_COMMAND_FACTORY(SetQzssUraIndexForSV);
 
@@ -29,7 +31,6 @@ namespace Sdx
       setUrai(urai);
       setDataSetName(dataSetName);
     }
-
 
     SetQzssUraIndexForSVPtr SetQzssUraIndexForSV::create(int svId, int urai, const Sdx::optional<std::string>& dataSetName)
     {

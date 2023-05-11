@@ -1,3 +1,6 @@
+
+#include "gen/GetBeiDouHealthInfoForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetBeiDouHealthInfoForSV
 ///
-#include "gen/GetBeiDouHealthInfoForSV.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setSvId(svId);
       setDataSetName(dataSetName);
     }
-
 
     GetBeiDouHealthInfoForSVPtr GetBeiDouHealthInfoForSV::create(int svId, const Sdx::optional<std::string>& dataSetName)
     {

@@ -1,3 +1,6 @@
+
+#include "gen/GetMessageModificationToQzssLNavResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetMessageModificationToQzssLNavResult
 ///
-#include "gen/GetMessageModificationToQzssLNavResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,28 @@ namespace Sdx
     const char* const GetMessageModificationToQzssLNavResult::CmdName = "GetMessageModificationToQzssLNavResult";
     const char* const GetMessageModificationToQzssLNavResult::Documentation = "Result of GetMessageModificationToQzssLNav.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetMessageModificationToQzssLNavResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetMessageModificationToQzssLNavResult);
 
 
     GetMessageModificationToQzssLNavResult::GetMessageModificationToQzssLNavResult()
       : CommandResult(CmdName)
     {}
+
+    GetMessageModificationToQzssLNavResult::GetMessageModificationToQzssLNavResult(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int lNavSvId, int word, bool updateParity, const std::string& wordModification, const std::string& id)
+      : CommandResult(CmdName)
+    {
+
+      setSignalArray(signalArray);
+      setSvId(svId);
+      setStartTime(startTime);
+      setStopTime(stopTime);
+      setSubframe(subframe);
+      setLNavSvId(lNavSvId);
+      setWord(word);
+      setUpdateParity(updateParity);
+      setWordModification(wordModification);
+      setId(id);
+    }
 
     GetMessageModificationToQzssLNavResult::GetMessageModificationToQzssLNavResult(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int lNavSvId, int word, bool updateParity, const std::string& wordModification, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -37,6 +55,11 @@ namespace Sdx
       setId(id);
     }
 
+
+    GetMessageModificationToQzssLNavResultPtr GetMessageModificationToQzssLNavResult::create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int lNavSvId, int word, bool updateParity, const std::string& wordModification, const std::string& id)
+    {
+      return std::make_shared<GetMessageModificationToQzssLNavResult>(signalArray, svId, startTime, stopTime, subframe, lNavSvId, word, updateParity, wordModification, id);
+    }
 
     GetMessageModificationToQzssLNavResultPtr GetMessageModificationToQzssLNavResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int lNavSvId, int word, bool updateParity, const std::string& wordModification, const std::string& id)
     {

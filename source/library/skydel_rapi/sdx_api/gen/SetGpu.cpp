@@ -1,3 +1,6 @@
+
+#include "gen/SetGpu.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetGpu
 ///
-#include "gen/SetGpu.h"
 
 namespace Sdx
 {
@@ -29,7 +31,6 @@ namespace Sdx
       setOutput(output);
       setId(id);
     }
-
 
     SetGpuPtr SetGpu::create(int gpuIdx, int output, const std::string& id)
     {

@@ -1,3 +1,6 @@
+
+#include "gen/IsWFAntennaElementEnabledResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of IsWFAntennaElementEnabledResult
 ///
-#include "gen/IsWFAntennaElementEnabledResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,20 @@ namespace Sdx
     const char* const IsWFAntennaElementEnabledResult::CmdName = "IsWFAntennaElementEnabledResult";
     const char* const IsWFAntennaElementEnabledResult::Documentation = "Result of IsWFAntennaElementEnabled.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(IsWFAntennaElementEnabledResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsWFAntennaElementEnabledResult);
 
 
     IsWFAntennaElementEnabledResult::IsWFAntennaElementEnabledResult()
       : CommandResult(CmdName)
     {}
+
+    IsWFAntennaElementEnabledResult::IsWFAntennaElementEnabledResult(int element, bool enabled)
+      : CommandResult(CmdName)
+    {
+
+      setElement(element);
+      setEnabled(enabled);
+    }
 
     IsWFAntennaElementEnabledResult::IsWFAntennaElementEnabledResult(CommandBasePtr relatedCommand, int element, bool enabled)
       : CommandResult(CmdName, relatedCommand)
@@ -29,6 +39,11 @@ namespace Sdx
       setEnabled(enabled);
     }
 
+
+    IsWFAntennaElementEnabledResultPtr IsWFAntennaElementEnabledResult::create(int element, bool enabled)
+    {
+      return std::make_shared<IsWFAntennaElementEnabledResult>(element, enabled);
+    }
 
     IsWFAntennaElementEnabledResultPtr IsWFAntennaElementEnabledResult::create(CommandBasePtr relatedCommand, int element, bool enabled)
     {

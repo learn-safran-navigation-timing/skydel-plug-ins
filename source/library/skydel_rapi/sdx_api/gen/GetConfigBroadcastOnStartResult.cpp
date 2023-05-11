@@ -1,3 +1,6 @@
+
+#include "gen/GetConfigBroadcastOnStartResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetConfigBroadcastOnStartResult
 ///
-#include "gen/GetConfigBroadcastOnStartResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const GetConfigBroadcastOnStartResult::CmdName = "GetConfigBroadcastOnStartResult";
     const char* const GetConfigBroadcastOnStartResult::Documentation = "Result of GetConfigBroadcastOnStart.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetConfigBroadcastOnStartResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetConfigBroadcastOnStartResult);
 
 
     GetConfigBroadcastOnStartResult::GetConfigBroadcastOnStartResult()
       : CommandResult(CmdName)
     {}
+
+    GetConfigBroadcastOnStartResult::GetConfigBroadcastOnStartResult(bool broadcastOnStart)
+      : CommandResult(CmdName)
+    {
+
+      setBroadcastOnStart(broadcastOnStart);
+    }
 
     GetConfigBroadcastOnStartResult::GetConfigBroadcastOnStartResult(CommandBasePtr relatedCommand, bool broadcastOnStart)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setBroadcastOnStart(broadcastOnStart);
     }
 
+
+    GetConfigBroadcastOnStartResultPtr GetConfigBroadcastOnStartResult::create(bool broadcastOnStart)
+    {
+      return std::make_shared<GetConfigBroadcastOnStartResult>(broadcastOnStart);
+    }
 
     GetConfigBroadcastOnStartResultPtr GetConfigBroadcastOnStartResult::create(CommandBasePtr relatedCommand, bool broadcastOnStart)
     {

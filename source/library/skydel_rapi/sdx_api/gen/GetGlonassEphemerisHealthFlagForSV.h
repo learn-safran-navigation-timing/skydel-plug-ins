@@ -4,6 +4,7 @@
 #include "command_base.h"
 
 
+
 namespace Sdx
 {
   namespace Cmd
@@ -30,7 +31,7 @@ namespace Sdx
       GetGlonassEphemerisHealthFlagForSV();
 
       GetGlonassEphemerisHealthFlagForSV(int svId);
-  
+
       static GetGlonassEphemerisHealthFlagForSVPtr create(int svId);
       static GetGlonassEphemerisHealthFlagForSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -43,6 +44,7 @@ namespace Sdx
       int svId() const;
       void setSvId(int svId);
     };
+    
   }
 }
 

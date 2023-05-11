@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -32,7 +33,7 @@ namespace Sdx
       MessageSequenceInsert();
 
       MessageSequenceInsert(const std::string& signal, int index, int type);
-  
+
       static MessageSequenceInsertPtr create(const std::string& signal, int index, int type);
       static MessageSequenceInsertPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -55,6 +56,7 @@ namespace Sdx
       int type() const;
       void setType(int type);
     };
+    
   }
 }
 

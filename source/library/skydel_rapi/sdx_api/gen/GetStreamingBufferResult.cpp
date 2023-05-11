@@ -1,3 +1,6 @@
+
+#include "gen/GetStreamingBufferResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetStreamingBufferResult
 ///
-#include "gen/GetStreamingBufferResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,19 @@ namespace Sdx
     const char* const GetStreamingBufferResult::CmdName = "GetStreamingBufferResult";
     const char* const GetStreamingBufferResult::Documentation = "Result of GetStreamingBuffer.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetStreamingBufferResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetStreamingBufferResult);
 
 
     GetStreamingBufferResult::GetStreamingBufferResult()
       : CommandResult(CmdName)
     {}
+
+    GetStreamingBufferResult::GetStreamingBufferResult(int size)
+      : CommandResult(CmdName)
+    {
+
+      setSize(size);
+    }
 
     GetStreamingBufferResult::GetStreamingBufferResult(CommandBasePtr relatedCommand, int size)
       : CommandResult(CmdName, relatedCommand)
@@ -28,6 +37,11 @@ namespace Sdx
       setSize(size);
     }
 
+
+    GetStreamingBufferResultPtr GetStreamingBufferResult::create(int size)
+    {
+      return std::make_shared<GetStreamingBufferResult>(size);
+    }
 
     GetStreamingBufferResultPtr GetStreamingBufferResult::create(CommandBasePtr relatedCommand, int size)
     {

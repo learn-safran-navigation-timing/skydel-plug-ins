@@ -1,3 +1,6 @@
+
+#include "gen/SetLogRawRate.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetLogRawRate
 ///
-#include "gen/SetLogRawRate.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setRate(rate);
     }
-
 
     SetLogRawRatePtr SetLogRawRate::create(int rate)
     {

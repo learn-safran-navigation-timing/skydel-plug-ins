@@ -1,3 +1,6 @@
+
+#include "gen/GetIntTxAntennaOffset.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetIntTxAntennaOffset
 ///
-#include "gen/GetIntTxAntennaOffset.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setId(id);
     }
-
 
     GetIntTxAntennaOffsetPtr GetIntTxAntennaOffset::create(const std::string& id)
     {

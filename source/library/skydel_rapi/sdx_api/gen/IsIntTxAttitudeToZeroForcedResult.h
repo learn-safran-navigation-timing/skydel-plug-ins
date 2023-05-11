@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include <string>
 
 namespace Sdx
@@ -30,8 +31,12 @@ namespace Sdx
 
       IsIntTxAttitudeToZeroForcedResult();
 
+      IsIntTxAttitudeToZeroForcedResult(bool enabled, const std::string& id);
+
       IsIntTxAttitudeToZeroForcedResult(CommandBasePtr relatedCommand, bool enabled, const std::string& id);
-  
+
+      static IsIntTxAttitudeToZeroForcedResultPtr create(bool enabled, const std::string& id);
+
       static IsIntTxAttitudeToZeroForcedResultPtr create(CommandBasePtr relatedCommand, bool enabled, const std::string& id);
       static IsIntTxAttitudeToZeroForcedResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -47,6 +52,7 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(IsIntTxAttitudeToZeroForcedResult);
   }
 }
 

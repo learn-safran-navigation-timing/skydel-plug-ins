@@ -1,3 +1,6 @@
+
+#include "gen/GetGpsAntiSpoofingFlagForSVResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetGpsAntiSpoofingFlagForSVResult
 ///
-#include "gen/GetGpsAntiSpoofingFlagForSVResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,21 @@ namespace Sdx
     const char* const GetGpsAntiSpoofingFlagForSVResult::CmdName = "GetGpsAntiSpoofingFlagForSVResult";
     const char* const GetGpsAntiSpoofingFlagForSVResult::Documentation = "Result of GetGpsAntiSpoofingFlagForSV.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetGpsAntiSpoofingFlagForSVResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetGpsAntiSpoofingFlagForSVResult);
 
 
     GetGpsAntiSpoofingFlagForSVResult::GetGpsAntiSpoofingFlagForSVResult()
       : CommandResult(CmdName)
     {}
+
+    GetGpsAntiSpoofingFlagForSVResult::GetGpsAntiSpoofingFlagForSVResult(int svId, const Sdx::GpsASFlag& antiSpoofing, const Sdx::optional<std::string>& dataSetName)
+      : CommandResult(CmdName)
+    {
+
+      setSvId(svId);
+      setAntiSpoofing(antiSpoofing);
+      setDataSetName(dataSetName);
+    }
 
     GetGpsAntiSpoofingFlagForSVResult::GetGpsAntiSpoofingFlagForSVResult(CommandBasePtr relatedCommand, int svId, const Sdx::GpsASFlag& antiSpoofing, const Sdx::optional<std::string>& dataSetName)
       : CommandResult(CmdName, relatedCommand)
@@ -30,6 +41,11 @@ namespace Sdx
       setDataSetName(dataSetName);
     }
 
+
+    GetGpsAntiSpoofingFlagForSVResultPtr GetGpsAntiSpoofingFlagForSVResult::create(int svId, const Sdx::GpsASFlag& antiSpoofing, const Sdx::optional<std::string>& dataSetName)
+    {
+      return std::make_shared<GetGpsAntiSpoofingFlagForSVResult>(svId, antiSpoofing, dataSetName);
+    }
 
     GetGpsAntiSpoofingFlagForSVResultPtr GetGpsAntiSpoofingFlagForSVResult::create(CommandBasePtr relatedCommand, int svId, const Sdx::GpsASFlag& antiSpoofing, const Sdx::optional<std::string>& dataSetName)
     {

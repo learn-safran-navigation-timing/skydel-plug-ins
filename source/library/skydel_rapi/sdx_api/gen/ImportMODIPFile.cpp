@@ -1,3 +1,6 @@
+
+#include "gen/ImportMODIPFile.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of ImportMODIPFile
 ///
-#include "gen/ImportMODIPFile.h"
 
 namespace Sdx
 {
@@ -27,7 +29,6 @@ namespace Sdx
 
       setPath(path);
     }
-
 
     ImportMODIPFilePtr ImportMODIPFile::create(const std::string& path)
     {

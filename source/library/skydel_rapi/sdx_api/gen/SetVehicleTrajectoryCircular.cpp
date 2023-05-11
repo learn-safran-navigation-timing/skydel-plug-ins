@@ -1,3 +1,6 @@
+
+#include "gen/SetVehicleTrajectoryCircular.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetVehicleTrajectoryCircular
 ///
-#include "gen/SetVehicleTrajectoryCircular.h"
 
 namespace Sdx
 {
@@ -34,7 +36,6 @@ namespace Sdx
       setClockwise(clockwise);
       setOriginAngle(originAngle);
     }
-
 
     SetVehicleTrajectoryCircularPtr SetVehicleTrajectoryCircular::create(const std::string& type, double lat, double lon, double alt, double radius, double speed, bool clockwise, const Sdx::optional<double>& originAngle)
     {

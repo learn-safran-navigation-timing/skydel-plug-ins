@@ -1,3 +1,6 @@
+
+#include "gen/GetBeiDouEphBoolParamForEachSVResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetBeiDouEphBoolParamForEachSVResult
 ///
-#include "gen/GetBeiDouEphBoolParamForEachSVResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,21 @@ namespace Sdx
     const char* const GetBeiDouEphBoolParamForEachSVResult::CmdName = "GetBeiDouEphBoolParamForEachSVResult";
     const char* const GetBeiDouEphBoolParamForEachSVResult::Documentation = "Result of GetBeiDouEphBoolParamForEachSV.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetBeiDouEphBoolParamForEachSVResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetBeiDouEphBoolParamForEachSVResult);
 
 
     GetBeiDouEphBoolParamForEachSVResult::GetBeiDouEphBoolParamForEachSVResult()
       : CommandResult(CmdName)
     {}
+
+    GetBeiDouEphBoolParamForEachSVResult::GetBeiDouEphBoolParamForEachSVResult(const std::string& paramName, const std::vector<bool>& val, const Sdx::optional<std::string>& dataSetName)
+      : CommandResult(CmdName)
+    {
+
+      setParamName(paramName);
+      setVal(val);
+      setDataSetName(dataSetName);
+    }
 
     GetBeiDouEphBoolParamForEachSVResult::GetBeiDouEphBoolParamForEachSVResult(CommandBasePtr relatedCommand, const std::string& paramName, const std::vector<bool>& val, const Sdx::optional<std::string>& dataSetName)
       : CommandResult(CmdName, relatedCommand)
@@ -30,6 +41,11 @@ namespace Sdx
       setDataSetName(dataSetName);
     }
 
+
+    GetBeiDouEphBoolParamForEachSVResultPtr GetBeiDouEphBoolParamForEachSVResult::create(const std::string& paramName, const std::vector<bool>& val, const Sdx::optional<std::string>& dataSetName)
+    {
+      return std::make_shared<GetBeiDouEphBoolParamForEachSVResult>(paramName, val, dataSetName);
+    }
 
     GetBeiDouEphBoolParamForEachSVResultPtr GetBeiDouEphBoolParamForEachSVResult::create(CommandBasePtr relatedCommand, const std::string& paramName, const std::vector<bool>& val, const Sdx::optional<std::string>& dataSetName)
     {

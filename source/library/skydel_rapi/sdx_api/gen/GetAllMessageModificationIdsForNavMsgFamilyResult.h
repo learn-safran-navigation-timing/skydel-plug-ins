@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 #include <string>
 #include <vector>
 
@@ -30,8 +31,12 @@ namespace Sdx
 
       GetAllMessageModificationIdsForNavMsgFamilyResult();
 
+      GetAllMessageModificationIdsForNavMsgFamilyResult(const std::vector<std::string>& ids);
+
       GetAllMessageModificationIdsForNavMsgFamilyResult(CommandBasePtr relatedCommand, const std::vector<std::string>& ids);
-  
+
+      static GetAllMessageModificationIdsForNavMsgFamilyResultPtr create(const std::vector<std::string>& ids);
+
       static GetAllMessageModificationIdsForNavMsgFamilyResultPtr create(CommandBasePtr relatedCommand, const std::vector<std::string>& ids);
       static GetAllMessageModificationIdsForNavMsgFamilyResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -42,6 +47,7 @@ namespace Sdx
       std::vector<std::string> ids() const;
       void setIds(const std::vector<std::string>& ids);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetAllMessageModificationIdsForNavMsgFamilyResult);
   }
 }
 

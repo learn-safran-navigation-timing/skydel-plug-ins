@@ -1,3 +1,6 @@
+
+#include "gen/SetGpsTimingReceiver.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of SetGpsTimingReceiver
 ///
-#include "gen/SetGpsTimingReceiver.h"
 
 namespace Sdx
 {
@@ -32,7 +34,6 @@ namespace Sdx
       setStopBits(stopBits);
       setFlowControl(flowControl);
     }
-
 
     SetGpsTimingReceiverPtr SetGpsTimingReceiver::create(const std::string& port, const Sdx::optional<int>& baudRate, const Sdx::optional<int>& dataBits, const Sdx::optional<Sdx::SerialPortParity>& parity, const Sdx::optional<int>& stopBits, const Sdx::optional<Sdx::SerialPortFlowControl>& flowControl)
     {

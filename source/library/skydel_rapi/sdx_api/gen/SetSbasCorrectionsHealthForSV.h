@@ -4,6 +4,7 @@
 #include "command_base.h"
 
 
+
 namespace Sdx
 {
   namespace Cmd
@@ -31,7 +32,7 @@ namespace Sdx
       SetSbasCorrectionsHealthForSV();
 
       SetSbasCorrectionsHealthForSV(int svId, bool health);
-  
+
       static SetSbasCorrectionsHealthForSVPtr create(int svId, bool health);
       static SetSbasCorrectionsHealthForSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -49,6 +50,7 @@ namespace Sdx
       bool health() const;
       void setHealth(bool health);
     };
+    
   }
 }
 

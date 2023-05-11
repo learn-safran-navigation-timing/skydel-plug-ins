@@ -1,3 +1,6 @@
+
+#include "gen/GetQzssL1SAugmentationResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetQzssL1SAugmentationResult
 ///
-#include "gen/GetQzssL1SAugmentationResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,24 @@ namespace Sdx
     const char* const GetQzssL1SAugmentationResult::CmdName = "GetQzssL1SAugmentationResult";
     const char* const GetQzssL1SAugmentationResult::Documentation = "Result of GetQzssL1SAugmentation.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetQzssL1SAugmentationResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetQzssL1SAugmentationResult);
 
 
     GetQzssL1SAugmentationResult::GetQzssL1SAugmentationResult()
       : CommandResult(CmdName)
     {}
+
+    GetQzssL1SAugmentationResult::GetQzssL1SAugmentationResult(const std::string& system, int prn, bool augmentIOD, bool augmentPRC, double prc, const std::string& id)
+      : CommandResult(CmdName)
+    {
+
+      setSystem(system);
+      setPrn(prn);
+      setAugmentIOD(augmentIOD);
+      setAugmentPRC(augmentPRC);
+      setPrc(prc);
+      setId(id);
+    }
 
     GetQzssL1SAugmentationResult::GetQzssL1SAugmentationResult(CommandBasePtr relatedCommand, const std::string& system, int prn, bool augmentIOD, bool augmentPRC, double prc, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -33,6 +47,11 @@ namespace Sdx
       setId(id);
     }
 
+
+    GetQzssL1SAugmentationResultPtr GetQzssL1SAugmentationResult::create(const std::string& system, int prn, bool augmentIOD, bool augmentPRC, double prc, const std::string& id)
+    {
+      return std::make_shared<GetQzssL1SAugmentationResult>(system, prn, augmentIOD, augmentPRC, prc, id);
+    }
 
     GetQzssL1SAugmentationResultPtr GetQzssL1SAugmentationResult::create(CommandBasePtr relatedCommand, const std::string& system, int prn, bool augmentIOD, bool augmentPRC, double prc, const std::string& id)
     {

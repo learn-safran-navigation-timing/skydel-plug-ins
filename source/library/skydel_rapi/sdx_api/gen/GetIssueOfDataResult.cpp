@@ -1,3 +1,6 @@
+
+#include "gen/GetIssueOfDataResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetIssueOfDataResult
 ///
-#include "gen/GetIssueOfDataResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,21 @@ namespace Sdx
     const char* const GetIssueOfDataResult::CmdName = "GetIssueOfDataResult";
     const char* const GetIssueOfDataResult::Documentation = "Result of GetIssueOfData.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetIssueOfDataResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetIssueOfDataResult);
 
 
     GetIssueOfDataResult::GetIssueOfDataResult()
       : CommandResult(CmdName)
     {}
+
+    GetIssueOfDataResult::GetIssueOfDataResult(int clock, int ephemeris, const Sdx::optional<bool>& overrideRinex)
+      : CommandResult(CmdName)
+    {
+
+      setClock(clock);
+      setEphemeris(ephemeris);
+      setOverrideRinex(overrideRinex);
+    }
 
     GetIssueOfDataResult::GetIssueOfDataResult(CommandBasePtr relatedCommand, int clock, int ephemeris, const Sdx::optional<bool>& overrideRinex)
       : CommandResult(CmdName, relatedCommand)
@@ -30,6 +41,11 @@ namespace Sdx
       setOverrideRinex(overrideRinex);
     }
 
+
+    GetIssueOfDataResultPtr GetIssueOfDataResult::create(int clock, int ephemeris, const Sdx::optional<bool>& overrideRinex)
+    {
+      return std::make_shared<GetIssueOfDataResult>(clock, ephemeris, overrideRinex);
+    }
 
     GetIssueOfDataResultPtr GetIssueOfDataResult::create(CommandBasePtr relatedCommand, int clock, int ephemeris, const Sdx::optional<bool>& overrideRinex)
     {

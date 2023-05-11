@@ -1,3 +1,6 @@
+
+#include "gen/GetIssueOfDataGalileoResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetIssueOfDataGalileoResult
 ///
-#include "gen/GetIssueOfDataGalileoResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,21 @@ namespace Sdx
     const char* const GetIssueOfDataGalileoResult::CmdName = "GetIssueOfDataGalileoResult";
     const char* const GetIssueOfDataGalileoResult::Documentation = "Result of GetIssueOfDataGalileo.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetIssueOfDataGalileoResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetIssueOfDataGalileoResult);
 
 
     GetIssueOfDataGalileoResult::GetIssueOfDataGalileoResult()
       : CommandResult(CmdName)
     {}
+
+    GetIssueOfDataGalileoResult::GetIssueOfDataGalileoResult(int navigation, int almanac, const Sdx::optional<bool>& overrideRinex)
+      : CommandResult(CmdName)
+    {
+
+      setNavigation(navigation);
+      setAlmanac(almanac);
+      setOverrideRinex(overrideRinex);
+    }
 
     GetIssueOfDataGalileoResult::GetIssueOfDataGalileoResult(CommandBasePtr relatedCommand, int navigation, int almanac, const Sdx::optional<bool>& overrideRinex)
       : CommandResult(CmdName, relatedCommand)
@@ -30,6 +41,11 @@ namespace Sdx
       setOverrideRinex(overrideRinex);
     }
 
+
+    GetIssueOfDataGalileoResultPtr GetIssueOfDataGalileoResult::create(int navigation, int almanac, const Sdx::optional<bool>& overrideRinex)
+    {
+      return std::make_shared<GetIssueOfDataGalileoResult>(navigation, almanac, overrideRinex);
+    }
 
     GetIssueOfDataGalileoResultPtr GetIssueOfDataGalileoResult::create(CommandBasePtr relatedCommand, int navigation, int almanac, const Sdx::optional<bool>& overrideRinex)
     {

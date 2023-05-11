@@ -1,3 +1,6 @@
+
+#include "gen/PushRouteEcef.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of PushRouteEcef
 ///
-#include "gen/PushRouteEcef.h"
 
 namespace Sdx
 {
@@ -30,7 +32,6 @@ namespace Sdx
       setY(y);
       setZ(z);
     }
-
 
     PushRouteEcefPtr PushRouteEcef::create(double speed, double x, double y, double z)
     {

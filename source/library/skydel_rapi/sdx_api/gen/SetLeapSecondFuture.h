@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include "date.h"
 
 namespace Sdx
@@ -32,7 +33,7 @@ namespace Sdx
       SetLeapSecondFuture();
 
       SetLeapSecondFuture(bool enabled, int seconds, const Sdx::Date& date);
-  
+
       static SetLeapSecondFuturePtr create(bool enabled, int seconds, const Sdx::Date& date);
       static SetLeapSecondFuturePtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -55,6 +56,7 @@ namespace Sdx
       Sdx::Date date() const;
       void setDate(const Sdx::Date& date);
     };
+    
   }
 }
 

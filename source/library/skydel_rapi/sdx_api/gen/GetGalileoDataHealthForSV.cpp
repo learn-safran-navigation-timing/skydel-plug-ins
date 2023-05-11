@@ -1,3 +1,6 @@
+
+#include "gen/GetGalileoDataHealthForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetGalileoDataHealthForSV
 ///
-#include "gen/GetGalileoDataHealthForSV.h"
 
 namespace Sdx
 {
@@ -29,7 +31,6 @@ namespace Sdx
       setComponent(component);
       setDataSetName(dataSetName);
     }
-
 
     GetGalileoDataHealthForSVPtr GetGalileoDataHealthForSV::create(int svId, const std::string& component, const Sdx::optional<std::string>& dataSetName)
     {

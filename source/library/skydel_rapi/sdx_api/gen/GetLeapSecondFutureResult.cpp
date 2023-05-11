@@ -1,3 +1,6 @@
+
+#include "gen/GetLeapSecondFutureResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetLeapSecondFutureResult
 ///
-#include "gen/GetLeapSecondFutureResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,21 @@ namespace Sdx
     const char* const GetLeapSecondFutureResult::CmdName = "GetLeapSecondFutureResult";
     const char* const GetLeapSecondFutureResult::Documentation = "Result of GetLeapSecondFuture.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetLeapSecondFutureResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetLeapSecondFutureResult);
 
 
     GetLeapSecondFutureResult::GetLeapSecondFutureResult()
       : CommandResult(CmdName)
     {}
+
+    GetLeapSecondFutureResult::GetLeapSecondFutureResult(bool enabled, int seconds, const Sdx::Date& date)
+      : CommandResult(CmdName)
+    {
+
+      setEnabled(enabled);
+      setSeconds(seconds);
+      setDate(date);
+    }
 
     GetLeapSecondFutureResult::GetLeapSecondFutureResult(CommandBasePtr relatedCommand, bool enabled, int seconds, const Sdx::Date& date)
       : CommandResult(CmdName, relatedCommand)
@@ -30,6 +41,11 @@ namespace Sdx
       setDate(date);
     }
 
+
+    GetLeapSecondFutureResultPtr GetLeapSecondFutureResult::create(bool enabled, int seconds, const Sdx::Date& date)
+    {
+      return std::make_shared<GetLeapSecondFutureResult>(enabled, seconds, date);
+    }
 
     GetLeapSecondFutureResultPtr GetLeapSecondFutureResult::create(CommandBasePtr relatedCommand, bool enabled, int seconds, const Sdx::Date& date)
     {

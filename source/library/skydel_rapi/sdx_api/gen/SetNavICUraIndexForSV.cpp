@@ -1,3 +1,6 @@
+
+#include "gen/SetNavICUraIndexForSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,13 @@
 ///
 /// Definition of SetNavICUraIndexForSV
 ///
-#include "gen/SetNavICUraIndexForSV.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const SetNavICUraIndexForSV::CmdName = "SetNavICUraIndexForSV";
-    const char* const SetNavICUraIndexForSV::Documentation = "Please note the command SetNavICUraIndex is deprecated since 21.3. You may use SetNavICUraIndexForSV.\n\nSet the URA index of a NavIC satellite";
+    const char* const SetNavICUraIndexForSV::Documentation = "Set the URA index of a NavIC satellite";
 
     REGISTER_COMMAND_FACTORY(SetNavICUraIndexForSV);
 
@@ -29,7 +31,6 @@ namespace Sdx
       setUrai(urai);
       setDataSetName(dataSetName);
     }
-
 
     SetNavICUraIndexForSVPtr SetNavICUraIndexForSV::create(int svId, int urai, const Sdx::optional<std::string>& dataSetName)
     {

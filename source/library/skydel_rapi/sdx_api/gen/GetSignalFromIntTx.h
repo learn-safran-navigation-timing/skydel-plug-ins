@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_base.h"
+
 #include <string>
 
 namespace Sdx
@@ -31,7 +32,7 @@ namespace Sdx
       GetSignalFromIntTx();
 
       GetSignalFromIntTx(const std::string& idTransmitter, const std::string& signalType);
-  
+
       static GetSignalFromIntTxPtr create(const std::string& idTransmitter, const std::string& signalType);
       static GetSignalFromIntTxPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -49,6 +50,7 @@ namespace Sdx
       std::string signalType() const;
       void setSignalType(const std::string& signalType);
     };
+    
   }
 }
 

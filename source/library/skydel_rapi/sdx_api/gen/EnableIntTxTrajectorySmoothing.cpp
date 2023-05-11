@@ -1,3 +1,6 @@
+
+#include "gen/EnableIntTxTrajectorySmoothing.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of EnableIntTxTrajectorySmoothing
 ///
-#include "gen/EnableIntTxTrajectorySmoothing.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setEnabled(enabled);
       setId(id);
     }
-
 
     EnableIntTxTrajectorySmoothingPtr EnableIntTxTrajectorySmoothing::create(bool enabled, const std::string& id)
     {

@@ -1,3 +1,6 @@
+
+#include "gen/RandomizePseudorangeNoiseGaussMarkovSeedsForAllSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,14 +8,13 @@
 ///
 /// Definition of RandomizePseudorangeNoiseGaussMarkovSeedsForAllSV
 ///
-#include "gen/RandomizePseudorangeNoiseGaussMarkovSeedsForAllSV.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const RandomizePseudorangeNoiseGaussMarkovSeedsForAllSV::CmdName = "RandomizePseudorangeNoiseGaussMarkovSeedsForAllSV";
-    const char* const RandomizePseudorangeNoiseGaussMarkovSeedsForAllSV::Documentation = "Please note the command RandomizeSeedsForAllSatellitesPseudorangeNoiseGaussMarkov is deprecated since 21.3. You may use RandomizePseudorangeNoiseGaussMarkovSeedsForAllSV.\n\nGenerate new seeds for pseudorange noise Gauss-Markov process error on all satellites.";
+    const char* const RandomizePseudorangeNoiseGaussMarkovSeedsForAllSV::Documentation = "Generate new seeds for pseudorange noise Gauss-Markov process error on all satellites.";
 
     REGISTER_COMMAND_FACTORY(RandomizePseudorangeNoiseGaussMarkovSeedsForAllSV);
 
@@ -27,7 +29,6 @@ namespace Sdx
 
       setSystem(system);
     }
-
 
     RandomizePseudorangeNoiseGaussMarkovSeedsForAllSVPtr RandomizePseudorangeNoiseGaussMarkovSeedsForAllSV::create(const std::string& system)
     {

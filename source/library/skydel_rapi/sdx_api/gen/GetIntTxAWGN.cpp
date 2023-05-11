@@ -1,3 +1,6 @@
+
+#include "gen/GetIntTxAWGN.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetIntTxAWGN
 ///
-#include "gen/GetIntTxAWGN.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setTransmitterId(transmitterId);
       setSignalId(signalId);
     }
-
 
     GetIntTxAWGNPtr GetIntTxAWGN::create(const std::string& transmitterId, const std::string& signalId)
     {

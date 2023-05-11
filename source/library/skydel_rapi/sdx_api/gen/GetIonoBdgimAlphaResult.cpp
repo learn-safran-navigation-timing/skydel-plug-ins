@@ -1,3 +1,6 @@
+
+#include "gen/GetIonoBdgimAlphaResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetIonoBdgimAlphaResult
 ///
-#include "gen/GetIonoBdgimAlphaResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,20 @@ namespace Sdx
     const char* const GetIonoBdgimAlphaResult::CmdName = "GetIonoBdgimAlphaResult";
     const char* const GetIonoBdgimAlphaResult::Documentation = "Result of GetIonoBdgimAlpha.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetIonoBdgimAlphaResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetIonoBdgimAlphaResult);
 
 
     GetIonoBdgimAlphaResult::GetIonoBdgimAlphaResult()
       : CommandResult(CmdName)
     {}
+
+    GetIonoBdgimAlphaResult::GetIonoBdgimAlphaResult(int index, double val)
+      : CommandResult(CmdName)
+    {
+
+      setIndex(index);
+      setVal(val);
+    }
 
     GetIonoBdgimAlphaResult::GetIonoBdgimAlphaResult(CommandBasePtr relatedCommand, int index, double val)
       : CommandResult(CmdName, relatedCommand)
@@ -29,6 +39,11 @@ namespace Sdx
       setVal(val);
     }
 
+
+    GetIonoBdgimAlphaResultPtr GetIonoBdgimAlphaResult::create(int index, double val)
+    {
+      return std::make_shared<GetIonoBdgimAlphaResult>(index, val);
+    }
 
     GetIonoBdgimAlphaResultPtr GetIonoBdgimAlphaResult::create(CommandBasePtr relatedCommand, int index, double val)
     {

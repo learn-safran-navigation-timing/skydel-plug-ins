@@ -4,6 +4,7 @@
 #include "command_base.h"
 
 
+
 namespace Sdx
 {
   namespace Cmd
@@ -30,7 +31,7 @@ namespace Sdx
       SetElevationMaskBelow();
 
       SetElevationMaskBelow(double angle);
-  
+
       static SetElevationMaskBelowPtr create(double angle);
       static SetElevationMaskBelowPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -43,6 +44,7 @@ namespace Sdx
       double angle() const;
       void setAngle(double angle);
     };
+    
   }
 }
 

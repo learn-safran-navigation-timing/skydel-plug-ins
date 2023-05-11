@@ -1,3 +1,6 @@
+
+#include "gen/GetUdreiForSVResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetUdreiForSVResult
 ///
-#include "gen/GetUdreiForSVResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,21 @@ namespace Sdx
     const char* const GetUdreiForSVResult::CmdName = "GetUdreiForSVResult";
     const char* const GetUdreiForSVResult::Documentation = "Result of GetUdreiForSV.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetUdreiForSVResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetUdreiForSVResult);
 
 
     GetUdreiForSVResult::GetUdreiForSVResult()
       : CommandResult(CmdName)
     {}
+
+    GetUdreiForSVResult::GetUdreiForSVResult(const std::string& system, int svId, int udrei)
+      : CommandResult(CmdName)
+    {
+
+      setSystem(system);
+      setSvId(svId);
+      setUdrei(udrei);
+    }
 
     GetUdreiForSVResult::GetUdreiForSVResult(CommandBasePtr relatedCommand, const std::string& system, int svId, int udrei)
       : CommandResult(CmdName, relatedCommand)
@@ -30,6 +41,11 @@ namespace Sdx
       setUdrei(udrei);
     }
 
+
+    GetUdreiForSVResultPtr GetUdreiForSVResult::create(const std::string& system, int svId, int udrei)
+    {
+      return std::make_shared<GetUdreiForSVResult>(system, svId, udrei);
+    }
 
     GetUdreiForSVResultPtr GetUdreiForSVResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, int udrei)
     {

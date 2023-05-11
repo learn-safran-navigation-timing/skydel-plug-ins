@@ -1,3 +1,6 @@
+
+#include "gen/GetGpsCNavAlertFlagToSV.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetGpsCNavAlertFlagToSV
 ///
-#include "gen/GetGpsCNavAlertFlagToSV.h"
 
 namespace Sdx
 {
@@ -28,7 +30,6 @@ namespace Sdx
       setSvId(svId);
       setDataSetName(dataSetName);
     }
-
 
     GetGpsCNavAlertFlagToSVPtr GetGpsCNavAlertFlagToSV::create(int svId, const Sdx::optional<std::string>& dataSetName)
     {

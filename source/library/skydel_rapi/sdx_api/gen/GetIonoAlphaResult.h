@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "command_result.h"
+#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -30,8 +31,12 @@ namespace Sdx
 
       GetIonoAlphaResult();
 
+      GetIonoAlphaResult(int index, double val);
+
       GetIonoAlphaResult(CommandBasePtr relatedCommand, int index, double val);
-  
+
+      static GetIonoAlphaResultPtr create(int index, double val);
+
       static GetIonoAlphaResultPtr create(CommandBasePtr relatedCommand, int index, double val);
       static GetIonoAlphaResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -47,6 +52,7 @@ namespace Sdx
       double val() const;
       void setVal(double val);
     };
+    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetIonoAlphaResult);
   }
 }
 

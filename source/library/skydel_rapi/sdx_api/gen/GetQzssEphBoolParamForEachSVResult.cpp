@@ -1,3 +1,6 @@
+
+#include "gen/GetQzssEphBoolParamForEachSVResult.h"
+
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -5,7 +8,6 @@
 ///
 /// Definition of GetQzssEphBoolParamForEachSVResult
 ///
-#include "gen/GetQzssEphBoolParamForEachSVResult.h"
 
 namespace Sdx
 {
@@ -14,12 +16,21 @@ namespace Sdx
     const char* const GetQzssEphBoolParamForEachSVResult::CmdName = "GetQzssEphBoolParamForEachSVResult";
     const char* const GetQzssEphBoolParamForEachSVResult::Documentation = "Result of GetQzssEphBoolParamForEachSV.";
 
-    REGISTER_COMMAND_RESULT_FACTORY(GetQzssEphBoolParamForEachSVResult);
+    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetQzssEphBoolParamForEachSVResult);
 
 
     GetQzssEphBoolParamForEachSVResult::GetQzssEphBoolParamForEachSVResult()
       : CommandResult(CmdName)
     {}
+
+    GetQzssEphBoolParamForEachSVResult::GetQzssEphBoolParamForEachSVResult(const std::string& paramName, const std::vector<bool>& val, const Sdx::optional<std::string>& dataSetName)
+      : CommandResult(CmdName)
+    {
+
+      setParamName(paramName);
+      setVal(val);
+      setDataSetName(dataSetName);
+    }
 
     GetQzssEphBoolParamForEachSVResult::GetQzssEphBoolParamForEachSVResult(CommandBasePtr relatedCommand, const std::string& paramName, const std::vector<bool>& val, const Sdx::optional<std::string>& dataSetName)
       : CommandResult(CmdName, relatedCommand)
@@ -30,6 +41,11 @@ namespace Sdx
       setDataSetName(dataSetName);
     }
 
+
+    GetQzssEphBoolParamForEachSVResultPtr GetQzssEphBoolParamForEachSVResult::create(const std::string& paramName, const std::vector<bool>& val, const Sdx::optional<std::string>& dataSetName)
+    {
+      return std::make_shared<GetQzssEphBoolParamForEachSVResult>(paramName, val, dataSetName);
+    }
 
     GetQzssEphBoolParamForEachSVResultPtr GetQzssEphBoolParamForEachSVResult::create(CommandBasePtr relatedCommand, const std::string& paramName, const std::vector<bool>& val, const Sdx::optional<std::string>& dataSetName)
     {
