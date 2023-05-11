@@ -44,6 +44,7 @@ public:
     BEIDOU_B2,
     BEIDOU_B1C,
     BEIDOU_B2a,
+    BEIDOU_B3I,
     SBAS_L1,
     SBAS_L5,
     QZSS_L1_CA,
@@ -56,13 +57,51 @@ public:
     NAVIC_L5
   };
 
+  struct Ecef
+  {
+    double x;
+    double y;
+    double z;
+  };
+
   struct SignalRawData
   {
     Signal signal;
-
     double svElapsedTimeMs;
-    double pseudorange;
+    Ecef position;
+    Ecef positionError;
+    double bodyAzimuth;
+    double bodyElevation;
+    double range;
     double adr;
+    double clockCorrection;
+    double clockNoise;
+    double deltaAf0;
+    double deltaAf1;
+    double ionoCorrection;
+    double tropoCorrection;
+    double psrOffset;
+    double receiverAntennaAzimuth;
+    double receiverAntennaElevation;
+    double receiverAntennaGain;
+    double svAntennaAzimuth;
+    double svAntennaElevation;
+    double relativePowerLevel;
+    double doplerFrequency;
+    double psrChangeRate;
+    bool isEcho;
+    double echoPowerLoss;
+    double echoDopplerOffset;
+    double echoCarrierPhaseOffset;
+    double echoPsrOffset;
+    double receiverCarrierPhaseOffset;
+    double satelliteCarrierPhaseOffset;
+    double calibrationOffset;
+    double psrSatTime;
+    double pseudorange;
+    double gpsTow;
+    double gpsWeekNumber;
+    double sbas;
   };
 
   struct SVRawData

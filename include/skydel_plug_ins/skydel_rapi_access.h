@@ -1,11 +1,14 @@
 #ifndef SKYDEL_RAPI_ACCESS_H
 #define SKYDEL_RAPI_ACCESS_H
 
+#include <QString>
+
 #include <stdexcept>
 #include <utility>
 
 #include "command_base.h"
 #include "command_result_factory.h"
+#include "gen/PlugInCommand.h"
 #include "internal/skydel_rapi_interface.h"
 
 class SkydelRapiAccess : public SkydelRapiInterface
@@ -74,8 +77,18 @@ public:
     return nullptr;
   }
 
+  inline void setPluginInstanceName(const QString& name) { m_instanceName = name.toStdString(); }
+
+  inline Sdx::CommandBasePtr createPluginCommand(Sdx::CommandBasePtr cmd) const
+  {
+    return Sdx::Cmd::PlugInCommand::create(m_instanceName, cmd->toString());
+  }
+
+  inline void thisPost(Sdx::CommandBasePtr cmd) { post(createPluginCommand(cmd), 0.0, {}, false); }
+
 private:
   SkydelRapi* m_rapi;
+  std::string m_instanceName;
 };
 
 #endif // SKYDEL_RAPI_ACCESS_H
