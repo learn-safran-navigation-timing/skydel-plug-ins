@@ -70,11 +70,6 @@ std::string CommandBase::documentation() const
   return "Documentation not available.";
 }
 
-Sdx::optional<std::string> CommandBase::deprecated() const
-{
-  return {};
-}
-
 void CommandBase::setHidden(bool isHidden)
 {
   rapidjson::Value value(isHidden);

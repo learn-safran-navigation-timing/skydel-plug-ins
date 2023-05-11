@@ -1,6 +1,3 @@
-
-#include "gen/GetMessageModificationToQzssSlasResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetMessageModificationToQzssSlasResult
 ///
+#include "gen/GetMessageModificationToQzssSlasResult.h"
 
 namespace Sdx
 {
@@ -16,27 +14,12 @@ namespace Sdx
     const char* const GetMessageModificationToQzssSlasResult::CmdName = "GetMessageModificationToQzssSlasResult";
     const char* const GetMessageModificationToQzssSlasResult::Documentation = "Result of GetMessageModificationToQzssSlas.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetMessageModificationToQzssSlasResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetMessageModificationToQzssSlasResult);
 
 
     GetMessageModificationToQzssSlasResult::GetMessageModificationToQzssSlasResult()
       : CommandResult(CmdName)
     {}
-
-    GetMessageModificationToQzssSlasResult::GetMessageModificationToQzssSlasResult(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id)
-      : CommandResult(CmdName)
-    {
-
-      setSignalArray(signalArray);
-      setSvId(svId);
-      setStartTime(startTime);
-      setStopTime(stopTime);
-      setMessageType(messageType);
-      setCondition(condition);
-      setUpdateCRC(updateCRC);
-      setBitModifications(bitModifications);
-      setId(id);
-    }
 
     GetMessageModificationToQzssSlasResult::GetMessageModificationToQzssSlasResult(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -53,11 +36,6 @@ namespace Sdx
       setId(id);
     }
 
-
-    GetMessageModificationToQzssSlasResultPtr GetMessageModificationToQzssSlasResult::create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id)
-    {
-      return std::make_shared<GetMessageModificationToQzssSlasResult>(signalArray, svId, startTime, stopTime, messageType, condition, updateCRC, bitModifications, id);
-    }
 
     GetMessageModificationToQzssSlasResultPtr GetMessageModificationToQzssSlasResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id)
     {

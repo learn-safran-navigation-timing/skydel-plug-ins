@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 #include <string>
 
 namespace Sdx
@@ -36,12 +35,8 @@ namespace Sdx
 
       GetIntTxFixEcefResult();
 
-      GetIntTxFixEcefResult(double x, double y, double z, double yaw, double pitch, double roll, const std::string& id);
-
       GetIntTxFixEcefResult(CommandBasePtr relatedCommand, double x, double y, double z, double yaw, double pitch, double roll, const std::string& id);
-
-      static GetIntTxFixEcefResultPtr create(double x, double y, double z, double yaw, double pitch, double roll, const std::string& id);
-
+  
       static GetIntTxFixEcefResultPtr create(CommandBasePtr relatedCommand, double x, double y, double z, double yaw, double pitch, double roll, const std::string& id);
       static GetIntTxFixEcefResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -82,7 +77,6 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetIntTxFixEcefResult);
   }
 }
 

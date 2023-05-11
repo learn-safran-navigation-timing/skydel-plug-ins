@@ -1,6 +1,3 @@
-
-#include "gen/GetPrnOfSVID.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetPrnOfSVID
 ///
+#include "gen/GetPrnOfSVID.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setSignal(signal);
       setSvId(svId);
     }
+
 
     GetPrnOfSVIDPtr GetPrnOfSVID::create(const std::string& signal, int svId)
     {

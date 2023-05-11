@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -32,7 +31,7 @@ namespace Sdx
       RemoveModulationAnechoicTargetInterference();
 
       RemoveModulationAnechoicTargetInterference(int group);
-
+  
       static RemoveModulationAnechoicTargetInterferencePtr create(int group);
       static RemoveModulationAnechoicTargetInterferencePtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -45,7 +44,6 @@ namespace Sdx
       int group() const;
       void setGroup(int group);
     };
-    
   }
 }
 

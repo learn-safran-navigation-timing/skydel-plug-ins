@@ -1,6 +1,3 @@
-
-#include "gen/GetPseudorangeNoiseOffsetForSVResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetPseudorangeNoiseOffsetForSVResult
 ///
+#include "gen/GetPseudorangeNoiseOffsetForSVResult.h"
 
 namespace Sdx
 {
@@ -16,22 +14,12 @@ namespace Sdx
     const char* const GetPseudorangeNoiseOffsetForSVResult::CmdName = "GetPseudorangeNoiseOffsetForSVResult";
     const char* const GetPseudorangeNoiseOffsetForSVResult::Documentation = "Result of GetPseudorangeNoiseOffsetForSV.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetPseudorangeNoiseOffsetForSVResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetPseudorangeNoiseOffsetForSVResult);
 
 
     GetPseudorangeNoiseOffsetForSVResult::GetPseudorangeNoiseOffsetForSVResult()
       : CommandResult(CmdName)
     {}
-
-    GetPseudorangeNoiseOffsetForSVResult::GetPseudorangeNoiseOffsetForSVResult(const std::string& system, int svId, bool enabled, double offset)
-      : CommandResult(CmdName)
-    {
-
-      setSystem(system);
-      setSvId(svId);
-      setEnabled(enabled);
-      setOffset(offset);
-    }
 
     GetPseudorangeNoiseOffsetForSVResult::GetPseudorangeNoiseOffsetForSVResult(CommandBasePtr relatedCommand, const std::string& system, int svId, bool enabled, double offset)
       : CommandResult(CmdName, relatedCommand)
@@ -43,11 +31,6 @@ namespace Sdx
       setOffset(offset);
     }
 
-
-    GetPseudorangeNoiseOffsetForSVResultPtr GetPseudorangeNoiseOffsetForSVResult::create(const std::string& system, int svId, bool enabled, double offset)
-    {
-      return std::make_shared<GetPseudorangeNoiseOffsetForSVResult>(system, svId, enabled, offset);
-    }
 
     GetPseudorangeNoiseOffsetForSVResultPtr GetPseudorangeNoiseOffsetForSVResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, bool enabled, double offset)
     {

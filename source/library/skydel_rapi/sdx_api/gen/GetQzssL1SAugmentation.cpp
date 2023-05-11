@@ -1,6 +1,3 @@
-
-#include "gen/GetQzssL1SAugmentation.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetQzssL1SAugmentation
 ///
+#include "gen/GetQzssL1SAugmentation.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setId(id);
     }
+
 
     GetQzssL1SAugmentationPtr GetQzssL1SAugmentation::create(const std::string& id)
     {

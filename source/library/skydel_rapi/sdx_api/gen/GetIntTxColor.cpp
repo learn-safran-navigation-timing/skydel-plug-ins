@@ -1,6 +1,3 @@
-
-#include "gen/GetIntTxColor.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetIntTxColor
 ///
+#include "gen/GetIntTxColor.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setId(id);
     }
+
 
     GetIntTxColorPtr GetIntTxColor::create(const std::string& id)
     {

@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -35,12 +34,8 @@ namespace Sdx
 
       GetWFAntennaOffsetResult();
 
-      GetWFAntennaOffsetResult(double x, double y, double z, double yaw, double pitch, double roll);
-
       GetWFAntennaOffsetResult(CommandBasePtr relatedCommand, double x, double y, double z, double yaw, double pitch, double roll);
-
-      static GetWFAntennaOffsetResultPtr create(double x, double y, double z, double yaw, double pitch, double roll);
-
+  
       static GetWFAntennaOffsetResultPtr create(CommandBasePtr relatedCommand, double x, double y, double z, double yaw, double pitch, double roll);
       static GetWFAntennaOffsetResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -76,7 +71,6 @@ namespace Sdx
       double roll() const;
       void setRoll(double roll);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetWFAntennaOffsetResult);
   }
 }
 

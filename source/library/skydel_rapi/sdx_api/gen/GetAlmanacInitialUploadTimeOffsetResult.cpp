@@ -1,6 +1,3 @@
-
-#include "gen/GetAlmanacInitialUploadTimeOffsetResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetAlmanacInitialUploadTimeOffsetResult
 ///
+#include "gen/GetAlmanacInitialUploadTimeOffsetResult.h"
 
 namespace Sdx
 {
@@ -16,20 +14,12 @@ namespace Sdx
     const char* const GetAlmanacInitialUploadTimeOffsetResult::CmdName = "GetAlmanacInitialUploadTimeOffsetResult";
     const char* const GetAlmanacInitialUploadTimeOffsetResult::Documentation = "Result of GetAlmanacInitialUploadTimeOffset.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetAlmanacInitialUploadTimeOffsetResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetAlmanacInitialUploadTimeOffsetResult);
 
 
     GetAlmanacInitialUploadTimeOffsetResult::GetAlmanacInitialUploadTimeOffsetResult()
       : CommandResult(CmdName)
     {}
-
-    GetAlmanacInitialUploadTimeOffsetResult::GetAlmanacInitialUploadTimeOffsetResult(const std::string& system, int offset)
-      : CommandResult(CmdName)
-    {
-
-      setSystem(system);
-      setOffset(offset);
-    }
 
     GetAlmanacInitialUploadTimeOffsetResult::GetAlmanacInitialUploadTimeOffsetResult(CommandBasePtr relatedCommand, const std::string& system, int offset)
       : CommandResult(CmdName, relatedCommand)
@@ -39,11 +29,6 @@ namespace Sdx
       setOffset(offset);
     }
 
-
-    GetAlmanacInitialUploadTimeOffsetResultPtr GetAlmanacInitialUploadTimeOffsetResult::create(const std::string& system, int offset)
-    {
-      return std::make_shared<GetAlmanacInitialUploadTimeOffsetResult>(system, offset);
-    }
 
     GetAlmanacInitialUploadTimeOffsetResultPtr GetAlmanacInitialUploadTimeOffsetResult::create(CommandBasePtr relatedCommand, const std::string& system, int offset)
     {

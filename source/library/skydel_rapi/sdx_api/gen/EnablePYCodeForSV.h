@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -33,7 +32,7 @@ namespace Sdx
       EnablePYCodeForSV();
 
       EnablePYCodeForSV(const std::string& signal, int svId, bool enabled);
-
+  
       static EnablePYCodeForSVPtr create(const std::string& signal, int svId, bool enabled);
       static EnablePYCodeForSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -56,7 +55,6 @@ namespace Sdx
       bool enabled() const;
       void setEnabled(bool enabled);
     };
-    
   }
 }
 

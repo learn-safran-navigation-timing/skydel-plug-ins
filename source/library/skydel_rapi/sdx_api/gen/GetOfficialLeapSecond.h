@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include "date_time.h"
 
 namespace Sdx
@@ -31,7 +30,7 @@ namespace Sdx
       GetOfficialLeapSecond();
 
       GetOfficialLeapSecond(const Sdx::DateTime& date);
-
+  
       static GetOfficialLeapSecondPtr create(const Sdx::DateTime& date);
       static GetOfficialLeapSecondPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       Sdx::DateTime date() const;
       void setDate(const Sdx::DateTime& date);
     };
-    
   }
 }
 

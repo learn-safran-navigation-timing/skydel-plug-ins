@@ -1,6 +1,3 @@
-
-#include "gen/FailureResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of FailureResult
 ///
+#include "gen/FailureResult.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const FailureResult::CmdName = "FailureResult";
     const char* const FailureResult::Documentation = "When command failed";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(FailureResult);
+    REGISTER_COMMAND_RESULT_FACTORY(FailureResult);
 
 
     FailureResult::FailureResult()
       : CommandResult(CmdName)
     {}
-
-    FailureResult::FailureResult(const std::string& errorMsg)
-      : CommandResult(CmdName)
-    {
-
-      setErrorMsg(errorMsg);
-    }
 
     FailureResult::FailureResult(CommandBasePtr relatedCommand, const std::string& errorMsg)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setErrorMsg(errorMsg);
     }
 
-
-    FailureResultPtr FailureResult::create(const std::string& errorMsg)
-    {
-      return std::make_shared<FailureResult>(errorMsg);
-    }
 
     FailureResultPtr FailureResult::create(CommandBasePtr relatedCommand, const std::string& errorMsg)
     {

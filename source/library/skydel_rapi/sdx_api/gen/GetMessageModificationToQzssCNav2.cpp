@@ -1,6 +1,3 @@
-
-#include "gen/GetMessageModificationToQzssCNav2.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetMessageModificationToQzssCNav2
 ///
+#include "gen/GetMessageModificationToQzssCNav2.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setId(id);
     }
+
 
     GetMessageModificationToQzssCNav2Ptr GetMessageModificationToQzssCNav2::create(const std::string& id)
     {

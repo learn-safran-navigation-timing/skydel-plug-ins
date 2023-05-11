@@ -1,6 +1,3 @@
-
-#include "gen/GetIntTxAWGNResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetIntTxAWGNResult
 ///
+#include "gen/GetIntTxAWGNResult.h"
 
 namespace Sdx
 {
@@ -16,26 +14,12 @@ namespace Sdx
     const char* const GetIntTxAWGNResult::CmdName = "GetIntTxAWGNResult";
     const char* const GetIntTxAWGNResult::Documentation = "Result of GetIntTxAWGN.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetIntTxAWGNResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetIntTxAWGNResult);
 
 
     GetIntTxAWGNResult::GetIntTxAWGNResult()
       : CommandResult(CmdName)
     {}
-
-    GetIntTxAWGNResult::GetIntTxAWGNResult(bool enabled, double centralFreq, double power, double bandwidth, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& seed, const Sdx::optional<int>& group)
-      : CommandResult(CmdName)
-    {
-
-      setEnabled(enabled);
-      setCentralFreq(centralFreq);
-      setPower(power);
-      setBandwidth(bandwidth);
-      setTransmitterId(transmitterId);
-      setSignalId(signalId);
-      setSeed(seed);
-      setGroup(group);
-    }
 
     GetIntTxAWGNResult::GetIntTxAWGNResult(CommandBasePtr relatedCommand, bool enabled, double centralFreq, double power, double bandwidth, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& seed, const Sdx::optional<int>& group)
       : CommandResult(CmdName, relatedCommand)
@@ -51,11 +35,6 @@ namespace Sdx
       setGroup(group);
     }
 
-
-    GetIntTxAWGNResultPtr GetIntTxAWGNResult::create(bool enabled, double centralFreq, double power, double bandwidth, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& seed, const Sdx::optional<int>& group)
-    {
-      return std::make_shared<GetIntTxAWGNResult>(enabled, centralFreq, power, bandwidth, transmitterId, signalId, seed, group);
-    }
 
     GetIntTxAWGNResultPtr GetIntTxAWGNResult::create(CommandBasePtr relatedCommand, bool enabled, double centralFreq, double power, double bandwidth, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& seed, const Sdx::optional<int>& group)
     {

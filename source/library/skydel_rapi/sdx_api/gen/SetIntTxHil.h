@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -31,7 +30,7 @@ namespace Sdx
       SetIntTxHil();
 
       SetIntTxHil(const std::string& id);
-
+  
       static SetIntTxHilPtr create(const std::string& id);
       static SetIntTxHilPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
-    
   }
 }
 

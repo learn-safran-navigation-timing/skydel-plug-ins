@@ -1,6 +1,3 @@
-
-#include "gen/SetUsingVelocityInSbasMessage25.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetUsingVelocityInSbasMessage25
 ///
+#include "gen/SetUsingVelocityInSbasMessage25.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setUseVelocity(useVelocity);
     }
+
 
     SetUsingVelocityInSbasMessage25Ptr SetUsingVelocityInSbasMessage25::create(bool useVelocity)
     {

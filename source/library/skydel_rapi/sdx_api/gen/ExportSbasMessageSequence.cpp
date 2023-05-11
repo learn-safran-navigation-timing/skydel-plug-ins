@@ -1,6 +1,3 @@
-
-#include "gen/ExportSbasMessageSequence.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of ExportSbasMessageSequence
 ///
+#include "gen/ExportSbasMessageSequence.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setPath(path);
       setOverwriting(overwriting);
     }
+
 
     ExportSbasMessageSequencePtr ExportSbasMessageSequence::create(const std::string& path, bool overwriting)
     {

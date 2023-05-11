@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -32,7 +31,7 @@ namespace Sdx
       AddPlugInInstance();
 
       AddPlugInInstance(const std::string& name, const std::string& type);
-
+  
       static AddPlugInInstancePtr create(const std::string& name, const std::string& type);
       static AddPlugInInstancePtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -50,7 +49,6 @@ namespace Sdx
       std::string type() const;
       void setType(const std::string& type);
     };
-    
   }
 }
 

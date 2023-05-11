@@ -1,6 +1,3 @@
-
-#include "gen/ResetHilWarning.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of ResetHilWarning
 ///
+#include "gen/ResetHilWarning.h"
 
 namespace Sdx
 {
@@ -15,8 +13,6 @@ namespace Sdx
   {
     const char* const ResetHilWarning::CmdName = "ResetHilWarning";
     const char* const ResetHilWarning::Documentation = "Please note the command ResetHilWarning is deprecated since 22.5. You may use GetHilExtrapolationState.\n\nReset Hardware in the loop trajectory server warning message.";
-
-    const char* const ResetHilWarning::Deprecated = "Please note the command ResetHilWarning is deprecated since 22.5. You may use GetHilExtrapolationState.";
 
     REGISTER_COMMAND_FACTORY(ResetHilWarning);
 
@@ -26,6 +22,7 @@ namespace Sdx
     {
 
     }
+
 
     ResetHilWarningPtr ResetHilWarning::create()
     {
@@ -46,8 +43,6 @@ namespace Sdx
     }
 
     std::string ResetHilWarning::documentation() const { return Documentation; }
-
-    Sdx::optional<std::string> ResetHilWarning::deprecated() const { return Sdx::optional<std::string>{Deprecated}; }
 
 
     int ResetHilWarning::executePermission() const

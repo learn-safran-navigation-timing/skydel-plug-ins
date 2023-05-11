@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 #include <string>
 #include <vector>
 
@@ -39,12 +38,8 @@ namespace Sdx
 
       GetMessageModificationToSbasNavResult();
 
-      GetMessageModificationToSbasNavResult(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id);
-
       GetMessageModificationToSbasNavResult(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id);
-
-      static GetMessageModificationToSbasNavResultPtr create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id);
-
+  
       static GetMessageModificationToSbasNavResultPtr create(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id);
       static GetMessageModificationToSbasNavResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -95,7 +90,6 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetMessageModificationToSbasNavResult);
   }
 }
 

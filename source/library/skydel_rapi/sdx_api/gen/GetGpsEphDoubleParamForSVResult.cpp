@@ -1,6 +1,3 @@
-
-#include "gen/GetGpsEphDoubleParamForSVResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetGpsEphDoubleParamForSVResult
 ///
+#include "gen/GetGpsEphDoubleParamForSVResult.h"
 
 namespace Sdx
 {
@@ -16,22 +14,12 @@ namespace Sdx
     const char* const GetGpsEphDoubleParamForSVResult::CmdName = "GetGpsEphDoubleParamForSVResult";
     const char* const GetGpsEphDoubleParamForSVResult::Documentation = "Result of GetGpsEphDoubleParamForSV.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetGpsEphDoubleParamForSVResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetGpsEphDoubleParamForSVResult);
 
 
     GetGpsEphDoubleParamForSVResult::GetGpsEphDoubleParamForSVResult()
       : CommandResult(CmdName)
     {}
-
-    GetGpsEphDoubleParamForSVResult::GetGpsEphDoubleParamForSVResult(int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName)
-      : CommandResult(CmdName)
-    {
-
-      setSvId(svId);
-      setParamName(paramName);
-      setVal(val);
-      setDataSetName(dataSetName);
-    }
 
     GetGpsEphDoubleParamForSVResult::GetGpsEphDoubleParamForSVResult(CommandBasePtr relatedCommand, int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName)
       : CommandResult(CmdName, relatedCommand)
@@ -43,11 +31,6 @@ namespace Sdx
       setDataSetName(dataSetName);
     }
 
-
-    GetGpsEphDoubleParamForSVResultPtr GetGpsEphDoubleParamForSVResult::create(int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName)
-    {
-      return std::make_shared<GetGpsEphDoubleParamForSVResult>(svId, paramName, val, dataSetName);
-    }
 
     GetGpsEphDoubleParamForSVResultPtr GetGpsEphDoubleParamForSVResult::create(CommandBasePtr relatedCommand, int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName)
     {

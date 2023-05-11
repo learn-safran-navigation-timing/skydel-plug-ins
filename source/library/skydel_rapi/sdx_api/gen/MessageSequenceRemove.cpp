@@ -1,6 +1,3 @@
-
-#include "gen/MessageSequenceRemove.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of MessageSequenceRemove
 ///
+#include "gen/MessageSequenceRemove.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setSignal(signal);
       setIndex(index);
     }
+
 
     MessageSequenceRemovePtr MessageSequenceRemove::create(const std::string& signal, int index)
     {

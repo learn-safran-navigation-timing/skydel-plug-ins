@@ -1,6 +1,3 @@
-
-#include "gen/SetEphemerisErrorForSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetEphemerisErrorForSV
 ///
+#include "gen/SetEphemerisErrorForSV.h"
 
 namespace Sdx
 {
@@ -33,6 +31,7 @@ namespace Sdx
       setDeltaAf0(deltaAf0);
       setDeltaAf1(deltaAf1);
     }
+
 
     SetEphemerisErrorForSVPtr SetEphemerisErrorForSV::create(const std::string& system, int svId, const Sdx::RIC& orbit, double deltaAf0, double deltaAf1)
     {

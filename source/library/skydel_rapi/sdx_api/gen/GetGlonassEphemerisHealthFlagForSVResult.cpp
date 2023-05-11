@@ -1,6 +1,3 @@
-
-#include "gen/GetGlonassEphemerisHealthFlagForSVResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetGlonassEphemerisHealthFlagForSVResult
 ///
+#include "gen/GetGlonassEphemerisHealthFlagForSVResult.h"
 
 namespace Sdx
 {
@@ -16,20 +14,12 @@ namespace Sdx
     const char* const GetGlonassEphemerisHealthFlagForSVResult::CmdName = "GetGlonassEphemerisHealthFlagForSVResult";
     const char* const GetGlonassEphemerisHealthFlagForSVResult::Documentation = "Result of GetGlonassEphemerisHealthFlagForSV.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetGlonassEphemerisHealthFlagForSVResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetGlonassEphemerisHealthFlagForSVResult);
 
 
     GetGlonassEphemerisHealthFlagForSVResult::GetGlonassEphemerisHealthFlagForSVResult()
       : CommandResult(CmdName)
     {}
-
-    GetGlonassEphemerisHealthFlagForSVResult::GetGlonassEphemerisHealthFlagForSVResult(int svId, bool health)
-      : CommandResult(CmdName)
-    {
-
-      setSvId(svId);
-      setHealth(health);
-    }
 
     GetGlonassEphemerisHealthFlagForSVResult::GetGlonassEphemerisHealthFlagForSVResult(CommandBasePtr relatedCommand, int svId, bool health)
       : CommandResult(CmdName, relatedCommand)
@@ -39,11 +29,6 @@ namespace Sdx
       setHealth(health);
     }
 
-
-    GetGlonassEphemerisHealthFlagForSVResultPtr GetGlonassEphemerisHealthFlagForSVResult::create(int svId, bool health)
-    {
-      return std::make_shared<GetGlonassEphemerisHealthFlagForSVResult>(svId, health);
-    }
 
     GetGlonassEphemerisHealthFlagForSVResultPtr GetGlonassEphemerisHealthFlagForSVResult::create(CommandBasePtr relatedCommand, int svId, bool health)
     {

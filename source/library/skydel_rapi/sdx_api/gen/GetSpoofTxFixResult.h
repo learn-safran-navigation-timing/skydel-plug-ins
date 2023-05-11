@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 #include <string>
 
 namespace Sdx
@@ -36,12 +35,8 @@ namespace Sdx
 
       GetSpoofTxFixResult();
 
-      GetSpoofTxFixResult(double lat, double lon, double alt, double yaw, double pitch, double roll, const std::string& id);
-
       GetSpoofTxFixResult(CommandBasePtr relatedCommand, double lat, double lon, double alt, double yaw, double pitch, double roll, const std::string& id);
-
-      static GetSpoofTxFixResultPtr create(double lat, double lon, double alt, double yaw, double pitch, double roll, const std::string& id);
-
+  
       static GetSpoofTxFixResultPtr create(CommandBasePtr relatedCommand, double lat, double lon, double alt, double yaw, double pitch, double roll, const std::string& id);
       static GetSpoofTxFixResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -82,7 +77,6 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetSpoofTxFixResult);
   }
 }
 

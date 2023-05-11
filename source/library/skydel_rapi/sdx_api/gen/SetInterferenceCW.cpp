@@ -1,6 +1,3 @@
-
-#include "gen/SetInterferenceCW.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetInterferenceCW
 ///
+#include "gen/SetInterferenceCW.h"
 
 namespace Sdx
 {
@@ -34,6 +32,7 @@ namespace Sdx
       setEnabled(enabled);
       setId(id);
     }
+
 
     SetInterferenceCWPtr SetInterferenceCW::create(int startTime, int stopTime, double centralFreq, double power, bool enabled, const std::string& id)
     {

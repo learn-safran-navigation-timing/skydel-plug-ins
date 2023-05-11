@@ -1,6 +1,3 @@
-
-#include "gen/ChangeCustomSignalColor.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of ChangeCustomSignalColor
 ///
+#include "gen/ChangeCustomSignalColor.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setColor(color);
       setId(id);
     }
+
 
     ChangeCustomSignalColorPtr ChangeCustomSignalColor::create(const std::string& color, const std::string& id)
     {

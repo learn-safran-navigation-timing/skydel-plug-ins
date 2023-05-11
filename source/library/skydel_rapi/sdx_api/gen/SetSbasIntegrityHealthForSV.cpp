@@ -1,6 +1,3 @@
-
-#include "gen/SetSbasIntegrityHealthForSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetSbasIntegrityHealthForSV
 ///
+#include "gen/SetSbasIntegrityHealthForSV.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setSvId(svId);
       setHealth(health);
     }
+
 
     SetSbasIntegrityHealthForSVPtr SetSbasIntegrityHealthForSV::create(int svId, bool health)
     {

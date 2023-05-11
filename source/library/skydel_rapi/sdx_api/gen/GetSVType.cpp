@@ -1,6 +1,3 @@
-
-#include "gen/GetSVType.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetSVType
 ///
+#include "gen/GetSVType.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setSystem(system);
       setSvId(svId);
     }
+
 
     GetSVTypePtr GetSVType::create(const std::string& system, int svId)
     {

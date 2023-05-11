@@ -1,6 +1,3 @@
-
-#include "gen/ImportCCIRFilesFromDirectory.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of ImportCCIRFilesFromDirectory
 ///
+#include "gen/ImportCCIRFilesFromDirectory.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setPath(path);
     }
+
 
     ImportCCIRFilesFromDirectoryPtr ImportCCIRFilesFromDirectory::create(const std::string& path)
     {

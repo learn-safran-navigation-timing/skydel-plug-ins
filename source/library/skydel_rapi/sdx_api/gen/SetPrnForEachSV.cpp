@@ -1,6 +1,3 @@
-
-#include "gen/SetPrnForEachSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetPrnForEachSV
 ///
+#include "gen/SetPrnForEachSV.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setSignal(signal);
       setPrn(prn);
     }
+
 
     SetPrnForEachSVPtr SetPrnForEachSV::create(const std::string& signal, const std::vector<int>& prn)
     {

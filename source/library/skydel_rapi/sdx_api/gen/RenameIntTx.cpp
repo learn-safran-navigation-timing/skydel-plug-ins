@@ -1,6 +1,3 @@
-
-#include "gen/RenameIntTx.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of RenameIntTx
 ///
+#include "gen/RenameIntTx.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setUsualName(usualName);
       setId(id);
     }
+
 
     RenameIntTxPtr RenameIntTx::create(const std::string& usualName, const std::string& id)
     {

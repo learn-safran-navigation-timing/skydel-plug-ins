@@ -1,6 +1,3 @@
-
-#include "gen/GetEffectiveIonisationLevelCoefficient.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetEffectiveIonisationLevelCoefficient
 ///
+#include "gen/GetEffectiveIonisationLevelCoefficient.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setIndex(index);
     }
+
 
     GetEffectiveIonisationLevelCoefficientPtr GetEffectiveIonisationLevelCoefficient::create(int index)
     {

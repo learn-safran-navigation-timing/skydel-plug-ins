@@ -1,6 +1,3 @@
-
-#include "gen/SetIonoGridMaskAll.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetIonoGridMaskAll
 ///
+#include "gen/SetIonoGridMaskAll.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setServiceProvider(serviceProvider);
       setGrid(grid);
     }
+
 
     SetIonoGridMaskAllPtr SetIonoGridMaskAll::create(const std::string& serviceProvider, const std::vector<std::vector<bool>>& grid)
     {

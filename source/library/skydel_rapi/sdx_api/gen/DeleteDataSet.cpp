@@ -1,6 +1,3 @@
-
-#include "gen/DeleteDataSet.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of DeleteDataSet
 ///
+#include "gen/DeleteDataSet.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setSystem(system);
       setDataSetName(dataSetName);
     }
+
 
     DeleteDataSetPtr DeleteDataSet::create(const std::string& system, const std::string& dataSetName)
     {

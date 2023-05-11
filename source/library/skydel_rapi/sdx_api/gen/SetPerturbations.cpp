@@ -1,6 +1,3 @@
-
-#include "gen/SetPerturbations.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetPerturbations
 ///
+#include "gen/SetPerturbations.h"
 
 namespace Sdx
 {
@@ -37,6 +35,7 @@ namespace Sdx
       setCuc(cuc);
       setDataSetName(dataSetName);
     }
+
 
     SetPerturbationsPtr SetPerturbations::create(const std::string& system, int svId, double crs, double crc, double cis, double cic, double cus, double cuc, const Sdx::optional<std::string>& dataSetName)
     {

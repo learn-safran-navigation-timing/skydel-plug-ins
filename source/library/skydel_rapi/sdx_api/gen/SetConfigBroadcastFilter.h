@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include "gen/ConfigFilter.h"
 #include <vector>
 
@@ -32,7 +31,7 @@ namespace Sdx
       SetConfigBroadcastFilter();
 
       SetConfigBroadcastFilter(const std::vector<Sdx::ConfigFilter>& filter);
-
+  
       static SetConfigBroadcastFilterPtr create(const std::vector<Sdx::ConfigFilter>& filter);
       static SetConfigBroadcastFilterPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -45,7 +44,6 @@ namespace Sdx
       std::vector<Sdx::ConfigFilter> filter() const;
       void setFilter(const std::vector<Sdx::ConfigFilter>& filter);
     };
-    
   }
 }
 

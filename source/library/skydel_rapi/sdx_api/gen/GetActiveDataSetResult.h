@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 #include <string>
 
 namespace Sdx
@@ -31,12 +30,8 @@ namespace Sdx
 
       GetActiveDataSetResult();
 
-      GetActiveDataSetResult(const std::string& system, const std::string& dataSetName);
-
       GetActiveDataSetResult(CommandBasePtr relatedCommand, const std::string& system, const std::string& dataSetName);
-
-      static GetActiveDataSetResultPtr create(const std::string& system, const std::string& dataSetName);
-
+  
       static GetActiveDataSetResultPtr create(CommandBasePtr relatedCommand, const std::string& system, const std::string& dataSetName);
       static GetActiveDataSetResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -52,7 +47,6 @@ namespace Sdx
       std::string dataSetName() const;
       void setDataSetName(const std::string& dataSetName);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetActiveDataSetResult);
   }
 }
 

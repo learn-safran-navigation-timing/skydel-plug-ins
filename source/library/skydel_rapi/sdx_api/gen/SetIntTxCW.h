@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include "sdx_optional.h"
 #include <string>
 
@@ -41,7 +40,7 @@ namespace Sdx
       SetIntTxCW();
 
       SetIntTxCW(bool enabled, double centralFreq, double power, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<double>& initialPhaseOffset = {}, const Sdx::optional<int>& group = {});
-
+  
       static SetIntTxCWPtr create(bool enabled, double centralFreq, double power, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<double>& initialPhaseOffset = {}, const Sdx::optional<int>& group = {});
       static SetIntTxCWPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -84,7 +83,6 @@ namespace Sdx
       Sdx::optional<int> group() const;
       void setGroup(const Sdx::optional<int>& group);
     };
-    
   }
 }
 

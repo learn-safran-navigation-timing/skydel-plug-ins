@@ -1,6 +1,3 @@
-
-#include "gen/GetAllSignalsFromIntTx.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetAllSignalsFromIntTx
 ///
+#include "gen/GetAllSignalsFromIntTx.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setId(id);
     }
+
 
     GetAllSignalsFromIntTxPtr GetAllSignalsFromIntTx::create(const std::string& id)
     {

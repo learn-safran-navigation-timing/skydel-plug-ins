@@ -1,6 +1,3 @@
-
-#include "gen/IsAttitudeToZeroForcedResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of IsAttitudeToZeroForcedResult
 ///
+#include "gen/IsAttitudeToZeroForcedResult.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const IsAttitudeToZeroForcedResult::CmdName = "IsAttitudeToZeroForcedResult";
     const char* const IsAttitudeToZeroForcedResult::Documentation = "Result of IsAttitudeToZeroForced.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsAttitudeToZeroForcedResult);
+    REGISTER_COMMAND_RESULT_FACTORY(IsAttitudeToZeroForcedResult);
 
 
     IsAttitudeToZeroForcedResult::IsAttitudeToZeroForcedResult()
       : CommandResult(CmdName)
     {}
-
-    IsAttitudeToZeroForcedResult::IsAttitudeToZeroForcedResult(bool enabled)
-      : CommandResult(CmdName)
-    {
-
-      setEnabled(enabled);
-    }
 
     IsAttitudeToZeroForcedResult::IsAttitudeToZeroForcedResult(CommandBasePtr relatedCommand, bool enabled)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setEnabled(enabled);
     }
 
-
-    IsAttitudeToZeroForcedResultPtr IsAttitudeToZeroForcedResult::create(bool enabled)
-    {
-      return std::make_shared<IsAttitudeToZeroForcedResult>(enabled);
-    }
 
     IsAttitudeToZeroForcedResultPtr IsAttitudeToZeroForcedResult::create(CommandBasePtr relatedCommand, bool enabled)
     {

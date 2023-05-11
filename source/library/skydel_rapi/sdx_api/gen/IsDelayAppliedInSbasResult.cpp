@@ -1,6 +1,3 @@
-
-#include "gen/IsDelayAppliedInSbasResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of IsDelayAppliedInSbasResult
 ///
+#include "gen/IsDelayAppliedInSbasResult.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const IsDelayAppliedInSbasResult::CmdName = "IsDelayAppliedInSbasResult";
     const char* const IsDelayAppliedInSbasResult::Documentation = "Result of IsDelayAppliedInSbas.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsDelayAppliedInSbasResult);
+    REGISTER_COMMAND_RESULT_FACTORY(IsDelayAppliedInSbasResult);
 
 
     IsDelayAppliedInSbasResult::IsDelayAppliedInSbasResult()
       : CommandResult(CmdName)
     {}
-
-    IsDelayAppliedInSbasResult::IsDelayAppliedInSbasResult(bool isEnabled)
-      : CommandResult(CmdName)
-    {
-
-      setIsEnabled(isEnabled);
-    }
 
     IsDelayAppliedInSbasResult::IsDelayAppliedInSbasResult(CommandBasePtr relatedCommand, bool isEnabled)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setIsEnabled(isEnabled);
     }
 
-
-    IsDelayAppliedInSbasResultPtr IsDelayAppliedInSbasResult::create(bool isEnabled)
-    {
-      return std::make_shared<IsDelayAppliedInSbasResult>(isEnabled);
-    }
 
     IsDelayAppliedInSbasResultPtr IsDelayAppliedInSbasResult::create(CommandBasePtr relatedCommand, bool isEnabled)
     {

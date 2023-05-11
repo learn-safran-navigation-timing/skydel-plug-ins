@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 #include <string>
 
 namespace Sdx
@@ -31,12 +30,8 @@ namespace Sdx
 
       GetIntTxColorResult();
 
-      GetIntTxColorResult(const std::string& color, const std::string& id);
-
       GetIntTxColorResult(CommandBasePtr relatedCommand, const std::string& color, const std::string& id);
-
-      static GetIntTxColorResultPtr create(const std::string& color, const std::string& id);
-
+  
       static GetIntTxColorResultPtr create(CommandBasePtr relatedCommand, const std::string& color, const std::string& id);
       static GetIntTxColorResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -52,7 +47,6 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetIntTxColorResult);
   }
 }
 

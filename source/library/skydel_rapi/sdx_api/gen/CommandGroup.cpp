@@ -1,6 +1,3 @@
-
-#include "gen/CommandGroup.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of CommandGroup
 ///
+#include "gen/CommandGroup.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setCommands(commands);
     }
+
 
     CommandGroupPtr CommandGroup::create(const std::vector<Sdx::CommandBasePtr>& commands)
     {

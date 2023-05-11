@@ -1,6 +1,3 @@
-
-#include "gen/RenameSpoofTx.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of RenameSpoofTx
 ///
+#include "gen/RenameSpoofTx.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setUsualName(usualName);
       setId(id);
     }
+
 
     RenameSpoofTxPtr RenameSpoofTx::create(const std::string& usualName, const std::string& id)
     {

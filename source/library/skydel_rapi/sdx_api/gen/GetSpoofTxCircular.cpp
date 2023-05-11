@@ -1,6 +1,3 @@
-
-#include "gen/GetSpoofTxCircular.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetSpoofTxCircular
 ///
+#include "gen/GetSpoofTxCircular.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setId(id);
     }
+
 
     GetSpoofTxCircularPtr GetSpoofTxCircular::create(const std::string& id)
     {

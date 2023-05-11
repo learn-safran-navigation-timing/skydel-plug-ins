@@ -1,6 +1,3 @@
-
-#include "gen/EnableTrajectorySmoothing.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of EnableTrajectorySmoothing
 ///
+#include "gen/EnableTrajectorySmoothing.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setEnabled(enabled);
     }
+
 
     EnableTrajectorySmoothingPtr EnableTrajectorySmoothing::create(bool enabled)
     {

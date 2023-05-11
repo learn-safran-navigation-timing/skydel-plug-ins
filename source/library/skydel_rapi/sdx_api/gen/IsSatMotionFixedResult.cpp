@@ -1,6 +1,3 @@
-
-#include "gen/IsSatMotionFixedResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of IsSatMotionFixedResult
 ///
+#include "gen/IsSatMotionFixedResult.h"
 
 namespace Sdx
 {
@@ -16,21 +14,12 @@ namespace Sdx
     const char* const IsSatMotionFixedResult::CmdName = "IsSatMotionFixedResult";
     const char* const IsSatMotionFixedResult::Documentation = "Result of IsSatMotionFixed.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsSatMotionFixedResult);
+    REGISTER_COMMAND_RESULT_FACTORY(IsSatMotionFixedResult);
 
 
     IsSatMotionFixedResult::IsSatMotionFixedResult()
       : CommandResult(CmdName)
     {}
-
-    IsSatMotionFixedResult::IsSatMotionFixedResult(const std::string& system, int svId, bool isFixed)
-      : CommandResult(CmdName)
-    {
-
-      setSystem(system);
-      setSvId(svId);
-      setIsFixed(isFixed);
-    }
 
     IsSatMotionFixedResult::IsSatMotionFixedResult(CommandBasePtr relatedCommand, const std::string& system, int svId, bool isFixed)
       : CommandResult(CmdName, relatedCommand)
@@ -41,11 +30,6 @@ namespace Sdx
       setIsFixed(isFixed);
     }
 
-
-    IsSatMotionFixedResultPtr IsSatMotionFixedResult::create(const std::string& system, int svId, bool isFixed)
-    {
-      return std::make_shared<IsSatMotionFixedResult>(system, svId, isFixed);
-    }
 
     IsSatMotionFixedResultPtr IsSatMotionFixedResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, bool isFixed)
     {

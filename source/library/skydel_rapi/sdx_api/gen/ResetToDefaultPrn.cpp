@@ -1,6 +1,3 @@
-
-#include "gen/ResetToDefaultPrn.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of ResetToDefaultPrn
 ///
+#include "gen/ResetToDefaultPrn.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setSystem(system);
     }
+
 
     ResetToDefaultPrnPtr ResetToDefaultPrn::create(const std::string& system)
     {

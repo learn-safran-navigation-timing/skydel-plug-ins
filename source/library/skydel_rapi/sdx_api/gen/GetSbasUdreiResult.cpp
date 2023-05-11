@@ -1,6 +1,3 @@
-
-#include "gen/GetSbasUdreiResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetSbasUdreiResult
 ///
+#include "gen/GetSbasUdreiResult.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const GetSbasUdreiResult::CmdName = "GetSbasUdreiResult";
     const char* const GetSbasUdreiResult::Documentation = "Result of GetSbasUdrei.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetSbasUdreiResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetSbasUdreiResult);
 
 
     GetSbasUdreiResult::GetSbasUdreiResult()
       : CommandResult(CmdName)
     {}
-
-    GetSbasUdreiResult::GetSbasUdreiResult(int udrei)
-      : CommandResult(CmdName)
-    {
-
-      setUdrei(udrei);
-    }
 
     GetSbasUdreiResult::GetSbasUdreiResult(CommandBasePtr relatedCommand, int udrei)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setUdrei(udrei);
     }
 
-
-    GetSbasUdreiResultPtr GetSbasUdreiResult::create(int udrei)
-    {
-      return std::make_shared<GetSbasUdreiResult>(udrei);
-    }
 
     GetSbasUdreiResultPtr GetSbasUdreiResult::create(CommandBasePtr relatedCommand, int udrei)
     {

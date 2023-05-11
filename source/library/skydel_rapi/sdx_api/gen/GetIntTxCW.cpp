@@ -1,6 +1,3 @@
-
-#include "gen/GetIntTxCW.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetIntTxCW
 ///
+#include "gen/GetIntTxCW.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setTransmitterId(transmitterId);
       setSignalId(signalId);
     }
+
 
     GetIntTxCWPtr GetIntTxCW::create(const std::string& transmitterId, const std::string& signalId)
     {

@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -37,7 +36,7 @@ namespace Sdx
       SetVehicleTrajectoryFix();
 
       SetVehicleTrajectoryFix(const std::string& type, double lat, double lon, double alt, double yaw, double pitch, double roll);
-
+  
       static SetVehicleTrajectoryFixPtr create(const std::string& type, double lat, double lon, double alt, double yaw, double pitch, double roll);
       static SetVehicleTrajectoryFixPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -80,7 +79,6 @@ namespace Sdx
       double roll() const;
       void setRoll(double roll);
     };
-    
   }
 }
 

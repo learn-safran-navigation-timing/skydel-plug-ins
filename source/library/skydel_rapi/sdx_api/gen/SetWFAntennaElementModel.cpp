@@ -1,6 +1,3 @@
-
-#include "gen/SetWFAntennaElementModel.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetWFAntennaElementModel
 ///
+#include "gen/SetWFAntennaElementModel.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setAntennaModelName(antennaModelName);
       setElement(element);
     }
+
 
     SetWFAntennaElementModelPtr SetWFAntennaElementModel::create(const std::string& antennaModelName, int element)
     {

@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include "sdx_optional.h"
 #include <string>
 
@@ -36,7 +35,7 @@ namespace Sdx
       SetQzssSatelliteNavAlertFlag();
 
       SetQzssSatelliteNavAlertFlag(int svId, bool alert, const Sdx::optional<std::string>& dataSetName = {});
-
+  
       static SetQzssSatelliteNavAlertFlagPtr create(int svId, bool alert, const Sdx::optional<std::string>& dataSetName = {});
       static SetQzssSatelliteNavAlertFlagPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -59,7 +58,6 @@ namespace Sdx
       Sdx::optional<std::string> dataSetName() const;
       void setDataSetName(const Sdx::optional<std::string>& dataSetName);
     };
-    
   }
 }
 

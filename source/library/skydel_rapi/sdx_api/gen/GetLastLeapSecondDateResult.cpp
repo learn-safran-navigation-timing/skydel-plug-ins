@@ -1,6 +1,3 @@
-
-#include "gen/GetLastLeapSecondDateResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetLastLeapSecondDateResult
 ///
+#include "gen/GetLastLeapSecondDateResult.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const GetLastLeapSecondDateResult::CmdName = "GetLastLeapSecondDateResult";
     const char* const GetLastLeapSecondDateResult::Documentation = "Result of GetLastLeapSecondDate.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetLastLeapSecondDateResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetLastLeapSecondDateResult);
 
 
     GetLastLeapSecondDateResult::GetLastLeapSecondDateResult()
       : CommandResult(CmdName)
     {}
-
-    GetLastLeapSecondDateResult::GetLastLeapSecondDateResult(const Sdx::Date& date)
-      : CommandResult(CmdName)
-    {
-
-      setDate(date);
-    }
 
     GetLastLeapSecondDateResult::GetLastLeapSecondDateResult(CommandBasePtr relatedCommand, const Sdx::Date& date)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setDate(date);
     }
 
-
-    GetLastLeapSecondDateResultPtr GetLastLeapSecondDateResult::create(const Sdx::Date& date)
-    {
-      return std::make_shared<GetLastLeapSecondDateResult>(date);
-    }
 
     GetLastLeapSecondDateResultPtr GetLastLeapSecondDateResult::create(CommandBasePtr relatedCommand, const Sdx::Date& date)
     {

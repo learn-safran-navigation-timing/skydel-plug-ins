@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -34,7 +33,7 @@ namespace Sdx
       ChangeModulationAnechoicTargetInterference();
 
       ChangeModulationAnechoicTargetInterference(int group, const std::string& output, double centralFreq);
-
+  
       static ChangeModulationAnechoicTargetInterferencePtr create(int group, const std::string& output, double centralFreq);
       static ChangeModulationAnechoicTargetInterferencePtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -57,7 +56,6 @@ namespace Sdx
       double centralFreq() const;
       void setCentralFreq(double centralFreq);
     };
-    
   }
 }
 

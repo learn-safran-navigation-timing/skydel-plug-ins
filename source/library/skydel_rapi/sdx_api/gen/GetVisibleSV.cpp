@@ -1,6 +1,3 @@
-
-#include "gen/GetVisibleSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetVisibleSV
 ///
+#include "gen/GetVisibleSV.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setSystem(system);
     }
+
 
     GetVisibleSVPtr GetVisibleSV::create(const std::string& system)
     {

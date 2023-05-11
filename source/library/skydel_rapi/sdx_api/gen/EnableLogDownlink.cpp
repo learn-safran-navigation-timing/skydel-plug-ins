@@ -1,6 +1,3 @@
-
-#include "gen/EnableLogDownlink.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of EnableLogDownlink
 ///
+#include "gen/EnableLogDownlink.h"
 
 namespace Sdx
 {
@@ -31,6 +29,7 @@ namespace Sdx
       setBeforeEncoding(beforeEncoding);
       setAfterEncoding(afterEncoding);
     }
+
 
     EnableLogDownlinkPtr EnableLogDownlink::create(bool enabled, const Sdx::optional<bool>& beforeEncoding, const Sdx::optional<bool>& afterEncoding)
     {

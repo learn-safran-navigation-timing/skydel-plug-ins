@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -34,7 +33,7 @@ namespace Sdx
       SetSpoofTxRemoteAddress();
 
       SetSpoofTxRemoteAddress(const std::string& address, int instanceId, const std::string& id);
-
+  
       static SetSpoofTxRemoteAddressPtr create(const std::string& address, int instanceId, const std::string& id);
       static SetSpoofTxRemoteAddressPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -57,7 +56,6 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
-    
   }
 }
 

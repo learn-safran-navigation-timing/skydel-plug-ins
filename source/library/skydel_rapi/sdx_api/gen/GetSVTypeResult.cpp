@@ -1,6 +1,3 @@
-
-#include "gen/GetSVTypeResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetSVTypeResult
 ///
+#include "gen/GetSVTypeResult.h"
 
 namespace Sdx
 {
@@ -16,21 +14,12 @@ namespace Sdx
     const char* const GetSVTypeResult::CmdName = "GetSVTypeResult";
     const char* const GetSVTypeResult::Documentation = "Result of GetSVType.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetSVTypeResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetSVTypeResult);
 
 
     GetSVTypeResult::GetSVTypeResult()
       : CommandResult(CmdName)
     {}
-
-    GetSVTypeResult::GetSVTypeResult(const std::string& system, int svId, const std::string& svType)
-      : CommandResult(CmdName)
-    {
-
-      setSystem(system);
-      setSvId(svId);
-      setSvType(svType);
-    }
 
     GetSVTypeResult::GetSVTypeResult(CommandBasePtr relatedCommand, const std::string& system, int svId, const std::string& svType)
       : CommandResult(CmdName, relatedCommand)
@@ -41,11 +30,6 @@ namespace Sdx
       setSvType(svType);
     }
 
-
-    GetSVTypeResultPtr GetSVTypeResult::create(const std::string& system, int svId, const std::string& svType)
-    {
-      return std::make_shared<GetSVTypeResult>(system, svId, svType);
-    }
 
     GetSVTypeResultPtr GetSVTypeResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, const std::string& svType)
     {

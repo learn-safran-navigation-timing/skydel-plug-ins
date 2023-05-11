@@ -1,6 +1,3 @@
-
-#include "gen/GetSpoofTxColorResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetSpoofTxColorResult
 ///
+#include "gen/GetSpoofTxColorResult.h"
 
 namespace Sdx
 {
@@ -16,20 +14,12 @@ namespace Sdx
     const char* const GetSpoofTxColorResult::CmdName = "GetSpoofTxColorResult";
     const char* const GetSpoofTxColorResult::Documentation = "Result of GetSpoofTxColor.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetSpoofTxColorResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetSpoofTxColorResult);
 
 
     GetSpoofTxColorResult::GetSpoofTxColorResult()
       : CommandResult(CmdName)
     {}
-
-    GetSpoofTxColorResult::GetSpoofTxColorResult(const std::string& color, const std::string& id)
-      : CommandResult(CmdName)
-    {
-
-      setColor(color);
-      setId(id);
-    }
 
     GetSpoofTxColorResult::GetSpoofTxColorResult(CommandBasePtr relatedCommand, const std::string& color, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -39,11 +29,6 @@ namespace Sdx
       setId(id);
     }
 
-
-    GetSpoofTxColorResultPtr GetSpoofTxColorResult::create(const std::string& color, const std::string& id)
-    {
-      return std::make_shared<GetSpoofTxColorResult>(color, id);
-    }
 
     GetSpoofTxColorResultPtr GetSpoofTxColorResult::create(CommandBasePtr relatedCommand, const std::string& color, const std::string& id)
     {

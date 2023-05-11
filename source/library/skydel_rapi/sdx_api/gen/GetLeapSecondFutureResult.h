@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 #include "date.h"
 
 namespace Sdx
@@ -32,12 +31,8 @@ namespace Sdx
 
       GetLeapSecondFutureResult();
 
-      GetLeapSecondFutureResult(bool enabled, int seconds, const Sdx::Date& date);
-
       GetLeapSecondFutureResult(CommandBasePtr relatedCommand, bool enabled, int seconds, const Sdx::Date& date);
-
-      static GetLeapSecondFutureResultPtr create(bool enabled, int seconds, const Sdx::Date& date);
-
+  
       static GetLeapSecondFutureResultPtr create(CommandBasePtr relatedCommand, bool enabled, int seconds, const Sdx::Date& date);
       static GetLeapSecondFutureResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -58,7 +53,6 @@ namespace Sdx
       Sdx::Date date() const;
       void setDate(const Sdx::Date& date);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetLeapSecondFutureResult);
   }
 }
 

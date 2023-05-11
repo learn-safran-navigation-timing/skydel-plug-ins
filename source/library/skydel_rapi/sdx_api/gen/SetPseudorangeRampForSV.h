@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -51,7 +50,7 @@ namespace Sdx
       SetPseudorangeRampForSV();
 
       SetPseudorangeRampForSV(const std::string& system, int svId, double offset, int startTime, int holdStartTime, int holdStopTime, int stopTime, const std::string& id);
-
+  
       static SetPseudorangeRampForSVPtr create(const std::string& system, int svId, double offset, int startTime, int holdStartTime, int holdStopTime, int stopTime, const std::string& id);
       static SetPseudorangeRampForSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -99,7 +98,6 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
-    
   }
 }
 

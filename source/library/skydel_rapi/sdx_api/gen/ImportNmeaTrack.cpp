@@ -1,6 +1,3 @@
-
-#include "gen/ImportNmeaTrack.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of ImportNmeaTrack
 ///
+#include "gen/ImportNmeaTrack.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setPath(path);
     }
+
 
     ImportNmeaTrackPtr ImportNmeaTrack::create(const std::string& path)
     {

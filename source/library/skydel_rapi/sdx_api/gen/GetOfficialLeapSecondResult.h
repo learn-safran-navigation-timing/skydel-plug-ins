@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -30,12 +29,8 @@ namespace Sdx
 
       GetOfficialLeapSecondResult();
 
-      GetOfficialLeapSecondResult(int leapSecond);
-
       GetOfficialLeapSecondResult(CommandBasePtr relatedCommand, int leapSecond);
-
-      static GetOfficialLeapSecondResultPtr create(int leapSecond);
-
+  
       static GetOfficialLeapSecondResultPtr create(CommandBasePtr relatedCommand, int leapSecond);
       static GetOfficialLeapSecondResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -46,7 +41,6 @@ namespace Sdx
       int leapSecond() const;
       void setLeapSecond(int leapSecond);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetOfficialLeapSecondResult);
   }
 }
 

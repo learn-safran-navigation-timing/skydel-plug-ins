@@ -1,6 +1,3 @@
-
-#include "gen/GetLastHilWarning.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetLastHilWarning
 ///
+#include "gen/GetLastHilWarning.h"
 
 namespace Sdx
 {
@@ -15,8 +13,6 @@ namespace Sdx
   {
     const char* const GetLastHilWarning::CmdName = "GetLastHilWarning";
     const char* const GetLastHilWarning::Documentation = "Please note the command GetLastHilWarning is deprecated since 22.5. You may use GetHilExtrapolationState.\n\nGet last Hardware in the loop trajectory server warning message. Returns HilWarningResult.";
-
-    const char* const GetLastHilWarning::Deprecated = "Please note the command GetLastHilWarning is deprecated since 22.5. You may use GetHilExtrapolationState.";
 
     REGISTER_COMMAND_FACTORY(GetLastHilWarning);
 
@@ -26,6 +22,7 @@ namespace Sdx
     {
 
     }
+
 
     GetLastHilWarningPtr GetLastHilWarning::create()
     {
@@ -46,8 +43,6 @@ namespace Sdx
     }
 
     std::string GetLastHilWarning::documentation() const { return Documentation; }
-
-    Sdx::optional<std::string> GetLastHilWarning::deprecated() const { return Sdx::optional<std::string>{Deprecated}; }
 
 
     int GetLastHilWarning::executePermission() const

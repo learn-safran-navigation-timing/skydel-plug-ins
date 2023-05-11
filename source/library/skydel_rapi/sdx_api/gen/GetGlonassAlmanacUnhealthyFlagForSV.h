@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -31,7 +30,7 @@ namespace Sdx
       GetGlonassAlmanacUnhealthyFlagForSV();
 
       GetGlonassAlmanacUnhealthyFlagForSV(int svId);
-
+  
       static GetGlonassAlmanacUnhealthyFlagForSVPtr create(int svId);
       static GetGlonassAlmanacUnhealthyFlagForSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       int svId() const;
       void setSvId(int svId);
     };
-    
   }
 }
 

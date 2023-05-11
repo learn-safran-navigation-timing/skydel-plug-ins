@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -44,7 +43,7 @@ namespace Sdx
       GetGlonassEphDoubleParamForSV();
 
       GetGlonassEphDoubleParamForSV(int svId, const std::string& paramName);
-
+  
       static GetGlonassEphDoubleParamForSVPtr create(int svId, const std::string& paramName);
       static GetGlonassEphDoubleParamForSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -62,7 +61,6 @@ namespace Sdx
       std::string paramName() const;
       void setParamName(const std::string& paramName);
     };
-    
   }
 }
 

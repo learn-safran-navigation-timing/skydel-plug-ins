@@ -1,6 +1,3 @@
-
-#include "gen/GetPowerSbasOffsetResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetPowerSbasOffsetResult
 ///
+#include "gen/GetPowerSbasOffsetResult.h"
 
 namespace Sdx
 {
@@ -16,20 +14,12 @@ namespace Sdx
     const char* const GetPowerSbasOffsetResult::CmdName = "GetPowerSbasOffsetResult";
     const char* const GetPowerSbasOffsetResult::Documentation = "Result of GetPowerSbasOffset.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetPowerSbasOffsetResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetPowerSbasOffsetResult);
 
 
     GetPowerSbasOffsetResult::GetPowerSbasOffsetResult()
       : CommandResult(CmdName)
     {}
-
-    GetPowerSbasOffsetResult::GetPowerSbasOffsetResult(const std::string& serviceProvider, double offset)
-      : CommandResult(CmdName)
-    {
-
-      setServiceProvider(serviceProvider);
-      setOffset(offset);
-    }
 
     GetPowerSbasOffsetResult::GetPowerSbasOffsetResult(CommandBasePtr relatedCommand, const std::string& serviceProvider, double offset)
       : CommandResult(CmdName, relatedCommand)
@@ -39,11 +29,6 @@ namespace Sdx
       setOffset(offset);
     }
 
-
-    GetPowerSbasOffsetResultPtr GetPowerSbasOffsetResult::create(const std::string& serviceProvider, double offset)
-    {
-      return std::make_shared<GetPowerSbasOffsetResult>(serviceProvider, offset);
-    }
 
     GetPowerSbasOffsetResultPtr GetPowerSbasOffsetResult::create(CommandBasePtr relatedCommand, const std::string& serviceProvider, double offset)
     {

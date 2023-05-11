@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 #include <string>
 
 namespace Sdx
@@ -36,12 +35,8 @@ namespace Sdx
 
       GetPseudorangeNoiseGaussMarkovForSVResult();
 
-      GetPseudorangeNoiseGaussMarkovForSVResult(const std::string& system, int svId, int process, bool enabled, double sigma, double time, int seed);
-
       GetPseudorangeNoiseGaussMarkovForSVResult(CommandBasePtr relatedCommand, const std::string& system, int svId, int process, bool enabled, double sigma, double time, int seed);
-
-      static GetPseudorangeNoiseGaussMarkovForSVResultPtr create(const std::string& system, int svId, int process, bool enabled, double sigma, double time, int seed);
-
+  
       static GetPseudorangeNoiseGaussMarkovForSVResultPtr create(CommandBasePtr relatedCommand, const std::string& system, int svId, int process, bool enabled, double sigma, double time, int seed);
       static GetPseudorangeNoiseGaussMarkovForSVResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -82,7 +77,6 @@ namespace Sdx
       int seed() const;
       void setSeed(int seed);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetPseudorangeNoiseGaussMarkovForSVResult);
   }
 }
 

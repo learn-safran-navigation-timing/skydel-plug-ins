@@ -1,6 +1,3 @@
-
-#include "gen/SetDefaultConfiguration.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetDefaultConfiguration
 ///
+#include "gen/SetDefaultConfiguration.h"
 
 namespace Sdx
 {
@@ -24,6 +22,7 @@ namespace Sdx
     {
 
     }
+
 
     SetDefaultConfigurationPtr SetDefaultConfiguration::create()
     {

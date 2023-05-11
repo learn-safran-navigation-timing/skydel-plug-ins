@@ -1,6 +1,3 @@
-
-#include "gen/MessageSequenceSwap.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of MessageSequenceSwap
 ///
+#include "gen/MessageSequenceSwap.h"
 
 namespace Sdx
 {
@@ -31,6 +29,7 @@ namespace Sdx
       setIndexI(indexI);
       setIndexJ(indexJ);
     }
+
 
     MessageSequenceSwapPtr MessageSequenceSwap::create(const std::string& signal, int indexI, int indexJ)
     {

@@ -1,6 +1,3 @@
-
-#include "gen/GetSVPhasePatternOffset.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetSVPhasePatternOffset
 ///
+#include "gen/GetSVPhasePatternOffset.h"
 
 namespace Sdx
 {
@@ -31,6 +29,7 @@ namespace Sdx
       setSystem(system);
       setAntennaName(antennaName);
     }
+
 
     GetSVPhasePatternOffsetPtr GetSVPhasePatternOffset::create(const Sdx::GNSSBand& band, const std::string& system, const Sdx::optional<std::string>& antennaName)
     {

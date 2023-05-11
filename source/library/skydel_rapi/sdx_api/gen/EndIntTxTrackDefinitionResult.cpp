@@ -1,6 +1,3 @@
-
-#include "gen/EndIntTxTrackDefinitionResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of EndIntTxTrackDefinitionResult
 ///
+#include "gen/EndIntTxTrackDefinitionResult.h"
 
 namespace Sdx
 {
@@ -16,20 +14,12 @@ namespace Sdx
     const char* const EndIntTxTrackDefinitionResult::CmdName = "EndIntTxTrackDefinitionResult";
     const char* const EndIntTxTrackDefinitionResult::Documentation = "EndIntTxTrackDefinition Result with created track informations.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(EndIntTxTrackDefinitionResult);
+    REGISTER_COMMAND_RESULT_FACTORY(EndIntTxTrackDefinitionResult);
 
 
     EndIntTxTrackDefinitionResult::EndIntTxTrackDefinitionResult()
       : CommandResult(CmdName)
     {}
-
-    EndIntTxTrackDefinitionResult::EndIntTxTrackDefinitionResult(int count, const std::string& id)
-      : CommandResult(CmdName)
-    {
-
-      setCount(count);
-      setId(id);
-    }
 
     EndIntTxTrackDefinitionResult::EndIntTxTrackDefinitionResult(CommandBasePtr relatedCommand, int count, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -39,11 +29,6 @@ namespace Sdx
       setId(id);
     }
 
-
-    EndIntTxTrackDefinitionResultPtr EndIntTxTrackDefinitionResult::create(int count, const std::string& id)
-    {
-      return std::make_shared<EndIntTxTrackDefinitionResult>(count, id);
-    }
 
     EndIntTxTrackDefinitionResultPtr EndIntTxTrackDefinitionResult::create(CommandBasePtr relatedCommand, int count, const std::string& id)
     {

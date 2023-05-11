@@ -1,6 +1,3 @@
-
-#include "gen/IsPropagationDelayEnabledResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of IsPropagationDelayEnabledResult
 ///
+#include "gen/IsPropagationDelayEnabledResult.h"
 
 namespace Sdx
 {
@@ -16,20 +14,12 @@ namespace Sdx
     const char* const IsPropagationDelayEnabledResult::CmdName = "IsPropagationDelayEnabledResult";
     const char* const IsPropagationDelayEnabledResult::Documentation = "Result of IsPropagationDelayEnabled.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsPropagationDelayEnabledResult);
+    REGISTER_COMMAND_RESULT_FACTORY(IsPropagationDelayEnabledResult);
 
 
     IsPropagationDelayEnabledResult::IsPropagationDelayEnabledResult()
       : CommandResult(CmdName)
     {}
-
-    IsPropagationDelayEnabledResult::IsPropagationDelayEnabledResult(const std::string& system, bool enabled)
-      : CommandResult(CmdName)
-    {
-
-      setSystem(system);
-      setEnabled(enabled);
-    }
 
     IsPropagationDelayEnabledResult::IsPropagationDelayEnabledResult(CommandBasePtr relatedCommand, const std::string& system, bool enabled)
       : CommandResult(CmdName, relatedCommand)
@@ -39,11 +29,6 @@ namespace Sdx
       setEnabled(enabled);
     }
 
-
-    IsPropagationDelayEnabledResultPtr IsPropagationDelayEnabledResult::create(const std::string& system, bool enabled)
-    {
-      return std::make_shared<IsPropagationDelayEnabledResult>(system, enabled);
-    }
 
     IsPropagationDelayEnabledResultPtr IsPropagationDelayEnabledResult::create(CommandBasePtr relatedCommand, const std::string& system, bool enabled)
     {

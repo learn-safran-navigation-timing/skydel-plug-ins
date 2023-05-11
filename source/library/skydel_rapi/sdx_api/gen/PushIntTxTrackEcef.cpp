@@ -1,6 +1,3 @@
-
-#include "gen/PushIntTxTrackEcef.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of PushIntTxTrackEcef
 ///
+#include "gen/PushIntTxTrackEcef.h"
 
 namespace Sdx
 {
@@ -33,6 +31,7 @@ namespace Sdx
       setZ(z);
       setId(id);
     }
+
 
     PushIntTxTrackEcefPtr PushIntTxTrackEcef::create(int time, double x, double y, double z, const std::string& id)
     {

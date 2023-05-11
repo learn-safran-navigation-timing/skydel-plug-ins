@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <vector>
 
 namespace Sdx
@@ -31,7 +30,7 @@ namespace Sdx
       EnableCnav2Pages();
 
       EnableCnav2Pages(const std::vector<int>& messages);
-
+  
       static EnableCnav2PagesPtr create(const std::vector<int>& messages);
       static EnableCnav2PagesPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       std::vector<int> messages() const;
       void setMessages(const std::vector<int>& messages);
     };
-    
   }
 }
 

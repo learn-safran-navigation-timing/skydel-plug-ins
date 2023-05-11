@@ -1,6 +1,3 @@
-
-#include "gen/SetMessageModificationToGlonassNav.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetMessageModificationToGlonassNav
 ///
+#include "gen/SetMessageModificationToGlonassNav.h"
 
 namespace Sdx
 {
@@ -37,6 +35,7 @@ namespace Sdx
       setStringModification(stringModification);
       setId(id);
     }
+
 
     SetMessageModificationToGlonassNavPtr SetMessageModificationToGlonassNav::create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int frame, int stringNumber, bool updateHammingCode, const std::string& stringModification, const std::string& id)
     {

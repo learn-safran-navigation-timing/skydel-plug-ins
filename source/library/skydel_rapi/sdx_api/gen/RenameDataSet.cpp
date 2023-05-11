@@ -1,6 +1,3 @@
-
-#include "gen/RenameDataSet.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of RenameDataSet
 ///
+#include "gen/RenameDataSet.h"
 
 namespace Sdx
 {
@@ -31,6 +29,7 @@ namespace Sdx
       setDataSetName(dataSetName);
       setNewDataSetName(newDataSetName);
     }
+
 
     RenameDataSetPtr RenameDataSet::create(const std::string& system, const std::string& dataSetName, const std::string& newDataSetName)
     {

@@ -1,6 +1,3 @@
-
-#include "gen/CopyVehicleAntennaModel.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of CopyVehicleAntennaModel
 ///
+#include "gen/CopyVehicleAntennaModel.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setName(name);
       setCopyName(copyName);
     }
+
 
     CopyVehicleAntennaModelPtr CopyVehicleAntennaModel::create(const std::string& name, const std::string& copyName)
     {

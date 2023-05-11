@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -30,12 +29,8 @@ namespace Sdx
 
       IsSpectrumVisibleResult();
 
-      IsSpectrumVisibleResult(bool visible);
-
       IsSpectrumVisibleResult(CommandBasePtr relatedCommand, bool visible);
-
-      static IsSpectrumVisibleResultPtr create(bool visible);
-
+  
       static IsSpectrumVisibleResultPtr create(CommandBasePtr relatedCommand, bool visible);
       static IsSpectrumVisibleResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -46,7 +41,6 @@ namespace Sdx
       bool visible() const;
       void setVisible(bool visible);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(IsSpectrumVisibleResult);
   }
 }
 

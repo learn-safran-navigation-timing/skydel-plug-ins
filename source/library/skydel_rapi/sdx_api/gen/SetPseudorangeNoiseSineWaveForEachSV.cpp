@@ -1,6 +1,3 @@
-
-#include "gen/SetPseudorangeNoiseSineWaveForEachSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,13 +5,14 @@
 ///
 /// Definition of SetPseudorangeNoiseSineWaveForEachSV
 ///
+#include "gen/SetPseudorangeNoiseSineWaveForEachSV.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const SetPseudorangeNoiseSineWaveForEachSV::CmdName = "SetPseudorangeNoiseSineWaveForEachSV";
-    const char* const SetPseudorangeNoiseSineWaveForEachSV::Documentation = "Set the satellite pseudorange noise sine wave attributes for all satellites.";
+    const char* const SetPseudorangeNoiseSineWaveForEachSV::Documentation = "Please note the command SetAllSatellitesPseudorangeNoiseSineWave is deprecated since 21.3. You may use SetPseudorangeNoiseSineWaveForEachSV.\n\nSet the satellite pseudorange noise sine wave attributes for all satellites.";
 
     REGISTER_COMMAND_FACTORY(SetPseudorangeNoiseSineWaveForEachSV);
 
@@ -34,6 +32,7 @@ namespace Sdx
       setPeriod(period);
       setOffset(offset);
     }
+
 
     SetPseudorangeNoiseSineWaveForEachSVPtr SetPseudorangeNoiseSineWaveForEachSV::create(const std::string& system, int sineWave, const std::vector<bool>& enabled, const std::vector<double>& amplitude, const std::vector<int>& period, const std::vector<double>& offset)
     {

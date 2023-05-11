@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 #include "sdx_optional.h"
 #include <string>
 
@@ -38,12 +37,8 @@ namespace Sdx
 
       GetIntTxAWGNResult();
 
-      GetIntTxAWGNResult(bool enabled, double centralFreq, double power, double bandwidth, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& seed = {}, const Sdx::optional<int>& group = {});
-
       GetIntTxAWGNResult(CommandBasePtr relatedCommand, bool enabled, double centralFreq, double power, double bandwidth, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& seed = {}, const Sdx::optional<int>& group = {});
-
-      static GetIntTxAWGNResultPtr create(bool enabled, double centralFreq, double power, double bandwidth, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& seed = {}, const Sdx::optional<int>& group = {});
-
+  
       static GetIntTxAWGNResultPtr create(CommandBasePtr relatedCommand, bool enabled, double centralFreq, double power, double bandwidth, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& seed = {}, const Sdx::optional<int>& group = {});
       static GetIntTxAWGNResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -89,7 +84,6 @@ namespace Sdx
       Sdx::optional<int> group() const;
       void setGroup(const Sdx::optional<int>& group);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetIntTxAWGNResult);
   }
 }
 

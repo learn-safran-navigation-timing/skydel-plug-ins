@@ -1,6 +1,3 @@
-
-#include "gen/GetComputerSystemTimeSinceEpochAtPps0Result.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetComputerSystemTimeSinceEpochAtPps0Result
 ///
+#include "gen/GetComputerSystemTimeSinceEpochAtPps0Result.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const GetComputerSystemTimeSinceEpochAtPps0Result::CmdName = "GetComputerSystemTimeSinceEpochAtPps0Result";
     const char* const GetComputerSystemTimeSinceEpochAtPps0Result::Documentation = "Result of GetComputerSystemTimeSinceEpochAtPps0.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetComputerSystemTimeSinceEpochAtPps0Result);
+    REGISTER_COMMAND_RESULT_FACTORY(GetComputerSystemTimeSinceEpochAtPps0Result);
 
 
     GetComputerSystemTimeSinceEpochAtPps0Result::GetComputerSystemTimeSinceEpochAtPps0Result()
       : CommandResult(CmdName)
     {}
-
-    GetComputerSystemTimeSinceEpochAtPps0Result::GetComputerSystemTimeSinceEpochAtPps0Result(double milliseconds)
-      : CommandResult(CmdName)
-    {
-
-      setMilliseconds(milliseconds);
-    }
 
     GetComputerSystemTimeSinceEpochAtPps0Result::GetComputerSystemTimeSinceEpochAtPps0Result(CommandBasePtr relatedCommand, double milliseconds)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setMilliseconds(milliseconds);
     }
 
-
-    GetComputerSystemTimeSinceEpochAtPps0ResultPtr GetComputerSystemTimeSinceEpochAtPps0Result::create(double milliseconds)
-    {
-      return std::make_shared<GetComputerSystemTimeSinceEpochAtPps0Result>(milliseconds);
-    }
 
     GetComputerSystemTimeSinceEpochAtPps0ResultPtr GetComputerSystemTimeSinceEpochAtPps0Result::create(CommandBasePtr relatedCommand, double milliseconds)
     {

@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -30,12 +29,8 @@ namespace Sdx
 
       GetWFAntennaGainResult();
 
-      GetWFAntennaGainResult(int gain);
-
       GetWFAntennaGainResult(CommandBasePtr relatedCommand, int gain);
-
-      static GetWFAntennaGainResultPtr create(int gain);
-
+  
       static GetWFAntennaGainResultPtr create(CommandBasePtr relatedCommand, int gain);
       static GetWFAntennaGainResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -46,7 +41,6 @@ namespace Sdx
       int gain() const;
       void setGain(int gain);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetWFAntennaGainResult);
   }
 }
 

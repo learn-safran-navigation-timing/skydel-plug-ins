@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 #include <string>
 #include <vector>
 
@@ -14,8 +13,8 @@ namespace Sdx
     /// Result of GetMessageModificationToBeiDouD1Nav.
     ///
     /// Name             Type         Description
-    /// ---------------- ------------ ---------------------------------------------------------------------------------------------------
-    /// SignalArray      array string Array of signals to apply the message modification to, accepts "B1", "B2" and "B3I" (empty for all)
+    /// ---------------- ------------ --------------------------------------------------------------------------------------------
+    /// SignalArray      array string Array of signals to apply the message modification to, accepts "B1" and "B2" (empty for all)
     /// SvId             int          The satellite's SV ID 1..35 (use 0 to apply modification to all SVs)
     /// StartTime        int          Elapsed time in seconds since start of simulation
     /// StopTime         int          Elapsed time in seconds since start of simulation (use 0 for no stop time)
@@ -40,12 +39,8 @@ namespace Sdx
 
       GetMessageModificationToBeiDouD1NavResult();
 
-      GetMessageModificationToBeiDouD1NavResult(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int page, int word, bool updateParity, const std::string& wordModification, const std::string& id);
-
       GetMessageModificationToBeiDouD1NavResult(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int page, int word, bool updateParity, const std::string& wordModification, const std::string& id);
-
-      static GetMessageModificationToBeiDouD1NavResultPtr create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int page, int word, bool updateParity, const std::string& wordModification, const std::string& id);
-
+  
       static GetMessageModificationToBeiDouD1NavResultPtr create(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int page, int word, bool updateParity, const std::string& wordModification, const std::string& id);
       static GetMessageModificationToBeiDouD1NavResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -101,7 +96,6 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetMessageModificationToBeiDouD1NavResult);
   }
 }
 

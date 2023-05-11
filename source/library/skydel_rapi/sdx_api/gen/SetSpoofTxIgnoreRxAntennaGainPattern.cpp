@@ -1,6 +1,3 @@
-
-#include "gen/SetSpoofTxIgnoreRxAntennaGainPattern.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetSpoofTxIgnoreRxAntennaGainPattern
 ///
+#include "gen/SetSpoofTxIgnoreRxAntennaGainPattern.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setIgnore(ignore);
       setId(id);
     }
+
 
     SetSpoofTxIgnoreRxAntennaGainPatternPtr SetSpoofTxIgnoreRxAntennaGainPattern::create(bool ignore, const std::string& id)
     {

@@ -1,6 +1,3 @@
-
-#include "gen/IsSpectrumVisible.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of IsSpectrumVisible
 ///
+#include "gen/IsSpectrumVisible.h"
 
 namespace Sdx
 {
@@ -24,6 +22,7 @@ namespace Sdx
     {
 
     }
+
 
     IsSpectrumVisiblePtr IsSpectrumVisible::create()
     {

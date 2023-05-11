@@ -1,6 +1,3 @@
-
-#include "gen/IsSbasFastCorrectionsEnabledForResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of IsSbasFastCorrectionsEnabledForResult
 ///
+#include "gen/IsSbasFastCorrectionsEnabledForResult.h"
 
 namespace Sdx
 {
@@ -16,21 +14,12 @@ namespace Sdx
     const char* const IsSbasFastCorrectionsEnabledForResult::CmdName = "IsSbasFastCorrectionsEnabledForResult";
     const char* const IsSbasFastCorrectionsEnabledForResult::Documentation = "Result of IsSbasFastCorrectionsEnabledFor.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsSbasFastCorrectionsEnabledForResult);
+    REGISTER_COMMAND_RESULT_FACTORY(IsSbasFastCorrectionsEnabledForResult);
 
 
     IsSbasFastCorrectionsEnabledForResult::IsSbasFastCorrectionsEnabledForResult()
       : CommandResult(CmdName)
     {}
-
-    IsSbasFastCorrectionsEnabledForResult::IsSbasFastCorrectionsEnabledForResult(const std::string& system, bool isEnabled, const Sdx::optional<std::string>& errorType)
-      : CommandResult(CmdName)
-    {
-
-      setSystem(system);
-      setIsEnabled(isEnabled);
-      setErrorType(errorType);
-    }
 
     IsSbasFastCorrectionsEnabledForResult::IsSbasFastCorrectionsEnabledForResult(CommandBasePtr relatedCommand, const std::string& system, bool isEnabled, const Sdx::optional<std::string>& errorType)
       : CommandResult(CmdName, relatedCommand)
@@ -41,11 +30,6 @@ namespace Sdx
       setErrorType(errorType);
     }
 
-
-    IsSbasFastCorrectionsEnabledForResultPtr IsSbasFastCorrectionsEnabledForResult::create(const std::string& system, bool isEnabled, const Sdx::optional<std::string>& errorType)
-    {
-      return std::make_shared<IsSbasFastCorrectionsEnabledForResult>(system, isEnabled, errorType);
-    }
 
     IsSbasFastCorrectionsEnabledForResultPtr IsSbasFastCorrectionsEnabledForResult::create(CommandBasePtr relatedCommand, const std::string& system, bool isEnabled, const Sdx::optional<std::string>& errorType)
     {

@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 #include "gen/AntennaPatternType.h"
 #include <string>
 #include <vector>
@@ -34,12 +33,8 @@ namespace Sdx
 
       GetIntTxAntennaResult();
 
-      GetIntTxAntennaResult(const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const std::string& id);
-
       GetIntTxAntennaResult(CommandBasePtr relatedCommand, const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const std::string& id);
-
-      static GetIntTxAntennaResultPtr create(const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const std::string& id);
-
+  
       static GetIntTxAntennaResultPtr create(CommandBasePtr relatedCommand, const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const std::string& id);
       static GetIntTxAntennaResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -60,7 +55,6 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetIntTxAntennaResult);
   }
 }
 

@@ -1,6 +1,3 @@
-
-#include "gen/RemoveAllIntTx.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of RemoveAllIntTx
 ///
+#include "gen/RemoveAllIntTx.h"
 
 namespace Sdx
 {
@@ -24,6 +22,7 @@ namespace Sdx
     {
 
     }
+
 
     RemoveAllIntTxPtr RemoveAllIntTx::create()
     {

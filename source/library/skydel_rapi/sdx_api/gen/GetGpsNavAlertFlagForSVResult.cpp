@@ -1,6 +1,3 @@
-
-#include "gen/GetGpsNavAlertFlagForSVResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetGpsNavAlertFlagForSVResult
 ///
+#include "gen/GetGpsNavAlertFlagForSVResult.h"
 
 namespace Sdx
 {
@@ -16,21 +14,12 @@ namespace Sdx
     const char* const GetGpsNavAlertFlagForSVResult::CmdName = "GetGpsNavAlertFlagForSVResult";
     const char* const GetGpsNavAlertFlagForSVResult::Documentation = "Result of GetGpsNavAlertFlagForSV.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetGpsNavAlertFlagForSVResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetGpsNavAlertFlagForSVResult);
 
 
     GetGpsNavAlertFlagForSVResult::GetGpsNavAlertFlagForSVResult()
       : CommandResult(CmdName)
     {}
-
-    GetGpsNavAlertFlagForSVResult::GetGpsNavAlertFlagForSVResult(int svId, bool alert, const Sdx::optional<std::string>& dataSetName)
-      : CommandResult(CmdName)
-    {
-
-      setSvId(svId);
-      setAlert(alert);
-      setDataSetName(dataSetName);
-    }
 
     GetGpsNavAlertFlagForSVResult::GetGpsNavAlertFlagForSVResult(CommandBasePtr relatedCommand, int svId, bool alert, const Sdx::optional<std::string>& dataSetName)
       : CommandResult(CmdName, relatedCommand)
@@ -41,11 +30,6 @@ namespace Sdx
       setDataSetName(dataSetName);
     }
 
-
-    GetGpsNavAlertFlagForSVResultPtr GetGpsNavAlertFlagForSVResult::create(int svId, bool alert, const Sdx::optional<std::string>& dataSetName)
-    {
-      return std::make_shared<GetGpsNavAlertFlagForSVResult>(svId, alert, dataSetName);
-    }
 
     GetGpsNavAlertFlagForSVResultPtr GetGpsNavAlertFlagForSVResult::create(CommandBasePtr relatedCommand, int svId, bool alert, const Sdx::optional<std::string>& dataSetName)
     {

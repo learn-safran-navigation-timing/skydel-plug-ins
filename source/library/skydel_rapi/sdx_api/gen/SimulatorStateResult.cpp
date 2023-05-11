@@ -1,6 +1,3 @@
-
-#include "gen/SimulatorStateResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SimulatorStateResult
 ///
+#include "gen/SimulatorStateResult.h"
 
 namespace Sdx
 {
@@ -16,22 +14,12 @@ namespace Sdx
     const char* const SimulatorStateResult::CmdName = "SimulatorStateResult";
     const char* const SimulatorStateResult::Documentation = "Simulator State Result.\nPossible substates are :\n-None\n-Incomplete\n-Ready\n-Initializing\n-Armed\n-Streaming RF\n-Sync Slave\n-WF Init (Slave)\n-WF Init (Master)\n-HIL Sync\n-Sync Init\n-Sync PPS Reset\n-Sync Start Time\n-Sync Start\n-Error";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(SimulatorStateResult);
+    REGISTER_COMMAND_RESULT_FACTORY(SimulatorStateResult);
 
 
     SimulatorStateResult::SimulatorStateResult()
       : CommandResult(CmdName)
     {}
-
-    SimulatorStateResult::SimulatorStateResult(const std::string& state, const std::string& error, const Sdx::SimulatorState& stateId, const Sdx::SimulatorSubState& subStateId)
-      : CommandResult(CmdName)
-    {
-
-      setState(state);
-      setError(error);
-      setStateId(stateId);
-      setSubStateId(subStateId);
-    }
 
     SimulatorStateResult::SimulatorStateResult(CommandBasePtr relatedCommand, const std::string& state, const std::string& error, const Sdx::SimulatorState& stateId, const Sdx::SimulatorSubState& subStateId)
       : CommandResult(CmdName, relatedCommand)
@@ -43,11 +31,6 @@ namespace Sdx
       setSubStateId(subStateId);
     }
 
-
-    SimulatorStateResultPtr SimulatorStateResult::create(const std::string& state, const std::string& error, const Sdx::SimulatorState& stateId, const Sdx::SimulatorSubState& subStateId)
-    {
-      return std::make_shared<SimulatorStateResult>(state, error, stateId, subStateId);
-    }
 
     SimulatorStateResultPtr SimulatorStateResult::create(CommandBasePtr relatedCommand, const std::string& state, const std::string& error, const Sdx::SimulatorState& stateId, const Sdx::SimulatorSubState& subStateId)
     {

@@ -1,6 +1,3 @@
-
-#include "gen/SetSpoofTxRemoteAddress.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetSpoofTxRemoteAddress
 ///
+#include "gen/SetSpoofTxRemoteAddress.h"
 
 namespace Sdx
 {
@@ -31,6 +29,7 @@ namespace Sdx
       setInstanceId(instanceId);
       setId(id);
     }
+
 
     SetSpoofTxRemoteAddressPtr SetSpoofTxRemoteAddress::create(const std::string& address, int instanceId, const std::string& id)
     {

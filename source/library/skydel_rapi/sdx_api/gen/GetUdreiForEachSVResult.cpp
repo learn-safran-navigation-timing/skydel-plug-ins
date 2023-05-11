@@ -1,6 +1,3 @@
-
-#include "gen/GetUdreiForEachSVResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetUdreiForEachSVResult
 ///
+#include "gen/GetUdreiForEachSVResult.h"
 
 namespace Sdx
 {
@@ -16,20 +14,12 @@ namespace Sdx
     const char* const GetUdreiForEachSVResult::CmdName = "GetUdreiForEachSVResult";
     const char* const GetUdreiForEachSVResult::Documentation = "Result of GetUdreiForEachSV.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetUdreiForEachSVResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetUdreiForEachSVResult);
 
 
     GetUdreiForEachSVResult::GetUdreiForEachSVResult()
       : CommandResult(CmdName)
     {}
-
-    GetUdreiForEachSVResult::GetUdreiForEachSVResult(const std::string& system, const std::vector<int>& udreis)
-      : CommandResult(CmdName)
-    {
-
-      setSystem(system);
-      setUdreis(udreis);
-    }
 
     GetUdreiForEachSVResult::GetUdreiForEachSVResult(CommandBasePtr relatedCommand, const std::string& system, const std::vector<int>& udreis)
       : CommandResult(CmdName, relatedCommand)
@@ -39,11 +29,6 @@ namespace Sdx
       setUdreis(udreis);
     }
 
-
-    GetUdreiForEachSVResultPtr GetUdreiForEachSVResult::create(const std::string& system, const std::vector<int>& udreis)
-    {
-      return std::make_shared<GetUdreiForEachSVResult>(system, udreis);
-    }
 
     GetUdreiForEachSVResultPtr GetUdreiForEachSVResult::create(CommandBasePtr relatedCommand, const std::string& system, const std::vector<int>& udreis)
     {

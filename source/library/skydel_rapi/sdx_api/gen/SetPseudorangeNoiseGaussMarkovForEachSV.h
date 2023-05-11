@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 #include <vector>
 
@@ -37,7 +36,7 @@ namespace Sdx
       SetPseudorangeNoiseGaussMarkovForEachSV();
 
       SetPseudorangeNoiseGaussMarkovForEachSV(const std::string& system, int process, const std::vector<bool>& enabled, const std::vector<double>& sigma, const std::vector<double>& time, const std::vector<int>& seed);
-
+  
       static SetPseudorangeNoiseGaussMarkovForEachSVPtr create(const std::string& system, int process, const std::vector<bool>& enabled, const std::vector<double>& sigma, const std::vector<double>& time, const std::vector<int>& seed);
       static SetPseudorangeNoiseGaussMarkovForEachSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -75,7 +74,6 @@ namespace Sdx
       std::vector<int> seed() const;
       void setSeed(const std::vector<int>& seed);
     };
-    
   }
 }
 

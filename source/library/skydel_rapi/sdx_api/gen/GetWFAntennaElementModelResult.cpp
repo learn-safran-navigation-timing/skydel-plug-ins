@@ -1,6 +1,3 @@
-
-#include "gen/GetWFAntennaElementModelResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetWFAntennaElementModelResult
 ///
+#include "gen/GetWFAntennaElementModelResult.h"
 
 namespace Sdx
 {
@@ -16,20 +14,12 @@ namespace Sdx
     const char* const GetWFAntennaElementModelResult::CmdName = "GetWFAntennaElementModelResult";
     const char* const GetWFAntennaElementModelResult::Documentation = "Result of GetWFAntennaElementModel.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetWFAntennaElementModelResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetWFAntennaElementModelResult);
 
 
     GetWFAntennaElementModelResult::GetWFAntennaElementModelResult()
       : CommandResult(CmdName)
     {}
-
-    GetWFAntennaElementModelResult::GetWFAntennaElementModelResult(const std::string& antennaModelName, int element)
-      : CommandResult(CmdName)
-    {
-
-      setAntennaModelName(antennaModelName);
-      setElement(element);
-    }
 
     GetWFAntennaElementModelResult::GetWFAntennaElementModelResult(CommandBasePtr relatedCommand, const std::string& antennaModelName, int element)
       : CommandResult(CmdName, relatedCommand)
@@ -39,11 +29,6 @@ namespace Sdx
       setElement(element);
     }
 
-
-    GetWFAntennaElementModelResultPtr GetWFAntennaElementModelResult::create(const std::string& antennaModelName, int element)
-    {
-      return std::make_shared<GetWFAntennaElementModelResult>(antennaModelName, element);
-    }
 
     GetWFAntennaElementModelResultPtr GetWFAntennaElementModelResult::create(CommandBasePtr relatedCommand, const std::string& antennaModelName, int element)
     {

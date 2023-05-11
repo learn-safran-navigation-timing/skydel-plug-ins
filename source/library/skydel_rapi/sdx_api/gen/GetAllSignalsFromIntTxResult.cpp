@@ -1,6 +1,3 @@
-
-#include "gen/GetAllSignalsFromIntTxResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetAllSignalsFromIntTxResult
 ///
+#include "gen/GetAllSignalsFromIntTxResult.h"
 
 namespace Sdx
 {
@@ -16,20 +14,12 @@ namespace Sdx
     const char* const GetAllSignalsFromIntTxResult::CmdName = "GetAllSignalsFromIntTxResult";
     const char* const GetAllSignalsFromIntTxResult::Documentation = "Result of GetAllSignalsFromIntTx.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetAllSignalsFromIntTxResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetAllSignalsFromIntTxResult);
 
 
     GetAllSignalsFromIntTxResult::GetAllSignalsFromIntTxResult()
       : CommandResult(CmdName)
     {}
-
-    GetAllSignalsFromIntTxResult::GetAllSignalsFromIntTxResult(const std::string& id, const std::vector<std::string>& idsSignal)
-      : CommandResult(CmdName)
-    {
-
-      setId(id);
-      setIdsSignal(idsSignal);
-    }
 
     GetAllSignalsFromIntTxResult::GetAllSignalsFromIntTxResult(CommandBasePtr relatedCommand, const std::string& id, const std::vector<std::string>& idsSignal)
       : CommandResult(CmdName, relatedCommand)
@@ -39,11 +29,6 @@ namespace Sdx
       setIdsSignal(idsSignal);
     }
 
-
-    GetAllSignalsFromIntTxResultPtr GetAllSignalsFromIntTxResult::create(const std::string& id, const std::vector<std::string>& idsSignal)
-    {
-      return std::make_shared<GetAllSignalsFromIntTxResult>(id, idsSignal);
-    }
 
     GetAllSignalsFromIntTxResultPtr GetAllSignalsFromIntTxResult::create(CommandBasePtr relatedCommand, const std::string& id, const std::vector<std::string>& idsSignal)
     {

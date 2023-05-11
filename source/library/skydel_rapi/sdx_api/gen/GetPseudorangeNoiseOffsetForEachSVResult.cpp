@@ -1,6 +1,3 @@
-
-#include "gen/GetPseudorangeNoiseOffsetForEachSVResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetPseudorangeNoiseOffsetForEachSVResult
 ///
+#include "gen/GetPseudorangeNoiseOffsetForEachSVResult.h"
 
 namespace Sdx
 {
@@ -16,21 +14,12 @@ namespace Sdx
     const char* const GetPseudorangeNoiseOffsetForEachSVResult::CmdName = "GetPseudorangeNoiseOffsetForEachSVResult";
     const char* const GetPseudorangeNoiseOffsetForEachSVResult::Documentation = "Result of GetPseudorangeNoiseOffsetForEachSV.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetPseudorangeNoiseOffsetForEachSVResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetPseudorangeNoiseOffsetForEachSVResult);
 
 
     GetPseudorangeNoiseOffsetForEachSVResult::GetPseudorangeNoiseOffsetForEachSVResult()
       : CommandResult(CmdName)
     {}
-
-    GetPseudorangeNoiseOffsetForEachSVResult::GetPseudorangeNoiseOffsetForEachSVResult(const std::string& system, const std::vector<bool>& enabled, const std::vector<double>& offset)
-      : CommandResult(CmdName)
-    {
-
-      setSystem(system);
-      setEnabled(enabled);
-      setOffset(offset);
-    }
 
     GetPseudorangeNoiseOffsetForEachSVResult::GetPseudorangeNoiseOffsetForEachSVResult(CommandBasePtr relatedCommand, const std::string& system, const std::vector<bool>& enabled, const std::vector<double>& offset)
       : CommandResult(CmdName, relatedCommand)
@@ -41,11 +30,6 @@ namespace Sdx
       setOffset(offset);
     }
 
-
-    GetPseudorangeNoiseOffsetForEachSVResultPtr GetPseudorangeNoiseOffsetForEachSVResult::create(const std::string& system, const std::vector<bool>& enabled, const std::vector<double>& offset)
-    {
-      return std::make_shared<GetPseudorangeNoiseOffsetForEachSVResult>(system, enabled, offset);
-    }
 
     GetPseudorangeNoiseOffsetForEachSVResultPtr GetPseudorangeNoiseOffsetForEachSVResult::create(CommandBasePtr relatedCommand, const std::string& system, const std::vector<bool>& enabled, const std::vector<double>& offset)
     {

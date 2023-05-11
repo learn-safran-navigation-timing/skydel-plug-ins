@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include "sdx_optional.h"
 #include <string>
 #include <vector>
@@ -37,7 +36,7 @@ namespace Sdx
       SetGpsEphemerisDoubleParams();
 
       SetGpsEphemerisDoubleParams(const std::string& paramName, const std::vector<double>& val, const Sdx::optional<std::string>& dataSetName = {});
-
+  
       static SetGpsEphemerisDoubleParamsPtr create(const std::string& paramName, const std::vector<double>& val, const Sdx::optional<std::string>& dataSetName = {});
       static SetGpsEphemerisDoubleParamsPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -60,7 +59,6 @@ namespace Sdx
       Sdx::optional<std::string> dataSetName() const;
       void setDataSetName(const Sdx::optional<std::string>& dataSetName);
     };
-    
   }
 }
 

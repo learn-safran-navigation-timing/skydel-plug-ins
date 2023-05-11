@@ -1,6 +1,3 @@
-
-#include "gen/SetRFOutputOffsets.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetRFOutputOffsets
 ///
+#include "gen/SetRFOutputOffsets.h"
 
 namespace Sdx
 {
@@ -32,6 +30,7 @@ namespace Sdx
       setTimeOffset(timeOffset);
       setPhaseOffset(phaseOffset);
     }
+
 
     SetRFOutputOffsetsPtr SetRFOutputOffsets::create(int outputIdx, double powerOffset, double timeOffset, double phaseOffset)
     {

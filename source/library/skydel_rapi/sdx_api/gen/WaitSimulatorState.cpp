@@ -1,6 +1,3 @@
-
-#include "gen/WaitSimulatorState.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of WaitSimulatorState
 ///
+#include "gen/WaitSimulatorState.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setState(state);
       setFailureState(failureState);
     }
+
 
     WaitSimulatorStatePtr WaitSimulatorState::create(const std::string& state, const std::string& failureState)
     {

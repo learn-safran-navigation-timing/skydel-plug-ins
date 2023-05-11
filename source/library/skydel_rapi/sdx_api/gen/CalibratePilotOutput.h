@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -34,7 +33,7 @@ namespace Sdx
       CalibratePilotOutput();
 
       CalibratePilotOutput(int outputIdx, double power, double time, double carrierPhase);
-
+  
       static CalibratePilotOutputPtr create(int outputIdx, double power, double time, double carrierPhase);
       static CalibratePilotOutputPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -62,7 +61,6 @@ namespace Sdx
       double carrierPhase() const;
       void setCarrierPhase(double carrierPhase);
     };
-    
   }
 }
 

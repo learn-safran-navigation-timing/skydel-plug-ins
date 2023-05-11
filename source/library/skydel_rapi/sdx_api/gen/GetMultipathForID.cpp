@@ -1,6 +1,3 @@
-
-#include "gen/GetMultipathForID.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetMultipathForID
 ///
+#include "gen/GetMultipathForID.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setId(id);
     }
+
 
     GetMultipathForIDPtr GetMultipathForID::create(const std::string& id)
     {

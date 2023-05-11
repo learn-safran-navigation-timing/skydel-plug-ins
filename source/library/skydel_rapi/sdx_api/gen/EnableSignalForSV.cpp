@@ -1,6 +1,3 @@
-
-#include "gen/EnableSignalForSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of EnableSignalForSV
 ///
+#include "gen/EnableSignalForSV.h"
 
 namespace Sdx
 {
@@ -31,6 +29,7 @@ namespace Sdx
       setSvId(svId);
       setEnabled(enabled);
     }
+
 
     EnableSignalForSVPtr EnableSignalForSV::create(const std::string& signal, int svId, bool enabled)
     {

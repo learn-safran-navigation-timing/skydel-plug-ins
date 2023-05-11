@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -31,7 +30,7 @@ namespace Sdx
       GetSpoofTxColor();
 
       GetSpoofTxColor(const std::string& id);
-
+  
       static GetSpoofTxColorPtr create(const std::string& id);
       static GetSpoofTxColorPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
-    
   }
 }
 

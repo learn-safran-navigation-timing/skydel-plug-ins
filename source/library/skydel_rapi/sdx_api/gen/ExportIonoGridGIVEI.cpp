@@ -1,6 +1,3 @@
-
-#include "gen/ExportIonoGridGIVEI.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of ExportIonoGridGIVEI
 ///
+#include "gen/ExportIonoGridGIVEI.h"
 
 namespace Sdx
 {
@@ -31,6 +29,7 @@ namespace Sdx
       setPath(path);
       setServiceProvider(serviceProvider);
     }
+
 
     ExportIonoGridGIVEIPtr ExportIonoGridGIVEI::create(bool overwriting, const std::string& path, const Sdx::optional<std::string>& serviceProvider)
     {

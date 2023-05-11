@@ -1,6 +1,3 @@
-
-#include "gen/ImportVehicleAntennaModel.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of ImportVehicleAntennaModel
 ///
+#include "gen/ImportVehicleAntennaModel.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setFilePath(filePath);
     }
+
 
     ImportVehicleAntennaModelPtr ImportVehicleAntennaModel::create(const std::string& filePath)
     {

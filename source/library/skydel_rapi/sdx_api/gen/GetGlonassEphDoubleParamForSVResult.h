@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 #include <string>
 
 namespace Sdx
@@ -32,12 +31,8 @@ namespace Sdx
 
       GetGlonassEphDoubleParamForSVResult();
 
-      GetGlonassEphDoubleParamForSVResult(int svId, const std::string& paramName, double val);
-
       GetGlonassEphDoubleParamForSVResult(CommandBasePtr relatedCommand, int svId, const std::string& paramName, double val);
-
-      static GetGlonassEphDoubleParamForSVResultPtr create(int svId, const std::string& paramName, double val);
-
+  
       static GetGlonassEphDoubleParamForSVResultPtr create(CommandBasePtr relatedCommand, int svId, const std::string& paramName, double val);
       static GetGlonassEphDoubleParamForSVResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -58,7 +53,6 @@ namespace Sdx
       double val() const;
       void setVal(double val);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetGlonassEphDoubleParamForSVResult);
   }
 }
 

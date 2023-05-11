@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -32,7 +31,7 @@ namespace Sdx
       GetDataSetAssignation();
 
       GetDataSetAssignation(const std::string& system, const std::string& dataSetType);
-
+  
       static GetDataSetAssignationPtr create(const std::string& system, const std::string& dataSetType);
       static GetDataSetAssignationPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -50,7 +49,6 @@ namespace Sdx
       std::string dataSetType() const;
       void setDataSetType(const std::string& dataSetType);
     };
-    
   }
 }
 

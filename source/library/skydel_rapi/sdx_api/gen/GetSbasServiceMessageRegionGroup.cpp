@@ -1,6 +1,3 @@
-
-#include "gen/GetSbasServiceMessageRegionGroup.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetSbasServiceMessageRegionGroup
 ///
+#include "gen/GetSbasServiceMessageRegionGroup.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setServiceProvider(serviceProvider);
       setId(id);
     }
+
 
     GetSbasServiceMessageRegionGroupPtr GetSbasServiceMessageRegionGroup::create(const std::string& serviceProvider, const std::string& id)
     {

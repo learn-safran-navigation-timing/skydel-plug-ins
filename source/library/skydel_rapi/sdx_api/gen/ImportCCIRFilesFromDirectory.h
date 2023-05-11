@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -31,7 +30,7 @@ namespace Sdx
       ImportCCIRFilesFromDirectory();
 
       ImportCCIRFilesFromDirectory(const std::string& path);
-
+  
       static ImportCCIRFilesFromDirectoryPtr create(const std::string& path);
       static ImportCCIRFilesFromDirectoryPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       std::string path() const;
       void setPath(const std::string& path);
     };
-    
   }
 }
 

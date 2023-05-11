@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -34,7 +33,7 @@ namespace Sdx
       SetIntTxIgnoreVehicleAntennaPattern();
 
       SetIntTxIgnoreVehicleAntennaPattern(bool ignore, const std::string& id);
-
+  
       static SetIntTxIgnoreVehicleAntennaPatternPtr create(bool ignore, const std::string& id);
       static SetIntTxIgnoreVehicleAntennaPatternPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -52,7 +51,6 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
-    
   }
 }
 

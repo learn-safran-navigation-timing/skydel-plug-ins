@@ -1,6 +1,3 @@
-
-#include "gen/EnableLogRaw.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of EnableLogRaw
 ///
+#include "gen/EnableLogRaw.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setEnabled(enabled);
     }
+
 
     EnableLogRawPtr EnableLogRaw::create(bool enabled)
     {

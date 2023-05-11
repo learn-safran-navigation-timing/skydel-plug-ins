@@ -1,6 +1,3 @@
-
-#include "gen/SetGalileoFnavSatelliteK.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetGalileoFnavSatelliteK
 ///
+#include "gen/SetGalileoFnavSatelliteK.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setPrn(prn);
       setK(k);
     }
+
 
     SetGalileoFnavSatelliteKPtr SetGalileoFnavSatelliteK::create(int prn, int k)
     {

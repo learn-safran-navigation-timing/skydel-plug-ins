@@ -1,6 +1,3 @@
-
-#include "gen/GetIonoGridMaskAll.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetIonoGridMaskAll
 ///
+#include "gen/GetIonoGridMaskAll.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setServiceProvider(serviceProvider);
     }
+
 
     GetIonoGridMaskAllPtr GetIonoGridMaskAll::create(const std::string& serviceProvider)
     {

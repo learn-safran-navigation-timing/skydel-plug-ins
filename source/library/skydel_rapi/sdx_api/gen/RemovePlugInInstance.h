@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -31,7 +30,7 @@ namespace Sdx
       RemovePlugInInstance();
 
       RemovePlugInInstance(const std::string& name);
-
+  
       static RemovePlugInInstancePtr create(const std::string& name);
       static RemovePlugInInstancePtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       std::string name() const;
       void setName(const std::string& name);
     };
-    
   }
 }
 

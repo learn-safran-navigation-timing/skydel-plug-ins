@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -30,12 +29,8 @@ namespace Sdx
 
       GetDurationResult();
 
-      GetDurationResult(int second);
-
       GetDurationResult(CommandBasePtr relatedCommand, int second);
-
-      static GetDurationResultPtr create(int second);
-
+  
       static GetDurationResultPtr create(CommandBasePtr relatedCommand, int second);
       static GetDurationResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -46,7 +41,6 @@ namespace Sdx
       int second() const;
       void setSecond(int second);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetDurationResult);
   }
 }
 

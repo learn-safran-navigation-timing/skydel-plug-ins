@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -33,7 +32,7 @@ namespace Sdx
       SwapSbasServiceMessageRegionGroup();
 
       SwapSbasServiceMessageRegionGroup(const std::string& serviceProvider, const std::string& firstId, const std::string& secondId);
-
+  
       static SwapSbasServiceMessageRegionGroupPtr create(const std::string& serviceProvider, const std::string& firstId, const std::string& secondId);
       static SwapSbasServiceMessageRegionGroupPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -56,7 +55,6 @@ namespace Sdx
       std::string secondId() const;
       void setSecondId(const std::string& secondId);
     };
-    
   }
 }
 

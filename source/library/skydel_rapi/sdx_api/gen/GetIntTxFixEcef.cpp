@@ -1,6 +1,3 @@
-
-#include "gen/GetIntTxFixEcef.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetIntTxFixEcef
 ///
+#include "gen/GetIntTxFixEcef.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setId(id);
     }
+
 
     GetIntTxFixEcefPtr GetIntTxFixEcef::create(const std::string& id)
     {

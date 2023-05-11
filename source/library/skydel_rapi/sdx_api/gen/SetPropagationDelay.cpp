@@ -1,6 +1,3 @@
-
-#include "gen/SetPropagationDelay.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetPropagationDelay
 ///
+#include "gen/SetPropagationDelay.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setSystem(system);
       setEnabled(enabled);
     }
+
 
     SetPropagationDelayPtr SetPropagationDelay::create(const std::string& system, bool enabled)
     {

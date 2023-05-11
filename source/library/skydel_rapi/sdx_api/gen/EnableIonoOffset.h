@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -31,7 +30,7 @@ namespace Sdx
       EnableIonoOffset();
 
       EnableIonoOffset(bool isEnabled);
-
+  
       static EnableIonoOffsetPtr create(bool isEnabled);
       static EnableIonoOffsetPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       bool isEnabled() const;
       void setIsEnabled(bool isEnabled);
     };
-    
   }
 }
 

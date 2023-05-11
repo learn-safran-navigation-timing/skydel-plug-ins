@@ -1,6 +1,3 @@
-
-#include "gen/ClearAllLOSForSystem.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of ClearAllLOSForSystem
 ///
+#include "gen/ClearAllLOSForSystem.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setSystem(system);
     }
+
 
     ClearAllLOSForSystemPtr ClearAllLOSForSystem::create(const std::string& system)
     {

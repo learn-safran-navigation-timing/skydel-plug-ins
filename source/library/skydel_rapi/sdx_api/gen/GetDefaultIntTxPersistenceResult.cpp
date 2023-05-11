@@ -1,6 +1,3 @@
-
-#include "gen/GetDefaultIntTxPersistenceResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetDefaultIntTxPersistenceResult
 ///
+#include "gen/GetDefaultIntTxPersistenceResult.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const GetDefaultIntTxPersistenceResult::CmdName = "GetDefaultIntTxPersistenceResult";
     const char* const GetDefaultIntTxPersistenceResult::Documentation = "Result of GetDefaultIntTxPersistence.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetDefaultIntTxPersistenceResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetDefaultIntTxPersistenceResult);
 
 
     GetDefaultIntTxPersistenceResult::GetDefaultIntTxPersistenceResult()
       : CommandResult(CmdName)
     {}
-
-    GetDefaultIntTxPersistenceResult::GetDefaultIntTxPersistenceResult(bool defaultValue)
-      : CommandResult(CmdName)
-    {
-
-      setDefaultValue(defaultValue);
-    }
 
     GetDefaultIntTxPersistenceResult::GetDefaultIntTxPersistenceResult(CommandBasePtr relatedCommand, bool defaultValue)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setDefaultValue(defaultValue);
     }
 
-
-    GetDefaultIntTxPersistenceResultPtr GetDefaultIntTxPersistenceResult::create(bool defaultValue)
-    {
-      return std::make_shared<GetDefaultIntTxPersistenceResult>(defaultValue);
-    }
 
     GetDefaultIntTxPersistenceResultPtr GetDefaultIntTxPersistenceResult::create(CommandBasePtr relatedCommand, bool defaultValue)
     {

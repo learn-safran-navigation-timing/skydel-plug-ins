@@ -1,6 +1,3 @@
-
-#include "gen/RemoveAllMultipathForSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of RemoveAllMultipathForSV
 ///
+#include "gen/RemoveAllMultipathForSV.h"
 
 namespace Sdx
 {
@@ -31,6 +29,7 @@ namespace Sdx
       setSvId(svId);
       setReset(reset);
     }
+
 
     RemoveAllMultipathForSVPtr RemoveAllMultipathForSV::create(const std::string& system, int svId, bool reset)
     {

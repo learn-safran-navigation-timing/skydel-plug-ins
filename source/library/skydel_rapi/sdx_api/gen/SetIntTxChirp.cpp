@@ -1,6 +1,3 @@
-
-#include "gen/SetIntTxChirp.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetIntTxChirp
 ///
+#include "gen/SetIntTxChirp.h"
 
 namespace Sdx
 {
@@ -36,6 +34,7 @@ namespace Sdx
       setSignalId(signalId);
       setGroup(group);
     }
+
 
     SetIntTxChirpPtr SetIntTxChirp::create(bool enabled, double centralFreq, double power, double bandwidth, double sweepTime, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& group)
     {

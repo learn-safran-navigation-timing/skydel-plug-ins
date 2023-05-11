@@ -1,6 +1,3 @@
-
-#include "gen/GetPseudorangeNoiseGaussMarkovForEachSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,13 +5,14 @@
 ///
 /// Definition of GetPseudorangeNoiseGaussMarkovForEachSV
 ///
+#include "gen/GetPseudorangeNoiseGaussMarkovForEachSV.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const GetPseudorangeNoiseGaussMarkovForEachSV::CmdName = "GetPseudorangeNoiseGaussMarkovForEachSV";
-    const char* const GetPseudorangeNoiseGaussMarkovForEachSV::Documentation = "Get the satellite pseudorange noise Gauss-Markov process attributes for all satellites.";
+    const char* const GetPseudorangeNoiseGaussMarkovForEachSV::Documentation = "Please note the command GetAllSatellitesPseudorangeNoiseGaussMarkov is deprecated since 21.3. You may use GetPseudorangeNoiseGaussMarkovForEachSV.\n\nGet the satellite pseudorange noise Gauss-Markov process attributes for all satellites.";
 
     REGISTER_COMMAND_FACTORY(GetPseudorangeNoiseGaussMarkovForEachSV);
 
@@ -30,6 +28,7 @@ namespace Sdx
       setSystem(system);
       setProcess(process);
     }
+
 
     GetPseudorangeNoiseGaussMarkovForEachSVPtr GetPseudorangeNoiseGaussMarkovForEachSV::create(const std::string& system, int process)
     {

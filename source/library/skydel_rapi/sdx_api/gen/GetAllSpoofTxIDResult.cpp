@@ -1,6 +1,3 @@
-
-#include "gen/GetAllSpoofTxIDResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetAllSpoofTxIDResult
 ///
+#include "gen/GetAllSpoofTxIDResult.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const GetAllSpoofTxIDResult::CmdName = "GetAllSpoofTxIDResult";
     const char* const GetAllSpoofTxIDResult::Documentation = "Result of GetAllSpoofTxID.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetAllSpoofTxIDResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetAllSpoofTxIDResult);
 
 
     GetAllSpoofTxIDResult::GetAllSpoofTxIDResult()
       : CommandResult(CmdName)
     {}
-
-    GetAllSpoofTxIDResult::GetAllSpoofTxIDResult(const std::vector<std::string>& ids)
-      : CommandResult(CmdName)
-    {
-
-      setIds(ids);
-    }
 
     GetAllSpoofTxIDResult::GetAllSpoofTxIDResult(CommandBasePtr relatedCommand, const std::vector<std::string>& ids)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setIds(ids);
     }
 
-
-    GetAllSpoofTxIDResultPtr GetAllSpoofTxIDResult::create(const std::vector<std::string>& ids)
-    {
-      return std::make_shared<GetAllSpoofTxIDResult>(ids);
-    }
 
     GetAllSpoofTxIDResultPtr GetAllSpoofTxIDResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& ids)
     {

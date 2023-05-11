@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 #include <string>
 
 namespace Sdx
@@ -30,12 +29,8 @@ namespace Sdx
 
       GetTropoModelResult();
 
-      GetTropoModelResult(const std::string& model);
-
       GetTropoModelResult(CommandBasePtr relatedCommand, const std::string& model);
-
-      static GetTropoModelResultPtr create(const std::string& model);
-
+  
       static GetTropoModelResultPtr create(CommandBasePtr relatedCommand, const std::string& model);
       static GetTropoModelResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -46,7 +41,6 @@ namespace Sdx
       std::string model() const;
       void setModel(const std::string& model);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetTropoModelResult);
   }
 }
 

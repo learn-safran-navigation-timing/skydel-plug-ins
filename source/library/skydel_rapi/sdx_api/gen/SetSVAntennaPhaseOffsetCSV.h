@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include "gen/AntennaPatternFileType.h"
 #include "gen/AntennaPatternType.h"
 #include "gen/GNSSBand.h"
@@ -40,7 +39,7 @@ namespace Sdx
       SetSVAntennaPhaseOffsetCSV();
 
       SetSVAntennaPhaseOffsetCSV(const std::string& filePath, const Sdx::AntennaPatternFileType& fileFormat, const Sdx::AntennaPatternType& type, const Sdx::GNSSBand& band, const std::string& system, const Sdx::optional<std::string>& name = {});
-
+  
       static SetSVAntennaPhaseOffsetCSVPtr create(const std::string& filePath, const Sdx::AntennaPatternFileType& fileFormat, const Sdx::AntennaPatternType& type, const Sdx::GNSSBand& band, const std::string& system, const Sdx::optional<std::string>& name = {});
       static SetSVAntennaPhaseOffsetCSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -78,7 +77,6 @@ namespace Sdx
       Sdx::optional<std::string> name() const;
       void setName(const Sdx::optional<std::string>& name);
     };
-    
   }
 }
 

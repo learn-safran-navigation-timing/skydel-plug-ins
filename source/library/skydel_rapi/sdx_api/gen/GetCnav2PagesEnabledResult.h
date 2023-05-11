@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 #include <vector>
 
 namespace Sdx
@@ -30,12 +29,8 @@ namespace Sdx
 
       GetCnav2PagesEnabledResult();
 
-      GetCnav2PagesEnabledResult(const std::vector<int>& messages);
-
       GetCnav2PagesEnabledResult(CommandBasePtr relatedCommand, const std::vector<int>& messages);
-
-      static GetCnav2PagesEnabledResultPtr create(const std::vector<int>& messages);
-
+  
       static GetCnav2PagesEnabledResultPtr create(CommandBasePtr relatedCommand, const std::vector<int>& messages);
       static GetCnav2PagesEnabledResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -46,7 +41,6 @@ namespace Sdx
       std::vector<int> messages() const;
       void setMessages(const std::vector<int>& messages);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetCnav2PagesEnabledResult);
   }
 }
 

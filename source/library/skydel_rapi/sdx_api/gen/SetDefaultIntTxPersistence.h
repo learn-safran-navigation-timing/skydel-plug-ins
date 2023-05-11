@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -31,7 +30,7 @@ namespace Sdx
       SetDefaultIntTxPersistence();
 
       SetDefaultIntTxPersistence(bool defaultValue);
-
+  
       static SetDefaultIntTxPersistencePtr create(bool defaultValue);
       static SetDefaultIntTxPersistencePtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       bool defaultValue() const;
       void setDefaultValue(bool defaultValue);
     };
-    
   }
 }
 

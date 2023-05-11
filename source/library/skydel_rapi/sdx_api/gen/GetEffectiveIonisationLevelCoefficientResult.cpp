@@ -1,6 +1,3 @@
-
-#include "gen/GetEffectiveIonisationLevelCoefficientResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetEffectiveIonisationLevelCoefficientResult
 ///
+#include "gen/GetEffectiveIonisationLevelCoefficientResult.h"
 
 namespace Sdx
 {
@@ -16,20 +14,12 @@ namespace Sdx
     const char* const GetEffectiveIonisationLevelCoefficientResult::CmdName = "GetEffectiveIonisationLevelCoefficientResult";
     const char* const GetEffectiveIonisationLevelCoefficientResult::Documentation = "Result of GetEffectiveIonisationLevelCoefficient.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetEffectiveIonisationLevelCoefficientResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetEffectiveIonisationLevelCoefficientResult);
 
 
     GetEffectiveIonisationLevelCoefficientResult::GetEffectiveIonisationLevelCoefficientResult()
       : CommandResult(CmdName)
     {}
-
-    GetEffectiveIonisationLevelCoefficientResult::GetEffectiveIonisationLevelCoefficientResult(int index, double val)
-      : CommandResult(CmdName)
-    {
-
-      setIndex(index);
-      setVal(val);
-    }
 
     GetEffectiveIonisationLevelCoefficientResult::GetEffectiveIonisationLevelCoefficientResult(CommandBasePtr relatedCommand, int index, double val)
       : CommandResult(CmdName, relatedCommand)
@@ -39,11 +29,6 @@ namespace Sdx
       setVal(val);
     }
 
-
-    GetEffectiveIonisationLevelCoefficientResultPtr GetEffectiveIonisationLevelCoefficientResult::create(int index, double val)
-    {
-      return std::make_shared<GetEffectiveIonisationLevelCoefficientResult>(index, val);
-    }
 
     GetEffectiveIonisationLevelCoefficientResultPtr GetEffectiveIonisationLevelCoefficientResult::create(CommandBasePtr relatedCommand, int index, double val)
     {

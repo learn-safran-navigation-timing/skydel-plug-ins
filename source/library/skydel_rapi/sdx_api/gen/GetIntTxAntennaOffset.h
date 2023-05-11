@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -37,7 +36,7 @@ namespace Sdx
       GetIntTxAntennaOffset();
 
       GetIntTxAntennaOffset(const std::string& id);
-
+  
       static GetIntTxAntennaOffsetPtr create(const std::string& id);
       static GetIntTxAntennaOffsetPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -50,7 +49,6 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
-    
   }
 }
 

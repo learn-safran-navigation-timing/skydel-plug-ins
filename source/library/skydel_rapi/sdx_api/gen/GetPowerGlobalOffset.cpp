@@ -1,6 +1,3 @@
-
-#include "gen/GetPowerGlobalOffset.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,13 +5,14 @@
 ///
 /// Definition of GetPowerGlobalOffset
 ///
+#include "gen/GetPowerGlobalOffset.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const GetPowerGlobalOffset::CmdName = "GetPowerGlobalOffset";
-    const char* const GetPowerGlobalOffset::Documentation = "Please note the command GetPowerGlobalOffset is deprecated since 21.7. You may use GetGlobalPowerOffset.\n\nGet global power offset default value for all signals and all systems";
+    const char* const GetPowerGlobalOffset::Documentation = "Get global power offset default value for all signals and all systems";
 
     REGISTER_COMMAND_FACTORY(GetPowerGlobalOffset);
 
@@ -24,6 +22,7 @@ namespace Sdx
     {
 
     }
+
 
     GetPowerGlobalOffsetPtr GetPowerGlobalOffset::create()
     {

@@ -1,6 +1,3 @@
-
-#include "gen/GetIonoGridGIVEIAllResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetIonoGridGIVEIAllResult
 ///
+#include "gen/GetIonoGridGIVEIAllResult.h"
 
 namespace Sdx
 {
@@ -16,20 +14,12 @@ namespace Sdx
     const char* const GetIonoGridGIVEIAllResult::CmdName = "GetIonoGridGIVEIAllResult";
     const char* const GetIonoGridGIVEIAllResult::Documentation = "Result of GetIonoGridGIVEIAll.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetIonoGridGIVEIAllResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetIonoGridGIVEIAllResult);
 
 
     GetIonoGridGIVEIAllResult::GetIonoGridGIVEIAllResult()
       : CommandResult(CmdName)
     {}
-
-    GetIonoGridGIVEIAllResult::GetIonoGridGIVEIAllResult(const std::vector<std::vector<int>>& grid, const Sdx::optional<std::string>& serviceProvider)
-      : CommandResult(CmdName)
-    {
-
-      setGrid(grid);
-      setServiceProvider(serviceProvider);
-    }
 
     GetIonoGridGIVEIAllResult::GetIonoGridGIVEIAllResult(CommandBasePtr relatedCommand, const std::vector<std::vector<int>>& grid, const Sdx::optional<std::string>& serviceProvider)
       : CommandResult(CmdName, relatedCommand)
@@ -39,11 +29,6 @@ namespace Sdx
       setServiceProvider(serviceProvider);
     }
 
-
-    GetIonoGridGIVEIAllResultPtr GetIonoGridGIVEIAllResult::create(const std::vector<std::vector<int>>& grid, const Sdx::optional<std::string>& serviceProvider)
-    {
-      return std::make_shared<GetIonoGridGIVEIAllResult>(grid, serviceProvider);
-    }
 
     GetIonoGridGIVEIAllResultPtr GetIonoGridGIVEIAllResult::create(CommandBasePtr relatedCommand, const std::vector<std::vector<int>>& grid, const Sdx::optional<std::string>& serviceProvider)
     {

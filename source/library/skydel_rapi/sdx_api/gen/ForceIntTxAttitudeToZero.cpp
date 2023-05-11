@@ -1,6 +1,3 @@
-
-#include "gen/ForceIntTxAttitudeToZero.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of ForceIntTxAttitudeToZero
 ///
+#include "gen/ForceIntTxAttitudeToZero.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setEnabled(enabled);
       setId(id);
     }
+
 
     ForceIntTxAttitudeToZeroPtr ForceIntTxAttitudeToZero::create(bool enabled, const std::string& id)
     {

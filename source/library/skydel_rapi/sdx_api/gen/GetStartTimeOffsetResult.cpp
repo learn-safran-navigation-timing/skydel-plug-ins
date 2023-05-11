@@ -1,6 +1,3 @@
-
-#include "gen/GetStartTimeOffsetResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetStartTimeOffsetResult
 ///
+#include "gen/GetStartTimeOffsetResult.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const GetStartTimeOffsetResult::CmdName = "GetStartTimeOffsetResult";
     const char* const GetStartTimeOffsetResult::Documentation = "Result of GetStartTimeOffset.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetStartTimeOffsetResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetStartTimeOffsetResult);
 
 
     GetStartTimeOffsetResult::GetStartTimeOffsetResult()
       : CommandResult(CmdName)
     {}
-
-    GetStartTimeOffsetResult::GetStartTimeOffsetResult(int offset)
-      : CommandResult(CmdName)
-    {
-
-      setOffset(offset);
-    }
 
     GetStartTimeOffsetResult::GetStartTimeOffsetResult(CommandBasePtr relatedCommand, int offset)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setOffset(offset);
     }
 
-
-    GetStartTimeOffsetResultPtr GetStartTimeOffsetResult::create(int offset)
-    {
-      return std::make_shared<GetStartTimeOffsetResult>(offset);
-    }
 
     GetStartTimeOffsetResultPtr GetStartTimeOffsetResult::create(CommandBasePtr relatedCommand, int offset)
     {

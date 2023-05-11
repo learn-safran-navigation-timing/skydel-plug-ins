@@ -1,6 +1,3 @@
-
-#include "gen/GetGlonassAlmanacUnhealthyFlagForSVResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetGlonassAlmanacUnhealthyFlagForSVResult
 ///
+#include "gen/GetGlonassAlmanacUnhealthyFlagForSVResult.h"
 
 namespace Sdx
 {
@@ -16,20 +14,12 @@ namespace Sdx
     const char* const GetGlonassAlmanacUnhealthyFlagForSVResult::CmdName = "GetGlonassAlmanacUnhealthyFlagForSVResult";
     const char* const GetGlonassAlmanacUnhealthyFlagForSVResult::Documentation = "Result of GetGlonassAlmanacUnhealthyFlagForSV.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetGlonassAlmanacUnhealthyFlagForSVResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetGlonassAlmanacUnhealthyFlagForSVResult);
 
 
     GetGlonassAlmanacUnhealthyFlagForSVResult::GetGlonassAlmanacUnhealthyFlagForSVResult()
       : CommandResult(CmdName)
     {}
-
-    GetGlonassAlmanacUnhealthyFlagForSVResult::GetGlonassAlmanacUnhealthyFlagForSVResult(int svId, bool health)
-      : CommandResult(CmdName)
-    {
-
-      setSvId(svId);
-      setHealth(health);
-    }
 
     GetGlonassAlmanacUnhealthyFlagForSVResult::GetGlonassAlmanacUnhealthyFlagForSVResult(CommandBasePtr relatedCommand, int svId, bool health)
       : CommandResult(CmdName, relatedCommand)
@@ -39,11 +29,6 @@ namespace Sdx
       setHealth(health);
     }
 
-
-    GetGlonassAlmanacUnhealthyFlagForSVResultPtr GetGlonassAlmanacUnhealthyFlagForSVResult::create(int svId, bool health)
-    {
-      return std::make_shared<GetGlonassAlmanacUnhealthyFlagForSVResult>(svId, health);
-    }
 
     GetGlonassAlmanacUnhealthyFlagForSVResultPtr GetGlonassAlmanacUnhealthyFlagForSVResult::create(CommandBasePtr relatedCommand, int svId, bool health)
     {

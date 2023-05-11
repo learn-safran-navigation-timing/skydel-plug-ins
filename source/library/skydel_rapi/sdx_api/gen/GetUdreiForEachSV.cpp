@@ -1,6 +1,3 @@
-
-#include "gen/GetUdreiForEachSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetUdreiForEachSV
 ///
+#include "gen/GetUdreiForEachSV.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setSystem(system);
     }
+
 
     GetUdreiForEachSVPtr GetUdreiForEachSV::create(const std::string& system)
     {

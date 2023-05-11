@@ -1,6 +1,3 @@
-
-#include "gen/SetWFAntennaElementPhasePatternOffset.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetWFAntennaElementPhasePatternOffset
 ///
+#include "gen/SetWFAntennaElementPhasePatternOffset.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setPhaseOffset(phaseOffset);
       setElement(element);
     }
+
 
     SetWFAntennaElementPhasePatternOffsetPtr SetWFAntennaElementPhasePatternOffset::create(double phaseOffset, int element)
     {

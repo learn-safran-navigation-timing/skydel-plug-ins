@@ -1,6 +1,3 @@
-
-#include "gen/RemoveSpoofTx.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of RemoveSpoofTx
 ///
+#include "gen/RemoveSpoofTx.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setId(id);
     }
+
 
     RemoveSpoofTxPtr RemoveSpoofTx::create(const std::string& id)
     {

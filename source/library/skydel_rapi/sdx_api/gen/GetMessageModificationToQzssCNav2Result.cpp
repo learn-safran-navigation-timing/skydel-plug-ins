@@ -1,6 +1,3 @@
-
-#include "gen/GetMessageModificationToQzssCNav2Result.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetMessageModificationToQzssCNav2Result
 ///
+#include "gen/GetMessageModificationToQzssCNav2Result.h"
 
 namespace Sdx
 {
@@ -16,27 +14,12 @@ namespace Sdx
     const char* const GetMessageModificationToQzssCNav2Result::CmdName = "GetMessageModificationToQzssCNav2Result";
     const char* const GetMessageModificationToQzssCNav2Result::Documentation = "Result of GetMessageModificationToQzssCNav2.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetMessageModificationToQzssCNav2Result);
+    REGISTER_COMMAND_RESULT_FACTORY(GetMessageModificationToQzssCNav2Result);
 
 
     GetMessageModificationToQzssCNav2Result::GetMessageModificationToQzssCNav2Result()
       : CommandResult(CmdName)
     {}
-
-    GetMessageModificationToQzssCNav2Result::GetMessageModificationToQzssCNav2Result(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int page, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id)
-      : CommandResult(CmdName)
-    {
-
-      setSignalArray(signalArray);
-      setSvId(svId);
-      setStartTime(startTime);
-      setStopTime(stopTime);
-      setPage(page);
-      setCondition(condition);
-      setUpdateCRC(updateCRC);
-      setBitModifications(bitModifications);
-      setId(id);
-    }
 
     GetMessageModificationToQzssCNav2Result::GetMessageModificationToQzssCNav2Result(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int page, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -53,11 +36,6 @@ namespace Sdx
       setId(id);
     }
 
-
-    GetMessageModificationToQzssCNav2ResultPtr GetMessageModificationToQzssCNav2Result::create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int page, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id)
-    {
-      return std::make_shared<GetMessageModificationToQzssCNav2Result>(signalArray, svId, startTime, stopTime, page, condition, updateCRC, bitModifications, id);
-    }
 
     GetMessageModificationToQzssCNav2ResultPtr GetMessageModificationToQzssCNav2Result::create(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int page, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id)
     {

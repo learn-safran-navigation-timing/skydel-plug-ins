@@ -1,6 +1,3 @@
-
-#include "gen/New.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of New
 ///
+#include "gen/New.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setDiscardCurrentConfig(discardCurrentConfig);
       setLoadDefaultConfig(loadDefaultConfig);
     }
+
 
     NewPtr New::create(bool discardCurrentConfig, const Sdx::optional<bool>& loadDefaultConfig)
     {

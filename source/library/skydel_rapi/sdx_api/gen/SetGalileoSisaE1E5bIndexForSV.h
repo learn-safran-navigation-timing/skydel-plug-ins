@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include "sdx_optional.h"
 #include <string>
 
@@ -34,7 +33,7 @@ namespace Sdx
       SetGalileoSisaE1E5bIndexForSV();
 
       SetGalileoSisaE1E5bIndexForSV(int svId, int sisai, const Sdx::optional<std::string>& dataSetName = {});
-
+  
       static SetGalileoSisaE1E5bIndexForSVPtr create(int svId, int sisai, const Sdx::optional<std::string>& dataSetName = {});
       static SetGalileoSisaE1E5bIndexForSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -57,7 +56,6 @@ namespace Sdx
       Sdx::optional<std::string> dataSetName() const;
       void setDataSetName(const Sdx::optional<std::string>& dataSetName);
     };
-    
   }
 }
 

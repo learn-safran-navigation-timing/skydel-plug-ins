@@ -1,6 +1,3 @@
-
-#include "gen/SetVehicleTrajectoryFixEcef.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetVehicleTrajectoryFixEcef
 ///
+#include "gen/SetVehicleTrajectoryFixEcef.h"
 
 namespace Sdx
 {
@@ -35,6 +33,7 @@ namespace Sdx
       setPitch(pitch);
       setRoll(roll);
     }
+
 
     SetVehicleTrajectoryFixEcefPtr SetVehicleTrajectoryFixEcef::create(const std::string& type, double x, double y, double z, double yaw, double pitch, double roll)
     {

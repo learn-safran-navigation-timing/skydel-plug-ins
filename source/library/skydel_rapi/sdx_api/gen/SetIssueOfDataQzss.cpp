@@ -1,6 +1,3 @@
-
-#include "gen/SetIssueOfDataQzss.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetIssueOfDataQzss
 ///
+#include "gen/SetIssueOfDataQzss.h"
 
 namespace Sdx
 {
@@ -31,6 +29,7 @@ namespace Sdx
       setEphemeris(ephemeris);
       setOverrideRinex(overrideRinex);
     }
+
 
     SetIssueOfDataQzssPtr SetIssueOfDataQzss::create(int clock, int ephemeris, const Sdx::optional<bool>& overrideRinex)
     {

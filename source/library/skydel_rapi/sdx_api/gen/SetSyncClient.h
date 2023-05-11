@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -32,7 +31,7 @@ namespace Sdx
       SetSyncClient();
 
       SetSyncClient(const std::string& host, int port);
-
+  
       static SetSyncClientPtr create(const std::string& host, int port);
       static SetSyncClientPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -50,7 +49,6 @@ namespace Sdx
       int port() const;
       void setPort(int port);
     };
-    
   }
 }
 

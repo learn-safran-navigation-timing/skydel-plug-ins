@@ -1,6 +1,3 @@
-
-#include "gen/SetBeiDouUraIndexForSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetBeiDouUraIndexForSV
 ///
+#include "gen/SetBeiDouUraIndexForSV.h"
 
 namespace Sdx
 {
@@ -31,6 +29,7 @@ namespace Sdx
       setUrai(urai);
       setDataSetName(dataSetName);
     }
+
 
     SetBeiDouUraIndexForSVPtr SetBeiDouUraIndexForSV::create(int svId, int urai, const Sdx::optional<std::string>& dataSetName)
     {

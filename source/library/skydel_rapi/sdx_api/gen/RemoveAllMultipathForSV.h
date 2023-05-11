@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -33,7 +32,7 @@ namespace Sdx
       RemoveAllMultipathForSV();
 
       RemoveAllMultipathForSV(const std::string& system, int svId, bool reset);
-
+  
       static RemoveAllMultipathForSVPtr create(const std::string& system, int svId, bool reset);
       static RemoveAllMultipathForSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -56,7 +55,6 @@ namespace Sdx
       bool reset() const;
       void setReset(bool reset);
     };
-    
   }
 }
 

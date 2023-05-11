@@ -1,6 +1,3 @@
-
-#include "gen/SetWFAntennaElementOffset.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetWFAntennaElementOffset
 ///
+#include "gen/SetWFAntennaElementOffset.h"
 
 namespace Sdx
 {
@@ -35,6 +33,7 @@ namespace Sdx
       setRoll(roll);
       setElement(element);
     }
+
 
     SetWFAntennaElementOffsetPtr SetWFAntennaElementOffset::create(double x, double y, double z, double yaw, double pitch, double roll, int element)
     {

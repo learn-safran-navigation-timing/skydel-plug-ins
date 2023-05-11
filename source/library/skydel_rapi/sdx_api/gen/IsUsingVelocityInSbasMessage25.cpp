@@ -1,6 +1,3 @@
-
-#include "gen/IsUsingVelocityInSbasMessage25.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of IsUsingVelocityInSbasMessage25
 ///
+#include "gen/IsUsingVelocityInSbasMessage25.h"
 
 namespace Sdx
 {
@@ -24,6 +22,7 @@ namespace Sdx
     {
 
     }
+
 
     IsUsingVelocityInSbasMessage25Ptr IsUsingVelocityInSbasMessage25::create()
     {

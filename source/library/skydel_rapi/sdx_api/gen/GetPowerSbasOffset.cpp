@@ -1,6 +1,3 @@
-
-#include "gen/GetPowerSbasOffset.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetPowerSbasOffset
 ///
+#include "gen/GetPowerSbasOffset.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setServiceProvider(serviceProvider);
     }
+
 
     GetPowerSbasOffsetPtr GetPowerSbasOffset::create(const std::string& serviceProvider)
     {

@@ -1,6 +1,3 @@
-
-#include "gen/IsSignalStrengthModelEnabledResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of IsSignalStrengthModelEnabledResult
 ///
+#include "gen/IsSignalStrengthModelEnabledResult.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const IsSignalStrengthModelEnabledResult::CmdName = "IsSignalStrengthModelEnabledResult";
     const char* const IsSignalStrengthModelEnabledResult::Documentation = "Result of IsSignalStrengthModelEnabled.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsSignalStrengthModelEnabledResult);
+    REGISTER_COMMAND_RESULT_FACTORY(IsSignalStrengthModelEnabledResult);
 
 
     IsSignalStrengthModelEnabledResult::IsSignalStrengthModelEnabledResult()
       : CommandResult(CmdName)
     {}
-
-    IsSignalStrengthModelEnabledResult::IsSignalStrengthModelEnabledResult(bool enabled)
-      : CommandResult(CmdName)
-    {
-
-      setEnabled(enabled);
-    }
 
     IsSignalStrengthModelEnabledResult::IsSignalStrengthModelEnabledResult(CommandBasePtr relatedCommand, bool enabled)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setEnabled(enabled);
     }
 
-
-    IsSignalStrengthModelEnabledResultPtr IsSignalStrengthModelEnabledResult::create(bool enabled)
-    {
-      return std::make_shared<IsSignalStrengthModelEnabledResult>(enabled);
-    }
 
     IsSignalStrengthModelEnabledResultPtr IsSignalStrengthModelEnabledResult::create(CommandBasePtr relatedCommand, bool enabled)
     {

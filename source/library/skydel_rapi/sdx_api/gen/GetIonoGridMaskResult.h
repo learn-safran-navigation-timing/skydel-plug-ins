@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 #include <string>
 
 namespace Sdx
@@ -33,12 +32,8 @@ namespace Sdx
 
       GetIonoGridMaskResult();
 
-      GetIonoGridMaskResult(const std::string& serviceProvider, int band, int point, bool flag);
-
       GetIonoGridMaskResult(CommandBasePtr relatedCommand, const std::string& serviceProvider, int band, int point, bool flag);
-
-      static GetIonoGridMaskResultPtr create(const std::string& serviceProvider, int band, int point, bool flag);
-
+  
       static GetIonoGridMaskResultPtr create(CommandBasePtr relatedCommand, const std::string& serviceProvider, int band, int point, bool flag);
       static GetIonoGridMaskResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -64,7 +59,6 @@ namespace Sdx
       bool flag() const;
       void setFlag(bool flag);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetIonoGridMaskResult);
   }
 }
 

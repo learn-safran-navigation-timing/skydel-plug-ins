@@ -1,6 +1,3 @@
-
-#include "gen/GetNavICEphDoubleParamForEachSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,13 +5,14 @@
 ///
 /// Definition of GetNavICEphDoubleParamForEachSV
 ///
+#include "gen/GetNavICEphDoubleParamForEachSV.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const GetNavICEphDoubleParamForEachSV::CmdName = "GetNavICEphDoubleParamForEachSV";
-    const char* const GetNavICEphDoubleParamForEachSV::Documentation = "Get NavIC ephemeris parameter value for all satellites";
+    const char* const GetNavICEphDoubleParamForEachSV::Documentation = "Please note the command GetNavICEphemerisDoubleParams is deprecated since 21.3. You may use GetNavICEphDoubleParamForEachSV.\n\nGet NavIC ephemeris parameter value for all satellites";
 
     REGISTER_COMMAND_FACTORY(GetNavICEphDoubleParamForEachSV);
 
@@ -30,6 +28,7 @@ namespace Sdx
       setParamName(paramName);
       setDataSetName(dataSetName);
     }
+
 
     GetNavICEphDoubleParamForEachSVPtr GetNavICEphDoubleParamForEachSV::create(const std::string& paramName, const Sdx::optional<std::string>& dataSetName)
     {

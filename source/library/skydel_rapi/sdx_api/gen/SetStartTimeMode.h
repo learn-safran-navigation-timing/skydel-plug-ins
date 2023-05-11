@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -31,7 +30,7 @@ namespace Sdx
       SetStartTimeMode();
 
       SetStartTimeMode(const std::string& mode);
-
+  
       static SetStartTimeModePtr create(const std::string& mode);
       static SetStartTimeModePtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       std::string mode() const;
       void setMode(const std::string& mode);
     };
-    
   }
 }
 

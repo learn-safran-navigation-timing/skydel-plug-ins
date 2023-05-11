@@ -1,6 +1,3 @@
-
-#include "gen/SetIntTxVehicleType.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetIntTxVehicleType
 ///
+#include "gen/SetIntTxVehicleType.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setType(type);
       setId(id);
     }
+
 
     SetIntTxVehicleTypePtr SetIntTxVehicleType::create(const std::string& type, const std::string& id)
     {

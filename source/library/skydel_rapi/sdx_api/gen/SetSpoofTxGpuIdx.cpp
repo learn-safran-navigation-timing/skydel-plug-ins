@@ -1,6 +1,3 @@
-
-#include "gen/SetSpoofTxGpuIdx.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetSpoofTxGpuIdx
 ///
+#include "gen/SetSpoofTxGpuIdx.h"
 
 namespace Sdx
 {
@@ -31,6 +29,7 @@ namespace Sdx
       setSignalId(signalId);
       setId(id);
     }
+
 
     SetSpoofTxGpuIdxPtr SetSpoofTxGpuIdx::create(int gpuIdx, int signalId, const std::string& id)
     {

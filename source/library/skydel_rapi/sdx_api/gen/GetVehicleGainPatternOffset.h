@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include "gen/GNSSBand.h"
 #include "sdx_optional.h"
 #include <string>
@@ -34,7 +33,7 @@ namespace Sdx
       GetVehicleGainPatternOffset();
 
       GetVehicleGainPatternOffset(const Sdx::GNSSBand& band, const Sdx::optional<std::string>& antennaName = {});
-
+  
       static GetVehicleGainPatternOffsetPtr create(const Sdx::GNSSBand& band, const Sdx::optional<std::string>& antennaName = {});
       static GetVehicleGainPatternOffsetPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -52,7 +51,6 @@ namespace Sdx
       Sdx::optional<std::string> antennaName() const;
       void setAntennaName(const Sdx::optional<std::string>& antennaName);
     };
-    
   }
 }
 

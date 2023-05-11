@@ -1,6 +1,3 @@
-
-#include "gen/PushTrackEcef.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of PushTrackEcef
 ///
+#include "gen/PushTrackEcef.h"
 
 namespace Sdx
 {
@@ -32,6 +30,7 @@ namespace Sdx
       setY(y);
       setZ(z);
     }
+
 
     PushTrackEcefPtr PushTrackEcef::create(int time, double x, double y, double z)
     {

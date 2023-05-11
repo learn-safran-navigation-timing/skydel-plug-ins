@@ -1,6 +1,3 @@
-
-#include "gen/IsLOSEnabledForEachSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of IsLOSEnabledForEachSV
 ///
+#include "gen/IsLOSEnabledForEachSV.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setSystem(system);
     }
+
 
     IsLOSEnabledForEachSVPtr IsLOSEnabledForEachSV::create(const std::string& system)
     {

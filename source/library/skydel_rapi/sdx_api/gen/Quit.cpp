@@ -1,6 +1,3 @@
-
-#include "gen/Quit.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of Quit
 ///
+#include "gen/Quit.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setForceQuit(forceQuit);
     }
+
 
     QuitPtr Quit::create(bool forceQuit)
     {

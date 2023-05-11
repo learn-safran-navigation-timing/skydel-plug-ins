@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include "sdx_optional.h"
 #include <string>
 
@@ -34,7 +33,7 @@ namespace Sdx
       ExportIonoGridGIVEI();
 
       ExportIonoGridGIVEI(bool overwriting, const std::string& path, const Sdx::optional<std::string>& serviceProvider = {});
-
+  
       static ExportIonoGridGIVEIPtr create(bool overwriting, const std::string& path, const Sdx::optional<std::string>& serviceProvider = {});
       static ExportIonoGridGIVEIPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -57,7 +56,6 @@ namespace Sdx
       Sdx::optional<std::string> serviceProvider() const;
       void setServiceProvider(const Sdx::optional<std::string>& serviceProvider);
     };
-    
   }
 }
 

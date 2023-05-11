@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -28,7 +27,7 @@ namespace Sdx
 
 
       GetAlmanacUploadTimeInterval();
-
+  
       static GetAlmanacUploadTimeIntervalPtr create();
       static GetAlmanacUploadTimeIntervalPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -36,7 +35,6 @@ namespace Sdx
 
       virtual int executePermission() const override;
     };
-    
   }
 }
 

@@ -1,6 +1,3 @@
-
-#include "gen/SetIntTxNone.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetIntTxNone
 ///
+#include "gen/SetIntTxNone.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setId(id);
     }
+
 
     SetIntTxNonePtr SetIntTxNone::create(const std::string& id)
     {

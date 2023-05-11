@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -37,7 +36,7 @@ namespace Sdx
       PushTrackEcefNed();
 
       PushTrackEcefNed(int time, double x, double y, double z, double yaw, double pitch, double roll);
-
+  
       static PushTrackEcefNedPtr create(int time, double x, double y, double z, double yaw, double pitch, double roll);
       static PushTrackEcefNedPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -80,7 +79,6 @@ namespace Sdx
       double roll() const;
       void setRoll(double roll);
     };
-    
   }
 }
 

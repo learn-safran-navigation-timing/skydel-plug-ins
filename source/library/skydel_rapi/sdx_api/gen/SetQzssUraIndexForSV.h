@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include "sdx_optional.h"
 #include <string>
 
@@ -34,7 +33,7 @@ namespace Sdx
       SetQzssUraIndexForSV();
 
       SetQzssUraIndexForSV(int svId, int urai, const Sdx::optional<std::string>& dataSetName = {});
-
+  
       static SetQzssUraIndexForSVPtr create(int svId, int urai, const Sdx::optional<std::string>& dataSetName = {});
       static SetQzssUraIndexForSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -57,7 +56,6 @@ namespace Sdx
       Sdx::optional<std::string> dataSetName() const;
       void setDataSetName(const Sdx::optional<std::string>& dataSetName);
     };
-    
   }
 }
 

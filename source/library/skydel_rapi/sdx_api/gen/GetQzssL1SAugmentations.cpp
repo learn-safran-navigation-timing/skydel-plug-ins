@@ -1,6 +1,3 @@
-
-#include "gen/GetQzssL1SAugmentations.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetQzssL1SAugmentations
 ///
+#include "gen/GetQzssL1SAugmentations.h"
 
 namespace Sdx
 {
@@ -24,6 +22,7 @@ namespace Sdx
     {
 
     }
+
 
     GetQzssL1SAugmentationsPtr GetQzssL1SAugmentations::create()
     {

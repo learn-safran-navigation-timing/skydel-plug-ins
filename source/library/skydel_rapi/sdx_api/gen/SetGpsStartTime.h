@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include "date_time.h"
 
 namespace Sdx
@@ -31,7 +30,7 @@ namespace Sdx
       SetGpsStartTime();
 
       SetGpsStartTime(const Sdx::DateTime& start);
-
+  
       static SetGpsStartTimePtr create(const Sdx::DateTime& start);
       static SetGpsStartTimePtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       Sdx::DateTime start() const;
       void setStart(const Sdx::DateTime& start);
     };
-    
   }
 }
 

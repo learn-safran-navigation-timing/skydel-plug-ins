@@ -1,6 +1,3 @@
-
-#include "gen/ChangeIntTxColor.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of ChangeIntTxColor
 ///
+#include "gen/ChangeIntTxColor.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setColor(color);
       setId(id);
     }
+
 
     ChangeIntTxColorPtr ChangeIntTxColor::create(const std::string& color, const std::string& id)
     {

@@ -1,6 +1,3 @@
-
-#include "gen/EnableSignalForEachSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of EnableSignalForEachSV
 ///
+#include "gen/EnableSignalForEachSV.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setSignal(signal);
       setEnabled(enabled);
     }
+
 
     EnableSignalForEachSVPtr EnableSignalForEachSV::create(const std::string& signal, const std::vector<bool>& enabled)
     {

@@ -1,6 +1,3 @@
-
-#include "gen/SetAgeOfDataBeiDou.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetAgeOfDataBeiDou
 ///
+#include "gen/SetAgeOfDataBeiDou.h"
 
 namespace Sdx
 {
@@ -31,6 +29,7 @@ namespace Sdx
       setEphemeris(ephemeris);
       setOverrideRinex(overrideRinex);
     }
+
 
     SetAgeOfDataBeiDouPtr SetAgeOfDataBeiDou::create(int clock, int ephemeris, const Sdx::optional<bool>& overrideRinex)
     {

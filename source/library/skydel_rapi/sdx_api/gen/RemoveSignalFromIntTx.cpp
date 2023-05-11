@@ -1,6 +1,3 @@
-
-#include "gen/RemoveSignalFromIntTx.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of RemoveSignalFromIntTx
 ///
+#include "gen/RemoveSignalFromIntTx.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setTransmitterId(transmitterId);
       setSignalId(signalId);
     }
+
 
     RemoveSignalFromIntTxPtr RemoveSignalFromIntTx::create(const std::string& transmitterId, const std::string& signalId)
     {

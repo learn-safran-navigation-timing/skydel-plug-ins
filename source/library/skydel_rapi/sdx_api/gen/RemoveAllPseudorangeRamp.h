@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -33,7 +32,7 @@ namespace Sdx
       RemoveAllPseudorangeRamp();
 
       RemoveAllPseudorangeRamp(const std::string& system);
-
+  
       static RemoveAllPseudorangeRampPtr create(const std::string& system);
       static RemoveAllPseudorangeRampPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -46,7 +45,6 @@ namespace Sdx
       std::string system() const;
       void setSystem(const std::string& system);
     };
-    
   }
 }
 

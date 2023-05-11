@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include "sdx_optional.h"
 
 namespace Sdx
@@ -33,7 +32,7 @@ namespace Sdx
       EnableLogDownlink();
 
       EnableLogDownlink(bool enabled, const Sdx::optional<bool>& beforeEncoding = {}, const Sdx::optional<bool>& afterEncoding = {});
-
+  
       static EnableLogDownlinkPtr create(bool enabled, const Sdx::optional<bool>& beforeEncoding = {}, const Sdx::optional<bool>& afterEncoding = {});
       static EnableLogDownlinkPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -56,7 +55,6 @@ namespace Sdx
       Sdx::optional<bool> afterEncoding() const;
       void setAfterEncoding(const Sdx::optional<bool>& afterEncoding);
     };
-    
   }
 }
 

@@ -1,6 +1,3 @@
-
-#include "gen/SetQzssEphBoolParamForSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,13 +5,14 @@
 ///
 /// Definition of SetQzssEphBoolParamForSV
 ///
+#include "gen/SetQzssEphBoolParamForSV.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const SetQzssEphBoolParamForSV::CmdName = "SetQzssEphBoolParamForSV";
-    const char* const SetQzssEphBoolParamForSV::Documentation = "Set various boolean parameters in the QZSS ephemeris\n\n  ParamName\n\"IscL1CaAvailable\"\n\"IscL2CAvailable\"\n\"IscL5I5Available\"\n\"IscL5Q5Available\"\n\"IscL1CPAvailable\"\n\"IscL1CDAvailable\"";
+    const char* const SetQzssEphBoolParamForSV::Documentation = "Please note the command SetQzssEphemerisBoolParam is deprecated since 21.3. You may use SetQzssEphBoolParamForSV.\n\nSet various boolean parameters in the QZSS ephemeris\n\n  ParamName\n\"IscL1CaAvailable\"\n\"IscL2CAvailable\"\n\"IscL5I5Available\"\n\"IscL5Q5Available\"\n\"IscL1CPAvailable\"\n\"IscL1CDAvailable\"";
 
     REGISTER_COMMAND_FACTORY(SetQzssEphBoolParamForSV);
 
@@ -32,6 +30,7 @@ namespace Sdx
       setVal(val);
       setDataSetName(dataSetName);
     }
+
 
     SetQzssEphBoolParamForSVPtr SetQzssEphBoolParamForSV::create(int svId, const std::string& paramName, bool val, const Sdx::optional<std::string>& dataSetName)
     {

@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -32,7 +31,7 @@ namespace Sdx
       RemoveInterference();
 
       RemoveInterference(const std::string& id);
-
+  
       static RemoveInterferencePtr create(const std::string& id);
       static RemoveInterferencePtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -45,7 +44,6 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
-    
   }
 }
 

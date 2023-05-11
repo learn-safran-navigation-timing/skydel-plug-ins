@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -31,7 +30,7 @@ namespace Sdx
       SetTransmitMessage2InSbasMessage0();
 
       SetTransmitMessage2InSbasMessage0(bool transmitMessage2);
-
+  
       static SetTransmitMessage2InSbasMessage0Ptr create(bool transmitMessage2);
       static SetTransmitMessage2InSbasMessage0Ptr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       bool transmitMessage2() const;
       void setTransmitMessage2(bool transmitMessage2);
     };
-    
   }
 }
 

@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -30,12 +29,8 @@ namespace Sdx
 
       IsTrajectoryCompletedResult();
 
-      IsTrajectoryCompletedResult(bool isCompleted);
-
       IsTrajectoryCompletedResult(CommandBasePtr relatedCommand, bool isCompleted);
-
-      static IsTrajectoryCompletedResultPtr create(bool isCompleted);
-
+  
       static IsTrajectoryCompletedResultPtr create(CommandBasePtr relatedCommand, bool isCompleted);
       static IsTrajectoryCompletedResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -46,7 +41,6 @@ namespace Sdx
       bool isCompleted() const;
       void setIsCompleted(bool isCompleted);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(IsTrajectoryCompletedResult);
   }
 }
 

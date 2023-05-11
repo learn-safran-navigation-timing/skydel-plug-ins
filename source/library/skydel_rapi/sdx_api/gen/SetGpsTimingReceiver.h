@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include "gen/SerialPortFlowControl.h"
 #include "gen/SerialPortParity.h"
 #include "sdx_optional.h"
@@ -39,7 +38,7 @@ namespace Sdx
       SetGpsTimingReceiver();
 
       SetGpsTimingReceiver(const std::string& port, const Sdx::optional<int>& baudRate = {}, const Sdx::optional<int>& dataBits = {}, const Sdx::optional<Sdx::SerialPortParity>& parity = {}, const Sdx::optional<int>& stopBits = {}, const Sdx::optional<Sdx::SerialPortFlowControl>& flowControl = {});
-
+  
       static SetGpsTimingReceiverPtr create(const std::string& port, const Sdx::optional<int>& baudRate = {}, const Sdx::optional<int>& dataBits = {}, const Sdx::optional<Sdx::SerialPortParity>& parity = {}, const Sdx::optional<int>& stopBits = {}, const Sdx::optional<Sdx::SerialPortFlowControl>& flowControl = {});
       static SetGpsTimingReceiverPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -77,7 +76,6 @@ namespace Sdx
       Sdx::optional<Sdx::SerialPortFlowControl> flowControl() const;
       void setFlowControl(const Sdx::optional<Sdx::SerialPortFlowControl>& flowControl);
     };
-    
   }
 }
 

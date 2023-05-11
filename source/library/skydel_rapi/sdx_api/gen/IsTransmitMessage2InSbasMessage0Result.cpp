@@ -1,6 +1,3 @@
-
-#include "gen/IsTransmitMessage2InSbasMessage0Result.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of IsTransmitMessage2InSbasMessage0Result
 ///
+#include "gen/IsTransmitMessage2InSbasMessage0Result.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const IsTransmitMessage2InSbasMessage0Result::CmdName = "IsTransmitMessage2InSbasMessage0Result";
     const char* const IsTransmitMessage2InSbasMessage0Result::Documentation = "Result of IsTransmitMessage2InSbasMessage0.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsTransmitMessage2InSbasMessage0Result);
+    REGISTER_COMMAND_RESULT_FACTORY(IsTransmitMessage2InSbasMessage0Result);
 
 
     IsTransmitMessage2InSbasMessage0Result::IsTransmitMessage2InSbasMessage0Result()
       : CommandResult(CmdName)
     {}
-
-    IsTransmitMessage2InSbasMessage0Result::IsTransmitMessage2InSbasMessage0Result(bool transmitMessage2)
-      : CommandResult(CmdName)
-    {
-
-      setTransmitMessage2(transmitMessage2);
-    }
 
     IsTransmitMessage2InSbasMessage0Result::IsTransmitMessage2InSbasMessage0Result(CommandBasePtr relatedCommand, bool transmitMessage2)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setTransmitMessage2(transmitMessage2);
     }
 
-
-    IsTransmitMessage2InSbasMessage0ResultPtr IsTransmitMessage2InSbasMessage0Result::create(bool transmitMessage2)
-    {
-      return std::make_shared<IsTransmitMessage2InSbasMessage0Result>(transmitMessage2);
-    }
 
     IsTransmitMessage2InSbasMessage0ResultPtr IsTransmitMessage2InSbasMessage0Result::create(CommandBasePtr relatedCommand, bool transmitMessage2)
     {

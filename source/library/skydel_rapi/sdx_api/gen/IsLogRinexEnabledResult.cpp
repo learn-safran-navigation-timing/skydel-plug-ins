@@ -1,6 +1,3 @@
-
-#include "gen/IsLogRinexEnabledResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of IsLogRinexEnabledResult
 ///
+#include "gen/IsLogRinexEnabledResult.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const IsLogRinexEnabledResult::CmdName = "IsLogRinexEnabledResult";
     const char* const IsLogRinexEnabledResult::Documentation = "Result of IsLogRinexEnabled.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsLogRinexEnabledResult);
+    REGISTER_COMMAND_RESULT_FACTORY(IsLogRinexEnabledResult);
 
 
     IsLogRinexEnabledResult::IsLogRinexEnabledResult()
       : CommandResult(CmdName)
     {}
-
-    IsLogRinexEnabledResult::IsLogRinexEnabledResult(bool enabled)
-      : CommandResult(CmdName)
-    {
-
-      setEnabled(enabled);
-    }
 
     IsLogRinexEnabledResult::IsLogRinexEnabledResult(CommandBasePtr relatedCommand, bool enabled)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setEnabled(enabled);
     }
 
-
-    IsLogRinexEnabledResultPtr IsLogRinexEnabledResult::create(bool enabled)
-    {
-      return std::make_shared<IsLogRinexEnabledResult>(enabled);
-    }
 
     IsLogRinexEnabledResultPtr IsLogRinexEnabledResult::create(CommandBasePtr relatedCommand, bool enabled)
     {

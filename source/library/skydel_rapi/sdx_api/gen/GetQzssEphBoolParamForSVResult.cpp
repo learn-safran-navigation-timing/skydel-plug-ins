@@ -1,6 +1,3 @@
-
-#include "gen/GetQzssEphBoolParamForSVResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetQzssEphBoolParamForSVResult
 ///
+#include "gen/GetQzssEphBoolParamForSVResult.h"
 
 namespace Sdx
 {
@@ -16,22 +14,12 @@ namespace Sdx
     const char* const GetQzssEphBoolParamForSVResult::CmdName = "GetQzssEphBoolParamForSVResult";
     const char* const GetQzssEphBoolParamForSVResult::Documentation = "Result of GetQzssEphBoolParamForSV.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetQzssEphBoolParamForSVResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetQzssEphBoolParamForSVResult);
 
 
     GetQzssEphBoolParamForSVResult::GetQzssEphBoolParamForSVResult()
       : CommandResult(CmdName)
     {}
-
-    GetQzssEphBoolParamForSVResult::GetQzssEphBoolParamForSVResult(int svId, const std::string& paramName, bool val, const Sdx::optional<std::string>& dataSetName)
-      : CommandResult(CmdName)
-    {
-
-      setSvId(svId);
-      setParamName(paramName);
-      setVal(val);
-      setDataSetName(dataSetName);
-    }
 
     GetQzssEphBoolParamForSVResult::GetQzssEphBoolParamForSVResult(CommandBasePtr relatedCommand, int svId, const std::string& paramName, bool val, const Sdx::optional<std::string>& dataSetName)
       : CommandResult(CmdName, relatedCommand)
@@ -43,11 +31,6 @@ namespace Sdx
       setDataSetName(dataSetName);
     }
 
-
-    GetQzssEphBoolParamForSVResultPtr GetQzssEphBoolParamForSVResult::create(int svId, const std::string& paramName, bool val, const Sdx::optional<std::string>& dataSetName)
-    {
-      return std::make_shared<GetQzssEphBoolParamForSVResult>(svId, paramName, val, dataSetName);
-    }
 
     GetQzssEphBoolParamForSVResultPtr GetQzssEphBoolParamForSVResult::create(CommandBasePtr relatedCommand, int svId, const std::string& paramName, bool val, const Sdx::optional<std::string>& dataSetName)
     {

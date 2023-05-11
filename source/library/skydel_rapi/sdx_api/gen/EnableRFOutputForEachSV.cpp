@@ -1,6 +1,3 @@
-
-#include "gen/EnableRFOutputForEachSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of EnableRFOutputForEachSV
 ///
+#include "gen/EnableRFOutputForEachSV.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setSystem(system);
       setEnabled(enabled);
     }
+
 
     EnableRFOutputForEachSVPtr EnableRFOutputForEachSV::create(const std::string& system, const std::vector<bool>& enabled)
     {

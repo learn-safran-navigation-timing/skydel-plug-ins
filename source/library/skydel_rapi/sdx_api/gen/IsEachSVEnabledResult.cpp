@@ -1,6 +1,3 @@
-
-#include "gen/IsEachSVEnabledResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of IsEachSVEnabledResult
 ///
+#include "gen/IsEachSVEnabledResult.h"
 
 namespace Sdx
 {
@@ -16,20 +14,12 @@ namespace Sdx
     const char* const IsEachSVEnabledResult::CmdName = "IsEachSVEnabledResult";
     const char* const IsEachSVEnabledResult::Documentation = "Result of IsEachSVEnabled.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsEachSVEnabledResult);
+    REGISTER_COMMAND_RESULT_FACTORY(IsEachSVEnabledResult);
 
 
     IsEachSVEnabledResult::IsEachSVEnabledResult()
       : CommandResult(CmdName)
     {}
-
-    IsEachSVEnabledResult::IsEachSVEnabledResult(const std::string& system, const std::vector<bool>& enabled)
-      : CommandResult(CmdName)
-    {
-
-      setSystem(system);
-      setEnabled(enabled);
-    }
 
     IsEachSVEnabledResult::IsEachSVEnabledResult(CommandBasePtr relatedCommand, const std::string& system, const std::vector<bool>& enabled)
       : CommandResult(CmdName, relatedCommand)
@@ -39,11 +29,6 @@ namespace Sdx
       setEnabled(enabled);
     }
 
-
-    IsEachSVEnabledResultPtr IsEachSVEnabledResult::create(const std::string& system, const std::vector<bool>& enabled)
-    {
-      return std::make_shared<IsEachSVEnabledResult>(system, enabled);
-    }
 
     IsEachSVEnabledResultPtr IsEachSVEnabledResult::create(CommandBasePtr relatedCommand, const std::string& system, const std::vector<bool>& enabled)
     {

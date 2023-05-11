@@ -1,6 +1,3 @@
-
-#include "gen/EnableLosForEachSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of EnableLosForEachSV
 ///
+#include "gen/EnableLosForEachSV.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setSystem(system);
       setEnabled(enabled);
     }
+
 
     EnableLosForEachSVPtr EnableLosForEachSV::create(const std::string& system, const std::vector<bool>& enabled)
     {

@@ -1,6 +1,3 @@
-
-#include "gen/SetVehicleAntennaGainCSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetVehicleAntennaGainCSV
 ///
+#include "gen/SetVehicleAntennaGainCSV.h"
 
 namespace Sdx
 {
@@ -32,6 +30,7 @@ namespace Sdx
       setBand(band);
       setName(name);
     }
+
 
     SetVehicleAntennaGainCSVPtr SetVehicleAntennaGainCSV::create(const std::string& filePath, const Sdx::AntennaPatternType& type, const Sdx::GNSSBand& band, const Sdx::optional<std::string>& name)
     {

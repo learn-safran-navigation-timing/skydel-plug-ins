@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 #include <string>
 
 namespace Sdx
@@ -30,12 +29,8 @@ namespace Sdx
 
       VersionResult();
 
-      VersionResult(const std::string& version);
-
       VersionResult(CommandBasePtr relatedCommand, const std::string& version);
-
-      static VersionResultPtr create(const std::string& version);
-
+  
       static VersionResultPtr create(CommandBasePtr relatedCommand, const std::string& version);
       static VersionResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -46,7 +41,6 @@ namespace Sdx
       std::string version() const;
       void setVersion(const std::string& version);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(VersionResult);
   }
 }
 

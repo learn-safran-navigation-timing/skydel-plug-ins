@@ -1,6 +1,3 @@
-
-#include "gen/GetEphemerisErrorForSVResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetEphemerisErrorForSVResult
 ///
+#include "gen/GetEphemerisErrorForSVResult.h"
 
 namespace Sdx
 {
@@ -16,23 +14,12 @@ namespace Sdx
     const char* const GetEphemerisErrorForSVResult::CmdName = "GetEphemerisErrorForSVResult";
     const char* const GetEphemerisErrorForSVResult::Documentation = "Result of GetEphemerisErrorForSV.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetEphemerisErrorForSVResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetEphemerisErrorForSVResult);
 
 
     GetEphemerisErrorForSVResult::GetEphemerisErrorForSVResult()
       : CommandResult(CmdName)
     {}
-
-    GetEphemerisErrorForSVResult::GetEphemerisErrorForSVResult(const std::string& system, int svId, const Sdx::RIC& orbit, double deltaAf0, double deltaAf1)
-      : CommandResult(CmdName)
-    {
-
-      setSystem(system);
-      setSvId(svId);
-      setOrbit(orbit);
-      setDeltaAf0(deltaAf0);
-      setDeltaAf1(deltaAf1);
-    }
 
     GetEphemerisErrorForSVResult::GetEphemerisErrorForSVResult(CommandBasePtr relatedCommand, const std::string& system, int svId, const Sdx::RIC& orbit, double deltaAf0, double deltaAf1)
       : CommandResult(CmdName, relatedCommand)
@@ -45,11 +32,6 @@ namespace Sdx
       setDeltaAf1(deltaAf1);
     }
 
-
-    GetEphemerisErrorForSVResultPtr GetEphemerisErrorForSVResult::create(const std::string& system, int svId, const Sdx::RIC& orbit, double deltaAf0, double deltaAf1)
-    {
-      return std::make_shared<GetEphemerisErrorForSVResult>(system, svId, orbit, deltaAf0, deltaAf1);
-    }
 
     GetEphemerisErrorForSVResultPtr GetEphemerisErrorForSVResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, const Sdx::RIC& orbit, double deltaAf0, double deltaAf1)
     {

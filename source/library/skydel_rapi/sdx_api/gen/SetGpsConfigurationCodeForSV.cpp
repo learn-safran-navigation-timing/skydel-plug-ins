@@ -1,6 +1,3 @@
-
-#include "gen/SetGpsConfigurationCodeForSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetGpsConfigurationCodeForSV
 ///
+#include "gen/SetGpsConfigurationCodeForSV.h"
 
 namespace Sdx
 {
@@ -31,6 +29,7 @@ namespace Sdx
       setSvConfig(svConfig);
       setDataSetName(dataSetName);
     }
+
 
     SetGpsConfigurationCodeForSVPtr SetGpsConfigurationCodeForSV::create(int svId, int svConfig, const Sdx::optional<std::string>& dataSetName)
     {

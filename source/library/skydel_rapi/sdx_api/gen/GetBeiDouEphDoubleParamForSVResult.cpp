@@ -1,6 +1,3 @@
-
-#include "gen/GetBeiDouEphDoubleParamForSVResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetBeiDouEphDoubleParamForSVResult
 ///
+#include "gen/GetBeiDouEphDoubleParamForSVResult.h"
 
 namespace Sdx
 {
@@ -16,22 +14,12 @@ namespace Sdx
     const char* const GetBeiDouEphDoubleParamForSVResult::CmdName = "GetBeiDouEphDoubleParamForSVResult";
     const char* const GetBeiDouEphDoubleParamForSVResult::Documentation = "Result of GetBeiDouEphDoubleParamForSV.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetBeiDouEphDoubleParamForSVResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetBeiDouEphDoubleParamForSVResult);
 
 
     GetBeiDouEphDoubleParamForSVResult::GetBeiDouEphDoubleParamForSVResult()
       : CommandResult(CmdName)
     {}
-
-    GetBeiDouEphDoubleParamForSVResult::GetBeiDouEphDoubleParamForSVResult(int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName)
-      : CommandResult(CmdName)
-    {
-
-      setSvId(svId);
-      setParamName(paramName);
-      setVal(val);
-      setDataSetName(dataSetName);
-    }
 
     GetBeiDouEphDoubleParamForSVResult::GetBeiDouEphDoubleParamForSVResult(CommandBasePtr relatedCommand, int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName)
       : CommandResult(CmdName, relatedCommand)
@@ -43,11 +31,6 @@ namespace Sdx
       setDataSetName(dataSetName);
     }
 
-
-    GetBeiDouEphDoubleParamForSVResultPtr GetBeiDouEphDoubleParamForSVResult::create(int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName)
-    {
-      return std::make_shared<GetBeiDouEphDoubleParamForSVResult>(svId, paramName, val, dataSetName);
-    }
 
     GetBeiDouEphDoubleParamForSVResultPtr GetBeiDouEphDoubleParamForSVResult::create(CommandBasePtr relatedCommand, int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName)
     {

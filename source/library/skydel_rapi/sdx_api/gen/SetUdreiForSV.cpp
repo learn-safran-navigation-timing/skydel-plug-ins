@@ -1,6 +1,3 @@
-
-#include "gen/SetUdreiForSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetUdreiForSV
 ///
+#include "gen/SetUdreiForSV.h"
 
 namespace Sdx
 {
@@ -31,6 +29,7 @@ namespace Sdx
       setSvId(svId);
       setUdrei(udrei);
     }
+
 
     SetUdreiForSVPtr SetUdreiForSV::create(const std::string& system, int svId, int udrei)
     {

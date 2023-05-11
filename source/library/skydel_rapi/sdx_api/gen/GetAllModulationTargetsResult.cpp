@@ -1,6 +1,3 @@
-
-#include "gen/GetAllModulationTargetsResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetAllModulationTargetsResult
 ///
+#include "gen/GetAllModulationTargetsResult.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const GetAllModulationTargetsResult::CmdName = "GetAllModulationTargetsResult";
     const char* const GetAllModulationTargetsResult::Documentation = "Result of GetAllModulationTargets.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetAllModulationTargetsResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetAllModulationTargetsResult);
 
 
     GetAllModulationTargetsResult::GetAllModulationTargetsResult()
       : CommandResult(CmdName)
     {}
-
-    GetAllModulationTargetsResult::GetAllModulationTargetsResult(const std::vector<std::string>& ids)
-      : CommandResult(CmdName)
-    {
-
-      setIds(ids);
-    }
 
     GetAllModulationTargetsResult::GetAllModulationTargetsResult(CommandBasePtr relatedCommand, const std::vector<std::string>& ids)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setIds(ids);
     }
 
-
-    GetAllModulationTargetsResultPtr GetAllModulationTargetsResult::create(const std::vector<std::string>& ids)
-    {
-      return std::make_shared<GetAllModulationTargetsResult>(ids);
-    }
 
     GetAllModulationTargetsResultPtr GetAllModulationTargetsResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& ids)
     {

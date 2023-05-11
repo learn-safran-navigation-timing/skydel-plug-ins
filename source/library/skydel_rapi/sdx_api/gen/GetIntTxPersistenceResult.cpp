@@ -1,6 +1,3 @@
-
-#include "gen/GetIntTxPersistenceResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetIntTxPersistenceResult
 ///
+#include "gen/GetIntTxPersistenceResult.h"
 
 namespace Sdx
 {
@@ -16,20 +14,12 @@ namespace Sdx
     const char* const GetIntTxPersistenceResult::CmdName = "GetIntTxPersistenceResult";
     const char* const GetIntTxPersistenceResult::Documentation = "Result of GetIntTxPersistence.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetIntTxPersistenceResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetIntTxPersistenceResult);
 
 
     GetIntTxPersistenceResult::GetIntTxPersistenceResult()
       : CommandResult(CmdName)
     {}
-
-    GetIntTxPersistenceResult::GetIntTxPersistenceResult(bool persistence, const std::string& id)
-      : CommandResult(CmdName)
-    {
-
-      setPersistence(persistence);
-      setId(id);
-    }
 
     GetIntTxPersistenceResult::GetIntTxPersistenceResult(CommandBasePtr relatedCommand, bool persistence, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -39,11 +29,6 @@ namespace Sdx
       setId(id);
     }
 
-
-    GetIntTxPersistenceResultPtr GetIntTxPersistenceResult::create(bool persistence, const std::string& id)
-    {
-      return std::make_shared<GetIntTxPersistenceResult>(persistence, id);
-    }
 
     GetIntTxPersistenceResultPtr GetIntTxPersistenceResult::create(CommandBasePtr relatedCommand, bool persistence, const std::string& id)
     {

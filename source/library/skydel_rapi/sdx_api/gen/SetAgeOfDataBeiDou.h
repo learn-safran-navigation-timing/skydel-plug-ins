@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include "sdx_optional.h"
 
 namespace Sdx
@@ -33,7 +32,7 @@ namespace Sdx
       SetAgeOfDataBeiDou();
 
       SetAgeOfDataBeiDou(int clock, int ephemeris, const Sdx::optional<bool>& overrideRinex = {});
-
+  
       static SetAgeOfDataBeiDouPtr create(int clock, int ephemeris, const Sdx::optional<bool>& overrideRinex = {});
       static SetAgeOfDataBeiDouPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -56,7 +55,6 @@ namespace Sdx
       Sdx::optional<bool> overrideRinex() const;
       void setOverrideRinex(const Sdx::optional<bool>& overrideRinex);
     };
-    
   }
 }
 

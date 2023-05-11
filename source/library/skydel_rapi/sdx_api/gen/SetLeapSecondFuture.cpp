@@ -1,6 +1,3 @@
-
-#include "gen/SetLeapSecondFuture.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetLeapSecondFuture
 ///
+#include "gen/SetLeapSecondFuture.h"
 
 namespace Sdx
 {
@@ -31,6 +29,7 @@ namespace Sdx
       setSeconds(seconds);
       setDate(date);
     }
+
 
     SetLeapSecondFuturePtr SetLeapSecondFuture::create(bool enabled, int seconds, const Sdx::Date& date)
     {

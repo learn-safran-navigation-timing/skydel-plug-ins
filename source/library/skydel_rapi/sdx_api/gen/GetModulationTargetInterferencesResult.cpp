@@ -1,6 +1,3 @@
-
-#include "gen/GetModulationTargetInterferencesResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetModulationTargetInterferencesResult
 ///
+#include "gen/GetModulationTargetInterferencesResult.h"
 
 namespace Sdx
 {
@@ -16,26 +14,12 @@ namespace Sdx
     const char* const GetModulationTargetInterferencesResult::CmdName = "GetModulationTargetInterferencesResult";
     const char* const GetModulationTargetInterferencesResult::Documentation = "Result of GetModulationTargetInterferences.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetModulationTargetInterferencesResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetModulationTargetInterferencesResult);
 
 
     GetModulationTargetInterferencesResult::GetModulationTargetInterferencesResult()
       : CommandResult(CmdName)
     {}
-
-    GetModulationTargetInterferencesResult::GetModulationTargetInterferencesResult(int output, int minRate, int maxRate, int group, double centralFreq, int gain, const std::string& id, const Sdx::optional<std::string>& signal)
-      : CommandResult(CmdName)
-    {
-
-      setOutput(output);
-      setMinRate(minRate);
-      setMaxRate(maxRate);
-      setGroup(group);
-      setCentralFreq(centralFreq);
-      setGain(gain);
-      setId(id);
-      setSignal(signal);
-    }
 
     GetModulationTargetInterferencesResult::GetModulationTargetInterferencesResult(CommandBasePtr relatedCommand, int output, int minRate, int maxRate, int group, double centralFreq, int gain, const std::string& id, const Sdx::optional<std::string>& signal)
       : CommandResult(CmdName, relatedCommand)
@@ -51,11 +35,6 @@ namespace Sdx
       setSignal(signal);
     }
 
-
-    GetModulationTargetInterferencesResultPtr GetModulationTargetInterferencesResult::create(int output, int minRate, int maxRate, int group, double centralFreq, int gain, const std::string& id, const Sdx::optional<std::string>& signal)
-    {
-      return std::make_shared<GetModulationTargetInterferencesResult>(output, minRate, maxRate, group, centralFreq, gain, id, signal);
-    }
 
     GetModulationTargetInterferencesResultPtr GetModulationTargetInterferencesResult::create(CommandBasePtr relatedCommand, int output, int minRate, int maxRate, int group, double centralFreq, int gain, const std::string& id, const Sdx::optional<std::string>& signal)
     {

@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -31,12 +30,8 @@ namespace Sdx
 
       IsWFAntennaElementEnabledResult();
 
-      IsWFAntennaElementEnabledResult(int element, bool enabled);
-
       IsWFAntennaElementEnabledResult(CommandBasePtr relatedCommand, int element, bool enabled);
-
-      static IsWFAntennaElementEnabledResultPtr create(int element, bool enabled);
-
+  
       static IsWFAntennaElementEnabledResultPtr create(CommandBasePtr relatedCommand, int element, bool enabled);
       static IsWFAntennaElementEnabledResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -52,7 +47,6 @@ namespace Sdx
       bool enabled() const;
       void setEnabled(bool enabled);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(IsWFAntennaElementEnabledResult);
   }
 }
 

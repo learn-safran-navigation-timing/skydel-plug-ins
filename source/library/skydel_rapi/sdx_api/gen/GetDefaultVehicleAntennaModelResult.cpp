@@ -1,6 +1,3 @@
-
-#include "gen/GetDefaultVehicleAntennaModelResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetDefaultVehicleAntennaModelResult
 ///
+#include "gen/GetDefaultVehicleAntennaModelResult.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const GetDefaultVehicleAntennaModelResult::CmdName = "GetDefaultVehicleAntennaModelResult";
     const char* const GetDefaultVehicleAntennaModelResult::Documentation = "Result of GetDefaultVehicleAntennaModel.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetDefaultVehicleAntennaModelResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetDefaultVehicleAntennaModelResult);
 
 
     GetDefaultVehicleAntennaModelResult::GetDefaultVehicleAntennaModelResult()
       : CommandResult(CmdName)
     {}
-
-    GetDefaultVehicleAntennaModelResult::GetDefaultVehicleAntennaModelResult(const std::string& name)
-      : CommandResult(CmdName)
-    {
-
-      setName(name);
-    }
 
     GetDefaultVehicleAntennaModelResult::GetDefaultVehicleAntennaModelResult(CommandBasePtr relatedCommand, const std::string& name)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setName(name);
     }
 
-
-    GetDefaultVehicleAntennaModelResultPtr GetDefaultVehicleAntennaModelResult::create(const std::string& name)
-    {
-      return std::make_shared<GetDefaultVehicleAntennaModelResult>(name);
-    }
 
     GetDefaultVehicleAntennaModelResultPtr GetDefaultVehicleAntennaModelResult::create(CommandBasePtr relatedCommand, const std::string& name)
     {

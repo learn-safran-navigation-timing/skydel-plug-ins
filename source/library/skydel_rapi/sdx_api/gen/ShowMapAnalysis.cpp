@@ -1,6 +1,3 @@
-
-#include "gen/ShowMapAnalysis.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of ShowMapAnalysis
 ///
+#include "gen/ShowMapAnalysis.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setShow(show);
     }
+
 
     ShowMapAnalysisPtr ShowMapAnalysis::create(bool show)
     {

@@ -1,6 +1,3 @@
-
-#include "gen/GetAllVehicleAntennaNamesResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetAllVehicleAntennaNamesResult
 ///
+#include "gen/GetAllVehicleAntennaNamesResult.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const GetAllVehicleAntennaNamesResult::CmdName = "GetAllVehicleAntennaNamesResult";
     const char* const GetAllVehicleAntennaNamesResult::Documentation = "Result of GetAllVehicleAntennaNames.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetAllVehicleAntennaNamesResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetAllVehicleAntennaNamesResult);
 
 
     GetAllVehicleAntennaNamesResult::GetAllVehicleAntennaNamesResult()
       : CommandResult(CmdName)
     {}
-
-    GetAllVehicleAntennaNamesResult::GetAllVehicleAntennaNamesResult(const std::vector<std::string>& antennaNames)
-      : CommandResult(CmdName)
-    {
-
-      setAntennaNames(antennaNames);
-    }
 
     GetAllVehicleAntennaNamesResult::GetAllVehicleAntennaNamesResult(CommandBasePtr relatedCommand, const std::vector<std::string>& antennaNames)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setAntennaNames(antennaNames);
     }
 
-
-    GetAllVehicleAntennaNamesResultPtr GetAllVehicleAntennaNamesResult::create(const std::vector<std::string>& antennaNames)
-    {
-      return std::make_shared<GetAllVehicleAntennaNamesResult>(antennaNames);
-    }
 
     GetAllVehicleAntennaNamesResultPtr GetAllVehicleAntennaNamesResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& antennaNames)
     {

@@ -40,8 +40,6 @@ public:
   inline virtual bool isSuccess() const { return true; }
   std::string message() const;
 
-  void setRelatedCommand(CommandBasePtr relatedCommand);
-
 private:
   CommandBasePtr m_relatedCommand;
   friend class CommandResultFactory;

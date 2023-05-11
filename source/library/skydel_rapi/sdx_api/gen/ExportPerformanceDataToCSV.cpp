@@ -1,6 +1,3 @@
-
-#include "gen/ExportPerformanceDataToCSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of ExportPerformanceDataToCSV
 ///
+#include "gen/ExportPerformanceDataToCSV.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setPath(path);
       setOverwriting(overwriting);
     }
+
 
     ExportPerformanceDataToCSVPtr ExportPerformanceDataToCSV::create(const std::string& path, bool overwriting)
     {

@@ -1,6 +1,3 @@
-
-#include "gen/GetIntTxChirpResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetIntTxChirpResult
 ///
+#include "gen/GetIntTxChirpResult.h"
 
 namespace Sdx
 {
@@ -16,26 +14,12 @@ namespace Sdx
     const char* const GetIntTxChirpResult::CmdName = "GetIntTxChirpResult";
     const char* const GetIntTxChirpResult::Documentation = "Result of GetIntTxChirp.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetIntTxChirpResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetIntTxChirpResult);
 
 
     GetIntTxChirpResult::GetIntTxChirpResult()
       : CommandResult(CmdName)
     {}
-
-    GetIntTxChirpResult::GetIntTxChirpResult(bool enabled, double centralFreq, double power, double bandwidth, double sweepTime, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& group)
-      : CommandResult(CmdName)
-    {
-
-      setEnabled(enabled);
-      setCentralFreq(centralFreq);
-      setPower(power);
-      setBandwidth(bandwidth);
-      setSweepTime(sweepTime);
-      setTransmitterId(transmitterId);
-      setSignalId(signalId);
-      setGroup(group);
-    }
 
     GetIntTxChirpResult::GetIntTxChirpResult(CommandBasePtr relatedCommand, bool enabled, double centralFreq, double power, double bandwidth, double sweepTime, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& group)
       : CommandResult(CmdName, relatedCommand)
@@ -51,11 +35,6 @@ namespace Sdx
       setGroup(group);
     }
 
-
-    GetIntTxChirpResultPtr GetIntTxChirpResult::create(bool enabled, double centralFreq, double power, double bandwidth, double sweepTime, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& group)
-    {
-      return std::make_shared<GetIntTxChirpResult>(enabled, centralFreq, power, bandwidth, sweepTime, transmitterId, signalId, group);
-    }
 
     GetIntTxChirpResultPtr GetIntTxChirpResult::create(CommandBasePtr relatedCommand, bool enabled, double centralFreq, double power, double bandwidth, double sweepTime, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& group)
     {

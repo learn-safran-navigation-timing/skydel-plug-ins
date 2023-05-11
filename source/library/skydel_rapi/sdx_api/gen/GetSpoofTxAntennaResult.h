@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 #include "gen/AntennaPatternType.h"
 #include <string>
 #include <vector>
@@ -34,12 +33,8 @@ namespace Sdx
 
       GetSpoofTxAntennaResult();
 
-      GetSpoofTxAntennaResult(const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const std::string& id);
-
       GetSpoofTxAntennaResult(CommandBasePtr relatedCommand, const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const std::string& id);
-
-      static GetSpoofTxAntennaResultPtr create(const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const std::string& id);
-
+  
       static GetSpoofTxAntennaResultPtr create(CommandBasePtr relatedCommand, const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const std::string& id);
       static GetSpoofTxAntennaResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -60,7 +55,6 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetSpoofTxAntennaResult);
   }
 }
 

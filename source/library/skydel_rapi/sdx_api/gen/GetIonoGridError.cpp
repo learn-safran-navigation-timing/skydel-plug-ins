@@ -1,6 +1,3 @@
-
-#include "gen/GetIonoGridError.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetIonoGridError
 ///
+#include "gen/GetIonoGridError.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setBand(band);
       setPoint(point);
     }
+
 
     GetIonoGridErrorPtr GetIonoGridError::create(int band, int point)
     {

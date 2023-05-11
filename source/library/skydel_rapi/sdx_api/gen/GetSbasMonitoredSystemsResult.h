@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 #include <string>
 #include <vector>
 
@@ -31,12 +30,8 @@ namespace Sdx
 
       GetSbasMonitoredSystemsResult();
 
-      GetSbasMonitoredSystemsResult(const std::vector<std::string>& systems);
-
       GetSbasMonitoredSystemsResult(CommandBasePtr relatedCommand, const std::vector<std::string>& systems);
-
-      static GetSbasMonitoredSystemsResultPtr create(const std::vector<std::string>& systems);
-
+  
       static GetSbasMonitoredSystemsResultPtr create(CommandBasePtr relatedCommand, const std::vector<std::string>& systems);
       static GetSbasMonitoredSystemsResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -47,7 +42,6 @@ namespace Sdx
       std::vector<std::string> systems() const;
       void setSystems(const std::vector<std::string>& systems);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetSbasMonitoredSystemsResult);
   }
 }
 

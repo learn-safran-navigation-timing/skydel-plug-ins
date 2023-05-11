@@ -1,6 +1,3 @@
-
-#include "gen/SetLogNmeaRate.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetLogNmeaRate
 ///
+#include "gen/SetLogNmeaRate.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setRate(rate);
     }
+
 
     SetLogNmeaRatePtr SetLogNmeaRate::create(int rate)
     {

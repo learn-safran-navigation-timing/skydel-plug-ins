@@ -1,6 +1,3 @@
-
-#include "gen/GetMessageModificationToGalileoINav.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetMessageModificationToGalileoINav
 ///
+#include "gen/GetMessageModificationToGalileoINav.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setId(id);
     }
+
 
     GetMessageModificationToGalileoINavPtr GetMessageModificationToGalileoINav::create(const std::string& id)
     {

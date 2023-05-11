@@ -1,6 +1,3 @@
-
-#include "gen/RemovePlugInInstance.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of RemovePlugInInstance
 ///
+#include "gen/RemovePlugInInstance.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setName(name);
     }
+
 
     RemovePlugInInstancePtr RemovePlugInInstance::create(const std::string& name)
     {

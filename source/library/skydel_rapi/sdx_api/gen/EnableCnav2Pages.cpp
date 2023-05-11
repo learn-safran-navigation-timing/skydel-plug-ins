@@ -1,6 +1,3 @@
-
-#include "gen/EnableCnav2Pages.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of EnableCnav2Pages
 ///
+#include "gen/EnableCnav2Pages.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setMessages(messages);
     }
+
 
     EnableCnav2PagesPtr EnableCnav2Pages::create(const std::vector<int>& messages)
     {

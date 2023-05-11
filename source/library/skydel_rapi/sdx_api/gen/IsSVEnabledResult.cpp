@@ -1,6 +1,3 @@
-
-#include "gen/IsSVEnabledResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of IsSVEnabledResult
 ///
+#include "gen/IsSVEnabledResult.h"
 
 namespace Sdx
 {
@@ -16,21 +14,12 @@ namespace Sdx
     const char* const IsSVEnabledResult::CmdName = "IsSVEnabledResult";
     const char* const IsSVEnabledResult::Documentation = "Result of IsSVEnabled.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsSVEnabledResult);
+    REGISTER_COMMAND_RESULT_FACTORY(IsSVEnabledResult);
 
 
     IsSVEnabledResult::IsSVEnabledResult()
       : CommandResult(CmdName)
     {}
-
-    IsSVEnabledResult::IsSVEnabledResult(const std::string& system, int svId, bool enabled)
-      : CommandResult(CmdName)
-    {
-
-      setSystem(system);
-      setSvId(svId);
-      setEnabled(enabled);
-    }
 
     IsSVEnabledResult::IsSVEnabledResult(CommandBasePtr relatedCommand, const std::string& system, int svId, bool enabled)
       : CommandResult(CmdName, relatedCommand)
@@ -41,11 +30,6 @@ namespace Sdx
       setEnabled(enabled);
     }
 
-
-    IsSVEnabledResultPtr IsSVEnabledResult::create(const std::string& system, int svId, bool enabled)
-    {
-      return std::make_shared<IsSVEnabledResult>(system, svId, enabled);
-    }
 
     IsSVEnabledResultPtr IsSVEnabledResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, bool enabled)
     {

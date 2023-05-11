@@ -1,6 +1,3 @@
-
-#include "gen/IsIntTxIgnoreRxAntennaGainPattern.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of IsIntTxIgnoreRxAntennaGainPattern
 ///
+#include "gen/IsIntTxIgnoreRxAntennaGainPattern.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setId(id);
     }
+
 
     IsIntTxIgnoreRxAntennaGainPatternPtr IsIntTxIgnoreRxAntennaGainPattern::create(const std::string& id)
     {

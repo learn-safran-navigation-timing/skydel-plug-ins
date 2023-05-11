@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -31,7 +30,7 @@ namespace Sdx
       ClearAllMessageModificationsForNavMsgFamily();
 
       ClearAllMessageModificationsForNavMsgFamily(const std::string& navMsgFamily);
-
+  
       static ClearAllMessageModificationsForNavMsgFamilyPtr create(const std::string& navMsgFamily);
       static ClearAllMessageModificationsForNavMsgFamilyPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       std::string navMsgFamily() const;
       void setNavMsgFamily(const std::string& navMsgFamily);
     };
-    
   }
 }
 

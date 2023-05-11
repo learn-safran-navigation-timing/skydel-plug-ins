@@ -1,6 +1,3 @@
-
-#include "gen/SetStartTimeMode.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetStartTimeMode
 ///
+#include "gen/SetStartTimeMode.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setMode(mode);
     }
+
 
     SetStartTimeModePtr SetStartTimeMode::create(const std::string& mode)
     {

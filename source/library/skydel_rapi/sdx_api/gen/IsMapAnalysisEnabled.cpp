@@ -1,6 +1,3 @@
-
-#include "gen/IsMapAnalysisEnabled.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of IsMapAnalysisEnabled
 ///
+#include "gen/IsMapAnalysisEnabled.h"
 
 namespace Sdx
 {
@@ -24,6 +22,7 @@ namespace Sdx
     {
 
     }
+
 
     IsMapAnalysisEnabledPtr IsMapAnalysisEnabled::create()
     {

@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -32,7 +31,7 @@ namespace Sdx
       GetIntTxIqFile();
 
       GetIntTxIqFile(const std::string& transmitterId, const std::string& signalId);
-
+  
       static GetIntTxIqFilePtr create(const std::string& transmitterId, const std::string& signalId);
       static GetIntTxIqFilePtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -50,7 +49,6 @@ namespace Sdx
       std::string signalId() const;
       void setSignalId(const std::string& signalId);
     };
-    
   }
 }
 

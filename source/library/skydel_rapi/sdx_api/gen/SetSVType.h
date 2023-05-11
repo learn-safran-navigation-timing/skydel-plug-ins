@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -35,7 +34,7 @@ namespace Sdx
       SetSVType();
 
       SetSVType(const std::string& system, int svId, const std::string& svType);
-
+  
       static SetSVTypePtr create(const std::string& system, int svId, const std::string& svType);
       static SetSVTypePtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -58,7 +57,6 @@ namespace Sdx
       std::string svType() const;
       void setSvType(const std::string& svType);
     };
-    
   }
 }
 

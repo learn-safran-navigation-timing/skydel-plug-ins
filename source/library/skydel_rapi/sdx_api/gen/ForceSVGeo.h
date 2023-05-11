@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include "sdx_optional.h"
 #include <string>
 
@@ -36,7 +35,7 @@ namespace Sdx
       ForceSVGeo();
 
       ForceSVGeo(const std::string& system, int svId, bool isGeo, double longitude, const Sdx::optional<std::string>& dataSetName = {});
-
+  
       static ForceSVGeoPtr create(const std::string& system, int svId, bool isGeo, double longitude, const Sdx::optional<std::string>& dataSetName = {});
       static ForceSVGeoPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -69,7 +68,6 @@ namespace Sdx
       Sdx::optional<std::string> dataSetName() const;
       void setDataSetName(const Sdx::optional<std::string>& dataSetName);
     };
-    
   }
 }
 

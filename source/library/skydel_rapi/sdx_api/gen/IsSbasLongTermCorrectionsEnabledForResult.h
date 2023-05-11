@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 #include <string>
 
 namespace Sdx
@@ -31,12 +30,8 @@ namespace Sdx
 
       IsSbasLongTermCorrectionsEnabledForResult();
 
-      IsSbasLongTermCorrectionsEnabledForResult(const std::string& system, bool isEnabled);
-
       IsSbasLongTermCorrectionsEnabledForResult(CommandBasePtr relatedCommand, const std::string& system, bool isEnabled);
-
-      static IsSbasLongTermCorrectionsEnabledForResultPtr create(const std::string& system, bool isEnabled);
-
+  
       static IsSbasLongTermCorrectionsEnabledForResultPtr create(CommandBasePtr relatedCommand, const std::string& system, bool isEnabled);
       static IsSbasLongTermCorrectionsEnabledForResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -52,7 +47,6 @@ namespace Sdx
       bool isEnabled() const;
       void setIsEnabled(bool isEnabled);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(IsSbasLongTermCorrectionsEnabledForResult);
   }
 }
 

@@ -1,6 +1,3 @@
-
-#include "gen/GetAllIntTxIDResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetAllIntTxIDResult
 ///
+#include "gen/GetAllIntTxIDResult.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const GetAllIntTxIDResult::CmdName = "GetAllIntTxIDResult";
     const char* const GetAllIntTxIDResult::Documentation = "Result of GetAllIntTxID.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetAllIntTxIDResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetAllIntTxIDResult);
 
 
     GetAllIntTxIDResult::GetAllIntTxIDResult()
       : CommandResult(CmdName)
     {}
-
-    GetAllIntTxIDResult::GetAllIntTxIDResult(const std::vector<std::string>& ids)
-      : CommandResult(CmdName)
-    {
-
-      setIds(ids);
-    }
 
     GetAllIntTxIDResult::GetAllIntTxIDResult(CommandBasePtr relatedCommand, const std::vector<std::string>& ids)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setIds(ids);
     }
 
-
-    GetAllIntTxIDResultPtr GetAllIntTxIDResult::create(const std::vector<std::string>& ids)
-    {
-      return std::make_shared<GetAllIntTxIDResult>(ids);
-    }
 
     GetAllIntTxIDResultPtr GetAllIntTxIDResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& ids)
     {

@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -37,7 +36,7 @@ namespace Sdx
       SetIntTxFix();
 
       SetIntTxFix(double lat, double lon, double alt, double yaw, double pitch, double roll, const std::string& id);
-
+  
       static SetIntTxFixPtr create(double lat, double lon, double alt, double yaw, double pitch, double roll, const std::string& id);
       static SetIntTxFixPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -80,7 +79,6 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
-    
   }
 }
 

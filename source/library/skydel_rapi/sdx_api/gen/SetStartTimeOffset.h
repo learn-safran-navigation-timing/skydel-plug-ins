@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -32,7 +31,7 @@ namespace Sdx
       SetStartTimeOffset();
 
       SetStartTimeOffset(int offset);
-
+  
       static SetStartTimeOffsetPtr create(int offset);
       static SetStartTimeOffsetPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -45,7 +44,6 @@ namespace Sdx
       int offset() const;
       void setOffset(int offset);
     };
-    
   }
 }
 

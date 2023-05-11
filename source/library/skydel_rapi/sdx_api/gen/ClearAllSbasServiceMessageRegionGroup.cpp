@@ -1,6 +1,3 @@
-
-#include "gen/ClearAllSbasServiceMessageRegionGroup.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of ClearAllSbasServiceMessageRegionGroup
 ///
+#include "gen/ClearAllSbasServiceMessageRegionGroup.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setServiceProvider(serviceProvider);
     }
+
 
     ClearAllSbasServiceMessageRegionGroupPtr ClearAllSbasServiceMessageRegionGroup::create(const std::string& serviceProvider)
     {

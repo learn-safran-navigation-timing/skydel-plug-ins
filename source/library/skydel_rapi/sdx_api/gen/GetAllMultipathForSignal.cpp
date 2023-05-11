@@ -1,6 +1,3 @@
-
-#include "gen/GetAllMultipathForSignal.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetAllMultipathForSignal
 ///
+#include "gen/GetAllMultipathForSignal.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setSignal(signal);
     }
+
 
     GetAllMultipathForSignalPtr GetAllMultipathForSignal::create(const std::string& signal)
     {

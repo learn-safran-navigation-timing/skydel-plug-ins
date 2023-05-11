@@ -1,6 +1,3 @@
-
-#include "gen/GetVehiclePhasePatternOffsetResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetVehiclePhasePatternOffsetResult
 ///
+#include "gen/GetVehiclePhasePatternOffsetResult.h"
 
 namespace Sdx
 {
@@ -16,21 +14,12 @@ namespace Sdx
     const char* const GetVehiclePhasePatternOffsetResult::CmdName = "GetVehiclePhasePatternOffsetResult";
     const char* const GetVehiclePhasePatternOffsetResult::Documentation = "Result of GetVehiclePhasePatternOffset.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetVehiclePhasePatternOffsetResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetVehiclePhasePatternOffsetResult);
 
 
     GetVehiclePhasePatternOffsetResult::GetVehiclePhasePatternOffsetResult()
       : CommandResult(CmdName)
     {}
-
-    GetVehiclePhasePatternOffsetResult::GetVehiclePhasePatternOffsetResult(const Sdx::GNSSBand& band, double offset, const Sdx::optional<std::string>& antennaName)
-      : CommandResult(CmdName)
-    {
-
-      setBand(band);
-      setOffset(offset);
-      setAntennaName(antennaName);
-    }
 
     GetVehiclePhasePatternOffsetResult::GetVehiclePhasePatternOffsetResult(CommandBasePtr relatedCommand, const Sdx::GNSSBand& band, double offset, const Sdx::optional<std::string>& antennaName)
       : CommandResult(CmdName, relatedCommand)
@@ -41,11 +30,6 @@ namespace Sdx
       setAntennaName(antennaName);
     }
 
-
-    GetVehiclePhasePatternOffsetResultPtr GetVehiclePhasePatternOffsetResult::create(const Sdx::GNSSBand& band, double offset, const Sdx::optional<std::string>& antennaName)
-    {
-      return std::make_shared<GetVehiclePhasePatternOffsetResult>(band, offset, antennaName);
-    }
 
     GetVehiclePhasePatternOffsetResultPtr GetVehiclePhasePatternOffsetResult::create(CommandBasePtr relatedCommand, const Sdx::GNSSBand& band, double offset, const Sdx::optional<std::string>& antennaName)
     {

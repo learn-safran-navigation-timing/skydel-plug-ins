@@ -1,6 +1,3 @@
-
-#include "gen/GetPerturbationsForAllSatResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetPerturbationsForAllSatResult
 ///
+#include "gen/GetPerturbationsForAllSatResult.h"
 
 namespace Sdx
 {
@@ -16,26 +14,12 @@ namespace Sdx
     const char* const GetPerturbationsForAllSatResult::CmdName = "GetPerturbationsForAllSatResult";
     const char* const GetPerturbationsForAllSatResult::Documentation = "Result of GetPerturbationsForAllSat.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetPerturbationsForAllSatResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetPerturbationsForAllSatResult);
 
 
     GetPerturbationsForAllSatResult::GetPerturbationsForAllSatResult()
       : CommandResult(CmdName)
     {}
-
-    GetPerturbationsForAllSatResult::GetPerturbationsForAllSatResult(const std::string& system, const std::vector<double>& crs, const std::vector<double>& crc, const std::vector<double>& cis, const std::vector<double>& cic, const std::vector<double>& cus, const std::vector<double>& cuc, const Sdx::optional<std::string>& dataSetName)
-      : CommandResult(CmdName)
-    {
-
-      setSystem(system);
-      setCrs(crs);
-      setCrc(crc);
-      setCis(cis);
-      setCic(cic);
-      setCus(cus);
-      setCuc(cuc);
-      setDataSetName(dataSetName);
-    }
 
     GetPerturbationsForAllSatResult::GetPerturbationsForAllSatResult(CommandBasePtr relatedCommand, const std::string& system, const std::vector<double>& crs, const std::vector<double>& crc, const std::vector<double>& cis, const std::vector<double>& cic, const std::vector<double>& cus, const std::vector<double>& cuc, const Sdx::optional<std::string>& dataSetName)
       : CommandResult(CmdName, relatedCommand)
@@ -51,11 +35,6 @@ namespace Sdx
       setDataSetName(dataSetName);
     }
 
-
-    GetPerturbationsForAllSatResultPtr GetPerturbationsForAllSatResult::create(const std::string& system, const std::vector<double>& crs, const std::vector<double>& crc, const std::vector<double>& cis, const std::vector<double>& cic, const std::vector<double>& cus, const std::vector<double>& cuc, const Sdx::optional<std::string>& dataSetName)
-    {
-      return std::make_shared<GetPerturbationsForAllSatResult>(system, crs, crc, cis, cic, cus, cuc, dataSetName);
-    }
 
     GetPerturbationsForAllSatResultPtr GetPerturbationsForAllSatResult::create(CommandBasePtr relatedCommand, const std::string& system, const std::vector<double>& crs, const std::vector<double>& crc, const std::vector<double>& cis, const std::vector<double>& cic, const std::vector<double>& cus, const std::vector<double>& cuc, const Sdx::optional<std::string>& dataSetName)
     {

@@ -1,6 +1,3 @@
-
-#include "gen/GetSpoofTxFixEcefResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetSpoofTxFixEcefResult
 ///
+#include "gen/GetSpoofTxFixEcefResult.h"
 
 namespace Sdx
 {
@@ -16,25 +14,12 @@ namespace Sdx
     const char* const GetSpoofTxFixEcefResult::CmdName = "GetSpoofTxFixEcefResult";
     const char* const GetSpoofTxFixEcefResult::Documentation = "Result of GetSpoofTxFixEcef.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetSpoofTxFixEcefResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetSpoofTxFixEcefResult);
 
 
     GetSpoofTxFixEcefResult::GetSpoofTxFixEcefResult()
       : CommandResult(CmdName)
     {}
-
-    GetSpoofTxFixEcefResult::GetSpoofTxFixEcefResult(double x, double y, double z, double yaw, double pitch, double roll, const std::string& id)
-      : CommandResult(CmdName)
-    {
-
-      setX(x);
-      setY(y);
-      setZ(z);
-      setYaw(yaw);
-      setPitch(pitch);
-      setRoll(roll);
-      setId(id);
-    }
 
     GetSpoofTxFixEcefResult::GetSpoofTxFixEcefResult(CommandBasePtr relatedCommand, double x, double y, double z, double yaw, double pitch, double roll, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -49,11 +34,6 @@ namespace Sdx
       setId(id);
     }
 
-
-    GetSpoofTxFixEcefResultPtr GetSpoofTxFixEcefResult::create(double x, double y, double z, double yaw, double pitch, double roll, const std::string& id)
-    {
-      return std::make_shared<GetSpoofTxFixEcefResult>(x, y, z, yaw, pitch, roll, id);
-    }
 
     GetSpoofTxFixEcefResultPtr GetSpoofTxFixEcefResult::create(CommandBasePtr relatedCommand, double x, double y, double z, double yaw, double pitch, double roll, const std::string& id)
     {

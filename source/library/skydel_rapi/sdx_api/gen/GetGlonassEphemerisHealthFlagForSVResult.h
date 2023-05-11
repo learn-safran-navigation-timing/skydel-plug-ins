@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -31,12 +30,8 @@ namespace Sdx
 
       GetGlonassEphemerisHealthFlagForSVResult();
 
-      GetGlonassEphemerisHealthFlagForSVResult(int svId, bool health);
-
       GetGlonassEphemerisHealthFlagForSVResult(CommandBasePtr relatedCommand, int svId, bool health);
-
-      static GetGlonassEphemerisHealthFlagForSVResultPtr create(int svId, bool health);
-
+  
       static GetGlonassEphemerisHealthFlagForSVResultPtr create(CommandBasePtr relatedCommand, int svId, bool health);
       static GetGlonassEphemerisHealthFlagForSVResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -52,7 +47,6 @@ namespace Sdx
       bool health() const;
       void setHealth(bool health);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetGlonassEphemerisHealthFlagForSVResult);
   }
 }
 

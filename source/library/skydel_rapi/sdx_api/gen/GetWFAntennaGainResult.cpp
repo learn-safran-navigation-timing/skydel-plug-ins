@@ -1,6 +1,3 @@
-
-#include "gen/GetWFAntennaGainResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetWFAntennaGainResult
 ///
+#include "gen/GetWFAntennaGainResult.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const GetWFAntennaGainResult::CmdName = "GetWFAntennaGainResult";
     const char* const GetWFAntennaGainResult::Documentation = "Result of GetWFAntennaGain.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetWFAntennaGainResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetWFAntennaGainResult);
 
 
     GetWFAntennaGainResult::GetWFAntennaGainResult()
       : CommandResult(CmdName)
     {}
-
-    GetWFAntennaGainResult::GetWFAntennaGainResult(int gain)
-      : CommandResult(CmdName)
-    {
-
-      setGain(gain);
-    }
 
     GetWFAntennaGainResult::GetWFAntennaGainResult(CommandBasePtr relatedCommand, int gain)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setGain(gain);
     }
 
-
-    GetWFAntennaGainResultPtr GetWFAntennaGainResult::create(int gain)
-    {
-      return std::make_shared<GetWFAntennaGainResult>(gain);
-    }
 
     GetWFAntennaGainResultPtr GetWFAntennaGainResult::create(CommandBasePtr relatedCommand, int gain)
     {

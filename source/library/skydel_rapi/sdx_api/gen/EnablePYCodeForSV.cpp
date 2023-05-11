@@ -1,6 +1,3 @@
-
-#include "gen/EnablePYCodeForSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of EnablePYCodeForSV
 ///
+#include "gen/EnablePYCodeForSV.h"
 
 namespace Sdx
 {
@@ -31,6 +29,7 @@ namespace Sdx
       setSvId(svId);
       setEnabled(enabled);
     }
+
 
     EnablePYCodeForSVPtr EnablePYCodeForSV::create(const std::string& signal, int svId, bool enabled)
     {

@@ -1,6 +1,3 @@
-
-#include "gen/ImportGlonassAlmanac.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of ImportGlonassAlmanac
 ///
+#include "gen/ImportGlonassAlmanac.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setPath(path);
     }
+
 
     ImportGlonassAlmanacPtr ImportGlonassAlmanac::create(const std::string& path)
     {

@@ -1,6 +1,3 @@
-
-#include "gen/GetMessageModificationToGpsLNavResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetMessageModificationToGpsLNavResult
 ///
+#include "gen/GetMessageModificationToGpsLNavResult.h"
 
 namespace Sdx
 {
@@ -16,28 +14,12 @@ namespace Sdx
     const char* const GetMessageModificationToGpsLNavResult::CmdName = "GetMessageModificationToGpsLNavResult";
     const char* const GetMessageModificationToGpsLNavResult::Documentation = "Result of GetMessageModificationToGpsLNav.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetMessageModificationToGpsLNavResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetMessageModificationToGpsLNavResult);
 
 
     GetMessageModificationToGpsLNavResult::GetMessageModificationToGpsLNavResult()
       : CommandResult(CmdName)
     {}
-
-    GetMessageModificationToGpsLNavResult::GetMessageModificationToGpsLNavResult(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int page, int word, bool updateParity, const std::string& wordModification, const std::string& id)
-      : CommandResult(CmdName)
-    {
-
-      setSignalArray(signalArray);
-      setSvId(svId);
-      setStartTime(startTime);
-      setStopTime(stopTime);
-      setSubframe(subframe);
-      setPage(page);
-      setWord(word);
-      setUpdateParity(updateParity);
-      setWordModification(wordModification);
-      setId(id);
-    }
 
     GetMessageModificationToGpsLNavResult::GetMessageModificationToGpsLNavResult(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int page, int word, bool updateParity, const std::string& wordModification, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -55,11 +37,6 @@ namespace Sdx
       setId(id);
     }
 
-
-    GetMessageModificationToGpsLNavResultPtr GetMessageModificationToGpsLNavResult::create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int page, int word, bool updateParity, const std::string& wordModification, const std::string& id)
-    {
-      return std::make_shared<GetMessageModificationToGpsLNavResult>(signalArray, svId, startTime, stopTime, subframe, page, word, updateParity, wordModification, id);
-    }
 
     GetMessageModificationToGpsLNavResultPtr GetMessageModificationToGpsLNavResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int page, int word, bool updateParity, const std::string& wordModification, const std::string& id)
     {

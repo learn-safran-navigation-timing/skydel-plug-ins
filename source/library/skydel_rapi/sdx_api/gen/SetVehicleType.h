@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -31,7 +30,7 @@ namespace Sdx
       SetVehicleType();
 
       SetVehicleType(const std::string& type);
-
+  
       static SetVehicleTypePtr create(const std::string& type);
       static SetVehicleTypePtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       std::string type() const;
       void setType(const std::string& type);
     };
-    
   }
 }
 

@@ -1,6 +1,3 @@
-
-#include "gen/GetGpsAntiSpoofingFlagForSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetGpsAntiSpoofingFlagForSV
 ///
+#include "gen/GetGpsAntiSpoofingFlagForSV.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setSvId(svId);
       setDataSetName(dataSetName);
     }
+
 
     GetGpsAntiSpoofingFlagForSVPtr GetGpsAntiSpoofingFlagForSV::create(int svId, const Sdx::optional<std::string>& dataSetName)
     {

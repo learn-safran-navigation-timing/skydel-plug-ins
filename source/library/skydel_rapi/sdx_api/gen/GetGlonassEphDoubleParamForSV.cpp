@@ -1,6 +1,3 @@
-
-#include "gen/GetGlonassEphDoubleParamForSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetGlonassEphDoubleParamForSV
 ///
+#include "gen/GetGlonassEphDoubleParamForSV.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setSvId(svId);
       setParamName(paramName);
     }
+
 
     GetGlonassEphDoubleParamForSVPtr GetGlonassEphDoubleParamForSV::create(int svId, const std::string& paramName)
     {

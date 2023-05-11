@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -34,7 +33,7 @@ namespace Sdx
       SetRFOutputOffsets();
 
       SetRFOutputOffsets(int outputIdx, double powerOffset, double timeOffset, double phaseOffset);
-
+  
       static SetRFOutputOffsetsPtr create(int outputIdx, double powerOffset, double timeOffset, double phaseOffset);
       static SetRFOutputOffsetsPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -62,7 +61,6 @@ namespace Sdx
       double phaseOffset() const;
       void setPhaseOffset(double phaseOffset);
     };
-    
   }
 }
 

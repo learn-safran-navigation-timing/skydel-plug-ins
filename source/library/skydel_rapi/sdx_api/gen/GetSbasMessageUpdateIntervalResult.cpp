@@ -1,6 +1,3 @@
-
-#include "gen/GetSbasMessageUpdateIntervalResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetSbasMessageUpdateIntervalResult
 ///
+#include "gen/GetSbasMessageUpdateIntervalResult.h"
 
 namespace Sdx
 {
@@ -16,20 +14,12 @@ namespace Sdx
     const char* const GetSbasMessageUpdateIntervalResult::CmdName = "GetSbasMessageUpdateIntervalResult";
     const char* const GetSbasMessageUpdateIntervalResult::Documentation = "Result of GetSbasMessageUpdateInterval.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetSbasMessageUpdateIntervalResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetSbasMessageUpdateIntervalResult);
 
 
     GetSbasMessageUpdateIntervalResult::GetSbasMessageUpdateIntervalResult()
       : CommandResult(CmdName)
     {}
-
-    GetSbasMessageUpdateIntervalResult::GetSbasMessageUpdateIntervalResult(int message, int updateInterval)
-      : CommandResult(CmdName)
-    {
-
-      setMessage(message);
-      setUpdateInterval(updateInterval);
-    }
 
     GetSbasMessageUpdateIntervalResult::GetSbasMessageUpdateIntervalResult(CommandBasePtr relatedCommand, int message, int updateInterval)
       : CommandResult(CmdName, relatedCommand)
@@ -39,11 +29,6 @@ namespace Sdx
       setUpdateInterval(updateInterval);
     }
 
-
-    GetSbasMessageUpdateIntervalResultPtr GetSbasMessageUpdateIntervalResult::create(int message, int updateInterval)
-    {
-      return std::make_shared<GetSbasMessageUpdateIntervalResult>(message, updateInterval);
-    }
 
     GetSbasMessageUpdateIntervalResultPtr GetSbasMessageUpdateIntervalResult::create(CommandBasePtr relatedCommand, int message, int updateInterval)
     {

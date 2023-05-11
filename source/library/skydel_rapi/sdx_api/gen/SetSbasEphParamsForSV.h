@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <map>
 #include <string>
 
@@ -37,7 +36,7 @@ namespace Sdx
       SetSbasEphParamsForSV();
 
       SetSbasEphParamsForSV(int svId, const std::map<std::string, double>& paramValueDict);
-
+  
       static SetSbasEphParamsForSVPtr create(int svId, const std::map<std::string, double>& paramValueDict);
       static SetSbasEphParamsForSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -55,7 +54,6 @@ namespace Sdx
       std::map<std::string, double> paramValueDict() const;
       void setParamValueDict(const std::map<std::string, double>& paramValueDict);
     };
-    
   }
 }
 

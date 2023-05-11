@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -31,7 +30,7 @@ namespace Sdx
       RemoveAllSignalsFromIntTx();
 
       RemoveAllSignalsFromIntTx(const std::string& transmitterId);
-
+  
       static RemoveAllSignalsFromIntTxPtr create(const std::string& transmitterId);
       static RemoveAllSignalsFromIntTxPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       std::string transmitterId() const;
       void setTransmitterId(const std::string& transmitterId);
     };
-    
   }
 }
 

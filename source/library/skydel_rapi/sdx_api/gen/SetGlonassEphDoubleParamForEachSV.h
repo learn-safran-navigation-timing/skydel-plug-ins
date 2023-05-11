@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 #include <vector>
 
@@ -33,7 +32,7 @@ namespace Sdx
       SetGlonassEphDoubleParamForEachSV();
 
       SetGlonassEphDoubleParamForEachSV(const std::string& paramName, const std::vector<double>& val);
-
+  
       static SetGlonassEphDoubleParamForEachSVPtr create(const std::string& paramName, const std::vector<double>& val);
       static SetGlonassEphDoubleParamForEachSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -51,7 +50,6 @@ namespace Sdx
       std::vector<double> val() const;
       void setVal(const std::vector<double>& val);
     };
-    
   }
 }
 

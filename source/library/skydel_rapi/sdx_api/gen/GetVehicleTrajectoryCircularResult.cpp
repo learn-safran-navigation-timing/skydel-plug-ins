@@ -1,6 +1,3 @@
-
-#include "gen/GetVehicleTrajectoryCircularResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetVehicleTrajectoryCircularResult
 ///
+#include "gen/GetVehicleTrajectoryCircularResult.h"
 
 namespace Sdx
 {
@@ -16,26 +14,12 @@ namespace Sdx
     const char* const GetVehicleTrajectoryCircularResult::CmdName = "GetVehicleTrajectoryCircularResult";
     const char* const GetVehicleTrajectoryCircularResult::Documentation = "Result of GetVehicleTrajectoryCircular.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetVehicleTrajectoryCircularResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetVehicleTrajectoryCircularResult);
 
 
     GetVehicleTrajectoryCircularResult::GetVehicleTrajectoryCircularResult()
       : CommandResult(CmdName)
     {}
-
-    GetVehicleTrajectoryCircularResult::GetVehicleTrajectoryCircularResult(const std::string& type, double lat, double lon, double alt, double radius, double speed, bool clockwise, const Sdx::optional<double>& originAngle)
-      : CommandResult(CmdName)
-    {
-
-      setType(type);
-      setLat(lat);
-      setLon(lon);
-      setAlt(alt);
-      setRadius(radius);
-      setSpeed(speed);
-      setClockwise(clockwise);
-      setOriginAngle(originAngle);
-    }
 
     GetVehicleTrajectoryCircularResult::GetVehicleTrajectoryCircularResult(CommandBasePtr relatedCommand, const std::string& type, double lat, double lon, double alt, double radius, double speed, bool clockwise, const Sdx::optional<double>& originAngle)
       : CommandResult(CmdName, relatedCommand)
@@ -51,11 +35,6 @@ namespace Sdx
       setOriginAngle(originAngle);
     }
 
-
-    GetVehicleTrajectoryCircularResultPtr GetVehicleTrajectoryCircularResult::create(const std::string& type, double lat, double lon, double alt, double radius, double speed, bool clockwise, const Sdx::optional<double>& originAngle)
-    {
-      return std::make_shared<GetVehicleTrajectoryCircularResult>(type, lat, lon, alt, radius, speed, clockwise, originAngle);
-    }
 
     GetVehicleTrajectoryCircularResultPtr GetVehicleTrajectoryCircularResult::create(CommandBasePtr relatedCommand, const std::string& type, double lat, double lon, double alt, double radius, double speed, bool clockwise, const Sdx::optional<double>& originAngle)
     {

@@ -1,6 +1,3 @@
-
-#include "gen/SetGpsSignalHealthForSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetGpsSignalHealthForSV
 ///
+#include "gen/SetGpsSignalHealthForSV.h"
 
 namespace Sdx
 {
@@ -31,6 +29,7 @@ namespace Sdx
       setHealth(health);
       setDataSetName(dataSetName);
     }
+
 
     SetGpsSignalHealthForSVPtr SetGpsSignalHealthForSV::create(int svId, int health, const Sdx::optional<std::string>& dataSetName)
     {

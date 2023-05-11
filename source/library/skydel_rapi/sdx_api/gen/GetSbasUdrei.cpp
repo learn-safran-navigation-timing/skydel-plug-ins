@@ -1,6 +1,3 @@
-
-#include "gen/GetSbasUdrei.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetSbasUdrei
 ///
+#include "gen/GetSbasUdrei.h"
 
 namespace Sdx
 {
@@ -15,8 +13,6 @@ namespace Sdx
   {
     const char* const GetSbasUdrei::CmdName = "GetSbasUdrei";
     const char* const GetSbasUdrei::Documentation = "Please note the command GetSbasUdrei is deprecated since 22.2. You may use GetUdreiForSV.\n\nGet the global UDREI value transmitted by SBAS";
-
-    const char* const GetSbasUdrei::Deprecated = "Please note the command GetSbasUdrei is deprecated since 22.2. You may use GetUdreiForSV.";
 
     REGISTER_COMMAND_FACTORY(GetSbasUdrei);
 
@@ -26,6 +22,7 @@ namespace Sdx
     {
 
     }
+
 
     GetSbasUdreiPtr GetSbasUdrei::create()
     {
@@ -46,8 +43,6 @@ namespace Sdx
     }
 
     std::string GetSbasUdrei::documentation() const { return Documentation; }
-
-    Sdx::optional<std::string> GetSbasUdrei::deprecated() const { return Sdx::optional<std::string>{Deprecated}; }
 
 
     int GetSbasUdrei::executePermission() const

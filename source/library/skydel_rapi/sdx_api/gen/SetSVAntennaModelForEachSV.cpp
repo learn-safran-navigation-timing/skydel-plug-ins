@@ -1,6 +1,3 @@
-
-#include "gen/SetSVAntennaModelForEachSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetSVAntennaModelForEachSV
 ///
+#include "gen/SetSVAntennaModelForEachSV.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setSystem(system);
       setAntennaModelNames(antennaModelNames);
     }
+
 
     SetSVAntennaModelForEachSVPtr SetSVAntennaModelForEachSV::create(const std::string& system, const std::vector<std::string>& antennaModelNames)
     {

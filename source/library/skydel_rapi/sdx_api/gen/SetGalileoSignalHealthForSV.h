@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include "sdx_optional.h"
 #include <string>
 
@@ -35,7 +34,7 @@ namespace Sdx
       SetGalileoSignalHealthForSV();
 
       SetGalileoSignalHealthForSV(int svId, const std::string& component, int health, const Sdx::optional<std::string>& dataSetName = {});
-
+  
       static SetGalileoSignalHealthForSVPtr create(int svId, const std::string& component, int health, const Sdx::optional<std::string>& dataSetName = {});
       static SetGalileoSignalHealthForSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -63,7 +62,6 @@ namespace Sdx
       Sdx::optional<std::string> dataSetName() const;
       void setDataSetName(const Sdx::optional<std::string>& dataSetName);
     };
-    
   }
 }
 

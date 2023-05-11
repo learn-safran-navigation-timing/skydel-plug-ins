@@ -1,6 +1,3 @@
-
-#include "gen/GetOfficialLeapSecondResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetOfficialLeapSecondResult
 ///
+#include "gen/GetOfficialLeapSecondResult.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const GetOfficialLeapSecondResult::CmdName = "GetOfficialLeapSecondResult";
     const char* const GetOfficialLeapSecondResult::Documentation = "Result of GetOfficialLeapSecond";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetOfficialLeapSecondResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetOfficialLeapSecondResult);
 
 
     GetOfficialLeapSecondResult::GetOfficialLeapSecondResult()
       : CommandResult(CmdName)
     {}
-
-    GetOfficialLeapSecondResult::GetOfficialLeapSecondResult(int leapSecond)
-      : CommandResult(CmdName)
-    {
-
-      setLeapSecond(leapSecond);
-    }
 
     GetOfficialLeapSecondResult::GetOfficialLeapSecondResult(CommandBasePtr relatedCommand, int leapSecond)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setLeapSecond(leapSecond);
     }
 
-
-    GetOfficialLeapSecondResultPtr GetOfficialLeapSecondResult::create(int leapSecond)
-    {
-      return std::make_shared<GetOfficialLeapSecondResult>(leapSecond);
-    }
 
     GetOfficialLeapSecondResultPtr GetOfficialLeapSecondResult::create(CommandBasePtr relatedCommand, int leapSecond)
     {

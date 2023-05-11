@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -33,7 +32,7 @@ namespace Sdx
       SetGpu();
 
       SetGpu(int gpuIdx, int output, const std::string& id);
-
+  
       static SetGpuPtr create(int gpuIdx, int output, const std::string& id);
       static SetGpuPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -56,7 +55,6 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
-    
   }
 }
 

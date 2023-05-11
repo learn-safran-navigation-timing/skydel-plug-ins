@@ -1,6 +1,3 @@
-
-#include "gen/VersionResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of VersionResult
 ///
+#include "gen/VersionResult.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const VersionResult::CmdName = "VersionResult";
     const char* const VersionResult::Documentation = "Result of GetVersion.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(VersionResult);
+    REGISTER_COMMAND_RESULT_FACTORY(VersionResult);
 
 
     VersionResult::VersionResult()
       : CommandResult(CmdName)
     {}
-
-    VersionResult::VersionResult(const std::string& version)
-      : CommandResult(CmdName)
-    {
-
-      setVersion(version);
-    }
 
     VersionResult::VersionResult(CommandBasePtr relatedCommand, const std::string& version)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setVersion(version);
     }
 
-
-    VersionResultPtr VersionResult::create(const std::string& version)
-    {
-      return std::make_shared<VersionResult>(version);
-    }
 
     VersionResultPtr VersionResult::create(CommandBasePtr relatedCommand, const std::string& version)
     {

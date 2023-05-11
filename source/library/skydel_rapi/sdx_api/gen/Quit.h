@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -31,7 +30,7 @@ namespace Sdx
       Quit();
 
       Quit(bool forceQuit);
-
+  
       static QuitPtr create(bool forceQuit);
       static QuitPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       bool forceQuit() const;
       void setForceQuit(bool forceQuit);
     };
-    
   }
 }
 

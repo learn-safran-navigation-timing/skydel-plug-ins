@@ -1,6 +1,3 @@
-
-#include "gen/GetSbasDeltaUdreiOutsideOfRegionsResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetSbasDeltaUdreiOutsideOfRegionsResult
 ///
+#include "gen/GetSbasDeltaUdreiOutsideOfRegionsResult.h"
 
 namespace Sdx
 {
@@ -16,20 +14,12 @@ namespace Sdx
     const char* const GetSbasDeltaUdreiOutsideOfRegionsResult::CmdName = "GetSbasDeltaUdreiOutsideOfRegionsResult";
     const char* const GetSbasDeltaUdreiOutsideOfRegionsResult::Documentation = "Result of GetSbasDeltaUdreiOutsideOfRegions.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetSbasDeltaUdreiOutsideOfRegionsResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetSbasDeltaUdreiOutsideOfRegionsResult);
 
 
     GetSbasDeltaUdreiOutsideOfRegionsResult::GetSbasDeltaUdreiOutsideOfRegionsResult()
       : CommandResult(CmdName)
     {}
-
-    GetSbasDeltaUdreiOutsideOfRegionsResult::GetSbasDeltaUdreiOutsideOfRegionsResult(const std::string& serviceProvider, int deltaUdrei)
-      : CommandResult(CmdName)
-    {
-
-      setServiceProvider(serviceProvider);
-      setDeltaUdrei(deltaUdrei);
-    }
 
     GetSbasDeltaUdreiOutsideOfRegionsResult::GetSbasDeltaUdreiOutsideOfRegionsResult(CommandBasePtr relatedCommand, const std::string& serviceProvider, int deltaUdrei)
       : CommandResult(CmdName, relatedCommand)
@@ -39,11 +29,6 @@ namespace Sdx
       setDeltaUdrei(deltaUdrei);
     }
 
-
-    GetSbasDeltaUdreiOutsideOfRegionsResultPtr GetSbasDeltaUdreiOutsideOfRegionsResult::create(const std::string& serviceProvider, int deltaUdrei)
-    {
-      return std::make_shared<GetSbasDeltaUdreiOutsideOfRegionsResult>(serviceProvider, deltaUdrei);
-    }
 
     GetSbasDeltaUdreiOutsideOfRegionsResultPtr GetSbasDeltaUdreiOutsideOfRegionsResult::create(CommandBasePtr relatedCommand, const std::string& serviceProvider, int deltaUdrei)
     {

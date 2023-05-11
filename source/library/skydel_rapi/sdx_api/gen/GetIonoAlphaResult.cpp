@@ -1,6 +1,3 @@
-
-#include "gen/GetIonoAlphaResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetIonoAlphaResult
 ///
+#include "gen/GetIonoAlphaResult.h"
 
 namespace Sdx
 {
@@ -16,20 +14,12 @@ namespace Sdx
     const char* const GetIonoAlphaResult::CmdName = "GetIonoAlphaResult";
     const char* const GetIonoAlphaResult::Documentation = "Result of GetIonoAlpha.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetIonoAlphaResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetIonoAlphaResult);
 
 
     GetIonoAlphaResult::GetIonoAlphaResult()
       : CommandResult(CmdName)
     {}
-
-    GetIonoAlphaResult::GetIonoAlphaResult(int index, double val)
-      : CommandResult(CmdName)
-    {
-
-      setIndex(index);
-      setVal(val);
-    }
 
     GetIonoAlphaResult::GetIonoAlphaResult(CommandBasePtr relatedCommand, int index, double val)
       : CommandResult(CmdName, relatedCommand)
@@ -39,11 +29,6 @@ namespace Sdx
       setVal(val);
     }
 
-
-    GetIonoAlphaResultPtr GetIonoAlphaResult::create(int index, double val)
-    {
-      return std::make_shared<GetIonoAlphaResult>(index, val);
-    }
 
     GetIonoAlphaResultPtr GetIonoAlphaResult::create(CommandBasePtr relatedCommand, int index, double val)
     {

@@ -1,6 +1,3 @@
-
-#include "gen/GetIntTxHiddenOnMapResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetIntTxHiddenOnMapResult
 ///
+#include "gen/GetIntTxHiddenOnMapResult.h"
 
 namespace Sdx
 {
@@ -16,20 +14,12 @@ namespace Sdx
     const char* const GetIntTxHiddenOnMapResult::CmdName = "GetIntTxHiddenOnMapResult";
     const char* const GetIntTxHiddenOnMapResult::Documentation = "Result of GetIntTxHiddenOnMap.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetIntTxHiddenOnMapResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetIntTxHiddenOnMapResult);
 
 
     GetIntTxHiddenOnMapResult::GetIntTxHiddenOnMapResult()
       : CommandResult(CmdName)
     {}
-
-    GetIntTxHiddenOnMapResult::GetIntTxHiddenOnMapResult(bool hiddenOnMap, const std::string& id)
-      : CommandResult(CmdName)
-    {
-
-      setHiddenOnMap(hiddenOnMap);
-      setId(id);
-    }
 
     GetIntTxHiddenOnMapResult::GetIntTxHiddenOnMapResult(CommandBasePtr relatedCommand, bool hiddenOnMap, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -39,11 +29,6 @@ namespace Sdx
       setId(id);
     }
 
-
-    GetIntTxHiddenOnMapResultPtr GetIntTxHiddenOnMapResult::create(bool hiddenOnMap, const std::string& id)
-    {
-      return std::make_shared<GetIntTxHiddenOnMapResult>(hiddenOnMap, id);
-    }
 
     GetIntTxHiddenOnMapResultPtr GetIntTxHiddenOnMapResult::create(CommandBasePtr relatedCommand, bool hiddenOnMap, const std::string& id)
     {

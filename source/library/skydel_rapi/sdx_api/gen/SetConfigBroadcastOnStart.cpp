@@ -1,6 +1,3 @@
-
-#include "gen/SetConfigBroadcastOnStart.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetConfigBroadcastOnStart
 ///
+#include "gen/SetConfigBroadcastOnStart.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setBroadcastOnStart(broadcastOnStart);
     }
+
 
     SetConfigBroadcastOnStartPtr SetConfigBroadcastOnStart::create(bool broadcastOnStart)
     {

@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 #include "sdx_optional.h"
 
 namespace Sdx
@@ -32,12 +31,8 @@ namespace Sdx
 
       GetAgeOfDataBeiDouResult();
 
-      GetAgeOfDataBeiDouResult(int clock, int ephemeris, const Sdx::optional<bool>& overrideRinex = {});
-
       GetAgeOfDataBeiDouResult(CommandBasePtr relatedCommand, int clock, int ephemeris, const Sdx::optional<bool>& overrideRinex = {});
-
-      static GetAgeOfDataBeiDouResultPtr create(int clock, int ephemeris, const Sdx::optional<bool>& overrideRinex = {});
-
+  
       static GetAgeOfDataBeiDouResultPtr create(CommandBasePtr relatedCommand, int clock, int ephemeris, const Sdx::optional<bool>& overrideRinex = {});
       static GetAgeOfDataBeiDouResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -58,7 +53,6 @@ namespace Sdx
       Sdx::optional<bool> overrideRinex() const;
       void setOverrideRinex(const Sdx::optional<bool>& overrideRinex);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetAgeOfDataBeiDouResult);
   }
 }
 

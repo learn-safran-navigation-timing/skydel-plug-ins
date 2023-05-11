@@ -1,6 +1,3 @@
-
-#include "gen/SetMessageModificationToGpsMNav.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetMessageModificationToGpsMNav
 ///
+#include "gen/SetMessageModificationToGpsMNav.h"
 
 namespace Sdx
 {
@@ -37,6 +35,7 @@ namespace Sdx
       setBitModifications(bitModifications);
       setId(id);
     }
+
 
     SetMessageModificationToGpsMNavPtr SetMessageModificationToGpsMNav::create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, int occurrence, const std::string& condition, const std::string& bitModifications, const std::string& id)
     {

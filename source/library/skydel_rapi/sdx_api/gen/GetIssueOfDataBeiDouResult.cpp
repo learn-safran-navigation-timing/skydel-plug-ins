@@ -1,6 +1,3 @@
-
-#include "gen/GetIssueOfDataBeiDouResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetIssueOfDataBeiDouResult
 ///
+#include "gen/GetIssueOfDataBeiDouResult.h"
 
 namespace Sdx
 {
@@ -16,20 +14,12 @@ namespace Sdx
     const char* const GetIssueOfDataBeiDouResult::CmdName = "GetIssueOfDataBeiDouResult";
     const char* const GetIssueOfDataBeiDouResult::Documentation = "Result of GetIssueOfDataBeiDou.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetIssueOfDataBeiDouResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetIssueOfDataBeiDouResult);
 
 
     GetIssueOfDataBeiDouResult::GetIssueOfDataBeiDouResult()
       : CommandResult(CmdName)
     {}
-
-    GetIssueOfDataBeiDouResult::GetIssueOfDataBeiDouResult(int clock, int ephemeris)
-      : CommandResult(CmdName)
-    {
-
-      setClock(clock);
-      setEphemeris(ephemeris);
-    }
 
     GetIssueOfDataBeiDouResult::GetIssueOfDataBeiDouResult(CommandBasePtr relatedCommand, int clock, int ephemeris)
       : CommandResult(CmdName, relatedCommand)
@@ -39,11 +29,6 @@ namespace Sdx
       setEphemeris(ephemeris);
     }
 
-
-    GetIssueOfDataBeiDouResultPtr GetIssueOfDataBeiDouResult::create(int clock, int ephemeris)
-    {
-      return std::make_shared<GetIssueOfDataBeiDouResult>(clock, ephemeris);
-    }
 
     GetIssueOfDataBeiDouResultPtr GetIssueOfDataBeiDouResult::create(CommandBasePtr relatedCommand, int clock, int ephemeris)
     {

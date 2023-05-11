@@ -1,6 +1,3 @@
-
-#include "gen/GetPrnForEachSVResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetPrnForEachSVResult
 ///
+#include "gen/GetPrnForEachSVResult.h"
 
 namespace Sdx
 {
@@ -16,20 +14,12 @@ namespace Sdx
     const char* const GetPrnForEachSVResult::CmdName = "GetPrnForEachSVResult";
     const char* const GetPrnForEachSVResult::Documentation = "Result of GetPrnForEachSV.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetPrnForEachSVResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetPrnForEachSVResult);
 
 
     GetPrnForEachSVResult::GetPrnForEachSVResult()
       : CommandResult(CmdName)
     {}
-
-    GetPrnForEachSVResult::GetPrnForEachSVResult(const std::string& signal, const std::vector<int>& prn)
-      : CommandResult(CmdName)
-    {
-
-      setSignal(signal);
-      setPrn(prn);
-    }
 
     GetPrnForEachSVResult::GetPrnForEachSVResult(CommandBasePtr relatedCommand, const std::string& signal, const std::vector<int>& prn)
       : CommandResult(CmdName, relatedCommand)
@@ -39,11 +29,6 @@ namespace Sdx
       setPrn(prn);
     }
 
-
-    GetPrnForEachSVResultPtr GetPrnForEachSVResult::create(const std::string& signal, const std::vector<int>& prn)
-    {
-      return std::make_shared<GetPrnForEachSVResult>(signal, prn);
-    }
 
     GetPrnForEachSVResultPtr GetPrnForEachSVResult::create(CommandBasePtr relatedCommand, const std::string& signal, const std::vector<int>& prn)
     {

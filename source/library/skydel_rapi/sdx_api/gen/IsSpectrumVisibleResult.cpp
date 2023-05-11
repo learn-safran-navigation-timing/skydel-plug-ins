@@ -1,6 +1,3 @@
-
-#include "gen/IsSpectrumVisibleResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of IsSpectrumVisibleResult
 ///
+#include "gen/IsSpectrumVisibleResult.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const IsSpectrumVisibleResult::CmdName = "IsSpectrumVisibleResult";
     const char* const IsSpectrumVisibleResult::Documentation = "Result of IsSpectrumVisible.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsSpectrumVisibleResult);
+    REGISTER_COMMAND_RESULT_FACTORY(IsSpectrumVisibleResult);
 
 
     IsSpectrumVisibleResult::IsSpectrumVisibleResult()
       : CommandResult(CmdName)
     {}
-
-    IsSpectrumVisibleResult::IsSpectrumVisibleResult(bool visible)
-      : CommandResult(CmdName)
-    {
-
-      setVisible(visible);
-    }
 
     IsSpectrumVisibleResult::IsSpectrumVisibleResult(CommandBasePtr relatedCommand, bool visible)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setVisible(visible);
     }
 
-
-    IsSpectrumVisibleResultPtr IsSpectrumVisibleResult::create(bool visible)
-    {
-      return std::make_shared<IsSpectrumVisibleResult>(visible);
-    }
 
     IsSpectrumVisibleResultPtr IsSpectrumVisibleResult::create(CommandBasePtr relatedCommand, bool visible)
     {

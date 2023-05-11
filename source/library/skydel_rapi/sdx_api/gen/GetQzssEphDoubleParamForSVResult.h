@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 #include "sdx_optional.h"
 #include <string>
 
@@ -37,12 +36,8 @@ namespace Sdx
 
       GetQzssEphDoubleParamForSVResult();
 
-      GetQzssEphDoubleParamForSVResult(int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName = {});
-
       GetQzssEphDoubleParamForSVResult(CommandBasePtr relatedCommand, int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName = {});
-
-      static GetQzssEphDoubleParamForSVResultPtr create(int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName = {});
-
+  
       static GetQzssEphDoubleParamForSVResultPtr create(CommandBasePtr relatedCommand, int svId, const std::string& paramName, double val, const Sdx::optional<std::string>& dataSetName = {});
       static GetQzssEphDoubleParamForSVResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -68,7 +63,6 @@ namespace Sdx
       Sdx::optional<std::string> dataSetName() const;
       void setDataSetName(const Sdx::optional<std::string>& dataSetName);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetQzssEphDoubleParamForSVResult);
   }
 }
 

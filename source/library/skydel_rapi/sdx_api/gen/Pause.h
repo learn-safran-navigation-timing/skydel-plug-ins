@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -27,7 +26,7 @@ namespace Sdx
 
 
       Pause();
-
+  
       static PausePtr create();
       static PausePtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -35,7 +34,6 @@ namespace Sdx
 
       virtual int executePermission() const override;
     };
-    
   }
 }
 

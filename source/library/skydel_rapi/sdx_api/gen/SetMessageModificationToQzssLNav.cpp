@@ -1,6 +1,3 @@
-
-#include "gen/SetMessageModificationToQzssLNav.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetMessageModificationToQzssLNav
 ///
+#include "gen/SetMessageModificationToQzssLNav.h"
 
 namespace Sdx
 {
@@ -38,6 +36,7 @@ namespace Sdx
       setWordModification(wordModification);
       setId(id);
     }
+
 
     SetMessageModificationToQzssLNavPtr SetMessageModificationToQzssLNav::create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int lNavSvId, int word, bool updateParity, const std::string& wordModification, const std::string& id)
     {

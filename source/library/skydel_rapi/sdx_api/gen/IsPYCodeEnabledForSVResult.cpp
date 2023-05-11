@@ -1,6 +1,3 @@
-
-#include "gen/IsPYCodeEnabledForSVResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of IsPYCodeEnabledForSVResult
 ///
+#include "gen/IsPYCodeEnabledForSVResult.h"
 
 namespace Sdx
 {
@@ -16,21 +14,12 @@ namespace Sdx
     const char* const IsPYCodeEnabledForSVResult::CmdName = "IsPYCodeEnabledForSVResult";
     const char* const IsPYCodeEnabledForSVResult::Documentation = "Result of IsPYCodeEnabledForSV.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsPYCodeEnabledForSVResult);
+    REGISTER_COMMAND_RESULT_FACTORY(IsPYCodeEnabledForSVResult);
 
 
     IsPYCodeEnabledForSVResult::IsPYCodeEnabledForSVResult()
       : CommandResult(CmdName)
     {}
-
-    IsPYCodeEnabledForSVResult::IsPYCodeEnabledForSVResult(const std::string& signal, int svId, bool enabled)
-      : CommandResult(CmdName)
-    {
-
-      setSignal(signal);
-      setSvId(svId);
-      setEnabled(enabled);
-    }
 
     IsPYCodeEnabledForSVResult::IsPYCodeEnabledForSVResult(CommandBasePtr relatedCommand, const std::string& signal, int svId, bool enabled)
       : CommandResult(CmdName, relatedCommand)
@@ -41,11 +30,6 @@ namespace Sdx
       setEnabled(enabled);
     }
 
-
-    IsPYCodeEnabledForSVResultPtr IsPYCodeEnabledForSVResult::create(const std::string& signal, int svId, bool enabled)
-    {
-      return std::make_shared<IsPYCodeEnabledForSVResult>(signal, svId, enabled);
-    }
 
     IsPYCodeEnabledForSVResultPtr IsPYCodeEnabledForSVResult::create(CommandBasePtr relatedCommand, const std::string& signal, int svId, bool enabled)
     {

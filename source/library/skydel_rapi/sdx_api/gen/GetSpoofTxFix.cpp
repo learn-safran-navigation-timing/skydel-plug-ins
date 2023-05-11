@@ -1,6 +1,3 @@
-
-#include "gen/GetSpoofTxFix.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetSpoofTxFix
 ///
+#include "gen/GetSpoofTxFix.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setId(id);
     }
+
 
     GetSpoofTxFixPtr GetSpoofTxFix::create(const std::string& id)
     {

@@ -1,6 +1,3 @@
-
-#include "gen/ImportIonoParameters.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of ImportIonoParameters
 ///
+#include "gen/ImportIonoParameters.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setPath(path);
       setType(type);
     }
+
 
     ImportIonoParametersPtr ImportIonoParameters::create(const std::string& path, const Sdx::optional<std::string>& type)
     {

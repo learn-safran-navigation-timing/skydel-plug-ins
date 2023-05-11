@@ -1,6 +1,3 @@
-
-#include "gen/SetIntTxIgnoreRxAntennaPatterns.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,13 +5,14 @@
 ///
 /// Definition of SetIntTxIgnoreRxAntennaPatterns
 ///
+#include "gen/SetIntTxIgnoreRxAntennaPatterns.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const SetIntTxIgnoreRxAntennaPatterns::CmdName = "SetIntTxIgnoreRxAntennaPatterns";
-    const char* const SetIntTxIgnoreRxAntennaPatterns::Documentation = "Set whether a dynamic transmitter should ignore the vehicle's antenna patterns (gain and phase).";
+    const char* const SetIntTxIgnoreRxAntennaPatterns::Documentation = "Please note the command SetIntTxIgnoreVehicleAntennaPattern is deprecated since 20.2. You may use SetIntTxIgnoreRxAntennaPatterns.\n\nSet whether a dynamic transmitter should ignore the vehicle's antenna patterns (gain and phase).";
 
     REGISTER_COMMAND_FACTORY(SetIntTxIgnoreRxAntennaPatterns);
 
@@ -30,6 +28,7 @@ namespace Sdx
       setIgnore(ignore);
       setId(id);
     }
+
 
     SetIntTxIgnoreRxAntennaPatternsPtr SetIntTxIgnoreRxAntennaPatterns::create(bool ignore, const std::string& id)
     {

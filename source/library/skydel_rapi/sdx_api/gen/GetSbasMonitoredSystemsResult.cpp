@@ -1,6 +1,3 @@
-
-#include "gen/GetSbasMonitoredSystemsResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetSbasMonitoredSystemsResult
 ///
+#include "gen/GetSbasMonitoredSystemsResult.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const GetSbasMonitoredSystemsResult::CmdName = "GetSbasMonitoredSystemsResult";
     const char* const GetSbasMonitoredSystemsResult::Documentation = "Result of GetSbasMonitoredSystems.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetSbasMonitoredSystemsResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetSbasMonitoredSystemsResult);
 
 
     GetSbasMonitoredSystemsResult::GetSbasMonitoredSystemsResult()
       : CommandResult(CmdName)
     {}
-
-    GetSbasMonitoredSystemsResult::GetSbasMonitoredSystemsResult(const std::vector<std::string>& systems)
-      : CommandResult(CmdName)
-    {
-
-      setSystems(systems);
-    }
 
     GetSbasMonitoredSystemsResult::GetSbasMonitoredSystemsResult(CommandBasePtr relatedCommand, const std::vector<std::string>& systems)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setSystems(systems);
     }
 
-
-    GetSbasMonitoredSystemsResultPtr GetSbasMonitoredSystemsResult::create(const std::vector<std::string>& systems)
-    {
-      return std::make_shared<GetSbasMonitoredSystemsResult>(systems);
-    }
 
     GetSbasMonitoredSystemsResultPtr GetSbasMonitoredSystemsResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& systems)
     {

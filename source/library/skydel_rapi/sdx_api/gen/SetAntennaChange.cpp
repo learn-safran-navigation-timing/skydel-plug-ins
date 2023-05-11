@@ -1,6 +1,3 @@
-
-#include "gen/SetAntennaChange.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetAntennaChange
 ///
+#include "gen/SetAntennaChange.h"
 
 namespace Sdx
 {
@@ -31,6 +29,7 @@ namespace Sdx
       setAntenna(antenna);
       setId(id);
     }
+
 
     SetAntennaChangePtr SetAntennaChange::create(double startTime, const std::string& antenna, const std::string& id)
     {

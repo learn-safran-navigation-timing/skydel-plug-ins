@@ -1,6 +1,3 @@
-
-#include "gen/GetGlonassEphDoubleParamForEachSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,13 +5,14 @@
 ///
 /// Definition of GetGlonassEphDoubleParamForEachSV
 ///
+#include "gen/GetGlonassEphDoubleParamForEachSV.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const GetGlonassEphDoubleParamForEachSV::CmdName = "GetGlonassEphDoubleParamForEachSV";
-    const char* const GetGlonassEphDoubleParamForEachSV::Documentation = "Get GLONASS parameter value for all satellites";
+    const char* const GetGlonassEphDoubleParamForEachSV::Documentation = "Please note the command GetGlonassDoubleParams is deprecated since 21.3. You may use GetGlonassEphDoubleParamForEachSV.\n\nGet GLONASS parameter value for all satellites";
 
     REGISTER_COMMAND_FACTORY(GetGlonassEphDoubleParamForEachSV);
 
@@ -29,6 +27,7 @@ namespace Sdx
 
       setParamName(paramName);
     }
+
 
     GetGlonassEphDoubleParamForEachSVPtr GetGlonassEphDoubleParamForEachSV::create(const std::string& paramName)
     {

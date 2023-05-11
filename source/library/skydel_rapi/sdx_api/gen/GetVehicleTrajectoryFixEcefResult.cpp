@@ -1,6 +1,3 @@
-
-#include "gen/GetVehicleTrajectoryFixEcefResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetVehicleTrajectoryFixEcefResult
 ///
+#include "gen/GetVehicleTrajectoryFixEcefResult.h"
 
 namespace Sdx
 {
@@ -16,25 +14,12 @@ namespace Sdx
     const char* const GetVehicleTrajectoryFixEcefResult::CmdName = "GetVehicleTrajectoryFixEcefResult";
     const char* const GetVehicleTrajectoryFixEcefResult::Documentation = "Result of GetVehicleTrajectoryFixEcef.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetVehicleTrajectoryFixEcefResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetVehicleTrajectoryFixEcefResult);
 
 
     GetVehicleTrajectoryFixEcefResult::GetVehicleTrajectoryFixEcefResult()
       : CommandResult(CmdName)
     {}
-
-    GetVehicleTrajectoryFixEcefResult::GetVehicleTrajectoryFixEcefResult(const std::string& type, double x, double y, double z, double yaw, double pitch, double roll)
-      : CommandResult(CmdName)
-    {
-
-      setType(type);
-      setX(x);
-      setY(y);
-      setZ(z);
-      setYaw(yaw);
-      setPitch(pitch);
-      setRoll(roll);
-    }
 
     GetVehicleTrajectoryFixEcefResult::GetVehicleTrajectoryFixEcefResult(CommandBasePtr relatedCommand, const std::string& type, double x, double y, double z, double yaw, double pitch, double roll)
       : CommandResult(CmdName, relatedCommand)
@@ -49,11 +34,6 @@ namespace Sdx
       setRoll(roll);
     }
 
-
-    GetVehicleTrajectoryFixEcefResultPtr GetVehicleTrajectoryFixEcefResult::create(const std::string& type, double x, double y, double z, double yaw, double pitch, double roll)
-    {
-      return std::make_shared<GetVehicleTrajectoryFixEcefResult>(type, x, y, z, yaw, pitch, roll);
-    }
 
     GetVehicleTrajectoryFixEcefResultPtr GetVehicleTrajectoryFixEcefResult::create(CommandBasePtr relatedCommand, const std::string& type, double x, double y, double z, double yaw, double pitch, double roll)
     {

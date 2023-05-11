@@ -1,6 +1,3 @@
-
-#include "gen/ImportIonoGridGIVEI.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of ImportIonoGridGIVEI
 ///
+#include "gen/ImportIonoGridGIVEI.h"
 
 namespace Sdx
 {
@@ -31,6 +29,7 @@ namespace Sdx
       setPath(path);
       setServiceProvider(serviceProvider);
     }
+
 
     ImportIonoGridGIVEIPtr ImportIonoGridGIVEI::create(bool overwriting, const std::string& path, const Sdx::optional<std::string>& serviceProvider)
     {

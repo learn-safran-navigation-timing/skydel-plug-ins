@@ -1,6 +1,3 @@
-
-#include "gen/Open.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of Open
 ///
+#include "gen/Open.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setPath(path);
       setDiscardCurrentConfig(discardCurrentConfig);
     }
+
 
     OpenPtr Open::create(const std::string& path, bool discardCurrentConfig)
     {

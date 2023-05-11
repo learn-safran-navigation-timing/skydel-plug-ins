@@ -1,6 +1,3 @@
-
-#include "gen/IsSbasFastCorrectionsEnabledFor.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of IsSbasFastCorrectionsEnabledFor
 ///
+#include "gen/IsSbasFastCorrectionsEnabledFor.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setSystem(system);
       setErrorType(errorType);
     }
+
 
     IsSbasFastCorrectionsEnabledForPtr IsSbasFastCorrectionsEnabledFor::create(const std::string& system, const Sdx::optional<std::string>& errorType)
     {

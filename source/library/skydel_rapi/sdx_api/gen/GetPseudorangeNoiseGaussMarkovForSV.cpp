@@ -1,6 +1,3 @@
-
-#include "gen/GetPseudorangeNoiseGaussMarkovForSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetPseudorangeNoiseGaussMarkovForSV
 ///
+#include "gen/GetPseudorangeNoiseGaussMarkovForSV.h"
 
 namespace Sdx
 {
@@ -31,6 +29,7 @@ namespace Sdx
       setSvId(svId);
       setProcess(process);
     }
+
 
     GetPseudorangeNoiseGaussMarkovForSVPtr GetPseudorangeNoiseGaussMarkovForSV::create(const std::string& system, int svId, int process)
     {

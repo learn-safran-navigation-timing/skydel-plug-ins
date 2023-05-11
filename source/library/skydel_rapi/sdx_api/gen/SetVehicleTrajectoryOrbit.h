@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include "date_time.h"
 #include <string>
 
@@ -39,7 +38,7 @@ namespace Sdx
       SetVehicleTrajectoryOrbit();
 
       SetVehicleTrajectoryOrbit(const std::string& type, const Sdx::DateTime& reference, double semiMajorAxis, double inclination, double rightAscension, double eccentricity, double meanAnomaly, double argumentOfPerigee);
-
+  
       static SetVehicleTrajectoryOrbitPtr create(const std::string& type, const Sdx::DateTime& reference, double semiMajorAxis, double inclination, double rightAscension, double eccentricity, double meanAnomaly, double argumentOfPerigee);
       static SetVehicleTrajectoryOrbitPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -87,7 +86,6 @@ namespace Sdx
       double argumentOfPerigee() const;
       void setArgumentOfPerigee(double argumentOfPerigee);
     };
-    
   }
 }
 

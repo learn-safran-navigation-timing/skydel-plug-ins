@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -30,7 +29,7 @@ namespace Sdx
 
 
       IsTrajectoryCompleted();
-
+  
       static IsTrajectoryCompletedPtr create();
       static IsTrajectoryCompletedPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -38,7 +37,6 @@ namespace Sdx
 
       virtual int executePermission() const override;
     };
-    
   }
 }
 

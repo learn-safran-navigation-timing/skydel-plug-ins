@@ -1,6 +1,3 @@
-
-#include "gen/Pause.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of Pause
 ///
+#include "gen/Pause.h"
 
 namespace Sdx
 {
@@ -24,6 +22,7 @@ namespace Sdx
     {
 
     }
+
 
     PausePtr Pause::create()
     {

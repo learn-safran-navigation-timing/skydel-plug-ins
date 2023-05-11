@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -31,7 +30,7 @@ namespace Sdx
       SetIonoModel();
 
       SetIonoModel(const std::string& model);
-
+  
       static SetIonoModelPtr create(const std::string& model);
       static SetIonoModelPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       std::string model() const;
       void setModel(const std::string& model);
     };
-    
   }
 }
 

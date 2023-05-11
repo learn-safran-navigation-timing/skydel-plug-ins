@@ -1,6 +1,3 @@
-
-#include "gen/GetSpoofTxResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetSpoofTxResult
 ///
+#include "gen/GetSpoofTxResult.h"
 
 namespace Sdx
 {
@@ -16,23 +14,12 @@ namespace Sdx
     const char* const GetSpoofTxResult::CmdName = "GetSpoofTxResult";
     const char* const GetSpoofTxResult::Documentation = "Result of GetSpoofTx.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetSpoofTxResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetSpoofTxResult);
 
 
     GetSpoofTxResult::GetSpoofTxResult()
       : CommandResult(CmdName)
     {}
-
-    GetSpoofTxResult::GetSpoofTxResult(const std::string& usualName, bool enabled, const std::string& address, int instanceId, const std::string& id)
-      : CommandResult(CmdName)
-    {
-
-      setUsualName(usualName);
-      setEnabled(enabled);
-      setAddress(address);
-      setInstanceId(instanceId);
-      setId(id);
-    }
 
     GetSpoofTxResult::GetSpoofTxResult(CommandBasePtr relatedCommand, const std::string& usualName, bool enabled, const std::string& address, int instanceId, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -45,11 +32,6 @@ namespace Sdx
       setId(id);
     }
 
-
-    GetSpoofTxResultPtr GetSpoofTxResult::create(const std::string& usualName, bool enabled, const std::string& address, int instanceId, const std::string& id)
-    {
-      return std::make_shared<GetSpoofTxResult>(usualName, enabled, address, instanceId, id);
-    }
 
     GetSpoofTxResultPtr GetSpoofTxResult::create(CommandBasePtr relatedCommand, const std::string& usualName, bool enabled, const std::string& address, int instanceId, const std::string& id)
     {

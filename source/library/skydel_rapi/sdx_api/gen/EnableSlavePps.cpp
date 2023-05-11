@@ -1,6 +1,3 @@
-
-#include "gen/EnableSlavePps.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of EnableSlavePps
 ///
+#include "gen/EnableSlavePps.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setEnabled(enabled);
     }
+
 
     EnableSlavePpsPtr EnableSlavePps::create(bool enabled)
     {

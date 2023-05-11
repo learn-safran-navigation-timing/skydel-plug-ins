@@ -1,6 +1,3 @@
-
-#include "gen/SetExternalChannelsPath.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetExternalChannelsPath
 ///
+#include "gen/SetExternalChannelsPath.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setPath(path);
     }
+
 
     SetExternalChannelsPathPtr SetExternalChannelsPath::create(const std::string& path)
     {

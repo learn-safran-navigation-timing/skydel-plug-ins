@@ -1,6 +1,3 @@
-
-#include "gen/GetConfigPathsResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetConfigPathsResult
 ///
+#include "gen/GetConfigPathsResult.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const GetConfigPathsResult::CmdName = "GetConfigPathsResult";
     const char* const GetConfigPathsResult::Documentation = "Result of GetConfigPaths.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetConfigPathsResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetConfigPathsResult);
 
 
     GetConfigPathsResult::GetConfigPathsResult()
       : CommandResult(CmdName)
     {}
-
-    GetConfigPathsResult::GetConfigPathsResult(const std::vector<std::string>& paths)
-      : CommandResult(CmdName)
-    {
-
-      setPaths(paths);
-    }
 
     GetConfigPathsResult::GetConfigPathsResult(CommandBasePtr relatedCommand, const std::vector<std::string>& paths)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setPaths(paths);
     }
 
-
-    GetConfigPathsResultPtr GetConfigPathsResult::create(const std::vector<std::string>& paths)
-    {
-      return std::make_shared<GetConfigPathsResult>(paths);
-    }
 
     GetConfigPathsResultPtr GetConfigPathsResult::create(CommandBasePtr relatedCommand, const std::vector<std::string>& paths)
     {

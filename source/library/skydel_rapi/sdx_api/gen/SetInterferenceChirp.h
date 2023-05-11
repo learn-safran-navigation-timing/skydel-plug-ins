@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -38,7 +37,7 @@ namespace Sdx
       SetInterferenceChirp();
 
       SetInterferenceChirp(int startTime, int stopTime, double centralFreq, double power, double bandwidth, double sweepTime, bool enabled, const std::string& id);
-
+  
       static SetInterferenceChirpPtr create(int startTime, int stopTime, double centralFreq, double power, double bandwidth, double sweepTime, bool enabled, const std::string& id);
       static SetInterferenceChirpPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -86,7 +85,6 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
-    
   }
 }
 

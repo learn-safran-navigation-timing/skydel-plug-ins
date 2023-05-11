@@ -1,6 +1,3 @@
-
-#include "gen/IsSignalEnabledForSVResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of IsSignalEnabledForSVResult
 ///
+#include "gen/IsSignalEnabledForSVResult.h"
 
 namespace Sdx
 {
@@ -16,21 +14,12 @@ namespace Sdx
     const char* const IsSignalEnabledForSVResult::CmdName = "IsSignalEnabledForSVResult";
     const char* const IsSignalEnabledForSVResult::Documentation = "Result of IsSignalEnabledForSV.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsSignalEnabledForSVResult);
+    REGISTER_COMMAND_RESULT_FACTORY(IsSignalEnabledForSVResult);
 
 
     IsSignalEnabledForSVResult::IsSignalEnabledForSVResult()
       : CommandResult(CmdName)
     {}
-
-    IsSignalEnabledForSVResult::IsSignalEnabledForSVResult(const std::string& signal, int svId, bool enabled)
-      : CommandResult(CmdName)
-    {
-
-      setSignal(signal);
-      setSvId(svId);
-      setEnabled(enabled);
-    }
 
     IsSignalEnabledForSVResult::IsSignalEnabledForSVResult(CommandBasePtr relatedCommand, const std::string& signal, int svId, bool enabled)
       : CommandResult(CmdName, relatedCommand)
@@ -41,11 +30,6 @@ namespace Sdx
       setEnabled(enabled);
     }
 
-
-    IsSignalEnabledForSVResultPtr IsSignalEnabledForSVResult::create(const std::string& signal, int svId, bool enabled)
-    {
-      return std::make_shared<IsSignalEnabledForSVResult>(signal, svId, enabled);
-    }
 
     IsSignalEnabledForSVResultPtr IsSignalEnabledForSVResult::create(CommandBasePtr relatedCommand, const std::string& signal, int svId, bool enabled)
     {

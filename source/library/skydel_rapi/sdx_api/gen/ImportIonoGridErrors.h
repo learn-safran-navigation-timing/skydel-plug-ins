@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -32,7 +31,7 @@ namespace Sdx
       ImportIonoGridErrors();
 
       ImportIonoGridErrors(bool overwriting, const std::string& path);
-
+  
       static ImportIonoGridErrorsPtr create(bool overwriting, const std::string& path);
       static ImportIonoGridErrorsPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -50,7 +49,6 @@ namespace Sdx
       std::string path() const;
       void setPath(const std::string& path);
     };
-    
   }
 }
 

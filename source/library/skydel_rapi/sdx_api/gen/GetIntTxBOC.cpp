@@ -1,6 +1,3 @@
-
-#include "gen/GetIntTxBOC.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetIntTxBOC
 ///
+#include "gen/GetIntTxBOC.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setTransmitterId(transmitterId);
       setSignalId(signalId);
     }
+
 
     GetIntTxBOCPtr GetIntTxBOC::create(const std::string& transmitterId, const std::string& signalId)
     {

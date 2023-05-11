@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include "date_time.h"
 #include "sdx_optional.h"
 #include <string>
@@ -36,7 +35,7 @@ namespace Sdx
       SetEphemerisReferenceTimeForSV();
 
       SetEphemerisReferenceTimeForSV(const std::string& system, int svId, const Sdx::DateTime& time, const Sdx::optional<std::string>& dataSetName = {});
-
+  
       static SetEphemerisReferenceTimeForSVPtr create(const std::string& system, int svId, const Sdx::DateTime& time, const Sdx::optional<std::string>& dataSetName = {});
       static SetEphemerisReferenceTimeForSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -64,7 +63,6 @@ namespace Sdx
       Sdx::optional<std::string> dataSetName() const;
       void setDataSetName(const Sdx::optional<std::string>& dataSetName);
     };
-    
   }
 }
 

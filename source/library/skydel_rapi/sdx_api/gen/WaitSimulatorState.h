@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -48,7 +47,7 @@ namespace Sdx
       WaitSimulatorState();
 
       WaitSimulatorState(const std::string& state, const std::string& failureState);
-
+  
       static WaitSimulatorStatePtr create(const std::string& state, const std::string& failureState);
       static WaitSimulatorStatePtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -66,7 +65,6 @@ namespace Sdx
       std::string failureState() const;
       void setFailureState(const std::string& failureState);
     };
-    
   }
 }
 

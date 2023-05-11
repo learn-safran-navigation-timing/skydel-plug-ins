@@ -1,6 +1,3 @@
-
-#include "gen/SetMessageModificationToGpsLNav.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetMessageModificationToGpsLNav
 ///
+#include "gen/SetMessageModificationToGpsLNav.h"
 
 namespace Sdx
 {
@@ -38,6 +36,7 @@ namespace Sdx
       setWordModification(wordModification);
       setId(id);
     }
+
 
     SetMessageModificationToGpsLNavPtr SetMessageModificationToGpsLNav::create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int page, int word, bool updateParity, const std::string& wordModification, const std::string& id)
     {

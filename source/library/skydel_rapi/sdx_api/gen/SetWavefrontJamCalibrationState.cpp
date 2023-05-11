@@ -1,6 +1,3 @@
-
-#include "gen/SetWavefrontJamCalibrationState.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetWavefrontJamCalibrationState
 ///
+#include "gen/SetWavefrontJamCalibrationState.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setState(state);
     }
+
 
     SetWavefrontJamCalibrationStatePtr SetWavefrontJamCalibrationState::create(bool state)
     {

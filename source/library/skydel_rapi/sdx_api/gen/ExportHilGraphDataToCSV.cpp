@@ -1,6 +1,3 @@
-
-#include "gen/ExportHilGraphDataToCSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of ExportHilGraphDataToCSV
 ///
+#include "gen/ExportHilGraphDataToCSV.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setPath(path);
       setOverwriting(overwriting);
     }
+
 
     ExportHilGraphDataToCSVPtr ExportHilGraphDataToCSV::create(const std::string& path, bool overwriting)
     {

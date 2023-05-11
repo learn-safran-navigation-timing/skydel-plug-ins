@@ -1,6 +1,3 @@
-
-#include "gen/SetSpoofTxIgnorePropagationLoss.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetSpoofTxIgnorePropagationLoss
 ///
+#include "gen/SetSpoofTxIgnorePropagationLoss.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setIgnore(ignore);
       setId(id);
     }
+
 
     SetSpoofTxIgnorePropagationLossPtr SetSpoofTxIgnorePropagationLoss::create(bool ignore, const std::string& id)
     {

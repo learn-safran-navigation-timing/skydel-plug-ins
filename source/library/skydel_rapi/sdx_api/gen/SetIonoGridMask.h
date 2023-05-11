@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -34,7 +33,7 @@ namespace Sdx
       SetIonoGridMask();
 
       SetIonoGridMask(const std::string& serviceProvider, int band, int point, bool flag);
-
+  
       static SetIonoGridMaskPtr create(const std::string& serviceProvider, int band, int point, bool flag);
       static SetIonoGridMaskPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -62,7 +61,6 @@ namespace Sdx
       bool flag() const;
       void setFlag(bool flag);
     };
-    
   }
 }
 

@@ -1,6 +1,3 @@
-
-#include "gen/SetMultipathForSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetMultipathForSV
 ///
+#include "gen/SetMultipathForSV.h"
 
 namespace Sdx
 {
@@ -36,6 +34,7 @@ namespace Sdx
       setEcho(echo);
       setId(id);
     }
+
 
     SetMultipathForSVPtr SetMultipathForSV::create(const std::string& signal, int svId, double powerLoss, double pseudorange, double doppler, double carrierPhase, int echo, const std::string& id)
     {

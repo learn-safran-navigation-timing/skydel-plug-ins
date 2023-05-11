@@ -1,6 +1,3 @@
-
-#include "gen/GetDurationResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetDurationResult
 ///
+#include "gen/GetDurationResult.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const GetDurationResult::CmdName = "GetDurationResult";
     const char* const GetDurationResult::Documentation = "Result of GetDuration.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetDurationResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetDurationResult);
 
 
     GetDurationResult::GetDurationResult()
       : CommandResult(CmdName)
     {}
-
-    GetDurationResult::GetDurationResult(int second)
-      : CommandResult(CmdName)
-    {
-
-      setSecond(second);
-    }
 
     GetDurationResult::GetDurationResult(CommandBasePtr relatedCommand, int second)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setSecond(second);
     }
 
-
-    GetDurationResultPtr GetDurationResult::create(int second)
-    {
-      return std::make_shared<GetDurationResult>(second);
-    }
 
     GetDurationResultPtr GetDurationResult::create(CommandBasePtr relatedCommand, int second)
     {

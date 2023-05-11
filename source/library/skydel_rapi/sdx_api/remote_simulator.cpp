@@ -134,22 +134,6 @@ void RemoteSimulator::errorMessage(const std::string& msg)
     std::cout << msg << std::endl;
 }
 
-void RemoteSimulator::setDeprecatedMessageMode(DeprecatedMessageMode mode)
-{
-  m_deprecatedMessageMode = mode;
-  m_latchDeprecated.clear();
-}
-
-void RemoteSimulator::deprecatedMessage(CommandBasePtr cmd)
-{
-  auto deprecated = cmd->deprecated();
-  if (deprecated && (m_deprecatedMessageMode == DeprecatedMessageMode::ALL || (m_deprecatedMessageMode == DeprecatedMessageMode::LATCH && m_latchDeprecated.find(cmd->name()) == m_latchDeprecated.end())))
-  {
-    std::cout << "Warning: " << *deprecated << std::endl;
-    m_latchDeprecated.insert(cmd->name());
-  }
-}
-
 void RemoteSimulator::setVerbose(bool verbose)
 {
   m_verbose = verbose;
@@ -617,7 +601,6 @@ CommandResultPtr RemoteSimulator::call(CommandBasePtr cmd)
 
 CommandBasePtr RemoteSimulator::postCommand(CommandBasePtr cmd, double timestamp)
 {
-  deprecatedMessage(cmd);
   cmd->setTimestamp(timestamp);
   m_client->sendCommand(cmd);
   return cmd;
@@ -625,7 +608,6 @@ CommandBasePtr RemoteSimulator::postCommand(CommandBasePtr cmd, double timestamp
 
 CommandBasePtr RemoteSimulator::postCommand(CommandBasePtr cmd)
 {
-  deprecatedMessage(cmd);
   m_client->sendCommand(cmd);
   return cmd;
 }

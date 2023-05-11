@@ -1,6 +1,3 @@
-
-#include "gen/GetGalileoEphDoubleParamForEachSVResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetGalileoEphDoubleParamForEachSVResult
 ///
+#include "gen/GetGalileoEphDoubleParamForEachSVResult.h"
 
 namespace Sdx
 {
@@ -16,21 +14,12 @@ namespace Sdx
     const char* const GetGalileoEphDoubleParamForEachSVResult::CmdName = "GetGalileoEphDoubleParamForEachSVResult";
     const char* const GetGalileoEphDoubleParamForEachSVResult::Documentation = "Result of GetGalileoEphDoubleParamForEachSV.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetGalileoEphDoubleParamForEachSVResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetGalileoEphDoubleParamForEachSVResult);
 
 
     GetGalileoEphDoubleParamForEachSVResult::GetGalileoEphDoubleParamForEachSVResult()
       : CommandResult(CmdName)
     {}
-
-    GetGalileoEphDoubleParamForEachSVResult::GetGalileoEphDoubleParamForEachSVResult(const std::string& paramName, const std::vector<double>& val, const Sdx::optional<std::string>& dataSetName)
-      : CommandResult(CmdName)
-    {
-
-      setParamName(paramName);
-      setVal(val);
-      setDataSetName(dataSetName);
-    }
 
     GetGalileoEphDoubleParamForEachSVResult::GetGalileoEphDoubleParamForEachSVResult(CommandBasePtr relatedCommand, const std::string& paramName, const std::vector<double>& val, const Sdx::optional<std::string>& dataSetName)
       : CommandResult(CmdName, relatedCommand)
@@ -41,11 +30,6 @@ namespace Sdx
       setDataSetName(dataSetName);
     }
 
-
-    GetGalileoEphDoubleParamForEachSVResultPtr GetGalileoEphDoubleParamForEachSVResult::create(const std::string& paramName, const std::vector<double>& val, const Sdx::optional<std::string>& dataSetName)
-    {
-      return std::make_shared<GetGalileoEphDoubleParamForEachSVResult>(paramName, val, dataSetName);
-    }
 
     GetGalileoEphDoubleParamForEachSVResultPtr GetGalileoEphDoubleParamForEachSVResult::create(CommandBasePtr relatedCommand, const std::string& paramName, const std::vector<double>& val, const Sdx::optional<std::string>& dataSetName)
     {

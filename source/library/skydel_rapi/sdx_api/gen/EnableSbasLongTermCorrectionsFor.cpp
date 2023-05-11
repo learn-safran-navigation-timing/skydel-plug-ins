@@ -1,6 +1,3 @@
-
-#include "gen/EnableSbasLongTermCorrectionsFor.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of EnableSbasLongTermCorrectionsFor
 ///
+#include "gen/EnableSbasLongTermCorrectionsFor.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setSystem(system);
       setIsEnabled(isEnabled);
     }
+
 
     EnableSbasLongTermCorrectionsForPtr EnableSbasLongTermCorrectionsFor::create(const std::string& system, bool isEnabled)
     {

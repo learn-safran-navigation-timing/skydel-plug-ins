@@ -1,6 +1,3 @@
-
-#include "gen/GetIonoBeta.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetIonoBeta
 ///
+#include "gen/GetIonoBeta.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setIndex(index);
     }
+
 
     GetIonoBetaPtr GetIonoBeta::create(int index)
     {

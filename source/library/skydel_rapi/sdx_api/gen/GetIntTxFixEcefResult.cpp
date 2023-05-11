@@ -1,6 +1,3 @@
-
-#include "gen/GetIntTxFixEcefResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetIntTxFixEcefResult
 ///
+#include "gen/GetIntTxFixEcefResult.h"
 
 namespace Sdx
 {
@@ -16,25 +14,12 @@ namespace Sdx
     const char* const GetIntTxFixEcefResult::CmdName = "GetIntTxFixEcefResult";
     const char* const GetIntTxFixEcefResult::Documentation = "Result of GetIntTxFixEcef.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetIntTxFixEcefResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetIntTxFixEcefResult);
 
 
     GetIntTxFixEcefResult::GetIntTxFixEcefResult()
       : CommandResult(CmdName)
     {}
-
-    GetIntTxFixEcefResult::GetIntTxFixEcefResult(double x, double y, double z, double yaw, double pitch, double roll, const std::string& id)
-      : CommandResult(CmdName)
-    {
-
-      setX(x);
-      setY(y);
-      setZ(z);
-      setYaw(yaw);
-      setPitch(pitch);
-      setRoll(roll);
-      setId(id);
-    }
 
     GetIntTxFixEcefResult::GetIntTxFixEcefResult(CommandBasePtr relatedCommand, double x, double y, double z, double yaw, double pitch, double roll, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -49,11 +34,6 @@ namespace Sdx
       setId(id);
     }
 
-
-    GetIntTxFixEcefResultPtr GetIntTxFixEcefResult::create(double x, double y, double z, double yaw, double pitch, double roll, const std::string& id)
-    {
-      return std::make_shared<GetIntTxFixEcefResult>(x, y, z, yaw, pitch, roll, id);
-    }
 
     GetIntTxFixEcefResultPtr GetIntTxFixEcefResult::create(CommandBasePtr relatedCommand, double x, double y, double z, double yaw, double pitch, double roll, const std::string& id)
     {

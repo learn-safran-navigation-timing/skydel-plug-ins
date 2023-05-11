@@ -1,6 +1,3 @@
-
-#include "gen/SetSyncTimeMaster.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetSyncTimeMaster
 ///
+#include "gen/SetSyncTimeMaster.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setTime(time);
     }
+
 
     SetSyncTimeMasterPtr SetSyncTimeMaster::create(double time)
     {

@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 #include <string>
 
 namespace Sdx
@@ -31,12 +30,8 @@ namespace Sdx
 
       IsIntTxTrajectorySmoothingEnabledResult();
 
-      IsIntTxTrajectorySmoothingEnabledResult(bool enabled, const std::string& id);
-
       IsIntTxTrajectorySmoothingEnabledResult(CommandBasePtr relatedCommand, bool enabled, const std::string& id);
-
-      static IsIntTxTrajectorySmoothingEnabledResultPtr create(bool enabled, const std::string& id);
-
+  
       static IsIntTxTrajectorySmoothingEnabledResultPtr create(CommandBasePtr relatedCommand, bool enabled, const std::string& id);
       static IsIntTxTrajectorySmoothingEnabledResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -52,7 +47,6 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(IsIntTxTrajectorySmoothingEnabledResult);
   }
 }
 

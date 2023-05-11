@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -31,12 +30,8 @@ namespace Sdx
 
       GetGalileoFnavSatelliteKResult();
 
-      GetGalileoFnavSatelliteKResult(int prn, int k);
-
       GetGalileoFnavSatelliteKResult(CommandBasePtr relatedCommand, int prn, int k);
-
-      static GetGalileoFnavSatelliteKResultPtr create(int prn, int k);
-
+  
       static GetGalileoFnavSatelliteKResultPtr create(CommandBasePtr relatedCommand, int prn, int k);
       static GetGalileoFnavSatelliteKResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -52,7 +47,6 @@ namespace Sdx
       int k() const;
       void setK(int k);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetGalileoFnavSatelliteKResult);
   }
 }
 

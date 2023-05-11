@@ -1,6 +1,3 @@
-
-#include "gen/IsSpoofTxIgnoreRxAntennaPhasePatternResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of IsSpoofTxIgnoreRxAntennaPhasePatternResult
 ///
+#include "gen/IsSpoofTxIgnoreRxAntennaPhasePatternResult.h"
 
 namespace Sdx
 {
@@ -16,20 +14,12 @@ namespace Sdx
     const char* const IsSpoofTxIgnoreRxAntennaPhasePatternResult::CmdName = "IsSpoofTxIgnoreRxAntennaPhasePatternResult";
     const char* const IsSpoofTxIgnoreRxAntennaPhasePatternResult::Documentation = "Result of IsSpoofTxIgnoreRxAntennaPhasePattern.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(IsSpoofTxIgnoreRxAntennaPhasePatternResult);
+    REGISTER_COMMAND_RESULT_FACTORY(IsSpoofTxIgnoreRxAntennaPhasePatternResult);
 
 
     IsSpoofTxIgnoreRxAntennaPhasePatternResult::IsSpoofTxIgnoreRxAntennaPhasePatternResult()
       : CommandResult(CmdName)
     {}
-
-    IsSpoofTxIgnoreRxAntennaPhasePatternResult::IsSpoofTxIgnoreRxAntennaPhasePatternResult(bool ignore, const std::string& id)
-      : CommandResult(CmdName)
-    {
-
-      setIgnore(ignore);
-      setId(id);
-    }
 
     IsSpoofTxIgnoreRxAntennaPhasePatternResult::IsSpoofTxIgnoreRxAntennaPhasePatternResult(CommandBasePtr relatedCommand, bool ignore, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -39,11 +29,6 @@ namespace Sdx
       setId(id);
     }
 
-
-    IsSpoofTxIgnoreRxAntennaPhasePatternResultPtr IsSpoofTxIgnoreRxAntennaPhasePatternResult::create(bool ignore, const std::string& id)
-    {
-      return std::make_shared<IsSpoofTxIgnoreRxAntennaPhasePatternResult>(ignore, id);
-    }
 
     IsSpoofTxIgnoreRxAntennaPhasePatternResultPtr IsSpoofTxIgnoreRxAntennaPhasePatternResult::create(CommandBasePtr relatedCommand, bool ignore, const std::string& id)
     {

@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -31,7 +30,7 @@ namespace Sdx
       ApplyDelayInSbas();
 
       ApplyDelayInSbas(bool isEnabled);
-
+  
       static ApplyDelayInSbasPtr create(bool isEnabled);
       static ApplyDelayInSbasPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       bool isEnabled() const;
       void setIsEnabled(bool isEnabled);
     };
-    
   }
 }
 

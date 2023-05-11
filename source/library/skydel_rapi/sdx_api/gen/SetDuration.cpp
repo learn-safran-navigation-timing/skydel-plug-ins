@@ -1,6 +1,3 @@
-
-#include "gen/SetDuration.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetDuration
 ///
+#include "gen/SetDuration.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setSecond(second);
     }
+
 
     SetDurationPtr SetDuration::create(int second)
     {

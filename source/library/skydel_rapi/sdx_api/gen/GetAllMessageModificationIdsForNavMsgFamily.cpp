@@ -1,6 +1,3 @@
-
-#include "gen/GetAllMessageModificationIdsForNavMsgFamily.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetAllMessageModificationIdsForNavMsgFamily
 ///
+#include "gen/GetAllMessageModificationIdsForNavMsgFamily.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setNavMsgFamily(navMsgFamily);
       setSvId(svId);
     }
+
 
     GetAllMessageModificationIdsForNavMsgFamilyPtr GetAllMessageModificationIdsForNavMsgFamily::create(const std::string& navMsgFamily, int svId)
     {

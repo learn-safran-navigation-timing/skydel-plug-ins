@@ -1,6 +1,3 @@
-
-#include "gen/LogNmeaRateResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of LogNmeaRateResult
 ///
+#include "gen/LogNmeaRateResult.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const LogNmeaRateResult::CmdName = "LogNmeaRateResult";
     const char* const LogNmeaRateResult::Documentation = "Result of GetLogNmeaRate.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(LogNmeaRateResult);
+    REGISTER_COMMAND_RESULT_FACTORY(LogNmeaRateResult);
 
 
     LogNmeaRateResult::LogNmeaRateResult()
       : CommandResult(CmdName)
     {}
-
-    LogNmeaRateResult::LogNmeaRateResult(int rate)
-      : CommandResult(CmdName)
-    {
-
-      setRate(rate);
-    }
 
     LogNmeaRateResult::LogNmeaRateResult(CommandBasePtr relatedCommand, int rate)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setRate(rate);
     }
 
-
-    LogNmeaRateResultPtr LogNmeaRateResult::create(int rate)
-    {
-      return std::make_shared<LogNmeaRateResult>(rate);
-    }
 
     LogNmeaRateResultPtr LogNmeaRateResult::create(CommandBasePtr relatedCommand, int rate)
     {

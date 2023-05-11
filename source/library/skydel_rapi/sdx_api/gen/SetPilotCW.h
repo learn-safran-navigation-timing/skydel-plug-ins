@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -35,7 +34,7 @@ namespace Sdx
       SetPilotCW();
 
       SetPilotCW(bool enabled, int outputIdx, double centralFreqOffset, double power, const std::string& pilotId);
-
+  
       static SetPilotCWPtr create(bool enabled, int outputIdx, double centralFreqOffset, double power, const std::string& pilotId);
       static SetPilotCWPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -68,7 +67,6 @@ namespace Sdx
       std::string pilotId() const;
       void setPilotId(const std::string& pilotId);
     };
-    
   }
 }
 

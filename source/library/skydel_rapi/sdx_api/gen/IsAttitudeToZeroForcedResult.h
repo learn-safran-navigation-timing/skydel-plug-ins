@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -30,12 +29,8 @@ namespace Sdx
 
       IsAttitudeToZeroForcedResult();
 
-      IsAttitudeToZeroForcedResult(bool enabled);
-
       IsAttitudeToZeroForcedResult(CommandBasePtr relatedCommand, bool enabled);
-
-      static IsAttitudeToZeroForcedResultPtr create(bool enabled);
-
+  
       static IsAttitudeToZeroForcedResultPtr create(CommandBasePtr relatedCommand, bool enabled);
       static IsAttitudeToZeroForcedResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -46,7 +41,6 @@ namespace Sdx
       bool enabled() const;
       void setEnabled(bool enabled);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(IsAttitudeToZeroForcedResult);
   }
 }
 

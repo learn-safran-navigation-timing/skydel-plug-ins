@@ -1,6 +1,3 @@
-
-#include "gen/GetMessageModificationToBeiDouD2Nav.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetMessageModificationToBeiDouD2Nav
 ///
+#include "gen/GetMessageModificationToBeiDouD2Nav.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setId(id);
     }
+
 
     GetMessageModificationToBeiDouD2NavPtr GetMessageModificationToBeiDouD2Nav::create(const std::string& id)
     {

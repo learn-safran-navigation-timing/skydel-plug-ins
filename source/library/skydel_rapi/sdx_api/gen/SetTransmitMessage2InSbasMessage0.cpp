@@ -1,6 +1,3 @@
-
-#include "gen/SetTransmitMessage2InSbasMessage0.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetTransmitMessage2InSbasMessage0
 ///
+#include "gen/SetTransmitMessage2InSbasMessage0.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setTransmitMessage2(transmitMessage2);
     }
+
 
     SetTransmitMessage2InSbasMessage0Ptr SetTransmitMessage2InSbasMessage0::create(bool transmitMessage2)
     {

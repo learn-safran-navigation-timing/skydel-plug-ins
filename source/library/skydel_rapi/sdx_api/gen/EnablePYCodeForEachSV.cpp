@@ -1,6 +1,3 @@
-
-#include "gen/EnablePYCodeForEachSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of EnablePYCodeForEachSV
 ///
+#include "gen/EnablePYCodeForEachSV.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setSignal(signal);
       setEnabled(enabled);
     }
+
 
     EnablePYCodeForEachSVPtr EnablePYCodeForEachSV::create(const std::string& signal, const std::vector<bool>& enabled)
     {

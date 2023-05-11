@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 #include <vector>
 
@@ -67,7 +66,7 @@ namespace Sdx
       SetMessageModificationToNavICNav();
 
       SetMessageModificationToNavICNav(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int messageType, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id);
-
+  
       static SetMessageModificationToNavICNavPtr create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int subframe, int messageType, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id);
       static SetMessageModificationToNavICNavPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -125,7 +124,6 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
-    
   }
 }
 

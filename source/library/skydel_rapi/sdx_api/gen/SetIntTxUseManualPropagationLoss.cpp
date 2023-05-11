@@ -1,6 +1,3 @@
-
-#include "gen/SetIntTxUseManualPropagationLoss.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetIntTxUseManualPropagationLoss
 ///
+#include "gen/SetIntTxUseManualPropagationLoss.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setManual(manual);
       setId(id);
     }
+
 
     SetIntTxUseManualPropagationLossPtr SetIntTxUseManualPropagationLoss::create(bool manual, const std::string& id)
     {

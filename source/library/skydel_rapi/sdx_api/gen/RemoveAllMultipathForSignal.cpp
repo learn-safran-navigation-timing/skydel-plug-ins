@@ -1,6 +1,3 @@
-
-#include "gen/RemoveAllMultipathForSignal.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of RemoveAllMultipathForSignal
 ///
+#include "gen/RemoveAllMultipathForSignal.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setSignal(signal);
       setReset(reset);
     }
+
 
     RemoveAllMultipathForSignalPtr RemoveAllMultipathForSignal::create(const std::string& signal, bool reset)
     {

@@ -1,6 +1,3 @@
-
-#include "gen/GetIonoGridGIVEIAll.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetIonoGridGIVEIAll
 ///
+#include "gen/GetIonoGridGIVEIAll.h"
 
 namespace Sdx
 {
@@ -25,6 +23,7 @@ namespace Sdx
 
       setServiceProvider(serviceProvider);
     }
+
 
     GetIonoGridGIVEIAllPtr GetIonoGridGIVEIAll::create(const Sdx::optional<std::string>& serviceProvider)
     {

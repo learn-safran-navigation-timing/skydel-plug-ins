@@ -1,6 +1,3 @@
-
-#include "gen/SetIssueOfDataGalileo.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetIssueOfDataGalileo
 ///
+#include "gen/SetIssueOfDataGalileo.h"
 
 namespace Sdx
 {
@@ -31,6 +29,7 @@ namespace Sdx
       setAlmanac(almanac);
       setOverrideRinex(overrideRinex);
     }
+
 
     SetIssueOfDataGalileoPtr SetIssueOfDataGalileo::create(int navigation, int almanac, const Sdx::optional<bool>& overrideRinex)
     {

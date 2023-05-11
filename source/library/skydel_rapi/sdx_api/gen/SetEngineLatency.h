@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -31,7 +30,7 @@ namespace Sdx
       SetEngineLatency();
 
       SetEngineLatency(int latency);
-
+  
       static SetEngineLatencyPtr create(int latency);
       static SetEngineLatencyPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       int latency() const;
       void setLatency(int latency);
     };
-    
   }
 }
 

@@ -1,6 +1,3 @@
-
-#include "gen/SetIssueOfDataBeiDou.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetIssueOfDataBeiDou
 ///
+#include "gen/SetIssueOfDataBeiDou.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setClock(clock);
       setEphemeris(ephemeris);
     }
+
 
     SetIssueOfDataBeiDouPtr SetIssueOfDataBeiDou::create(int clock, int ephemeris)
     {

@@ -1,6 +1,3 @@
-
-#include "gen/SetSatMotionFixed.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetSatMotionFixed
 ///
+#include "gen/SetSatMotionFixed.h"
 
 namespace Sdx
 {
@@ -31,6 +29,7 @@ namespace Sdx
       setSvId(svId);
       setIsFixed(isFixed);
     }
+
 
     SetSatMotionFixedPtr SetSatMotionFixed::create(const std::string& system, int svId, bool isFixed)
     {

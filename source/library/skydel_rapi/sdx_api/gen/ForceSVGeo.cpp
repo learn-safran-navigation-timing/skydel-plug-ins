@@ -1,6 +1,3 @@
-
-#include "gen/ForceSVGeo.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of ForceSVGeo
 ///
+#include "gen/ForceSVGeo.h"
 
 namespace Sdx
 {
@@ -33,6 +31,7 @@ namespace Sdx
       setLongitude(longitude);
       setDataSetName(dataSetName);
     }
+
 
     ForceSVGeoPtr ForceSVGeo::create(const std::string& system, int svId, bool isGeo, double longitude, const Sdx::optional<std::string>& dataSetName)
     {

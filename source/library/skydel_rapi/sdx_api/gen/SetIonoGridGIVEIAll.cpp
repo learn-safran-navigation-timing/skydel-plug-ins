@@ -1,6 +1,3 @@
-
-#include "gen/SetIonoGridGIVEIAll.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetIonoGridGIVEIAll
 ///
+#include "gen/SetIonoGridGIVEIAll.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setGrid(grid);
       setServiceProvider(serviceProvider);
     }
+
 
     SetIonoGridGIVEIAllPtr SetIonoGridGIVEIAll::create(const std::vector<std::vector<int>>& grid, const Sdx::optional<std::string>& serviceProvider)
     {

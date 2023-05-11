@@ -1,6 +1,3 @@
-
-#include "gen/EnableIntTxSignal.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of EnableIntTxSignal
 ///
+#include "gen/EnableIntTxSignal.h"
 
 namespace Sdx
 {
@@ -31,6 +29,7 @@ namespace Sdx
       setTransmitterId(transmitterId);
       setSignalId(signalId);
     }
+
 
     EnableIntTxSignalPtr EnableIntTxSignal::create(bool enabled, const std::string& transmitterId, const std::string& signalId)
     {

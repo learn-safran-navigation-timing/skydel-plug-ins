@@ -1,6 +1,3 @@
-
-#include "gen/EnableElevationMaskBelow.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of EnableElevationMaskBelow
 ///
+#include "gen/EnableElevationMaskBelow.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setEnabled(enabled);
     }
+
 
     EnableElevationMaskBelowPtr EnableElevationMaskBelow::create(bool enabled)
     {

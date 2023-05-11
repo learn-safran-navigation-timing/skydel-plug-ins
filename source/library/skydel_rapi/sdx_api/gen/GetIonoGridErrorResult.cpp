@@ -1,6 +1,3 @@
-
-#include "gen/GetIonoGridErrorResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetIonoGridErrorResult
 ///
+#include "gen/GetIonoGridErrorResult.h"
 
 namespace Sdx
 {
@@ -16,21 +14,12 @@ namespace Sdx
     const char* const GetIonoGridErrorResult::CmdName = "GetIonoGridErrorResult";
     const char* const GetIonoGridErrorResult::Documentation = "Result of GetIonoGridError.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetIonoGridErrorResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetIonoGridErrorResult);
 
 
     GetIonoGridErrorResult::GetIonoGridErrorResult()
       : CommandResult(CmdName)
     {}
-
-    GetIonoGridErrorResult::GetIonoGridErrorResult(int band, int point, double error)
-      : CommandResult(CmdName)
-    {
-
-      setBand(band);
-      setPoint(point);
-      setError(error);
-    }
 
     GetIonoGridErrorResult::GetIonoGridErrorResult(CommandBasePtr relatedCommand, int band, int point, double error)
       : CommandResult(CmdName, relatedCommand)
@@ -41,11 +30,6 @@ namespace Sdx
       setError(error);
     }
 
-
-    GetIonoGridErrorResultPtr GetIonoGridErrorResult::create(int band, int point, double error)
-    {
-      return std::make_shared<GetIonoGridErrorResult>(band, point, error);
-    }
 
     GetIonoGridErrorResultPtr GetIonoGridErrorResult::create(CommandBasePtr relatedCommand, int band, int point, double error)
     {

@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -31,7 +30,7 @@ namespace Sdx
       ImportVehicleAntennaModel();
 
       ImportVehicleAntennaModel(const std::string& filePath);
-
+  
       static ImportVehicleAntennaModelPtr create(const std::string& filePath);
       static ImportVehicleAntennaModelPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       std::string filePath() const;
       void setFilePath(const std::string& filePath);
     };
-    
   }
 }
 

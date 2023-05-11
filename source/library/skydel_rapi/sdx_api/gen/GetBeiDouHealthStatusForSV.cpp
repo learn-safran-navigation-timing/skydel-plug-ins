@@ -1,6 +1,3 @@
-
-#include "gen/GetBeiDouHealthStatusForSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetBeiDouHealthStatusForSV
 ///
+#include "gen/GetBeiDouHealthStatusForSV.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setSvId(svId);
       setDataSetName(dataSetName);
     }
+
 
     GetBeiDouHealthStatusForSVPtr GetBeiDouHealthStatusForSV::create(int svId, const Sdx::optional<std::string>& dataSetName)
     {

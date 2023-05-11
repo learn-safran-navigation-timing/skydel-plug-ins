@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -31,7 +30,7 @@ namespace Sdx
       SetLeapSecond();
 
       SetLeapSecond(int leapSecond);
-
+  
       static SetLeapSecondPtr create(int leapSecond);
       static SetLeapSecondPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       int leapSecond() const;
       void setLeapSecond(int leapSecond);
     };
-    
   }
 }
 

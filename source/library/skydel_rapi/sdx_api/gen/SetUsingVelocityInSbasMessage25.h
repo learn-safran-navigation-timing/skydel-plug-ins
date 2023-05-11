@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -31,7 +30,7 @@ namespace Sdx
       SetUsingVelocityInSbasMessage25();
 
       SetUsingVelocityInSbasMessage25(bool useVelocity);
-
+  
       static SetUsingVelocityInSbasMessage25Ptr create(bool useVelocity);
       static SetUsingVelocityInSbasMessage25Ptr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       bool useVelocity() const;
       void setUseVelocity(bool useVelocity);
     };
-    
   }
 }
 

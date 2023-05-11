@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 #include <string>
 
 namespace Sdx
@@ -32,12 +31,8 @@ namespace Sdx
 
       GetGpuResult();
 
-      GetGpuResult(int gpuIdx, int output, const std::string& id);
-
       GetGpuResult(CommandBasePtr relatedCommand, int gpuIdx, int output, const std::string& id);
-
-      static GetGpuResultPtr create(int gpuIdx, int output, const std::string& id);
-
+  
       static GetGpuResultPtr create(CommandBasePtr relatedCommand, int gpuIdx, int output, const std::string& id);
       static GetGpuResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -58,7 +53,6 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetGpuResult);
   }
 }
 

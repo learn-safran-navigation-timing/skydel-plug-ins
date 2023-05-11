@@ -1,6 +1,3 @@
-
-#include "gen/RemoveMultipath.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of RemoveMultipath
 ///
+#include "gen/RemoveMultipath.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setId(id);
     }
+
 
     RemoveMultipathPtr RemoveMultipath::create(const std::string& id)
     {

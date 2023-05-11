@@ -1,6 +1,3 @@
-
-#include "gen/GetBeiDouCNavHealthInfoForSVResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetBeiDouCNavHealthInfoForSVResult
 ///
+#include "gen/GetBeiDouCNavHealthInfoForSVResult.h"
 
 namespace Sdx
 {
@@ -16,21 +14,12 @@ namespace Sdx
     const char* const GetBeiDouCNavHealthInfoForSVResult::CmdName = "GetBeiDouCNavHealthInfoForSVResult";
     const char* const GetBeiDouCNavHealthInfoForSVResult::Documentation = "Result of GetBeiDouCNavHealthInfoForSV.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetBeiDouCNavHealthInfoForSVResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetBeiDouCNavHealthInfoForSVResult);
 
 
     GetBeiDouCNavHealthInfoForSVResult::GetBeiDouCNavHealthInfoForSVResult()
       : CommandResult(CmdName)
     {}
-
-    GetBeiDouCNavHealthInfoForSVResult::GetBeiDouCNavHealthInfoForSVResult(int svId, int health, const Sdx::optional<std::string>& dataSetName)
-      : CommandResult(CmdName)
-    {
-
-      setSvId(svId);
-      setHealth(health);
-      setDataSetName(dataSetName);
-    }
 
     GetBeiDouCNavHealthInfoForSVResult::GetBeiDouCNavHealthInfoForSVResult(CommandBasePtr relatedCommand, int svId, int health, const Sdx::optional<std::string>& dataSetName)
       : CommandResult(CmdName, relatedCommand)
@@ -41,11 +30,6 @@ namespace Sdx
       setDataSetName(dataSetName);
     }
 
-
-    GetBeiDouCNavHealthInfoForSVResultPtr GetBeiDouCNavHealthInfoForSVResult::create(int svId, int health, const Sdx::optional<std::string>& dataSetName)
-    {
-      return std::make_shared<GetBeiDouCNavHealthInfoForSVResult>(svId, health, dataSetName);
-    }
 
     GetBeiDouCNavHealthInfoForSVResultPtr GetBeiDouCNavHealthInfoForSVResult::create(CommandBasePtr relatedCommand, int svId, int health, const Sdx::optional<std::string>& dataSetName)
     {

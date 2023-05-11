@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -31,12 +30,8 @@ namespace Sdx
 
       GetGlonassAlmanacUnhealthyFlagForSVResult();
 
-      GetGlonassAlmanacUnhealthyFlagForSVResult(int svId, bool health);
-
       GetGlonassAlmanacUnhealthyFlagForSVResult(CommandBasePtr relatedCommand, int svId, bool health);
-
-      static GetGlonassAlmanacUnhealthyFlagForSVResultPtr create(int svId, bool health);
-
+  
       static GetGlonassAlmanacUnhealthyFlagForSVResultPtr create(CommandBasePtr relatedCommand, int svId, bool health);
       static GetGlonassAlmanacUnhealthyFlagForSVResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -52,7 +47,6 @@ namespace Sdx
       bool health() const;
       void setHealth(bool health);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetGlonassAlmanacUnhealthyFlagForSVResult);
   }
 }
 

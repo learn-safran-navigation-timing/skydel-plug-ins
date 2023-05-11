@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -32,7 +31,7 @@ namespace Sdx
       RemoveSbasServiceMessageRegionGroup();
 
       RemoveSbasServiceMessageRegionGroup(const std::string& serviceProvider, const std::string& id);
-
+  
       static RemoveSbasServiceMessageRegionGroupPtr create(const std::string& serviceProvider, const std::string& id);
       static RemoveSbasServiceMessageRegionGroupPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -50,7 +49,6 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
-    
   }
 }
 

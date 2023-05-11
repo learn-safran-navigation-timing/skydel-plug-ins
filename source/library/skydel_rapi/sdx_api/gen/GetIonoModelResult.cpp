@@ -1,6 +1,3 @@
-
-#include "gen/GetIonoModelResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetIonoModelResult
 ///
+#include "gen/GetIonoModelResult.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const GetIonoModelResult::CmdName = "GetIonoModelResult";
     const char* const GetIonoModelResult::Documentation = "Result of GetIonoModel.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetIonoModelResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetIonoModelResult);
 
 
     GetIonoModelResult::GetIonoModelResult()
       : CommandResult(CmdName)
     {}
-
-    GetIonoModelResult::GetIonoModelResult(const std::string& model)
-      : CommandResult(CmdName)
-    {
-
-      setModel(model);
-    }
 
     GetIonoModelResult::GetIonoModelResult(CommandBasePtr relatedCommand, const std::string& model)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setModel(model);
     }
 
-
-    GetIonoModelResultPtr GetIonoModelResult::create(const std::string& model)
-    {
-      return std::make_shared<GetIonoModelResult>(model);
-    }
 
     GetIonoModelResultPtr GetIonoModelResult::create(CommandBasePtr relatedCommand, const std::string& model)
     {

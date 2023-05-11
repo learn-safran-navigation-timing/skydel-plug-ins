@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -30,12 +29,8 @@ namespace Sdx
 
       IsUsingVelocityInSbasMessage25Result();
 
-      IsUsingVelocityInSbasMessage25Result(bool useVelocity);
-
       IsUsingVelocityInSbasMessage25Result(CommandBasePtr relatedCommand, bool useVelocity);
-
-      static IsUsingVelocityInSbasMessage25ResultPtr create(bool useVelocity);
-
+  
       static IsUsingVelocityInSbasMessage25ResultPtr create(CommandBasePtr relatedCommand, bool useVelocity);
       static IsUsingVelocityInSbasMessage25ResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -46,7 +41,6 @@ namespace Sdx
       bool useVelocity() const;
       void setUseVelocity(bool useVelocity);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(IsUsingVelocityInSbasMessage25Result);
   }
 }
 

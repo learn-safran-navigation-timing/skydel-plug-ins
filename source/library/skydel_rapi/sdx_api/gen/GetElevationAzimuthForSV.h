@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -32,7 +31,7 @@ namespace Sdx
       GetElevationAzimuthForSV();
 
       GetElevationAzimuthForSV(const std::string& system, int svId);
-
+  
       static GetElevationAzimuthForSVPtr create(const std::string& system, int svId);
       static GetElevationAzimuthForSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -50,7 +49,6 @@ namespace Sdx
       int svId() const;
       void setSvId(int svId);
     };
-    
   }
 }
 

@@ -1,6 +1,3 @@
-
-#include "gen/SuccessResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SuccessResult
 ///
+#include "gen/SuccessResult.h"
 
 namespace Sdx
 {
@@ -16,7 +14,7 @@ namespace Sdx
     const char* const SuccessResult::CmdName = "SuccessResult";
     const char* const SuccessResult::Documentation = "When command succeed.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(SuccessResult);
+    REGISTER_COMMAND_RESULT_FACTORY(SuccessResult);
 
 
     SuccessResult::SuccessResult()
@@ -28,6 +26,7 @@ namespace Sdx
     {
 
     }
+
 
     SuccessResultPtr SuccessResult::create(CommandBasePtr relatedCommand)
     {

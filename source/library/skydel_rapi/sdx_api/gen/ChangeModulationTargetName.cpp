@@ -1,6 +1,3 @@
-
-#include "gen/ChangeModulationTargetName.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of ChangeModulationTargetName
 ///
+#include "gen/ChangeModulationTargetName.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setTargetName(targetName);
       setId(id);
     }
+
 
     ChangeModulationTargetNamePtr ChangeModulationTargetName::create(const std::string& targetName, const std::string& id)
     {

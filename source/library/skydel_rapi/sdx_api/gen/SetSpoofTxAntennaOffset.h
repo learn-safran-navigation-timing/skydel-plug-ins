@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -43,7 +42,7 @@ namespace Sdx
       SetSpoofTxAntennaOffset();
 
       SetSpoofTxAntennaOffset(double x, double y, double z, double yaw, double pitch, double roll, const std::string& id);
-
+  
       static SetSpoofTxAntennaOffsetPtr create(double x, double y, double z, double yaw, double pitch, double roll, const std::string& id);
       static SetSpoofTxAntennaOffsetPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -86,7 +85,6 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
-    
   }
 }
 

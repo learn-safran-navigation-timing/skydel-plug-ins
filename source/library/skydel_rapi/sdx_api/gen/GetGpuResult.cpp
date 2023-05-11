@@ -1,6 +1,3 @@
-
-#include "gen/GetGpuResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetGpuResult
 ///
+#include "gen/GetGpuResult.h"
 
 namespace Sdx
 {
@@ -16,21 +14,12 @@ namespace Sdx
     const char* const GetGpuResult::CmdName = "GetGpuResult";
     const char* const GetGpuResult::Documentation = "Result of GetGpu.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetGpuResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetGpuResult);
 
 
     GetGpuResult::GetGpuResult()
       : CommandResult(CmdName)
     {}
-
-    GetGpuResult::GetGpuResult(int gpuIdx, int output, const std::string& id)
-      : CommandResult(CmdName)
-    {
-
-      setGpuIdx(gpuIdx);
-      setOutput(output);
-      setId(id);
-    }
 
     GetGpuResult::GetGpuResult(CommandBasePtr relatedCommand, int gpuIdx, int output, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -41,11 +30,6 @@ namespace Sdx
       setId(id);
     }
 
-
-    GetGpuResultPtr GetGpuResult::create(int gpuIdx, int output, const std::string& id)
-    {
-      return std::make_shared<GetGpuResult>(gpuIdx, output, id);
-    }
 
     GetGpuResultPtr GetGpuResult::create(CommandBasePtr relatedCommand, int gpuIdx, int output, const std::string& id)
     {

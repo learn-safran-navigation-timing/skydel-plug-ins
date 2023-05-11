@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include "sdx_optional.h"
 
 namespace Sdx
@@ -32,7 +31,7 @@ namespace Sdx
       New();
 
       New(bool discardCurrentConfig, const Sdx::optional<bool>& loadDefaultConfig = {});
-
+  
       static NewPtr create(bool discardCurrentConfig, const Sdx::optional<bool>& loadDefaultConfig = {});
       static NewPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -50,7 +49,6 @@ namespace Sdx
       Sdx::optional<bool> loadDefaultConfig() const;
       void setLoadDefaultConfig(const Sdx::optional<bool>& loadDefaultConfig);
     };
-    
   }
 }
 

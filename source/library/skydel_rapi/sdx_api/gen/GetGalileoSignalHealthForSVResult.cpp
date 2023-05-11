@@ -1,6 +1,3 @@
-
-#include "gen/GetGalileoSignalHealthForSVResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetGalileoSignalHealthForSVResult
 ///
+#include "gen/GetGalileoSignalHealthForSVResult.h"
 
 namespace Sdx
 {
@@ -16,22 +14,12 @@ namespace Sdx
     const char* const GetGalileoSignalHealthForSVResult::CmdName = "GetGalileoSignalHealthForSVResult";
     const char* const GetGalileoSignalHealthForSVResult::Documentation = "Result of GetGalileoSignalHealthForSV.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetGalileoSignalHealthForSVResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetGalileoSignalHealthForSVResult);
 
 
     GetGalileoSignalHealthForSVResult::GetGalileoSignalHealthForSVResult()
       : CommandResult(CmdName)
     {}
-
-    GetGalileoSignalHealthForSVResult::GetGalileoSignalHealthForSVResult(int svId, const std::string& component, int health, const Sdx::optional<std::string>& dataSetName)
-      : CommandResult(CmdName)
-    {
-
-      setSvId(svId);
-      setComponent(component);
-      setHealth(health);
-      setDataSetName(dataSetName);
-    }
 
     GetGalileoSignalHealthForSVResult::GetGalileoSignalHealthForSVResult(CommandBasePtr relatedCommand, int svId, const std::string& component, int health, const Sdx::optional<std::string>& dataSetName)
       : CommandResult(CmdName, relatedCommand)
@@ -43,11 +31,6 @@ namespace Sdx
       setDataSetName(dataSetName);
     }
 
-
-    GetGalileoSignalHealthForSVResultPtr GetGalileoSignalHealthForSVResult::create(int svId, const std::string& component, int health, const Sdx::optional<std::string>& dataSetName)
-    {
-      return std::make_shared<GetGalileoSignalHealthForSVResult>(svId, component, health, dataSetName);
-    }
 
     GetGalileoSignalHealthForSVResultPtr GetGalileoSignalHealthForSVResult::create(CommandBasePtr relatedCommand, int svId, const std::string& component, int health, const Sdx::optional<std::string>& dataSetName)
     {

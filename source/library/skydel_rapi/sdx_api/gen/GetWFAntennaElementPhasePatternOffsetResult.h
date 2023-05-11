@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -31,12 +30,8 @@ namespace Sdx
 
       GetWFAntennaElementPhasePatternOffsetResult();
 
-      GetWFAntennaElementPhasePatternOffsetResult(double phaseOffset, int element);
-
       GetWFAntennaElementPhasePatternOffsetResult(CommandBasePtr relatedCommand, double phaseOffset, int element);
-
-      static GetWFAntennaElementPhasePatternOffsetResultPtr create(double phaseOffset, int element);
-
+  
       static GetWFAntennaElementPhasePatternOffsetResultPtr create(CommandBasePtr relatedCommand, double phaseOffset, int element);
       static GetWFAntennaElementPhasePatternOffsetResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -52,7 +47,6 @@ namespace Sdx
       int element() const;
       void setElement(int element);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetWFAntennaElementPhasePatternOffsetResult);
   }
 }
 

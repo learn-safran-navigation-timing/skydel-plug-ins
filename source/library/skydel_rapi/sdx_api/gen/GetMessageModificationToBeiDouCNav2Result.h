@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 #include <string>
 #include <vector>
 
@@ -39,12 +38,8 @@ namespace Sdx
 
       GetMessageModificationToBeiDouCNav2Result();
 
-      GetMessageModificationToBeiDouCNav2Result(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id);
-
       GetMessageModificationToBeiDouCNav2Result(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id);
-
-      static GetMessageModificationToBeiDouCNav2ResultPtr create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id);
-
+  
       static GetMessageModificationToBeiDouCNav2ResultPtr create(CommandBasePtr relatedCommand, const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id);
       static GetMessageModificationToBeiDouCNav2ResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -95,7 +90,6 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetMessageModificationToBeiDouCNav2Result);
   }
 }
 

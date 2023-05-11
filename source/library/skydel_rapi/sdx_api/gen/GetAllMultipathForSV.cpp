@@ -1,6 +1,3 @@
-
-#include "gen/GetAllMultipathForSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetAllMultipathForSV
 ///
+#include "gen/GetAllMultipathForSV.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setSystem(system);
       setSvId(svId);
     }
+
 
     GetAllMultipathForSVPtr GetAllMultipathForSV::create(const std::string& system, int svId)
     {

@@ -1,6 +1,3 @@
-
-#include "gen/ImportSVAntennaModel.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of ImportSVAntennaModel
 ///
+#include "gen/ImportSVAntennaModel.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setFilePath(filePath);
       setSystem(system);
     }
+
 
     ImportSVAntennaModelPtr ImportSVAntennaModel::create(const std::string& filePath, const std::string& system)
     {

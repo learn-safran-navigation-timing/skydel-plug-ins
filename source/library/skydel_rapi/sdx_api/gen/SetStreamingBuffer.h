@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -31,7 +30,7 @@ namespace Sdx
       SetStreamingBuffer();
 
       SetStreamingBuffer(int size);
-
+  
       static SetStreamingBufferPtr create(int size);
       static SetStreamingBufferPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       int size() const;
       void setSize(int size);
     };
-    
   }
 }
 

@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 #include <vector>
 
@@ -37,7 +36,7 @@ namespace Sdx
       GetSbasEphParamsForSV();
 
       GetSbasEphParamsForSV(int svId, const std::vector<std::string>& paramArray);
-
+  
       static GetSbasEphParamsForSVPtr create(int svId, const std::vector<std::string>& paramArray);
       static GetSbasEphParamsForSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -55,7 +54,6 @@ namespace Sdx
       std::vector<std::string> paramArray() const;
       void setParamArray(const std::vector<std::string>& paramArray);
     };
-    
   }
 }
 

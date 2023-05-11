@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -32,7 +31,7 @@ namespace Sdx
       SetWFAntennaElementPhasePatternOffset();
 
       SetWFAntennaElementPhasePatternOffset(double phaseOffset, int element);
-
+  
       static SetWFAntennaElementPhasePatternOffsetPtr create(double phaseOffset, int element);
       static SetWFAntennaElementPhasePatternOffsetPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -50,7 +49,6 @@ namespace Sdx
       int element() const;
       void setElement(int element);
     };
-    
   }
 }
 

@@ -1,6 +1,3 @@
-
-#include "gen/SetPowerForSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,15 +5,14 @@
 ///
 /// Definition of SetPowerForSV
 ///
+#include "gen/SetPowerForSV.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const SetPowerForSV::CmdName = "SetPowerForSV";
-    const char* const SetPowerForSV::Documentation = "Please note the command SetPowerForSV is deprecated since 22.7. You may use SetManualPowerOffsetForSV.\n\nSet power offset for specified satellite SV ID. Use SV ID 0 to set power for all satellites.";
-
-    const char* const SetPowerForSV::Deprecated = "Please note the command SetPowerForSV is deprecated since 22.7. You may use SetManualPowerOffsetForSV.";
+    const char* const SetPowerForSV::Documentation = "Set power offset for specified satellite SV ID. Use SV ID 0 to set power for all satellites.";
 
     REGISTER_COMMAND_FACTORY(SetPowerForSV);
 
@@ -34,6 +30,7 @@ namespace Sdx
       setPowerOffset(powerOffset);
       setOtherSatsFollow(otherSatsFollow);
     }
+
 
     SetPowerForSVPtr SetPowerForSV::create(const std::string& system, int svId, double powerOffset, bool otherSatsFollow)
     {
@@ -58,8 +55,6 @@ namespace Sdx
     }
 
     std::string SetPowerForSV::documentation() const { return Documentation; }
-
-    Sdx::optional<std::string> SetPowerForSV::deprecated() const { return Sdx::optional<std::string>{Deprecated}; }
 
 
     int SetPowerForSV::executePermission() const

@@ -1,6 +1,3 @@
-
-#include "gen/SetSbasCorrectionsHealthForSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetSbasCorrectionsHealthForSV
 ///
+#include "gen/SetSbasCorrectionsHealthForSV.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setSvId(svId);
       setHealth(health);
     }
+
 
     SetSbasCorrectionsHealthForSVPtr SetSbasCorrectionsHealthForSV::create(int svId, bool health)
     {

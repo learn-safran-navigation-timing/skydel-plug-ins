@@ -1,6 +1,3 @@
-
-#include "gen/SetBeiDouEphBoolParamForEachSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,13 +5,14 @@
 ///
 /// Definition of SetBeiDouEphBoolParamForEachSV
 ///
+#include "gen/SetBeiDouEphBoolParamForEachSV.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const SetBeiDouEphBoolParamForEachSV::CmdName = "SetBeiDouEphBoolParamForEachSV";
-    const char* const SetBeiDouEphBoolParamForEachSV::Documentation = "Set BeiDou ephemeris boolean parameter value for all satellites";
+    const char* const SetBeiDouEphBoolParamForEachSV::Documentation = "Please note the command SetBeiDouEphemerisBoolParams is deprecated since 21.3. You may use SetBeiDouEphBoolParamForEachSV.\n\nSet BeiDou ephemeris boolean parameter value for all satellites";
 
     REGISTER_COMMAND_FACTORY(SetBeiDouEphBoolParamForEachSV);
 
@@ -31,6 +29,7 @@ namespace Sdx
       setVal(val);
       setDataSetName(dataSetName);
     }
+
 
     SetBeiDouEphBoolParamForEachSVPtr SetBeiDouEphBoolParamForEachSV::create(const std::string& paramName, const std::vector<bool>& val, const Sdx::optional<std::string>& dataSetName)
     {

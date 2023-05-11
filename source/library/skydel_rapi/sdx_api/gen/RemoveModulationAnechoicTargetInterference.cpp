@@ -1,6 +1,3 @@
-
-#include "gen/RemoveModulationAnechoicTargetInterference.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of RemoveModulationAnechoicTargetInterference
 ///
+#include "gen/RemoveModulationAnechoicTargetInterference.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setGroup(group);
     }
+
 
     RemoveModulationAnechoicTargetInterferencePtr RemoveModulationAnechoicTargetInterference::create(int group)
     {

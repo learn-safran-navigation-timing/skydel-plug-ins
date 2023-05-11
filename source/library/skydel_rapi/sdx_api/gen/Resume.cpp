@@ -1,6 +1,3 @@
-
-#include "gen/Resume.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of Resume
 ///
+#include "gen/Resume.h"
 
 namespace Sdx
 {
@@ -24,6 +22,7 @@ namespace Sdx
     {
 
     }
+
 
     ResumePtr Resume::create()
     {

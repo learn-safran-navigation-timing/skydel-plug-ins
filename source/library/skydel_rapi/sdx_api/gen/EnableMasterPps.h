@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -32,7 +31,7 @@ namespace Sdx
       EnableMasterPps();
 
       EnableMasterPps(bool enabled);
-
+  
       static EnableMasterPpsPtr create(bool enabled);
       static EnableMasterPpsPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -45,7 +44,6 @@ namespace Sdx
       bool enabled() const;
       void setEnabled(bool enabled);
     };
-    
   }
 }
 

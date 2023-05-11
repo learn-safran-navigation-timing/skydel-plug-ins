@@ -1,6 +1,3 @@
-
-#include "gen/DeleteSVAntennaModel.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of DeleteSVAntennaModel
 ///
+#include "gen/DeleteSVAntennaModel.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setName(name);
       setSystem(system);
     }
+
 
     DeleteSVAntennaModelPtr DeleteSVAntennaModel::create(const std::string& name, const std::string& system)
     {

@@ -1,6 +1,3 @@
-
-#include "gen/SetIntTxIqFile.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetIntTxIqFile
 ///
+#include "gen/SetIntTxIqFile.h"
 
 namespace Sdx
 {
@@ -35,6 +33,7 @@ namespace Sdx
       setSignalId(signalId);
       setGroup(group);
     }
+
 
     SetIntTxIqFilePtr SetIntTxIqFile::create(bool enabled, double centralFreq, double power, const std::string& path, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& group)
     {

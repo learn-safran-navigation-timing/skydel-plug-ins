@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include "gen/AntennaPatternType.h"
 #include <string>
 #include <vector>
@@ -35,7 +34,7 @@ namespace Sdx
       SetIntTxAntenna();
 
       SetIntTxAntenna(const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const std::string& id);
-
+  
       static SetIntTxAntennaPtr create(const std::vector<std::vector<double>>& gain, const Sdx::AntennaPatternType& type, const std::string& id);
       static SetIntTxAntennaPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -58,7 +57,6 @@ namespace Sdx
       std::string id() const;
       void setId(const std::string& id);
     };
-    
   }
 }
 

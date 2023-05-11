@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -32,7 +31,7 @@ namespace Sdx
       SetIssueOfDataBeiDou();
 
       SetIssueOfDataBeiDou(int clock, int ephemeris);
-
+  
       static SetIssueOfDataBeiDouPtr create(int clock, int ephemeris);
       static SetIssueOfDataBeiDouPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -50,7 +49,6 @@ namespace Sdx
       int ephemeris() const;
       void setEphemeris(int ephemeris);
     };
-    
   }
 }
 

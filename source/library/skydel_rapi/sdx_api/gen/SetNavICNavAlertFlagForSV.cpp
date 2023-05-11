@@ -1,6 +1,3 @@
-
-#include "gen/SetNavICNavAlertFlagForSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,13 +5,14 @@
 ///
 /// Definition of SetNavICNavAlertFlagForSV
 ///
+#include "gen/SetNavICNavAlertFlagForSV.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const SetNavICNavAlertFlagForSV::CmdName = "SetNavICNavAlertFlagForSV";
-    const char* const SetNavICNavAlertFlagForSV::Documentation = "Set NavIC NAV Alert Flag";
+    const char* const SetNavICNavAlertFlagForSV::Documentation = "Please note the command SetNavICSatelliteNavAlertFlag is deprecated since 21.3. You may use SetNavICNavAlertFlagForSV.\n\nSet NavIC NAV Alert Flag";
 
     REGISTER_COMMAND_FACTORY(SetNavICNavAlertFlagForSV);
 
@@ -31,6 +29,7 @@ namespace Sdx
       setAlert(alert);
       setDataSetName(dataSetName);
     }
+
 
     SetNavICNavAlertFlagForSVPtr SetNavICNavAlertFlagForSV::create(int svId, bool alert, const Sdx::optional<std::string>& dataSetName)
     {

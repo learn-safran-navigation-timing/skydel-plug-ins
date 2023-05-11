@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -31,7 +30,7 @@ namespace Sdx
       StartPPS();
 
       StartPPS(int msec);
-
+  
       static StartPPSPtr create(int msec);
       static StartPPSPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       int msec() const;
       void setMsec(int msec);
     };
-    
   }
 }
 

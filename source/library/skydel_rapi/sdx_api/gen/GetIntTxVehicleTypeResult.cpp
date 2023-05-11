@@ -1,6 +1,3 @@
-
-#include "gen/GetIntTxVehicleTypeResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetIntTxVehicleTypeResult
 ///
+#include "gen/GetIntTxVehicleTypeResult.h"
 
 namespace Sdx
 {
@@ -16,20 +14,12 @@ namespace Sdx
     const char* const GetIntTxVehicleTypeResult::CmdName = "GetIntTxVehicleTypeResult";
     const char* const GetIntTxVehicleTypeResult::Documentation = "Result of GetIntTxVehicleType.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetIntTxVehicleTypeResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetIntTxVehicleTypeResult);
 
 
     GetIntTxVehicleTypeResult::GetIntTxVehicleTypeResult()
       : CommandResult(CmdName)
     {}
-
-    GetIntTxVehicleTypeResult::GetIntTxVehicleTypeResult(const std::string& type, const std::string& id)
-      : CommandResult(CmdName)
-    {
-
-      setType(type);
-      setId(id);
-    }
 
     GetIntTxVehicleTypeResult::GetIntTxVehicleTypeResult(CommandBasePtr relatedCommand, const std::string& type, const std::string& id)
       : CommandResult(CmdName, relatedCommand)
@@ -39,11 +29,6 @@ namespace Sdx
       setId(id);
     }
 
-
-    GetIntTxVehicleTypeResultPtr GetIntTxVehicleTypeResult::create(const std::string& type, const std::string& id)
-    {
-      return std::make_shared<GetIntTxVehicleTypeResult>(type, id);
-    }
 
     GetIntTxVehicleTypeResultPtr GetIntTxVehicleTypeResult::create(CommandBasePtr relatedCommand, const std::string& type, const std::string& id)
     {

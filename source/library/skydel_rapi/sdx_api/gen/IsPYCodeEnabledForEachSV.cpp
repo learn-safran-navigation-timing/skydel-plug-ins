@@ -1,6 +1,3 @@
-
-#include "gen/IsPYCodeEnabledForEachSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of IsPYCodeEnabledForEachSV
 ///
+#include "gen/IsPYCodeEnabledForEachSV.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setSignal(signal);
     }
+
 
     IsPYCodeEnabledForEachSVPtr IsPYCodeEnabledForEachSV::create(const std::string& signal)
     {

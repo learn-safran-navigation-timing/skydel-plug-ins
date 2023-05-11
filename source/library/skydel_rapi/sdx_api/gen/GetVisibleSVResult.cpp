@@ -1,6 +1,3 @@
-
-#include "gen/GetVisibleSVResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetVisibleSVResult
 ///
+#include "gen/GetVisibleSVResult.h"
 
 namespace Sdx
 {
@@ -16,20 +14,12 @@ namespace Sdx
     const char* const GetVisibleSVResult::CmdName = "GetVisibleSVResult";
     const char* const GetVisibleSVResult::Documentation = "Result of GetVisibleSV.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetVisibleSVResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetVisibleSVResult);
 
 
     GetVisibleSVResult::GetVisibleSVResult()
       : CommandResult(CmdName)
     {}
-
-    GetVisibleSVResult::GetVisibleSVResult(const std::string& system, const std::vector<int>& svId)
-      : CommandResult(CmdName)
-    {
-
-      setSystem(system);
-      setSvId(svId);
-    }
 
     GetVisibleSVResult::GetVisibleSVResult(CommandBasePtr relatedCommand, const std::string& system, const std::vector<int>& svId)
       : CommandResult(CmdName, relatedCommand)
@@ -39,11 +29,6 @@ namespace Sdx
       setSvId(svId);
     }
 
-
-    GetVisibleSVResultPtr GetVisibleSVResult::create(const std::string& system, const std::vector<int>& svId)
-    {
-      return std::make_shared<GetVisibleSVResult>(system, svId);
-    }
 
     GetVisibleSVResultPtr GetVisibleSVResult::create(CommandBasePtr relatedCommand, const std::string& system, const std::vector<int>& svId)
     {

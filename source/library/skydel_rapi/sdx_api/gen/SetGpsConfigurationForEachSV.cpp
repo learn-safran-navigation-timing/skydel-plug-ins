@@ -1,6 +1,3 @@
-
-#include "gen/SetGpsConfigurationForEachSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,13 +5,14 @@
 ///
 /// Definition of SetGpsConfigurationForEachSV
 ///
+#include "gen/SetGpsConfigurationForEachSV.h"
 
 namespace Sdx
 {
   namespace Cmd
   {
     const char* const SetGpsConfigurationForEachSV::CmdName = "SetGpsConfigurationForEachSV";
-    const char* const SetGpsConfigurationForEachSV::Documentation = "Set GPS SV configuration flag for each SVs";
+    const char* const SetGpsConfigurationForEachSV::Documentation = "Please note the command SetGpsSVConfigurationForAllSat is deprecated since 21.3. You may use SetGpsConfigurationForEachSV.\n\nSet GPS SV configuration flag for each SVs";
 
     REGISTER_COMMAND_FACTORY(SetGpsConfigurationForEachSV);
 
@@ -30,6 +28,7 @@ namespace Sdx
       setSvConfigs(svConfigs);
       setDataSetName(dataSetName);
     }
+
 
     SetGpsConfigurationForEachSVPtr SetGpsConfigurationForEachSV::create(const std::vector<int>& svConfigs, const Sdx::optional<std::string>& dataSetName)
     {

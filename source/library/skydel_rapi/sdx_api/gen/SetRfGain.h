@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -32,7 +31,7 @@ namespace Sdx
       SetRfGain();
 
       SetRfGain(int output, double gain);
-
+  
       static SetRfGainPtr create(int output, double gain);
       static SetRfGainPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -50,7 +49,6 @@ namespace Sdx
       double gain() const;
       void setGain(double gain);
     };
-    
   }
 }
 

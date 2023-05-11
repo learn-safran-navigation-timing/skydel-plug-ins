@@ -1,6 +1,3 @@
-
-#include "gen/SetVehicleTrajectory.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetVehicleTrajectory
 ///
+#include "gen/SetVehicleTrajectory.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setType(type);
     }
+
 
     SetVehicleTrajectoryPtr SetVehicleTrajectory::create(const std::string& type)
     {

@@ -1,6 +1,3 @@
-
-#include "gen/GetPowerForSVResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetPowerForSVResult
 ///
+#include "gen/GetPowerForSVResult.h"
 
 namespace Sdx
 {
@@ -16,26 +14,12 @@ namespace Sdx
     const char* const GetPowerForSVResult::CmdName = "GetPowerForSVResult";
     const char* const GetPowerForSVResult::Documentation = "Result of GetPowerForSV.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetPowerForSVResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetPowerForSVResult);
 
 
     GetPowerForSVResult::GetPowerForSVResult()
       : CommandResult(CmdName)
     {}
-
-    GetPowerForSVResult::GetPowerForSVResult(const std::string& system, int svId, double nominalPower, double signalStrengthModel, double antenna, double signalLevelOffset, double manualGain, double total)
-      : CommandResult(CmdName)
-    {
-
-      setSystem(system);
-      setSvId(svId);
-      setNominalPower(nominalPower);
-      setSignalStrengthModel(signalStrengthModel);
-      setAntenna(antenna);
-      setSignalLevelOffset(signalLevelOffset);
-      setManualGain(manualGain);
-      setTotal(total);
-    }
 
     GetPowerForSVResult::GetPowerForSVResult(CommandBasePtr relatedCommand, const std::string& system, int svId, double nominalPower, double signalStrengthModel, double antenna, double signalLevelOffset, double manualGain, double total)
       : CommandResult(CmdName, relatedCommand)
@@ -51,11 +35,6 @@ namespace Sdx
       setTotal(total);
     }
 
-
-    GetPowerForSVResultPtr GetPowerForSVResult::create(const std::string& system, int svId, double nominalPower, double signalStrengthModel, double antenna, double signalLevelOffset, double manualGain, double total)
-    {
-      return std::make_shared<GetPowerForSVResult>(system, svId, nominalPower, signalStrengthModel, antenna, signalLevelOffset, manualGain, total);
-    }
 
     GetPowerForSVResultPtr GetPowerForSVResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, double nominalPower, double signalStrengthModel, double antenna, double signalLevelOffset, double manualGain, double total)
     {

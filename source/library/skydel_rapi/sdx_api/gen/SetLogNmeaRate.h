@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -31,7 +30,7 @@ namespace Sdx
       SetLogNmeaRate();
 
       SetLogNmeaRate(int rate);
-
+  
       static SetLogNmeaRatePtr create(int rate);
       static SetLogNmeaRatePtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       int rate() const;
       void setRate(int rate);
     };
-    
   }
 }
 

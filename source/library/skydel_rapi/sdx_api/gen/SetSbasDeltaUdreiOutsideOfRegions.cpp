@@ -1,6 +1,3 @@
-
-#include "gen/SetSbasDeltaUdreiOutsideOfRegions.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetSbasDeltaUdreiOutsideOfRegions
 ///
+#include "gen/SetSbasDeltaUdreiOutsideOfRegions.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setServiceProvider(serviceProvider);
       setDeltaUdrei(deltaUdrei);
     }
+
 
     SetSbasDeltaUdreiOutsideOfRegionsPtr SetSbasDeltaUdreiOutsideOfRegions::create(const std::string& serviceProvider, int deltaUdrei)
     {

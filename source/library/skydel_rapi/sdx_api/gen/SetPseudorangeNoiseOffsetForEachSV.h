@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 #include <vector>
 
@@ -34,7 +33,7 @@ namespace Sdx
       SetPseudorangeNoiseOffsetForEachSV();
 
       SetPseudorangeNoiseOffsetForEachSV(const std::string& system, const std::vector<bool>& enabled, const std::vector<double>& offset);
-
+  
       static SetPseudorangeNoiseOffsetForEachSVPtr create(const std::string& system, const std::vector<bool>& enabled, const std::vector<double>& offset);
       static SetPseudorangeNoiseOffsetForEachSVPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -57,7 +56,6 @@ namespace Sdx
       std::vector<double> offset() const;
       void setOffset(const std::vector<double>& offset);
     };
-    
   }
 }
 

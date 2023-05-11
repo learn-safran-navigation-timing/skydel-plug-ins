@@ -1,6 +1,3 @@
-
-#include "gen/SetVehicleAntennaPhaseOffsetCSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetVehicleAntennaPhaseOffsetCSV
 ///
+#include "gen/SetVehicleAntennaPhaseOffsetCSV.h"
 
 namespace Sdx
 {
@@ -33,6 +31,7 @@ namespace Sdx
       setBand(band);
       setName(name);
     }
+
 
     SetVehicleAntennaPhaseOffsetCSVPtr SetVehicleAntennaPhaseOffsetCSV::create(const std::string& filePath, const Sdx::AntennaPatternFileType& fileFormat, const Sdx::AntennaPatternType& type, const Sdx::GNSSBand& band, const Sdx::optional<std::string>& name)
     {

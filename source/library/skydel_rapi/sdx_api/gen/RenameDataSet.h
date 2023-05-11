@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -33,7 +32,7 @@ namespace Sdx
       RenameDataSet();
 
       RenameDataSet(const std::string& system, const std::string& dataSetName, const std::string& newDataSetName);
-
+  
       static RenameDataSetPtr create(const std::string& system, const std::string& dataSetName, const std::string& newDataSetName);
       static RenameDataSetPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -56,7 +55,6 @@ namespace Sdx
       std::string newDataSetName() const;
       void setNewDataSetName(const std::string& newDataSetName);
     };
-    
   }
 }
 

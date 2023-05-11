@@ -1,6 +1,3 @@
-
-#include "gen/SetBeiDouEphBoolParamForSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetBeiDouEphBoolParamForSV
 ///
+#include "gen/SetBeiDouEphBoolParamForSV.h"
 
 namespace Sdx
 {
@@ -32,6 +30,7 @@ namespace Sdx
       setVal(val);
       setDataSetName(dataSetName);
     }
+
 
     SetBeiDouEphBoolParamForSVPtr SetBeiDouEphBoolParamForSV::create(int svId, const std::string& paramName, bool val, const Sdx::optional<std::string>& dataSetName)
     {

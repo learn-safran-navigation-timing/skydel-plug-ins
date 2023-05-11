@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 #include <string>
 #include <vector>
 
@@ -32,12 +31,8 @@ namespace Sdx
 
       GetAllSVAntennaNamesResult();
 
-      GetAllSVAntennaNamesResult(const std::string& system, const std::vector<std::string>& antennaNames);
-
       GetAllSVAntennaNamesResult(CommandBasePtr relatedCommand, const std::string& system, const std::vector<std::string>& antennaNames);
-
-      static GetAllSVAntennaNamesResultPtr create(const std::string& system, const std::vector<std::string>& antennaNames);
-
+  
       static GetAllSVAntennaNamesResultPtr create(CommandBasePtr relatedCommand, const std::string& system, const std::vector<std::string>& antennaNames);
       static GetAllSVAntennaNamesResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -53,7 +48,6 @@ namespace Sdx
       std::vector<std::string> antennaNames() const;
       void setAntennaNames(const std::vector<std::string>& antennaNames);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetAllSVAntennaNamesResult);
   }
 }
 

@@ -1,6 +1,3 @@
-
-#include "gen/SetSyncClient.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetSyncClient
 ///
+#include "gen/SetSyncClient.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setHost(host);
       setPort(port);
     }
+
 
     SetSyncClientPtr SetSyncClient::create(const std::string& host, int port)
     {

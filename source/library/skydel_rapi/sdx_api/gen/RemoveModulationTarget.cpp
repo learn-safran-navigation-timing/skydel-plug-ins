@@ -1,6 +1,3 @@
-
-#include "gen/RemoveModulationTarget.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of RemoveModulationTarget
 ///
+#include "gen/RemoveModulationTarget.h"
 
 namespace Sdx
 {
@@ -29,6 +27,7 @@ namespace Sdx
 
       setId(id);
     }
+
 
     RemoveModulationTargetPtr RemoveModulationTarget::create(const std::string& id)
     {

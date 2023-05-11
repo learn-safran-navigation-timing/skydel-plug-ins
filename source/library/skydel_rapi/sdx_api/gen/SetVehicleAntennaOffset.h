@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include "sdx_optional.h"
 #include <string>
 
@@ -44,7 +43,7 @@ namespace Sdx
       SetVehicleAntennaOffset();
 
       SetVehicleAntennaOffset(double x, double y, double z, double yaw, double pitch, double roll, const Sdx::optional<std::string>& name = {});
-
+  
       static SetVehicleAntennaOffsetPtr create(double x, double y, double z, double yaw, double pitch, double roll, const Sdx::optional<std::string>& name = {});
       static SetVehicleAntennaOffsetPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -87,7 +86,6 @@ namespace Sdx
       Sdx::optional<std::string> name() const;
       void setName(const Sdx::optional<std::string>& name);
     };
-    
   }
 }
 

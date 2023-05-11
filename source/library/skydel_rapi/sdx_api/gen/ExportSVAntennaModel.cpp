@@ -1,6 +1,3 @@
-
-#include "gen/ExportSVAntennaModel.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of ExportSVAntennaModel
 ///
+#include "gen/ExportSVAntennaModel.h"
 
 namespace Sdx
 {
@@ -32,6 +30,7 @@ namespace Sdx
       setFilePath(filePath);
       setOverwriting(overwriting);
     }
+
 
     ExportSVAntennaModelPtr ExportSVAntennaModel::create(const std::string& antennaName, const std::string& system, const std::string& filePath, bool overwriting)
     {

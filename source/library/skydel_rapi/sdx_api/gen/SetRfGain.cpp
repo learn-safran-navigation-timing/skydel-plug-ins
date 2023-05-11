@@ -1,6 +1,3 @@
-
-#include "gen/SetRfGain.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetRfGain
 ///
+#include "gen/SetRfGain.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setOutput(output);
       setGain(gain);
     }
+
 
     SetRfGainPtr SetRfGain::create(int output, double gain)
     {

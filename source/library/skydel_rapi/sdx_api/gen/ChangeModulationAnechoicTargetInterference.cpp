@@ -1,6 +1,3 @@
-
-#include "gen/ChangeModulationAnechoicTargetInterference.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of ChangeModulationAnechoicTargetInterference
 ///
+#include "gen/ChangeModulationAnechoicTargetInterference.h"
 
 namespace Sdx
 {
@@ -31,6 +29,7 @@ namespace Sdx
       setOutput(output);
       setCentralFreq(centralFreq);
     }
+
 
     ChangeModulationAnechoicTargetInterferencePtr ChangeModulationAnechoicTargetInterference::create(int group, const std::string& output, double centralFreq)
     {

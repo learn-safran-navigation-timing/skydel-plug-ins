@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 
 
 namespace Sdx
@@ -32,12 +31,8 @@ namespace Sdx
 
       GetIonoGridErrorResult();
 
-      GetIonoGridErrorResult(int band, int point, double error);
-
       GetIonoGridErrorResult(CommandBasePtr relatedCommand, int band, int point, double error);
-
-      static GetIonoGridErrorResultPtr create(int band, int point, double error);
-
+  
       static GetIonoGridErrorResultPtr create(CommandBasePtr relatedCommand, int band, int point, double error);
       static GetIonoGridErrorResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -58,7 +53,6 @@ namespace Sdx
       double error() const;
       void setError(double error);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetIonoGridErrorResult);
   }
 }
 

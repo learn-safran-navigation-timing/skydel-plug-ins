@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -31,7 +30,7 @@ namespace Sdx
       IsPropagationDelayEnabled();
 
       IsPropagationDelayEnabled(const std::string& system);
-
+  
       static IsPropagationDelayEnabledPtr create(const std::string& system);
       static IsPropagationDelayEnabledPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       std::string system() const;
       void setSystem(const std::string& system);
     };
-    
   }
 }
 

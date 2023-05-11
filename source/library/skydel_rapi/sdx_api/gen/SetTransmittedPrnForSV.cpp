@@ -1,6 +1,3 @@
-
-#include "gen/SetTransmittedPrnForSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetTransmittedPrnForSV
 ///
+#include "gen/SetTransmittedPrnForSV.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setSvId(svId);
       setSignalPrnDict(signalPrnDict);
     }
+
 
     SetTransmittedPrnForSVPtr SetTransmittedPrnForSV::create(int svId, const std::map<std::string, int>& signalPrnDict)
     {

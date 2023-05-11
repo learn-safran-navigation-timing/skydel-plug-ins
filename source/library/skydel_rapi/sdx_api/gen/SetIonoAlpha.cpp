@@ -1,6 +1,3 @@
-
-#include "gen/SetIonoAlpha.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetIonoAlpha
 ///
+#include "gen/SetIonoAlpha.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setIndex(index);
       setVal(val);
     }
+
 
     SetIonoAlphaPtr SetIonoAlpha::create(int index, double val)
     {

@@ -1,6 +1,3 @@
-
-#include "gen/SetVehicleAntennaPhaseOffset.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetVehicleAntennaPhaseOffset
 ///
+#include "gen/SetVehicleAntennaPhaseOffset.h"
 
 namespace Sdx
 {
@@ -32,6 +30,7 @@ namespace Sdx
       setBand(band);
       setName(name);
     }
+
 
     SetVehicleAntennaPhaseOffsetPtr SetVehicleAntennaPhaseOffset::create(const std::vector<std::vector<double>>& phaseOffset, const Sdx::AntennaPatternType& type, const Sdx::GNSSBand& band, const Sdx::optional<std::string>& name)
     {

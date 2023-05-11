@@ -1,6 +1,3 @@
-
-#include "gen/CalibratePilotOutput.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of CalibratePilotOutput
 ///
+#include "gen/CalibratePilotOutput.h"
 
 namespace Sdx
 {
@@ -32,6 +30,7 @@ namespace Sdx
       setTime(time);
       setCarrierPhase(carrierPhase);
     }
+
 
     CalibratePilotOutputPtr CalibratePilotOutput::create(int outputIdx, double power, double time, double carrierPhase)
     {

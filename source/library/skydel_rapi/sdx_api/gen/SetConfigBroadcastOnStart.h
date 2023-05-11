@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -31,7 +30,7 @@ namespace Sdx
       SetConfigBroadcastOnStart();
 
       SetConfigBroadcastOnStart(bool broadcastOnStart);
-
+  
       static SetConfigBroadcastOnStartPtr create(bool broadcastOnStart);
       static SetConfigBroadcastOnStartPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       bool broadcastOnStart() const;
       void setBroadcastOnStart(bool broadcastOnStart);
     };
-    
   }
 }
 

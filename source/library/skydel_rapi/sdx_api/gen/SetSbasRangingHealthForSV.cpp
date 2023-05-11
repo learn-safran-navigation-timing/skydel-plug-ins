@@ -1,6 +1,3 @@
-
-#include "gen/SetSbasRangingHealthForSV.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetSbasRangingHealthForSV
 ///
+#include "gen/SetSbasRangingHealthForSV.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setSvId(svId);
       setHealth(health);
     }
+
 
     SetSbasRangingHealthForSVPtr SetSbasRangingHealthForSV::create(int svId, bool health)
     {

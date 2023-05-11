@@ -1,6 +1,3 @@
-
-#include "gen/GetIntTxIqFileResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetIntTxIqFileResult
 ///
+#include "gen/GetIntTxIqFileResult.h"
 
 namespace Sdx
 {
@@ -16,25 +14,12 @@ namespace Sdx
     const char* const GetIntTxIqFileResult::CmdName = "GetIntTxIqFileResult";
     const char* const GetIntTxIqFileResult::Documentation = "Result of GetIntTxIqFile.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetIntTxIqFileResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetIntTxIqFileResult);
 
 
     GetIntTxIqFileResult::GetIntTxIqFileResult()
       : CommandResult(CmdName)
     {}
-
-    GetIntTxIqFileResult::GetIntTxIqFileResult(bool enabled, double centralFreq, double power, const std::string& path, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& group)
-      : CommandResult(CmdName)
-    {
-
-      setEnabled(enabled);
-      setCentralFreq(centralFreq);
-      setPower(power);
-      setPath(path);
-      setTransmitterId(transmitterId);
-      setSignalId(signalId);
-      setGroup(group);
-    }
 
     GetIntTxIqFileResult::GetIntTxIqFileResult(CommandBasePtr relatedCommand, bool enabled, double centralFreq, double power, const std::string& path, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& group)
       : CommandResult(CmdName, relatedCommand)
@@ -49,11 +34,6 @@ namespace Sdx
       setGroup(group);
     }
 
-
-    GetIntTxIqFileResultPtr GetIntTxIqFileResult::create(bool enabled, double centralFreq, double power, const std::string& path, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& group)
-    {
-      return std::make_shared<GetIntTxIqFileResult>(enabled, centralFreq, power, path, transmitterId, signalId, group);
-    }
 
     GetIntTxIqFileResultPtr GetIntTxIqFileResult::create(CommandBasePtr relatedCommand, bool enabled, double centralFreq, double power, const std::string& path, const std::string& transmitterId, const std::string& signalId, const Sdx::optional<int>& group)
     {

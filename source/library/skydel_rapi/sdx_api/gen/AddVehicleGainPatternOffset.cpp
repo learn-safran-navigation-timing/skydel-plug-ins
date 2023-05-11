@@ -1,6 +1,3 @@
-
-#include "gen/AddVehicleGainPatternOffset.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of AddVehicleGainPatternOffset
 ///
+#include "gen/AddVehicleGainPatternOffset.h"
 
 namespace Sdx
 {
@@ -31,6 +29,7 @@ namespace Sdx
       setOffset(offset);
       setAntennaName(antennaName);
     }
+
 
     AddVehicleGainPatternOffsetPtr AddVehicleGainPatternOffset::create(const Sdx::GNSSBand& band, double offset, const Sdx::optional<std::string>& antennaName)
     {

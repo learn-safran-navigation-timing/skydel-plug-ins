@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -32,7 +31,7 @@ namespace Sdx
       GetIonoGridError();
 
       GetIonoGridError(int band, int point);
-
+  
       static GetIonoGridErrorPtr create(int band, int point);
       static GetIonoGridErrorPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -50,7 +49,6 @@ namespace Sdx
       int point() const;
       void setPoint(int point);
     };
-    
   }
 }
 

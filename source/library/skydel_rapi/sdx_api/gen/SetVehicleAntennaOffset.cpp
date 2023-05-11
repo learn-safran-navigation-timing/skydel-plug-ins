@@ -1,6 +1,3 @@
-
-#include "gen/SetVehicleAntennaOffset.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetVehicleAntennaOffset
 ///
+#include "gen/SetVehicleAntennaOffset.h"
 
 namespace Sdx
 {
@@ -35,6 +33,7 @@ namespace Sdx
       setRoll(roll);
       setName(name);
     }
+
 
     SetVehicleAntennaOffsetPtr SetVehicleAntennaOffset::create(double x, double y, double z, double yaw, double pitch, double roll, const Sdx::optional<std::string>& name)
     {

@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_base.h"
-
 #include <string>
 
 namespace Sdx
@@ -32,7 +31,7 @@ namespace Sdx
       SetPowerSbasOffset();
 
       SetPowerSbasOffset(const std::string& serviceProvider, double offset);
-
+  
       static SetPowerSbasOffsetPtr create(const std::string& serviceProvider, double offset);
       static SetPowerSbasOffsetPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -50,7 +49,6 @@ namespace Sdx
       double offset() const;
       void setOffset(double offset);
     };
-    
   }
 }
 

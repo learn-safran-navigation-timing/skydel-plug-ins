@@ -1,6 +1,3 @@
-
-#include "gen/GetSbasMessagesEnabledResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetSbasMessagesEnabledResult
 ///
+#include "gen/GetSbasMessagesEnabledResult.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const GetSbasMessagesEnabledResult::CmdName = "GetSbasMessagesEnabledResult";
     const char* const GetSbasMessagesEnabledResult::Documentation = "Result of GetSbasMessagesEnabled.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetSbasMessagesEnabledResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetSbasMessagesEnabledResult);
 
 
     GetSbasMessagesEnabledResult::GetSbasMessagesEnabledResult()
       : CommandResult(CmdName)
     {}
-
-    GetSbasMessagesEnabledResult::GetSbasMessagesEnabledResult(const std::vector<int>& messages)
-      : CommandResult(CmdName)
-    {
-
-      setMessages(messages);
-    }
 
     GetSbasMessagesEnabledResult::GetSbasMessagesEnabledResult(CommandBasePtr relatedCommand, const std::vector<int>& messages)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setMessages(messages);
     }
 
-
-    GetSbasMessagesEnabledResultPtr GetSbasMessagesEnabledResult::create(const std::vector<int>& messages)
-    {
-      return std::make_shared<GetSbasMessagesEnabledResult>(messages);
-    }
 
     GetSbasMessagesEnabledResultPtr GetSbasMessagesEnabledResult::create(CommandBasePtr relatedCommand, const std::vector<int>& messages)
     {

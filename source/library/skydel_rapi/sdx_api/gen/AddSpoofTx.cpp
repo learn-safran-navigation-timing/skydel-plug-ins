@@ -1,6 +1,3 @@
-
-#include "gen/AddSpoofTx.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of AddSpoofTx
 ///
+#include "gen/AddSpoofTx.h"
 
 namespace Sdx
 {
@@ -33,6 +31,7 @@ namespace Sdx
       setInstanceId(instanceId);
       setId(id);
     }
+
 
     AddSpoofTxPtr AddSpoofTx::create(const std::string& usualName, bool enabled, const std::string& address, int instanceId, const std::string& id)
     {

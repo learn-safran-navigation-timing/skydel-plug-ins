@@ -1,6 +1,3 @@
-
-#include "gen/EndRouteDefinitionResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of EndRouteDefinitionResult
 ///
+#include "gen/EndRouteDefinitionResult.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const EndRouteDefinitionResult::CmdName = "EndRouteDefinitionResult";
     const char* const EndRouteDefinitionResult::Documentation = "EndRouteDefinition Result with created route informations.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(EndRouteDefinitionResult);
+    REGISTER_COMMAND_RESULT_FACTORY(EndRouteDefinitionResult);
 
 
     EndRouteDefinitionResult::EndRouteDefinitionResult()
       : CommandResult(CmdName)
     {}
-
-    EndRouteDefinitionResult::EndRouteDefinitionResult(int count)
-      : CommandResult(CmdName)
-    {
-
-      setCount(count);
-    }
 
     EndRouteDefinitionResult::EndRouteDefinitionResult(CommandBasePtr relatedCommand, int count)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setCount(count);
     }
 
-
-    EndRouteDefinitionResultPtr EndRouteDefinitionResult::create(int count)
-    {
-      return std::make_shared<EndRouteDefinitionResult>(count);
-    }
 
     EndRouteDefinitionResultPtr EndRouteDefinitionResult::create(CommandBasePtr relatedCommand, int count)
     {

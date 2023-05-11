@@ -2,7 +2,6 @@
 
 #include <memory>
 #include "command_result.h"
-#include "command_result_factory.h"
 #include "sdx_optional.h"
 #include <string>
 
@@ -37,12 +36,8 @@ namespace Sdx
 
       GetVehicleAntennaOffsetResult();
 
-      GetVehicleAntennaOffsetResult(double x, double y, double z, double yaw, double pitch, double roll, const Sdx::optional<std::string>& name = {});
-
       GetVehicleAntennaOffsetResult(CommandBasePtr relatedCommand, double x, double y, double z, double yaw, double pitch, double roll, const Sdx::optional<std::string>& name = {});
-
-      static GetVehicleAntennaOffsetResultPtr create(double x, double y, double z, double yaw, double pitch, double roll, const Sdx::optional<std::string>& name = {});
-
+  
       static GetVehicleAntennaOffsetResultPtr create(CommandBasePtr relatedCommand, double x, double y, double z, double yaw, double pitch, double roll, const Sdx::optional<std::string>& name = {});
       static GetVehicleAntennaOffsetResultPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -83,7 +78,6 @@ namespace Sdx
       Sdx::optional<std::string> name() const;
       void setName(const Sdx::optional<std::string>& name);
     };
-    REGISTER_COMMAND_RESULT_TO_FACTORY_DECL(GetVehicleAntennaOffsetResult);
   }
 }
 

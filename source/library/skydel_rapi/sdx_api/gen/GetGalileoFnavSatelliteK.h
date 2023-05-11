@@ -4,7 +4,6 @@
 #include "command_base.h"
 
 
-
 namespace Sdx
 {
   namespace Cmd
@@ -31,7 +30,7 @@ namespace Sdx
       GetGalileoFnavSatelliteK();
 
       GetGalileoFnavSatelliteK(int prn);
-
+  
       static GetGalileoFnavSatelliteKPtr create(int prn);
       static GetGalileoFnavSatelliteKPtr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
@@ -44,7 +43,6 @@ namespace Sdx
       int prn() const;
       void setPrn(int prn);
     };
-    
   }
 }
 

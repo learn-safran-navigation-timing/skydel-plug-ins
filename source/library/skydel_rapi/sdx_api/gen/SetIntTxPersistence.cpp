@@ -1,6 +1,3 @@
-
-#include "gen/SetIntTxPersistence.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of SetIntTxPersistence
 ///
+#include "gen/SetIntTxPersistence.h"
 
 namespace Sdx
 {
@@ -30,6 +28,7 @@ namespace Sdx
       setPersistence(persistence);
       setId(id);
     }
+
 
     SetIntTxPersistencePtr SetIntTxPersistence::create(bool persistence, const std::string& id)
     {

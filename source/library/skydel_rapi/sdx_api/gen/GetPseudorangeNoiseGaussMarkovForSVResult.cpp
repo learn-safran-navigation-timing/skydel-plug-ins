@@ -1,6 +1,3 @@
-
-#include "gen/GetPseudorangeNoiseGaussMarkovForSVResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of GetPseudorangeNoiseGaussMarkovForSVResult
 ///
+#include "gen/GetPseudorangeNoiseGaussMarkovForSVResult.h"
 
 namespace Sdx
 {
@@ -16,25 +14,12 @@ namespace Sdx
     const char* const GetPseudorangeNoiseGaussMarkovForSVResult::CmdName = "GetPseudorangeNoiseGaussMarkovForSVResult";
     const char* const GetPseudorangeNoiseGaussMarkovForSVResult::Documentation = "Result of GetPseudorangeNoiseGaussMarkovForSV.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(GetPseudorangeNoiseGaussMarkovForSVResult);
+    REGISTER_COMMAND_RESULT_FACTORY(GetPseudorangeNoiseGaussMarkovForSVResult);
 
 
     GetPseudorangeNoiseGaussMarkovForSVResult::GetPseudorangeNoiseGaussMarkovForSVResult()
       : CommandResult(CmdName)
     {}
-
-    GetPseudorangeNoiseGaussMarkovForSVResult::GetPseudorangeNoiseGaussMarkovForSVResult(const std::string& system, int svId, int process, bool enabled, double sigma, double time, int seed)
-      : CommandResult(CmdName)
-    {
-
-      setSystem(system);
-      setSvId(svId);
-      setProcess(process);
-      setEnabled(enabled);
-      setSigma(sigma);
-      setTime(time);
-      setSeed(seed);
-    }
 
     GetPseudorangeNoiseGaussMarkovForSVResult::GetPseudorangeNoiseGaussMarkovForSVResult(CommandBasePtr relatedCommand, const std::string& system, int svId, int process, bool enabled, double sigma, double time, int seed)
       : CommandResult(CmdName, relatedCommand)
@@ -49,11 +34,6 @@ namespace Sdx
       setSeed(seed);
     }
 
-
-    GetPseudorangeNoiseGaussMarkovForSVResultPtr GetPseudorangeNoiseGaussMarkovForSVResult::create(const std::string& system, int svId, int process, bool enabled, double sigma, double time, int seed)
-    {
-      return std::make_shared<GetPseudorangeNoiseGaussMarkovForSVResult>(system, svId, process, enabled, sigma, time, seed);
-    }
 
     GetPseudorangeNoiseGaussMarkovForSVResultPtr GetPseudorangeNoiseGaussMarkovForSVResult::create(CommandBasePtr relatedCommand, const std::string& system, int svId, int process, bool enabled, double sigma, double time, int seed)
     {

@@ -1,6 +1,3 @@
-
-#include "gen/EndTrackDefinitionResult.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of EndTrackDefinitionResult
 ///
+#include "gen/EndTrackDefinitionResult.h"
 
 namespace Sdx
 {
@@ -16,19 +14,12 @@ namespace Sdx
     const char* const EndTrackDefinitionResult::CmdName = "EndTrackDefinitionResult";
     const char* const EndTrackDefinitionResult::Documentation = "EndTrackDefinition Result with created track informations.";
 
-    REGISTER_COMMAND_RESULT_TO_FACTORY_IMPL(EndTrackDefinitionResult);
+    REGISTER_COMMAND_RESULT_FACTORY(EndTrackDefinitionResult);
 
 
     EndTrackDefinitionResult::EndTrackDefinitionResult()
       : CommandResult(CmdName)
     {}
-
-    EndTrackDefinitionResult::EndTrackDefinitionResult(int count)
-      : CommandResult(CmdName)
-    {
-
-      setCount(count);
-    }
 
     EndTrackDefinitionResult::EndTrackDefinitionResult(CommandBasePtr relatedCommand, int count)
       : CommandResult(CmdName, relatedCommand)
@@ -37,11 +28,6 @@ namespace Sdx
       setCount(count);
     }
 
-
-    EndTrackDefinitionResultPtr EndTrackDefinitionResult::create(int count)
-    {
-      return std::make_shared<EndTrackDefinitionResult>(count);
-    }
 
     EndTrackDefinitionResultPtr EndTrackDefinitionResult::create(CommandBasePtr relatedCommand, int count)
     {

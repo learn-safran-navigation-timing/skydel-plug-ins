@@ -1,6 +1,3 @@
-
-#include "gen/ClearQzssL1SAugmentations.h"
-
 #include "command_factory.h"
 #include "command_result_factory.h"
 #include "parse_json.hpp"
@@ -8,6 +5,7 @@
 ///
 /// Definition of ClearQzssL1SAugmentations
 ///
+#include "gen/ClearQzssL1SAugmentations.h"
 
 namespace Sdx
 {
@@ -24,6 +22,7 @@ namespace Sdx
     {
 
     }
+
 
     ClearQzssL1SAugmentationsPtr ClearQzssL1SAugmentations::create()
     {
