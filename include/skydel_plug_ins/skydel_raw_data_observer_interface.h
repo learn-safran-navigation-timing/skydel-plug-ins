@@ -134,7 +134,7 @@ public:
   virtual SkydelRuntimeRawDataObserver* createRuntimeRawDataObserver() = 0;
 
   static constexpr auto ID = "SkydelRawDataObserver";
-  static constexpr auto VERSION = 2;
+  static constexpr auto VERSION = 3;
 };
 
 #endif // SKYDEL_RAW_DATA_OBSERVER_INTERFACE_H
