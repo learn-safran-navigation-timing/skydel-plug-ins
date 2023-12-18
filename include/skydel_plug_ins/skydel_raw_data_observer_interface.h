@@ -8,55 +8,6 @@
 class SkydelRuntimeRawDataObserver : public QObject
 {
 public:
-  enum class Constellation
-  {
-    GPS,
-    GLONASS,
-    GALILEO,
-    BEIDOU,
-    SBAS,
-    QZSS,
-    NAVIC
-  };
-
-  enum class Signal
-  {
-    GPS_L1_CA,
-    GPS_L1C,
-    GPS_L2C,
-    GPS_L1_PCODE,
-    GPS_L2_PCODE,
-    GPS_L1_MCODE_E,
-    GPS_L2_MCODE_E,
-    GPS_L1_MCODE_R,
-    GPS_L2_MCODE_R,
-    GPS_L5,
-    GLONASS_G1,
-    GLONASS_G2,
-    GALILEO_E1,
-    GALILEO_E1_PRS,
-    GALILEO_E5a,
-    GALILEO_E5b,
-    GALILEO_E5ALTBOC,
-    GALILEO_E6,
-    GALILEO_E6_PRS,
-    BEIDOU_B1,
-    BEIDOU_B2,
-    BEIDOU_B1C,
-    BEIDOU_B2a,
-    BEIDOU_B3I,
-    SBAS_L1,
-    SBAS_L5,
-    QZSS_L1_CA,
-    QZSS_L1_CB,
-    QZSS_L1C,
-    QZSS_L1S,
-    QZSS_L2C,
-    QZSS_L5,
-    QZSS_L5S,
-    NAVIC_L5
-  };
-
   struct Ecef
   {
     double x;
@@ -66,7 +17,7 @@ public:
 
   struct SignalRawData
   {
-    Signal signal;
+    uint32_t id;
     double svElapsedTimeMs;
     Ecef position;
     Ecef positionError;
@@ -106,35 +57,39 @@ public:
 
   struct SVRawData
   {
-    uint32_t svID;
-    std::vector<SignalRawData> rawDatas;
+    uint32_t id;
+    std::vector<SignalRawData> signalsRawData;
   };
 
   struct ConstellationRawData
   {
-    Constellation system;
-    std::vector<SVRawData> svs;
+    uint32_t id;
+    std::vector<SVRawData> svsRawData;
   };
 
   struct TimedRawData
   {
     int64_t elapsedTimeMs;
-    std::vector<ConstellationRawData> svsData;
+    std::vector<ConstellationRawData> constellationsRawData;
   };
 
   virtual void pushRawData(const TimedRawData&) = 0;
   virtual void connectToView(QWidget* view) = 0;
 };
 
+using SkydelConstellationIDToStringMap = std::map<uint32_t, QString>;
+using SkydelSignalIDToStringMap = std::map<uint32_t, QString>;
+
 class SkydelRawDataObserverInterface
 {
 public:
   virtual ~SkydelRawDataObserverInterface() = default;
 
-  virtual SkydelRuntimeRawDataObserver* createRuntimeRawDataObserver() = 0;
+  virtual SkydelRuntimeRawDataObserver* createRuntimeRawDataObserver(const SkydelConstellationIDToStringMap&,
+                                                                     const SkydelSignalIDToStringMap&) = 0;
 
   static constexpr auto ID = "SkydelRawDataObserver";
-  static constexpr auto VERSION = 3;
+  static constexpr auto VERSION = 4;
 };
 
 #endif // SKYDEL_RAW_DATA_OBSERVER_INTERFACE_H
