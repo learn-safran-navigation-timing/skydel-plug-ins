@@ -4,7 +4,6 @@
 #include <stdexcept>
 #include <unordered_map>
 
-#include "command_factory.h"
 #include "skydel_command_execution.h"
 
 using namespace CommandExecution;

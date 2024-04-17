@@ -14,9 +14,13 @@ public:
   {
     using Execute = std::function<std::string()>;
     using Undo = std::optional<std::function<void()>>;
+    using Documentation = std::function<std::string()>;
+    using FieldNames = std::function<std::vector<std::string>()>;
 
     Execute execute;
     Undo undo;
+    Documentation documentation;
+    FieldNames fieldNames;
   };
 
   virtual std::optional<CommandHandler> getCommandHandler(const std::string& serializedCommand) = 0;
