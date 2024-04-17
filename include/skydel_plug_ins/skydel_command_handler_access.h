@@ -30,8 +30,12 @@ inline std::optional<SkydelCommandHandlerInterface::CommandHandler> SkydelComman
     if (auto handler = m_commandExecutor.findHandlerFor(*command))
     {
       auto execute = [command, execute = handler->handler]() { return execute(std::move(command))->toString(); };
+      auto documentation = [command]() { return command->documentation(); };
+      auto fieldNames = [command]() { return command->fieldNames(); };
       return SkydelCommandHandlerInterface::CommandHandler {std::move(execute),
-                                                            createUndo(*handler, std::move(command))};
+                                                            createUndo(*handler, std::move(command)),
+                                                            std::move(documentation),
+                                                            std::move(fieldNames)};
     }
   }
 
