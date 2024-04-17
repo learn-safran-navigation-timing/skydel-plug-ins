@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.17)
 
 project(SkydelPlugin VERSION 0.0.1 LANGUAGES CXX)
 
+set(CMAKE_CXX_STANDARD 20)
+
 if(NOT WIN32)
     set(CMAKE_CXX_COMPILER /usr/bin/g++-11 CACHE FILEPATH "GNU C++ compiler")
     set(Qt5_VERSION 5.15.2 CACHE STRING "Version of Qt5 you want to find")
