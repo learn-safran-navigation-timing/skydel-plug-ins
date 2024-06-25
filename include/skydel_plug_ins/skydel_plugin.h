@@ -1,5 +1,4 @@
-#ifndef SKYDEL_PLUGIN_H
-#define SKYDEL_PLUGIN_H
+#pragma once
 
 #include <QObject>
 #include <QString>
@@ -31,6 +30,7 @@ Q_DECLARE_INTERFACE(SkydelPluginBase, "SkydelPluginBase/1.0")
 #include "skydel_position_observer_interface.h"
 #include "skydel_radio_time_observer_interface.h"
 #include "skydel_raw_data_observer_interface.h"
+#include "skydel_simulator_state_observer_interface.h"
 #include "skydel_transmitter_observer_interface.h"
 
 template<typename T>
@@ -47,6 +47,7 @@ public:
     skydelPluginRole<SkydelTransmitterObserverInterface>();
     skydelPluginRole<SkydelHilObserverInterface>();
     skydelPluginRole<SkydelCommandHandlerInterface>();
+    skydelPluginRole<SkydelSimulatorStateObserverInterface>();
   }
 
   QObject* createInstance() override { return new T {}; }
@@ -73,5 +74,3 @@ private:
     Q_PLUGIN_METADATA(IID PLUGIN_IID FILE PLUGIN_FILE)                    \
     Q_INTERFACES(SkydelPluginBase)                                        \
   };
-
-#endif // SKYDEL_PLUGIN_H

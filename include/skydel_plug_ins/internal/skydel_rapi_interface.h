@@ -1,5 +1,4 @@
-#ifndef SKYDEL_RAPI_INTERFACE_H
-#define SKYDEL_RAPI_INTERFACE_H
+#pragma once
 
 #include <functional>
 #include <string>
@@ -25,5 +24,3 @@ public:
   static constexpr auto ID = "SkydelRapi";
   static constexpr auto VERSION = 2;
 };
-
-#endif // SKYDEL_RAPI_INTERFACE_H

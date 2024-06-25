@@ -1,5 +1,4 @@
-#ifndef SKYDEL_HIL_OBSERVER_INTERFACE_H
-#define SKYDEL_HIL_OBSERVER_INTERFACE_H
+#pragma once
 
 #include <QObject>
 
@@ -41,5 +40,3 @@ public:
   static constexpr auto ID = "SkydelHilObserver";
   static constexpr auto VERSION = 2;
 };
-
-#endif // SKYDEL_HIL_OBSERVER_INTERFACE_H

@@ -1,5 +1,4 @@
-#ifndef SKYDEL_RAW_DATA_OBSERVER_INTERFACE_H
-#define SKYDEL_RAW_DATA_OBSERVER_INTERFACE_H
+#pragma once
 
 #include <QObject>
 
@@ -91,5 +90,3 @@ public:
   static constexpr auto ID = "SkydelRawDataObserver";
   static constexpr auto VERSION = 4;
 };
-
-#endif // SKYDEL_RAW_DATA_OBSERVER_INTERFACE_H

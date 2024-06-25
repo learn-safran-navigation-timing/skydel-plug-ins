@@ -1,5 +1,4 @@
-#ifndef SKYDEL_CORE_INTERFACE_H
-#define SKYDEL_CORE_INTERFACE_H
+#pragma once
 
 #include <QJsonObject>
 #include <QString>
@@ -44,5 +43,3 @@ public:
   static constexpr auto ID = "SkydelCore";
   static constexpr auto VERSION = 4;
 };
-
-#endif // SKYDEL_CORE_INTERFACE_H
