@@ -1,5 +1,4 @@
-#ifndef SKYDEL_COMMAND_HANDLER_H
-#define SKYDEL_COMMAND_HANDLER_H
+#pragma once
 
 #include "internal/skydel_command_executor.h"
 
@@ -31,5 +30,3 @@ struct SkydelCommandHandler
 private:
   SkydelCommandExecutor& m_commandExecutor;
 };
-
-#endif // SKYDEL_COMMAND_HANDLER_H

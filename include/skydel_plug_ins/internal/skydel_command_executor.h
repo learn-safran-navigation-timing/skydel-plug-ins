@@ -1,5 +1,4 @@
-#ifndef SKYDEL_COMMAND_EXECUTOR_H
-#define SKYDEL_COMMAND_EXECUTOR_H
+#pragma once
 
 #include <stdexcept>
 #include <unordered_map>
@@ -45,5 +44,3 @@ private:
 
   std::unordered_map<std::string, Handler> m_commandHandlers;
 };
-
-#endif // SKYDEL_COMMAND_EXECUTOR_H

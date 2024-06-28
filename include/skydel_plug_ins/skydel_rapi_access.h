@@ -1,5 +1,4 @@
-#ifndef SKYDEL_RAPI_ACCESS_H
-#define SKYDEL_RAPI_ACCESS_H
+#pragma once
 
 #include <QString>
 
@@ -82,5 +81,3 @@ private:
   SkydelRapi* m_rapi;
   std::string m_name;
 };
-
-#endif // SKYDEL_RAPI_ACCESS_H

@@ -1,5 +1,4 @@
-#ifndef SKYDEL_POSITON_OBSERVER_INTERFACE_H
-#define SKYDEL_POSITON_OBSERVER_INTERFACE_H
+#pragma once
 
 #include <QObject>
 
@@ -43,5 +42,3 @@ public:
   static constexpr auto ID = "SkydelPositionObserver";
   static constexpr auto VERSION = 1;
 };
-
-#endif // SKYDEL_POSITON_OBSERVER_INTERFACE_H

@@ -1,5 +1,4 @@
-#ifndef SKYDEL_COMMAND_EXECUTION_H
-#define SKYDEL_COMMAND_EXECUTION_H
+#pragma once
 
 #include <functional>
 
@@ -81,5 +80,3 @@ inline auto createExecuteFunction(HandlerObject* object, Method method)
 }
 
 } // namespace CommandExecution
-
-#endif // SKYDEL_COMMAND_EXECUTION_H

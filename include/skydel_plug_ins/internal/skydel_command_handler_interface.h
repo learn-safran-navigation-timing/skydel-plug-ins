@@ -1,5 +1,4 @@
-#ifndef SKYDEL_COMMAND_HANDLER_INTERFACE_H
-#define SKYDEL_COMMAND_HANDLER_INTERFACE_H
+#pragma once
 
 #include <functional>
 #include <optional>
@@ -28,5 +27,3 @@ public:
   static constexpr auto ID = "SkydelCommandHandler";
   static constexpr auto VERSION = 1;
 };
-
-#endif // SKYDEL_COMMAND_HANDLER_INTERFACE_H

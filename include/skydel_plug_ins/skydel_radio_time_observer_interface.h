@@ -1,5 +1,4 @@
-#ifndef SKYDEL_RADIO_TIME_OBSERVER_INTERFACE_H
-#define SKYDEL_RADIO_TIME_OBSERVER_INTERFACE_H
+#pragma once
 
 #include <QObject>
 
@@ -82,5 +81,3 @@ public:
   static constexpr auto ID = "SkydelRadioTimeObserver";
   static constexpr auto VERSION = 1;
 };
-
-#endif // SKYDEL_RADIO_TIME_OBSERVER_INTERFACE_H

@@ -1,5 +1,4 @@
-#ifndef SKYDEL_TRANSMITTER_OBSERVER_INTERFACE_H
-#define SKYDEL_TRANSMITTER_OBSERVER_INTERFACE_H
+#pragma once
 
 #include <QObject>
 #include <QString>
@@ -76,5 +75,3 @@ public:
   static constexpr auto ID = "SkydelTransmitterObserver";
   static constexpr auto VERSION = 1;
 };
-
-#endif // SKYDEL_TRANSMITTER_OBSERVER_INTERFACE_H

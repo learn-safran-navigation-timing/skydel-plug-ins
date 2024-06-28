@@ -1,5 +1,4 @@
-#ifndef SKYDEL_COMMAND_HANDLER_ACCESS_H
-#define SKYDEL_COMMAND_HANDLER_ACCESS_H
+#pragma once
 
 #include "command_factory.h"
 #include "internal/skydel_command_executor.h"
@@ -54,5 +53,3 @@ inline std::optional<std::function<void()>> SkydelCommandHandlerAccess::createUn
     return std::nullopt;
   }
 }
-
-#endif // SKYDEL_COMMAND_HANDLER_ACCESS_H
