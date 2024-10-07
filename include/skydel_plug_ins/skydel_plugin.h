@@ -53,7 +53,7 @@ public:
   QObject* createInstance() override { return new T {}; }
   std::vector<Interface> implementedInterfaces() override { return m_implementedInterfaces; }
 
-private:
+protected:
   template<typename Interface>
   void skydelPluginRole()
   {
@@ -64,6 +64,7 @@ private:
     }
   }
 
+private:
   std::vector<Interface> m_implementedInterfaces;
 };
 
