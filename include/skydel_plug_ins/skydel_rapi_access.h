@@ -78,6 +78,6 @@ public:
   }
 
 private:
-  SkydelRapi* m_rapi;
+  SkydelRapi* m_rapi {nullptr};
   std::string m_name;
 };

@@ -23,6 +23,7 @@ public:
 
 Q_DECLARE_INTERFACE(SkydelPluginBase, "SkydelPluginBase/1.0")
 
+#include "custom_signal/skydel_custom_signal_factory_interface.h"
 #include "internal/skydel_command_handler_interface.h"
 #include "internal/skydel_rapi_interface.h"
 #include "skydel_core_interface.h"
@@ -48,6 +49,7 @@ public:
     skydelPluginRole<SkydelHilObserverInterface>();
     skydelPluginRole<SkydelCommandHandlerInterface>();
     skydelPluginRole<SkydelSimulatorStateObserverInterface>();
+    skydelPluginRole<SkydelCustomSignalFactoryInterface>();
   }
 
   QObject* createInstance() override { return new T {}; }
