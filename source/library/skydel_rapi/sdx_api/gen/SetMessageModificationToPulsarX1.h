@@ -11,7 +11,7 @@ namespace Sdx
   namespace Cmd
   {
     ///
-    /// Set (or Modify) event to change GPS MNAV message bits. If you send this command without setting the ID
+    /// Set (or Modify) event to change PULSAR X1 message bits. If you send this command without setting the ID
     /// parameter, or if you set the ID with a value never used before, a new Modification event will be
     /// created. If you reuse the same event ID, it will modify the existing event.
     /// 
@@ -40,23 +40,23 @@ namespace Sdx
     /// You can add multiple bit modifications using commas. For example: "24:X---10XX,127:100X,231:01"
     ///
     /// Name             Type         Description
-    /// ---------------- ------------ ------------------------------------------------------------------------------------------------
-    /// SignalArray      array string Array of signals to apply the message modification to, accepts "L1ME" and "L2ME" (empty for all)
-    /// SvId             int          The satellite's SV ID 1..32 (use 0 to apply modification to all SVs)
+    /// ---------------- ------------ -----------------------------------------------------------------------------------------
+    /// SignalArray      array string Array of signals to apply the message modification to, accepts "PULSARX1" (empty for all)
+    /// SvId             int          The satellite's SV ID 1..258 (use 0 to apply modification to all SVs)
     /// StartTime        int          Elapsed time in seconds since start of simulation
     /// StopTime         int          Elapsed time in seconds since start of simulation (use 0 for no stop time)
-    /// MessageType      int          MNAV Message type
-    /// Occurrence       int          Occurrence number in message sequence (1 based, or use -1 to match any occurrence)
+    /// MessageType      int          Message type (use -1 to apply modification to all message types)
     /// Condition        string       Optional condition to match message content, ex: "EQUAL(45, 10, 0x3f)"
+    /// UpdateCRC        bool         Recalculate CRC after making modification
     /// BitModifications string       Comma separated bit modifications
-    /// Id               string       Unique identifier automatically set by simulator
+    /// Id               string       Unique identifier of the event
     ///
 
-    class SetMessageModificationToGpsMNav;
-    typedef std::shared_ptr<SetMessageModificationToGpsMNav> SetMessageModificationToGpsMNavPtr;
+    class SetMessageModificationToPulsarX1;
+    typedef std::shared_ptr<SetMessageModificationToPulsarX1> SetMessageModificationToPulsarX1Ptr;
     
     
-    class SetMessageModificationToGpsMNav : public CommandBase
+    class SetMessageModificationToPulsarX1 : public CommandBase
     {
     public:
       static const char* const CmdName;
@@ -64,12 +64,12 @@ namespace Sdx
       static const char* const TargetId;
 
 
-      SetMessageModificationToGpsMNav();
+      SetMessageModificationToPulsarX1();
 
-      SetMessageModificationToGpsMNav(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, int occurrence, const std::string& condition, const std::string& bitModifications, const std::string& id);
+      SetMessageModificationToPulsarX1(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id);
 
-      static SetMessageModificationToGpsMNavPtr create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, int occurrence, const std::string& condition, const std::string& bitModifications, const std::string& id);
-      static SetMessageModificationToGpsMNavPtr dynamicCast(CommandBasePtr ptr);
+      static SetMessageModificationToPulsarX1Ptr create(const std::vector<std::string>& signalArray, int svId, int startTime, int stopTime, int messageType, const std::string& condition, bool updateCRC, const std::string& bitModifications, const std::string& id);
+      static SetMessageModificationToPulsarX1Ptr dynamicCast(CommandBasePtr ptr);
       virtual bool isValid() const override;
       virtual std::string documentation() const override;
       virtual const std::vector<std::string>& fieldNames() const override;
@@ -102,14 +102,14 @@ namespace Sdx
       void setMessageType(int messageType);
 
 
-      // **** occurrence ****
-      int occurrence() const;
-      void setOccurrence(int occurrence);
-
-
       // **** condition ****
       std::string condition() const;
       void setCondition(const std::string& condition);
+
+
+      // **** updateCRC ****
+      bool updateCRC() const;
+      void setUpdateCRC(bool updateCRC);
 
 
       // **** bitModifications ****
