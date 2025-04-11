@@ -4,6 +4,8 @@
 #include <QString>
 #include <QWidget>
 
+#include <cstdint>
+
 #include "skydel_notifier_interface.h"
 
 const QString SKYDEL_WIDGET_SETTINGS_KEY = "Settings";
@@ -34,6 +36,7 @@ public:
   virtual ~SkydelCoreInterface() = default;
 
   virtual void setLogPath(const QString& path) = 0;
+  virtual void setInstanceIdentifier(uint32_t identifier) = 0;
   virtual void setNotifier(SkydelNotifierInterface* notifier) = 0;
   virtual void setConfiguration(const QString& version, const QJsonObject& configuration) = 0;
   virtual QJsonObject getConfiguration() const = 0;
@@ -41,5 +44,5 @@ public:
   virtual void initialize() = 0;
 
   static constexpr auto ID = "SkydelCore";
-  static constexpr auto VERSION = 4;
+  static constexpr auto VERSION = 5;
 };

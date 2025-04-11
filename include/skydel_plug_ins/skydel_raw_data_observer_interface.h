@@ -37,13 +37,6 @@ public:
     double svAntennaAzimuth;
     double svAntennaElevation;
     double relativePowerLevel;
-    double doplerFrequency;
-    double psrChangeRate;
-    bool isEcho;
-    double echoPowerLoss;
-    double echoDopplerOffset;
-    double echoCarrierPhaseOffset;
-    double echoPsrOffset;
     double receiverCarrierPhaseOffset;
     double satelliteCarrierPhaseOffset;
     double calibrationOffset;
@@ -88,5 +81,5 @@ public:
                                                                      const SkydelSignalIDToStringMap&) = 0;
 
   static constexpr auto ID = "SkydelRawDataObserver";
-  static constexpr auto VERSION = 4;
+  static constexpr auto VERSION = 5;
 };
