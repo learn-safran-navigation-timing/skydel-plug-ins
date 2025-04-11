@@ -15,8 +15,9 @@ struct InitData
    */
   uint32_t startWeek;
   uint32_t startSecondOfWeek;
-  char pathToXml[512];   // NULL terminated string
-  char xmlFileName[512]; // NULL terminated string
+  char pathToXml[512];        // NULL terminated string
+  char xmlFileName[512];      // NULL terminated string
+  char customSignalName[512]; // NULL terminated string
 };
 
 enum ConstellationEnum
