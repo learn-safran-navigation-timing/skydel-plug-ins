@@ -11,16 +11,19 @@ jobs:
   build:
     runs-on: windows-latest
 
+    env:
+      QT_VERSION: 5.15.17
+      QT_PREFIX: C:\Qt\5.15.17\msvc2019_64
+      QT_SRC: C:\qt-src
+      QT_CACHE_KEY: QT
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install Qt
-        uses: jurplel/install-qt-action@v3
-        with:
-          version: '5.15.2'
-          host: 'windows'
-          arch: 'win64_msvc2019_64'
+      - name: Install Build Dependencies
+        run: |
+          choco install -y strawberryperl
 
       - name: Setup Ninja
         uses: ashutoshvarma/setup-ninja@master
@@ -36,6 +39,32 @@ jobs:
         uses: jwlawson/actions-setup-cmake@v1.13
         with:
           cmake-version: '3.22.x'
+
+      - name: Cache Qt Build
+        id: qt-cache
+        uses: actions/cache@v3
+        with:
+          path: C:\Qt\${{ env.QT_VERSION }}
+          key: ${{ runner.os }}-${{ env.QT_CACHE_KEY }}-${{ env.QT_VERSION }}
+
+      - name: Configure Qt (if not cached)
+        if: steps.qt-cache.outputs.cache-hit != 'true'
+        shell: cmd
+        run: |
+          cd /d C:\
+          git clone --branch v%QT_VERSION%-lts-lgpl --single-branch https://github.com/qt/qt5
+          cd qt5
+          perl init-repository --module-subset="qtbase"
+          configure -prefix %QT_PREFIX% -opensource -confirm-license -nomake tests -nomake examples
+
+      - name: Build and Install Qt (if not cached)
+        if: steps.qt-cache.outputs.cache-hit != 'true'
+        shell: cmd
+        run: |
+          cd /d C:\qt5
+          set CL=/MP
+          nmake
+          nmake install
 
       - name: Build with CMake
         uses: ashutoshvarma/action-cmake-build@master
