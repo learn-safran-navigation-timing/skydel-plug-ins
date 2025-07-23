@@ -15,6 +15,6 @@ public:
 
   // Called every navMsgDuration
   // elapsedTime is an offset to the start time in millisecond
-  // prn is the PRN transmitted by legacy signals on the same space vehicle
-  virtual void buildNavMsg(int64_t elapsedTime, uint32_t prn, const Sdx::CS::Constellation& data) = 0;
+  // svID is the satellite unique identifier
+  virtual void buildNavMsg(int64_t elapsedTime, uint32_t svID, const Sdx::CS::ConstellationDatas& datas) = 0;
 };

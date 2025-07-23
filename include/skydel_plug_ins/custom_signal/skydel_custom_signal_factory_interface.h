@@ -8,8 +8,8 @@ class SkydelCustomSignalFactoryInterface
 public:
   virtual ~SkydelCustomSignalFactoryInterface() = default;
 
-  virtual SkydelCustomSignalInterface* createCustomSignal(const Sdx::CS::InitData& data) = 0;
+  virtual SkydelCustomSignalInterface* createCustomSignal(const Sdx::CS::InitializationDatas& datas) = 0;
 
   static constexpr auto ID = "SkydelCustomSignalFactory";
-  static constexpr auto VERSION = 1;
+  static constexpr auto VERSION = 2;
 };

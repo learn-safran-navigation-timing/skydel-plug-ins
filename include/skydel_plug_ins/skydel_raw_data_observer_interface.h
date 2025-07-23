@@ -31,8 +31,6 @@ public:
     double ionoCorrection;
     double tropoCorrection;
     double psrOffset;
-    double receiverAntennaAzimuth;
-    double receiverAntennaElevation;
     double receiverAntennaGain;
     double svAntennaAzimuth;
     double svAntennaElevation;
@@ -50,6 +48,8 @@ public:
   struct SVRawData
   {
     uint32_t id;
+    double receiverAntennaAzimuth;
+    double receiverAntennaElevation;
     std::vector<SignalRawData> signalsRawData;
   };
 
@@ -79,7 +79,8 @@ public:
 
   virtual SkydelRuntimeRawDataObserver* createRuntimeRawDataObserver(const SkydelConstellationIDToStringMap&,
                                                                      const SkydelSignalIDToStringMap&) = 0;
+  virtual uint64_t getUpdateIntervalMs() const = 0;
 
   static constexpr auto ID = "SkydelRawDataObserver";
-  static constexpr auto VERSION = 5;
+  static constexpr auto VERSION = 6;
 };

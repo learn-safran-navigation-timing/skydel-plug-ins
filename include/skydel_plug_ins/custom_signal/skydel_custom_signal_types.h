@@ -3,6 +3,23 @@
 #include <cstdint>
 #include <vector>
 
+#include "skydel_custom_signal_constellation_datas.h"
+#include "skydel_custom_signal_initialization_datas.h"
+
+// ============================================================================
+// !! LEGACY WARNING !!
+//
+// The structures defined in this file are deprecated and no longer used
+// in the Custom Signal interfaces as of Skydel version 25.6.
+//
+// This file is retained temporarily for backward compatibility purposes only
+// and will be removed in a future version of the SDK.
+//
+// Please avoid using these definitions in any new development.
+//
+// !! LEGACY WARNING !!
+// ============================================================================
+
 namespace Sdx::CS
 {
 
