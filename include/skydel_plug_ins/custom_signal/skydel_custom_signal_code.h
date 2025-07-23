@@ -15,7 +15,7 @@ public:
 
   // Called every millisecond
   // elapsedTime is an offset to the start time in millisecond
-  // prn is the PRN transmitted by legacy signals on the same space vehicle
+  // svID is the satellite unique identifier
   // chips is a chip buffer allocated for <codeRate> / 1000 + extraAllocSize chips
-  virtual void getChips(int64_t elapsedTime, uint32_t prn, int8_t* chips) = 0;
+  virtual void getChips(int64_t elapsedTime, uint32_t svID, int8_t* chips) = 0;
 };
