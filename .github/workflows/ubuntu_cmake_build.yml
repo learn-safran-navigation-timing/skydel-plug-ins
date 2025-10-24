@@ -49,14 +49,13 @@ jobs:
 
           # Build qtbase
           git clone --branch v${{ env.QT_VERSION }}-lts-lgpl --single-branch https://github.com/qt/qt5
-          ls
-          # cd "$QT_TMP"/qt5
+          cd qt5
 
-          # sed -i "0,/#ifdef __cplusplus/!b;//a#  include <limits>" src/corelib/global/qglobal.h
+          sed -i "0,/#ifdef __cplusplus/!b;//a#  include <limits>" src/corelib/global/qglobal.h
 
-          # ./configure -prefix "$QT_PREFIX" -xcb -opensource -confirm-license -nomake tests -nomake examples
-          # make -j$(nproc)
-          # sudo make install
+          ./configure -prefix ${{ env.QT_PREFIX }} -xcb -opensource -confirm-license -nomake tests -nomake examples
+          make -j$(nproc)
+          sudo make install
 
       - name: Build with CMake
         uses: ashutoshvarma/action-cmake-build@master
