@@ -49,10 +49,7 @@ jobs:
 
           # Build qtbase
           git clone --branch v${{ env.QT_VERSION }}-lts-lgpl --single-branch https://github.com/qt/qt5
-          ls
-          echo "HERE"
-          cd qt5
-          ls
+          cd qt5/qtbase
           sed -i "0,/#ifdef __cplusplus/!b;//a#  include <limits>" src/corelib/global/qglobal.h
 
           ./configure -prefix ${{ env.QT_PREFIX }} -xcb -opensource -confirm-license -nomake tests -nomake examples
