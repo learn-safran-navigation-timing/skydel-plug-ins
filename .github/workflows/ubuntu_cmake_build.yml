@@ -46,14 +46,14 @@ jobs:
         if: steps.qt-cache.outputs.cache-hit != 'true'
         run: |
           mkdir -p $QT_TMP
+          cd $QT_TMP
 
           # Build qtbase
-          wget -qO- "https://download.qt.io/official_releases/qt/${QT_VERSION%.*}/${QT_VERSION}/submodules/qtbase-everywhere-opensource-src-${QT_VERSION}.tar.xz" | tar -xJvC "$QT_TMP"
-          cd "$QT_TMP"/qtbase-everywhere-src*
-
+          git clone --branch v${{ env.QT_VERSION }}-lts-lgpl --single-branch https://github.com/qt/qtbase
+          cd qtbase
           sed -i "0,/#ifdef __cplusplus/!b;//a#  include <limits>" src/corelib/global/qglobal.h
 
-          ./configure -prefix "$QT_PREFIX" -xcb -opensource -confirm-license -nomake tests -nomake examples
+          ./configure -prefix ${{ env.QT_PREFIX }} -xcb -opensource -confirm-license -nomake tests -nomake examples
           make -j$(nproc)
           sudo make install
 
