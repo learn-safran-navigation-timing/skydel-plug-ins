@@ -249,14 +249,14 @@ inline std::vector<Ephemeris> convertToLegacyEphemerides(const ConstellationData
 
 inline IonosphereTerms convertToLegacyIonosphereTerms(const InitializationDatas& data)
 {
-  return {std::get<double>(data.at(ALPHA_0_KEY)),
-          std::get<double>(data.at(ALPHA_1_KEY)),
-          std::get<double>(data.at(ALPHA_2_KEY)),
-          std::get<double>(data.at(ALPHA_3_KEY)),
-          std::get<double>(data.at(BETA_0_KEY)),
-          std::get<double>(data.at(BETA_1_KEY)),
-          std::get<double>(data.at(BETA_2_KEY)),
-          std::get<double>(data.at(BETA_3_KEY))};
+  return {std::get<double>(data.at(KLOBUCHAR_ALPHA_0_KEY)),
+          std::get<double>(data.at(KLOBUCHAR_ALPHA_1_KEY)),
+          std::get<double>(data.at(KLOBUCHAR_ALPHA_2_KEY)),
+          std::get<double>(data.at(KLOBUCHAR_ALPHA_3_KEY)),
+          std::get<double>(data.at(KLOBUCHAR_BETA_0_KEY)),
+          std::get<double>(data.at(KLOBUCHAR_BETA_1_KEY)),
+          std::get<double>(data.at(KLOBUCHAR_BETA_2_KEY)),
+          std::get<double>(data.at(KLOBUCHAR_BETA_3_KEY))};
 }
 
 inline UtcTerms convertToLegacyUtcTerms(const InitializationDatas& data)

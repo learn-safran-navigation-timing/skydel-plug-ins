@@ -11,5 +11,5 @@ public:
   virtual SkydelCustomSignalInterface* createCustomSignal(const Sdx::CS::InitializationDatas& datas) = 0;
 
   static constexpr auto ID = "SkydelCustomSignalFactory";
-  static constexpr auto VERSION = 2;
+  static constexpr auto VERSION = 3;
 };
